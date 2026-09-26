@@ -470,29 +470,83 @@ const GAUD_INCLUDE_MARKERS = ['📖', '✏️', '🧠', '⚠️'];
 const GAUD_EXCLUDE_MARKERS = ['📝', '✅'];
 const GAUD_LEAF_SELECTOR = 'td, th, li, p, blockquote';
 
+// Set once per applyLessonAudio() call (see below) — true only for 01-Phonics
+// topics AFTER topic 1 (Alphabet). Topic 1 intentionally teaches letter
+// NAMES (A=ay, B=bee...), so it keeps the normal "word" behavior; every
+// other Phonics topic is about the SOUND a letter makes, so a bare single
+// letter there should speak its phonics sound (e.g. "buh") instead of its
+// name (e.g. "bee"). Not applied anywhere else on the site.
+let gaudSoundModeActive = false;
+
+// Given a target character offset into root.textContent, finds the actual
+// text node (and offset within it) at that position — walks descendant
+// text nodes in document order so bold/inline tags don't confuse the math.
+function gaudFindNodeAtOffset(root, targetOffset) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  let cumulative = 0;
+  let node;
+  while ((node = walker.nextNode())) {
+    const len = node.nodeValue.length;
+    if (cumulative + len >= targetOffset) return { node, localOffset: targetOffset - cumulative };
+    cumulative += len;
+  }
+  return null;
+}
+
+// Inserts btn immediately after the text that ends at `offset` (character
+// position in root.textContent) — this is what makes the speaker button
+// land right next to the English word/letter it reads, instead of every
+// button for a whole paragraph/list-item being lumped at the very end of it.
+function gaudInsertButtonAtOffset(root, offset, btn) {
+  const found = gaudFindNodeAtOffset(root, offset);
+  if (!found) { root.appendChild(btn); return; }
+  const { node, localOffset } = found;
+  if (localOffset >= node.nodeValue.length) node.parentNode.insertBefore(btn, node.nextSibling);
+  else if (localOffset <= 0) node.parentNode.insertBefore(btn, node);
+  else node.parentNode.insertBefore(btn, node.splitText(localOffset));
+}
+
 function gaudAnnotateLeaf(el) {
   if (!el || el.dataset.gaudProcessed) return;
   el.dataset.gaudProcessed = '1';
   const text = el.textContent;
-  const matches = text.match(GAUD_EN_RUN_RE);
-  if (!matches) return;
-  const seen = new Set();
-  const frag = document.createDocumentFragment();
-  matches.forEach((raw) => {
-    const chunk = raw.trim();
-    if (chunk.length < 1 || seen.has(chunk)) return;
-    seen.add(chunk);
+  const matches = [];
+  GAUD_EN_RUN_RE.lastIndex = 0;
+  let m;
+  while ((m = GAUD_EN_RUN_RE.exec(text))) {
+    const chunk = m[0].trim();
+    if (chunk.length < 1) continue;
+    matches.push({ chunk, end: m.index + m[0].length });
+  }
+  if (!matches.length) return;
+  // Insert furthest-in-the-text match first: once we've split/inserted near
+  // the end, earlier offsets (computed from the ORIGINAL text) are still
+  // valid for everything before that point, since we never touch that part
+  // of the DOM until its own turn.
+  for (let k = matches.length - 1; k >= 0; k--) {
+    const chunk = matches[k].chunk;
     const isSentence = /\s/.test(chunk) && /[.!?]$/.test(chunk);
+    // Matches a bare single letter ("Q"), or the same letter shown twice
+    // for case ("B b", as in this site's "ตัวอักษร" table column) — both
+    // represent ONE letter, not a real word, so they're sound-eligible.
+    const bareLetterMatch = /^([A-Za-z])(?:[ \t]+\1)?$/i.exec(chunk);
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'gaud-btn';
-    btn.setAttribute('data-gaud-type', isSentence ? 'sentence' : 'word');
-    btn.setAttribute('data-gaud-text', chunk);
+    if (isSentence) {
+      btn.setAttribute('data-gaud-type', 'sentence');
+      btn.setAttribute('data-gaud-text', chunk);
+    } else if (gaudSoundModeActive && bareLetterMatch) {
+      btn.setAttribute('data-gaud-type', 'sound');
+      btn.setAttribute('data-gaud-text', bareLetterMatch[1].toLowerCase());
+    } else {
+      btn.setAttribute('data-gaud-type', 'word');
+      btn.setAttribute('data-gaud-text', chunk);
+    }
     btn.setAttribute('aria-label', `ฟังเสียง (Listen): ${chunk}`);
     btn.textContent = '🔊';
-    frag.appendChild(btn);
-  });
-  if (frag.childNodes.length) el.appendChild(frag);
+    gaudInsertButtonAtOffset(el, matches[k].end, btn);
+  }
 }
 
 function gaudAnnotateSubtree(el) {
@@ -509,8 +563,11 @@ function gaudAnnotateSubtree(el) {
   }
 }
 
-function applyLessonAudio(rootEl) {
+function applyLessonAudio(rootEl, page) {
   if (!window.GlobalAudio || !rootEl) return;
+
+  const chFolder = page && COURSE[page.chapterIdx] ? COURSE[page.chapterIdx].folder : null;
+  gaudSoundModeActive = chFolder === '01-Phonics' && !!page && page.topicId > 1;
 
   const h1 = rootEl.querySelector('.lesson-header h1');
   if (h1) gaudAnnotateLeaf(h1);
@@ -708,7 +765,7 @@ function applyLessonAudio(rootEl) {
       heroHtml +
       `<div class="lesson-body">${mdToHtml(page.body)}</div>` +
       `</div>`;
-    applyLessonAudio(contentEl);
+    applyLessonAudio(contentEl, page);
     // Story Adventure is a full interactive game (Adventure-engine module,
     // not a markdown lesson) — this mini markdown renderer's own link
     // syntax strips the href (see inlineMd above), so a real clickable

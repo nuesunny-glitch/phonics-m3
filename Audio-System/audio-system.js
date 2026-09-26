@@ -28,6 +28,12 @@
 //        words. A lone "_" or "..." token is a silent blank (used for
 //        ordering-quiz prompts like "A B _ D E" so the button can read
 //        what's visible without ever speaking the blanked answer).
+//      GlobalAudio.speakSound('b'); // speaks the PHONICS SOUND of a
+//        single letter ("buh") instead of its NAME ("bee") — for topics
+//        that teach letter sounds rather than letter names. Not exposed
+//        via a render*() helper since script.js's applyLessonAudio()
+//        decides per-topic (data-gaud-type="sound") whether a bare
+//        single letter should use this or the normal speakWord name.
 //
 // BEHAVIOR
 // - English voice only, en-US preferred (falls back to en-GB, then any
@@ -45,6 +51,18 @@
 
   var RATE = 0.85;
   var THAI_RE = /[฀-๿]/;
+
+  // English-approximation spellings so the TTS engine says a letter's
+  // PHONICS SOUND (e.g. "buh") instead of its NAME (e.g. "bee"). Same table
+  // as 01-Phonics/_tools/shared-audio.js's SOUND_MAP — kept as its own copy
+  // here rather than shared, since the two audio engines are intentionally
+  // separate (see CLAUDE.md §6).
+  var SOUND_MAP = {
+    a: 'ah', b: 'buh', c: 'kuh', d: 'duh', e: 'eh', f: 'ffff', g: 'guh',
+    h: 'huh', i: 'ih', j: 'juh', k: 'kuh', l: 'luh', m: 'mmm', n: 'nnn',
+    o: 'aw', p: 'puh', q: 'kwuh', r: 'ruh', s: 'sss', t: 'tuh', u: 'uh',
+    v: 'vuh', w: 'wuh', x: 'ks', y: 'yuh', z: 'zzz'
+  };
 
   var cachedVoices = [];
   var currentBtn = null;
@@ -127,6 +145,10 @@
 
   function speakWord(text, btn) { speak(text, btn); }
   function speakSentence(text, btn) { speak(text, btn); }
+  function speakSound(letter, btn) {
+    if (!letter) return;
+    speak(SOUND_MAP[String(letter).toLowerCase()] || letter, btn);
+  }
 
   // Speaks a run of individual letters with a short pause between each,
   // e.g. "A-B-C-D-E" -> "A" ...pause... "B" ...pause... "C" ... — for
@@ -233,6 +255,7 @@
     var type = btn.getAttribute('data-gaud-type');
     if (type === 'sentence') speakSentence(text, btn);
     else if (type === 'sequence') speakSequence(text, btn);
+    else if (type === 'sound') speakSound(text, btn);
     else speakWord(text, btn);
   });
 
@@ -240,6 +263,7 @@
     speakWord: speakWord,
     speakSentence: speakSentence,
     speakSequence: speakSequence,
+    speakSound: speakSound,
     renderButton: renderButton,
     renderSequenceButton: renderSequenceButton,
     renderPracticeButton: renderPracticeButton
