@@ -60,8 +60,8 @@
   var SOUND_MAP = {
     a: 'ah', b: 'buh', c: 'kuh', d: 'duh', e: 'eh', f: 'fee', g: 'gah',
     h: 'hah', i: 'ih', j: 'juh', k: 'kuh', l: 'luh', m: 'hmm', n: 'nuh',
-    o: 'aw', p: 'puh', q: 'kwuh', r: 'ruh', s: 'sssssssss', t: 'tuh', u: 'uh',
-    v: 'vuh', w: 'wuh', x: 'ksee', y: 'yuh', z: 'zzzzzzzzz'
+    o: 'aw', p: 'puh', q: 'kwuh', r: 'ruh', s: 'hiss', t: 'tuh', u: 'uh',
+    v: 'vuh', w: 'wuh', x: 'ksee', y: 'yuh', z: 'buzz'
   };
 
   var cachedVoices = [];

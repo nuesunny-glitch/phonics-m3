@@ -8,8 +8,8 @@
   var SOUND_MAP = {
     'b': 'buh', 'c': 'kuh', 'd': 'duh', 'f': 'fee', 'g': 'gah',
     'h': 'hah', 'j': 'juh', 'k': 'kuh', 'l': 'luh', 'm': 'hmm',
-    'n': 'nuh', 'p': 'puh', 'q': 'kwuh', 'qu': 'kwuh', 'r': 'ruh', 's': 'sssssssss',
-    't': 'tuh', 'v': 'vuh', 'w': 'wuh', 'x': 'ksee', 'y': 'yuh', 'z': 'zzzzzzzzz',
+    'n': 'nuh', 'p': 'puh', 'q': 'kwuh', 'qu': 'kwuh', 'r': 'ruh', 's': 'hiss',
+    't': 'tuh', 'v': 'vuh', 'w': 'wuh', 'x': 'ksee', 'y': 'yuh', 'z': 'buzz',
     'sh': 'shh', 'ch': 'chuh', 'th': 'th', 'wh': 'wuh', 'ph': 'ffff',
     'ng': 'ng', 'ck': 'kuh',
     'a': 'ah', 'e': 'eh', 'i': 'ih', 'o': 'aw', 'u': 'uh',
