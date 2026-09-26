@@ -470,12 +470,12 @@ const GAUD_INCLUDE_MARKERS = ['📖', '✏️', '🧠', '⚠️'];
 const GAUD_EXCLUDE_MARKERS = ['📝', '✅'];
 const GAUD_LEAF_SELECTOR = 'td, th, li, p, blockquote';
 
-// Set once per applyLessonAudio() call (see below) — true only for 01-Phonics
-// topics AFTER topic 1 (Alphabet). Topic 1 intentionally teaches letter
-// NAMES (A=ay, B=bee...), so it keeps the normal "word" behavior; every
-// other Phonics topic is about the SOUND a letter makes, so a bare single
-// letter there should speak its phonics sound (e.g. "buh") instead of its
-// name (e.g. "bee"). Not applied anywhere else on the site.
+// Set once per applyLessonAudio() call (see below) — true for every
+// 01-Phonics topic (2026-09-26: extended to include topic 1/Alphabet too,
+// per explicit instruction that this whole course teaches sounds from day
+// one, not letter names). A bare single letter speaks its phonics sound
+// (e.g. "buh") instead of its name (e.g. "bee"). Not applied anywhere
+// else on the site.
 let gaudSoundModeActive = false;
 
 // Given a target character offset into root.textContent, finds the actual
@@ -567,7 +567,7 @@ function applyLessonAudio(rootEl, page) {
   if (!window.GlobalAudio || !rootEl) return;
 
   const chFolder = page && COURSE[page.chapterIdx] ? COURSE[page.chapterIdx].folder : null;
-  gaudSoundModeActive = chFolder === '01-Phonics' && !!page && page.topicId > 1;
+  gaudSoundModeActive = chFolder === '01-Phonics' && !!page;
 
   const h1 = rootEl.querySelector('.lesson-header h1');
   if (h1) gaudAnnotateLeaf(h1);
