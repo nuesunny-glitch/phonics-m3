@@ -1,10 +1,11 @@
 # Lesson 1 (Phonics) — Illustration Asset Plan
 
-Status: **placeholders only** — no real artwork exists yet. Each spot
-below currently renders as a styled placeholder box (see
-`_tools/shared.css`, classes `.illus-hero` / `.illus-card` /
-`.vocab-pic-card` / `.blend-card`) reserving the correct aspect ratio,
-so there is zero layout shift when real art is dropped in.
+Status: **1 of 5 assets live** (#3, `consonant-sounds.jpg`, 2026-09-26)
+— the rest are still placeholders. Each not-yet-filled spot renders as
+a styled placeholder box (see `_tools/shared.css`, classes
+`.illus-hero` / `.illus-card` / `.vocab-pic-card` / `.blend-card`)
+reserving the correct aspect ratio, so there is zero layout shift when
+real art is dropped in.
 
 Visual style for all assets: **Cute 3D Educational Cartoon**, Gen
 Alpha (13–15 y/o) — cute, modern, colorful, friendly, energetic,
@@ -40,7 +41,7 @@ attribute naming its planned file. To swap in real art:
 |---|---|---|---|---|
 | 1 | `lesson1-phonics-hero.webp` | `01-Alphabet/lesson.html` (top of page) | 4:3 | Two friendly teen students exploring a colorful world of English letters. Large floating letters A B C. Include alphabet blocks, headphones, a speaker icon, a book, speech bubbles. Theme: "Learn English Sounds." |
 | 2 | `alphabet-adventure.webp` | `01-Alphabet/lesson.html` (above the A–Z table) | 4:3 | Teen students learning A–Z with colorful alphabet cards, showing Letter → Word → Meaning via recognizable objects (A-Apple, B-Ball, C-Cat, D-Dog). |
-| 3 | `consonant-sounds.webp` | `02-Consonant-Sounds/lesson.html` (top, below objectives) | 4:3 | A student wearing headphones practicing pronunciation, with B→bag, C→cat, D→dog, F→fish shown visually plus small sound-wave elements. No Thai text inside the image. |
+| 3 | ~~`consonant-sounds.webp`~~ → **`consonant-sounds.jpg`** ✅ done | `02-Consonant-Sounds/lesson.html` (top, below objectives) | 4:3 | A student wearing headphones practicing pronunciation, with B→bag, C→cat, D→dog, F→fish shown visually plus small sound-wave elements. No Thai text inside the image. Real asset supplied by the user matches this brief closely (ball/cat/dog/fish/goat/hat/jam/key/leaf/mouse consonant cards) — kept as `.jpg` (the file's actual format) rather than converted to WebP, since no image-conversion tool is available in this environment; browsers render it correctly regardless of the extension mismatch that would exist with `.webp`. |
 | 4 | `vowels-aeiou.webp` | `04-Short-Vowels/lesson.html` (above the vowel table) | 4:3 | Simple, clean visual of the 5 vowels with one object each: A-apple, E-egg, I-ink, O-orange, U-umbrella. |
 | 5 | `phonics-blending.webp` | `09-Blending/lesson.html` (above the blending steps table) | 4:3 | Visual demonstration of sounds combining into a word: C+A+T → CAT (cat), reinforcing the adjacent live blend-cards for C+A+T→CAT and D+O+G→DOG. |
 
