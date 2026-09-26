@@ -1,0 +1,184 @@
+{
+  "id": "11",
+  "folder": "11-Conversation",
+  "titleThai": "Conversation (บทสนทนาในชีวิตประจำวัน)",
+  "titleShort": "Conversation",
+  "emojiTitle": "💬🤝",
+  "objectives": [
+    "จำสำนวนภาษาอังกฤษที่ใช้บ่อยที่สุดใน 7 สถานการณ์ประจำวันได้",
+    "เลือกประโยคตอบรับที่เหมาะสมกับบทสนทนาที่กำหนดให้ได้ถูกต้อง",
+    "เรียงลำดับบทสนทนาให้ต่อเนื่องและสมเหตุสมผลได้",
+    "ใช้สำนวนขอร้อง ขออนุญาต และขอบคุณ-ขอโทษได้อย่างสุภาพ",
+    "รับมือกับข้อสอบแบบ Conversation Completion ที่พบบ่อยในข้อสอบเข้า ม.4"
+  ],
+  "summaryTable": {
+    "headers": ["สถานการณ์", "สำนวนเปิดบทสนทนา", "สำนวนตอบรับ"],
+    "rows": [
+      ["ทักทาย/แนะนำตัว", "Hello! What's your name?", "I'm... Nice to meet you."],
+      ["ขอบคุณ/ขอโทษ", "Thank you. / I'm sorry.", "You're welcome. / That's okay."],
+      ["ขอร้อง/ขออนุญาต", "Could you...? / May I...?", "Sure. / I'm afraid not."],
+      ["ซื้อของ", "Can I help you? / How much...?", "It's... baht. / I'll take it."],
+      ["ถามทาง", "Where is...?", "Go straight. / Turn left/right."],
+      ["โทรศัพท์", "May I speak to...?", "This is...speaking."],
+      ["กล่าวลา", "Goodbye. / See you...", "Take care. / Bye."]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เลือกประโยคตอบรับที่เหมาะสม (12 ข้อ)",
+        "instructions": "เลือกประโยคที่เหมาะสมที่สุดมาเติมในบทสนทนา",
+        "items": [
+          "A: What's your name? B: ___",
+          "A: Thank you so much. B: ___",
+          "A: I'm sorry I broke your pen. B: ___",
+          "A: Could you help me carry this? B: ___",
+          "A: How much is this hat? B: ___",
+          "A: Excuse me, where is the museum? B: ___",
+          "A: May I speak to Mr. Somsak? B: ___",
+          "A: Goodbye! See you tomorrow! B: ___",
+          "A: Can I help you find something? B: ___",
+          "A: May I borrow your book? B: ___",
+          "A: Is it far from here? B: ___",
+          "A: Nice to meet you. B: ___"
+        ],
+        "answers": [
+          "My name is Anan.",
+          "You're welcome.",
+          "That's okay.",
+          "Sure, no problem.",
+          "It's 150 baht.",
+          "Go straight and turn left.",
+          "Hold on, please.",
+          "Bye! See you tomorrow!",
+          "Yes, I'm looking for a birthday gift.",
+          "Of course, here you are.",
+          "No, it's just 10 minutes away.",
+          "Nice to meet you too."
+        ],
+        "reasons": [
+          "ตอบคำถามชื่อโดยตรง",
+          "ตอบรับคำขอบคุณ",
+          "ตอบรับคำขอโทษ",
+          "ตอบรับคำขอร้อง",
+          "ตอบราคาสิ่งของ",
+          "บอกทิศทาง",
+          "ขอให้รอสายโทรศัพท์",
+          "ตอบรับการกล่าวลา",
+          "ตอบรับข้อเสนอช่วยเหลือในร้านค้า",
+          "ตอบรับคำขออนุญาตยืมของ",
+          "ตอบระยะทาง",
+          "ตอบรับการทักทายแนะนำตัว"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เรียงประโยคบทสนทนาให้ถูกลำดับ (2 ข้อ — เขียนหมายเลข 1-4)",
+        "instructions": "เรียงลำดับบทสนทนาที่กำหนดให้ถูกต้อง",
+        "items": [
+          "บทสนทนาการถามทาง:\n___ Go straight and turn left at the corner.\n___ Excuse me, where is the bank?\n___ Thank you very much.\n___ You're welcome.",
+          "บทสนทนาการคุยโทรศัพท์:\n___ Hi, this is Nid. Is Somsak there?\n___ Hello?\n___ Sure, hold on please.\n___ Thank you."
+        ],
+        "answers": [
+          "2 → 1 → 4 → 3",
+          "2 → 1 → 3 → 4"
+        ],
+        "reasons": [
+          "Excuse me... → Go straight... → Thank you... → You're welcome.",
+          "Hello? → Hi, this is Nid... → Sure, hold on please. → Thank you."
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เลือกสำนวนที่ถูกต้องตามสถานการณ์ (10 ข้อ)",
+        "instructions": "เลือกสำนวนภาษาอังกฤษที่เหมาะสมกับสถานการณ์ที่กำหนดให้",
+        "items": [
+          "ต้องการขออนุญาตเข้าห้อง: ___ (Can I help you? / May I come in?)",
+          "ต้องการถามราคาสินค้า: ___ (How much is this? / How are you?)",
+          "ต้องการขอบคุณอย่างสุภาพ: ___ (Thank you very much. / Excuse me.)",
+          "ต้องการบอกทางตรงไปข้างหน้า: ___ (Go straight ahead. / Turn left.)",
+          "ต้องการแนะนำตัวเอง: ___ (My name is... / This is...speaking.)",
+          "ต้องการรับสายโทรศัพท์: ___ (This is...speaking. / See you soon.)",
+          "ต้องการขอโทษที่มาสาย: ___ (I'm sorry I'm late. / Can I help you?)",
+          "ต้องการกล่าวลาแบบเป็นกันเอง: ___ (Bye! / How much is this?)",
+          "ต้องการขอความช่วยเหลือสุภาพ: ___ (Could you help me, please? / It's 100 baht.)",
+          "ต้องการถามไซส์เสื้อผ้า: ___ (Do you have a smaller size? / Turn right.)"
+        ],
+        "answers": [
+          "May I come in?",
+          "How much is this?",
+          "Thank you very much.",
+          "Go straight ahead.",
+          "My name is...",
+          "This is...speaking.",
+          "I'm sorry I'm late.",
+          "Bye!",
+          "Could you help me, please?",
+          "Do you have a smaller size?"
+        ],
+        "reasons": [
+          "สำนวนขออนุญาตเข้าห้อง",
+          "สำนวนถามราคา",
+          "สำนวนขอบคุณ",
+          "สำนวนบอกทาง",
+          "สำนวนแนะนำตัว",
+          "สำนวนรับสายโทรศัพท์",
+          "สำนวนขอโทษ",
+          "สำนวนกล่าวลาแบบเป็นกันเอง",
+          "สำนวนขอความช่วยเหลือ",
+          "สำนวนซื้อของถามไซส์"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "👋", "tag": "ทักทาย: What's your name?", "difficulty": 1, "q": "A: Hello! What's your name? B: ___", "choices": ["I'm fine, thank you.", "My name is Malee.", "Goodbye!", "It's 50 baht."], "answer": 1, "explain": "ตอบคำถามชื่อโดยตรง" },
+    { "emoji": "🙏", "tag": "ขอบคุณ: You're welcome", "difficulty": 1, "q": "A: Thank you very much. B: ___", "choices": ["You're welcome.", "I'm sorry.", "See you.", "How much?"], "answer": 0, "explain": "ตอบรับคำขอบคุณ" },
+    { "emoji": "😔", "tag": "ขอโทษ: That's okay", "difficulty": 1, "q": "A: I'm sorry I'm late. B: ___", "choices": ["It's 100 baht.", "That's okay.", "Turn left.", "My name is Ben."], "answer": 1, "explain": "ตอบรับคำขอโทษ" },
+    { "emoji": "💰", "tag": "ซื้อของ: ราคา", "difficulty": 1, "q": "A: How much is this shirt? B: ___", "choices": ["It's next to the bank.", "It's 250 baht.", "I'm fine.", "Nice to meet you."], "answer": 1, "explain": "ตอบราคาสิ่งของ" },
+    { "emoji": "🧭", "tag": "ถามทาง: บอกทิศทาง", "difficulty": 1, "q": "A: Excuse me, where is the post office? B: ___", "choices": ["It's 50 baht.", "Go straight and turn right.", "My name is Somsak.", "You're welcome."], "answer": 1, "explain": "บอกทิศทาง" },
+    { "emoji": "📞", "tag": "โทรศัพท์: This is...speaking", "difficulty": 1, "q": "A: May I speak to Dara, please? B: ___", "choices": ["This is Dara speaking.", "It's 20 baht.", "Turn left.", "Nice to meet you."], "answer": 0, "explain": "ตอบรับสายโทรศัพท์" },
+    { "emoji": "🙋", "tag": "ขอร้อง: Sure, no problem", "difficulty": 1, "q": "A: Could you help me, please? B: ___", "choices": ["Sure, no problem.", "It's 10 baht.", "Goodbye.", "How are you?"], "answer": 0, "explain": "ตอบรับคำขอร้อง" },
+    { "emoji": "🛍️", "tag": "ซื้อของ: Can I help you?", "difficulty": 1, "q": "A: Can I help you? B: ___", "choices": ["Yes, how much is this shirt?", "See you tomorrow.", "I'm sorry.", "Turn right."], "answer": 0, "explain": "ตอบรับข้อเสนอช่วยเหลือในร้านค้า" },
+    { "emoji": "👋", "tag": "กล่าวลา: Okay, bye!", "difficulty": 1, "q": "A: See you tomorrow! B: ___", "choices": ["It's 100 baht.", "Okay, bye!", "Excuse me.", "I'm fine."], "answer": 1, "explain": "ตอบรับการกล่าวลา" },
+    { "emoji": "🚶", "tag": "ถามทาง: ระยะทาง", "difficulty": 1, "q": "A: Is the hospital far from here? B: ___", "choices": ["No, it's just 5 minutes away.", "It's 100 baht.", "My name is Ben.", "You're welcome."], "answer": 0, "explain": "ตอบระยะทาง" },
+    { "emoji": "🤝", "tag": "ทักทาย: Nice to meet you too", "difficulty": 1, "q": "A: Nice to meet you. B: ___", "choices": ["Nice to meet you too.", "It's 100 baht.", "Goodbye.", "I'm sorry."], "answer": 0, "explain": "ตอบรับการแนะนำตัว" },
+    { "emoji": "🚪", "tag": "ขออนุญาต: May I come in?", "difficulty": 1, "q": "A: May I come in? B: ___", "choices": ["Sure, come in.", "It's 50 baht.", "See you later.", "How much is this?"], "answer": 0, "explain": "ตอบรับคำขออนุญาต" },
+    { "emoji": "📏", "tag": "ซื้อของ: ขอไซส์อื่น", "difficulty": 2, "q": "A: Do you have a smaller size? B: ___", "choices": ["Yes, here you are.", "It's next to the bank.", "Nice to meet you.", "I'm sorry."], "answer": 0, "explain": "ตอบรับคำขอไซส์อื่น" },
+    { "emoji": "🔁", "tag": "โทรศัพท์: ผิดเบอร์", "difficulty": 2, "q": "A: Sorry, wrong number. B: ___", "choices": ["That's okay.", "It's 100 baht.", "Go straight.", "I'm fine."], "answer": 0, "explain": "ตอบรับการขอโทษที่โทรผิดเบอร์" },
+    { "emoji": "🙋‍♀️", "tag": "ขออนุญาต: ยืมของ", "difficulty": 2, "q": "A: Could I borrow your pen? B: ___", "choices": ["Of course, here you are.", "It's 50 baht.", "Go straight.", "See you."], "answer": 0, "explain": "ตอบรับคำขอยืมของ" },
+    { "emoji": "☀️", "tag": "กล่าวลา: Have a nice day", "difficulty": 2, "q": "A: Have a nice day! B: ___", "choices": ["You too, thanks!", "It's 30 baht.", "My name is Dara.", "Turn left."], "answer": 0, "explain": "ตอบรับคำอวยพร Have a nice day" },
+    { "emoji": "🏥", "tag": "ถามทาง: โรงพยาบาล", "difficulty": 2, "q": "A: Excuse me, where is the nearest hospital? B: ___", "choices": ["It's 200 baht.", "Go straight ahead, then turn left.", "My name is Ann.", "Nice to meet you."], "answer": 1, "explain": "บอกทิศทางไปโรงพยาบาล" },
+    { "emoji": "🎂", "tag": "ทักทาย: How are you?", "difficulty": 2, "q": "A: How are you? B: ___", "choices": ["I'm fine, thank you.", "It's 50 baht.", "Turn right.", "Goodbye."], "answer": 0, "explain": "ตอบรับคำถามสารทุกข์สุกดิบ" },
+    { "emoji": "🙅", "tag": "ขออนุญาต: ปฏิเสธสุภาพ", "difficulty": 2, "q": "A: May I use your phone? B: ___", "choices": ["I'm afraid not, sorry.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "การปฏิเสธคำขออนุญาตอย่างสุภาพ" },
+    { "emoji": "🕐", "tag": "โทรศัพท์: รอสักครู่", "difficulty": 2, "q": "A: May I speak to the manager, please? B: ___", "choices": ["Hold on, please.", "It's 20 baht.", "Turn left.", "Nice to meet you."], "answer": 0, "explain": "ขอให้ผู้โทรรอสักครู่" },
+    { "emoji": "💵", "tag": "ซื้อของ: ตัดสินใจซื้อ", "difficulty": 2, "q": "A: It's 250 baht. B: ___", "choices": ["I'll take it.", "Go straight.", "Nice to meet you.", "See you."], "answer": 0, "explain": "แสดงการตัดสินใจซื้อสินค้า" },
+    { "emoji": "🧳", "tag": "ถามทาง: ใกล้-ไกล", "difficulty": 2, "q": "A: Is it near here? B: ___", "choices": ["Yes, it's very close.", "It's 100 baht.", "My name is Ben.", "Nice to meet you."], "answer": 0, "explain": "ตอบระยะทางใกล้-ไกล" },
+    { "emoji": "🎉", "tag": "กล่าวลา: Take care", "difficulty": 2, "q": "A: I have to go now. B: ___", "choices": ["Okay, take care!", "It's 50 baht.", "Nice to meet you.", "How much is this?"], "answer": 0, "explain": "กล่าวลาด้วยการบอกให้ดูแลตัวเอง" },
+    { "emoji": "🤔", "tag": "ขอร้อง: ปฏิเสธพร้อมเหตุผล", "difficulty": 2, "q": "A: Could you lend me some money? B: ___", "choices": ["Sorry, I don't have any with me.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "ปฏิเสธคำขอร้องอย่างสุภาพพร้อมเหตุผล" },
+    { "emoji": "🛒", "tag": "ซื้อของ: ถามมีของไหม", "difficulty": 2, "q": "A: Do you have this in red? B: ___", "choices": ["Yes, we do.", "Go straight.", "Nice to meet you.", "See you tomorrow."], "answer": 0, "explain": "ตอบคำถามว่ามีสินค้าสีที่ถามหรือไม่" },
+    { "emoji": "🗺️", "tag": "ถามทาง: ทางซ้าย-ขวา", "difficulty": 2, "q": "A: How can I get to the library? B: ___", "choices": ["Turn right at the traffic light.", "It's 100 baht.", "My name is Ann.", "Nice to meet you."], "answer": 0, "explain": "บอกทิศทางไปห้องสมุด" },
+    { "emoji": "📱", "tag": "โทรศัพท์: โทรกลับ", "difficulty": 2, "q": "A: He is not here right now. B: ___", "choices": ["Okay, I'll call back later.", "It's 20 baht.", "Turn left.", "Nice to meet you."], "answer": 0, "explain": "แสดงว่าจะโทรกลับภายหลัง" },
+    { "emoji": "🎁", "tag": "ขออนุญาต: เปิดของขวัญ", "difficulty": 2, "q": "A: Can I open my present now? B: ___", "choices": ["Sure, go ahead.", "It's 100 baht.", "Turn left.", "Nice to meet you."], "answer": 0, "explain": "อนุญาตให้ทำสิ่งใดสิ่งหนึ่งได้" },
+    { "emoji": "🍽️", "tag": "ขอร้อง: ในร้านอาหาร", "difficulty": 2, "q": "A: Could I have the menu, please? B: ___", "choices": ["Sure, here you are.", "It's 200 baht.", "Turn right.", "Nice to meet you."], "answer": 0, "explain": "ตอบรับคำขอร้องในร้านอาหาร" },
+    { "emoji": "🙋‍♂️", "tag": "ทักทาย: บทสนทนายาว", "difficulty": 3, "q": "A: Hi! Long time no see! How have you been? B: ___", "choices": ["I've been great, thanks! How about you?", "It's 100 baht.", "Turn left.", "Go straight."], "answer": 0, "explain": "ตอบรับการทักทายเพื่อนที่ไม่ได้เจอกันนาน" },
+    { "emoji": "🧾", "tag": "ซื้อของ: ต่อรองราคา", "difficulty": 3, "q": "A: Can you make it cheaper? B: ___", "choices": ["Sorry, this is the fixed price.", "Nice to meet you.", "Go straight.", "See you tomorrow."], "answer": 0, "explain": "ปฏิเสธการต่อรองราคาอย่างสุภาพ" },
+    { "emoji": "🚦", "tag": "ถามทาง: ซับซ้อนหลายขั้นตอน", "difficulty": 3, "q": "A: How do I get to the stadium from here? B: Go straight for two blocks, then ___", "choices": ["turn left at the traffic light.", "it's 100 baht.", "nice to meet you.", "you're welcome."], "answer": 0, "explain": "บอกทิศทางแบบมีหลายขั้นตอนต่อเนื่องกัน" },
+    { "emoji": "📴", "tag": "โทรศัพท์: สายไม่ว่าง", "difficulty": 3, "q": "A: I'm sorry, the line is busy right now. B: ___", "choices": ["Okay, I'll try again later.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "ตอบรับเมื่อสายโทรศัพท์ไม่ว่าง" },
+    { "emoji": "🎊", "tag": "กล่าวลา: อวยพรก่อนเดินทาง", "difficulty": 3, "q": "A: I'm leaving for Chiang Mai tomorrow. B: ___", "choices": ["Have a safe trip!", "It's 100 baht.", "Nice to meet you.", "Turn left."], "answer": 0, "explain": "อวยพรก่อนเพื่อนเดินทาง" },
+    { "emoji": "🙇", "tag": "ขอโทษ: ทำของเสียหาย", "difficulty": 3, "q": "A: I'm so sorry, I broke your vase. B: ___", "choices": ["Don't worry, it's not a big deal.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "ตอบรับคำขอโทษที่ทำของเสียหายอย่างให้อภัย" },
+    { "emoji": "🤝", "tag": "ขอร้อง: เสนอความช่วยเหลือ", "difficulty": 3, "q": "A: This bag looks heavy. B: ___", "choices": ["Let me help you carry it.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "เสนอความช่วยเหลือโดยไม่ต้องมีคนขอก่อน" },
+    { "emoji": "🧑‍💼", "tag": "โทรศัพท์: ฝากข้อความ", "difficulty": 3, "q": "A: He's out for lunch. Would you like to leave a message? B: ___", "choices": ["Yes, please tell him I called.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "ตอบรับการฝากข้อความทางโทรศัพท์" },
+    { "emoji": "🛍️", "tag": "ซื้อของ: ขอใบเสร็จ", "difficulty": 3, "q": "A: Could I have a receipt, please? B: ___", "choices": ["Sure, here you are.", "Turn left.", "Nice to meet you.", "See you tomorrow."], "answer": 0, "explain": "ตอบรับคำขอใบเสร็จหลังซื้อของ" },
+    { "emoji": "🚕", "tag": "ถามทาง: เรียกแท็กซี่", "difficulty": 3, "q": "A: Where can I catch a taxi around here? B: ___", "choices": ["There's a taxi stand right around the corner.", "It's 100 baht.", "Nice to meet you.", "Go straight."], "answer": 0, "explain": "บอกตำแหน่งที่เรียกรถแท็กซี่ได้" },
+    { "emoji": "🔍", "tag": "Error Detection: คำตอบไม่สอดคล้อง", "difficulty": 3, "q": "A: How much is this bag? ข้อใดคือคำตอบที่ถูกต้อง?", "choices": ["It's next to the bank.", "It's 300 baht.", "I'm fine, thanks.", "Nice to meet you."], "answer": 1, "explain": "คำถามถามราคา ต้องตอบด้วยจำนวนเงิน ไม่ใช่สถานที่หรือความรู้สึก" },
+    { "emoji": "🔍", "tag": "Error Detection: บทสนทนาไม่สอดคล้อง", "difficulty": 3, "q": "A: Could you help me, please? ข้อใดคือคำตอบที่ถูกต้อง?", "choices": ["It's 100 baht.", "Sure, no problem.", "Turn left.", "Goodbye."], "answer": 1, "explain": "คำขอร้องต้องตอบรับหรือปฏิเสธการช่วยเหลือ ไม่ใช่ตอบราคาหรือทิศทาง" },
+    { "emoji": "🔍", "tag": "Error Detection: การกล่าวลา", "difficulty": 3, "q": "A: I have to leave now. Bye! ข้อใดคือคำตอบที่ถูกต้อง?", "choices": ["It's 50 baht.", "Bye! Take care!", "Nice to meet you.", "How much is this?"], "answer": 1, "explain": "การกล่าวลาต้องตอบรับด้วยการกล่าวลาเช่นกัน" },
+    { "emoji": "🎯", "tag": "สรุปรวม: เลือกสถานการณ์ถูกต้อง", "difficulty": 3, "q": "สถานการณ์ใดที่ควรพูดว่า \"Excuse me, where is the nearest bank?\"", "choices": ["ถามทาง", "ซื้อของ", "คุยโทรศัพท์", "กล่าวลา"], "answer": 0, "explain": "ประโยคนี้ใช้ในสถานการณ์ถามทาง" },
+    { "emoji": "🎯", "tag": "สรุปรวม: เลือกสถานการณ์ถูกต้อง", "difficulty": 3, "q": "สถานการณ์ใดที่ควรพูดว่า \"May I speak to Somsak, please?\"", "choices": ["ถามทาง", "ซื้อของ", "คุยโทรศัพท์", "กล่าวลา"], "answer": 2, "explain": "ประโยคนี้ใช้ในสถานการณ์คุยโทรศัพท์" },
+    { "emoji": "🏁", "tag": "สรุปรวม: ครบทุกสถานการณ์", "difficulty": 3, "q": "ข้อใดคือสำนวนตอบรับคำขอบคุณที่ถูกต้องที่สุด?", "choices": ["You're welcome.", "Go straight.", "It's 100 baht.", "This is speaking."], "answer": 0, "explain": "You're welcome เป็นสำนวนมาตรฐานสำหรับตอบรับคำขอบคุณ" },
+    { "emoji": "🏫", "tag": "ทักทาย: แนะนำที่โรงเรียน", "difficulty": 1, "q": "A: Hi! Are you a new student here? B: ___", "choices": ["Yes, I am. My name is Somchai.", "It's 50 baht.", "Go straight.", "Take care."], "answer": 0, "explain": "ตอบรับคำถามยืนยัน (Yes, I am) พร้อมแนะนำตัว" },
+    { "emoji": "🌦️", "tag": "ทักทาย: พูดคุยเรื่องทั่วไป", "difficulty": 2, "q": "A: Nice weather today, isn't it? B: ___", "choices": ["Yes, it's really nice.", "It's 100 baht.", "This is speaking.", "Turn left."], "answer": 0, "explain": "ตอบรับการพูดคุยทักทายเรื่องทั่วไป (small talk)" },
+    { "emoji": "🎈", "tag": "ขอร้อง: ขอของเพิ่ม", "difficulty": 2, "q": "A: Could I have some more water, please? B: ___", "choices": ["Sure, here you are.", "Go straight.", "Nice to meet you.", "See you."], "answer": 0, "explain": "ตอบรับคำขอสิ่งของเพิ่มเติมอย่างสุภาพ" },
+    { "emoji": "🚉", "tag": "ถามทาง: สถานีรถไฟ", "difficulty": 2, "q": "A: Excuse me, is this the way to the train station? B: ___", "choices": ["Yes, it's straight ahead.", "It's 50 baht.", "Nice to meet you.", "This is speaking."], "answer": 0, "explain": "ตอบยืนยันทิศทางที่ถามพร้อมบอกตำแหน่ง" },
+    { "emoji": "📲", "tag": "โทรศัพท์: ขอเบอร์ติดต่อ", "difficulty": 3, "q": "A: Could you give me your phone number? B: ___", "choices": ["Sure, it's 08X-XXX-XXXX.", "It's 100 baht.", "Go straight.", "Nice to meet you."], "answer": 0, "explain": "ตอบรับคำขอเบอร์โทรศัพท์ด้วยการให้เบอร์" }
+  ]
+}

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Entrance Exam — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 26px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 54px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 56px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 24px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 16px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 14px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 10px; color: #1e2b5c; font-size: 19px; text-align:center; }
+.cover-objectives li { margin-bottom: 8px; font-size: 14.5px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 13px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 14px 20px; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 22px; margin: 0; }
+.section-banner .eng { font-size: 12.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+.meaning-box { border-radius: 16px; padding: 14px; text-align: center; }
+.meaning-box .word { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.meaning-box .ex { font-size: 13.5px; margin-top: 8px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 6px 8px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 16px 18px; margin: 14px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 8px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 6px 0 0; padding-left: 20px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0; }
+.flash-card { border-radius: 14px; padding: 12px 8px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 34px; }
+.flash-card .fw { font-weight: 700; font-size: 14px; margin-top: 4px; }
+.flash-card .ft { font-size: 12.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 14px 18px; margin: 12px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 16px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 14px; margin-top: 6px; }
+.pattern-box .pex .th { color: #667; font-size: 12.5px; }
+
+.dialogue-wrap { margin: 14px 0 22px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 8px; font-size: 15px; }
+.bubble { max-width: 78%; padding: 9px 14px; border-radius: 16px; margin: 6px 0; font-size: 14.5px; }
+.bubble .th { font-size: 12.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 12.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 12px 16px; margin: 10px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 13.5px; color: #55607a; margin: 4px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 12px 0; }
+.tip-checklist li { display:flex; gap:10px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:14px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 18px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:20px; font-weight:800; border-radius:999px; padding:14px 30px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:18px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:12px 14px; color:#fff; font-size:13.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:14.5px; display:block; margin-bottom:4px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:12px 14px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 8px; font-size:14px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { width:100%; border-collapse: collapse; font-size:12.5px; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:4px 6px; }
+.cheat-box ul { margin:0; padding-left:18px; font-size:12.5px; }
+.cheat-box li { margin-bottom:4px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:12px 16px; margin-bottom:12px; }
+.teacher-note-box h4 { margin:0 0 6px; color:#b3261e; font-size:14.5px; }
+.teacher-note-box ul { margin:0; padding-left:20px; font-size:13.5px; }
+.teacher-note-box li { margin-bottom:4px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:12px 16px; margin-bottom:10px; font-size:14px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 30px 20px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 30px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:22px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:10px; font-size:14px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 22px 24px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:44px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:24px; margin:6px 0 14px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:9px 14px; margin-bottom:8px; font-size:14.5px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:16px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">🏆 📝 🎯 🚀 ✨</div>
+    <h1 class="cover-title-en">Entrance Exam</h1>
+    <div class="cover-title-th">ข้อสอบจำลองรวมทุกทักษะ (Mock Entrance Exam)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 บทที่ 15 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>ใช้กลยุทธ์การทำข้อสอบ 5 ข้อก่อนลงมือทำข้อสอบจริงได้</li><li>ทำข้อสอบจำลองที่รวมทุกทักษะที่เรียนมาตลอด 14 บท (Vocabulary, Grammar, WH-Questions, Conversation, Error Detection, Reading) ได้</li><li>จัดการเวลาในการทำข้อสอบได้อย่างเหมาะสม</li><li>ประเมินจุดอ่อนของตัวเองจากผลคะแนนแล้ววางแผนทบทวนก่อนสอบจริง</li><li>มั่นใจและพร้อมสำหรับการสอบเข้า ม.4 จริง</li></ul>
+    </div>
+    <div class="cover-footer">Chapter 15 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 บทสุดท้ายนี้คืออะไร?</h1><div class="eng">What is this Final Chapter?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">บทสุดท้ายนี้คือ <b>ข้อสอบจำลอง (Mock Exam)</b> ที่รวมทุกทักษะที่เรียนมาตลอด 14 บทเข้าไว้ด้วยกัน เพื่อจำลองสถานการณ์สอบเข้า ม.4 จริง ก่อนลงมือทำควรอ่านกลยุทธ์การทำข้อสอบในส่วนถัดไปก่อน ลองดูภาพรวมโครงสร้างข้อสอบด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">35 ข้อ</div>ข้อสอบเต็มรูปแบบ<div class="ex">Part A-F<br>(Vocabulary ถึง Reading)</div></div>
+    <div class="meaning-box mb2"><div class="word">15 ข้อ</div>Speed Round<div class="ex">ทบทวนรอบสุดท้าย<br>ก่อนเข้าห้องสอบ</div></div>
+    <div class="meaning-box mb3"><div class="word">6 ทักษะ</div>รวมทุกบท<div class="ex">Vocab, Grammar, WH,<br>Conversation, Error, Reading</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าข้อสอบนี้ไม่มีเนื้อหาใหม่เลย — ทุกข้อดึงมาจากสิ่งที่เรียนมาแล้วทั้งหมด นี่คือโอกาสสุดท้ายในการฝึกนำความรู้ทั้งหมดมาใช้จริงก่อนสอบจริง</p>
+  <div class="explain-block">
+    <h2>🧩 โครงสร้างข้อสอบเข้า ม.4 (ภาพรวมทั่วไป)</h2>
+    <table>
+      <tr><th>ส่วน</th><th>ทักษะที่ทดสอบ</th><th>บทที่เกี่ยวข้อง</th></tr>
+      <tr><td>Vocabulary</td><td>คำศัพท์หมวดต่าง ๆ</td><td>บทที่ 3-4</td></tr>
+      <tr><td>Grammar</td><td>Tense, Parts of Speech</td><td>บทที่ 5-9, 14</td></tr>
+      <tr><td>Reading</td><td>อ่านจับใจความ</td><td>บทที่ 12</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ วิธีวิเคราะห์โจทย์แต่ละแบบ</h2>
+    <table>
+      <tr><th>ประเภทโจทย์</th><th>วิธีคิด</th></tr>
+      <tr><td>Grammar (Tense)</td><td>หาคำสัญญาณ "every day" → Present Simple</td></tr>
+      <tr><td>WH-Question</td><td>___ is your birthday? → ถามเวลา → When</td></tr>
+      <tr><td>Conversation</td><td>A: Thank you. B: ___ → You're welcome</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กลยุทธ์การทำข้อสอบ ทีละขั้น</h1><div class="eng">Test-Taking Strategies Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">อ่านคำสั่งให้ครบก่อนทำ</div>
+    <p style="margin:6px 0;">อย่ารีบตอบจนไม่รู้ว่าโจทย์ถามอะไร — คำสั่งบางข้ออาจมีเงื่อนไขพิเศษที่ต้องสังเกต</p>
+    <ul><li>อ่านคำสั่งทั้งหมดก่อนเริ่มตอบทุกครั้ง</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">จัดการเวลา</div>
+    <p style="margin:6px 0;">แบ่งเวลาต่อข้อคร่าว ๆ ก่อนเริ่ม อย่าใช้เวลากับข้อยากข้อเดียวนานเกินไป</p>
+    <ul><li>ประเมินเวลาที่มีหารด้วยจำนวนข้อก่อนเริ่มทำ</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">ทำข้อที่มั่นใจก่อน และใช้เทคนิคตัดตัวเลือก</div>
+    <p style="margin:6px 0;">ข้ามข้อยากไปก่อน แล้วค่อยกลับมาทำทีหลัง — แม้ไม่มั่นใจ 100% ให้ตัดตัวเลือกที่ผิดชัดเจนออกก่อน จะเพิ่มโอกาสเดาถูกมากขึ้น</p>
+    <ul><li>ทำข้อง่ายให้เสร็จก่อน แล้วค่อยกลับมาทำข้อยาก</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">ตรวจคำตอบรอบสุดท้าย</div>
+    <p style="margin:6px 0;">ถ้ามีเวลาเหลือ ให้กลับมาตรวจข้อที่ไม่มั่นใจอีกครั้งก่อนส่งข้อสอบ</p>
+    <ul><li>เก็บเวลาไว้ 5-10 นาทีสุดท้ายสำหรับตรวจทาน</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 แผนที่ทักษะทั้งหลักสูตร</h1><div class="eng">Full Course Skill Map</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>บทที่</th><th>เรื่อง</th><th>ทักษะหลัก</th></tr>
+      <tr><td><b>1</b></td><td>Phonics</td><td>อ่านออกเสียง/แกะเสียงคำใหม่</td></tr><tr><td><b>2</b></td><td>Spelling</td><td>กฎสะกดคำ (-s/-es/-ing/-ed)</td></tr><tr><td><b>3</b></td><td>Sight Words</td><td>คำที่ต้องจำทันที</td></tr><tr><td><b>4</b></td><td>Vocabulary</td><td>คำศัพท์ 8 หมวดหมู่</td></tr><tr><td><b>5</b></td><td>Parts of Speech</td><td>ชนิดของคำ 8 ชนิด</td></tr><tr><td><b>6-9</b></td><td>Tenses</td><td>Present Simple/Continuous, Past Simple, Future</td></tr><tr><td><b>10</b></td><td>WH-Questions</td><td>คำถาม 8 คำ</td></tr><tr><td><b>11</b></td><td>Conversation</td><td>บทสนทนาในชีวิตประจำวัน</td></tr><tr><td><b>12</b></td><td>Reading</td><td>กลยุทธ์อ่านจับใจความ</td></tr><tr><td><b>13</b></td><td>Error Detection</td><td>จับผิดประโยค 8 จุด</td></tr><tr><td><b>14</b></td><td>Grammar Summary</td><td>ทบทวนรวมทั้งหมด</td></tr><tr><td><b>15</b></td><td>Entrance Exam</td><td>ข้อสอบจำลองรวมทุกทักษะ</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ทบทวนตารางนี้ให้ขึ้นใจ เพราะข้อสอบจำลองในบทนี้ดึงเนื้อหามาจากทุกบทในตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">"อ่านคำสั่ง 2 รอบ"</div><p>รอบแรกอ่านเพื่อเข้าใจภาพรวม รอบสองอ่านเพื่อจับรายละเอียด/เงื่อนไขพิเศษที่อาจพลาดไปตอนแรก</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">"ง่ายก่อน ยากทีหลัง"</div><p>เห็นข้อไหนตอบได้ทันที ให้รีบทำก่อน ข้อที่คิดนานให้วงไว้แล้วข้ามไปก่อน กลับมาทำทีหลัง</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">"ตัดตัวเลือกผิดชัดเจนออกก่อน"</div><p>แม้ไม่มั่นใจ 100% การตัดตัวเลือกที่ผิดแน่ ๆ ออก 1-2 ตัวจะเพิ่มโอกาสเดาถูกจาก 25% เป็น 50% ขึ้นไป</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">"เหลือเวลา = ตรวจทาน ไม่ใช่นั่งเฉย"</div><p>ถ้าทำเสร็จก่อนหมดเวลา อย่าหยุดพัก ให้กลับไปตรวจข้อที่ไม่มั่นใจซ้ำอีกรอบเสมอ</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🎒 มุมเตรียมตัววันสอบ</h1><div class="eng">Exam Day Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>ก่อนสอบ</th><th>ควรทำ</th><th>ไม่ควรทำ</th></tr>
+      <tr><td>คืนก่อนสอบ</td><td>ทบทวนเบา ๆ, นอนให้พอ</td><td>อ่านหนังสือดึกจนไม่ได้นอน</td></tr>
+      <tr><td>เช้าวันสอบ</td><td>ทานอาหารเช้า, ไปถึงแต่เนิ่น ๆ</td><td>รีบร้อนจนลืมอุปกรณ์</td></tr>
+      <tr><td>ระหว่างสอบ</td><td>ตั้งสติ, ทำตาม Checklist</td><td>ตื่นเต้นจนอ่านโจทย์ผิด</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดวันสอบ: การนอนหลับให้เพียงพอมีผลต่อสมาธิและความจำมากกว่าการอ่านหนังสือดึกในคืนสุดท้าย — เตรียมตัวมาดีแล้ว ที่เหลือคือความมั่นใจค่ะ!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้เป็นคำที่ใช้บ่อยเวลาพูดถึงการสอบและกลยุทธ์การทำข้อสอบ</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">📖</div><div class="fw">vocabulary</div><div class="ft">คำศัพท์</div></div><div class="flash-card"><div class="fe">📐</div><div class="fw">grammar</div><div class="ft">ไวยากรณ์</div></div><div class="flash-card"><div class="fe">❓</div><div class="fw">wh-question</div><div class="ft">คำถาม Wh-</div></div><div class="flash-card"><div class="fe">💬</div><div class="fw">conversation</div><div class="ft">บทสนทนา</div></div><div class="flash-card"><div class="fe">🔍</div><div class="fw">error detection</div><div class="ft">จับผิดประโยค</div></div><div class="flash-card"><div class="fe">📚</div><div class="fw">reading</div><div class="ft">การอ่าน</div></div><div class="flash-card"><div class="fe">⏱️</div><div class="fw">time management</div><div class="ft">การจัดการเวลา</div></div><div class="flash-card"><div class="fe">✂️</div><div class="fw">elimination</div><div class="ft">การตัดตัวเลือก</div></div><div class="flash-card"><div class="fe">🔄</div><div class="fw">review</div><div class="ft">ตรวจทาน</div></div><div class="flash-card"><div class="fe">🎯</div><div class="fw">strategy</div><div class="ft">กลยุทธ์</div></div><div class="flash-card"><div class="fe">📝</div><div class="fw">mock exam</div><div class="ft">ข้อสอบจำลอง</div></div><div class="flash-card"><div class="fe">🏆</div><div class="fw">confidence</div><div class="ft">ความมั่นใจ</div></div><div class="flash-card"><div class="fe">📊</div><div class="fw">score</div><div class="ft">คะแนน</div></div><div class="flash-card"><div class="fe">✅</div><div class="fw">correct answer</div><div class="ft">คำตอบที่ถูกต้อง</div></div><div class="flash-card"><div class="fe">🚀</div><div class="fw">ready</div><div class="ft">พร้อม</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 วิธีวิเคราะห์โจทย์แต่ละประเภท</h1><div class="eng">Question-Type Analysis Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Vocabulary: จำความหมายจากหมวดคำศัพท์</div>
+    <div class="pex">"nurse" แปลว่า? <span class="th">(นึกถึงหมวดอาชีพจากบทที่ 4)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Grammar: หาคำสัญญาณเวลาก่อนเสมอ</div>
+    <div class="pex">She ___ to school every day. <span class="th">(every day → Present Simple)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Error Detection: ตรวจทีละส่วน A-B-C-D</div>
+    <div class="pex">She (A)go to school. <span class="th">(ประธาน she ต้องเติม s ที่ A)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Reading: Skim ก่อน แล้วค่อย Scan</div>
+    <div class="pex">What is the passage mainly about? <span class="th">(อ่านประโยคแรก/สุดท้ายก่อน)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>🕵️ ตัวอย่างการวิเคราะห์โจทย์แต่ละแบบ</h1><div class="eng">Worked Examples</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🔍 ตัวอย่างที่ 1: Grammar (Tense)</div>
+    <div class="bubble left" style="max-width:100%;"><b>โจทย์:</b> She ___ to school every day.</div>
+    <div class="bubble right" style="max-width:100%;background:#D9F7EC;"><b>วิธีคิด:</b> หาคำสัญญาณ "every day" → Present Simple → ประธาน She เติม s → <b>goes</b></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🔍 ตัวอย่างที่ 2: WH-Question</div>
+    <div class="bubble left" style="max-width:100%;"><b>โจทย์:</b> ___ is your birthday?</div>
+    <div class="bubble right" style="max-width:100%;background:#D9F7EC;"><b>วิธีคิด:</b> คำถามนี้ถามเรื่องเวลา → <b>When</b></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🔍 ตัวอย่างที่ 3: Error Detection</div>
+    <div class="bubble left" style="max-width:100%;"><b>โจทย์:</b> She (A)go (B)to school (C)every day.</div>
+    <div class="bubble right" style="max-width:100%;background:#D9F7EC;"><b>วิธีคิด:</b> ประธาน she ต้องเติม s ที่กริยา → ผิดที่ <b>A</b> ต้องแก้เป็น goes</div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อยตอนสอบ</h1><div class="eng">Common Exam-Day Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ อ่านโจทย์ผ่าน ๆ แล้วรีบตอบทันที</div>
+    <div class="why">🤔 อาจพลาดเงื่อนไขสำคัญในโจทย์ เช่น "ไม่ใช่", "ยกเว้น"</div>
+    <div class="right">✅ อ่านโจทย์ให้ครบ 2 รอบก่อนตอบ</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ ใช้เวลานานเกินไปกับข้อยากข้อเดียว</div>
+    <div class="why">🤔 เสียเวลาที่ควรใช้ทำข้ออื่นที่ทำได้</div>
+    <div class="right">✅ ข้ามข้อยากไปก่อน แล้วกลับมาทำทีหลัง</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ ปล่อยข้อที่ไม่มั่นใจไว้ว่าง ๆ</div>
+    <div class="why">🤔 เสียโอกาสได้คะแนนแม้จะเดา</div>
+    <div class="right">✅ ตัดตัวเลือกผิดออกแล้วเดาที่เหลือดีกว่าเว้นว่าง</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ ไม่ตรวจคำตอบซ้ำแม้มีเวลาเหลือ</div>
+    <div class="why">🤔 อาจพลาดจุดที่ทำผิดโดยไม่ตั้งใจ</div>
+    <div class="right">✅ ใช้เวลาที่เหลือตรวจทานคำตอบเสมอ</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ ตื่นเต้นจนลืมกลยุทธ์ที่ฝึกมา</div>
+    <div class="why">🤔 ทำให้ทำข้อสอบได้แย่กว่าความสามารถจริง</div>
+    <div class="right">✅ หายใจลึก ๆ แล้วทำตาม Checklist ที่ฝึกมา</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ นอนดึกอ่านหนังสือคืนก่อนสอบ</div>
+    <div class="why">🤔 ร่างกายและสมองไม่พร้อมในวันสอบจริง</div>
+    <div class="right">✅ นอนให้เพียงพอ ทบทวนเบา ๆ พอ</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>อ่านคำสั่งให้ครบก่อนทำ อย่ารีบตอบจนไม่รู้ว่าโจทย์ถามอะไร</span></li><li><span class="num">2</span><span>จัดการเวลา แบ่งเวลาต่อข้อคร่าว ๆ ก่อนเริ่ม อย่าใช้เวลากับข้อยากข้อเดียวนานเกินไป</span></li><li><span class="num">3</span><span>ทำข้อที่มั่นใจก่อน ข้ามข้อยากไปก่อน แล้วค่อยกลับมาทำทีหลัง</span></li><li><span class="num">4</span><span>ใช้เทคนิคตัดตัวเลือกผิดทิ้ง แม้ไม่มั่นใจ 100% ตัดตัวเลือกที่ผิดชัดเจนออกก่อน</span></li><li><span class="num">5</span><span>ตรวจคำตอบรอบสุดท้าย ถ้ามีเวลาเหลือ ให้กลับมาตรวจข้อที่ไม่มั่นใจอีกครั้ง</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Entrance Exam</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">📖 Vocabulary</span>บทที่ 3-4</div>
+      <div class="mindmap-branch mb-b"><span class="bt">📐 Grammar</span>บทที่ 5-9, 14</div>
+      <div class="mindmap-branch mb-c"><span class="bt">❓ WH-Questions</span>บทที่ 10</div>
+      <div class="mindmap-branch mb-d"><span class="bt">💬 Conversation</span>บทที่ 11</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🔍 Error Detection</span>บทที่ 13</div>
+      <div class="mindmap-branch mb-f"><span class="bt">📚 Reading</span>บทที่ 12</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>📝 ข้อสอบจำลองเต็มรูปแบบ 35 ข้อ</h1><div class="eng">Full Mock Exam</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 35</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ทำข้อสอบจำลองเต็มรูปแบบ 35 ข้อ (Part A-F) จับเวลาทำเสมือนสอบจริง แล้วดูเกณฑ์ประเมินผลในส่วนเฉลย</div>
+  <h2 class="part-title">Part A: Vocabulary (5 ข้อ)</h2><p class="part-desc">เลือกคำแปลที่ถูกต้องที่สุด</p><ol class="qlist two-col"><li>"nurse" แปลว่าอะไร? (ก. หมอ ข. พยาบาล ค. ครู ง. ตำรวจ) &rarr; <span class="blank"></span></li><li>"January" คือเดือนอะไร? (ก. มกราคม ข. กุมภาพันธ์ ค. มีนาคม ง. เมษายน) &rarr; <span class="blank"></span></li><li>"apple" แปลว่าอะไร? (ก. กล้วย ข. ส้ม ค. แอปเปิ้ล ง. มะม่วง) &rarr; <span class="blank"></span></li><li>"rainy" แปลว่าอะไร? (ก. แดดจัด ข. ฝนตก ค. ลมแรง ง. หนาว) &rarr; <span class="blank"></span></li><li>"engineer" แปลว่าอะไร? (ก. วิศวกร ข. หมอ ค. ครู ง. ชาวนา) &rarr; <span class="blank"></span></li></ol><h2 class="part-title">Part B: Grammar - Tenses (10 ข้อ)</h2><p class="part-desc">เลือกคำตอบที่ถูกต้องตาม Tense ที่บริบทกำหนด</p><ol class="qlist two-col"><li>She <span class="blank"></span> to school every day. (ก. go ข. goes ค. going ง. went)</li><li>Look! They <span class="blank"></span> football now. (ก. play ข. plays ค. are playing ง. played)</li><li>I <span class="blank"></span> my homework yesterday. (ก. finish ข. finishes ค. finished ง. finishing)</li><li>We <span class="blank"></span> you tomorrow. (สัญญา) (ก. call ข. will call ค. called ง. calling)</li><li>She <span class="blank"></span> to study medicine next year. (ก. go ข. is going ค. went ง. goes)</li><li><span class="blank"></span> he like coffee? (ก. Do ข. Does ค. Is ง. Are)</li><li><span class="blank"></span> they playing football now? (ก. Do ข. Does ค. Are ง. Is)</li><li><span class="blank"></span> she finish her homework yesterday? (ก. Do ข. Does ค. Did ง. Is)</li><li>He <span class="blank"></span> not like vegetables. (ก. do ข. does ค. is ง. are)</li><li>I <span class="blank"></span> a letter last night. (ก. write ข. writes ค. wrote ง. writing)</li></ol><h2 class="part-title">Part C: WH-Questions (5 ข้อ)</h2><p class="part-desc">เลือกคำ WH- ที่ถูกต้อง</p><ol class="qlist two-col"><li><span class="blank"></span> is your name? (ก. What ข. Where ค. When ง. Who)</li><li><span class="blank"></span> do you live? (ก. What ข. Where ค. When ง. Who)</li><li><span class="blank"></span> is your birthday? (ก. What ข. Where ค. When ง. Who)</li><li><span class="blank"></span> old are you? (ก. What ข. How ค. Which ง. Whose)</li><li><span class="blank"></span> book is this? (ก. Whose ข. Which ค. Who ง. What)</li></ol><h2 class="part-title">Part D: Conversation (5 ข้อ)</h2><p class="part-desc">เลือกประโยคตอบรับที่เหมาะสม</p><ol class="qlist two-col"><li>A: Thank you very much. B: <span class="blank"></span> (ก. You're welcome. ข. I'm sorry. ค. Goodbye. ง. How are you?)</li><li>A: How much is this shirt? B: <span class="blank"></span> (ก. It's next to the bank. ข. It's 250 baht. ค. Nice to meet you. ง. I'm fine.)</li><li>A: Excuse me, where is the bank? B: <span class="blank"></span> (ก. Go straight and turn left. ข. It's 100 baht. ค. My name is Somsak. ง. You're welcome.)</li><li>A: May I speak to Dara? B: <span class="blank"></span> (ก. This is Dara speaking. ข. It's 50 baht. ค. Turn left. ง. See you.)</li><li>A: Nice to meet you. B: <span class="blank"></span> (ก. Nice to meet you too. ข. It's 20 baht. ค. Goodbye. ง. I'm sorry.)</li></ol><h2 class="part-title">Part E: Error Detection (5 ข้อ)</h2><p class="part-desc">หาส่วนที่ผิด (A/B/C/D)</p><ol class="qlist two-col"><li>She (A)go (B)to school (C)every day (D)by bus. ผิดที่? &rarr; <span class="blank"></span></li><li>I (A)saw (B)a (C)elephant (D)yesterday. ผิดที่? &rarr; <span class="blank"></span></li><li>He (A)did not (B)went (C)to school (D)yesterday. ผิดที่? &rarr; <span class="blank"></span></li><li>They (A)are (B)play (C)football (D)now. ผิดที่? &rarr; <span class="blank"></span></li><li>She (A)has (B)three (C)childs (D)at home. ผิดที่? &rarr; <span class="blank"></span></li></ol><h2 class="part-title">Part F: Reading Comprehension (5 ข้อ)</h2><p class="part-desc">Read the passage and answer the questions. Nid is a student at a small school in Chonburi. Every morning, she wakes up at 6 AM and helps her mother prepare breakfast. She walks to school with her brother because the school is near her house. Nid's favorite subject is English because she wants to travel abroad in the future. After school, she does her homework and reads storybooks before going to bed.</p><ol class="qlist two-col"><li>What is the passage mainly about? (ก. A school's history ข. Nid's daily life ค. A trip abroad ง. A cooking class) &rarr; <span class="blank"></span></li><li>What time does Nid wake up? (ก. 5 AM ข. 6 AM ค. 7 AM ง. 8 AM) &rarr; <span class="blank"></span></li><li>How does Nid go to school? (ก. By bus ข. By bike ค. She walks ง. By car) &rarr; <span class="blank"></span></li><li>Why does Nid like English? (ก. It's easy ข. She wants to travel abroad ค. Her friend likes it too ง. It's a new subject) &rarr; <span class="blank"></span></li><li>What does Nid do before going to bed? (ก. Watch TV ข. Read storybooks ค. Play games ง. Cook dinner) &rarr; <span class="blank"></span></li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>⚡ Speed Round ทบทวนรอบสุดท้าย 15 ข้อ</h1><div class="eng">Final Speed Round</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 15</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ทบทวนรอบสุดท้ายก่อนสอบจริงด้วยคำถามผสมทุกทักษะ 15 ข้อ ตั้งเวลาให้เร็วที่สุดเท่าที่ยังตอบถูก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👨‍⚕️</div>
+      <div class="qtext">"doctor" แปลว่า?<div class="rule-tag">Vocabulary</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) หมอ</div><div class="choice">B) พยาบาล</div><div class="choice">C) ครู</div><div class="choice">D) ตำรวจ</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚽</div>
+      <div class="qtext">She ___ football every weekend.<div class="rule-tag">Present Simple</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) play</div><div class="choice">B) plays</div><div class="choice">C) playing</div><div class="choice">D) played</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌧️</div>
+      <div class="qtext">Look! It ___ now.<div class="rule-tag">Present Continuous</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) rain</div><div class="choice">B) rains</div><div class="choice">C) is raining</div><div class="choice">D) rained</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏝️</div>
+      <div class="qtext">We ___ to Phuket last year.<div class="rule-tag">Past Simple</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) go</div><div class="choice">B) goes</div><div class="choice">C) went</div><div class="choice">D) going</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤝</div>
+      <div class="qtext">I ___ help you. (สัญญา)<div class="rule-tag">Future (will)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am</div><div class="choice">B) will</div><div class="choice">C) do</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👧</div>
+      <div class="qtext">___ is that girl?<div class="rule-tag">WH-Questions</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Who</div><div class="choice">C) Where</div><div class="choice">D) When</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😔</div>
+      <div class="qtext">A: Sorry I'm late. B: ___<div class="rule-tag">Conversation</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) That's okay.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) My name is Ann.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">She (A)like (B)ice cream (C)very much. ผิดที่ไหน?<div class="rule-tag">Error Detection</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A</div><div class="choice">B) B</div><div class="choice">C) C</div><div class="choice">D) ไม่มีจุดผิด</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">คำว่า "quickly" เป็นชนิดของคำใด?<div class="rule-tag">Parts of Speech</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Verb</div><div class="choice">C) Adjective</div><div class="choice">D) Adverb</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">"Monday" คือวันอะไร?<div class="rule-tag">Vocabulary</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) วันจันทร์</div><div class="choice">B) วันอังคาร</div><div class="choice">C) วันพุธ</div><div class="choice">D) วันศุกร์</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">He ___ a new car last month.<div class="rule-tag">Past Simple</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) buy</div><div class="choice">B) buys</div><div class="choice">C) bought</div><div class="choice">D) buying</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎂</div>
+      <div class="qtext">___ old are you?<div class="rule-tag">WH-Questions</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) How</div><div class="choice">C) Which</div><div class="choice">D) Whose</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👶</div>
+      <div class="qtext">I have two ___. (child)<div class="rule-tag">Grammar</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) childs</div><div class="choice">B) child</div><div class="choice">C) children</div><div class="choice">D) childrens</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📏</div>
+      <div class="qtext">She is ___ than her sister. (tall)<div class="rule-tag">Comparative (ความรู้เสริม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) tall</div><div class="choice">B) taller</div><div class="choice">C) tallest</div><div class="choice">D) tallness</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">This passage tells us about a girl who loves ___.<div class="rule-tag">Reading</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cooking</div><div class="choice">B) reading</div><div class="choice">C) singing</div><div class="choice">D) dancing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 15 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยข้อสอบจำลองเต็มรูปแบบ (35 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>ข</td><td>nurse = พยาบาล</td></tr><tr><td>2</td><td>ก</td><td>January = มกราคม</td></tr><tr><td>3</td><td>ค</td><td>apple = แอปเปิ้ล</td></tr><tr><td>4</td><td>ข</td><td>rainy = ฝนตก</td></tr><tr><td>5</td><td>ก</td><td>engineer = วิศวกร</td></tr><tr><td>6</td><td>ข</td><td>ประธาน She + every day ใช้ goes</td></tr><tr><td>7</td><td>ค</td><td>Look! + now ใช้ Present Continuous</td></tr><tr><td>8</td><td>ค</td><td>yesterday ใช้ Past Simple</td></tr><tr><td>9</td><td>ข</td><td>สัญญา ใช้ will</td></tr><tr><td>10</td><td>ข</td><td>แผนที่วางไว้แล้ว ใช้ is going to</td></tr><tr><td>11</td><td>ข</td><td>ประธาน he ใช้ Does</td></tr><tr><td>12</td><td>ค</td><td>ประธาน they ใช้ Are</td></tr><tr><td>13</td><td>ค</td><td>คำถามอดีตใช้ Did</td></tr><tr><td>14</td><td>ข</td><td>ประธาน He ใช้ does not</td></tr><tr><td>15</td><td>ค</td><td>last night ใช้ Past Simple</td></tr><tr><td>16</td><td>ก</td><td>What ถามชื่อ</td></tr><tr><td>17</td><td>ข</td><td>Where ถามสถานที่</td></tr><tr><td>18</td><td>ค</td><td>When ถามเวลา</td></tr><tr><td>19</td><td>ข</td><td>How old ถามอายุ</td></tr><tr><td>20</td><td>ก</td><td>Whose ถามความเป็นเจ้าของ</td></tr><tr><td>21</td><td>ก</td><td>ตอบรับคำขอบคุณ</td></tr><tr><td>22</td><td>ข</td><td>ตอบราคา</td></tr><tr><td>23</td><td>ก</td><td>บอกทิศทาง</td></tr><tr><td>24</td><td>ก</td><td>ตอบรับสายโทรศัพท์</td></tr><tr><td>25</td><td>ก</td><td>ตอบรับการแนะนำตัว</td></tr><tr><td>26</td><td>A</td><td>ประธาน she ต้องเติม s → goes</td></tr><tr><td>27</td><td>B</td><td>elephant ขึ้นต้นเสียงสระ ต้องใช้ an</td></tr><tr><td>28</td><td>B</td><td>หลัง did not ใช้กริยารูปเดิม → go</td></tr><tr><td>29</td><td>B</td><td>หลัง are ต้องเติม -ing → playing</td></tr><tr><td>30</td><td>C</td><td>พหูพจน์ไม่ปกติของ child คือ children</td></tr><tr><td>31</td><td>ข</td><td>ทั้งย่อหน้าพูดถึงชีวิตประจำวันของนิด</td></tr><tr><td>32</td><td>ข</td><td>ระบุตรง wakes up at 6 AM</td></tr><tr><td>33</td><td>ค</td><td>ระบุตรง she walks to school</td></tr><tr><td>34</td><td>ข</td><td>ระบุตรง wants to travel abroad</td></tr><tr><td>35</td><td>ข</td><td>ระบุตรง reads storybooks before going to bed</td></tr></table>
+  <div class="tip-card" style="margin:10px 0;">📊 <b>เกณฑ์ประเมิน:</b> 30-35 ข้อ = พร้อมสอบจริงมาก | 24-29 ข้อ = ดี ควรทบทวนบทที่ตอบผิดบ่อย | ต่ำกว่า 24 = กลับไปทบทวนบทที่ 14 (Grammar Summary) และบทที่เกี่ยวข้องอีกรอบ</div>
+  <h2 class="part-title">เฉลย Speed Round (15 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">👨‍⚕️</td><td>A) หมอ</td><td>doctor = หมอ</td></tr><tr><td>2</td><td class="emoji-cell">⚽</td><td>B) plays</td><td>ประธาน She + every weekend ใช้ Present Simple เติม s</td></tr><tr><td>3</td><td class="emoji-cell">🌧️</td><td>C) is raining</td><td>Look! + now บ่งบอก Present Continuous</td></tr><tr><td>4</td><td class="emoji-cell">🏝️</td><td>C) went</td><td>last year บ่งบอก Past Simple</td></tr><tr><td>5</td><td class="emoji-cell">🤝</td><td>B) will</td><td>สัญญาใช้ will</td></tr><tr><td>6</td><td class="emoji-cell">👧</td><td>B) Who</td><td>ถามบุคคลใช้ Who</td></tr><tr><td>7</td><td class="emoji-cell">😔</td><td>A) That's okay.</td><td>ตอบรับคำขอโทษด้วย That's okay</td></tr><tr><td>8</td><td class="emoji-cell">🔍</td><td>A) A</td><td>ประธาน She ต้องเติม s: likes</td></tr><tr><td>9</td><td class="emoji-cell">🏃</td><td>D) Adverb</td><td>quickly ลงท้าย -ly ขยายกริยา จึงเป็น Adverb</td></tr><tr><td>10</td><td class="emoji-cell">📅</td><td>A) วันจันทร์</td><td>Monday = วันจันทร์</td></tr><tr><td>11</td><td class="emoji-cell">🚗</td><td>C) bought</td><td>last month บ่งบอก Past Simple (buy→bought)</td></tr><tr><td>12</td><td class="emoji-cell">🎂</td><td>B) How</td><td>How old ถามอายุ</td></tr><tr><td>13</td><td class="emoji-cell">👶</td><td>C) children</td><td>พหูพจน์ไม่ปกติของ child คือ children</td></tr><tr><td>14</td><td class="emoji-cell">📏</td><td>B) taller</td><td>คำคุณศัพท์เปรียบเทียบ (Comparative) เป็นความรู้เสริมนอกเหนือจากบทหลักที่เรียนมา — tall→taller</td></tr><tr><td>15</td><td class="emoji-cell">📖</td><td>B) reading</td><td>อ้างอิงจากย่อหน้าตัวอย่างเรื่อง Ploy ที่รักการอ่านหนังสือ</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>5 กลยุทธ์การทำข้อสอบ</h4>
+      <ul><li>1. อ่านคำสั่งให้ครบ</li><li>2. จัดการเวลา</li><li>3. ทำง่ายก่อน ยากทีหลัง</li><li>4. ตัดตัวเลือกผิด</li><li>5. ตรวจทานรอบสุดท้าย</li></ul></div>
+    <div class="cheat-box"><h4>6 ส่วนของข้อสอบ</h4>
+      <ul><li>Vocabulary, Grammar</li><li>WH-Questions, Conversation</li><li>Error Detection, Reading</li></ul></div>
+    <div class="cheat-box"><h4>เกณฑ์ประเมิน (35 ข้อ)</h4>
+      <ul><li>30-35: พร้อมสอบจริงมาก</li><li>24-29: ดี ควรทบทวนจุดที่ผิด</li><li>ต่ำกว่า 24: ทบทวนบทที่ 14 อีกรอบ</li></ul></div>
+    <div class="cheat-box"><h4>ก่อนเข้าห้องสอบ</h4>
+      <ul><li>นอนให้พอ ทานอาหารเช้า</li><li>ไปถึงแต่เนิ่น ๆ ตั้งสติ</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกลยุทธ์ในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>ใช้บทนี้จำลองบรรยากาศห้องสอบจริง จับเวลาให้นักเรียนทำข้อสอบเต็มรูปแบบอย่างน้อย 1 ครั้ง</li>
+    <li>เน้นย้ำกลยุทธ์การทำข้อสอบมากพอ ๆ กับความรู้เนื้อหา เพราะหลายคนรู้เนื้อหาแต่บริหารเวลาไม่เป็น</li>
+    <li>ใช้ผลคะแนนจากบทนี้เป็นตัวชี้วัดสุดท้ายก่อนแนะนำแผนทบทวนรายบุคคล</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Mock Exam Day</b> — จัดสอบจำลองเต็มรูปแบบพร้อมจับเวลาเหมือนสอบจริง</li>
+    <li><b>Answer Key Review</b> — หลังสอบเสร็จ ให้นักเรียนตรวจคำตอบกันเองพร้อมอธิบายเหตุผล</li>
+    <li><b>Weakness Mapping</b> — ให้นักเรียนทำตารางสรุปว่าตัวเองพลาดส่วนไหนมากที่สุด</li>
+    <li><b>Confidence Circle</b> — ให้นักเรียนแต่ละคนพูด 1 ประโยคให้กำลังใจตัวเองก่อนแยกย้าย</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ข้อสอบจำลอง 35 ข้อ (ส่วนที่ 13) เป็นการสอบจำลองเต็มรูปแบบ และ Speed Round 15 ข้อ (ส่วนที่ 14) เป็นการทบทวนรอบสุดท้าย</li>
+    <li>ใช้เกณฑ์ประเมินในส่วนเฉลยเพื่อแนะนำแผนทบทวนที่เหมาะกับนักเรียนแต่ละคน</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> ทำข้อสอบจำลองในส่วนที่ 13 อีกรอบโดยจับเวลาจริง แล้วเทียบว่าคะแนนดีขึ้นหรือไม่</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> ทบทวนข้อที่ตอบผิดในการทำครั้งแรก แล้วกลับไปอ่านบทที่เกี่ยวข้องอีกครั้ง</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> เขียนแผนทบทวน 3 วันก่อนสอบจริงของตัวเอง โดยระบุว่าจะทบทวนบทไหนวันไหน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> ฝึกทำ Speed Round ในส่วนที่ 14 ให้เร็วขึ้นโดยที่ยังตอบถูกครบทุกข้อ</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"เธอเตรียมพร้อมมาตลอดทางแล้ว วันนี้แค่แสดงมันออกมา" 🌟</div>
+    <div class="sub">ตลอด 15 บทที่ผ่านมา นักเรียนได้สะสมความรู้ภาษาอังกฤษไว้มากมายแล้ว บทนี้เป็นเพียงการซ้อมใหญ่ก่อนสนามจริง ถ้าทำข้อสอบจำลองนี้ได้ดี ก็มั่นใจได้เลยว่าพร้อมสำหรับการสอบเข้า ม.4 จริงแล้ว สู้ ๆ นะคะ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทสุดท้ายนี้คือข้อสอบจำลองที่รวมทุกทักษะที่เรียนมาตลอด 14 บทเข้าไว้ด้วยกันค่ะ</div><div class="line">✅ ก่อนทำข้อสอบ ให้ใช้กลยุทธ์ 5 ข้อ: อ่านคำสั่งครบ, จัดการเวลา, ทำง่ายก่อน, ตัดตัวเลือกผิด, ตรวจทานรอบสุดท้าย</div><div class="line">✅ ข้อสอบจำลองเต็มรูปแบบมี 35 ข้อ ครอบคลุม Vocabulary, Grammar, WH-Questions, Conversation, Error Detection, Reading</div><div class="line">✅ Speed Round 15 ข้อ ใช้ทบทวนรอบสุดท้ายก่อนเข้าห้องสอบจริง</div><div class="line">✅ ดูเกณฑ์ประเมินผลในส่วนเฉลยเพื่อวางแผนทบทวนเพิ่มเติมให้ตรงจุด</div><div class="line">✅ จำไว้ว่าทุกข้อในบทนี้ไม่มีเนื้อหาใหม่เลย เป็นการนำสิ่งที่เรียนมาทั้งหมดมาใช้จริง</div><div class="line">✅ สุดท้าย ขอให้นักเรียนของครูสุนีทุกคนโชคดีและทำข้อสอบเข้า ม.4 ได้อย่างมั่นใจค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 ยินดีด้วยที่เรียนจบหลักสูตรภาษาอังกฤษ ม.3 ครบทั้ง 15 บทแล้ว พร้อมสอบเข้า ม.4! 🎉</div>
+  </div>
+</div>
+</body>
+</html>

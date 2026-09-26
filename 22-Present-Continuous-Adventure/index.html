@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Present Continuous Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>⏳ Present Continuous Adventure</h1>
+    <div class="sub">เรียน Present Continuous กับน้องคอนนี่ 🦊 — เล่นซ้ำได้ไม่จำกัด</div>
+  </div>
+
+  <div id="hub-mascot" style="margin-bottom:16px;"></div>
+
+  <div class="hub-grid">
+    <a href="chapter-1-am-is-are/game.html" class="hub-card" id="ch1Card">
+      <div class="icon">⏳</div>
+      <div>
+        <h2 class="title">บทที่ 1: am/is/are, verb+ing &amp; Affirmative</h2>
+        <p class="desc">What is Present Continuous?, am/is/are, verb+ing, Affirmative sentences, Actions happening now — ตัวอย่างภาพ 20 ประโยค, เกม 3 แบบ, Boss Quiz 10 ข้อ</p>
+        <p id="ch1Best" class="best"></p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<script src="_tools/mascot.js"></script>
+<script>
+  Mascot.renderBubble('hub-mascot', 'พร้อมผจญภัยกับ Present Continuous หรือยัง?');
+  function showBest(storageKey, elId, max) {
+    var raw = localStorage.getItem(storageKey);
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.playCount > 0) {
+        var starsHtml = '';
+        for (var i = 0; i < 3; i++) {
+          starsHtml += '<span style="color:' + (i < data.bestStars ? '#FFB800' : '#ccc') + '">★</span>';
+        }
+        document.getElementById(elId).innerHTML =
+          'คะแนนดีที่สุด: ' + data.bestScore + '/' + max + '  ' + starsHtml + '  (XP: ' + (data.xp || 0) + ')';
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  }
+  showBest('presentContinuousAdventureCh1Progress', 'ch1Best', 10);
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "folder": "01-Phonics",
+    "title": "Phonics",
+    "icon": "🔤",
+    "topics": [
+      { "id": 1, "file": "01-alphabet.md", "icon": "🔤" },
+      { "id": 2, "file": "02-consonant-sounds.md", "icon": "🗣️" },
+      { "id": 3, "file": "03-consonant-digraphs.md", "icon": "🔗" },
+      { "id": 4, "file": "04-short-vowels.md", "icon": "🅰️" },
+      { "id": 5, "file": "05-long-vowels.md", "icon": "🪄" },
+      { "id": 6, "file": "06-vowel-teams-1.md", "icon": "🌤️" },
+      { "id": 7, "file": "07-vowel-teams-2.md", "icon": "🌀" },
+      { "id": 8, "file": "08-r-controlled-vowels.md", "icon": "🅡" },
+      { "id": 9, "file": "09-blending.md", "icon": "🧩" }
+    ]
+  },
+  {
+    "id": 2,
+    "folder": "02-Spelling",
+    "title": "Spelling",
+    "icon": "✏️",
+    "topics": [{ "id": 1, "file": "02-spelling.md", "icon": "✏️" }]
+  },
+  {
+    "id": 3,
+    "folder": "03-Sight-Words",
+    "title": "Sight Words",
+    "icon": "👁️",
+    "topics": [{ "id": 1, "file": "03-sight-words.md", "icon": "👁️" }]
+  },
+  {
+    "id": 4,
+    "folder": "04-Vocabulary",
+    "title": "Vocabulary",
+    "icon": "📚",
+    "topics": [{ "id": 1, "file": "04-vocabulary.md", "icon": "📚" }]
+  },
+  {
+    "id": 5,
+    "folder": "05-Parts-of-Speech",
+    "title": "Parts of Speech",
+    "icon": "🧱",
+    "topics": [{ "id": 1, "file": "05-parts-of-speech.md", "icon": "🧱" }]
+  },
+  {
+    "id": 6,
+    "folder": "06-Present-Simple",
+    "title": "Present Simple",
+    "icon": "☀️",
+    "topics": [{ "id": 1, "file": "06-present-simple.md", "icon": "☀️" }]
+  },
+  {
+    "id": 7,
+    "folder": "07-Present-Continuous",
+    "title": "Present Continuous",
+    "icon": "🏃",
+    "topics": [{ "id": 1, "file": "07-present-continuous.md", "icon": "🏃" }]
+  },
+  {
+    "id": 8,
+    "folder": "08-Past-Simple",
+    "title": "Past Simple",
+    "icon": "⏮️",
+    "topics": [{ "id": 1, "file": "08-past-simple.md", "icon": "⏮️" }]
+  },
+  {
+    "id": 9,
+    "folder": "09-Future-Tense",
+    "title": "Future Tense",
+    "icon": "🔮",
+    "topics": [{ "id": 1, "file": "09-future-tense.md", "icon": "🔮" }]
+  },
+  {
+    "id": 10,
+    "folder": "10-WH-Questions",
+    "title": "WH-Questions",
+    "icon": "❓",
+    "topics": [{ "id": 1, "file": "10-wh-questions.md", "icon": "❓" }]
+  },
+  {
+    "id": 11,
+    "folder": "11-Conversation",
+    "title": "Conversation",
+    "icon": "💬",
+    "topics": [{ "id": 1, "file": "11-conversation.md", "icon": "💬" }]
+  },
+  {
+    "id": 12,
+    "folder": "12-Reading",
+    "title": "Reading",
+    "icon": "📖",
+    "topics": [{ "id": 1, "file": "12-reading.md", "icon": "📖" }]
+  },
+  {
+    "id": 13,
+    "folder": "13-Error-Detection",
+    "title": "Error Detection",
+    "icon": "🔍",
+    "topics": [{ "id": 1, "file": "13-error-detection.md", "icon": "🔍" }]
+  },
+  {
+    "id": 14,
+    "folder": "14-Grammar-Summary",
+    "title": "Grammar Summary",
+    "icon": "📋",
+    "topics": [{ "id": 1, "file": "14-grammar-summary.md", "icon": "📋" }]
+  },
+  {
+    "id": 15,
+    "folder": "15-Entrance-Exam",
+    "title": "Entrance Exam",
+    "icon": "🎓",
+    "topics": [{ "id": 1, "file": "15-entrance-exam.md", "icon": "🎓" }]
+  }
+]

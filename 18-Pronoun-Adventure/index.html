@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Pronoun Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>🎭 Pronoun Adventure</h1>
+    <div class="sub">เกมฝึกคำสรรพนามภาษาอังกฤษ — เล่นซ้ำได้ไม่จำกัด ไม่มีการบันทึกคะแนนลงเซิร์ฟเวอร์</div>
+  </div>
+
+  <div class="hub-grid">
+    <a id="chapter1Card" class="hub-card" href="chapter-1-basic-pronouns/game.html">
+      <div class="icon">🙋</div>
+      <div>
+        <p class="title">บทที่ 1: สรรพนามพื้นฐาน (Subject Pronouns)</p>
+        <p class="desc">I, you, he, she, it, we, they — 7 คำ — 3 ด่าน</p>
+        <p id="chapter1Best" class="best"></p>
+      </div>
+    </a>
+
+    <a id="chapter2Card" class="hub-card" href="chapter-2-object-pronouns/game.html">
+      <div class="icon">🎯</div>
+      <div>
+        <p class="title">บทที่ 2: สรรพนามที่ทำหน้าที่กรรม (Object Pronouns)</p>
+        <p class="desc">me, you, him, her, it, us, them — 7 คำ — 3 ด่าน</p>
+        <p id="chapter2Best" class="best"></p>
+      </div>
+    </a>
+
+    <a id="chapter3Card" class="hub-card" href="chapter-3-possessive-pronouns/game.html">
+      <div class="icon">🔑</div>
+      <div>
+        <p class="title">บทที่ 3: สรรพนามแสดงความเป็นเจ้าของ (Possessive)</p>
+        <p class="desc">my, your, his, her, its, our, their — 7 คำ — 3 ด่าน</p>
+        <p id="chapter3Best" class="best"></p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<script>
+  (function () {
+    var raw = localStorage.getItem('pronounAdventureProgress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.chapter1 && data.chapter1.playCount > 0) {
+        var stars = '★★★☆☆☆'.slice(3 - data.chapter1.bestStars, 6 - data.chapter1.bestStars);
+        document.getElementById('chapter1Best').textContent =
+          'คะแนนดีที่สุด: ' + data.chapter1.bestScore + '/21  ' + stars;
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+  (function () {
+    var raw = localStorage.getItem('pronounAdventureCh2Progress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.chapter2 && data.chapter2.playCount > 0) {
+        var stars = '★★★☆☆☆'.slice(3 - data.chapter2.bestStars, 6 - data.chapter2.bestStars);
+        document.getElementById('chapter2Best').textContent =
+          'คะแนนดีที่สุด: ' + data.chapter2.bestScore + '/21  ' + stars;
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+  (function () {
+    var raw = localStorage.getItem('pronounAdventureCh3Progress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.chapter3 && data.chapter3.playCount > 0) {
+        var stars = '★★★☆☆☆'.slice(3 - data.chapter3.bestStars, 6 - data.chapter3.bestStars);
+        document.getElementById('chapter3Best').textContent =
+          'คะแนนดีที่สุด: ' + data.chapter3.bestScore + '/21  ' + stars;
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+</script>
+</body>
+</html>

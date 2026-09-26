@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Future Tense — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 26px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 54px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 56px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 24px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 16px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 14px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 10px; color: #1e2b5c; font-size: 19px; text-align:center; }
+.cover-objectives li { margin-bottom: 8px; font-size: 14.5px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 13px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 14px 20px; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 22px; margin: 0; }
+.section-banner .eng { font-size: 12.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+.meaning-box { border-radius: 16px; padding: 14px; text-align: center; }
+.meaning-box .word { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.meaning-box .ex { font-size: 13.5px; margin-top: 8px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 6px 8px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 16px 18px; margin: 14px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 8px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 6px 0 0; padding-left: 20px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0; }
+.flash-card { border-radius: 14px; padding: 12px 8px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 34px; }
+.flash-card .fw { font-weight: 700; font-size: 14px; margin-top: 4px; }
+.flash-card .ft { font-size: 12.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 14px 18px; margin: 12px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 16px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 14px; margin-top: 6px; }
+.pattern-box .pex .th { color: #667; font-size: 12.5px; }
+
+.dialogue-wrap { margin: 14px 0 22px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 8px; font-size: 15px; }
+.bubble { max-width: 78%; padding: 9px 14px; border-radius: 16px; margin: 6px 0; font-size: 14.5px; }
+.bubble .th { font-size: 12.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 12.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 12px 16px; margin: 10px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 13.5px; color: #55607a; margin: 4px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 12px 0; }
+.tip-checklist li { display:flex; gap:10px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:14px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 18px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:20px; font-weight:800; border-radius:999px; padding:14px 30px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:18px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:12px 14px; color:#fff; font-size:13.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:14.5px; display:block; margin-bottom:4px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:12px 14px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 8px; font-size:14px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { width:100%; border-collapse: collapse; font-size:12.5px; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:4px 6px; }
+.cheat-box ul { margin:0; padding-left:18px; font-size:12.5px; }
+.cheat-box li { margin-bottom:4px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:12px 16px; margin-bottom:12px; }
+.teacher-note-box h4 { margin:0 0 6px; color:#b3261e; font-size:14.5px; }
+.teacher-note-box ul { margin:0; padding-left:20px; font-size:13.5px; }
+.teacher-note-box li { margin-bottom:4px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:12px 16px; margin-bottom:10px; font-size:14px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 30px 20px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 30px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:22px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:10px; font-size:14px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 22px 24px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:44px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:24px; margin:6px 0 14px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:9px 14px; margin-bottom:8px; font-size:14.5px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:16px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">🔮 🌅 📅 🚀 ✨</div>
+    <h1 class="cover-title-en">Future Tense</h1>
+    <div class="cover-title-th">Future Tense (will / be going to)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 บทที่ 9 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกความแตกต่างระหว่างการใช้ will และ be going to ได้ถูกต้อง</li><li>แต่งประโยคบอกเล่า ปฏิเสธ และคำถามด้วย will และ be going to ได้</li><li>สังเกตคำสัญญาณเวลาที่บ่งบอก Future Tense ได้ (tomorrow, next week, soon)</li><li>แยกแยะสถานการณ์ที่ต้องใช้ will (ตัดสินใจทันที/สัญญา/คาดเดาไม่มีหลักฐาน) กับ be going to (แผนที่วางไว้/คาดเดามีหลักฐาน)</li><li>สังเกตและแก้ไขประโยค Future Tense ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย</li></ul>
+    </div>
+    <div class="cover-footer">Chapter 09 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 Future Tense คืออะไร?</h1><div class="eng">What is Future Tense?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">Future Tense ใช้พูดถึงเหตุการณ์ที่ยังไม่เกิดขึ้น แต่จะเกิดขึ้นในอนาคต ภาษาอังกฤษมีวิธีพูดถึงอนาคตหลายแบบ แต่ที่สำคัญที่สุดสำหรับ ม.3 คือ 2 รูปแบบหลัก: <b>will</b> และ <b>be going to</b> ซึ่งแปลว่า "จะ" เหมือนกัน แต่ใช้ในสถานการณ์ต่างกัน ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">ตัดสินใจทันที</div>ใช้ will<div class="ex">The phone is ringing. I will answer it.<br>(โทรศัพท์ดังอยู่ ฉันจะรับเอง)</div></div>
+    <div class="meaning-box mb2"><div class="word">แผนที่วางไว้แล้ว</div>ใช้ be going to<div class="ex">I am going to visit my aunt.<br>(ฉันวางแผนจะไปเยี่ยมป้า)</div></div>
+    <div class="meaning-box mb3"><div class="word">คาดเดามีหลักฐาน</div>ใช้ be going to<div class="ex">Look! It is going to rain.<br>(ดูสิ! ฝนกำลังจะตกแน่ ๆ)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าทั้ง 3 ประโยคแปลว่า "จะ" เหมือนกัน แต่เลือกใช้ <b>will</b> หรือ <b>be going to</b> ต่างกันตามบริบท — นี่คือเหตุผลที่ต้องเข้าใจ "การใช้งาน" มากกว่าจะท่องจำแค่คำแปลเดียว</p>
+  <div class="explain-block">
+    <h2>🧩 ใช้เมื่อไหร่บ้าง?</h2>
+    <table>
+      <tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>ตัดสินใจทันทีตอนพูด</td><td>I will answer it.</td><td>ฉันจะรับเอง (ตัดสินใจตอนนี้)</td></tr>
+      <tr><td>สัญญา/ข้อเสนอ</td><td>I will help you.</td><td>ฉันจะช่วยคุณ</td></tr>
+      <tr><td>แผนที่วางไว้แล้ว</td><td>I am going to study medicine.</td><td>ฉันวางแผนจะเรียนแพทย์</td></tr>
+      <tr><td>คาดเดามีหลักฐาน</td><td>It is going to rain.</td><td>ฝนกำลังจะตก (เห็นเมฆดำ)</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>I will call you tomorrow.</td><td>ฉันจะโทรหาคุณพรุ่งนี้</td></tr>
+      <tr><td>She is going to study medicine.</td><td>เธอวางแผนจะเรียนแพทย์</td></tr>
+      <tr><td>Look! The bus is going to leave.</td><td>ดูสิ! รถบัสกำลังจะไปแล้ว</td></tr>
+      <tr><td>We will meet again soon.</td><td>เราจะเจอกันอีกครั้งเร็ว ๆ นี้</td></tr>
+      <tr><td>They are going to travel next month.</td><td>พวกเขาวางแผนจะเดินทางเดือนหน้า</td></tr>
+      <tr><td>I promise I will help you.</td><td>ฉันสัญญาว่าจะช่วยคุณ</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">will — ตัดสินใจทันที, สัญญา, คาดเดาไม่มีหลักฐาน</div>
+    <p style="margin:6px 0;">ใช้ <b>will</b> เมื่อตัดสินใจทำอะไรทันทีตอนพูด, ให้สัญญา/ข้อเสนอช่วยเหลือ, หรือคาดเดาโดยไม่มีหลักฐานชัดเจน<br><b>โครงสร้าง:</b> S + will + V(base) — will ใช้ได้กับทุกประธาน ไม่เปลี่ยนรูป</p>
+    <ul><li>The phone is ringing. I will answer it. (ตัดสินใจทันที)</li><li>I will help you with your homework. (สัญญา)</li><li>I think it will rain tomorrow. (คาดเดาไม่มีหลักฐาน)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">be going to — แผนที่วางไว้แล้ว, คาดเดามีหลักฐาน</div>
+    <p style="margin:6px 0;">ใช้ <b>be going to</b> เมื่อมีแผนที่ตั้งใจ/วางแผนไว้ล่วงหน้าแล้ว หรือคาดเดาจากหลักฐานที่เห็นอยู่ในปัจจุบัน<br><b>โครงสร้าง:</b> S + is/am/are + going to + V(base)</p>
+    <ul><li>I am going to visit my grandmother this weekend. (แผนที่วางไว้)</li><li>Look at those clouds! It is going to rain. (มีหลักฐาน)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">ปฏิเสธ — เติม not</div>
+    <p style="margin:6px 0;">ปฏิเสธของ will คือเติม <b>not</b> ต่อท้าย (will not / won't) ส่วนปฏิเสธของ be going to คือเติม not หลัง is/am/are</p>
+    <ul><li>I will not (won't) go home. (ปฏิเสธ will)</li><li>She is not going to study tonight. (ปฏิเสธ be going to)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">คำถาม — ยก will/is/am/are มาไว้หน้าประธาน</div>
+    <p style="margin:6px 0;">คำถามของ will ให้ยก <b>Will</b> มาไว้หน้าประธาน ส่วนคำถามของ be going to ให้ยก <b>Is/Am/Are</b> มาไว้หน้าประธาน</p>
+    <ul><li>Will you go home? (คำถาม will)</li><li>Is she going to study tonight? (คำถาม be going to)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>รูปประโยค</th><th>will</th><th>be going to</th></tr>
+      <tr><td><b>บอกเล่า</b></td><td>S + will + V(base)</td><td>S + is/am/are + going to + V(base)</td></tr><tr><td><b>ปฏิเสธ</b></td><td>S + will not (won't) + V(base)</td><td>S + is/am/are + not + going to + V(base)</td></tr><tr><td><b>คำถาม</b></td><td>Will + S + V(base)?</td><td>Is/Am/Are + S + going to + V(base)?</td></tr><tr><td><b>ใช้เมื่อ</b></td><td>ตัดสินใจทันที, สัญญา, คาดเดาไม่มีหลักฐาน</td><td>แผนที่วางไว้แล้ว, คาดเดาที่มีหลักฐาน</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">will = ตัดสินใจไว</div><p>will มาจากใจตอนนั้นเลย — ตัดสินใจไว, สัญญาไว, เดาไว (ไม่มีหลักฐาน) จำว่า "will = ใจสั่งตอนนี้"</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">be going to = วางแผนไว้ก่อนแล้ว</div><p>going to ฟังดูเหมือน "กำลังเดินไปหา" แผนนั้น — จำว่า "going to = ไปตามแผนที่วางไว้"</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">เห็นหลักฐาน → be going to</div><p>ถ้าประโยคมีคำว่า Look!, เห็นเมฆดำ, เห็นรอยร้าว ฯลฯ (มีหลักฐานอยู่ตรงหน้า) ให้เลือก be going to ทันที</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">คาถา "WGT"</div><p><b>W</b>ill = ตัดสินใจ/สัญญา/เดาลอย ๆ, <b>G</b>oing <b>T</b>o = แผน/หลักฐาน — ท่อง "Will ใจ, Going to แผน" ซ้ำ 3 รอบก่อนสอบ!</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำ</th><th>สัทอักษร (IPA)</th><th>เสียงอ่านแบบไทย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>will</b></td><td>/wɪl/</td><td>วิล</td><td>I will call you. (ไอ วิล คอล ยู)</td></tr>
+      <tr><td><b>won't</b></td><td>/woʊnt/</td><td>โวนท์</td><td>I won't forget. (ไอ โวนท์ ฟอร์เก็ท)</td></tr>
+      <tr><td><b>going to</b></td><td>/ˈɡoʊɪŋ tuː/</td><td>โกอิง ทู</td><td>She is going to study. (ชี อิซ โกอิง ทู สตัดดี้)</td></tr>
+      <tr><td><b>gonna</b> (พูดไม่เป็นทางการ)</td><td>/ˈɡʌnə/</td><td>กันนะ</td><td>I'm gonna go. (ไอม์ กันนะ โก)</td></tr>
+      <tr><td><b>soon</b></td><td>/suːn/</td><td>ซูน</td><td>See you soon. (ซี ยู ซูน)</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: ในการพูดจริง เจ้าของภาษามักพูด "going to" แบบย่อเป็น "gonna" (เช่น I'm gonna call you) แต่ในการเขียนหรือข้อสอบทางการ ให้ใช้ "going to" แบบเต็มเสมอนะคะ!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้เป็นคำสัญญาณเวลาและคำที่ใช้บ่อยที่สุดเวลาแต่งประโยค Future Tense — ลองสังเกตว่าคำไหนใช้ได้ทั้ง will และ be going to</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">📅</div><div class="fw">tomorrow</div><div class="ft">พรุ่งนี้</div></div><div class="flash-card"><div class="fe">🗓️</div><div class="fw">next week</div><div class="ft">สัปดาห์หน้า</div></div><div class="flash-card"><div class="fe">📆</div><div class="fw">next month</div><div class="ft">เดือนหน้า</div></div><div class="flash-card"><div class="fe">🎊</div><div class="fw">next year</div><div class="ft">ปีหน้า</div></div><div class="flash-card"><div class="fe">⏳</div><div class="fw">soon</div><div class="ft">เร็ว ๆ นี้</div></div><div class="flash-card"><div class="fe">🔮</div><div class="fw">in the future</div><div class="ft">ในอนาคต</div></div><div class="flash-card"><div class="fe">🌅</div><div class="fw">someday</div><div class="ft">สักวันหนึ่ง</div></div><div class="flash-card"><div class="fe">📋</div><div class="fw">plan</div><div class="ft">แผนการ</div></div><div class="flash-card"><div class="fe">🤞</div><div class="fw">promise</div><div class="ft">สัญญา</div></div><div class="flash-card"><div class="fe">🔍</div><div class="fw">evidence</div><div class="ft">หลักฐาน</div></div><div class="flash-card"><div class="fe">🎯</div><div class="fw">decide</div><div class="ft">ตัดสินใจ</div></div><div class="flash-card"><div class="fe">💭</div><div class="fw">predict</div><div class="ft">คาดเดา</div></div><div class="flash-card"><div class="fe">🎉</div><div class="fw">weekend</div><div class="ft">สุดสัปดาห์</div></div><div class="flash-card"><div class="fe">⏰</div><div class="fw">schedule</div><div class="ft">ตารางเวลา</div></div><div class="flash-card"><div class="fe">✋</div><div class="fw">offer</div><div class="ft">ข้อเสนอ</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Positive (will): Subject + will + V(base)</div>
+    <div class="pex">I will call you tomorrow. <span class="th">(ฉันจะโทรหาคุณพรุ่งนี้)</span></div>
+    <div class="pex">She will graduate next year. <span class="th">(เธอจะจบการศึกษาปีหน้า)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Negative (will): Subject + will not (won't) + V(base)</div>
+    <div class="pex">I will not go to the party. <span class="th">(ฉันจะไม่ไปงานปาร์ตี้)</span></div>
+    <div class="pex">She won't be late. <span class="th">(เธอจะไม่มาสาย)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Positive (be going to): Subject + is/am/are + going to + V(base)</div>
+    <div class="pex">I am going to visit my aunt. <span class="th">(ฉันวางแผนจะไปเยี่ยมป้า)</span></div>
+    <div class="pex">They are going to travel next month. <span class="th">(พวกเขาวางแผนจะเดินทางเดือนหน้า)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Question: Will + S + V(base)? / Is/Am/Are + S + going to + V(base)?</div>
+    <div class="pex">Will you come with me? <span class="th">(คุณจะมากับฉันไหม)</span></div>
+    <div class="pex">Is he going to join us? <span class="th">(เขาจะเข้าร่วมกับเราไหม)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🎉 บทสนทนาที่ 1: วางแผนสุดสัปดาห์ (Weekend Plans)</div>
+    <div class="bubble left"><div class="speaker">Ann</div>What are you going to do this weekend?<div class="th">สุดสัปดาห์นี้เธอวางแผนจะทำอะไร</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>I'm going to visit my grandmother. I already told her.<div class="th">ผมวางแผนจะไปเยี่ยมยาย ผมบอกยายไว้แล้ว</div></div>
+    <div class="bubble left"><div class="speaker">Ann</div>That's nice! I think I will just stay home and rest.<div class="th">ดีจังเลย! ฉันคิดว่าฉันคงจะอยู่บ้านพักผ่อนเฉย ๆ</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>Sounds good. I'll call you when I get back.<div class="th">ฟังดูดีนะ ผมจะโทรหาเธอตอนกลับมา</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">☁️ บทสนทนาที่ 2: ทายอากาศ (Guessing the Weather)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Look at those dark clouds! It's going to rain soon.<div class="th">ดูก้อนเมฆดำนั่นสิ! ฝนกำลังจะตกในไม่ช้า</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>You're right. I'll bring an umbrella just in case.<div class="th">เธอพูดถูก ฉันจะเอาร่มไปด้วยเผื่อไว้</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Good idea. I think it will rain all afternoon.<div class="th">ความคิดดีนะ ฉันคิดว่าฝนจะตกทั้งบ่ายเลย</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Then let's go home early today.<div class="th">งั้นวันนี้เรากลับบ้านแต่เนิ่น ๆ กันเถอะ</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ I will going to study.</div>
+    <div class="why">🤔 ห้ามใช้ will และ going to ปนกันในประโยคเดียว</div>
+    <div class="right">✅ I am going to study. / I will study.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She will to help you.</div>
+    <div class="why">🤔 หลัง will ห้ามมี to นำหน้ากริยา</div>
+    <div class="right">✅ She will help you.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ They is going to travel.</div>
+    <div class="why">🤔 ประธาน they เป็นพหูพจน์ ต้องใช้ are ไม่ใช่ is</div>
+    <div class="right">✅ They are going to travel.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Do you will come?</div>
+    <div class="why">🤔 คำถามด้วย will ห้ามใช้ do ร่วมด้วย ต้องยก Will มาไว้หน้าประธานเลย</div>
+    <div class="right">✅ Will you come?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ I am going study tonight.</div>
+    <div class="why">🤔 ลืมคำว่า to หลัง going</div>
+    <div class="right">✅ I am going to study tonight.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She wills graduate next year.</div>
+    <div class="why">🤔 will ไม่ผันตามประธาน ห้ามเติม -s</div>
+    <div class="right">✅ She will graduate next year.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>ดูว่ามีหลักฐานอยู่ตรงหน้าไหม (เมฆดำ, รอยร้าว, เห็นบางอย่างกำลังจะเกิด) — ถ้ามี ใช้ be going to</span></li><li><span class="num">2</span><span>ดูว่าเป็นแผนที่วางไว้ล่วงหน้าแล้วไหม (จองตั๋วแล้ว, บอกไว้แล้ว) — ถ้าใช่ ใช้ be going to</span></li><li><span class="num">3</span><span>ถ้าเป็นการตัดสินใจทันทีตอนพูด หรือเป็นสัญญา/ข้อเสนอ ใช้ will เสมอ</span></li><li><span class="num">4</span><span>ห้ามใช้ will และ going to ปนกันในประโยคเดียวกันเด็ดขาด</span></li><li><span class="num">5</span><span>หลัง will และหลัง going to ต้องเป็นกริยารูปเดิม (base form) เสมอ ไม่เติม -s/-ing/-ed</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Future Tense</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">⚡ will</span>ตัดสินใจทันที/สัญญา/เดาไม่มีหลักฐาน</div>
+      <div class="mindmap-branch mb-b"><span class="bt">📋 be going to</span>แผนที่วางไว้แล้ว/เดามีหลักฐาน</div>
+      <div class="mindmap-branch mb-c"><span class="bt">🚫 ปฏิเสธ</span>will not (won't) / is-am-are + not + going to</div>
+      <div class="mindmap-branch mb-d"><span class="bt">❓ คำถาม</span>Will + S...? / Is-Am-Are + S + going to...?</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🔤 คำสัญญาณ</span>tomorrow, next week/month/year, soon</div>
+      <div class="mindmap-branch mb-f"><span class="bt">⚠️ ข้อควรระวัง</span>ห้ามใช้ will + going to ปนกัน</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม will หรือ be going to ให้เหมาะสม (10 ข้อ)</h2><p class="part-desc">อ่านบริบทให้ดี แล้วเลือกใช้ will หรือ be going to ให้ถูกต้อง</p><ol class="qlist two-col"><li>Look at those dark clouds! It <span class="blank"></span> rain. (มีหลักฐาน)</li><li>I think it <span class="blank"></span> be sunny tomorrow. (คาดเดาไม่มีหลักฐาน)</li><li>The phone is ringing. I <span class="blank"></span> answer it. (ตัดสินใจทันที)</li><li>I already bought the tickets. We <span class="blank"></span> travel next week. (วางแผนไว้แล้ว)</li><li>She <span class="blank"></span> help you if you ask her. (สัญญา/เต็มใจ)</li><li>He has planned everything. He <span class="blank"></span> start his new job on Monday. (วางแผนไว้แล้ว)</li><li>I promise I <span class="blank"></span> call you tonight. (สัญญา)</li><li>Look! The bus <span class="blank"></span> leave without us! (มีหลักฐาน)</li><li>I <span class="blank"></span> visit my grandmother this weekend. (วางแผนไว้แล้ว)</li><li>Maybe it <span class="blank"></span> snow next winter. (คาดเดาไม่มีหลักฐาน)</li></ol><h2 class="part-title">ตอนที่ 2: เปลี่ยนเป็นประโยคปฏิเสธและคำถาม (8 ข้อ)</h2><p class="part-desc">เปลี่ยนประโยคที่กำหนดให้เป็นรูปปฏิเสธหรือคำถามตามคำสั่งในวงเล็บ</p><ol class="qlist two-col"><li>I will go to the party. (ปฏิเสธ) &rarr; <span class="blank"></span></li><li>She will help you. (คำถาม) &rarr; <span class="blank"></span></li><li>They are going to travel. (ปฏิเสธ) &rarr; <span class="blank"></span></li><li>He is going to study medicine. (คำถาม) &rarr; <span class="blank"></span></li><li>We will meet again. (ปฏิเสธ) &rarr; <span class="blank"></span></li><li>You are going to buy a car. (คำถาม) &rarr; <span class="blank"></span></li><li>It will rain tomorrow. (ปฏิเสธ) &rarr; <span class="blank"></span></li><li>She is going to take an exam. (คำถาม) &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 3: เลือกคำตอบที่ถูกต้อง (6 ข้อ)</h2><p class="part-desc">เลือกคำตอบที่ถูกต้องที่สุดจากบริบทที่ให้มา</p><ol class="qlist two-col"><li>Look! The building <span class="blank"></span> collapse! (ก. will ข. is going to)</li><li>I <span class="blank"></span> not forget you. (สัญญา) (ก. am ข. will)</li><li><span class="blank"></span> they going to join us? (ก. Do ข. Are)</li><li>She <span class="blank"></span> graduate next year. (ก. will ข. is going)</li><li>We <span class="blank"></span> going to have a meeting tomorrow. (ก. is ข. are)</li><li><span class="blank"></span> you help me with this? (ก. Will ข. Do)</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> อ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">☁️</div>
+      <div class="qtext">Look at those clouds! It ___ rain.<div class="rule-tag">หลักฐานชัดเจน → is going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">I think it ___ be sunny tomorrow.<div class="rule-tag">คาดเดาไม่มีหลักฐาน → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">☎️</div>
+      <div class="qtext">The phone is ringing. I ___ answer it.<div class="rule-tag">ตัดสินใจทันที → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am going to</div><div class="choice">B) will</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎫</div>
+      <div class="qtext">I already bought the tickets. We ___ travel next week.<div class="rule-tag">แผนวางไว้แล้ว → is/are going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤝</div>
+      <div class="qtext">She ___ help you if you ask her.<div class="rule-tag">สัญญา/เต็มใจช่วย → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) does</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💼</div>
+      <div class="qtext">He has planned everything. He ___ start his new job on Monday.<div class="rule-tag">แผนวางไว้แล้ว → is going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤞</div>
+      <div class="qtext">I promise I ___ call you tonight.<div class="rule-tag">สัญญา → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am going to</div><div class="choice">B) will</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚌</div>
+      <div class="qtext">Look! The bus ___ leave without us!<div class="rule-tag">หลักฐานชัดเจน → is going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) left</div><div class="choice">D) leaves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👵</div>
+      <div class="qtext">I ___ visit my grandmother this weekend.<div class="rule-tag">แผนวางไว้แล้ว → am going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) am going to</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">❄️</div>
+      <div class="qtext">Maybe it ___ snow next winter.<div class="rule-tag">คาดเดาไม่มีหลักฐาน → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📞</div>
+      <div class="qtext">They ___ call us tomorrow.<div class="rule-tag">will ใช้กับทุกประธาน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏖️</div>
+      <div class="qtext">We ___ go to the beach next month. We already booked a hotel.<div class="rule-tag">แผนวางไว้แล้ว → are going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are going to</div><div class="choice">C) went</div><div class="choice">D) go</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎂</div>
+      <div class="qtext">She will ___ twenty years old next year.<div class="rule-tag">will ตามด้วย base form</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) be</div><div class="choice">B) is</div><div class="choice">C) was</div><div class="choice">D) being</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌟</div>
+      <div class="qtext">He will arrive ___.<div class="rule-tag">สัญญาณ soon → will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) soon</div><div class="choice">B) yesterday</div><div class="choice">C) ago</div><div class="choice">D) now</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">We are going to have a party ___.<div class="rule-tag">สัญญาณ tomorrow</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) yesterday</div><div class="choice">B) tomorrow</div><div class="choice">C) ago</div><div class="choice">D) last week</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚫</div>
+      <div class="qtext">I ___ not go to the party.<div class="rule-tag">ปฏิเสธ will: won't</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) am</div><div class="choice">C) do</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙅</div>
+      <div class="qtext">They are ___ going to travel this year.<div class="rule-tag">ปฏิเสธ be going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) not</div><div class="choice">B) no</div><div class="choice">C) won't</div><div class="choice">D) don't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❓</div>
+      <div class="qtext">___ you come with me?<div class="rule-tag">คำถาม will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Are</div><div class="choice">C) Will</div><div class="choice">D) Did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌧️</div>
+      <div class="qtext">___ it rain tomorrow?<div class="rule-tag">คำถาม will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Will</div><div class="choice">C) Is</div><div class="choice">D) Does</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏥</div>
+      <div class="qtext">___ he going to join us?<div class="rule-tag">คำถาม be going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Is</div><div class="choice">D) Will</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">___ you going to buy a new phone?<div class="rule-tag">คำถาม be going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Are</div><div class="choice">C) Is</div><div class="choice">D) Will</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎓</div>
+      <div class="qtext">She ___ graduate next year.<div class="rule-tag">will กับทุกประธาน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going</div><div class="choice">C) goes</div><div class="choice">D) went</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💭</div>
+      <div class="qtext">I ___ always remember you.<div class="rule-tag">will always: ความรู้สึกถาวร</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am</div><div class="choice">B) will</div><div class="choice">C) do</div><div class="choice">D) was</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔮</div>
+      <div class="qtext">We ___ meet again soon.<div class="rule-tag">will meet again</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👨‍⚕️</div>
+      <div class="qtext">He ___ be a doctor in the future.<div class="rule-tag">be going to + อาชีพในอนาคต</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤞</div>
+      <div class="qtext">I promise I ___ not forget this.<div class="rule-tag">สัญญา: promise + will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am</div><div class="choice">B) will</div><div class="choice">C) do</div><div class="choice">D) was</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📝</div>
+      <div class="qtext">She ___ take an exam next week. It's already scheduled.<div class="rule-tag">แผนวางไว้แล้ว: take an exam</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) took</div><div class="choice">D) takes</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏠</div>
+      <div class="qtext">We ___ move to a new house. We signed the contract already.<div class="rule-tag">แผนวางไว้แล้ว: move house</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are going to</div><div class="choice">C) moved</div><div class="choice">D) move</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍰</div>
+      <div class="qtext">There's someone at the door. I ___ get it.<div class="rule-tag">ตัดสินใจทันที: I'll get it</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am going to</div><div class="choice">B) will</div><div class="choice">C) was</div><div class="choice">D) got</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧥</div>
+      <div class="qtext">Look at the sky, it ___ be cold tonight.<div class="rule-tag">หลักฐาน: it's going to be cold</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙋</div>
+      <div class="qtext">Will you help me? Yes, I ___.<div class="rule-tag">Short answer: Yes, I will.</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) am</div><div class="choice">C) will</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙅</div>
+      <div class="qtext">Is she going to come? No, she ___.<div class="rule-tag">Short answer: No, she isn't.</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) won't</div><div class="choice">B) isn't</div><div class="choice">C) doesn't</div><div class="choice">D) didn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎁</div>
+      <div class="qtext">___ I carry that bag for you?<div class="rule-tag">will: ข้อเสนอ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Will</div><div class="choice">B) Do</div><div class="choice">C) Am</div><div class="choice">D) Did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌈</div>
+      <div class="qtext">It ___ be a great day.<div class="rule-tag">will: เหตุการณ์ในอนาคตทั่วไป</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚧</div>
+      <div class="qtext">I ___ forget this, I promise.<div class="rule-tag">will not: won't</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) won't</div><div class="choice">B) don't</div><div class="choice">C) isn't</div><div class="choice">D) wasn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏢</div>
+      <div class="qtext">Look at the crack! The wall ___ fall down.<div class="rule-tag">หลักฐานชัด: ตึกจะถล่ม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) fell</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎈</div>
+      <div class="qtext">I don't know what will happen, but I think everything ___ be fine.<div class="rule-tag">will vs going to: ไม่มีหลักฐาน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">According to the schedule, the train ___ leave at 9 AM tomorrow.<div class="rule-tag">แผนล่วงหน้าชัดเจน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) left</div><div class="choice">D) leaves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙊</div>
+      <div class="qtext">Don't worry, I ___ tell anyone your secret.<div class="rule-tag">สัญญาไม่บอกความลับ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) won't</div><div class="choice">B) am not going to</div><div class="choice">C) wasn't</div><div class="choice">D) didn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌪️</div>
+      <div class="qtext">The sky is very dark and the wind is strong — a storm ___ come.<div class="rule-tag">หลักฐานร้ายแรง: พายุ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) came</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤷</div>
+      <div class="qtext">Nobody knows for sure, but she ___ probably win the competition.<div class="rule-tag">will: ไม่แน่ใจ/คาดเดา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) won</div><div class="choice">D) wins</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎬</div>
+      <div class="qtext">We ___ watch a movie tonight — I already bought the tickets online.<div class="rule-tag">แผนที่จองไว้แล้ว</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are going to</div><div class="choice">C) watched</div><div class="choice">D) watch</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧳</div>
+      <div class="qtext">Your bag looks heavy. I ___ help you carry it.<div class="rule-tag">will: ข้อเสนอทันที</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) am going to</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏗️</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: will + going to ผสมกันผิด</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I will going to study tonight.</div><div class="choice">B) I am going to study tonight.</div><div class="choice">C) I will to study tonight.</div><div class="choice">D) I am will study tonight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: หลัง be going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She is going to studies medicine.</div><div class="choice">B) She is going to study medicine.</div><div class="choice">C) She is going to studying medicine.</div><div class="choice">D) She going to study medicine.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: คำถาม will</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do you will come?</div><div class="choice">B) Will you come?</div><div class="choice">C) You will come?</div><div class="choice">D) Are you will come?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: ปฏิเสธ be going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They don't going to travel.</div><div class="choice">B) They aren't going to travel.</div><div class="choice">C) They won't going to travel.</div><div class="choice">D) They not going to travel.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">A: The phone is ringing. B: Don't worry, I ___ answer it.<div class="rule-tag">will vs going to: บริบทซับซ้อน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am going to</div><div class="choice">B) will</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">A: Why do you have an umbrella? B: Because it ___ rain — look at those clouds.<div class="rule-tag">will vs going to: มีหลักฐานในมือ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) rained</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏁</div>
+      <div class="qtext">ข้อใดใช้ Future Tense ถูกต้องที่สุด?<div class="rule-tag">สรุปรวม will/going to</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She will graduate next year.</div><div class="choice">B) She will graduating next year.</div><div class="choice">C) She wills graduate next year.</div><div class="choice">D) She will to graduate next year.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>is going to</td><td>มีหลักฐาน (เมฆดำ) ใช้ be going to</td></tr><tr><td>2</td><td>will</td><td>คาดเดาไม่มีหลักฐานชัด ใช้ will</td></tr><tr><td>3</td><td>will</td><td>ตัดสินใจทันทีตอนพูด ใช้ will</td></tr><tr><td>4</td><td>are going to</td><td>แผนที่วางไว้แล้ว (ซื้อตั๋วแล้ว) ใช้ be going to</td></tr><tr><td>5</td><td>will</td><td>สัญญา/ข้อเสนอช่วยเหลือ ใช้ will</td></tr><tr><td>6</td><td>is going to</td><td>แผนที่วางไว้แล้ว ใช้ be going to</td></tr><tr><td>7</td><td>will</td><td>สัญญา ใช้ will</td></tr><tr><td>8</td><td>is going to</td><td>มีหลักฐาน (เห็นรถบัสกำลังจะไป) ใช้ be going to</td></tr><tr><td>9</td><td>am going to</td><td>แผนที่วางไว้แล้ว ใช้ be going to</td></tr><tr><td>10</td><td>will</td><td>คาดเดาไม่มีหลักฐาน ใช้ will</td></tr><tr><td>11</td><td>I will not (won't) go to the party.</td><td>will → will not (won't) + V(base)</td></tr><tr><td>12</td><td>Will she help you?</td><td>สลับ Will มาไว้หน้าประธาน</td></tr><tr><td>13</td><td>They are not going to travel.</td><td>is/am/are + not + going to</td></tr><tr><td>14</td><td>Is he going to study medicine?</td><td>สลับ Is มาไว้หน้าประธาน</td></tr><tr><td>15</td><td>We will not (won't) meet again.</td><td>will → will not (won't) + V(base)</td></tr><tr><td>16</td><td>Are you going to buy a car?</td><td>สลับ Are มาไว้หน้าประธาน</td></tr><tr><td>17</td><td>It will not (won't) rain tomorrow.</td><td>will → will not (won't) + V(base)</td></tr><tr><td>18</td><td>Is she going to take an exam?</td><td>สลับ Is มาไว้หน้าประธาน</td></tr><tr><td>19</td><td>ข. is going to</td><td>มีหลักฐาน (ตึกกำลังจะถล่ม) ใช้ be going to</td></tr><tr><td>20</td><td>ข. will</td><td>สัญญา ใช้ will</td></tr><tr><td>21</td><td>ข. Are</td><td>ประธาน they + be going to ใช้ Are</td></tr><tr><td>22</td><td>ก. will</td><td>เหตุการณ์ในอนาคตทั่วไป ใช้ will</td></tr><tr><td>23</td><td>ข. are</td><td>ประธาน We ใช้ are</td></tr><tr><td>24</td><td>ก. Will</td><td>คำถามด้วย will ใช้ Will ขึ้นต้น</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">☁️</td><td>B) is going to</td><td>เห็นเมฆดำเป็นหลักฐาน ใช้ be going to</td></tr><tr><td>2</td><td class="emoji-cell">🤔</td><td>A) will</td><td>คาดเดาความคิดเห็น ไม่มีหลักฐาน ใช้ will</td></tr><tr><td>3</td><td class="emoji-cell">☎️</td><td>B) will</td><td>ตัดสินใจทันทีตอนพูด ใช้ will</td></tr><tr><td>4</td><td class="emoji-cell">🎫</td><td>B) are going to</td><td>ซื้อตั๋วไว้แล้ว = แผนที่วางไว้ล่วงหน้า ใช้ be going to</td></tr><tr><td>5</td><td class="emoji-cell">🤝</td><td>A) will</td><td>ความเต็มใจ/ข้อเสนอช่วยเหลือ ใช้ will</td></tr><tr><td>6</td><td class="emoji-cell">💼</td><td>B) is going to</td><td>วางแผนไว้แล้วล่วงหน้า ใช้ be going to</td></tr><tr><td>7</td><td class="emoji-cell">🤞</td><td>B) will</td><td>คำว่า promise เป็นสัญญา ใช้ will</td></tr><tr><td>8</td><td class="emoji-cell">🚌</td><td>B) is going to</td><td>เห็นรถบัสกำลังจะไปเป็นหลักฐาน ใช้ be going to</td></tr><tr><td>9</td><td class="emoji-cell">👵</td><td>B) am going to</td><td>แผนที่ตั้งใจไว้ล่วงหน้า ใช้ be going to</td></tr><tr><td>10</td><td class="emoji-cell">❄️</td><td>A) will</td><td>คำว่า maybe บ่งบอกคาดเดาไม่มีหลักฐานชัด ใช้ will</td></tr><tr><td>11</td><td class="emoji-cell">📞</td><td>A) will</td><td>will ใช้ได้กับทุกประธาน ไม่เปลี่ยนรูป</td></tr><tr><td>12</td><td class="emoji-cell">🏖️</td><td>B) are going to</td><td>จองโรงแรมไว้แล้ว = แผนที่วางไว้ล่วงหน้า</td></tr><tr><td>13</td><td class="emoji-cell">🎂</td><td>A) be</td><td>หลัง will ต้องใช้กริยารูปเดิม (base form) เสมอ</td></tr><tr><td>14</td><td class="emoji-cell">🌟</td><td>A) soon</td><td>soon เป็นคำสัญญาณของ Future Tense</td></tr><tr><td>15</td><td class="emoji-cell">🎉</td><td>B) tomorrow</td><td>tomorrow เป็นคำสัญญาณของ Future Tense</td></tr><tr><td>16</td><td class="emoji-cell">🚫</td><td>A) will</td><td>ปฏิเสธของ will คือ will not (won't)</td></tr><tr><td>17</td><td class="emoji-cell">🙅</td><td>A) not</td><td>ปฏิเสธของ be going to คือ is/am/are + not + going to</td></tr><tr><td>18</td><td class="emoji-cell">❓</td><td>C) Will</td><td>คำถามด้วย will ให้ยก Will มาไว้หน้าประธาน</td></tr><tr><td>19</td><td class="emoji-cell">🌧️</td><td>B) Will</td><td>คำถามด้วย will ให้ยก Will มาไว้หน้าประธาน</td></tr><tr><td>20</td><td class="emoji-cell">🏥</td><td>C) Is</td><td>ประธาน he ใช้ Is นำหน้า going to</td></tr><tr><td>21</td><td class="emoji-cell">📱</td><td>B) Are</td><td>ประธาน you ใช้ Are นำหน้า going to</td></tr><tr><td>22</td><td class="emoji-cell">🎓</td><td>A) will</td><td>will ใช้ได้กับทุกประธาน ตามด้วย graduate (base form)</td></tr><tr><td>23</td><td class="emoji-cell">💭</td><td>B) will</td><td>ความรู้สึก/สัญญาที่จะเป็นตลอดไป ใช้ will</td></tr><tr><td>24</td><td class="emoji-cell">🔮</td><td>A) will</td><td>คาดเดา/หวังในอนาคต ใช้ will + soon</td></tr><tr><td>25</td><td class="emoji-cell">👨‍⚕️</td><td>B) is going to</td><td>แผน/ความตั้งใจในชีวิต ใช้ be going to (ทั้ง will ก็ใช้ได้ในบริบทอื่น แต่ที่นี่มี in the future เป็นแผนที่ตั้งใจไว้)</td></tr><tr><td>26</td><td class="emoji-cell">🤞</td><td>B) will</td><td>หลัง promise ใช้ will เสมอ</td></tr><tr><td>27</td><td class="emoji-cell">📝</td><td>B) is going to</td><td>already scheduled = แผนที่วางไว้แล้ว ใช้ be going to</td></tr><tr><td>28</td><td class="emoji-cell">🏠</td><td>B) are going to</td><td>เซ็นสัญญาแล้ว = แผนที่วางไว้แน่นอน ใช้ be going to</td></tr><tr><td>29</td><td class="emoji-cell">🍰</td><td>B) will</td><td>ตัดสินใจทันทีตอนพูด ใช้ will</td></tr><tr><td>30</td><td class="emoji-cell">🧥</td><td>B) is going to</td><td>ดูจากท้องฟ้าเป็นหลักฐาน ใช้ be going to</td></tr><tr><td>31</td><td class="emoji-cell">🙋</td><td>C) will</td><td>คำตอบสั้นกับคำถาม Will...? ตอบด้วย will</td></tr><tr><td>32</td><td class="emoji-cell">🙅</td><td>B) isn't</td><td>คำตอบสั้นกับคำถาม Is she going to...? ตอบด้วย isn't</td></tr><tr><td>33</td><td class="emoji-cell">🎁</td><td>A) Will</td><td>Will I...? ใช้เสนอความช่วยเหลือ</td></tr><tr><td>34</td><td class="emoji-cell">🌈</td><td>A) will</td><td>คาดเดาเหตุการณ์ในอนาคต ใช้ will</td></tr><tr><td>35</td><td class="emoji-cell">🚧</td><td>A) won't</td><td>won't = will not ใช้กับทุกประธาน</td></tr><tr><td>36</td><td class="emoji-cell">🏢</td><td>B) is going to</td><td>เห็นรอยร้าวเป็นหลักฐานชัดเจน ใช้ be going to</td></tr><tr><td>37</td><td class="emoji-cell">🎈</td><td>A) will</td><td>"I think" แสดงถึงการคาดเดาไม่มีหลักฐาน ใช้ will</td></tr><tr><td>38</td><td class="emoji-cell">📅</td><td>B) is going to</td><td>ตารางเวลาที่กำหนดไว้แล้ว = แผนล่วงหน้า ใช้ be going to</td></tr><tr><td>39</td><td class="emoji-cell">🙊</td><td>A) won't</td><td>สัญญาว่าจะไม่ทำ (โครงสร้างปฏิเสธของสัญญา) ใช้ won't</td></tr><tr><td>40</td><td class="emoji-cell">🌪️</td><td>B) is going to</td><td>มีหลักฐานชัดเจน (ท้องฟ้ามืด ลมแรง) ใช้ be going to</td></tr><tr><td>41</td><td class="emoji-cell">🤷</td><td>A) will</td><td>"probably" + ไม่มีใครรู้แน่ชัด = คาดเดาไม่มีหลักฐาน ใช้ will</td></tr><tr><td>42</td><td class="emoji-cell">🎬</td><td>B) are going to</td><td>ซื้อตั๋วไว้แล้ว = แผนที่วางไว้ล่วงหน้าแน่นอน ใช้ be going to</td></tr><tr><td>43</td><td class="emoji-cell">🧳</td><td>A) will</td><td>ข้อเสนอช่วยเหลือที่เกิดขึ้นทันทีตอนพูด ใช้ will</td></tr><tr><td>44</td><td class="emoji-cell">🏗️</td><td>B) I am going to study tonight.</td><td>ห้ามใช้ will และ going to ปนกัน และหลัง will ห้ามมี to</td></tr><tr><td>45</td><td class="emoji-cell">🔍</td><td>B) She is going to study medicine.</td><td>หลัง going to ต้องใช้กริยารูปเดิม (base form) เสมอ และต้องมี is/am/are นำหน้า going to</td></tr><tr><td>46</td><td class="emoji-cell">🔍</td><td>B) Will you come?</td><td>คำถามด้วย will ต้องยก Will มาไว้หน้าประธานเท่านั้น ห้ามใช้ do/are ร่วมด้วย</td></tr><tr><td>47</td><td class="emoji-cell">🔍</td><td>B) They aren't going to travel.</td><td>ปฏิเสธของ be going to คือ is/am/are + not + going to เท่านั้น</td></tr><tr><td>48</td><td class="emoji-cell">🎯</td><td>B) will</td><td>การตัดสินใจทันทีตอนได้ยินเสียงโทรศัพท์ ใช้ will ไม่ใช่ be going to</td></tr><tr><td>49</td><td class="emoji-cell">🎯</td><td>B) is going to</td><td>มีหลักฐาน (เมฆดำ) อ้างอิงในประโยค ใช้ be going to ไม่ใช่ will</td></tr><tr><td>50</td><td class="emoji-cell">🏁</td><td>A) She will graduate next year.</td><td>will ตามด้วย base form เสมอ ไม่เติม -s/-ing และไม่มี to</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>ตาราง Future Tense</h4>
+      <table><tr><th>รูปแบบ</th><th>โครงสร้าง</th></tr>
+      <tr><td>will</td><td>S + will + V(base)</td></tr>
+      <tr><td>be going to</td><td>S + is/am/are + going to + V(base)</td></tr>
+      <tr><td>ปฏิเสธ will</td><td>S + will not (won't) + V</td></tr>
+      <tr><td>ปฏิเสธ going to</td><td>S + is/am/are + not + going to + V</td></tr></table></div>
+    <div class="cheat-box"><h4>ใช้เมื่อไหร่</h4>
+      <ul><li>will: ตัดสินใจทันที, สัญญา, เดาไม่มีหลักฐาน</li><li>going to: แผนที่วางไว้แล้ว, เดามีหลักฐาน</li></ul></div>
+    <div class="cheat-box"><h4>คำสัญญาณ</h4>
+      <ul><li>tomorrow, next week/month/year</li><li>soon, in the future, someday</li></ul></div>
+    <div class="cheat-box"><h4>เทคนิคจำเร็ว</h4>
+      <ul><li>เห็นหลักฐาน → going to</li><li>ตัดสินใจตอนนี้ → will</li><li>ห้ามผสม will + going to</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากสถานการณ์ที่นักเรียนคุ้นเคย (แผนวันหยุด, ทายอากาศ) ก่อนเข้ากฎไวยากรณ์</li>
+    <li>เน้นย้ำว่า will และ be going to แปลว่า "จะ" เหมือนกัน แต่เลือกใช้ตาม "หลักฐาน" กับ "แผนที่วางไว้"</li>
+    <li>ให้นักเรียนฝึกแยกประเภทประโยคก่อนตอบ: มีหลักฐานไหม? มีแผนไหม? หรือแค่ตัดสินใจตอนนี้?</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Fortune Teller Game</b> — ให้นักเรียนทายอนาคตของเพื่อนด้วย "I think you will..." แล้วเทียบกับความจริง</li>
+    <li><b>Weekend Plan Interview</b> — สัมภาษณ์เพื่อน "What are you going to do this weekend?"</li>
+    <li><b>Promise Circle</b> — นักเรียนแต่ละคนพูดสัญญา 1 ข้อด้วย "I will..." แล้วส่งต่อรอบวง</li>
+    <li><b>Weather Detective</b> — ดูภาพท้องฟ้าต่าง ๆ แล้วแต่งประโยคคาดเดาด้วย "It is going to..."</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 โดยเฉพาะการผสม will กับ going to เพื่อวางแผนการสอนซ่อมเสริม</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> เขียนประโยค 5 ประโยคเกี่ยวกับแผนสุดสัปดาห์ของตัวเอง โดยใช้ be going to</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> เขียนสัญญา 3 ข้อที่อยากทำให้คนในครอบครัว โดยใช้ "I will..."</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> สังเกตท้องฟ้าวันนี้แล้วเขียนคาดเดาสภาพอากาศ 2 ประโยคด้วย "It is going to..."</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> สัมภาษณ์เพื่อน 1 คน ด้วยคำถาม "What are you going to do next year?" แล้วจดคำตอบมาเล่าในห้องเรียน</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"อนาคตที่ดีเริ่มจากการวางแผนตั้งแต่วันนี้" 🌟</div>
+    <div class="sub">Future Tense สอนให้เราพูดถึงความฝันและแผนการของตัวเองเป็นภาษาอังกฤษได้ ถ้าวันนี้เข้าใจ will กับ be going to แน่นแล้ว การพูดถึงอนาคตจะง่ายขึ้นมาก ลองฝึกพูดถึงแผนของตัวเองทุกวันนะ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง Future Tense ที่แปลว่า "จะ" ค่ะ มี 2 รูปแบบหลัก: will และ be going to</div><div class="line">✅ will ใช้เมื่อ: ตัดสินใจทันทีตอนพูด, ให้สัญญา/ข้อเสนอ, หรือคาดเดาแบบไม่มีหลักฐาน</div><div class="line">✅ be going to ใช้เมื่อ: มีแผนที่วางไว้ล่วงหน้าแล้ว หรือคาดเดาจากหลักฐานที่เห็นอยู่ตรงหน้า</div><div class="line">✅ ปฏิเสธ: will not (won't) / is-am-are + not + going to</div><div class="line">✅ คำถาม: ยก Will หรือ Is/Am/Are มาไว้หน้าสุดของประโยค</div><div class="line">✅ ห้ามใช้ will และ going to ปนกันในประโยคเดียวเด็ดขาด นี่คือข้อผิดพลาดที่พบบ่อยที่สุด</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

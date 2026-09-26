@@ -1,0 +1,199 @@
+{
+  "id": "03",
+  "folder": "03-Verb to Do",
+  "titleThai": "Verb to Do (do / does / did)",
+  "titleShort": "Verb to Do",
+  "emojiTitle": "🔨❓",
+  "objectives": [
+    "บอกรูปแบบของ do/does ให้ตรงกับประธานในประโยคได้ถูกต้อง (I/You/We/They ใช้ do, He/She/It ใช้ does)",
+    "ใช้ do/does เป็นกริยาช่วย (Auxiliary Verb) สร้างประโยคคำถามและประโยคปฏิเสธในปัจจุบันกาลได้",
+    "ใช้ do เป็นกริยาแท้ (Main Verb) แปลว่า \"ทำ\" ในวลีที่พบบ่อย เช่น do homework, do the dishes, do exercise",
+    "ใช้ did เป็นกริยาช่วยและกริยาแท้ในอดีตได้ถูกต้องกับทุกประธาน",
+    "สังเกตและแก้ไขประโยคที่ใช้ do/does/did ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย"
+  ],
+  "explanation": [
+    {
+      "heading": "📖 Do คืออะไร",
+      "html": "<p>Do เป็นคำกริยาพิเศษที่ทำหน้าที่ได้ <b>2 แบบ</b>:</p><table><tr><th>หน้าที่</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>กริยาแท้ (Main Verb)</td><td>แปลว่า \"ทำ\"</td><td>I do my homework. (ฉันทำการบ้าน)</td></tr><tr><td>กริยาช่วย (Auxiliary Verb)</td><td>ไม่มีความหมาย ใช้ช่วยสร้างประโยคคำถาม/ปฏิเสธ</td><td>Do you like pizza? (คุณชอบพิซซ่าไหม)</td></tr></table><p>รูปของ do จะเปลี่ยนไปตามประธานและกาลเวลา: <b>do, does</b> (ปัจจุบัน) และ <b>did</b> (อดีต)</p>"
+    },
+    {
+      "heading": "🧩 Do/Does ต้องตรงกับประธาน (Subject-Verb Agreement)",
+      "html": "<p>เลือกใช้ do หรือ does ให้ตรงกับประธาน เหมือนกริยาปกติที่เติม s/es กับประธานเอกพจน์บุรุษที่ 3:</p><table><tr><th>ประธาน (Subject)</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They</td><td>do</td><td>They do their homework every day.</td></tr><tr><td>He / She / It / ชื่อคน-สิ่งของเอกพจน์</td><td>does</td><td>She does her homework every day.</td></tr></table>"
+    },
+    {
+      "heading": "🏋️ Do เป็นกริยาแท้ (Main Verb): แปลว่า \"ทำ\"",
+      "html": "<p>Do ใช้เป็นกริยาแท้ในวลีที่พบบ่อยมาก ต้องจำเป็นวลี ๆ ไป:</p><table><tr><th>วลี</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>do homework</td><td>ทำการบ้าน</td><td>I do my homework every night.</td></tr><tr><td>do the dishes</td><td>ล้างจาน</td><td>She does the dishes after dinner.</td></tr><tr><td>do exercise</td><td>ออกกำลังกาย</td><td>We do exercise every morning.</td></tr><tr><td>do a favor</td><td>ช่วยเหลือ</td><td>Can you do me a favor?</td></tr><tr><td>do one's best</td><td>ทำเต็มที่/ทำดีที่สุด</td><td>He always does his best.</td></tr><tr><td>do the cleaning/laundry/cooking</td><td>ทำความสะอาด/ซักผ้า/ทำอาหาร</td><td>They do the cleaning every weekend.</td></tr></table><p>สังเกตว่าเมื่อ do เป็นกริยาแท้ ก็ยังต้องผัน <b>do → does</b> กับประธานเอกพจน์บุรุษที่ 3 เหมือนกริยาอื่น ๆ</p>"
+    },
+    {
+      "heading": "❓ Do/Does เป็นกริยาช่วยสร้างประโยคคำถาม (Yes/No Question)",
+      "html": "<p><b>โครงสร้าง:</b> Do/Does + ประธาน + กริยาช่องที่ 1 (ไม่เติม s) ... ?</p><table><tr><th>ตัวอย่างคำถาม</th><th>คำตอบสั้น</th></tr><tr><td>Do you like pizza?</td><td>Yes, I do. / No, I don't.</td></tr><tr><td>Does he play football?</td><td>Yes, he does. / No, he doesn't.</td></tr></table><p><b>ข้อควรระวัง:</b> เมื่อมี Do/Does นำหน้าแล้ว กริยาตัวหลังต้องเป็นกริยาช่องที่ 1 เสมอ ห้ามเติม s (Does he plays ❌ → Does he play ✅)</p>"
+    },
+    {
+      "heading": "🚫 Do/Does เป็นกริยาช่วยสร้างประโยคปฏิเสธ (Negative)",
+      "html": "<p><b>โครงสร้าง:</b> ประธาน + do/does + not + กริยาช่องที่ 1</p><table><tr><th>เต็มรูป</th><th>รูปย่อ</th><th>ตัวอย่าง</th></tr><tr><td>I/You/We/They + do not</td><td>don't</td><td>I don't like spiders.</td></tr><tr><td>He/She/It + does not</td><td>doesn't</td><td>She doesn't play tennis.</td></tr></table><p><b>ข้อควรระวัง:</b> หลัง doesn't กริยาต้องเป็นช่องที่ 1 เสมอ (She doesn't likes ❌ → She doesn't like ✅) เพราะ does ผันแทนประธานไปแล้ว กริยาตัวหลังจึงไม่ต้องเติม s ซ้ำ</p>"
+    },
+    {
+      "heading": "🔎 WH-Question กับ Do/Does",
+      "html": "<p>วางคำถาม WH (What/Where/When/Why/How) ไว้หน้าสุด แล้วตามด้วย Do/Does + ประธาน + กริยาช่องที่ 1:</p><table><tr><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>What do you do?</td><td>คุณทำงานอะไร (ถามอาชีพ)</td></tr><tr><td>Where does he live?</td><td>เขาอาศัยอยู่ที่ไหน</td></tr><tr><td>Why don't you like it?</td><td>ทำไมคุณถึงไม่ชอบมันล่ะ</td></tr></table><p>สังเกตประโยค <b>\"What do you do?\"</b> — do ตัวแรกเป็นกริยาช่วย ส่วน do ตัวหลังเป็นกริยาแท้ที่แปลว่า \"ทำงาน/ประกอบอาชีพ\"</p>"
+    },
+    {
+      "heading": "⏮️ Did: กริยาช่วยในอดีต (ใช้ได้กับทุกประธาน)",
+      "html": "<p>เมื่อพูดถึงอดีต ไม่ว่าประธานจะเป็นใคร ใช้ <b>did</b> เหมือนกันหมด ไม่ต้องแยก do/does อีกต่อไป:</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th></tr><tr><td>Did + ประธาน (ทุกตัว) + กริยาช่องที่ 1 ... ?</td><td>Did you go? / Did she go? / Did they go?</td></tr><tr><td>ประธาน (ทุกตัว) + did not (didn't) + กริยาช่องที่ 1</td><td>I didn't go. / He didn't go. / We didn't go.</td></tr></table><p><b>ข้อควรระวังสำคัญ:</b> หลัง did/didn't กริยาต้องเป็นช่องที่ 1 เสมอ ห้ามผันเป็นอดีตซ้ำ (Did you went? ❌ → Did you go? ✅) เพราะ did แสดงความเป็นอดีตไปแล้ว</p>"
+    },
+    {
+      "heading": "🕰️ Did เป็นกริยาแท้ (Past Main Verb)",
+      "html": "<p>เมื่อ do ทำหน้าที่เป็นกริยาแท้ (แปลว่า \"ทำ\") แล้วอยู่ในประโยคบอกเล่าอดีต จะเปลี่ยนรูปเป็น <b>did</b> เหมือนกันทุกประธาน:</p><table><tr><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>I did my homework yesterday.</td><td>ฉันทำการบ้านเมื่อวาน</td></tr><tr><td>She did the laundry this morning.</td><td>เธอซักผ้าเมื่อเช้านี้</td></tr></table>"
+    },
+    {
+      "heading": "⚠️ จุดที่ต้องระวัง (ข้อสอบชอบออก)",
+      "html": "<p><b>1. ประโยคที่มี \"do\" สองตัว (Double Do):</b> ตัวแรกเป็นกริยาช่วย ตัวหลังเป็นกริยาแท้ ต้องแยกให้ออก</p><table><tr><th>ตัวอย่าง</th><th>คำอธิบาย</th></tr><tr><td>Do you do the dishes every day?</td><td>Do (ช่วย) + you + do (แท้ = ล้างจาน)</td></tr><tr><td>Does he do the ironing?</td><td>Does (ช่วย) + he + do (แท้ = รีดผ้า)</td></tr></table><p><b>2. ห้ามใช้ do/does/did ซ้ำกับ Verb to Be:</b> เช่น Is he does...? ❌ ไม่มีจริงในภาษาอังกฤษ</p><p><b>3. หลัง Do/Does/Did ต้องใช้กริยาช่องที่ 1 เสมอ</b> ไม่ว่าจะเป็นกริยาปกติหรือกริยาไม่ปกติ (Did you go? ไม่ใช่ Did you went?)</p><p><b>4. Doesn't/Didn't ใช้กับกริยาแท้ do ได้เช่นกัน:</b> My sister doesn't do the laundry on Mondays. (doesn't = ช่วย, do = แท้)</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["ประธาน (Subject)", "Present (ปัจจุบัน)", "Past (อดีต)", "ตัวอย่าง"],
+    "rows": [
+      ["I / You / We / They", "do / don't", "did / didn't", "I do my homework. / I did my homework yesterday."],
+      ["He / She / It", "does / doesn't", "did / didn't", "She does her homework. / She did her homework yesterday."],
+      ["คำถาม (Question)", "Do/Does + subject + verb1?", "Did + subject + verb1?", "Do you like it? / Did you go?"],
+      ["คำตอบสั้น (Short Answer)", "Yes, I do. / No, she doesn't.", "Yes, they did. / No, he didn't.", "Did you win? Yes, we did."]
+    ]
+  },
+  "tips": [
+    "จำแบบ \"DDD\": <b>D</b>o ใช้กับ I-You-We-They, <b>D</b>oes ใช้กับ He-She-It, <b>D</b>id ใช้กับทุกประธานในอดีต",
+    "ท่องคล้องจอง: \"Do, do, do — I You We They! Does, does, does — He She It today!\"",
+    "จำกฎเหล็ก: หลัง do/does/did ต้องเป็นกริยาช่องที่ 1 เสมอ ห้ามเติม s ห้ามผันอดีตซ้ำ (Does he plays ❌ / Did you went ❌)"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม do/does ในประโยคคำถามและปฏิเสธ (8 ข้อ)",
+        "instructions": "เติม Do, Does, do หรือ does ให้ถูกต้องตามประธานในประโยค",
+        "items": [
+          "___ you like ice cream?",
+          "___ she speak Japanese?",
+          "I ___ not eat meat.",
+          "He ___ not like coffee.",
+          "___ they live in Bangkok?",
+          "___ your brother play guitar?",
+          "We ___ not have class today.",
+          "___ it snow in Thailand?"
+        ],
+        "answers": ["Do", "Does", "do", "does", "Do", "Does", "do", "Does"],
+        "reasons": [
+          "ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม",
+          "she เป็นเอกพจน์ ใช้ Does",
+          "ประธาน I ใช้ do not (don't)",
+          "He เป็นเอกพจน์ ใช้ does not (doesn't)",
+          "ประธาน they ใช้ Do ขึ้นต้นประโยคคำถาม",
+          "your brother เป็นเอกพจน์ ใช้ Does",
+          "ประธาน We ใช้ do not (don't)",
+          "it เป็นเอกพจน์ ใช้ Does"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติม do/does เมื่อ do เป็นกริยาแท้ (8 ข้อ)",
+        "instructions": "เติม do หรือ does ให้ถูกต้อง (บางข้อ do เป็นกริยาแท้ แปลว่า \"ทำ\")",
+        "items": [
+          "I ___ my homework every night.",
+          "She ___ the dishes after dinner.",
+          "We ___ exercise every morning.",
+          "He always ___ his best in exams.",
+          "My sister ___ the laundry on Sundays.",
+          "They ___ the cleaning together.",
+          "___ you do the shopping every week?",
+          "Can you ___ me a favor?"
+        ],
+        "answers": ["do", "does", "do", "does", "does", "do", "Do", "do"],
+        "reasons": [
+          "ประธาน I ใช้ do (กริยาแท้ = ทำการบ้าน)",
+          "She เป็นเอกพจน์ ใช้ does (กริยาแท้ = ล้างจาน)",
+          "ประธาน We ใช้ do (กริยาแท้ = ออกกำลังกาย)",
+          "He เป็นเอกพจน์ ใช้ does (กริยาแท้ = ทำเต็มที่)",
+          "My sister เป็นเอกพจน์ ใช้ does (กริยาแท้ = ซักผ้า)",
+          "ประธาน They ใช้ do (กริยาแท้ = ทำความสะอาด)",
+          "ประธาน you ใช้ Do (กริยาช่วย) นำหน้าประโยคคำถาม",
+          "ประธาน you ใช้ do (กริยาแท้ = ช่วยเหลือ)"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม did/didn't ในประโยคอดีต (8 ข้อ)",
+        "instructions": "เติม Did, did หรือ didn't ให้ถูกต้องตามบริบท",
+        "items": [
+          "___ you go to school yesterday?",
+          "I ___ not go to the party last night.",
+          "She ___ her homework yesterday.",
+          "He ___ not finish his project.",
+          "___ they win the match?",
+          "When ___ she arrive at the airport?",
+          "We ___ not have time to study.",
+          "___ he do his exercise yesterday?"
+        ],
+        "answers": ["Did", "did", "did", "did", "Did", "did", "did", "Did"],
+        "reasons": [
+          "ประโยคคำถามอดีตใช้ Did กับทุกประธาน",
+          "ปฏิเสธอดีตใช้ did not (didn't) กับทุกประธาน",
+          "did เป็นรูปอดีตของกริยาแท้ do ใช้กับทุกประธาน",
+          "ปฏิเสธอดีตของ He คือ did not (didn't) ไม่ใช่ doesn't",
+          "ประโยคคำถามอดีตใช้ Did กับทุกประธานรวมถึง they",
+          "คำถาม WH ในอดีตใช้ did กับทุกประธาน",
+          "ปฏิเสธอดีตของ We คือ did not (didn't)",
+          "Did (กริยาช่วย) + he + do (กริยาแท้) ในประโยคคำถามอดีต"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🍕", "tag": "do/does: you + Do (คำถาม)", "difficulty": 1, "q": "___ you like pizza?", "choices": ["Do","Does","Did","Are"], "answer": 0, "explain": "ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม Present Simple" },
+    { "emoji": "⚽", "tag": "do/does: he + Does (คำถาม)", "difficulty": 1, "q": "___ he play football?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "ประธาน he เป็นเอกพจน์ ใช้ Does ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "🕷️", "tag": "ปฏิเสธ: I + don't", "difficulty": 1, "q": "I ___ like spiders.", "choices": ["don't","doesn't","didn't","not"], "answer": 0, "explain": "ประธาน I ใช้ don't ในประโยคปฏิเสธ Present Simple" },
+    { "emoji": "🎾", "tag": "ปฏิเสธ: she + doesn't", "difficulty": 1, "q": "She ___ play tennis.", "choices": ["don't","doesn't","didn't","isn't"], "answer": 1, "explain": "ประธาน She เป็นเอกพจน์ ใช้ doesn't" },
+    { "emoji": "🏠", "tag": "do/does: they + Do (คำถาม)", "difficulty": 1, "q": "___ they live here?", "choices": ["Do","Does","Did","Are"], "answer": 0, "explain": "ประธาน they ใช้ Do ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "🌧️", "tag": "do/does: it + Does (คำถาม)", "difficulty": 1, "q": "___ it rain a lot in Bangkok?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "ประธาน it เป็นเอกพจน์ ใช้ Does" },
+    { "emoji": "⏰", "tag": "ปฏิเสธ: we + don't", "difficulty": 1, "q": "We ___ have time now.", "choices": ["don't","doesn't","didn't","aren't"], "answer": 0, "explain": "ประธาน We ใช้ don't" },
+    { "emoji": "☕", "tag": "ปฏิเสธ: my mother + doesn't", "difficulty": 1, "q": "My mother ___ drink coffee.", "choices": ["don't","doesn't","didn't","isn't"], "answer": 1, "explain": "My mother เป็นเอกพจน์ ใช้ doesn't" },
+    { "emoji": "📚", "tag": "do/does: you+friend (พหูพจน์) + Do", "difficulty": 1, "q": "___ you and your friend study together?", "choices": ["Do","Does","Did","Are"], "answer": 0, "explain": "you and your friend เป็นประธานพหูพจน์ ใช้ Do" },
+    { "emoji": "🗣️", "tag": "do/does: your sister + Does", "difficulty": 1, "q": "___ your sister speak English?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "your sister เป็นเอกพจน์ ใช้ Does" },
+    { "emoji": "🥩", "tag": "ปฏิเสธ: they + don't", "difficulty": 1, "q": "They ___ eat meat.", "choices": ["don't","doesn't","didn't","aren't"], "answer": 0, "explain": "ประธาน They ใช้ don't" },
+    { "emoji": "🥦", "tag": "ปฏิเสธ: he + doesn't", "difficulty": 1, "q": "He ___ like vegetables.", "choices": ["don't","doesn't","didn't","isn't"], "answer": 1, "explain": "ประธาน He ใช้ doesn't" },
+    { "emoji": "👕", "tag": "do/does: the students (พหูพจน์) + Do", "difficulty": 1, "q": "___ the students wear uniforms?", "choices": ["Do","Does","Did","Are"], "answer": 0, "explain": "the students เป็นพหูพจน์ ใช้ Do" },
+    { "emoji": "🐕", "tag": "do/does: the dog + Does", "difficulty": 1, "q": "___ the dog bark at night?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "the dog เป็นเอกพจน์ ใช้ Does" },
+    { "emoji": "❓", "tag": "ปฏิเสธ: I + don't", "difficulty": 1, "q": "I ___ understand this question.", "choices": ["don't","doesn't","didn't","not"], "answer": 0, "explain": "ประธาน I ใช้ don't" },
+
+    { "emoji": "📝", "tag": "do เป็นกริยาแท้: do homework", "difficulty": 2, "q": "I ___ my homework every evening.", "choices": ["do","does","did","make"], "answer": 0, "explain": "\"do homework\" แปลว่าทำการบ้าน ประธาน I ใช้ do" },
+    { "emoji": "🍽️", "tag": "do เป็นกริยาแท้: do the dishes", "difficulty": 2, "q": "She ___ the dishes after dinner.", "choices": ["do","does","did","make"], "answer": 1, "explain": "\"do the dishes\" แปลว่าล้างจาน ประธาน She เป็นเอกพจน์ ใช้ does" },
+    { "emoji": "🏃", "tag": "do เป็นกริยาแท้: do exercise", "difficulty": 2, "q": "We ___ exercise every morning.", "choices": ["do","does","did","make"], "answer": 0, "explain": "\"do exercise\" แปลว่าออกกำลังกาย ประธาน We ใช้ do" },
+    { "emoji": "🙏", "tag": "do เป็นกริยาแท้: do a favor", "difficulty": 2, "q": "Can you ___ me a favor?", "choices": ["do","does","did","make"], "answer": 0, "explain": "\"do a favor\" แปลว่าช่วยเหลือ ประธาน you ใช้ do" },
+    { "emoji": "🏅", "tag": "do เป็นกริยาแท้: do one's best", "difficulty": 2, "q": "He always ___ his best in exams.", "choices": ["do","does","did","make"], "answer": 1, "explain": "\"do one's best\" แปลว่าทำเต็มที่ ประธาน He เป็นเอกพจน์ ใช้ does" },
+    { "emoji": "🙋", "tag": "คำตอบสั้น: Do...? Yes, I do.", "difficulty": 2, "q": "Do you like pizza? Yes, I ___.", "choices": ["do","does","did","am"], "answer": 0, "explain": "คำตอบสั้นกับ Do...? ใช้ I do" },
+    { "emoji": "🏀", "tag": "คำตอบสั้น: Does...? No, she doesn't.", "difficulty": 2, "q": "Does she play basketball? No, she ___.", "choices": ["don't","doesn't","didn't","isn't"], "answer": 1, "explain": "คำตอบสั้นกับ Does...? ใช้ she doesn't" },
+    { "emoji": "🧹", "tag": "do เป็นกริยาแท้: do the cleaning", "difficulty": 2, "q": "They ___ the cleaning every weekend.", "choices": ["do","does","did","make"], "answer": 0, "explain": "\"do the cleaning\" แปลว่าทำความสะอาด ประธาน They ใช้ do" },
+    { "emoji": "🎨", "tag": "do/does ผสม: Does...do...", "difficulty": 2, "q": "___ your brother do his art project on time?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "your brother เป็นเอกพจน์ ใช้ Does (กริยาช่วย) ส่วน do ตัวหลังเป็นกริยาแท้" },
+    { "emoji": "🧺", "tag": "do/does ผสม: doesn't do the laundry", "difficulty": 2, "q": "My sister ___ do the laundry on Mondays.", "choices": ["don't","doesn't","didn't","isn't"], "answer": 1, "explain": "My sister เป็นเอกพจน์ ใช้ doesn't ตามด้วย do (กริยาแท้ = ซักผ้า)" },
+    { "emoji": "💼", "tag": "WH-Question: What do you do? (อาชีพ)", "difficulty": 2, "q": "What ___ you do for a living?", "choices": ["do","does","did","are"], "answer": 0, "explain": "ถามอาชีพว่า \"What do you do?\" ใช้ do กับประธาน you" },
+    { "emoji": "📍", "tag": "WH-Question: Where does he live?", "difficulty": 2, "q": "Where ___ he live?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน he เป็นเอกพจน์ ใช้ does ในคำถาม Present Simple" },
+    { "emoji": "🥬", "tag": "WH-Question ปฏิเสธ: Why don't you...?", "difficulty": 2, "q": "Why ___ you like spinach?", "choices": ["don't","doesn't","didn't","not"], "answer": 0, "explain": "ประโยคคำถามปฏิเสธ Why don't + you ...? ใช้กับประธาน you" },
+    { "emoji": "🎮", "tag": "คำตอบสั้น: Does...? Yes, he does.", "difficulty": 2, "q": "Does he play video games? Yes, he ___.", "choices": ["do","does","did","is"], "answer": 1, "explain": "คำตอบสั้นกับ Does...? ใช้ he does" },
+    { "emoji": "🍳", "tag": "do เป็นกริยาแท้: do the cooking", "difficulty": 2, "q": "They ___ the cooking every Sunday.", "choices": ["do","does","did","make"], "answer": 0, "explain": "\"do the cooking\" แปลว่าทำอาหาร ประธาน They ใช้ do" },
+    { "emoji": "📋", "tag": "do/does ผสม: Does...do a review", "difficulty": 2, "q": "___ your teacher do a review before the test?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "your teacher เป็นเอกพจน์ ใช้ Does (กริยาช่วย) ส่วน do ตัวหลังเป็นกริยาแท้" },
+    { "emoji": "🧽", "tag": "do/does ผสม: don't do the dishes", "difficulty": 2, "q": "I ___ do the dishes on weekends.", "choices": ["don't","doesn't","didn't","am not"], "answer": 0, "explain": "ประธาน I ใช้ don't ตามด้วย do (กริยาแท้ = ล้างจาน)" },
+    { "emoji": "🧘", "tag": "คำตอบสั้น: Do...? No, they don't.", "difficulty": 2, "q": "Do they do exercise every day? No, they ___.", "choices": ["don't","doesn't","didn't","aren't"], "answer": 0, "explain": "คำตอบสั้นกับ Do...? ใช้ they don't" },
+    { "emoji": "🗓️", "tag": "WH-Question: What does she do?", "difficulty": 2, "q": "What ___ she do every weekend?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน she เป็นเอกพจน์ ใช้ does" },
+    { "emoji": "🎓", "tag": "คำตอบสั้น: Does...? Yes, he does.", "difficulty": 2, "q": "Does your friend do his homework alone? Yes, he ___.", "choices": ["do","does","did","is"], "answer": 1, "explain": "คำตอบสั้นกับ Does...? ใช้ he does" },
+
+    { "emoji": "✈️", "tag": "อดีต: Did + you (คำถาม)", "difficulty": 3, "q": "___ you go to Chiang Mai last month?", "choices": ["Do","Does","Did","Were"], "answer": 2, "explain": "ประโยคคำถามอดีตใช้ Did กับทุกประธาน" },
+    { "emoji": "🏫", "tag": "อดีตปฏิเสธ: I + didn't", "difficulty": 3, "q": "I ___ go to school yesterday.", "choices": ["don't","doesn't","didn't","wasn't"], "answer": 2, "explain": "ปฏิเสธอดีตใช้ didn't กับทุกประธาน" },
+    { "emoji": "📞", "tag": "อดีต: Did + she (คำถาม)", "difficulty": 3, "q": "___ she call you last night?", "choices": ["Do","Does","Did","Was"], "answer": 2, "explain": "Did ใช้กับทุกประธานในประโยคคำถามอดีต รวมถึง she (ไม่ใช่ Does)" },
+    { "emoji": "📕", "tag": "อดีตปฏิเสธ: he + didn't (ไม่ใช่ doesn't)", "difficulty": 3, "q": "He ___ finish his homework yesterday.", "choices": ["don't","doesn't","didn't","wasn't"], "answer": 2, "explain": "ปฏิเสธอดีตของ He คือ didn't (ไม่ใช่ doesn't เพราะเป็นอดีต)" },
+    { "emoji": "📗", "tag": "did เป็นกริยาแท้ (อดีตของ do)", "difficulty": 3, "q": "I ___ my homework yesterday.", "choices": ["do","does","did","doing"], "answer": 2, "explain": "did เป็นรูปอดีตของกริยาแท้ do ใช้ได้กับทุกประธาน" },
+    { "emoji": "👚", "tag": "did เป็นกริยาแท้: did the laundry", "difficulty": 3, "q": "She ___ the laundry this morning.", "choices": ["do","does","did","doing"], "answer": 2, "explain": "did เป็นรูปอดีตของ do (กริยาแท้) ใช้ได้กับทุกประธานรวมถึง she" },
+    { "emoji": "🕰️", "tag": "WH-Question อดีต: When did she...?", "difficulty": 3, "q": "When ___ she arrive at the party last night?", "choices": ["do","does","did","was"], "answer": 2, "explain": "คำถามอดีตใช้ did กับทุกประธาน ไม่แยก do/does อีกต่อไป" },
+    { "emoji": "🥗", "tag": "WH-Question อดีตปฏิเสธ: Why didn't you...?", "difficulty": 3, "q": "Why ___ you eat your vegetables yesterday?", "choices": ["don't","doesn't","didn't","weren't"], "answer": 2, "explain": "คำถามปฏิเสธอดีตใช้ didn't" },
+    { "emoji": "🏆", "tag": "คำตอบสั้น: Did...? Yes, they did.", "difficulty": 3, "q": "Did they win the game? Yes, they ___.", "choices": ["do","does","did","were"], "answer": 2, "explain": "คำตอบสั้นกับ Did...? ใช้ they did" },
+    { "emoji": "🍽️", "tag": "Double do: Do you do the dishes?", "difficulty": 3, "q": "___ you do the dishes every day?", "choices": ["Do","Does","Did","Are"], "answer": 0, "explain": "\"Do\" ตัวแรกเป็นกริยาช่วย ส่วน \"do\" ตัวหลังเป็นกริยาแท้ (do the dishes = ล้างจาน) ประธาน you ใช้ Do" },
+    { "emoji": "👔", "tag": "Double do: Does he do the ironing?", "difficulty": 3, "q": "___ he do the ironing every weekend?", "choices": ["Do","Does","Did","Is"], "answer": 1, "explain": "\"Does\" (กริยาช่วย) + he + do (กริยาแท้ = รีดผ้า) ประธาน he เป็นเอกพจน์ ใช้ Does" },
+    { "emoji": "🤸", "tag": "Double do อดีต: Did she do her exercise?", "difficulty": 3, "q": "___ she do her exercise yesterday?", "choices": ["Do","Does","Did","Was"], "answer": 2, "explain": "คำถามอดีตใช้ Did (กริยาช่วย) + she + do (กริยาแท้ = ออกกำลังกาย) ใช้ Did กับทุกประธาน" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She don't like coffee.","She doesn't likes coffee.","She doesn't like coffee.","She not like coffee."], "answer": 2, "explain": "She เป็นเอกพจน์ ต้องใช้ doesn't ตามด้วยกริยาช่องที่ 1 (ไม่เติม s) คือ doesn't like" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Did you went to the party?","Did you go to the party?","Do you went to the party?","Does you go to the party?"], "answer": 1, "explain": "หลัง Did ต้องใช้กริยาช่องที่ 1 เสมอ (go ไม่ใช่ went) และ Did ใช้กับทุกประธานรวมถึง you" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["He do his homework every day.","He does his homework every day.","He did his homework every day.","He doing his homework every day."], "answer": 1, "explain": "\"every day\" บ่งบอกความเคยชิน (Present Simple) ประธาน He เป็นเอกพจน์ ต้องใช้ does (กริยาแท้ do ที่ผันตามประธาน)" }
+  ]
+}

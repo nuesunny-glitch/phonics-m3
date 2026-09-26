@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Adding S and ES — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 64px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 29px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 22px 28px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0; }
+.meaning-box { border-radius: 16px; padding: 18px; text-align: center; }
+.meaning-box .word { font-size: 32px; font-weight: 800; margin-bottom: 5px; }
+.meaning-box .ex { font-size: 16.5px; margin-top: 10px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 8px 10px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 20px 22px; margin: 18px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 16px; padding: 5px 14px; border-radius: 999px; margin-bottom: 10px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 8px 0 0; padding-left: 24px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.flash-card { border-radius: 14px; padding: 16px 12px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 42px; }
+.flash-card .fw { font-weight: 700; font-size: 17px; margin-top: 6px; }
+.flash-card .ft { font-size: 15.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 18px 22px; margin: 16px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 17px; margin-top: 8px; }
+.pattern-box .pex .th { color: #667; font-size: 15.5px; }
+
+.dialogue-wrap { margin: 18px 0 26px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 10px; font-size: 18.5px; }
+.bubble { max-width: 78%; padding: 12px 18px; border-radius: 16px; margin: 8px 0; font-size: 18px; }
+.bubble .th { font-size: 15.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 15.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 16px 0; }
+.tip-checklist li { display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:17.5px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:30px; height:30px; min-width:30px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:16px 18px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 10px; font-size:17px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { display:block; max-width:100%; overflow-x:auto; width:100%; border-collapse: collapse; font-size:15.5px; -webkit-overflow-scrolling: touch; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:6px 8px; }
+.cheat-box ul { margin:0; padding-left:22px; font-size:15.5px; }
+.cheat-box li { margin-bottom:6px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:16px 20px; margin-bottom:16px; }
+.teacher-note-box h4 { margin:0 0 8px; color:#b3261e; font-size:17.5px; }
+.teacher-note-box ul { margin:0; padding-left:24px; font-size:16.5px; }
+.teacher-note-box li { margin-bottom:6px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:16px 20px; margin-bottom:14px; font-size:17px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 38px 24px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 34px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:27px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:12px; font-size:17px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 26px 28px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:52px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+.toc { list-style: none; padding:0; margin: 14px 0; columns: 2; column-gap: 26px; }
+.toc li { font-size: 16.5px; padding: 7px 0; border-bottom: 1px dashed #dde2ee; }
+.toc .n { color:#2952e3; font-weight:700; margin-right:6px; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">➕ 🔤 🐱🐱 📦📦</div>
+    <h1 class="cover-title-en">Adding S and ES</h1>
+    <div class="cover-title-th">การเติม s และ es (คำนามพหูพจน์ และกริยา he/she/it)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 เล่มที่ 7 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกและเติม s/es ให้คำนามพหูพจน์ปกติได้ถูกต้อง (regular +s และ +es หลังเสียง s, ss, sh, ch, x, z)</li><li>เปลี่ยนคำนามที่ลงท้ายด้วย y, f/fe และ o ให้เป็นรูปพหูพจน์ได้ถูกต้องตามกฎการสะกด</li><li>จำและใช้คำนามพหูพจน์รูปแปลก (irregular plurals) เช่น man-men, child-children ได้อย่างถูกต้อง</li><li>ใช้กฎการเติม s/es แบบเดียวกันกับกริยาในประโยค Present Simple สำหรับประธาน he/she/it ได้ถูกต้อง</li><li>สังเกตและแก้ไขคำสะกดผิดของคำนามพหูพจน์และกริยาเติม s/es ในประโยค ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย</li></ul>
+    </div>
+    <div class="cover-footer">Lesson 07 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 การเติม s และ es คืออะไร?</h1><div class="eng">What is Adding S and ES?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">การเติม -s หรือ -es ต่อท้ายคำ เป็นเรื่องเล็ก ๆ ที่สำคัญมากในภาษาอังกฤษ เพราะมันทำหน้าที่ได้ถึง <b>2 อย่าง</b> ในประโยค แม้จะเติมตัวอักษรเหมือนกัน แต่ความหมายและตำแหน่งในประโยคต่างกันโดยสิ้นเชิง ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">หน้าที่ 1</div>ทำให้คำนามเป็นพหูพจน์ (มากกว่า 1)<div class="ex">cat → cats<br>I have two cats.<br>(ฉันมีแมวสองตัว)</div></div>
+    <div class="meaning-box mb2"><div class="word">หน้าที่ 2</div>ทำให้กริยาเข้ากับประธาน he/she/it<div class="ex">play → plays<br>He plays football.<br>(เขาเล่นฟุตบอล)</div></div>
+    <div class="meaning-box mb3"><div class="word">ข่าวดี!</div>กฎการสะกดเหมือนกันทั้งคู่<div class="ex">box → boxes<br>watch → watches<br>(กฎเดียวกันเป๊ะ)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่า <b>boxes</b> (คำนามพหูพจน์) กับ <b>watches</b> (กริยา he/she/it) ใช้กฎการเติม -es แบบเดียวกันทุกประการ — นี่คือเหตุผลที่บทนี้เรียนกฎการสะกดแค่ชุดเดียว แต่ใช้ได้ทั้งคำนามและกริยา!</p>
+  <div class="explain-block">
+    <h2>🧩 ใช้เมื่อไหร่บ้าง?</h2>
+    <table>
+      <tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>บอกว่ามีมากกว่า 1 สิ่ง (คำนามพหูพจน์)</td><td>She has three books.</td><td>เธอมีหนังสือสามเล่ม</td></tr>
+      <tr><td>บอกกริยาของประธาน he/she/it (Present Simple)</td><td>She watches TV every night.</td><td>เธอดูทีวีทุกคืน</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>I have two dogs.</td><td>ฉันมีสุนัขสองตัว</td></tr>
+      <tr><td>There are five boxes on the table.</td><td>มีกล่องห้าใบอยู่บนโต๊ะ</td></tr>
+      <tr><td>He plays basketball every day.</td><td>เขาเล่นบาสเก็ตบอลทุกวัน</td></tr>
+      <tr><td>She studies English at school.</td><td>เธอเรียนภาษาอังกฤษที่โรงเรียน</td></tr>
+      <tr><td>My mother watches the news at night.</td><td>แม่ของฉันดูข่าวตอนกลางคืน</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">ปกติ — เติม <b>-s</b> ตรง ๆ ได้เลย</div>
+    <p style="margin:6px 0;">คำนามและกริยาส่วนใหญ่ แค่เติม -s ต่อท้ายคำเดิม ไม่ต้องเปลี่ยนรูปคำ</p>
+    <ul><li>cat → cats (แมว)</li><li>book → books (หนังสือ)</li><li>play → plays (เล่น)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">ลงท้ายเสียง <b>s, ss, sh, ch, x, z</b> — เติม <b>-es</b></div>
+    <p style="margin:6px 0;">ถ้าเติมแค่ -s เฉย ๆ จะออกเสียงยาก จึงต้องเติม -es แทน เพื่อให้ออกเสียงง่ายขึ้น</p>
+    <ul><li>bus → buses (รถบัส)</li><li>box → boxes (กล่อง)</li><li>watch → watches (นาฬิกา/เฝ้าดู)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">พยัญชนะ+y → เปลี่ยนเป็น <b>-ies</b> (แต่สระ+y เติม -s ตรง ๆ)</div>
+    <p style="margin:6px 0;">ดูตัวอักษรหน้า y ก่อนเสมอ ถ้าเป็นพยัญชนะ ต้องเปลี่ยน y เป็น i แล้วเติม es แต่ถ้าเป็นสระ (a,e,i,o,u) แค่เติม s ตรง ๆ</p>
+    <ul><li>baby → babies (b+y เป็นพยัญชนะ)</li><li>study → studies (d+y เป็นพยัญชนะ)</li><li>boy → boys (o+y เป็นสระ)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">f/fe → ves และพหูพจน์รูปแปลก (Irregular) ต้องท่องจำ</div>
+    <p style="margin:6px 0;">คำนามบางคำที่ลงท้าย f/fe เปลี่ยนเป็น ves และมีคำนามอีกกลุ่มที่ไม่เติม s เลย แต่เปลี่ยนรูปคำไปเลย ต้องท่องจำเป็นคำ ๆ ไป</p>
+    <ul><li>leaf → leaves, knife → knives</li><li>man → men, child → children, tooth → teeth</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>รูปแบบคำ (ลงท้ายด้วย)</th><th>กฎการเติม</th><th>ตัวอย่างคำนาม/กริยา</th></tr>
+      <tr><td><b>คำทั่วไป (b, c, d, ...)</b></td><td>เติม -s</td><td>cat → cats, play → plays</td></tr><tr><td><b>s, ss, sh, ch, x, z</b></td><td>เติม -es</td><td>bus → buses, box → boxes, watch → watches</td></tr><tr><td><b>พยัญชนะ + y</b></td><td>เปลี่ยน y เป็น i แล้วเติม -es</td><td>baby → babies, study → studies</td></tr><tr><td><b>สระ + y</b></td><td>เติม -s เท่านั้น (y คงเดิม)</td><td>boy → boys, play → plays</td></tr><tr><td><b>f / fe (บางคำ)</b></td><td>เปลี่ยนเป็น -ves</td><td>leaf → leaves, knife → knives</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด! และอย่าลืมว่ากฎเดียวกันนี้ใช้ได้กับทั้งคำนามพหูพจน์และกริยา he/she/it</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">ฟังเสียงท้ายคำ</div><p>คำที่ลงท้ายเสียง "ซ ช ส" คือ s, ss, sh, ch, x, z ออกเสียงเพิ่มพยางค์ไม่ได้ถ้าเติมแค่ s เฉย ๆ จึงต้องมี E ช่วยเสมอ — จำว่า <b>"เสียง ซ ช ส ต้องมี E ช่วย"</b></p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">พยัญชนะ+y ก่อน y เปลี่ยนเป็น i</div><p>จำคาถา: <b>"หน้าพยัญชนะ Y ใจร้อน ต้องเปลี่ยนเป็น IES ไว ๆ ส่วนหน้าสระ Y ใจเย็น แค่เติม S ก็พอ"</b> เช่น baby→babies (ใจร้อน) แต่ boy→boys (ใจเย็น)</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">คล้องจองพหูพจน์รูปแปลก</div><p>ท่องเป็นจังหวะ: <b>"man เป็น men, child เป็น children, tooth เป็น teeth, foot เป็น feet, mouse เป็น mice, person เป็น people"</b> ท่องซ้ำทุกวันจนติดปาก เพราะคำเหล่านี้ไม่มีกฎ ต้องจำล้วน ๆ</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">นามกับกริยาใช้กฎเดียวกัน!</div><p>ไม่ต้องท่องสองชุด เพราะกฎการเติม s/es ของคำนามพหูพจน์กับกริยา he/she/it เหมือนกันเป๊ะ จำแค่ชุดเดียว เช่น <b>box→boxes</b> เหมือน <b>watch→watches</b></p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">จุดที่พิเศษมากของ -s/-es คือมันออกเสียงได้ถึง <b>3 แบบ</b> ขึ้นอยู่กับเสียงสุดท้ายของคำเดิม (ไม่ใช่ตัวสะกด แต่เป็น "เสียง" ที่ออก)</p>
+  <div class="explain-block">
+    <table>
+      <tr><th>เสียง -s/-es</th><th>เมื่อคำเดิมลงท้ายด้วยเสียง...</th><th>ตัวอย่างคำ</th><th>เสียงอ่านแบบไทย</th></tr>
+      <tr><td>/s/</td><td>เสียงไม่ก้อง เช่น p, t, k, f</td><td>cats, books, laughs</td><td>แคทส์, บุคส์, ลาฟส์</td></tr>
+      <tr><td>/z/</td><td>เสียงก้อง เช่น b, d, g, l, n, สระ</td><td>dogs, boys, cars</td><td>ด็อกซ์, บอยซ์, คาร์ซ</td></tr>
+      <tr><td>/ɪz/</td><td>เสียง s, ss, sh, ch, x, z (ที่เติม -es)</td><td>buses, boxes, watches</td><td>บัสเซส, บ็อกซเซส, วอทเชส</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: ลองพูดคำว่า <b>cats</b> กับ <b>dogs</b> ช้า ๆ จะได้ยินว่า cats ลงท้ายเสียง "ส" แต่ dogs ลงท้ายเสียง "ซ" ทั้งที่สะกดด้วย s เหมือนกัน! ส่วนคำที่เติม -es อย่าง <b>buses</b> จะมีพยางค์เพิ่มขึ้นมาอีก 1 พยางค์เสมอ (บัส-เซส)</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้ครอบคลุมทุกกฎการเติม s/es ที่เรียนมา — ทั้งคำนามพหูพจน์แบบปกติ/พิเศษ และกริยา he/she/it</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">🍎</div><div class="fw">apple → apples</div><div class="ft">แอปเปิล (หลายผล)</div></div><div class="flash-card"><div class="fe">🐕</div><div class="fw">puppy → puppies</div><div class="ft">ลูกสุนัข (หลายตัว)</div></div><div class="flash-card"><div class="fe">🚕</div><div class="fw">taxi → taxis</div><div class="ft">รถแท็กซี่ (หลายคัน)</div></div><div class="flash-card"><div class="fe">🧦</div><div class="fw">sock → socks</div><div class="ft">ถุงเท้า (หลายข้าง)</div></div><div class="flash-card"><div class="fe">🍽️</div><div class="fw">brush (verb) → brushes</div><div class="ft">แปรง/ปัด (he/she/it)</div></div><div class="flash-card"><div class="fe">🎨</div><div class="fw">try (verb) → tries</div><div class="ft">พยายาม (he/she/it)</div></div><div class="flash-card"><div class="fe">🧀</div><div class="fw">loaf → loaves</div><div class="ft">ขนมปังก้อน (หลายก้อน)</div></div><div class="flash-card"><div class="fe">🎥</div><div class="fw">video → videos</div><div class="ft">วิดีโอ (หลายคลิป)</div></div><div class="flash-card"><div class="fe">🧑‍🍳</div><div class="fw">chef → chefs</div><div class="ft">เชฟ (หลายคน)</div></div><div class="flash-card"><div class="fe">🐟</div><div class="fw">fish → fish</div><div class="ft">ปลา (รูปเดียวกัน)</div></div><div class="flash-card"><div class="fe">👨</div><div class="fw">man → men</div><div class="ft">ผู้ชาย (พหูพจน์รูปแปลก)</div></div><div class="flash-card"><div class="fe">🦷</div><div class="fw">tooth → teeth</div><div class="ft">ฟัน (พหูพจน์รูปแปลก)</div></div><div class="flash-card"><div class="fe">🧺</div><div class="fw">wash (verb) → washes</div><div class="ft">ซัก/ล้าง (he/she/it)</div></div><div class="flash-card"><div class="fe">🎂</div><div class="fw">party → parties</div><div class="ft">งานปาร์ตี้ (หลายงาน)</div></div><div class="flash-card"><div class="fe">🔑</div><div class="fw">key → keys</div><div class="ft">กุญแจ (หลายดอก)</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">There is one ___, there are two ___s.</div>
+    <div class="pex">There is one box, there are two boxes. <span class="th">(มีกล่องหนึ่งใบ มีกล่องสองใบ)</span></div>
+    <div class="pex">There is one child, there are two children. <span class="th">(มีเด็กหนึ่งคน มีเด็กสองคน)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">He/She/It + verb+s/es + every day/week.</div>
+    <div class="pex">He plays football every day. <span class="th">(เขาเล่นฟุตบอลทุกวัน)</span></div>
+    <div class="pex">She watches TV every night. <span class="th">(เธอดูทีวีทุกคืน)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">I have + number + noun+s.</div>
+    <div class="pex">I have two cats and three dogs. <span class="th">(ฉันมีแมวสองตัวและสุนัขสามตัว)</span></div>
+    <div class="pex">She has five books on the shelf. <span class="th">(เธอมีหนังสือห้าเล่มบนชั้น)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">It + verb+s + noun+s.</div>
+    <div class="pex">The bus goes to school at 7 a.m. <span class="th">(รถบัสไปโรงเรียนตอน 7 โมง)</span></div>
+    <div class="pex">My mother washes the dishes after dinner. <span class="th">(แม่ล้างจานหลังอาหารเย็น)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🏫 บทสนทนาที่ 1: บรรยายห้องเรียน (Describing the Classroom)</div>
+    <div class="bubble left"><div class="speaker">Ann</div>How many students are there in your class?<div class="th">ห้องของเธอมีนักเรียนกี่คน</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>There are thirty students. We have five boxes of books and two shelves.<div class="th">มีนักเรียนสามสิบคนครับ เรามีกล่องหนังสือห้าใบและชั้นวางสองชั้น</div></div>
+    <div class="bubble left"><div class="speaker">Ann</div>Wow! Do you have many chairs and desks?<div class="th">ว้าว มีเก้าอี้กับโต๊ะเยอะไหม</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>Yes, we have thirty desks and thirty chairs. Some students bring their own dishes for lunch!<div class="th">ใช่ครับ เรามีโต๊ะและเก้าอี้อย่างละสามสิบตัว นักเรียนบางคนเอาจานมาเองสำหรับมื้อเที่ยงด้วย</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">👦 บทสนทนาที่ 2: กิจวัตรประจำวันของน้องชาย (My Brother's Daily Routine)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>My brother always plays football after school. He also studies English every night.<div class="th">น้องชายฉันเล่นฟุตบอลหลังเลิกเรียนเสมอ เขายังเรียนภาษาอังกฤษทุกคืนด้วย</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>That's great! Does he watch TV too?<div class="th">เยี่ยมเลย เขาดูทีวีด้วยไหม</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Yes, he watches cartoons on weekends. He washes his bike every Sunday too.<div class="th">ใช่ค่ะ เขาดูการ์ตูนช่วงวันหยุด เขายังล้างจักรยานทุกวันอาทิตย์ด้วย</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>He sounds very responsible. My sister carries her own bags and tries her best in every exam too.<div class="th">เขาดูมีความรับผิดชอบมากเลย น้องสาวฉันก็ถือกระเป๋าเองและพยายามอย่างเต็มที่ในทุกการสอบเหมือนกัน</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ I have two boxs.</div>
+    <div class="why">🤔 box ลงท้าย x ต้องเติม -es เป็น boxes ไม่ใช่แค่เติม s</div>
+    <div class="right">✅ I have two boxes.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She has two babys.</div>
+    <div class="why">🤔 baby ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es</div>
+    <div class="right">✅ She has two babies.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ He play football every day.</div>
+    <div class="why">🤔 ประธาน He เป็น he/she/it ต้องเติม -s ที่กริยา play เป็น plays</div>
+    <div class="right">✅ He plays football every day.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She watch TV every day.</div>
+    <div class="why">🤔 ประธาน She เป็น he/she/it และ watch ลงท้าย ch ต้องเติม -es เป็น watches</div>
+    <div class="right">✅ She watches TV every day.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ One child, two childs.</div>
+    <div class="why">🤔 child เป็นพหูพจน์รูปแปลก ไม่เติม s เลย ต้องเปลี่ยนเป็น children</div>
+    <div class="right">✅ One child, two children.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ My father has two knifes.</div>
+    <div class="why">🤔 knife ลงท้าย fe ต้องเปลี่ยนเป็น ves ไม่ใช่แค่เติม s</div>
+    <div class="right">✅ My father has two knives.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>มองตัวอักษร (หรือเสียง) ตัวสุดท้ายของคำก่อนเสมอ แล้วค่อยเลือกกฎที่ตรงกับตัวอักษรนั้น</span></li><li><span class="num">2</span><span>ถ้าเจอคำนามพหูพจน์รูปแปลก (man, woman, child, tooth, foot, mouse, person) ให้ท่องจำเป็นคำทั้งคำ เพราะไม่มีกฎตายตัวมาช่วย</span></li><li><span class="num">3</span><span>กฎการเติม s/es แบบเดียวกันนี้ใช้ได้ทั้งกับคำนามพหูพจน์ และกริยาที่ใช้กับประธาน he/she/it ในประโยค Present Simple</span></li><li><span class="num">4</span><span>ระวังคำที่ลงท้าย o และ f/fe เพราะมีทั้งคำที่ทำตามกฎและคำยกเว้นที่ต้องจำเป็นคำ ๆ ไป เช่น photo→photos แต่ potato→potatoes</span></li><li><span class="num">5</span><span>เวลาผันกริยา he/she/it ให้เช็คตัวสะกดท้ายคำกริยาเดิมก่อนเสมอ เหมือนกับตอนเติมพหูพจน์คำนามทุกประการ</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Adding S and ES</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">➕ ปกติ +s</span>cat → cats, play → plays</div>
+      <div class="mindmap-branch mb-b"><span class="bt">🔤 s/ss/sh/ch/x/z +es</span>bus → buses, watch → watches</div>
+      <div class="mindmap-branch mb-c"><span class="bt">🔁 y → ies</span>baby → babies, study → studies</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🍃 f/fe → ves</span>leaf → leaves, knife → knives</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🧑‍🤝‍🧑 พหูพจน์รูปแปลก</span>man → men, child → children</div>
+      <div class="mindmap-branch mb-f"><span class="bt">👤 กริยา he/she/it</span>ใช้กฎเดียวกันกับคำนามพหูพจน์</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม s/es ให้คำนามปกติ (8 ข้อ)</h2><p class="part-desc">เปลี่ยนคำนามต่อไปนี้ให้เป็นรูปพหูพจน์ (เติม -s หรือ -es ให้ถูกต้อง)</p><ol class="qlist two-col"><li>cat &rarr; <span class="blank"></span></li><li>book &rarr; <span class="blank"></span></li><li>bus &rarr; <span class="blank"></span></li><li>box &rarr; <span class="blank"></span></li><li>watch (นาฬิกาข้อมือ) &rarr; <span class="blank"></span></li><li>class &rarr; <span class="blank"></span></li><li>dish &rarr; <span class="blank"></span></li><li>brush &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 2: เติมพหูพจน์คำนามที่ลงท้าย y, f/fe, o (8 ข้อ)</h2><p class="part-desc">เปลี่ยนคำนามต่อไปนี้ให้เป็นรูปพหูพจน์ โดยระวังกฎการเปลี่ยน y, f/fe และ o</p><ol class="qlist two-col"><li>baby &rarr; <span class="blank"></span></li><li>city &rarr; <span class="blank"></span></li><li>boy &rarr; <span class="blank"></span></li><li>day &rarr; <span class="blank"></span></li><li>leaf &rarr; <span class="blank"></span></li><li>knife &rarr; <span class="blank"></span></li><li>potato &rarr; <span class="blank"></span></li><li>photo &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 3: เติมกริยา he/she/it และพหูพจน์รูปแปลก (8 ข้อ)</h2><p class="part-desc">เติมคำในช่องว่างให้ถูกต้อง (ผันกริยาให้ตรงกับประธาน หรือเติมพหูพจน์ให้ถูกต้อง)</p><ol class="qlist two-col"><li>He <span class="blank"></span> (play) football every weekend.</li><li>She <span class="blank"></span> (study) English every day.</li><li>My mother <span class="blank"></span> (watch) TV at night.</li><li>The bus <span class="blank"></span> (go) to school at 7 a.m.</li><li>He <span class="blank"></span> (wash) his car every Sunday.</li><li>She <span class="blank"></span> (try) her best in every exam.</li><li>One tooth, two <span class="blank"></span>.</li><li>One child, two <span class="blank"></span>.</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">One cat, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cats</div><div class="choice">B) catses</div><div class="choice">C) caties</div><div class="choice">D) cat</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📕</div>
+      <div class="qtext">One book, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) bookes</div><div class="choice">B) books</div><div class="choice">C) bookies</div><div class="choice">D) book</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐶</div>
+      <div class="qtext">One dog, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) doges</div><div class="choice">B) dogies</div><div class="choice">C) dogs</div><div class="choice">D) dog</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">One car, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) carses</div><div class="choice">B) carries</div><div class="choice">C) car</div><div class="choice">D) cars</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚌</div>
+      <div class="qtext">One bus, two ___.<div class="rule-tag">ลงท้าย s → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) buses</div><div class="choice">B) buss</div><div class="choice">C) busies</div><div class="choice">D) bus</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📦</div>
+      <div class="qtext">One box, two ___.<div class="rule-tag">ลงท้าย x → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) boxs</div><div class="choice">B) boxes</div><div class="choice">C) boxies</div><div class="choice">D) box</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⌚</div>
+      <div class="qtext">One watch (นาฬิกาข้อมือ), two ___.<div class="rule-tag">ลงท้าย ch → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) watchs</div><div class="choice">B) watchies</div><div class="choice">C) watches</div><div class="choice">D) watch</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">One dish, two ___.<div class="rule-tag">ลงท้าย sh → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dishs</div><div class="choice">B) dishies</div><div class="choice">C) dish</div><div class="choice">D) dishes</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">One class, two ___.<div class="rule-tag">ลงท้าย ss → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) classes</div><div class="choice">B) classs</div><div class="choice">C) classies</div><div class="choice">D) class</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🖌️</div>
+      <div class="qtext">One brush, two ___.<div class="rule-tag">ลงท้าย sh → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) brushs</div><div class="choice">B) brushes</div><div class="choice">C) brushies</div><div class="choice">D) brush</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🦊</div>
+      <div class="qtext">One fox, two ___.<div class="rule-tag">ลงท้าย x → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) foxs</div><div class="choice">B) foxies</div><div class="choice">C) foxes</div><div class="choice">D) fox</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🪑</div>
+      <div class="qtext">One chair, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) chaires</div><div class="choice">B) chairies</div><div class="choice">C) chair</div><div class="choice">D) chairs</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🖊️</div>
+      <div class="qtext">One pen, two ___.<div class="rule-tag">นามปกติ +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) pens</div><div class="choice">B) penes</div><div class="choice">C) penies</div><div class="choice">D) pen</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥛</div>
+      <div class="qtext">One glass (แก้วน้ำ), two ___.<div class="rule-tag">ลงท้าย ss → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) glasss</div><div class="choice">B) glasses</div><div class="choice">C) glassies</div><div class="choice">D) glass</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📝</div>
+      <div class="qtext">One quiz, two ___.<div class="rule-tag">ลงท้าย z → +es (เติม z ซ้ำ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) quizs</div><div class="choice">B) quizies</div><div class="choice">C) quizzes</div><div class="choice">D) quiz</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👶</div>
+      <div class="qtext">One baby, two ___.<div class="rule-tag">พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) babys</div><div class="choice">B) babyes</div><div class="choice">C) baby</div><div class="choice">D) babies</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏙️</div>
+      <div class="qtext">One city, two ___.<div class="rule-tag">พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cities</div><div class="choice">B) citys</div><div class="choice">C) cityes</div><div class="choice">D) city</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👨‍👩‍👧‍👦</div>
+      <div class="qtext">One family, two ___.<div class="rule-tag">พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) familys</div><div class="choice">B) families</div><div class="choice">C) familyes</div><div class="choice">D) family</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">One story, two ___.<div class="rule-tag">พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) storys</div><div class="choice">B) storyes</div><div class="choice">C) stories</div><div class="choice">D) story</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌍</div>
+      <div class="qtext">One country, two ___.<div class="rule-tag">พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) countrys</div><div class="choice">B) countryes</div><div class="choice">C) country</div><div class="choice">D) countries</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👦</div>
+      <div class="qtext">One boy, two ___.<div class="rule-tag">สระ+y → +s เท่านั้น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) boys</div><div class="choice">B) boies</div><div class="choice">C) boyes</div><div class="choice">D) boy</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">One day, two ___.<div class="rule-tag">สระ+y → +s เท่านั้น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dies</div><div class="choice">B) days</div><div class="choice">C) dayes</div><div class="choice">D) day</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐒</div>
+      <div class="qtext">One monkey, two ___.<div class="rule-tag">สระ+y → +s เท่านั้น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) monkies</div><div class="choice">B) monkeyes</div><div class="choice">C) monkeys</div><div class="choice">D) monkey</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍃</div>
+      <div class="qtext">One leaf, two ___.<div class="rule-tag">f → ves</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) leafs</div><div class="choice">B) leafes</div><div class="choice">C) leaf</div><div class="choice">D) leaves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔪</div>
+      <div class="qtext">One knife, two ___.<div class="rule-tag">fe → ves</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) knives</div><div class="choice">B) knifes</div><div class="choice">C) knifees</div><div class="choice">D) knife</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💍</div>
+      <div class="qtext">One wife, two ___.<div class="rule-tag">fe → ves</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) wifes</div><div class="choice">B) wives</div><div class="choice">C) wifees</div><div class="choice">D) wife</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍕</div>
+      <div class="qtext">One half, two ___.<div class="rule-tag">f → ves</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) halfs</div><div class="choice">B) halfes</div><div class="choice">C) halves</div><div class="choice">D) half</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">One shelf, two ___.<div class="rule-tag">f → ves</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) shelfs</div><div class="choice">B) shelfes</div><div class="choice">C) shelf</div><div class="choice">D) shelves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥔</div>
+      <div class="qtext">One potato, two ___.<div class="rule-tag">ลงท้าย o → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) potatoes</div><div class="choice">B) potatos</div><div class="choice">C) potatoies</div><div class="choice">D) potato</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍅</div>
+      <div class="qtext">One tomato, two ___.<div class="rule-tag">ลงท้าย o → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) tomatos</div><div class="choice">B) tomatoes</div><div class="choice">C) tomatoies</div><div class="choice">D) tomato</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🦸</div>
+      <div class="qtext">One hero, two ___.<div class="rule-tag">ลงท้าย o → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) heros</div><div class="choice">B) heroies</div><div class="choice">C) heroes</div><div class="choice">D) hero</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📔</div>
+      <div class="qtext">My brother ___ (study) English every day.<div class="rule-tag">กริยา he/she/it: พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) studys</div><div class="choice">B) studyes</div><div class="choice">C) study</div><div class="choice">D) studies</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎒</div>
+      <div class="qtext">She ___ (carry) a heavy bag to school.<div class="rule-tag">กริยา he/she/it: พยัญชนะ+y → ies</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) carries</div><div class="choice">B) carrys</div><div class="choice">C) carryes</div><div class="choice">D) carry</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚽</div>
+      <div class="qtext">He ___ (play) football every weekend.<div class="rule-tag">กริยา he/she/it: สระ+y → +s</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) plaies</div><div class="choice">B) plays</div><div class="choice">C) playes</div><div class="choice">D) play</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧼</div>
+      <div class="qtext">My mother ___ (wash) the dishes after dinner.<div class="rule-tag">กริยา he/she/it: ลงท้าย sh → +es</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) washs</div><div class="choice">B) washies</div><div class="choice">C) washes</div><div class="choice">D) wash</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑</div>
+      <div class="qtext">One man, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) mans</div><div class="choice">B) manes</div><div class="choice">C) man</div><div class="choice">D) men</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩</div>
+      <div class="qtext">One woman, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) women</div><div class="choice">B) womans</div><div class="choice">C) womens</div><div class="choice">D) woman</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧒</div>
+      <div class="qtext">One child, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) childs</div><div class="choice">B) children</div><div class="choice">C) childes</div><div class="choice">D) child</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🦷</div>
+      <div class="qtext">One tooth, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) tooths</div><div class="choice">B) toothes</div><div class="choice">C) teeth</div><div class="choice">D) tooth</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🦶</div>
+      <div class="qtext">One foot, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) foots</div><div class="choice">B) footes</div><div class="choice">C) foot</div><div class="choice">D) feet</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐭</div>
+      <div class="qtext">One mouse, two ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) mice</div><div class="choice">B) mouses</div><div class="choice">C) mousies</div><div class="choice">D) mouse</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🤝‍🧑</div>
+      <div class="qtext">One person, many ___.<div class="rule-tag">พหูพจน์รูปแปลก (irregular)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) persons</div><div class="choice">B) people</div><div class="choice">C) personses</div><div class="choice">D) person</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐑</div>
+      <div class="qtext">One sheep, two ___.<div class="rule-tag">รูปเดียวกันทั้งเอกพจน์-พหูพจน์</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) sheeps</div><div class="choice">B) sheepies</div><div class="choice">C) sheep</div><div class="choice">D) sheepes</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📷</div>
+      <div class="qtext">One photo, two ___.<div class="rule-tag">ข้อยกเว้น: ลงท้าย o → +s เท่านั้น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) photoes</div><div class="choice">B) photos</div><div class="choice">C) photoies</div><div class="choice">D) photo</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎹</div>
+      <div class="qtext">One piano, two ___.<div class="rule-tag">ข้อยกเว้น: ลงท้าย o → +s เท่านั้น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) pianoes</div><div class="choice">B) pianoies</div><div class="choice">C) pianos</div><div class="choice">D) piano</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐺</div>
+      <div class="qtext">One wolf, two ___.<div class="rule-tag">f → ves (คำยาก)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) wolfs</div><div class="choice">B) wolfes</div><div class="choice">C) wolf</div><div class="choice">D) wolves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐦</div>
+      <div class="qtext">The bird ___ (fly) south every winter.<div class="rule-tag">กริยา he/she/it: พยัญชนะ+y → ies (คำยาก)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) flies</div><div class="choice">B) flys</div><div class="choice">C) flyes</div><div class="choice">D) fly</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📦</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค: นามพหูพจน์</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) There are three boxs in the room.</div><div class="choice">B) There are three boxes in the room.</div><div class="choice">C) There are three boxies in the room.</div><div class="choice">D) There are three box in the room.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🎓</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค: กริยา he/she/it</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She study English every day.</div><div class="choice">B) She studys English every day.</div><div class="choice">C) She studies English every day.</div><div class="choice">D) She studying English every day.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔪</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค: ผสม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) My father has two knifes in the kitchen.</div><div class="choice">B) My father has two knives in the kitchen.</div><div class="choice">C) My father has two knivies in the kitchen.</div><div class="choice">D) My father has two knifes's in the kitchen.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>cats</td><td>cat เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>2</td><td>books</td><td>book เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>3</td><td>buses</td><td>bus ลงท้ายด้วย s ต้องเติม -es เป็น buses</td></tr><tr><td>4</td><td>boxes</td><td>box ลงท้ายด้วย x ต้องเติม -es เป็น boxes</td></tr><tr><td>5</td><td>watches</td><td>watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches</td></tr><tr><td>6</td><td>classes</td><td>class ลงท้ายด้วย ss ต้องเติม -es เป็น classes</td></tr><tr><td>7</td><td>dishes</td><td>dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes</td></tr><tr><td>8</td><td>brushes</td><td>brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes</td></tr><tr><td>9</td><td>babies</td><td>baby ลงท้ายพยัญชนะ+y (b+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: babies</td></tr><tr><td>10</td><td>cities</td><td>city ลงท้ายพยัญชนะ+y (t+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: cities</td></tr><tr><td>11</td><td>boys</td><td>boy ลงท้ายสระ+y (o+y) เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys</td></tr><tr><td>12</td><td>days</td><td>day ลงท้ายสระ+y (a+y) เติม s ได้เลย: days</td></tr><tr><td>13</td><td>leaves</td><td>leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves</td></tr><tr><td>14</td><td>knives</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives</td></tr><tr><td>15</td><td>potatoes</td><td>potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes</td></tr><tr><td>16</td><td>photos</td><td>photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น: photos</td></tr><tr><td>17</td><td>plays</td><td>He เป็นประธานเอกพจน์ (he/she/it) กริยา play ลงท้ายสระ+y เติม s ได้เลย: plays</td></tr><tr><td>18</td><td>studies</td><td>She เป็นประธานเอกพจน์ กริยา study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: studies</td></tr><tr><td>19</td><td>watches</td><td>กริยา watch ลงท้าย ch ต้องเติม -es: watches</td></tr><tr><td>20</td><td>goes</td><td>กริยา go ลงท้ายเสียงสระ ต้องเติม -es: goes</td></tr><tr><td>21</td><td>washes</td><td>กริยา wash ลงท้าย sh ต้องเติม -es: washes</td></tr><tr><td>22</td><td>tries</td><td>กริยา try ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: tries</td></tr><tr><td>23</td><td>teeth</td><td>tooth เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น teeth</td></tr><tr><td>24</td><td>children</td><td>child เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น children</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">🐱</td><td>A) cats</td><td>cat เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>2</td><td class="emoji-cell">📕</td><td>B) books</td><td>book เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>3</td><td class="emoji-cell">🐶</td><td>C) dogs</td><td>dog เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>4</td><td class="emoji-cell">🚗</td><td>D) cars</td><td>car เป็นคำนามปกติ เติม s ได้เลย ไม่ใช่ carries (นั่นคือกริยา carry)</td></tr><tr><td>5</td><td class="emoji-cell">🚌</td><td>A) buses</td><td>bus ลงท้ายด้วยเสียง s ต้องเติม -es เป็น buses</td></tr><tr><td>6</td><td class="emoji-cell">📦</td><td>B) boxes</td><td>box ลงท้ายด้วย x ต้องเติม -es เป็น boxes</td></tr><tr><td>7</td><td class="emoji-cell">⌚</td><td>C) watches</td><td>watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches</td></tr><tr><td>8</td><td class="emoji-cell">🍽️</td><td>D) dishes</td><td>dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes</td></tr><tr><td>9</td><td class="emoji-cell">🏫</td><td>A) classes</td><td>class ลงท้ายด้วย ss ต้องเติม -es เป็น classes</td></tr><tr><td>10</td><td class="emoji-cell">🖌️</td><td>B) brushes</td><td>brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes</td></tr><tr><td>11</td><td class="emoji-cell">🦊</td><td>C) foxes</td><td>fox ลงท้ายด้วย x ต้องเติม -es เป็น foxes</td></tr><tr><td>12</td><td class="emoji-cell">🪑</td><td>D) chairs</td><td>chair เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>13</td><td class="emoji-cell">🖊️</td><td>A) pens</td><td>pen เป็นคำนามปกติ เติม s ได้เลย</td></tr><tr><td>14</td><td class="emoji-cell">🥛</td><td>B) glasses</td><td>glass ลงท้ายด้วย ss ต้องเติม -es เป็น glasses</td></tr><tr><td>15</td><td class="emoji-cell">📝</td><td>C) quizzes</td><td>quiz ลงท้ายด้วย z ต้องเติม z ซ้ำแล้วเติม -es เป็น quizzes</td></tr><tr><td>16</td><td class="emoji-cell">👶</td><td>D) babies</td><td>baby ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: babies</td></tr><tr><td>17</td><td class="emoji-cell">🏙️</td><td>A) cities</td><td>city ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: cities</td></tr><tr><td>18</td><td class="emoji-cell">👨‍👩‍👧‍👦</td><td>B) families</td><td>family ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: families</td></tr><tr><td>19</td><td class="emoji-cell">📖</td><td>C) stories</td><td>story ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: stories</td></tr><tr><td>20</td><td class="emoji-cell">🌍</td><td>D) countries</td><td>country ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: countries</td></tr><tr><td>21</td><td class="emoji-cell">👦</td><td>A) boys</td><td>boy ลงท้ายสระ+y เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys</td></tr><tr><td>22</td><td class="emoji-cell">📅</td><td>B) days</td><td>day ลงท้ายสระ+y เติม s ได้เลย: days</td></tr><tr><td>23</td><td class="emoji-cell">🐒</td><td>C) monkeys</td><td>monkey ลงท้ายสระ+y (e+y) เติม s ได้เลย: monkeys</td></tr><tr><td>24</td><td class="emoji-cell">🍃</td><td>D) leaves</td><td>leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves</td></tr><tr><td>25</td><td class="emoji-cell">🔪</td><td>A) knives</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives</td></tr><tr><td>26</td><td class="emoji-cell">💍</td><td>B) wives</td><td>wife ลงท้าย fe ต้องเปลี่ยนเป็น ves: wives</td></tr><tr><td>27</td><td class="emoji-cell">🍕</td><td>C) halves</td><td>half ลงท้าย f ต้องเปลี่ยนเป็น ves: halves</td></tr><tr><td>28</td><td class="emoji-cell">📚</td><td>D) shelves</td><td>shelf ลงท้าย f ต้องเปลี่ยนเป็น ves: shelves</td></tr><tr><td>29</td><td class="emoji-cell">🥔</td><td>A) potatoes</td><td>potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes</td></tr><tr><td>30</td><td class="emoji-cell">🍅</td><td>B) tomatoes</td><td>tomato ลงท้าย o ต้องเติม -es: tomatoes</td></tr><tr><td>31</td><td class="emoji-cell">🦸</td><td>C) heroes</td><td>hero ลงท้าย o ต้องเติม -es: heroes</td></tr><tr><td>32</td><td class="emoji-cell">📔</td><td>D) studies</td><td>study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ he/she/it: studies</td></tr><tr><td>33</td><td class="emoji-cell">🎒</td><td>A) carries</td><td>carry ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: carries</td></tr><tr><td>34</td><td class="emoji-cell">⚽</td><td>B) plays</td><td>play ลงท้ายสระ+y เติม s ได้เลยเมื่อใช้กับ he/she/it: plays</td></tr><tr><td>35</td><td class="emoji-cell">🧼</td><td>C) washes</td><td>wash ลงท้าย sh ต้องเติม -es เมื่อใช้กับ he/she/it: washes</td></tr><tr><td>36</td><td class="emoji-cell">🧑</td><td>D) men</td><td>man เป็นพหูพจน์รูปแปลก ไม่เติม s แต่เปลี่ยนเป็น men</td></tr><tr><td>37</td><td class="emoji-cell">👩</td><td>A) women</td><td>woman เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น women</td></tr><tr><td>38</td><td class="emoji-cell">🧒</td><td>B) children</td><td>child เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น children</td></tr><tr><td>39</td><td class="emoji-cell">🦷</td><td>C) teeth</td><td>tooth เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น teeth</td></tr><tr><td>40</td><td class="emoji-cell">🦶</td><td>D) feet</td><td>foot เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น feet</td></tr><tr><td>41</td><td class="emoji-cell">🐭</td><td>A) mice</td><td>mouse เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น mice</td></tr><tr><td>42</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>B) people</td><td>person เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น people</td></tr><tr><td>43</td><td class="emoji-cell">🐑</td><td>C) sheep</td><td>sheep เป็นคำที่รูปเอกพจน์และพหูพจน์เหมือนกัน ไม่เติมอะไรเลย</td></tr><tr><td>44</td><td class="emoji-cell">📷</td><td>B) photos</td><td>photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ photoes</td></tr><tr><td>45</td><td class="emoji-cell">🎹</td><td>C) pianos</td><td>piano เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ pianoes</td></tr><tr><td>46</td><td class="emoji-cell">🐺</td><td>D) wolves</td><td>wolf ลงท้าย f ต้องเปลี่ยนเป็น ves: wolves</td></tr><tr><td>47</td><td class="emoji-cell">🐦</td><td>A) flies</td><td>fly ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ it (the bird): flies</td></tr><tr><td>48</td><td class="emoji-cell">📦</td><td>B) There are three boxes in the room.</td><td>box ลงท้าย x ต้องเติม -es เป็น boxes ไม่ใช่ boxs หรือ boxies</td></tr><tr><td>49</td><td class="emoji-cell">🧑‍🎓</td><td>C) She studies English every day.</td><td>ประธาน She (he/she/it) กับกริยาที่ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น ies: study → studies</td></tr><tr><td>50</td><td class="emoji-cell">🔪</td><td>B) My father has two knives in the kitchen.</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves สะกดว่า knives (ระวังสะกดผิดเป็น knifes หรือ knives)</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>กฎการเติม s/es</h4>
+      <table><tr><th>ลงท้ายด้วย</th><th>กฎ</th></tr>
+      <tr><td>ทั่วไป</td><td>+s</td></tr>
+      <tr><td>s,ss,sh,ch,x,z</td><td>+es</td></tr>
+      <tr><td>พยัญชนะ+y</td><td>y→ies</td></tr>
+      <tr><td>สระ+y</td><td>+s</td></tr>
+      <tr><td>f/fe (บางคำ)</td><td>→ves</td></tr></table></div>
+    <div class="cheat-box"><h4>พหูพจน์รูปแปลก (ท่องจำ)</h4>
+      <ul><li>man → men, woman → women</li><li>child → children</li><li>tooth → teeth, foot → feet</li><li>mouse → mice, person → people</li><li>sheep → sheep, fish → fish (เหมือนเดิม)</li></ul></div>
+    <div class="cheat-box"><h4>3 เสียงของ -s/-es</h4>
+      <ul><li>/s/ หลังเสียงไม่ก้อง เช่น cats</li><li>/z/ หลังเสียงก้อง/สระ เช่น dogs</li><li>/ɪz/ หลังเสียง s,ss,sh,ch,x,z เช่น buses</li></ul></div>
+    <div class="cheat-box"><h4>อย่าลืม!</h4>
+      <ul><li>นามพหูพจน์ กับ กริยา he/she/it ใช้กฎเดียวกัน</li><li>photo→photos, piano→pianos (ข้อยกเว้น +s เท่านั้น)</li><li>roof→roofs, chief→chiefs (ไม่เปลี่ยนเป็น ves)</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากการให้นักเรียนสังเกตเสียงท้ายคำก่อนสอนกฎ เพื่อให้จำได้ด้วยตัวเองมากกว่าท่องจำอย่างเดียว</li>
+    <li>เน้นย้ำว่ากฎการเติม s/es ใช้ได้ทั้งคำนามพหูพจน์และกริยา he/she/it เพื่อลดภาระการท่องจำของนักเรียน</li>
+    <li>แยกสอนพหูพจน์รูปแปลก (irregular) เป็นชุดคำศัพท์ต่างหาก เพราะไม่มีกฎช่วย ต้องอาศัยการทบทวนซ้ำ ๆ</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Plural Relay Race</b> — แบ่งทีม ให้นักเรียนวิ่งผลัดไปเขียนรูปพหูพจน์ที่ถูกต้องบนกระดาน ทีมที่เขียนถูกและเร็วที่สุดชนะ</li>
+    <li><b>Spelling Bee</b> — ครูพูดกริยา + ประธาน he/she/it แล้วให้นักเรียนสะกดรูปกริยาที่ผันแล้วออกมาดัง ๆ</li>
+    <li><b>Sound Sort</b> — แจกบัตรคำ ให้นักเรียนแยกกลุ่มตามเสียงลงท้าย /s/, /z/, /ɪz/ ลงในตาราง 3 ช่อง</li>
+    <li><b>Irregular Plural Memory Game</b> — เกมจับคู่การ์ด เอกพจน์-พหูพจน์รูปแปลก เพื่อฝึกจำคำที่ไม่มีกฎ</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 เพื่อวางแผนการสอนซ่อมเสริมรายบุคคล โดยเฉพาะพหูพจน์รูปแปลก</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> เขียนประโยค 5 ประโยค โดยใช้คำนามพหูพจน์ของสิ่งของภายในบ้าน (เช่น We have three chairs and two shelves.)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> ท่องจำพหูพจน์รูปแปลก 5 คำ (man, woman, child, tooth, foot) แล้วให้คนในครอบครัวช่วยทดสอบถามตอบ</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> เขียนบรรยายกิจวัตรประจำวันของสมาชิกในครอบครัว 1 คน (he/she) โดยใช้กริยาเติม s/es อย่างน้อย 5 ประโยค</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> หาคำนามพหูพจน์หรือกริยาเติม s/es จากป้าย/ฉลากสินค้าในบ้าน 3 คำ แล้วเขียนกฎการสะกดที่ใช้</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"แค่ตัว s ตัวเดียว ก็เปลี่ยนความหมายได้ทั้งประโยค อย่ามองข้ามรายละเอียดเล็ก ๆ นะ" 🌟</div>
+    <div class="sub">การเติม s/es อาจดูเป็นเรื่องเล็ก แต่ถ้าฝึกสังเกตเสียงท้ายคำทุกวัน จะกลายเป็นเรื่องง่ายและอัตโนมัติในที่สุด ทุกครั้งที่เขียนผิดคือโอกาสที่จะจำได้แม่นขึ้น อย่ากลัวที่จะฝึกซ้ำ ๆ เพราะความเก่งเกิดจากการฝึกฝนทุกวัน 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่องการเติม -s และ -es ซึ่งมีหน้าที่ 2 อย่าง คือทำให้คำนามเป็นพหูพจน์ และผันกริยาให้เข้ากับ he/she/it ค่ะ</div><div class="line">✅ คำทั่วไป เติม -s ตรง ๆ ได้เลย เช่น cat→cats, play→plays</div><div class="line">✅ ถ้าลงท้ายเสียง s, ss, sh, ch, x, z ต้องเติม -es เสมอ เช่น bus→buses, watch→watches</div><div class="line">✅ ถ้าลงท้ายพยัญชนะ+y ให้เปลี่ยน y เป็น i แล้วเติม es เช่น baby→babies, study→studies แต่ถ้าเป็นสระ+y แค่เติม s เช่น boy→boys</div><div class="line">✅ คำที่ลงท้าย f/fe บางคำเปลี่ยนเป็น ves เช่น leaf→leaves, knife→knives</div><div class="line">✅ ระวังพหูพจน์รูปแปลกที่ไม่มีกฎ ต้องท่องจำ เช่น man→men, child→children, tooth→teeth</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+{
+  "id": "01",
+  "folder": "01-Verb to Be",
+  "titleThai": "Verb to Be (am / is / are / was / were)",
+  "titleShort": "Verb to Be",
+  "emojiTitle": "🌈🔤",
+  "objectives": [
+    "บอกรูปแบบของ Verb to Be (am/is/are) ให้ตรงกับประธานในประโยคได้ถูกต้อง",
+    "แต่งประโยคปฏิเสธและประโยคคำถามด้วย Verb to Be ได้",
+    "ใช้ There is / There are บอกการมีอยู่ของสิ่งของหรือคนได้ถูกต้อง",
+    "ใช้ Verb to Be ในรูปอดีต (was/were) ได้ถูกต้อง",
+    "สังเกตและแก้ไขประโยค Verb to Be ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย"
+  ],
+  "explanation": [
+    {
+      "heading": "📖 Verb to Be คืออะไร",
+      "html": "<p>Verb to Be คือกริยาพิเศษที่แปลว่า \"เป็น/อยู่/คือ\" ใช้เชื่อมประธานกับคำนาม คำคุณศัพท์ หรือสถานที่ โดยรูปของมันจะเปลี่ยนไปตามประธานและกาลเวลา (ปัจจุบัน/อดีต) — Verb to Be ไม่ได้แปลว่า \"be\" ตรง ๆ แต่จะถูกผันเป็น am, is, are (ปัจจุบัน) หรือ was, were (อดีต) เสมอ</p><table><tr><th>ประธาน (Subject)</th><th>Verb to Be (ปัจจุบัน)</th><th>ตัวอย่าง</th></tr><tr><td>I</td><td>am</td><td>I am a student. (ฉันเป็นนักเรียน)</td></tr><tr><td>He / She / It / ชื่อคน-สิ่งของเอกพจน์</td><td>is</td><td>She is my sister. (เธอเป็นน้องสาวของฉัน)</td></tr><tr><td>You / We / They / นามพหูพจน์</td><td>are</td><td>They are my friends. (พวกเขาเป็นเพื่อนของฉัน)</td></tr></table>"
+    },
+    {
+      "heading": "🧩 Verb to Be ใช้ทำอะไรได้บ้าง",
+      "html": "<p>Verb to Be ใช้ได้ 3 แบบหลัก ๆ:</p><table><tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>บอกอาชีพ/ตัวตน (Identity)</td><td>He is a doctor.</td><td>เขาเป็นหมอ</td></tr><tr><td>บอกลักษณะ (Description)</td><td>The dog is big.</td><td>สุนัขตัวใหญ่</td></tr><tr><td>บอกสถานที่ (Location)</td><td>They are at school.</td><td>พวกเขาอยู่ที่โรงเรียน</td></tr></table>"
+    },
+    {
+      "heading": "🚫 รูปปฏิเสธ (Negative)",
+      "html": "<p>เติม <b>not</b> หลัง Verb to Be และมักย่อได้ (ยกเว้น am not ไม่มีรูปย่อที่ใช้จริง)</p><table><tr><th>เต็มรูป</th><th>รูปย่อ</th></tr><tr><td>I am not</td><td>(ไม่มีรูปย่อ)</td></tr><tr><td>He/She/It is not</td><td>isn't</td></tr><tr><td>You/We/They are not</td><td>aren't</td></tr><tr><td>I/He/She/It was not</td><td>wasn't</td></tr><tr><td>You/We/They were not</td><td>weren't</td></tr></table>"
+    },
+    {
+      "heading": "❓ รูปคำถาม (Yes/No Question)",
+      "html": "<p>สลับ Verb to Be มาไว้หน้าประโยค (หน้าประธาน):</p><p><b>โครงสร้าง:</b> Am/Is/Are + ประธาน + ...? &nbsp;→&nbsp; <b>ตัวอย่าง:</b> Are you ready? — Yes, I am. / No, I'm not.</p><p>ถ้ามีคำถาม WH (What/Where/Who/How) ให้วางไว้หน้าสุด: <b>What is your name?</b> / <b>Where are you from?</b></p>"
+    },
+    {
+      "heading": "📦 There is / There are",
+      "html": "<p>ใช้บอกว่า \"มี...อยู่\" — ดูที่คำนามหลัง is/are ว่าเป็นเอกพจน์หรือพหูพจน์:</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th></tr><tr><td>There is + นามเอกพจน์</td><td>There is a book on the table.</td></tr><tr><td>There are + นามพหูพจน์</td><td>There are many students here.</td></tr></table>"
+    },
+    {
+      "heading": "⏮️ Verb to Be ในอดีต: Was / Were",
+      "html": "<p>เปลี่ยนกฎเดิม โดย is/am → was และ are → were</p><table><tr><th>ประธาน</th><th>อดีต</th><th>ตัวอย่าง</th></tr><tr><td>I / He / She / It</td><td>was</td><td>I was at home yesterday.</td></tr><tr><td>You / We / They</td><td>were</td><td>They were at the beach last week.</td></tr></table>"
+    },
+    {
+      "heading": "⚠️ คำนามที่ต้องระวัง (ข้อสอบชอบออก)",
+      "html": "<p>คำนามบางคำดูเหมือนพหูพจน์แต่ใช้ is/was (เอกพจน์) และบางคำดูเหมือนเอกพจน์แต่ใช้ are/were (พหูพจน์):</p><table><tr><th>คำนาม</th><th>Verb to Be</th><th>เหตุผล</th></tr><tr><td>Everyone, Everybody</td><td>is/was</td><td>ถือเป็นเอกพจน์เสมอ แม้จะหมายถึงหลายคน</td></tr><tr><td>News (ข่าว)</td><td>is/was</td><td>ลงท้าย s แต่เป็นคำนามเอกพจน์เสมอ</td></tr><tr><td>Glasses, Trousers, Scissors</td><td>are/were</td><td>คำนามที่มี 2 ชิ้นเสมอ ใช้รูปพหูพจน์เสมอ</td></tr><tr><td>จำนวนเงิน/เวลา/ระยะทางรวม</td><td>is/was</td><td>ถือเป็นหน่วยเดียว เช่น Ten dollars is enough.</td></tr><tr><td>Neither / Either + of</td><td>is/was</td><td>ถือเป็นเอกพจน์เสมอ</td></tr></table>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["ประธาน (Subject)", "Present (ปัจจุบัน)", "Past (อดีต)", "ตัวอย่าง"],
+    "rows": [
+      ["I", "am", "was", "I am/was a student."],
+      ["He / She / It", "is", "was", "He is/was tired."],
+      ["You / We / They", "are", "were", "They are/were happy."]
+    ]
+  },
+  "tips": [
+    "จำแบบ \"AIA\": <b>A</b>m ใช้กับ I, <b>I</b>s ใช้กับ He-She-It, <b>A</b>re ใช้กับ You-We-They",
+    "ท่องเป็นจังหวะคล้องจอง: \"I am, You are, He is, She is, It is, We are, They are\" ซ้ำ ๆ จนติดปาก",
+    "จำ Was/Were ง่าย ๆ: I/He/She/It → WAS (จำคู่กับ is) ส่วน You/We/They → WERE (จำคู่กับ are)"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม am/is/are ให้ถูกต้อง (10 ข้อ)",
+        "instructions": "เลือกใช้ am, is หรือ are ให้ตรงกับประธานในประโยค",
+        "items": [
+          "My dog ___ friendly.",
+          "I ___ ready for the exam.",
+          "Our teachers ___ kind.",
+          "This apple ___ sweet.",
+          "You ___ a good friend.",
+          "The weather ___ nice today.",
+          "We ___ classmates.",
+          "My mother ___ a good cook.",
+          "Those shoes ___ expensive.",
+          "I ___ from Bangkok."
+        ],
+        "answers": ["is", "am", "are", "is", "are", "is", "are", "is", "are", "am"],
+        "reasons": [
+          "My dog เป็นเอกพจน์ ใช้ is",
+          "ประธาน I ใช้ am เสมอ",
+          "Our teachers เป็นพหูพจน์ ใช้ are",
+          "This apple เป็นเอกพจน์ ใช้ is",
+          "ประธาน You ใช้ are เสมอ",
+          "The weather เป็นเอกพจน์ ใช้ is",
+          "ประธาน We ใช้ are",
+          "My mother เป็นเอกพจน์ ใช้ is",
+          "Those shoes เป็นพหูพจน์ ใช้ are",
+          "ประธาน I ใช้ am เสมอ"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติมรูปปฏิเสธ/คำถาม (8 ข้อ)",
+        "instructions": "เติม is, am, are หรือรูปคำถาม (Is/Are) ให้ถูกต้องตามบริบท",
+        "items": [
+          "She ___ not busy today.",
+          "___ they at home?",
+          "I ___ not angry with you.",
+          "___ it raining outside?",
+          "We ___ not late for school.",
+          "___ your brother a doctor?",
+          "The boys ___ not tired.",
+          "___ you okay?"
+        ],
+        "answers": ["is", "Are", "am", "Is", "are", "Is", "are", "Are"],
+        "reasons": [
+          "She + is not (ปฏิเสธ)",
+          "ประธาน they ใช้ Are ขึ้นต้นประโยคคำถาม",
+          "ประธาน I + am not",
+          "ประธาน it ใช้ Is ขึ้นต้นประโยคคำถาม",
+          "ประธาน We + are not",
+          "your brother เป็นเอกพจน์ ใช้ Is",
+          "The boys เป็นพหูพจน์ ใช้ are",
+          "ประธาน you ใช้ Are ขึ้นต้นประโยคคำถาม"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม was/were ให้ถูกต้อง (6 ข้อ)",
+        "instructions": "เลือกใช้ was หรือ were ให้ตรงกับประธานในประโยคอดีต",
+        "items": [
+          "I ___ busy yesterday.",
+          "They ___ at the zoo last Sunday.",
+          "She ___ happy with her grade.",
+          "We ___ classmates last year.",
+          "It ___ hot yesterday.",
+          "___ you at home last night?"
+        ],
+        "answers": ["was", "were", "was", "were", "was", "Were"],
+        "reasons": [
+          "ประธาน I ใช้ was ในอดีต",
+          "ประธาน They ใช้ were ในอดีต",
+          "ประธาน She ใช้ was ในอดีต",
+          "ประธาน We ใช้ were ในอดีต",
+          "ประธาน It ใช้ was ในอดีต",
+          "ประธาน you ใช้ Were ขึ้นต้นประโยคคำถามอดีต"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🧑‍🎓", "tag": "am/is/are: I + am", "difficulty": 1, "q": "I ___ a student.", "choices": ["am","is","are","be"], "answer": 0, "explain": "ประธาน I ใช้ am เสมอ" },
+    { "emoji": "👧", "tag": "he/she/it + is", "difficulty": 1, "q": "She ___ my sister.", "choices": ["am","is","are","be"], "answer": 1, "explain": "ประธาน She (เอกพจน์) ใช้ is" },
+    { "emoji": "👫", "tag": "we/they/you + are", "difficulty": 1, "q": "They ___ my friends.", "choices": ["am","is","are","be"], "answer": 2, "explain": "ประธาน They (พหูพจน์) ใช้ are" },
+    { "emoji": "👨‍⚕️", "tag": "he/she/it + is", "difficulty": 1, "q": "He ___ a doctor.", "choices": ["is","am","are","be"], "answer": 0, "explain": "ประธาน He ใช้ is" },
+    { "emoji": "😄", "tag": "we/they/you + are", "difficulty": 1, "q": "We ___ happy.", "choices": ["am","is","are","be"], "answer": 2, "explain": "ประธาน We ใช้ are" },
+    { "emoji": "🐱", "tag": "he/she/it + is", "difficulty": 1, "q": "It ___ a cat.", "choices": ["am","is","are","be"], "answer": 1, "explain": "ประธาน It ใช้ is" },
+    { "emoji": "🤝", "tag": "we/they/you + are", "difficulty": 1, "q": "You ___ my best friend.", "choices": ["am","is","are","be"], "answer": 2, "explain": "ประธาน You ใช้ are เสมอ (เอกพจน์และพหูพจน์)" },
+    { "emoji": "🐶", "tag": "he/she/it + is", "difficulty": 1, "q": "The dog ___ big.", "choices": ["am","is","are","be"], "answer": 1, "explain": "The dog เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "👨‍👩‍👧", "tag": "we/they/you + are", "difficulty": 1, "q": "My parents ___ teachers.", "choices": ["am","is","are","be"], "answer": 2, "explain": "My parents เป็นพหูพจน์ ใช้ are" },
+    { "emoji": "📖", "tag": "he/she/it + is", "difficulty": 1, "q": "This book ___ interesting.", "choices": ["am","is","are","be"], "answer": 1, "explain": "This book เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "🍔", "tag": "I + am", "difficulty": 1, "q": "I ___ hungry now.", "choices": ["am","is","are","be"], "answer": 0, "explain": "ประธาน I ใช้ am เสมอ" },
+    { "emoji": "🏫", "tag": "we/they/you + are", "difficulty": 1, "q": "The children ___ at school.", "choices": ["am","is","are","be"], "answer": 2, "explain": "The children เป็นพหูพจน์ ใช้ are" },
+    { "emoji": "👦", "tag": "he/she/it + is", "difficulty": 1, "q": "My brother ___ tall.", "choices": ["am","is","are","be"], "answer": 1, "explain": "My brother เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "🇹🇭", "tag": "we/they/you + are", "difficulty": 1, "q": "We ___ from Thailand.", "choices": ["am","is","are","be"], "answer": 2, "explain": "ประธาน We ใช้ are" },
+    { "emoji": "👩‍⚕️", "tag": "he/she/it + is", "difficulty": 1, "q": "She ___ a nurse.", "choices": ["am","is","are","be"], "answer": 1, "explain": "ประธาน She ใช้ is" },
+
+    { "emoji": "😴", "tag": "ปฏิเสธ: I am not", "difficulty": 2, "q": "I ___ not tired now.", "choices": ["am","is","are","isn't"], "answer": 0, "explain": "ปฏิเสธของ I คือ am not" },
+    { "emoji": "🏠", "tag": "ปฏิเสธ: isn't", "difficulty": 2, "q": "He ___ at home. (ปฏิเสธ)", "choices": ["isn't","aren't","am not","not is"], "answer": 0, "explain": "He + is not = isn't" },
+    { "emoji": "🎒", "tag": "ปฏิเสธ: aren't", "difficulty": 2, "q": "They ___ students. (ปฏิเสธ)", "choices": ["isn't","aren't","am not","not are"], "answer": 1, "explain": "They + are not = aren't" },
+    { "emoji": "🙋", "tag": "คำถาม Yes/No: Are", "difficulty": 2, "q": "___ you ready?", "choices": ["Am","Is","Are","Be"], "answer": 2, "explain": "ประธาน you ใช้ Are ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "👩‍🏫", "tag": "คำถาม Yes/No: Is", "difficulty": 2, "q": "___ she a teacher?", "choices": ["Am","Is","Are","Be"], "answer": 1, "explain": "ประธาน she ใช้ Is ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "🌳", "tag": "คำถาม Yes/No: Are", "difficulty": 2, "q": "___ they at the park?", "choices": ["Am","Is","Are","Be"], "answer": 2, "explain": "ประธาน they ใช้ Are ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "📚", "tag": "There is (เอกพจน์)", "difficulty": 2, "q": "There ___ a book on the table.", "choices": ["am","is","are","be"], "answer": 1, "explain": "a book เป็นเอกพจน์ ใช้ There is" },
+    { "emoji": "🏫", "tag": "There are (พหูพจน์)", "difficulty": 2, "q": "There ___ many students in the room.", "choices": ["am","is","are","be"], "answer": 2, "explain": "many students เป็นพหูพจน์ ใช้ There are" },
+    { "emoji": "🍎", "tag": "There is (เอกพจน์)", "difficulty": 2, "q": "There ___ an apple in the basket.", "choices": ["am","is","are","be"], "answer": 1, "explain": "an apple เป็นเอกพจน์ ใช้ There is" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "คำถาม + คำตอบสั้น", "difficulty": 2, "q": "___ he your friend? Yes, he ___.", "choices": ["Is / is","Are / are","Is / are","Am / am"], "answer": 0, "explain": "he ใช้ Is ทั้งคำถามและคำตอบสั้น" },
+    { "emoji": "⏰", "tag": "คำถาม + คำตอบสั้น", "difficulty": 2, "q": "___ we late? No, we ___ not.", "choices": ["Is / is","Are / are","Am / are","Are / is"], "answer": 1, "explain": "we ใช้ Are ทั้งคำถามและคำตอบสั้น" },
+    { "emoji": "👟", "tag": "we/they/you + are", "difficulty": 2, "q": "My shoes ___ not clean.", "choices": ["is","are","am","be"], "answer": 1, "explain": "My shoes เป็นพหูพจน์ ใช้ are" },
+    { "emoji": "🍕", "tag": "he/she/it + is", "difficulty": 2, "q": "This pizza ___ delicious.", "choices": ["am","is","are","be"], "answer": 1, "explain": "This pizza เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "🌧️", "tag": "คำถาม Yes/No: Is", "difficulty": 2, "q": "___ it raining now?", "choices": ["Am","Is","Are","Be"], "answer": 1, "explain": "ประธาน it ใช้ Is" },
+    { "emoji": "🔑", "tag": "we/they/you + are", "difficulty": 2, "q": "The keys ___ on the desk.", "choices": ["is","am","are","be"], "answer": 2, "explain": "The keys เป็นพหูพจน์ ใช้ are" },
+
+    { "emoji": "📛", "tag": "WH-Question: What + is", "difficulty": 2, "q": "What ___ your name?", "choices": ["am","is","are","do"], "answer": 1, "explain": "your name เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "🌍", "tag": "WH-Question: Where + are", "difficulty": 2, "q": "Where ___ you from?", "choices": ["am","is","are","does"], "answer": 2, "explain": "ประธาน you ใช้ are" },
+    { "emoji": "🧔", "tag": "WH-Question: Who + is", "difficulty": 2, "q": "Who ___ that man?", "choices": ["am","is","are","do"], "answer": 1, "explain": "that man เป็นเอกพจน์ ใช้ is" },
+    { "emoji": "😊", "tag": "WH-Question: How + are", "difficulty": 2, "q": "How ___ you today?", "choices": ["am","is","are","do"], "answer": 2, "explain": "ประธาน you ใช้ are" },
+    { "emoji": "🏠", "tag": "อดีต: I + was", "difficulty": 2, "q": "I ___ at home yesterday.", "choices": ["was","were","am","is"], "answer": 0, "explain": "ประธาน I ใช้ was ในอดีต" },
+
+    { "emoji": "🏖️", "tag": "อดีต: they + were", "difficulty": 3, "q": "They ___ at the beach last week.", "choices": ["was","were","are","is"], "answer": 1, "explain": "ประธาน They ใช้ were ในอดีต" },
+    { "emoji": "🤒", "tag": "อดีต: she + was", "difficulty": 3, "q": "She ___ sick yesterday.", "choices": ["was","were","is","are"], "answer": 0, "explain": "ประธาน She ใช้ was ในอดีต" },
+    { "emoji": "🎓", "tag": "อดีต: we + were", "difficulty": 3, "q": "We ___ students last year.", "choices": ["was","were","are","is"], "answer": 1, "explain": "ประธาน We ใช้ were ในอดีต" },
+    { "emoji": "❄️", "tag": "อดีต: it + was", "difficulty": 3, "q": "It ___ cold last night.", "choices": ["was","were","is","are"], "answer": 0, "explain": "ประธาน It ใช้ was ในอดีต" },
+    { "emoji": "🎬", "tag": "อดีต: it + was", "difficulty": 3, "q": "The movie ___ boring last night.", "choices": ["was","were","is","are"], "answer": 0, "explain": "The movie เป็นเอกพจน์ ใช้ was ในอดีต" },
+    { "emoji": "👴", "tag": "อดีต: they + were", "difficulty": 3, "q": "My grandparents ___ farmers many years ago.", "choices": ["was","were","are","is"], "answer": 1, "explain": "My grandparents เป็นพหูพจน์ ใช้ were ในอดีต" },
+    { "emoji": "🏫", "tag": "อดีตปฏิเสธ: wasn't", "difficulty": 3, "q": "He ___ at school yesterday. (ปฏิเสธ)", "choices": ["wasn't","weren't","isn't","aren't"], "answer": 0, "explain": "He + was not = wasn't" },
+    { "emoji": "🏆", "tag": "อดีตคำถาม: Were", "difficulty": 3, "q": "___ you happy with the result?", "choices": ["Was","Were","Is","Are"], "answer": 1, "explain": "ประธาน you ใช้ Were ในอดีต" },
+    { "emoji": "🎉", "tag": "อดีตคำถาม: Was", "difficulty": 3, "q": "___ she at the party last night?", "choices": ["Was","Were","Is","Are"], "answer": 0, "explain": "ประธาน she ใช้ Was ในอดีต" },
+    { "emoji": "🚌", "tag": "คำนามพิเศษ: Everyone (เอกพจน์)", "difficulty": 3, "q": "Everyone ___ excited about the trip.", "choices": ["am","is","are","were"], "answer": 1, "explain": "Everyone ถือเป็นเอกพจน์เสมอ แม้หมายถึงหลายคน" },
+    { "emoji": "📰", "tag": "คำนามพิเศษ: News (เอกพจน์)", "difficulty": 3, "q": "The news ___ surprising.", "choices": ["am","is","are","were"], "answer": 1, "explain": "News ลงท้าย s แต่เป็นคำนามเอกพจน์เสมอ" },
+    { "emoji": "👓", "tag": "คำนามพิเศษ: Glasses (พหูพจน์)", "difficulty": 3, "q": "My glasses ___ broken.", "choices": ["is","am","are","was"], "answer": 2, "explain": "Glasses (แว่นตา) เป็นคำนามที่ใช้รูปพหูพจน์เสมอ" },
+    { "emoji": "💵", "tag": "คำนามพิเศษ: จำนวนเงิน (เอกพจน์)", "difficulty": 3, "q": "Ten dollars ___ not enough for this.", "choices": ["is","are","am","were"], "answer": 0, "explain": "จำนวนเงินรวมถือเป็นหน่วยเดียว (เอกพจน์)" },
+    { "emoji": "📝", "tag": "คำนามพิเศษ: Neither (เอกพจน์)", "difficulty": 3, "q": "Neither of the students ___ ready for the test.", "choices": ["is","are","am","were"], "answer": 0, "explain": "Neither of + นาม ถือเป็นเอกพจน์ (แนวข้อสอบยาก)" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She are a nurse.","She is a nurse.","She am a nurse.","She be a nurse."], "answer": 1, "explain": "ประธาน She (เอกพจน์) ต้องใช้ is ไม่ใช่ are/am/be" }
+  ]
+}

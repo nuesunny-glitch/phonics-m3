@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Verb to Have — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 64px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 29px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 22px 28px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0; }
+.meaning-box { border-radius: 16px; padding: 18px; text-align: center; }
+.meaning-box .word { font-size: 32px; font-weight: 800; margin-bottom: 5px; }
+.meaning-box .ex { font-size: 16.5px; margin-top: 10px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 8px 10px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 20px 22px; margin: 18px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 16px; padding: 5px 14px; border-radius: 999px; margin-bottom: 10px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 8px 0 0; padding-left: 24px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.flash-card { border-radius: 14px; padding: 16px 12px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 42px; }
+.flash-card .fw { font-weight: 700; font-size: 17px; margin-top: 6px; }
+.flash-card .ft { font-size: 15.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 18px 22px; margin: 16px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 17px; margin-top: 8px; }
+.pattern-box .pex .th { color: #667; font-size: 15.5px; }
+
+.dialogue-wrap { margin: 18px 0 26px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 10px; font-size: 18.5px; }
+.bubble { max-width: 78%; padding: 12px 18px; border-radius: 16px; margin: 8px 0; font-size: 18px; }
+.bubble .th { font-size: 15.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 15.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 16px 0; }
+.tip-checklist li { display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:17.5px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:30px; height:30px; min-width:30px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:16px 18px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 10px; font-size:17px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { display:block; max-width:100%; overflow-x:auto; width:100%; border-collapse: collapse; font-size:15.5px; -webkit-overflow-scrolling: touch; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:6px 8px; }
+.cheat-box ul { margin:0; padding-left:22px; font-size:15.5px; }
+.cheat-box li { margin-bottom:6px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:16px 20px; margin-bottom:16px; }
+.teacher-note-box h4 { margin:0 0 8px; color:#b3261e; font-size:17.5px; }
+.teacher-note-box ul { margin:0; padding-left:24px; font-size:16.5px; }
+.teacher-note-box li { margin-bottom:6px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:16px 20px; margin-bottom:14px; font-size:17px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 38px 24px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 34px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:27px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:12px; font-size:17px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 26px 28px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:52px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+.toc { list-style: none; padding:0; margin: 14px 0; columns: 2; column-gap: 26px; }
+.toc li { font-size: 16.5px; padding: 7px 0; border-bottom: 1px dashed #dde2ee; }
+.toc .n { color:#2952e3; font-weight:700; margin-right:6px; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">🎒 🖐️ 👨‍👩‍👧‍👦 📚 ✏️</div>
+    <h1 class="cover-title-en">Verb to Have</h1>
+    <div class="cover-title-th">กริยา Verb to Have (have / has / had)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 เล่มที่ 2 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกรูปแบบ have/has ให้ตรงกับประธานในประโยคปัจจุบันได้ถูกต้อง</li><li>ใช้ have ในความหมายต่าง ๆ ได้แก่ ความเป็นเจ้าของ ครอบครัว อาการป่วย และกิจวัตรประจำวัน (have breakfast, have a shower) ได้อย่างเหมาะสม</li><li>แต่งประโยคปฏิเสธ (don't/doesn't have) และประโยคคำถาม (Do/Does...have?) พร้อมตอบคำถามสั้นได้ถูกต้อง</li><li>ใช้ had ในรูปอดีตกับทุกประธาน ทั้งประโยคบอกเล่า ปฏิเสธ (didn't have) และคำถาม (Did...have?) ได้ถูกต้อง</li><li>แยกความแตกต่างระหว่าง have (ความเป็นเจ้าของ) กับ have to (ความจำเป็น/ต้อง) และแก้ไขข้อผิดพลาดที่พบบ่อยในข้อสอบเข้า ม.4 ได้</li></ul>
+    </div>
+    <div class="cover-footer">Lesson 02 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 Verb to Have คืออะไร?</h1><div class="eng">What is Verb to Have?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">Verb to Have แปลว่า "มี" ใช้บอกว่าประธานมีสิ่งใดสิ่งหนึ่งอยู่ แต่ในภาษาอังกฤษจริง ๆ have/has ถูกใช้ได้หลายความหมายมากกว่าคำว่า "มีของ" อย่างเดียว ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">ครอบครอง</div>มีสิ่งของเป็นเจ้าของ<div class="ex">I have a bike.<br>(ฉันมีจักรยาน)</div></div>
+    <div class="meaning-box mb2"><div class="word">ครอบครัว</div>บอกความสัมพันธ์คนในบ้าน<div class="ex">She has two brothers.<br>(เธอมีพี่ชายสองคน)</div></div>
+    <div class="meaning-box mb3"><div class="word">อาการ/ความรู้สึก</div>บอกว่าป่วยหรือรู้สึกอย่างไร<div class="ex">He has a headache.<br>(เขาปวดหัว)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">นอกจากนี้ have/has ยังใช้กับ <b>วลีกิจวัตรประจำวัน</b> ที่ไม่ได้แปลว่า "มี" ตรงตัว เช่น <b>have breakfast</b> (กินอาหารเช้า), <b>have a shower</b> (อาบน้ำ), <b>have fun</b> (สนุก) — ต้องจำเป็นชุด ๆ ไปเลย</p>
+  <div class="explain-block">
+    <h2>🧩 ใช้เมื่อไหร่บ้าง?</h2>
+    <table>
+      <tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>ความเป็นเจ้าของ</td><td>They have a big garden.</td><td>พวกเขามีสวนใหญ่</td></tr>
+      <tr><td>ครอบครัว/ความสัมพันธ์</td><td>We have a new teacher.</td><td>พวกเรามีครูคนใหม่</td></tr>
+      <tr><td>อาการป่วย/ความรู้สึก</td><td>My brother has a cold.</td><td>น้องชายฉันเป็นหวัด</td></tr>
+      <tr><td>กิจวัตรประจำวัน</td><td>I have lunch at noon.</td><td>ฉันกินอาหารกลางวันตอนเที่ยง</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>I have a new bag.</td><td>ฉันมีกระเป๋าใบใหม่</td></tr>
+      <tr><td>My father has a small shop.</td><td>พ่อของฉันมีร้านเล็ก ๆ</td></tr>
+      <tr><td>The cat has soft fur.</td><td>แมวตัวนี้มีขนนุ่ม</td></tr>
+      <tr><td>We have a lot of homework.</td><td>พวกเรามีการบ้านเยอะมาก</td></tr>
+      <tr><td>She has a headache today.</td><td>วันนี้เธอปวดหัว</td></tr>
+      <tr><td>They have breakfast at 7.</td><td>พวกเขากินอาหารเช้าตอน 7 โมง</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">have — ใช้กับ <b>I / You / We / They</b> หรือคำนามพหูพจน์</div>
+    <p style="margin:6px 0;">ถ้าประธานเป็น I, You, We, They หรือคำนามพหูพจน์ ให้ใช้ have เสมอ</p>
+    <ul><li>I have a new bag. (ฉันมีกระเป๋าใบใหม่)</li><li>They have a big garden. (พวกเขามีสวนใหญ่)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">has — ใช้กับ <b>He / She / It</b> หรือคำนามเอกพจน์</div>
+    <p style="margin:6px 0;">ถ้าพูดถึงคนเดียว/สิ่งเดียว (เอกพจน์บุรุษที่ 3) ให้เปลี่ยน have เป็น <b>has</b> เสมอ (ไม่ใช่ haves)</p>
+    <ul><li>She has two brothers. (เธอมีพี่ชายสองคน)</li><li>My father has a small shop. (พ่อของฉันมีร้านเล็ก ๆ)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3 (BONUS)</span>
+    <div class="qtext" style="font-size:17px;">had — ใช้กับ <b>ทุกประธาน</b> ในอดีต</div>
+    <p style="margin:6px 0;">พอเป็นเรื่องราวในอดีต ทั้ง have และ has จะกลายเป็น <b>had</b> เหมือนกันหมด ไม่ต้องแยกเอกพจน์-พหูพจน์อีกแล้ว</p>
+    <ul><li>I had a bike when I was young. (ตอนเด็กฉันมีจักรยาน)</li><li>She had long hair last year. (ปีที่แล้วเธอผมยาว)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">have (มี) vs have to (ต้อง) — ห้ามสับสน!</div>
+    <p style="margin:6px 0;">ถ้าหลัง have/has ตามด้วย <b>คำนาม</b> แปลว่า "มี" แต่ถ้าตามด้วย <b>to + กริยาช่อง 1</b> แปลว่า "ต้อง" (ความจำเป็น)</p>
+    <ul><li>I have a book. (ฉันมีหนังสือ) ≠ I have to study. (ฉันต้องเรียน)</li><li>She has to wear a uniform. (เธอต้องใส่ชุดนักเรียน)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>ประธาน (Subject)</th><th>ปัจจุบัน</th><th>อดีต</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>I</b></td><td>have</td><td>had</td><td>I have/had a pen.</td></tr><tr><td><b>You</b></td><td>have</td><td>had</td><td>You have/had a nice bike.</td></tr><tr><td><b>We</b></td><td>have</td><td>had</td><td>We have/had a great time.</td></tr><tr><td><b>They</b></td><td>have</td><td>had</td><td>They have/had a dog.</td></tr><tr><td><b>He</b></td><td>has</td><td>had</td><td>He has/had a car.</td></tr><tr><td><b>She</b></td><td>has</td><td>had</td><td>She has/had a headache.</td></tr><tr><td><b>It</b></td><td>has</td><td>had</td><td>It has/had soft fur.</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>🚫❓ ปฏิเสธและคำถาม</h2>
+    <table>
+      <tr><th></th><th>ปัจจุบัน</th><th>อดีต</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปฏิเสธ</td><td>don't/doesn't have</td><td>didn't have</td><td>He doesn't have / didn't have a car.</td></tr>
+      <tr><td>คำถาม</td><td>Do/Does...have?</td><td>Did...have?</td><td>Does she have / Did she have a dog?</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">He / She / It → has</div><p>สามคนนี้มี "ตัว s" เหมือนกับ is เลย — จำว่า "He She It ชอบเติม s เข้าไปหน่อย"</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">I / You / We / They → have</div><p>ประธานที่เหลือทั้งหมดใช้ have ธรรมดา ไม่ต้องเติมอะไร</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">คาถาจังหวะ</div><p>ท่องคล้องจอง: "I have, You have, He has, She has, It has, We have, They have" ซ้ำ ๆ จนติดปาก</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">อดีตง่ายกว่าอีก!</div><p>ทุกประธานในอดีตใช้ <b>had</b> เหมือนกันหมด ไม่ต้องแยกเอกพจน์-พหูพจน์ ไม่มีคำว่า "hased" หรือ "haved" — จำแค่คำเดียวจบ!</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำ</th><th>สัทอักษร (IPA)</th><th>เสียงอ่านแบบไทย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>have</b></td><td>/hæv/</td><td>แฮฟ</td><td>I have a pen. (ไอ แฮฟ อะ เพน)</td></tr>
+      <tr><td><b>has</b></td><td>/hæz/</td><td>แฮซ</td><td>She has a cat. (ชี แฮซ อะ แคท)</td></tr>
+      <tr><td><b>had</b></td><td>/hæd/</td><td>แฮด</td><td>They had a dog. (เธ แฮด อะ ดอก)</td></tr>
+      <tr><td><b>don't have</b></td><td>/doʊnt hæv/</td><td>โดนท์ แฮฟ</td><td>I don't have time. (ไอ โดนท์ แฮฟ ไทม์)</td></tr>
+      <tr><td><b>doesn't have</b></td><td>/ˈdʌzənt hæv/</td><td>ดัซเซินท์ แฮฟ</td><td>He doesn't have a car.</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียงสนุก ๆ: เวลาเจ้าของภาษาพูดคำว่า <b>"have to"</b> เร็ว ๆ เสียง v กับ t จะกลืนกันจนฟังดูเหมือน <b>/hæftə/ (แฮฟทู)</b> เช่น "I have to go" จะฟังดูเหมือน "ไอ แฮฟทู โก" — ลองฟังเพลงหรือหนังฝรั่งดูแล้วจะได้ยินแบบนี้บ่อยมาก!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้ใช้บ่อยที่สุดเวลาแต่งประโยคกับ Verb to Have — แบ่งเป็น 3 หมวด: คนในครอบครัว, อาการป่วย, และสิ่งของ/กิจวัตรประจำวัน</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">👦</div><div class="fw">brother</div><div class="ft">พี่/น้องชาย</div></div><div class="flash-card"><div class="fe">👧</div><div class="fw">sister</div><div class="ft">พี่/น้องสาว</div></div><div class="flash-card"><div class="fe">🐶</div><div class="fw">pet</div><div class="ft">สัตว์เลี้ยง</div></div><div class="flash-card"><div class="fe">🤒</div><div class="fw">a cold</div><div class="ft">เป็นหวัด</div></div><div class="flash-card"><div class="fe">🤕</div><div class="fw">a headache</div><div class="ft">ปวดหัว</div></div><div class="flash-card"><div class="fe">🌡️</div><div class="fw">a fever</div><div class="ft">เป็นไข้</div></div><div class="flash-card"><div class="fe">🚲</div><div class="fw">bike</div><div class="ft">จักรยาน</div></div><div class="flash-card"><div class="fe">📱</div><div class="fw">phone</div><div class="ft">โทรศัพท์</div></div><div class="flash-card"><div class="fe">🎒</div><div class="fw">bag</div><div class="ft">กระเป๋า</div></div><div class="flash-card"><div class="fe">🍳</div><div class="fw">breakfast</div><div class="ft">อาหารเช้า</div></div><div class="flash-card"><div class="fe">🚿</div><div class="fw">a shower</div><div class="ft">อาบน้ำ</div></div><div class="flash-card"><div class="fe">🎉</div><div class="fw">fun</div><div class="ft">ความสนุก</div></div><div class="flash-card"><div class="fe">🏠</div><div class="fw">a garden</div><div class="ft">สวน</div></div><div class="flash-card"><div class="fe">🚗</div><div class="fw">a car</div><div class="ft">รถยนต์</div></div><div class="flash-card"><div class="fe">👨‍👩‍👧‍👦</div><div class="fw">family</div><div class="ft">ครอบครัว</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Positive: Subject + have/has + ...</div>
+    <div class="pex">I have a bike. <span class="th">(ฉันมีจักรยาน)</span></div>
+    <div class="pex">She has two brothers. <span class="th">(เธอมีพี่ชายสองคน)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Negative: Subject + don't/doesn't + have + ...</div>
+    <div class="pex">I don't have a car. <span class="th">(ฉันไม่มีรถยนต์)</span></div>
+    <div class="pex">He doesn't have a pet. <span class="th">(เขาไม่มีสัตว์เลี้ยง)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Question: Do/Does + Subject + have + ...?</div>
+    <div class="pex">Do you have a pen? <span class="th">(เธอมีปากกาไหม)</span></div>
+    <div class="pex">Does she have a sister? <span class="th">(เธอมีน้องสาวไหม)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Short Answer: Yes, S + do/does. / No, S + don't/doesn't.</div>
+    <div class="pex">Yes, I do. / No, I don't. <span class="th">(ใช่ ฉันมี / ไม่ ฉันไม่มี)</span></div>
+    <div class="pex">Yes, she does. / No, she doesn't. <span class="th">(ใช่ เธอมี / ไม่ เธอไม่มี)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">👨‍👩‍👧‍👦 บทสนทนาที่ 1: ครอบครัวของฉัน (My Family)</div>
+    <div class="bubble left"><div class="speaker">Nan</div>Do you have any brothers or sisters?<div class="th">เธอมีพี่น้องไหม</div></div>
+    <div class="bubble right"><div class="speaker">Tim</div>Yes, I do. I have one brother and one sister.<div class="th">มีครับ ผมมีพี่ชายหนึ่งคนกับน้องสาวหนึ่งคน</div></div>
+    <div class="bubble left"><div class="speaker">Nan</div>That's nice! Does your family have a pet?<div class="th">ดีจังเลย ครอบครัวเธอมีสัตว์เลี้ยงไหม</div></div>
+    <div class="bubble right"><div class="speaker">Tim</div>Yes, we have a small dog. Her name is Milo.<div class="th">มีครับ พวกเรามีสุนัขตัวเล็ก ๆ ชื่อไมโล</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🤒 บทสนทนาที่ 2: รู้สึกไม่สบาย (Feeling Sick)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>What's wrong? You don't look well.<div class="th">เป็นอะไรไป ดูท่าทางไม่ค่อยสบายเลย</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>I have a headache and a fever.<div class="th">ผมปวดหัวและมีไข้</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Oh no! Does your sister have a cold too?<div class="th">แย่จัง น้องสาวเธอเป็นหวัดด้วยไหม</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Yes, she has a bad cold. We have to see a doctor today.<div class="th">ใช่ครับ เธอเป็นหวัดหนัก พวกเราต้องไปหาหมอวันนี้</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ I has a dog.</div>
+    <div class="why">🤔 ประธาน I ต้องใช้ have เสมอ ไม่ใช่ has</div>
+    <div class="right">✅ I have a dog.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She have a cat.</div>
+    <div class="why">🤔 She เป็นเอกพจน์ ต้องใช้ has ไม่ใช่ have</div>
+    <div class="right">✅ She has a cat.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ I don't has time.</div>
+    <div class="why">🤔 หลัง don't/doesn't ต้องใช้ have รูปเดิมเสมอ ไม่ผันซ้ำเป็น has</div>
+    <div class="right">✅ I don't have time.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Has you a pen?</div>
+    <div class="why">🤔 ประโยคคำถามกับ you ต้องใช้ Do ขึ้นต้น ไม่ใช่ Has</div>
+    <div class="right">✅ Do you have a pen?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ He haved a car last year.</div>
+    <div class="why">🤔 อดีตของ have/has คือ had (irregular verb) ห้ามเติม ed</div>
+    <div class="right">✅ He had a car last year.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ He is a headache.</div>
+    <div class="why">🤔 อาการป่วยต้องใช้ have/has ไม่ใช่ Verb to Be</div>
+    <div class="right">✅ He has a headache.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>มองประธานก่อนเสมอ — ถ้าเป็น He/She/It หรือคำนามเอกพจน์ ใช้ has ถ้าไม่ใช่ ใช้ have</span></li><li><span class="num">2</span><span>ปฏิเสธและคำถามใช้ don't/doesn't/Do/Does + have เสมอ (ห้ามใช้ has ตามหลังกริยาช่วย)</span></li><li><span class="num">3</span><span>อดีตกาลใช้ had กับทุกประธานเหมือนกันหมด ไม่มีคำว่า haved หรือ hased</span></li><li><span class="num">4</span><span>ระวัง have to / has to ที่แปลว่า "ต้อง" ไม่ใช่ "มี" — ดูว่าคำถัดไปเป็น to+กริยา หรือคำนาม</span></li><li><span class="num">5</span><span>อาการป่วย/ความรู้สึกใช้ have/has เท่านั้น (a headache, a cold, a fever) ห้ามใช้ Verb to Be</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Verb to Have</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">🔤 ความหมาย</span>ครอบครอง / ครอบครัว / อาการป่วย / กิจวัตร</div>
+      <div class="mindmap-branch mb-b"><span class="bt">🧩 รูปแบบ</span>have / has (ปัจจุบัน) → had (อดีต)</div>
+      <div class="mindmap-branch mb-c"><span class="bt">🚫 ปฏิเสธ</span>don't/doesn't/didn't + have</div>
+      <div class="mindmap-branch mb-d"><span class="bt">❓ คำถาม</span>Do/Does/Did + ประธาน + have...?</div>
+      <div class="mindmap-branch mb-e"><span class="bt">📌 Have to</span>แปลว่า "ต้อง" ไม่ใช่ "มี"</div>
+      <div class="mindmap-branch mb-f"><span class="bt">🍳 วลีกิจวัตร</span>have breakfast / a shower / fun</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม have/has ให้ถูกต้อง (9 ข้อ)</h2><p class="part-desc">เลือกใช้ have หรือ has ให้ตรงกับประธานในประโยค</p><ol class="qlist two-col"><li>I <span class="blank"></span> a new bag.</li><li>She <span class="blank"></span> two brothers.</li><li>They <span class="blank"></span> a big garden.</li><li>He <span class="blank"></span> a red car.</li><li>We <span class="blank"></span> a lot of homework.</li><li>My father <span class="blank"></span> a small shop.</li><li>You <span class="blank"></span> a kind heart.</li><li>The cat <span class="blank"></span> soft fur.</li><li>My friends <span class="blank"></span> the same hobby.</li></ol><h2 class="part-title">ตอนที่ 2: เติมรูปปฏิเสธ/คำถาม (8 ข้อ)</h2><p class="part-desc">เติม don't, doesn't, Do หรือ Does ให้ถูกต้องตามบริบท</p><ol class="qlist two-col"><li>He <span class="blank"></span> have a bicycle. (ปฏิเสธ)</li><li>I <span class="blank"></span> have a pen with me. (ปฏิเสธ)</li><li><span class="blank"></span> you have a computer?</li><li><span class="blank"></span> she have a sister?</li><li>They <span class="blank"></span> have enough time. (ปฏิเสธ)</li><li>Does he have a car? No, he <span class="blank"></span>.</li><li>Do they have a dog? Yes, they <span class="blank"></span>.</li><li>My sister <span class="blank"></span> have a headache today. (ปฏิเสธ)</li></ol><h2 class="part-title">ตอนที่ 3: เติม had/didn't have/Did ให้ถูกต้อง (7 ข้อ)</h2><p class="part-desc">เติมรูปอดีตของ have ให้ถูกต้องตามบริบท</p><ol class="qlist two-col"><li>I <span class="blank"></span> a bike when I was young.</li><li>She <span class="blank"></span> long hair last year.</li><li>They <span class="blank"></span> a dog before.</li><li>We <span class="blank"></span> a great time yesterday.</li><li>I <span class="blank"></span> have any money yesterday. (ปฏิเสธ)</li><li><span class="blank"></span> you have a pet when you were young?</li><li>He <span class="blank"></span> have a car last year. (ปฏิเสธ)</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">I ___ a bicycle.<div class="rule-tag">have: I</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👦</div>
+      <div class="qtext">She ___ a brother.<div class="rule-tag">has: she</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏠</div>
+      <div class="qtext">They ___ a big house.<div class="rule-tag">have: they</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) has</div><div class="choice">B) have</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">He ___ a new phone.<div class="rule-tag">has: he</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) has</div><div class="choice">B) have</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">We ___ two cats.<div class="rule-tag">have: we</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">My mother ___ a car.<div class="rule-tag">has: singular noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) has</div><div class="choice">B) have</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👀</div>
+      <div class="qtext">You ___ nice eyes.<div class="rule-tag">have: you</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐕</div>
+      <div class="qtext">The dog ___ a long tail.<div class="rule-tag">has: singular noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚜</div>
+      <div class="qtext">My parents ___ a farm.<div class="rule-tag">have: plural noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) has</div><div class="choice">B) have</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐘</div>
+      <div class="qtext">This elephant ___ a long trunk.<div class="rule-tag">has: singular noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🤝‍🧑</div>
+      <div class="qtext">I ___ many friends.<div class="rule-tag">have: I</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤕</div>
+      <div class="qtext">He ___ a headache.<div class="rule-tag">has: he</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📝</div>
+      <div class="qtext">We ___ a test today.<div class="rule-tag">have: we</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💇‍♀️</div>
+      <div class="qtext">My sister ___ curly hair.<div class="rule-tag">has: singular noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) has</div><div class="choice">B) have</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩‍🏫</div>
+      <div class="qtext">They ___ a new teacher.<div class="rule-tag">have: plural noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">He ___ have a car.<div class="rule-tag">ปฏิเสธ: doesn't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) doesn't</div><div class="choice">B) don't</div><div class="choice">C) isn't</div><div class="choice">D) not</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💰</div>
+      <div class="qtext">I ___ have any money.<div class="rule-tag">ปฏิเสธ: don't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) isn't</div><div class="choice">D) not</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📺</div>
+      <div class="qtext">They ___ have a TV.<div class="rule-tag">ปฏิเสธ: don't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) doesn't</div><div class="choice">B) don't</div><div class="choice">C) aren't</div><div class="choice">D) not</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐹</div>
+      <div class="qtext">She ___ have a pet.<div class="rule-tag">ปฏิเสธ: doesn't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) isn't</div><div class="choice">D) not</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">✏️</div>
+      <div class="qtext">___ you have a pen?<div class="rule-tag">คำถาม: Do...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Have</div><div class="choice">D) Has</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">___ she have a bike?<div class="rule-tag">คำถาม: Does...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Have</div><div class="choice">D) Has</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👧</div>
+      <div class="qtext">Do you have a sister? Yes, I ___.<div class="rule-tag">คำตอบสั้น: do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) have</div><div class="choice">D) has</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💼</div>
+      <div class="qtext">Does he have a job? No, he ___.<div class="rule-tag">คำตอบสั้น: doesn't</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) haven't</div><div class="choice">D) hasn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍳</div>
+      <div class="qtext">We ___ breakfast at 7 every day.<div class="rule-tag">have breakfast (กิจวัตร)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚿</div>
+      <div class="qtext">She ___ a shower every morning.<div class="rule-tag">has a shower (กิจวัตร)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍱</div>
+      <div class="qtext">I ___ lunch at noon.<div class="rule-tag">have lunch (กิจวัตร)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤒</div>
+      <div class="qtext">He ___ a headache today.<div class="rule-tag">has a headache (อาการป่วย)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">They ___ a good time at the party.<div class="rule-tag">have a good time</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤧</div>
+      <div class="qtext">My brother ___ a cold this week.<div class="rule-tag">has a cold (อาการป่วย)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏖️</div>
+      <div class="qtext">We ___ fun at the beach.<div class="rule-tag">have fun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏍️</div>
+      <div class="qtext">___ your father have a motorbike?<div class="rule-tag">คำถาม: Does...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Is</div><div class="choice">D) Are</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏰</div>
+      <div class="qtext">___ they have enough time?<div class="rule-tag">คำถาม: Do...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Is</div><div class="choice">D) Are</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐈</div>
+      <div class="qtext">He ___ have a dog; he has a cat.<div class="rule-tag">ปฏิเสธ: doesn't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) doesn't</div><div class="choice">B) don't</div><div class="choice">C) isn't</div><div class="choice">D) hasn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📓</div>
+      <div class="qtext">I ___ have any homework today.<div class="rule-tag">ปฏิเสธ: don't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) haven't</div><div class="choice">D) hasn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤕</div>
+      <div class="qtext">Does she have a headache? Yes, she ___.<div class="rule-tag">คำตอบสั้น: does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) has</div><div class="choice">D) have</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">I ___ a bike when I was young.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💇‍♀️</div>
+      <div class="qtext">She ___ long hair last year.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐕</div>
+      <div class="qtext">They ___ a dog before.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎊</div>
+      <div class="qtext">We ___ a great time yesterday.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤒</div>
+      <div class="qtext">He ___ a fever last night.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚜</div>
+      <div class="qtext">My grandparents ___ a small farm many years ago.<div class="rule-tag">อดีต: had (ทุกประธาน)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) haves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💸</div>
+      <div class="qtext">I ___ have any money yesterday.<div class="rule-tag">อดีตปฏิเสธ: didn't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) didn't</div><div class="choice">D) hadn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">She ___ have a car last year.<div class="rule-tag">อดีตปฏิเสธ: didn't have</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't</div><div class="choice">B) doesn't</div><div class="choice">C) didn't</div><div class="choice">D) hadn't</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐹</div>
+      <div class="qtext">___ you have a pet when you were a child?<div class="rule-tag">อดีตคำถาม: Did...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Did</div><div class="choice">D) Had</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">___ he have a bicycle before?<div class="rule-tag">อดีตคำถาม: Did...have?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Did</div><div class="choice">D) Had</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">I ___ to finish my homework before dinner.<div class="rule-tag">have to (ความจำเป็น)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">She ___ to go to school every day.<div class="rule-tag">has to (ความจำเป็น)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">👕</div>
+      <div class="qtext">He ___ to wear a uniform at school.<div class="rule-tag">has to (ความจำเป็น)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) had</div><div class="choice">D) having</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She have a brother.</div><div class="choice">B) She has a brother.</div><div class="choice">C) She having a brother.</div><div class="choice">D) She haves a brother.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) He have a car last year.</div><div class="choice">B) He has a car last year.</div><div class="choice">C) He had a car last year.</div><div class="choice">D) He haves a car last year.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>have</td><td>ประธาน I ใช้ have เสมอ</td></tr><tr><td>2</td><td>has</td><td>She เป็นเอกพจน์ ใช้ has</td></tr><tr><td>3</td><td>have</td><td>They เป็นพหูพจน์ ใช้ have</td></tr><tr><td>4</td><td>has</td><td>He เป็นเอกพจน์ ใช้ has</td></tr><tr><td>5</td><td>have</td><td>We ใช้ have เสมอ</td></tr><tr><td>6</td><td>has</td><td>My father เป็นเอกพจน์ ใช้ has</td></tr><tr><td>7</td><td>have</td><td>You ใช้ have เสมอ (เอกพจน์และพหูพจน์)</td></tr><tr><td>8</td><td>has</td><td>The cat เป็นเอกพจน์ ใช้ has</td></tr><tr><td>9</td><td>have</td><td>My friends เป็นพหูพจน์ ใช้ have</td></tr><tr><td>10</td><td>doesn't</td><td>He เป็นเอกพจน์ ใช้ doesn't have</td></tr><tr><td>11</td><td>don't</td><td>ประธาน I ใช้ don't have</td></tr><tr><td>12</td><td>Do</td><td>ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม</td></tr><tr><td>13</td><td>Does</td><td>she เป็นเอกพจน์ ใช้ Does ขึ้นต้นประโยคคำถาม</td></tr><tr><td>14</td><td>don't</td><td>They เป็นพหูพจน์ ใช้ don't have</td></tr><tr><td>15</td><td>doesn't</td><td>he ใช้ doesn't ในคำตอบสั้น</td></tr><tr><td>16</td><td>do</td><td>they ใช้ do ในคำตอบสั้น</td></tr><tr><td>17</td><td>doesn't</td><td>My sister เป็นเอกพจน์ ใช้ doesn't have</td></tr><tr><td>18</td><td>had</td><td>ทุกประธานใช้ had ในอดีต</td></tr><tr><td>19</td><td>had</td><td>She ใช้ had ในอดีต (ไม่แยก has/have อีกต่อไป)</td></tr><tr><td>20</td><td>had</td><td>They ใช้ had ในอดีต</td></tr><tr><td>21</td><td>had</td><td>We ใช้ had ในอดีต</td></tr><tr><td>22</td><td>didn't</td><td>ปฏิเสธอดีตใช้ didn't have กับทุกประธาน</td></tr><tr><td>23</td><td>Did</td><td>คำถามอดีตใช้ Did + ประธาน + have</td></tr><tr><td>24</td><td>didn't</td><td>ปฏิเสธอดีตใช้ didn't have กับทุกประธาน</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">🚲</td><td>A) have</td><td>ประธาน I ใช้ have เสมอ</td></tr><tr><td>2</td><td class="emoji-cell">👦</td><td>B) has</td><td>ประธาน She (เอกพจน์) ใช้ has</td></tr><tr><td>3</td><td class="emoji-cell">🏠</td><td>B) have</td><td>ประธาน They (พหูพจน์) ใช้ have</td></tr><tr><td>4</td><td class="emoji-cell">📱</td><td>A) has</td><td>ประธาน He ใช้ has</td></tr><tr><td>5</td><td class="emoji-cell">🐱</td><td>A) have</td><td>ประธาน We ใช้ have</td></tr><tr><td>6</td><td class="emoji-cell">🚗</td><td>A) has</td><td>My mother เป็นเอกพจน์ ใช้ has</td></tr><tr><td>7</td><td class="emoji-cell">👀</td><td>A) have</td><td>ประธาน You ใช้ have เสมอ (เอกพจน์และพหูพจน์)</td></tr><tr><td>8</td><td class="emoji-cell">🐕</td><td>B) has</td><td>The dog เป็นเอกพจน์ ใช้ has</td></tr><tr><td>9</td><td class="emoji-cell">🚜</td><td>B) have</td><td>My parents เป็นพหูพจน์ ใช้ have</td></tr><tr><td>10</td><td class="emoji-cell">🐘</td><td>B) has</td><td>This elephant เป็นเอกพจน์ ใช้ has</td></tr><tr><td>11</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>A) have</td><td>ประธาน I ใช้ have เสมอ</td></tr><tr><td>12</td><td class="emoji-cell">🤕</td><td>B) has</td><td>ประธาน He ใช้ has</td></tr><tr><td>13</td><td class="emoji-cell">📝</td><td>A) have</td><td>ประธาน We ใช้ have</td></tr><tr><td>14</td><td class="emoji-cell">💇‍♀️</td><td>A) has</td><td>My sister เป็นเอกพจน์ ใช้ has</td></tr><tr><td>15</td><td class="emoji-cell">👩‍🏫</td><td>A) have</td><td>They เป็นพหูพจน์ ใช้ have</td></tr><tr><td>16</td><td class="emoji-cell">🚗</td><td>A) doesn't</td><td>He เป็นเอกพจน์ ใช้ doesn't have</td></tr><tr><td>17</td><td class="emoji-cell">💰</td><td>A) don't</td><td>ประธาน I ใช้ don't have</td></tr><tr><td>18</td><td class="emoji-cell">📺</td><td>B) don't</td><td>They เป็นพหูพจน์ ใช้ don't have</td></tr><tr><td>19</td><td class="emoji-cell">🐹</td><td>B) doesn't</td><td>She เป็นเอกพจน์ ใช้ doesn't have</td></tr><tr><td>20</td><td class="emoji-cell">✏️</td><td>A) Do</td><td>ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม</td></tr><tr><td>21</td><td class="emoji-cell">🚲</td><td>B) Does</td><td>ประธาน she ใช้ Does ขึ้นต้นประโยคคำถาม</td></tr><tr><td>22</td><td class="emoji-cell">👧</td><td>A) do</td><td>ประธาน I ใช้ do ในคำตอบสั้น</td></tr><tr><td>23</td><td class="emoji-cell">💼</td><td>B) doesn't</td><td>ประธาน he ใช้ doesn't ในคำตอบสั้น</td></tr><tr><td>24</td><td class="emoji-cell">🍳</td><td>A) have</td><td>We ใช้ have และ have breakfast แปลว่ากินอาหารเช้า</td></tr><tr><td>25</td><td class="emoji-cell">🚿</td><td>B) has</td><td>She เป็นเอกพจน์ ใช้ has และ have a shower แปลว่าอาบน้ำ</td></tr><tr><td>26</td><td class="emoji-cell">🍱</td><td>A) have</td><td>ประธาน I ใช้ have และ have lunch แปลว่ากินอาหารกลางวัน</td></tr><tr><td>27</td><td class="emoji-cell">🤒</td><td>B) has</td><td>He เป็นเอกพจน์ ใช้ has และ have a headache แปลว่าปวดหัว</td></tr><tr><td>28</td><td class="emoji-cell">🎉</td><td>A) have</td><td>They ใช้ have และ have a good time แปลว่าสนุกสนาน/มีความสุข</td></tr><tr><td>29</td><td class="emoji-cell">🤧</td><td>B) has</td><td>My brother เป็นเอกพจน์ ใช้ has และ have a cold แปลว่าเป็นหวัด</td></tr><tr><td>30</td><td class="emoji-cell">🏖️</td><td>A) have</td><td>We ใช้ have และ have fun แปลว่าสนุกสนาน</td></tr><tr><td>31</td><td class="emoji-cell">🏍️</td><td>B) Does</td><td>your father เป็นเอกพจน์ ใช้ Does ขึ้นต้นประโยคคำถาม</td></tr><tr><td>32</td><td class="emoji-cell">⏰</td><td>A) Do</td><td>they เป็นพหูพจน์ ใช้ Do ขึ้นต้นประโยคคำถาม</td></tr><tr><td>33</td><td class="emoji-cell">🐈</td><td>A) doesn't</td><td>He เป็นเอกพจน์ ใช้ doesn't have</td></tr><tr><td>34</td><td class="emoji-cell">📓</td><td>A) don't</td><td>ประธาน I ใช้ don't have</td></tr><tr><td>35</td><td class="emoji-cell">🤕</td><td>B) does</td><td>ประธาน she ใช้ does ในคำตอบสั้น</td></tr><tr><td>36</td><td class="emoji-cell">🚲</td><td>C) had</td><td>ทุกประธานใช้ had ในอดีต</td></tr><tr><td>37</td><td class="emoji-cell">💇‍♀️</td><td>C) had</td><td>อดีตใช้ had เหมือนกันทุกประธาน ไม่แยก has/have</td></tr><tr><td>38</td><td class="emoji-cell">🐕</td><td>C) had</td><td>ทุกประธานใช้ had ในอดีต</td></tr><tr><td>39</td><td class="emoji-cell">🎊</td><td>C) had</td><td>ทุกประธานใช้ had ในอดีต</td></tr><tr><td>40</td><td class="emoji-cell">🤒</td><td>C) had</td><td>ทุกประธานใช้ had ในอดีต</td></tr><tr><td>41</td><td class="emoji-cell">🚜</td><td>C) had</td><td>My grandparents เป็นพหูพจน์ แต่ในอดีตใช้ had เหมือนกันทุกประธาน</td></tr><tr><td>42</td><td class="emoji-cell">💸</td><td>C) didn't</td><td>ปฏิเสธอดีตใช้ didn't have กับทุกประธาน</td></tr><tr><td>43</td><td class="emoji-cell">🚗</td><td>C) didn't</td><td>ปฏิเสธอดีตใช้ didn't have กับทุกประธาน แม้ประธานจะเป็นเอกพจน์</td></tr><tr><td>44</td><td class="emoji-cell">🐹</td><td>C) Did</td><td>คำถามอดีตใช้ Did + ประธาน + have กับทุกประธาน</td></tr><tr><td>45</td><td class="emoji-cell">🚲</td><td>C) Did</td><td>คำถามอดีตใช้ Did + ประธาน + have แม้ประธานจะเป็นเอกพจน์</td></tr><tr><td>46</td><td class="emoji-cell">📚</td><td>A) have</td><td>ประธาน I ใช้ have to (ต้อง) ตามด้วย to + กริยาช่อง 1</td></tr><tr><td>47</td><td class="emoji-cell">🏫</td><td>B) has</td><td>She เป็นเอกพจน์ ใช้ has to (ต้อง) ไม่ใช่ has a school</td></tr><tr><td>48</td><td class="emoji-cell">👕</td><td>B) has</td><td>He เป็นเอกพจน์ ใช้ has to (ต้อง) แปลว่าเขาต้องใส่ชุดนักเรียน</td></tr><tr><td>49</td><td class="emoji-cell">🔍</td><td>B) She has a brother.</td><td>ประธาน She (เอกพจน์) ต้องใช้ has ไม่ใช่ have/having/haves</td></tr><tr><td>50</td><td class="emoji-cell">🔍</td><td>C) He had a car last year.</td><td>ประโยคอดีต (last year) ต้องใช้ had ไม่ใช่ have/has/haves</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>ตาราง Verb to Have</h4>
+      <table><tr><th>ประธาน</th><th>ปัจจุบัน</th><th>อดีต</th></tr>
+      <tr><td>I/You/We/They</td><td>have</td><td>had</td></tr>
+      <tr><td>He/She/It</td><td>has</td><td>had</td></tr></table></div>
+    <div class="cheat-box"><h4>โครงสร้างประโยค</h4>
+      <ul><li>Positive: S + have/has + ...</li><li>Negative: S + don't/doesn't + have</li><li>Question: Do/Does + S + have...?</li><li>Past: S + had / didn't have / Did...have?</li></ul></div>
+    <div class="cheat-box"><h4>Have to ≠ Have</h4>
+      <ul><li>have + คำนาม = มี</li><li>have to + กริยาช่อง 1 = ต้อง</li><li>He has to go. (เขาต้องไป)</li><li>He has a car. (เขามีรถ)</li></ul></div>
+    <div class="cheat-box"><h4>เทคนิคจำเร็ว</h4>
+      <ul><li>He/She/It → has (มี s)</li><li>ที่เหลือ → have</li><li>อดีต: ทุกประธาน → had</li><li>ปฏิเสธ/คำถาม ใช้ have เสมอ ไม่ใช่ has</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากสิ่งของ/สัตว์เลี้ยงของนักเรียนเองก่อน แล้วค่อยขยายไปพูดถึงครอบครัวและอาการป่วย</li>
+    <li>เน้นย้ำจุดสับสนสำคัญ: หลัง don't/doesn't ต้องใช้ have เสมอ (ไม่ผันซ้ำเป็น has)</li>
+    <li>สอนแยก have (มี) กับ have to (ต้อง) โดยให้นักเรียนสังเกตคำที่ตามหลังเสมอ (คำนาม vs to+กริยา)</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Family Tree Interview</b> — ให้นักเรียนวาดต้นไม้ครอบครัวแล้วบรรยายด้วย have/has (I have one brother. She has a big family.)</li>
+    <li><b>What's in your bag?</b> — จับคู่ถามตอบ "Do you have a pencil?" แล้วเปิดกระเป๋าตรวจคำตอบจริง</li>
+    <li><b>Do you have...? Matching Game</b> — จับคู่บัตรภาพของกับประโยค "I have a ___." เพื่อฝึกคำศัพท์ไปพร้อมกัน</li>
+    <li><b>Doctor Role-Play</b> — ให้นักเรียนสวมบทเป็นหมอ/คนไข้ ฝึกประโยค "I have a headache." / "Does he have a fever?"</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 โดยเฉพาะ has/have หลัง don't/doesn't เพื่อวางแผนการสอนซ่อมเสริมรายบุคคล</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> วาดต้นไม้ครอบครัวของตัวเอง แล้วเขียนบรรยาย 5 ประโยคโดยใช้ have/has (เช่น My mother has two sisters.)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> เขียนบรรยายสัตว์เลี้ยง (หรือสัตว์เลี้ยงในฝัน) 3 ประโยค โดยใช้ "It has..." หรือ "I have..."</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> สัมภาษณ์คนในครอบครัว 1 คน ถามว่าในห้องของเขามีอะไรบ้าง ด้วยคำถาม "Do you have...?" อย่างน้อย 3 คำถาม แล้วจดคำตอบมาเล่าในห้องเรียน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> เขียนประโยคเปรียบเทียบ have (มี) กับ have to (ต้อง) อย่างละ 2 ประโยค แล้วแปลไทยกำกับ</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"ยิ่งเรียนรู้คำว่า have/has มากเท่าไหร่ ก็ยิ่งเล่าเรื่องครอบครัวและชีวิตตัวเองเป็นภาษาอังกฤษได้มากเท่านั้น" 🌟</div>
+    <div class="sub">Verb to Have ช่วยให้นักเรียนพูดถึงสิ่งที่ตัวเองมี คนที่ตัวเองรัก และความรู้สึกของตัวเองได้อย่างมั่นใจ ลองฝึกเล่าเรื่องครอบครัวหรือสัตว์เลี้ยงของตัวเองเป็นภาษาอังกฤษดูนะ แล้วจะรู้สึกว่าภาษาอังกฤษใกล้ตัวกว่าที่คิด 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง Verb to Have ที่แปลว่า "มี" ค่ะ</div><div class="line">✅ จำแค่นี้: He She It ใช้ has (มีตัว s เหมือน is) ส่วน I You We They ใช้ have</div><div class="line">✅ ในอดีต ทุกประธานใช้ had เหมือนกันหมด ไม่ต้องแยกเอกพจน์-พหูพจน์อีกแล้ว</div><div class="line">✅ ปฏิเสธ ใช้ don't/doesn't/didn't + have เสมอ (ห้ามใช้ has ตามหลังกริยาช่วย)</div><div class="line">✅ คำถาม ใช้ Do/Does/Did ขึ้นต้นประโยค แล้วตามด้วยประธาน + have</div><div class="line">✅ ระวัง have to ที่แปลว่า "ต้อง" ไม่ใช่ "มี" — ดูคำที่ตามหลังให้ดี</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

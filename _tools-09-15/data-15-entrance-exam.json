@@ -1,0 +1,158 @@
+{
+  "id": "15",
+  "folder": "15-Entrance-Exam",
+  "titleThai": "Entrance Exam (ข้อสอบจำลองรวมทุกทักษะ)",
+  "titleShort": "Entrance Exam",
+  "emojiTitle": "🏆📝",
+  "objectives": [
+    "ใช้กลยุทธ์การทำข้อสอบ 5 ข้อก่อนลงมือทำข้อสอบจริงได้",
+    "ทำข้อสอบจำลองที่รวมทุกทักษะที่เรียนมาตลอด 14 บท (Vocabulary, Grammar, WH-Questions, Conversation, Error Detection, Reading) ได้",
+    "จัดการเวลาในการทำข้อสอบได้อย่างเหมาะสม",
+    "ประเมินจุดอ่อนของตัวเองจากผลคะแนนแล้ววางแผนทบทวนก่อนสอบจริง",
+    "มั่นใจและพร้อมสำหรับการสอบเข้า ม.4 จริง"
+  ],
+  "summaryTable": {
+    "headers": ["บทที่", "เรื่อง", "ทักษะหลัก"],
+    "rows": [
+      ["1", "Phonics", "อ่านออกเสียง/แกะเสียงคำใหม่"],
+      ["2", "Spelling", "กฎสะกดคำ (-s/-es/-ing/-ed)"],
+      ["3", "Sight Words", "คำที่ต้องจำทันที"],
+      ["4", "Vocabulary", "คำศัพท์ 8 หมวดหมู่"],
+      ["5", "Parts of Speech", "ชนิดของคำ 8 ชนิด"],
+      ["6-9", "Tenses", "Present Simple/Continuous, Past Simple, Future"],
+      ["10", "WH-Questions", "คำถาม 8 คำ"],
+      ["11", "Conversation", "บทสนทนาในชีวิตประจำวัน"],
+      ["12", "Reading", "กลยุทธ์อ่านจับใจความ"],
+      ["13", "Error Detection", "จับผิดประโยค 8 จุด"],
+      ["14", "Grammar Summary", "ทบทวนรวมทั้งหมด"],
+      ["15", "Entrance Exam", "ข้อสอบจำลองรวมทุกทักษะ"]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "Part A: Vocabulary (5 ข้อ)",
+        "instructions": "เลือกคำแปลที่ถูกต้องที่สุด",
+        "items": [
+          "\"nurse\" แปลว่าอะไร? (ก. หมอ ข. พยาบาล ค. ครู ง. ตำรวจ)",
+          "\"January\" คือเดือนอะไร? (ก. มกราคม ข. กุมภาพันธ์ ค. มีนาคม ง. เมษายน)",
+          "\"apple\" แปลว่าอะไร? (ก. กล้วย ข. ส้ม ค. แอปเปิ้ล ง. มะม่วง)",
+          "\"rainy\" แปลว่าอะไร? (ก. แดดจัด ข. ฝนตก ค. ลมแรง ง. หนาว)",
+          "\"engineer\" แปลว่าอะไร? (ก. วิศวกร ข. หมอ ค. ครู ง. ชาวนา)"
+        ],
+        "answers": ["ข", "ก", "ค", "ข", "ก"],
+        "reasons": ["nurse = พยาบาล", "January = มกราคม", "apple = แอปเปิ้ล", "rainy = ฝนตก", "engineer = วิศวกร"]
+      },
+      {
+        "title": "Part B: Grammar - Tenses (10 ข้อ)",
+        "instructions": "เลือกคำตอบที่ถูกต้องตาม Tense ที่บริบทกำหนด",
+        "items": [
+          "She ___ to school every day. (ก. go ข. goes ค. going ง. went)",
+          "Look! They ___ football now. (ก. play ข. plays ค. are playing ง. played)",
+          "I ___ my homework yesterday. (ก. finish ข. finishes ค. finished ง. finishing)",
+          "We ___ you tomorrow. (สัญญา) (ก. call ข. will call ค. called ง. calling)",
+          "She ___ to study medicine next year. (ก. go ข. is going ค. went ง. goes)",
+          "___ he like coffee? (ก. Do ข. Does ค. Is ง. Are)",
+          "___ they playing football now? (ก. Do ข. Does ค. Are ง. Is)",
+          "___ she finish her homework yesterday? (ก. Do ข. Does ค. Did ง. Is)",
+          "He ___ not like vegetables. (ก. do ข. does ค. is ง. are)",
+          "I ___ a letter last night. (ก. write ข. writes ค. wrote ง. writing)"
+        ],
+        "answers": ["ข", "ค", "ค", "ข", "ข", "ข", "ค", "ค", "ข", "ค"],
+        "reasons": [
+          "ประธาน She + every day ใช้ goes",
+          "Look! + now ใช้ Present Continuous",
+          "yesterday ใช้ Past Simple",
+          "สัญญา ใช้ will",
+          "แผนที่วางไว้แล้ว ใช้ is going to",
+          "ประธาน he ใช้ Does",
+          "ประธาน they ใช้ Are",
+          "คำถามอดีตใช้ Did",
+          "ประธาน He ใช้ does not",
+          "last night ใช้ Past Simple"
+        ]
+      },
+      {
+        "title": "Part C: WH-Questions (5 ข้อ)",
+        "instructions": "เลือกคำ WH- ที่ถูกต้อง",
+        "items": [
+          "___ is your name? (ก. What ข. Where ค. When ง. Who)",
+          "___ do you live? (ก. What ข. Where ค. When ง. Who)",
+          "___ is your birthday? (ก. What ข. Where ค. When ง. Who)",
+          "___ old are you? (ก. What ข. How ค. Which ง. Whose)",
+          "___ book is this? (ก. Whose ข. Which ค. Who ง. What)"
+        ],
+        "answers": ["ก", "ข", "ค", "ข", "ก"],
+        "reasons": ["What ถามชื่อ", "Where ถามสถานที่", "When ถามเวลา", "How old ถามอายุ", "Whose ถามความเป็นเจ้าของ"]
+      },
+      {
+        "title": "Part D: Conversation (5 ข้อ)",
+        "instructions": "เลือกประโยคตอบรับที่เหมาะสม",
+        "items": [
+          "A: Thank you very much. B: ___ (ก. You're welcome. ข. I'm sorry. ค. Goodbye. ง. How are you?)",
+          "A: How much is this shirt? B: ___ (ก. It's next to the bank. ข. It's 250 baht. ค. Nice to meet you. ง. I'm fine.)",
+          "A: Excuse me, where is the bank? B: ___ (ก. Go straight and turn left. ข. It's 100 baht. ค. My name is Somsak. ง. You're welcome.)",
+          "A: May I speak to Dara? B: ___ (ก. This is Dara speaking. ข. It's 50 baht. ค. Turn left. ง. See you.)",
+          "A: Nice to meet you. B: ___ (ก. Nice to meet you too. ข. It's 20 baht. ค. Goodbye. ง. I'm sorry.)"
+        ],
+        "answers": ["ก", "ข", "ก", "ก", "ก"],
+        "reasons": ["ตอบรับคำขอบคุณ", "ตอบราคา", "บอกทิศทาง", "ตอบรับสายโทรศัพท์", "ตอบรับการแนะนำตัว"]
+      },
+      {
+        "title": "Part E: Error Detection (5 ข้อ)",
+        "instructions": "หาส่วนที่ผิด (A/B/C/D)",
+        "items": [
+          "She (A)go (B)to school (C)every day (D)by bus. ผิดที่?",
+          "I (A)saw (B)a (C)elephant (D)yesterday. ผิดที่?",
+          "He (A)did not (B)went (C)to school (D)yesterday. ผิดที่?",
+          "They (A)are (B)play (C)football (D)now. ผิดที่?",
+          "She (A)has (B)three (C)childs (D)at home. ผิดที่?"
+        ],
+        "answers": ["A", "B", "B", "B", "C"],
+        "reasons": [
+          "ประธาน she ต้องเติม s → goes",
+          "elephant ขึ้นต้นเสียงสระ ต้องใช้ an",
+          "หลัง did not ใช้กริยารูปเดิม → go",
+          "หลัง are ต้องเติม -ing → playing",
+          "พหูพจน์ไม่ปกติของ child คือ children"
+        ]
+      },
+      {
+        "title": "Part F: Reading Comprehension (5 ข้อ)",
+        "instructions": "Read the passage and answer the questions. Nid is a student at a small school in Chonburi. Every morning, she wakes up at 6 AM and helps her mother prepare breakfast. She walks to school with her brother because the school is near her house. Nid's favorite subject is English because she wants to travel abroad in the future. After school, she does her homework and reads storybooks before going to bed.",
+        "items": [
+          "What is the passage mainly about? (ก. A school's history ข. Nid's daily life ค. A trip abroad ง. A cooking class)",
+          "What time does Nid wake up? (ก. 5 AM ข. 6 AM ค. 7 AM ง. 8 AM)",
+          "How does Nid go to school? (ก. By bus ข. By bike ค. She walks ง. By car)",
+          "Why does Nid like English? (ก. It's easy ข. She wants to travel abroad ค. Her friend likes it too ง. It's a new subject)",
+          "What does Nid do before going to bed? (ก. Watch TV ข. Read storybooks ค. Play games ง. Cook dinner)"
+        ],
+        "answers": ["ข", "ข", "ค", "ข", "ข"],
+        "reasons": [
+          "ทั้งย่อหน้าพูดถึงชีวิตประจำวันของนิด",
+          "ระบุตรง wakes up at 6 AM",
+          "ระบุตรง she walks to school",
+          "ระบุตรง wants to travel abroad",
+          "ระบุตรง reads storybooks before going to bed"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "👨‍⚕️", "tag": "Vocabulary", "difficulty": 1, "q": "\"doctor\" แปลว่า?", "choices": ["หมอ", "พยาบาล", "ครู", "ตำรวจ"], "answer": 0, "explain": "doctor = หมอ" },
+    { "emoji": "⚽", "tag": "Present Simple", "difficulty": 1, "q": "She ___ football every weekend.", "choices": ["play", "plays", "playing", "played"], "answer": 1, "explain": "ประธาน She + every weekend ใช้ Present Simple เติม s" },
+    { "emoji": "🌧️", "tag": "Present Continuous", "difficulty": 1, "q": "Look! It ___ now.", "choices": ["rain", "rains", "is raining", "rained"], "answer": 2, "explain": "Look! + now บ่งบอก Present Continuous" },
+    { "emoji": "🏝️", "tag": "Past Simple", "difficulty": 1, "q": "We ___ to Phuket last year.", "choices": ["go", "goes", "went", "going"], "answer": 2, "explain": "last year บ่งบอก Past Simple" },
+    { "emoji": "🤝", "tag": "Future (will)", "difficulty": 1, "q": "I ___ help you. (สัญญา)", "choices": ["am", "will", "do", "did"], "answer": 1, "explain": "สัญญาใช้ will" },
+    { "emoji": "👧", "tag": "WH-Questions", "difficulty": 1, "q": "___ is that girl?", "choices": ["What", "Who", "Where", "When"], "answer": 1, "explain": "ถามบุคคลใช้ Who" },
+    { "emoji": "😔", "tag": "Conversation", "difficulty": 1, "q": "A: Sorry I'm late. B: ___", "choices": ["That's okay.", "It's 100 baht.", "Turn left.", "My name is Ann."], "answer": 0, "explain": "ตอบรับคำขอโทษด้วย That's okay" },
+    { "emoji": "🔍", "tag": "Error Detection", "difficulty": 2, "q": "She (A)like (B)ice cream (C)very much. ผิดที่ไหน?", "choices": ["A", "B", "C", "ไม่มีจุดผิด"], "answer": 0, "explain": "ประธาน She ต้องเติม s: likes" },
+    { "emoji": "🏃", "tag": "Parts of Speech", "difficulty": 1, "q": "คำว่า \"quickly\" เป็นชนิดของคำใด?", "choices": ["Noun", "Verb", "Adjective", "Adverb"], "answer": 3, "explain": "quickly ลงท้าย -ly ขยายกริยา จึงเป็น Adverb" },
+    { "emoji": "📅", "tag": "Vocabulary", "difficulty": 1, "q": "\"Monday\" คือวันอะไร?", "choices": ["วันจันทร์", "วันอังคาร", "วันพุธ", "วันศุกร์"], "answer": 0, "explain": "Monday = วันจันทร์" },
+    { "emoji": "🚗", "tag": "Past Simple", "difficulty": 2, "q": "He ___ a new car last month.", "choices": ["buy", "buys", "bought", "buying"], "answer": 2, "explain": "last month บ่งบอก Past Simple (buy→bought)" },
+    { "emoji": "🎂", "tag": "WH-Questions", "difficulty": 1, "q": "___ old are you?", "choices": ["What", "How", "Which", "Whose"], "answer": 1, "explain": "How old ถามอายุ" },
+    { "emoji": "👶", "tag": "Grammar", "difficulty": 2, "q": "I have two ___. (child)", "choices": ["childs", "child", "children", "childrens"], "answer": 2, "explain": "พหูพจน์ไม่ปกติของ child คือ children" },
+    { "emoji": "📏", "tag": "Comparative (ความรู้เสริม)", "difficulty": 3, "q": "She is ___ than her sister. (tall)", "choices": ["tall", "taller", "tallest", "tallness"], "answer": 1, "explain": "คำคุณศัพท์เปรียบเทียบ (Comparative) เป็นความรู้เสริมนอกเหนือจากบทหลักที่เรียนมา — tall→taller" },
+    { "emoji": "📖", "tag": "Reading", "difficulty": 2, "q": "This passage tells us about a girl who loves ___.", "choices": ["cooking", "reading", "singing", "dancing"], "answer": 1, "explain": "อ้างอิงจากย่อหน้าตัวอย่างเรื่อง Ploy ที่รักการอ่านหนังสือ" }
+  ]
+}

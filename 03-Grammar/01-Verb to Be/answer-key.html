@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เฉลย: Verb to Be (am / is / are / was / were)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="banner teacher">
+    <h1>✅ เฉลย: Verb to Be (am / is / are / was / were)</h1>
+    <div class="sub">เฉลยใบงานฝึกหัด + แบบทดสอบ พร้อมเหตุผลย่อ</div>
+  </div>
+
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>is</td><td>My dog เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>2</td><td>am</td><td>ประธาน I ใช้ am เสมอ</td></tr>
+<tr><td>3</td><td>are</td><td>Our teachers เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>4</td><td>is</td><td>This apple เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>5</td><td>are</td><td>ประธาน You ใช้ are เสมอ</td></tr>
+<tr><td>6</td><td>is</td><td>The weather เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>7</td><td>are</td><td>ประธาน We ใช้ are</td></tr>
+<tr><td>8</td><td>is</td><td>My mother เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>9</td><td>are</td><td>Those shoes เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>10</td><td>am</td><td>ประธาน I ใช้ am เสมอ</td></tr>
+<tr><td>11</td><td>is</td><td>She + is not (ปฏิเสธ)</td></tr>
+<tr><td>12</td><td>Are</td><td>ประธาน they ใช้ Are ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>13</td><td>am</td><td>ประธาน I + am not</td></tr>
+<tr><td>14</td><td>Is</td><td>ประธาน it ใช้ Is ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>15</td><td>are</td><td>ประธาน We + are not</td></tr>
+<tr><td>16</td><td>Is</td><td>your brother เป็นเอกพจน์ ใช้ Is</td></tr>
+<tr><td>17</td><td>are</td><td>The boys เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>18</td><td>Are</td><td>ประธาน you ใช้ Are ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>19</td><td>was</td><td>ประธาน I ใช้ was ในอดีต</td></tr>
+<tr><td>20</td><td>were</td><td>ประธาน They ใช้ were ในอดีต</td></tr>
+<tr><td>21</td><td>was</td><td>ประธาน She ใช้ was ในอดีต</td></tr>
+<tr><td>22</td><td>were</td><td>ประธาน We ใช้ were ในอดีต</td></tr>
+<tr><td>23</td><td>was</td><td>ประธาน It ใช้ was ในอดีต</td></tr>
+<tr><td>24</td><td>Were</td><td>ประธาน you ใช้ Were ขึ้นต้นประโยคคำถามอดีต</td></tr>
+</table>
+
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">🧑‍🎓</td><td>A) am</td><td>ประธาน I ใช้ am เสมอ</td></tr>
+<tr><td>2</td><td class="emoji-cell">👧</td><td>B) is</td><td>ประธาน She (เอกพจน์) ใช้ is</td></tr>
+<tr><td>3</td><td class="emoji-cell">👫</td><td>C) are</td><td>ประธาน They (พหูพจน์) ใช้ are</td></tr>
+<tr><td>4</td><td class="emoji-cell">👨‍⚕️</td><td>A) is</td><td>ประธาน He ใช้ is</td></tr>
+<tr><td>5</td><td class="emoji-cell">😄</td><td>C) are</td><td>ประธาน We ใช้ are</td></tr>
+<tr><td>6</td><td class="emoji-cell">🐱</td><td>B) is</td><td>ประธาน It ใช้ is</td></tr>
+<tr><td>7</td><td class="emoji-cell">🤝</td><td>C) are</td><td>ประธาน You ใช้ are เสมอ (เอกพจน์และพหูพจน์)</td></tr>
+<tr><td>8</td><td class="emoji-cell">🐶</td><td>B) is</td><td>The dog เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>9</td><td class="emoji-cell">👨‍👩‍👧</td><td>C) are</td><td>My parents เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>10</td><td class="emoji-cell">📖</td><td>B) is</td><td>This book เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>11</td><td class="emoji-cell">🍔</td><td>A) am</td><td>ประธาน I ใช้ am เสมอ</td></tr>
+<tr><td>12</td><td class="emoji-cell">🏫</td><td>C) are</td><td>The children เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>13</td><td class="emoji-cell">👦</td><td>B) is</td><td>My brother เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>14</td><td class="emoji-cell">🇹🇭</td><td>C) are</td><td>ประธาน We ใช้ are</td></tr>
+<tr><td>15</td><td class="emoji-cell">👩‍⚕️</td><td>B) is</td><td>ประธาน She ใช้ is</td></tr>
+<tr><td>16</td><td class="emoji-cell">😴</td><td>A) am</td><td>ปฏิเสธของ I คือ am not</td></tr>
+<tr><td>17</td><td class="emoji-cell">🏠</td><td>A) isn't</td><td>He + is not = isn't</td></tr>
+<tr><td>18</td><td class="emoji-cell">🎒</td><td>B) aren't</td><td>They + are not = aren't</td></tr>
+<tr><td>19</td><td class="emoji-cell">🙋</td><td>C) Are</td><td>ประธาน you ใช้ Are ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>20</td><td class="emoji-cell">👩‍🏫</td><td>B) Is</td><td>ประธาน she ใช้ Is ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>21</td><td class="emoji-cell">🌳</td><td>C) Are</td><td>ประธาน they ใช้ Are ขึ้นต้นประโยคคำถาม</td></tr>
+<tr><td>22</td><td class="emoji-cell">📚</td><td>B) is</td><td>a book เป็นเอกพจน์ ใช้ There is</td></tr>
+<tr><td>23</td><td class="emoji-cell">🏫</td><td>C) are</td><td>many students เป็นพหูพจน์ ใช้ There are</td></tr>
+<tr><td>24</td><td class="emoji-cell">🍎</td><td>B) is</td><td>an apple เป็นเอกพจน์ ใช้ There is</td></tr>
+<tr><td>25</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>A) Is / is</td><td>he ใช้ Is ทั้งคำถามและคำตอบสั้น</td></tr>
+<tr><td>26</td><td class="emoji-cell">⏰</td><td>B) Are / are</td><td>we ใช้ Are ทั้งคำถามและคำตอบสั้น</td></tr>
+<tr><td>27</td><td class="emoji-cell">👟</td><td>B) are</td><td>My shoes เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>28</td><td class="emoji-cell">🍕</td><td>B) is</td><td>This pizza เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>29</td><td class="emoji-cell">🌧️</td><td>B) Is</td><td>ประธาน it ใช้ Is</td></tr>
+<tr><td>30</td><td class="emoji-cell">🔑</td><td>C) are</td><td>The keys เป็นพหูพจน์ ใช้ are</td></tr>
+<tr><td>31</td><td class="emoji-cell">📛</td><td>B) is</td><td>your name เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>32</td><td class="emoji-cell">🌍</td><td>C) are</td><td>ประธาน you ใช้ are</td></tr>
+<tr><td>33</td><td class="emoji-cell">🧔</td><td>B) is</td><td>that man เป็นเอกพจน์ ใช้ is</td></tr>
+<tr><td>34</td><td class="emoji-cell">😊</td><td>C) are</td><td>ประธาน you ใช้ are</td></tr>
+<tr><td>35</td><td class="emoji-cell">🏠</td><td>A) was</td><td>ประธาน I ใช้ was ในอดีต</td></tr>
+<tr><td>36</td><td class="emoji-cell">🏖️</td><td>B) were</td><td>ประธาน They ใช้ were ในอดีต</td></tr>
+<tr><td>37</td><td class="emoji-cell">🤒</td><td>A) was</td><td>ประธาน She ใช้ was ในอดีต</td></tr>
+<tr><td>38</td><td class="emoji-cell">🎓</td><td>B) were</td><td>ประธาน We ใช้ were ในอดีต</td></tr>
+<tr><td>39</td><td class="emoji-cell">❄️</td><td>A) was</td><td>ประธาน It ใช้ was ในอดีต</td></tr>
+<tr><td>40</td><td class="emoji-cell">🎬</td><td>A) was</td><td>The movie เป็นเอกพจน์ ใช้ was ในอดีต</td></tr>
+<tr><td>41</td><td class="emoji-cell">👴</td><td>B) were</td><td>My grandparents เป็นพหูพจน์ ใช้ were ในอดีต</td></tr>
+<tr><td>42</td><td class="emoji-cell">🏫</td><td>A) wasn't</td><td>He + was not = wasn't</td></tr>
+<tr><td>43</td><td class="emoji-cell">🏆</td><td>B) Were</td><td>ประธาน you ใช้ Were ในอดีต</td></tr>
+<tr><td>44</td><td class="emoji-cell">🎉</td><td>A) Was</td><td>ประธาน she ใช้ Was ในอดีต</td></tr>
+<tr><td>45</td><td class="emoji-cell">🚌</td><td>B) is</td><td>Everyone ถือเป็นเอกพจน์เสมอ แม้หมายถึงหลายคน</td></tr>
+<tr><td>46</td><td class="emoji-cell">📰</td><td>B) is</td><td>News ลงท้าย s แต่เป็นคำนามเอกพจน์เสมอ</td></tr>
+<tr><td>47</td><td class="emoji-cell">👓</td><td>C) are</td><td>Glasses (แว่นตา) เป็นคำนามที่ใช้รูปพหูพจน์เสมอ</td></tr>
+<tr><td>48</td><td class="emoji-cell">💵</td><td>A) is</td><td>จำนวนเงินรวมถือเป็นหน่วยเดียว (เอกพจน์)</td></tr>
+<tr><td>49</td><td class="emoji-cell">📝</td><td>A) is</td><td>Neither of + นาม ถือเป็นเอกพจน์ (แนวข้อสอบยาก)</td></tr>
+<tr><td>50</td><td class="emoji-cell">🔍</td><td>B) She is a nurse.</td><td>ประธาน She (เอกพจน์) ต้องใช้ is ไม่ใช่ are/am/be</td></tr></table>
+
+  <div class="footer-note">English Grammar Quiz Pack · Verb to Be — เฉลย (สำหรับครู)</div>
+</div>
+</body>
+</html>

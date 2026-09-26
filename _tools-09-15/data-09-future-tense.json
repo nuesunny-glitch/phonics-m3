@@ -1,0 +1,163 @@
+{
+  "id": "09",
+  "folder": "09-Future-Tense",
+  "titleThai": "Future Tense (will / be going to)",
+  "titleShort": "Future Tense",
+  "emojiTitle": "🔮🌅",
+  "objectives": [
+    "บอกความแตกต่างระหว่างการใช้ will และ be going to ได้ถูกต้อง",
+    "แต่งประโยคบอกเล่า ปฏิเสธ และคำถามด้วย will และ be going to ได้",
+    "สังเกตคำสัญญาณเวลาที่บ่งบอก Future Tense ได้ (tomorrow, next week, soon)",
+    "แยกแยะสถานการณ์ที่ต้องใช้ will (ตัดสินใจทันที/สัญญา/คาดเดาไม่มีหลักฐาน) กับ be going to (แผนที่วางไว้/คาดเดามีหลักฐาน)",
+    "สังเกตและแก้ไขประโยค Future Tense ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย"
+  ],
+  "summaryTable": {
+    "headers": ["รูปประโยค", "will", "be going to"],
+    "rows": [
+      ["บอกเล่า", "S + will + V(base)", "S + is/am/are + going to + V(base)"],
+      ["ปฏิเสธ", "S + will not (won't) + V(base)", "S + is/am/are + not + going to + V(base)"],
+      ["คำถาม", "Will + S + V(base)?", "Is/Am/Are + S + going to + V(base)?"],
+      ["ใช้เมื่อ", "ตัดสินใจทันที, สัญญา, คาดเดาไม่มีหลักฐาน", "แผนที่วางไว้แล้ว, คาดเดาที่มีหลักฐาน"]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม will หรือ be going to ให้เหมาะสม (10 ข้อ)",
+        "instructions": "อ่านบริบทให้ดี แล้วเลือกใช้ will หรือ be going to ให้ถูกต้อง",
+        "items": [
+          "Look at those dark clouds! It ___ rain. (มีหลักฐาน)",
+          "I think it ___ be sunny tomorrow. (คาดเดาไม่มีหลักฐาน)",
+          "The phone is ringing. I ___ answer it. (ตัดสินใจทันที)",
+          "I already bought the tickets. We ___ travel next week. (วางแผนไว้แล้ว)",
+          "She ___ help you if you ask her. (สัญญา/เต็มใจ)",
+          "He has planned everything. He ___ start his new job on Monday. (วางแผนไว้แล้ว)",
+          "I promise I ___ call you tonight. (สัญญา)",
+          "Look! The bus ___ leave without us! (มีหลักฐาน)",
+          "I ___ visit my grandmother this weekend. (วางแผนไว้แล้ว)",
+          "Maybe it ___ snow next winter. (คาดเดาไม่มีหลักฐาน)"
+        ],
+        "answers": ["is going to", "will", "will", "are going to", "will", "is going to", "will", "is going to", "am going to", "will"],
+        "reasons": [
+          "มีหลักฐาน (เมฆดำ) ใช้ be going to",
+          "คาดเดาไม่มีหลักฐานชัด ใช้ will",
+          "ตัดสินใจทันทีตอนพูด ใช้ will",
+          "แผนที่วางไว้แล้ว (ซื้อตั๋วแล้ว) ใช้ be going to",
+          "สัญญา/ข้อเสนอช่วยเหลือ ใช้ will",
+          "แผนที่วางไว้แล้ว ใช้ be going to",
+          "สัญญา ใช้ will",
+          "มีหลักฐาน (เห็นรถบัสกำลังจะไป) ใช้ be going to",
+          "แผนที่วางไว้แล้ว ใช้ be going to",
+          "คาดเดาไม่มีหลักฐาน ใช้ will"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เปลี่ยนเป็นประโยคปฏิเสธและคำถาม (8 ข้อ)",
+        "instructions": "เปลี่ยนประโยคที่กำหนดให้เป็นรูปปฏิเสธหรือคำถามตามคำสั่งในวงเล็บ",
+        "items": [
+          "I will go to the party. (ปฏิเสธ)",
+          "She will help you. (คำถาม)",
+          "They are going to travel. (ปฏิเสธ)",
+          "He is going to study medicine. (คำถาม)",
+          "We will meet again. (ปฏิเสธ)",
+          "You are going to buy a car. (คำถาม)",
+          "It will rain tomorrow. (ปฏิเสธ)",
+          "She is going to take an exam. (คำถาม)"
+        ],
+        "answers": [
+          "I will not (won't) go to the party.",
+          "Will she help you?",
+          "They are not going to travel.",
+          "Is he going to study medicine?",
+          "We will not (won't) meet again.",
+          "Are you going to buy a car?",
+          "It will not (won't) rain tomorrow.",
+          "Is she going to take an exam?"
+        ],
+        "reasons": [
+          "will → will not (won't) + V(base)",
+          "สลับ Will มาไว้หน้าประธาน",
+          "is/am/are + not + going to",
+          "สลับ Is มาไว้หน้าประธาน",
+          "will → will not (won't) + V(base)",
+          "สลับ Are มาไว้หน้าประธาน",
+          "will → will not (won't) + V(base)",
+          "สลับ Is มาไว้หน้าประธาน"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เลือกคำตอบที่ถูกต้อง (6 ข้อ)",
+        "instructions": "เลือกคำตอบที่ถูกต้องที่สุดจากบริบทที่ให้มา",
+        "items": [
+          "Look! The building ___ collapse! (ก. will ข. is going to)",
+          "I ___ not forget you. (สัญญา) (ก. am ข. will)",
+          "___ they going to join us? (ก. Do ข. Are)",
+          "She ___ graduate next year. (ก. will ข. is going)",
+          "We ___ going to have a meeting tomorrow. (ก. is ข. are)",
+          "___ you help me with this? (ก. Will ข. Do)"
+        ],
+        "answers": ["ข. is going to", "ข. will", "ข. Are", "ก. will", "ข. are", "ก. Will"],
+        "reasons": [
+          "มีหลักฐาน (ตึกกำลังจะถล่ม) ใช้ be going to",
+          "สัญญา ใช้ will",
+          "ประธาน they + be going to ใช้ Are",
+          "เหตุการณ์ในอนาคตทั่วไป ใช้ will",
+          "ประธาน We ใช้ are",
+          "คำถามด้วย will ใช้ Will ขึ้นต้น"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "☁️", "tag": "หลักฐานชัดเจน → is going to", "difficulty": 1, "q": "Look at those clouds! It ___ rain.", "choices": ["will", "is going to", "was", "did"], "answer": 1, "explain": "เห็นเมฆดำเป็นหลักฐาน ใช้ be going to" },
+    { "emoji": "🤔", "tag": "คาดเดาไม่มีหลักฐาน → will", "difficulty": 1, "q": "I think it ___ be sunny tomorrow.", "choices": ["will", "is going to", "was", "were"], "answer": 0, "explain": "คาดเดาความคิดเห็น ไม่มีหลักฐาน ใช้ will" },
+    { "emoji": "☎️", "tag": "ตัดสินใจทันที → will", "difficulty": 1, "q": "The phone is ringing. I ___ answer it.", "choices": ["am going to", "will", "was", "did"], "answer": 1, "explain": "ตัดสินใจทันทีตอนพูด ใช้ will" },
+    { "emoji": "🎫", "tag": "แผนวางไว้แล้ว → is/are going to", "difficulty": 1, "q": "I already bought the tickets. We ___ travel next week.", "choices": ["will", "are going to", "was", "were"], "answer": 1, "explain": "ซื้อตั๋วไว้แล้ว = แผนที่วางไว้ล่วงหน้า ใช้ be going to" },
+    { "emoji": "🤝", "tag": "สัญญา/เต็มใจช่วย → will", "difficulty": 1, "q": "She ___ help you if you ask her.", "choices": ["will", "is going to", "does", "did"], "answer": 0, "explain": "ความเต็มใจ/ข้อเสนอช่วยเหลือ ใช้ will" },
+    { "emoji": "💼", "tag": "แผนวางไว้แล้ว → is going to", "difficulty": 1, "q": "He has planned everything. He ___ start his new job on Monday.", "choices": ["will", "is going to", "was", "did"], "answer": 1, "explain": "วางแผนไว้แล้วล่วงหน้า ใช้ be going to" },
+    { "emoji": "🤞", "tag": "สัญญา → will", "difficulty": 1, "q": "I promise I ___ call you tonight.", "choices": ["am going to", "will", "was", "did"], "answer": 1, "explain": "คำว่า promise เป็นสัญญา ใช้ will" },
+    { "emoji": "🚌", "tag": "หลักฐานชัดเจน → is going to", "difficulty": 1, "q": "Look! The bus ___ leave without us!", "choices": ["will", "is going to", "left", "leaves"], "answer": 1, "explain": "เห็นรถบัสกำลังจะไปเป็นหลักฐาน ใช้ be going to" },
+    { "emoji": "👵", "tag": "แผนวางไว้แล้ว → am going to", "difficulty": 1, "q": "I ___ visit my grandmother this weekend.", "choices": ["will", "am going to", "was", "did"], "answer": 1, "explain": "แผนที่ตั้งใจไว้ล่วงหน้า ใช้ be going to" },
+    { "emoji": "❄️", "tag": "คาดเดาไม่มีหลักฐาน → will", "difficulty": 1, "q": "Maybe it ___ snow next winter.", "choices": ["will", "is going to", "was", "were"], "answer": 0, "explain": "คำว่า maybe บ่งบอกคาดเดาไม่มีหลักฐานชัด ใช้ will" },
+    { "emoji": "📞", "tag": "will ใช้กับทุกประธาน", "difficulty": 1, "q": "They ___ call us tomorrow.", "choices": ["will", "is going to", "was", "were"], "answer": 0, "explain": "will ใช้ได้กับทุกประธาน ไม่เปลี่ยนรูป" },
+    { "emoji": "🏖️", "tag": "แผนวางไว้แล้ว → are going to", "difficulty": 1, "q": "We ___ go to the beach next month. We already booked a hotel.", "choices": ["will", "are going to", "went", "go"], "answer": 1, "explain": "จองโรงแรมไว้แล้ว = แผนที่วางไว้ล่วงหน้า" },
+    { "emoji": "🎂", "tag": "will ตามด้วย base form", "difficulty": 1, "q": "She will ___ twenty years old next year.", "choices": ["be", "is", "was", "being"], "answer": 0, "explain": "หลัง will ต้องใช้กริยารูปเดิม (base form) เสมอ" },
+    { "emoji": "🌟", "tag": "สัญญาณ soon → will", "difficulty": 1, "q": "He will arrive ___.", "choices": ["soon", "yesterday", "ago", "now"], "answer": 0, "explain": "soon เป็นคำสัญญาณของ Future Tense" },
+    { "emoji": "🎉", "tag": "สัญญาณ tomorrow", "difficulty": 1, "q": "We are going to have a party ___.", "choices": ["yesterday", "tomorrow", "ago", "last week"], "answer": 1, "explain": "tomorrow เป็นคำสัญญาณของ Future Tense" },
+    { "emoji": "🚫", "tag": "ปฏิเสธ will: won't", "difficulty": 2, "q": "I ___ not go to the party.", "choices": ["will", "am", "do", "did"], "answer": 0, "explain": "ปฏิเสธของ will คือ will not (won't)" },
+    { "emoji": "🙅", "tag": "ปฏิเสธ be going to", "difficulty": 2, "q": "They are ___ going to travel this year.", "choices": ["not", "no", "won't", "don't"], "answer": 0, "explain": "ปฏิเสธของ be going to คือ is/am/are + not + going to" },
+    { "emoji": "❓", "tag": "คำถาม will", "difficulty": 2, "q": "___ you come with me?", "choices": ["Do", "Are", "Will", "Did"], "answer": 2, "explain": "คำถามด้วย will ให้ยก Will มาไว้หน้าประธาน" },
+    { "emoji": "🌧️", "tag": "คำถาม will", "difficulty": 2, "q": "___ it rain tomorrow?", "choices": ["Do", "Will", "Is", "Does"], "answer": 1, "explain": "คำถามด้วย will ให้ยก Will มาไว้หน้าประธาน" },
+    { "emoji": "🏥", "tag": "คำถาม be going to", "difficulty": 2, "q": "___ he going to join us?", "choices": ["Do", "Does", "Is", "Will"], "answer": 2, "explain": "ประธาน he ใช้ Is นำหน้า going to" },
+    { "emoji": "📱", "tag": "คำถาม be going to", "difficulty": 2, "q": "___ you going to buy a new phone?", "choices": ["Do", "Are", "Is", "Will"], "answer": 1, "explain": "ประธาน you ใช้ Are นำหน้า going to" },
+    { "emoji": "🎓", "tag": "will กับทุกประธาน", "difficulty": 2, "q": "She ___ graduate next year.", "choices": ["will", "is going", "goes", "went"], "answer": 0, "explain": "will ใช้ได้กับทุกประธาน ตามด้วย graduate (base form)" },
+    { "emoji": "💭", "tag": "will always: ความรู้สึกถาวร", "difficulty": 2, "q": "I ___ always remember you.", "choices": ["am", "will", "do", "was"], "answer": 1, "explain": "ความรู้สึก/สัญญาที่จะเป็นตลอดไป ใช้ will" },
+    { "emoji": "🔮", "tag": "will meet again", "difficulty": 2, "q": "We ___ meet again soon.", "choices": ["will", "are", "did", "were"], "answer": 0, "explain": "คาดเดา/หวังในอนาคต ใช้ will + soon" },
+    { "emoji": "👨‍⚕️", "tag": "be going to + อาชีพในอนาคต", "difficulty": 2, "q": "He ___ be a doctor in the future.", "choices": ["will", "is going to", "was", "did"], "answer": 1, "explain": "แผน/ความตั้งใจในชีวิต ใช้ be going to (ทั้ง will ก็ใช้ได้ในบริบทอื่น แต่ที่นี่มี in the future เป็นแผนที่ตั้งใจไว้)" },
+    { "emoji": "🤞", "tag": "สัญญา: promise + will", "difficulty": 2, "q": "I promise I ___ not forget this.", "choices": ["am", "will", "do", "was"], "answer": 1, "explain": "หลัง promise ใช้ will เสมอ" },
+    { "emoji": "📝", "tag": "แผนวางไว้แล้ว: take an exam", "difficulty": 2, "q": "She ___ take an exam next week. It's already scheduled.", "choices": ["will", "is going to", "took", "takes"], "answer": 1, "explain": "already scheduled = แผนที่วางไว้แล้ว ใช้ be going to" },
+    { "emoji": "🏠", "tag": "แผนวางไว้แล้ว: move house", "difficulty": 2, "q": "We ___ move to a new house. We signed the contract already.", "choices": ["will", "are going to", "moved", "move"], "answer": 1, "explain": "เซ็นสัญญาแล้ว = แผนที่วางไว้แน่นอน ใช้ be going to" },
+    { "emoji": "🍰", "tag": "ตัดสินใจทันที: I'll get it", "difficulty": 2, "q": "There's someone at the door. I ___ get it.", "choices": ["am going to", "will", "was", "got"], "answer": 1, "explain": "ตัดสินใจทันทีตอนพูด ใช้ will" },
+    { "emoji": "🧥", "tag": "หลักฐาน: it's going to be cold", "difficulty": 2, "q": "Look at the sky, it ___ be cold tonight.", "choices": ["will", "is going to", "was", "were"], "answer": 1, "explain": "ดูจากท้องฟ้าเป็นหลักฐาน ใช้ be going to" },
+    { "emoji": "🙋", "tag": "Short answer: Yes, I will.", "difficulty": 2, "q": "Will you help me? Yes, I ___.", "choices": ["do", "am", "will", "did"], "answer": 2, "explain": "คำตอบสั้นกับคำถาม Will...? ตอบด้วย will" },
+    { "emoji": "🙅", "tag": "Short answer: No, she isn't.", "difficulty": 2, "q": "Is she going to come? No, she ___.", "choices": ["won't", "isn't", "doesn't", "didn't"], "answer": 1, "explain": "คำตอบสั้นกับคำถาม Is she going to...? ตอบด้วย isn't" },
+    { "emoji": "🎁", "tag": "will: ข้อเสนอ", "difficulty": 2, "q": "___ I carry that bag for you?", "choices": ["Will", "Do", "Am", "Did"], "answer": 0, "explain": "Will I...? ใช้เสนอความช่วยเหลือ" },
+    { "emoji": "🌈", "tag": "will: เหตุการณ์ในอนาคตทั่วไป", "difficulty": 2, "q": "It ___ be a great day.", "choices": ["will", "is", "was", "did"], "answer": 0, "explain": "คาดเดาเหตุการณ์ในอนาคต ใช้ will" },
+    { "emoji": "🚧", "tag": "will not: won't", "difficulty": 2, "q": "I ___ forget this, I promise.", "choices": ["won't", "don't", "isn't", "wasn't"], "answer": 0, "explain": "won't = will not ใช้กับทุกประธาน" },
+    { "emoji": "🏢", "tag": "หลักฐานชัด: ตึกจะถล่ม", "difficulty": 3, "q": "Look at the crack! The wall ___ fall down.", "choices": ["will", "is going to", "was", "fell"], "answer": 1, "explain": "เห็นรอยร้าวเป็นหลักฐานชัดเจน ใช้ be going to" },
+    { "emoji": "🎈", "tag": "will vs going to: ไม่มีหลักฐาน", "difficulty": 3, "q": "I don't know what will happen, but I think everything ___ be fine.", "choices": ["will", "is going to", "was", "were"], "answer": 0, "explain": "\"I think\" แสดงถึงการคาดเดาไม่มีหลักฐาน ใช้ will" },
+    { "emoji": "📅", "tag": "แผนล่วงหน้าชัดเจน", "difficulty": 3, "q": "According to the schedule, the train ___ leave at 9 AM tomorrow.", "choices": ["will", "is going to", "left", "leaves"], "answer": 1, "explain": "ตารางเวลาที่กำหนดไว้แล้ว = แผนล่วงหน้า ใช้ be going to" },
+    { "emoji": "🙊", "tag": "สัญญาไม่บอกความลับ", "difficulty": 3, "q": "Don't worry, I ___ tell anyone your secret.", "choices": ["won't", "am not going to", "wasn't", "didn't"], "answer": 0, "explain": "สัญญาว่าจะไม่ทำ (โครงสร้างปฏิเสธของสัญญา) ใช้ won't" },
+    { "emoji": "🌪️", "tag": "หลักฐานร้ายแรง: พายุ", "difficulty": 3, "q": "The sky is very dark and the wind is strong — a storm ___ come.", "choices": ["will", "is going to", "was", "came"], "answer": 1, "explain": "มีหลักฐานชัดเจน (ท้องฟ้ามืด ลมแรง) ใช้ be going to" },
+    { "emoji": "🤷", "tag": "will: ไม่แน่ใจ/คาดเดา", "difficulty": 3, "q": "Nobody knows for sure, but she ___ probably win the competition.", "choices": ["will", "is going to", "won", "wins"], "answer": 0, "explain": "\"probably\" + ไม่มีใครรู้แน่ชัด = คาดเดาไม่มีหลักฐาน ใช้ will" },
+    { "emoji": "🎬", "tag": "แผนที่จองไว้แล้ว", "difficulty": 3, "q": "We ___ watch a movie tonight — I already bought the tickets online.", "choices": ["will", "are going to", "watched", "watch"], "answer": 1, "explain": "ซื้อตั๋วไว้แล้ว = แผนที่วางไว้ล่วงหน้าแน่นอน ใช้ be going to" },
+    { "emoji": "🧳", "tag": "will: ข้อเสนอทันที", "difficulty": 3, "q": "Your bag looks heavy. I ___ help you carry it.", "choices": ["will", "am going to", "was", "did"], "answer": 0, "explain": "ข้อเสนอช่วยเหลือที่เกิดขึ้นทันทีตอนพูด ใช้ will" },
+    { "emoji": "🏗️", "tag": "Error Detection: will + going to ผสมกันผิด", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["I will going to study tonight.", "I am going to study tonight.", "I will to study tonight.", "I am will study tonight."], "answer": 1, "explain": "ห้ามใช้ will และ going to ปนกัน และหลัง will ห้ามมี to" },
+    { "emoji": "🔍", "tag": "Error Detection: หลัง be going to", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She is going to studies medicine.", "She is going to study medicine.", "She is going to studying medicine.", "She going to study medicine."], "answer": 1, "explain": "หลัง going to ต้องใช้กริยารูปเดิม (base form) เสมอ และต้องมี is/am/are นำหน้า going to" },
+    { "emoji": "🔍", "tag": "Error Detection: คำถาม will", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Do you will come?", "Will you come?", "You will come?", "Are you will come?"], "answer": 1, "explain": "คำถามด้วย will ต้องยก Will มาไว้หน้าประธานเท่านั้น ห้ามใช้ do/are ร่วมด้วย" },
+    { "emoji": "🔍", "tag": "Error Detection: ปฏิเสธ be going to", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["They don't going to travel.", "They aren't going to travel.", "They won't going to travel.", "They not going to travel."], "answer": 1, "explain": "ปฏิเสธของ be going to คือ is/am/are + not + going to เท่านั้น" },
+    { "emoji": "🎯", "tag": "will vs going to: บริบทซับซ้อน", "difficulty": 3, "q": "A: The phone is ringing. B: Don't worry, I ___ answer it.", "choices": ["am going to", "will", "was", "did"], "answer": 1, "explain": "การตัดสินใจทันทีตอนได้ยินเสียงโทรศัพท์ ใช้ will ไม่ใช่ be going to" },
+    { "emoji": "🎯", "tag": "will vs going to: มีหลักฐานในมือ", "difficulty": 3, "q": "A: Why do you have an umbrella? B: Because it ___ rain — look at those clouds.", "choices": ["will", "is going to", "was", "rained"], "answer": 1, "explain": "มีหลักฐาน (เมฆดำ) อ้างอิงในประโยค ใช้ be going to ไม่ใช่ will" },
+    { "emoji": "🏁", "tag": "สรุปรวม will/going to", "difficulty": 3, "q": "ข้อใดใช้ Future Tense ถูกต้องที่สุด?", "choices": ["She will graduate next year.", "She will graduating next year.", "She wills graduate next year.", "She will to graduate next year."], "answer": 0, "explain": "will ตามด้วย base form เสมอ ไม่เติม -s/-ing และไม่มี to" }
+  ]
+}

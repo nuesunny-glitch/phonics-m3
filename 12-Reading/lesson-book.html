@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Reading — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 26px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 54px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 56px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 24px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 16px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 14px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 10px; color: #1e2b5c; font-size: 19px; text-align:center; }
+.cover-objectives li { margin-bottom: 8px; font-size: 14.5px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 13px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 14px 20px; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 22px; margin: 0; }
+.section-banner .eng { font-size: 12.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+.meaning-box { border-radius: 16px; padding: 14px; text-align: center; }
+.meaning-box .word { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.meaning-box .ex { font-size: 13.5px; margin-top: 8px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 6px 8px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 16px 18px; margin: 14px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 8px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 6px 0 0; padding-left: 20px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0; }
+.flash-card { border-radius: 14px; padding: 12px 8px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 34px; }
+.flash-card .fw { font-weight: 700; font-size: 14px; margin-top: 4px; }
+.flash-card .ft { font-size: 12.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 14px 18px; margin: 12px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 16px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 14px; margin-top: 6px; }
+.pattern-box .pex .th { color: #667; font-size: 12.5px; }
+
+.dialogue-wrap { margin: 14px 0 22px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 8px; font-size: 15px; }
+.bubble { max-width: 78%; padding: 9px 14px; border-radius: 16px; margin: 6px 0; font-size: 14.5px; }
+.bubble .th { font-size: 12.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 12.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 12px 16px; margin: 10px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 13.5px; color: #55607a; margin: 4px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 12px 0; }
+.tip-checklist li { display:flex; gap:10px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:14px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 18px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:20px; font-weight:800; border-radius:999px; padding:14px 30px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:18px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:12px 14px; color:#fff; font-size:13.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:14.5px; display:block; margin-bottom:4px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:12px 14px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 8px; font-size:14px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { width:100%; border-collapse: collapse; font-size:12.5px; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:4px 6px; }
+.cheat-box ul { margin:0; padding-left:18px; font-size:12.5px; }
+.cheat-box li { margin-bottom:4px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:12px 16px; margin-bottom:12px; }
+.teacher-note-box h4 { margin:0 0 6px; color:#b3261e; font-size:14.5px; }
+.teacher-note-box ul { margin:0; padding-left:20px; font-size:13.5px; }
+.teacher-note-box li { margin-bottom:4px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:12px 16px; margin-bottom:10px; font-size:14px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 30px 20px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 30px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:22px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:10px; font-size:14px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 22px 24px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:44px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:24px; margin:6px 0 14px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:9px 14px; margin-bottom:8px; font-size:14.5px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:16px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">📖 🔍 🕵️ 🧩 ✨</div>
+    <h1 class="cover-title-en">Reading</h1>
+    <div class="cover-title-th">การอ่านจับใจความ (Reading Comprehension)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 บทที่ 12 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>ใช้กลยุทธ์การอ่าน 3 แบบ (Skimming, Scanning, Guessing from Context) ได้ถูกต้อง</li><li>แยกแยะประเภทคำถามอ่านจับใจความ 5 แบบ (Main Idea, Detail, Vocabulary in Context, Inference, Reference)</li><li>หาใจความหลักของย่อหน้าได้โดยไม่ต้องอ่านทุกคำ</li><li>เดาความหมายคำศัพท์ที่ไม่รู้จักจากบริบทรอบข้างได้</li><li>ตอบคำถามอ้างอิงสรรพนาม (it, he, she, they) และคำถามอนุมานได้ถูกต้อง</li></ul>
+    </div>
+    <div class="cover-footer">Chapter 12 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 ทำไมต้องมีกลยุทธ์การอ่าน?</h1><div class="eng">Why Reading Strategies?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">การอ่านจับใจความ (Reading Comprehension) เป็นทักษะที่รวมทุกอย่างที่เรียนมาเข้าด้วยกัน (Phonics, คำศัพท์, แกรมม่า) ข้อสอบเข้า ม.4 มักให้อ่านย่อหน้าสั้น ๆ แล้วตอบคำถาม 4-5 ข้อ บทนี้สอนกลยุทธ์การอ่านและประเภทคำถามที่พบบ่อย ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">Skimming</div>อ่านคร่าว ๆ<div class="ex">หาใจความหลักของย่อหน้า<br>(ไม่ต้องอ่านทุกคำ)</div></div>
+    <div class="meaning-box mb2"><div class="word">Scanning</div>อ่านหาข้อมูล<div class="ex">กวาดสายตาหาคำ/ตัวเลข<br>ที่ต้องการเจาะจง</div></div>
+    <div class="meaning-box mb3"><div class="word">Guessing</div>เดาความหมาย<div class="ex">ดูบริบทรอบคำศัพท์<br>ที่ไม่รู้จัก</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าแต่ละกลยุทธ์ใช้ในสถานการณ์ต่างกัน — นี่คือเหตุผลที่ต้องรู้ "จะอ่านแบบไหน" ก่อนเริ่มอ่านจริง ไม่ใช่อ่านทุกคำแบบเดียวกันทุกครั้ง</p>
+  <div class="explain-block">
+    <h2>🧩 5 ประเภทคำถามที่พบบ่อยในข้อสอบ</h2>
+    <table>
+      <tr><th>ประเภทคำถาม</th><th>ตัวอย่างคำถาม</th><th>วิธีตอบ</th></tr>
+      <tr><td>Main Idea</td><td>What is the passage mainly about?</td><td>อ่านประโยคแรก/สุดท้าย</td></tr>
+      <tr><td>Detail</td><td>What time does the shop open?</td><td>ใช้ Scanning หาคำตอบตรง</td></tr>
+      <tr><td>Vocabulary in Context</td><td>The word "huge"...closest in meaning?</td><td>ดูประโยครอบคำนั้น</td></tr>
+      <tr><td>Inference</td><td>What can we infer...?</td><td>คิดต่อจากข้อมูลที่ให้มา</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างย่อหน้าฝึกอ่าน</h2>
+    <table>
+      <tr><th>ย่อหน้าตัวอย่าง</th><th>คำถามตัวอย่าง</th></tr>
+      <tr><td>Malee is a student who wakes up at six every morning and likes English because her teacher is kind.</td><td>What time does Malee wake up? → Six o'clock</td></tr>
+      <tr><td>Milo is a small, brown dog. He is very friendly.</td><td>The word "He" refers to...? → Milo (the dog)</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กลยุทธ์การอ่านทีละขั้น</h1><div class="eng">Reading Strategies Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">Skimming — อ่านคร่าว ๆ หาใจความหลัก</div>
+    <p style="margin:6px 0;">อ่านเร็ว ๆ ทั้งย่อหน้าโดยไม่ต้องอ่านทุกคำ เน้นประโยคแรกและประโยคสุดท้ายซึ่งมักบอกใจความหลัก ใช้ตอบคำถามประเภท Main Idea</p>
+    <ul><li>อ่านหัวข้อ/ประโยคแรกก่อนเสมอ</li><li>ถามตัวเองว่า "ย่อหน้านี้พูดเรื่องอะไรโดยรวม"</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">Scanning — กวาดสายตาหาข้อมูลเฉพาะจุด</div>
+    <p style="margin:6px 0;">ไม่อ่านทั้งหมด แต่กวาดสายตาหาคำสำคัญในคำถาม (ชื่อ, ตัวเลข, วันที่) แล้วอ่านเฉพาะรอบ ๆ คำนั้น ใช้ตอบคำถามประเภท Detail</p>
+    <ul><li>อ่านคำถามก่อน แล้วหาคำสำคัญในคำถาม</li><li>กวาดหาคำนั้นในย่อหน้า แล้วอ่านประโยครอบข้าง</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">Guessing from Context — เดาความหมายจากบริบท</div>
+    <p style="margin:6px 0;">เมื่อเจอคำศัพท์ที่ไม่รู้จัก ให้ดูประโยคก่อน-หลังคำนั้นเพื่อเดาความหมาย ใช้ตอบคำถามประเภท Vocabulary in Context</p>
+    <ul><li>ไม่ต้องรู้ทุกคำศัพท์ก็ตอบได้ ถ้าดูบริบทเป็น</li><li>สังเกตคำเชื่อม (because, so, but) ที่ช่วยบอกความหมาย</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">Inference & Reference — คิดต่อและอ้างอิงสรรพนาม</div>
+    <p style="margin:6px 0;">Inference: คำตอบไม่ได้บอกตรง ๆ ต้องคิดต่อจากข้อมูลที่ให้มา — Reference: คำสรรพนาม (it, he, she, they) มองย้อนกลับไปหาคำนามก่อนหน้าเสมอ</p>
+    <ul><li>Inference: อ่านทั้งย่อหน้าอีกรอบ แล้วถามว่า "จากข้อมูลนี้ สรุปอะไรได้บ้าง"</li><li>Reference: หาคำนามที่อยู่ก่อนหน้าสรรพนามทันที</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>ทักษะ/ประเภทคำถาม</th><th>คืออะไร</th><th>วิธีตอบ</th></tr>
+      <tr><td><b>Skimming</b></td><td>อ่านคร่าว ๆ ทั้งย่อหน้าเพื่อจับใจความหลัก</td><td>ใช้หา Main Idea</td></tr><tr><td><b>Scanning</b></td><td>กวาดสายตาหาคำ/ตัวเลข/ชื่อเฉพาะที่ต้องการ</td><td>ใช้หาคำตอบ Detail Questions</td></tr><tr><td><b>Guessing from Context</b></td><td>เดาความหมายคำศัพท์จากประโยครอบข้าง</td><td>ใช้ตอบ Vocabulary in Context</td></tr><tr><td><b>Inference</b></td><td>คำตอบไม่ได้บอกตรง ๆ ต้องคิดต่อจากข้อมูลที่ให้มา</td><td>อ่านทั้งย่อหน้าอีกรอบแล้วคิดต่อ</td></tr><tr><td><b>Reference</b></td><td>คำสรรพนาม (it, he, she, they) อ้างถึงอะไร</td><td>มองย้อนกลับไปหาคำนามที่อยู่ก่อนหน้า</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกลยุทธ์และประเภทคำถามในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">"อ่านคำถามก่อนอ่านเนื้อเรื่อง"</div><p>อ่านคำถามและตัวเลือกก่อนเสมอ จะได้รู้ว่าต้องหาอะไรตอนอ่านย่อหน้า ประหยัดเวลาได้มาก</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">"ประโยคแรก-สุดท้าย = ใจความหลัก"</div><p>ย่อหน้าภาษาอังกฤษส่วนใหญ่บอกใจความหลักไว้ที่ประโยคแรกหรือประโยคสุดท้าย อ่าน 2 ประโยคนี้ก่อนก็มักตอบ Main Idea ได้แล้ว</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">"เขา-เธอ-มัน มองย้อนกลับ"</div><p>เจอคำถาม Reference (it, he, she, they) ให้มองคำนามที่อยู่ "ก่อนหน้า" สรรพนามนั้นทันที ไม่ต้องมองไปข้างหน้า</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">"ไม่รู้คำศัพท์ ไม่ใช่จบเกม"</div><p>เจอคำศัพท์ไม่รู้จัก อย่าตกใจ ให้อ่านประโยคก่อน-หลังคำนั้น มักมีคำใบ้ซ่อนอยู่เสมอ (เช่น because, but, so)</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔑 มุมคำสัญญาณสำคัญ</h1><div class="eng">Key Signal Words Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำสัญญาณ</th><th>ใช้บอกอะไร</th><th>ตัวอย่าง</th></tr>
+      <tr><td><b>because / so</b></td><td>เหตุผล/ผลลัพธ์ — ช่วยตอบ Detail และ Inference</td><td>...because her teacher is kind.</td></tr>
+      <tr><td><b>mainly / mostly</b></td><td>ใจความหลักของย่อหน้า</td><td>The passage is mainly about...</td></tr>
+      <tr><td><b>it / he / she / they</b></td><td>สรรพนามอ้างอิง — มองย้อนกลับหาคำนามก่อนหน้า</td><td>Milo is a dog. He is friendly.</td></tr>
+      <tr><td><b>closest in meaning to</b></td><td>คำถามศัพท์ในบริบท (Vocabulary in Context)</td><td>"huge" is closest in meaning to...</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดการอ่าน: คำสัญญาณเหล่านี้เปรียบเหมือน "ป้ายบอกทาง" ในย่อหน้า ถ้าเจอคำเหล่านี้ ให้ชะลอความเร็วในการอ่านตรงนั้นเป็นพิเศษ เพราะมักเป็นจุดที่ข้อสอบชอบถาม!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้เป็นชื่อเรียกประเภทคำถามและทักษะการอ่าน — รู้จักคำเหล่านี้จะช่วยให้เข้าใจโจทย์ข้อสอบได้เร็วขึ้น</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">🎯</div><div class="fw">main idea</div><div class="ft">ใจความหลัก</div></div><div class="flash-card"><div class="fe">🔎</div><div class="fw">detail</div><div class="ft">รายละเอียด</div></div><div class="flash-card"><div class="fe">🔤</div><div class="fw">vocabulary in context</div><div class="ft">คำศัพท์ในบริบท</div></div><div class="flash-card"><div class="fe">🤔</div><div class="fw">inference</div><div class="ft">การอนุมาน</div></div><div class="flash-card"><div class="fe">🔗</div><div class="fw">reference</div><div class="ft">การอ้างอิง</div></div><div class="flash-card"><div class="fe">👁️</div><div class="fw">skim</div><div class="ft">อ่านคร่าว ๆ</div></div><div class="flash-card"><div class="fe">🔍</div><div class="fw">scan</div><div class="ft">กวาดหาข้อมูล</div></div><div class="flash-card"><div class="fe">📝</div><div class="fw">passage</div><div class="ft">ย่อหน้า/บทอ่าน</div></div><div class="flash-card"><div class="fe">💡</div><div class="fw">context clue</div><div class="ft">เบาะแสจากบริบท</div></div><div class="flash-card"><div class="fe">🧩</div><div class="fw">meaning</div><div class="ft">ความหมาย</div></div><div class="flash-card"><div class="fe">📌</div><div class="fw">evidence</div><div class="ft">หลักฐานในเรื่อง</div></div><div class="flash-card"><div class="fe">🗂️</div><div class="fw">summary</div><div class="ft">สรุปความ</div></div><div class="flash-card"><div class="fe">❓</div><div class="fw">question type</div><div class="ft">ประเภทคำถาม</div></div><div class="flash-card"><div class="fe">✅</div><div class="fw">correct answer</div><div class="ft">คำตอบที่ถูกต้อง</div></div><div class="flash-card"><div class="fe">🚫</div><div class="fw">distractor</div><div class="ft">ตัวลวง</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 รูปแบบคำถามที่พบบ่อย</h1><div class="eng">Common Question Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Main Idea: What is the passage mainly about?</div>
+    <div class="pex">อ่านประโยคแรก/สุดท้าย แล้วสรุปเป็นภาพรวม <span class="th">(ใจความหลัก)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Detail: What/When/Where/Who + does/did/is...?</div>
+    <div class="pex">Scanning หาคำตอบตรงในเนื้อเรื่อง <span class="th">(รายละเอียด)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Vocabulary in Context: The word "___" is closest in meaning to...?</div>
+    <div class="pex">ดูประโยครอบคำนั้นเพื่อเดาความหมาย <span class="th">(คำศัพท์ในบริบท)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Reference/Inference: The word "it/he/she" refers to...? / What can we infer...?</div>
+    <div class="pex">มองคำนามก่อนหน้า / คิดต่อจากข้อมูลที่ให้มา <span class="th">(อ้างอิง/อนุมาน)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>📰 ย่อหน้าฝึกอ่านเพิ่มเติม</h1><div class="eng">Extra Practice Passages</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">ลองฝึกอ่านย่อหน้าสั้น ๆ ต่อไปนี้ด้วยตัวเอง แล้ววิเคราะห์ว่าแต่ละย่อหน้ามีใจความหลักว่าอะไร และมีคำสรรพนามอ้างอิงถึงใคร/อะไรบ้าง (ย่อหน้าเหล่านี้จะถูกใช้ในแบบทดสอบ ส่วนที่ 14 ด้วย)</p>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">⚽ ย่อหน้าที่ 1: Tum and Football</div>
+    <div class="bubble left" style="max-width:100%;">Tum is a Grade 9 student who loves playing football. Every afternoon after school, he practices with his friends at the field near his house. His coach says Tum is very talented and works harder than anyone else on the team. Last month, Tum's team won the district championship, and he scored the winning goal in the final match. Tum dreams of becoming a professional football player one day. He always tells his friends, "If you practice every day, you will improve." Tum's parents are proud of him and support his dream by driving him to practice every day.</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🍪 ย่อหน้าที่ 2: Kate's Baking Day</div>
+    <div class="bubble left" style="max-width:100%;">Kate is spending her Saturday afternoon baking cookies with her mother. Her mother is teaching her a family recipe that has been passed down for three generations. Kate carefully measures the flour and sugar, just like her mother shows her. Halfway through, Kate forgets to add the eggs, so the mixture looks strange and dry. Her mother laughs gently and helps her fix the mistake. After an hour, they take a tray of golden brown cookies out of the oven. The whole kitchen smells sweet. Kate feels proud because this is the first time she has baked something all by herself.</div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ อ่านทุกคำในย่อหน้าอย่างละเอียดก่อนดูคำถาม</div>
+    <div class="why">🤔 เสียเวลาโดยไม่จำเป็น ควรอ่านคำถามก่อนเพื่อรู้ว่าต้องหาอะไร</div>
+    <div class="right">✅ อ่านคำถาม → Skim ย่อหน้า → Scan หาคำตอบเฉพาะจุด</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ เจอคำศัพท์ไม่รู้จักแล้วหยุดอ่านทันที</div>
+    <div class="why">🤔 ควรอ่านต่อและดูบริบทรอบคำนั้นเพื่อเดาความหมาย</div>
+    <div class="right">✅ ใช้ Guessing from Context แทนการหยุดอ่าน</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ ตอบคำถาม Reference โดยมองไปข้างหน้าแทนข้างหลัง</div>
+    <div class="why">🤔 สรรพนาม (it, he, she) มักอ้างถึงคำนามที่อยู่ "ก่อนหน้า" เสมอ</div>
+    <div class="right">✅ มองย้อนกลับไปหาคำนามก่อนสรรพนามนั้น</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ เลือกคำตอบ Inference ที่มีคำจากย่อหน้าตรง ๆ ทุกคำ</div>
+    <div class="why">🤔 Inference ต้องคิดต่อจากข้อมูล ไม่ใช่แค่หาคำที่ตรงกับย่อหน้า</div>
+    <div class="right">✅ เลือกคำตอบที่ "สรุปได้อย่างสมเหตุสมผล" จากข้อมูลทั้งหมด</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ อ่านย่อหน้าเรียงจากบนลงล่างทุกครั้งเพื่อหา Detail</div>
+    <div class="why">🤔 เสียเวลา ควร Scan หาคำสำคัญในคำถามแทนการอ่านไล่ทีละบรรทัด</div>
+    <div class="right">✅ Scanning หาคำสำคัญที่ตรงกับคำถามโดยตรง</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ เลือกคำตอบที่ยาวและซับซ้อนที่สุดเพราะคิดว่าน่าจะถูก</div>
+    <div class="why">🤔 คำตอบที่ถูกต้องไม่จำเป็นต้องยาวหรือซับซ้อนที่สุดเสมอไป</div>
+    <div class="right">✅ เลือกคำตอบที่ตรงกับข้อมูลในย่อหน้าที่สุด ไม่ใช่ยาวที่สุด</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>อ่านคำถามและตัวเลือกก่อนอ่านย่อหน้าเต็ม จะรู้ว่าควรมองหาอะไร</span></li><li><span class="num">2</span><span>ใช้ Skimming หา Main Idea ก่อน แล้วค่อยใช้ Scanning หา Detail ทีละข้อ</span></li><li><span class="num">3</span><span>คำถาม Reference ให้มองคำนามที่อยู่ก่อนหน้าสรรพนามเสมอ ไม่ใช่มองไปข้างหน้า</span></li><li><span class="num">4</span><span>คำถาม Inference ต้องคิดต่อจากข้อมูล ไม่มีคำตอบที่บอกตรง ๆ ในย่อหน้า</span></li><li><span class="num">5</span><span>ถ้าไม่รู้ความหมายคำศัพท์ ให้ดูประโยคก่อน-หลังคำนั้น มักมีคำใบ้ซ่อนอยู่เสมอ</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Reading</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">👁️ Skimming</span>อ่านคร่าว ๆ หาใจความหลัก</div>
+      <div class="mindmap-branch mb-b"><span class="bt">🔍 Scanning</span>กวาดหาข้อมูลเฉพาะจุด</div>
+      <div class="mindmap-branch mb-c"><span class="bt">💡 Guessing from Context</span>เดาความหมายคำศัพท์จากบริบท</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🎯 Main Idea/Detail</span>ใจความหลัก/รายละเอียด</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🤔 Inference</span>คิดต่อจากข้อมูลที่ให้มา</div>
+      <div class="mindmap-branch mb-f"><span class="bt">🔗 Reference</span>สรรพนามอ้างถึงคำนามก่อนหน้า</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: อ่านย่อหน้าแล้วตอบคำถาม (12 ข้อ)</h2><p class="part-desc">Somchai works at a small shop in the market. The shop sells fruit and vegetables. It opens at 7 AM and closes at 6 PM every day except Sunday. Many people come to buy fresh fruit from Somchai because his prices are cheap and his fruit is always fresh. Somchai's favorite fruit is mango. He says mango is delicious and good for health. Every morning, he goes to the farm to buy fresh fruit before opening his shop. His daughter sometimes helps him at the shop after school.</p><ol class="qlist two-col"><li>What is the passage mainly about? (ก. A school ข. Somchai's shop ค. A hospital ง. A bus station) &rarr; <span class="blank"></span></li><li>What does Somchai's shop sell? (ก. Books ข. Clothes ค. Fruit and vegetables ง. Toys) &rarr; <span class="blank"></span></li><li>What time does the shop open? (ก. 6 AM ข. 7 AM ค. 8 AM ง. 9 AM) &rarr; <span class="blank"></span></li><li>What time does the shop close? (ก. 5 PM ข. 6 PM ค. 7 PM ง. 8 PM) &rarr; <span class="blank"></span></li><li>Which day is the shop closed? (ก. Saturday ข. Monday ค. Sunday ง. Friday) &rarr; <span class="blank"></span></li><li>Why do many people buy fruit from Somchai? (ก. Because it's far ข. Because his prices are cheap and fruit is fresh ค. Because he is famous ง. Because the shop is big) &rarr; <span class="blank"></span></li><li>What is Somchai's favorite fruit? (ก. Apple ข. Banana ค. Mango ง. Orange) &rarr; <span class="blank"></span></li><li>The word "delicious" is closest in meaning to...? (ก. expensive ข. tasty ค. cheap ง. fresh) &rarr; <span class="blank"></span></li><li>Where does Somchai go every morning before opening his shop? (ก. School ข. The farm ค. The bank ง. The hospital) &rarr; <span class="blank"></span></li><li>What can we infer about Somchai? (ก. He is lazy ข. He is careful about his business ค. He dislikes his job ง. He never works) &rarr; <span class="blank"></span></li><li>The word "He" in "He says mango is delicious" refers to...? (ก. the shop ข. Somchai ค. the farm ง. the daughter) &rarr; <span class="blank"></span></li><li>Who sometimes helps Somchai at the shop? (ก. His wife ข. His daughter ค. His son ง. His friend) &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 2: อ่านย่อหน้าแล้วตอบคำถาม (12 ข้อ)</h2><p class="part-desc">Ploy loves reading books. Every weekend, she goes to the library near her house. The library is big and quiet. Ploy usually reads storybooks and comic books. Her favorite book is about a young girl who travels to different countries. Ploy dreams of traveling around the world one day, just like the girl in her favorite book. Ploy's best friend, Nam, also loves reading, so they often go to the library together and share their favorite stories.</p><ol class="qlist two-col"><li>What does Ploy love doing? (ก. Swimming ข. Reading books ค. Cooking ง. Singing) &rarr; <span class="blank"></span></li><li>Where does Ploy go every weekend? (ก. The market ข. The library ค. The zoo ง. The park) &rarr; <span class="blank"></span></li><li>How is the library? (ก. Small and noisy ข. Big and quiet ค. Old and dirty ง. Far and expensive) &rarr; <span class="blank"></span></li><li>What kind of books does Ploy usually read? (ก. Science books ข. Storybooks and comic books ค. Cook books ง. Math books) &rarr; <span class="blank"></span></li><li>What is Ploy's favorite book about? (ก. A boy who plays football ข. A girl who travels to different countries ค. A dog and a cat ง. A teacher) &rarr; <span class="blank"></span></li><li>What does Ploy dream of doing? (ก. Becoming a teacher ข. Traveling around the world ค. Opening a library ง. Writing a book) &rarr; <span class="blank"></span></li><li>The word "quiet" is closest in meaning to...? (ก. noisy ข. silent ค. big ง. small) &rarr; <span class="blank"></span></li><li>The word "her" in "Her favorite book" refers to...? (ก. the library ข. Ploy ค. the girl in the book ง. the world) &rarr; <span class="blank"></span></li><li>What can we infer about Ploy? (ก. She dislikes books ข. She is inspired by the book she reads ค. She never goes out ง. She hates traveling) &rarr; <span class="blank"></span></li><li>This passage is mainly about...? (ก. A library's rules ข. Ploy's love of reading and her dream ค. How to travel the world ง. A comic book store) &rarr; <span class="blank"></span></li><li>Who is Ploy's best friend? (ก. Nid ข. Nam ค. Ann ง. Ben) &rarr; <span class="blank"></span></li><li>The word "they" in "they often go to the library together" refers to...? (ก. Ploy and Nam ข. Ploy and the girl in the book ค. the books ง. the library) &rarr; <span class="blank"></span></li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> อ่านย่อหน้าแต่ละตอนแล้วตอบคำถามที่ตามมา เลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="explain-block" style="margin:18px 0 10px;"><h2>📖 ย่อหน้าที่ 1: Tum and Football</h2><p style="font-size:14px;line-height:1.7;">Tum is a Grade 9 student who loves playing football. Every afternoon after school, he practices with his friends at the field near his house. His coach says Tum is very talented and works harder than anyone else on the team. Last month, Tum's team won the district championship, and he scored the winning goal in the final match. Tum dreams of becoming a professional football player one day. He always tells his friends, "If you practice every day, you will improve." Tum's parents are proud of him and support his dream by driving him to practice every day.</p></div><div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚽</div>
+      <div class="qtext">What is the passage mainly about?<div class="rule-tag">Main Idea</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Tum's passion for football</div><div class="choice">B) A district's history</div><div class="choice">C) Tum's school subjects</div><div class="choice">D) A football stadium</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏰</div>
+      <div class="qtext">When does Tum practice football?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) In the morning</div><div class="choice">B) Every afternoon after school</div><div class="choice">C) Late at night</div><div class="choice">D) Only on weekends</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📍</div>
+      <div class="qtext">Where does Tum practice?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) At school</div><div class="choice">B) At the field near his house</div><div class="choice">C) At the stadium downtown</div><div class="choice">D) At his coach's house</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏆</div>
+      <div class="qtext">What did Tum's team win last month?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A scholarship</div><div class="choice">B) The district championship</div><div class="choice">C) A trophy for attendance</div><div class="choice">D) A new football</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥅</div>
+      <div class="qtext">Who scored the winning goal in the final match?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) The coach</div><div class="choice">B) Tum</div><div class="choice">C) Tum's friend</div><div class="choice">D) The other team</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💪</div>
+      <div class="qtext">The word "talented" is closest in meaning to...?<div class="rule-tag">Vocabulary in Context</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) lazy</div><div class="choice">B) skillful</div><div class="choice">C) tall</div><div class="choice">D) young</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "He" in "He always tells his friends" refers to...?<div class="rule-tag">Reference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) the coach</div><div class="choice">B) Tum</div><div class="choice">C) the team</div><div class="choice">D) the field</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌟</div>
+      <div class="qtext">What is Tum's dream?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) To become a coach</div><div class="choice">B) To become a professional football player</div><div class="choice">C) To become a teacher</div><div class="choice">D) To travel abroad</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">What can we infer about Tum's parents?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They don't care about football</div><div class="choice">B) They support and are proud of him</div><div class="choice">C) They want him to quit football</div><div class="choice">D) They never watch his matches</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📈</div>
+      <div class="qtext">According to Tum, what helps you improve?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Watching TV</div><div class="choice">B) Practicing every day</div><div class="choice">C) Eating more</div><div class="choice">D) Sleeping early</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="explain-block" style="margin:18px 0 10px;"><h2>📖 ย่อหน้าที่ 2: Kate's Baking Day</h2><p style="font-size:14px;line-height:1.7;">Kate is spending her Saturday afternoon baking cookies with her mother. Her mother is teaching her a family recipe that has been passed down for three generations. Kate carefully measures the flour and sugar, just like her mother shows her. Halfway through, Kate forgets to add the eggs, so the mixture looks strange and dry. Her mother laughs gently and helps her fix the mistake. After an hour, they take a tray of golden brown cookies out of the oven. The whole kitchen smells sweet. Kate feels proud because this is the first time she has baked something all by herself.</p></div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍪</div>
+      <div class="qtext">What is the passage mainly about?<div class="rule-tag">Main Idea</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Kate baking cookies with her mother</div><div class="choice">B) A cooking competition</div><div class="choice">C) Kate's school project</div><div class="choice">D) A bakery shop</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">When is Kate baking cookies?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Friday morning</div><div class="choice">B) Saturday afternoon</div><div class="choice">C) Sunday night</div><div class="choice">D) Monday evening</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩‍🍳</div>
+      <div class="qtext">Who is teaching Kate the recipe?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Her teacher</div><div class="choice">B) Her mother</div><div class="choice">C) Her grandmother</div><div class="choice">D) Her sister</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❌</div>
+      <div class="qtext">What mistake did Kate make?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She used too much sugar</div><div class="choice">B) She forgot to add the eggs</div><div class="choice">C) She burned the cookies</div><div class="choice">D) She used the wrong oven</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">😊</div>
+      <div class="qtext">How did Kate's mother react to the mistake?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She got angry</div><div class="choice">B) She laughed gently and helped fix it</div><div class="choice">C) She stopped baking</div><div class="choice">D) She left the kitchen</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "golden brown" describes...?<div class="rule-tag">Vocabulary in Context</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) the color of the cookies</div><div class="choice">B) the color of the kitchen</div><div class="choice">C) the color of the flour</div><div class="choice">D) the color of Kate's dress</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏡</div>
+      <div class="qtext">How long did it take to bake the cookies?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) 30 minutes</div><div class="choice">B) An hour</div><div class="choice">C) Two hours</div><div class="choice">D) All day</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">Why does Kate feel proud?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Because she bought the cookies</div><div class="choice">B) Because this is the first time she baked alone</div><div class="choice">C) Because her mother did all the work</div><div class="choice">D) Because she won a competition</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "they" in "they take a tray of golden brown cookies" refers to...?<div class="rule-tag">Reference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Kate and her mother</div><div class="choice">B) Kate's friends</div><div class="choice">C) the neighbors</div><div class="choice">D) the recipe books</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📜</div>
+      <div class="qtext">How long has the recipe been in the family?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) One generation</div><div class="choice">B) Two generations</div><div class="choice">C) Three generations</div><div class="choice">D) Four generations</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="explain-block" style="margin:18px 0 10px;"><h2>📖 ย่อหน้าที่ 3: A Family Trip to the Beach</h2><p style="font-size:14px;line-height:1.7;">Last weekend, the Suksawat family drove three hours to spend the day at a quiet beach in the south. The children built sandcastles while their parents set up a small tent for shade. Around noon, they ate lunch together on a large mat near the water. In the afternoon, the wind became strong and the waves grew bigger, so the lifeguard asked everyone to stay closer to the shore. Despite the wind, the family enjoyed watching the sunset before driving home. They all agreed it was one of the best trips they had taken together.</p></div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏖️</div>
+      <div class="qtext">What is the passage mainly about?<div class="rule-tag">Main Idea</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A family trip to the beach</div><div class="choice">B) A swimming competition</div><div class="choice">C) A weather report</div><div class="choice">D) A fishing trip</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">How long did the family drive to the beach?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) One hour</div><div class="choice">B) Two hours</div><div class="choice">C) Three hours</div><div class="choice">D) Four hours</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏰</div>
+      <div class="qtext">What did the children do at the beach?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Built sandcastles</div><div class="choice">B) Went fishing</div><div class="choice">C) Played football</div><div class="choice">D) Rode bicycles</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⛺</div>
+      <div class="qtext">What did the parents set up?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A barbecue grill</div><div class="choice">B) A small tent for shade</div><div class="choice">C) A volleyball net</div><div class="choice">D) A boat</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌬️</div>
+      <div class="qtext">What happened in the afternoon?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It started raining</div><div class="choice">B) The wind became strong and waves grew bigger</div><div class="choice">C) The family went home early</div><div class="choice">D) They lost their tent</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛟</div>
+      <div class="qtext">What did the lifeguard ask everyone to do?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Leave the beach</div><div class="choice">B) Stay closer to the shore</div><div class="choice">C) Swim further out</div><div class="choice">D) Wear life jackets</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌅</div>
+      <div class="qtext">What did the family do before driving home?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Watched the sunset</div><div class="choice">B) Went shopping</div><div class="choice">C) Took a boat ride</div><div class="choice">D) Ate at a restaurant</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "they" in "they all agreed it was one of the best trips" refers to...?<div class="rule-tag">Reference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) the lifeguards</div><div class="choice">B) the Suksawat family</div><div class="choice">C) the other tourists</div><div class="choice">D) the children only</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">What can we infer about the family's feeling about the trip?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They regretted going</div><div class="choice">B) They enjoyed it despite the windy weather</div><div class="choice">C) They were bored the whole time</div><div class="choice">D) They wanted to leave early</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">Where did the family eat lunch?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) At a restaurant</div><div class="choice">B) On a mat near the water</div><div class="choice">C) In the car</div><div class="choice">D) At a hotel</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="explain-block" style="margin:18px 0 10px;"><h2>📖 ย่อหน้าที่ 4: Nan's Part-Time Job</h2><p style="font-size:14px;line-height:1.7;">Nan works part-time at a small bookstore near her school every weekend. Her main duties are arranging books on the shelves and helping customers find what they are looking for. At first, Nan found the job difficult because she had to remember where hundreds of books were kept. After a few weeks, however, she became familiar with the store and could answer customers' questions quickly. The bookstore owner often praises her for being responsible and polite to every customer. Nan uses the money she earns to buy books for herself and save for university in the future.</p></div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">What is the passage mainly about?<div class="rule-tag">Main Idea</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Nan's part-time job at a bookstore</div><div class="choice">B) A library's history</div><div class="choice">C) Nan's school exams</div><div class="choice">D) A writing competition</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🗓️</div>
+      <div class="qtext">When does Nan work at the bookstore?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Every day</div><div class="choice">B) Every weekend</div><div class="choice">C) Only in summer</div><div class="choice">D) Every morning</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📋</div>
+      <div class="qtext">What are Nan's main duties?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Cooking food</div><div class="choice">B) Arranging books and helping customers</div><div class="choice">C) Cleaning the floor</div><div class="choice">D) Driving a delivery truck</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">😕</div>
+      <div class="qtext">Why did Nan find the job difficult at first?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) The pay was too low</div><div class="choice">B) She had to remember where hundreds of books were kept</div><div class="choice">C) The store was too far from home</div><div class="choice">D) She didn't like reading</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👍</div>
+      <div class="qtext">What does the bookstore owner often praise Nan for?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Being fast at math</div><div class="choice">B) Being responsible and polite</div><div class="choice">C) Being the best reader</div><div class="choice">D) Being always on time</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💰</div>
+      <div class="qtext">What does Nan use her earned money for?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Buying clothes</div><div class="choice">B) Buying books and saving for university</div><div class="choice">C) Buying a phone</div><div class="choice">D) Traveling abroad</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "she" in "she could answer customers' questions quickly" refers to...?<div class="rule-tag">Reference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) the bookstore owner</div><div class="choice">B) Nan</div><div class="choice">C) a customer</div><div class="choice">D) Nan's teacher</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔤</div>
+      <div class="qtext">The word "familiar" is closest in meaning to...?<div class="rule-tag">Vocabulary in Context</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) confused</div><div class="choice">B) well-known/used to</div><div class="choice">C) afraid</div><div class="choice">D) bored</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">What can we infer about Nan's attitude toward her job?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She dislikes working at the bookstore</div><div class="choice">B) She has grown responsible and confident through her job</div><div class="choice">C) She wants to quit soon</div><div class="choice">D) She only works for fun</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎓</div>
+      <div class="qtext">What does Nan plan to save money for?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A vacation</div><div class="choice">B) University in the future</div><div class="choice">C) A new phone</div><div class="choice">D) A car</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="explain-block" style="margin:18px 0 10px;"><h2>📖 ย่อหน้าที่ 5: Reducing Plastic Waste</h2><p style="font-size:14px;line-height:1.7;">Many schools in Thailand have started programs to reduce plastic waste. Students are encouraged to bring their own bottles and food containers instead of using single-use plastic. One school in Chiang Mai reported that plastic waste decreased by half within just one semester after starting this program. Teachers explain that small daily choices, like refusing a plastic straw, can make a big difference over time. Some students were unsure about the change at first, but most of them now say they feel proud to be part of protecting the environment. The school plans to expand the program to include recycling stations next year.</p></div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">♻️</div>
+      <div class="qtext">What is the passage mainly about?<div class="rule-tag">Main Idea</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A school reducing plastic waste</div><div class="choice">B) A recycling factory</div><div class="choice">C) A science experiment</div><div class="choice">D) A shopping mall</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍶</div>
+      <div class="qtext">What are students encouraged to bring?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Their own bottles and food containers</div><div class="choice">B) Extra plastic bags</div><div class="choice">C) More snacks</div><div class="choice">D) New textbooks</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📉</div>
+      <div class="qtext">How much did plastic waste decrease at the Chiang Mai school?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) By a quarter</div><div class="choice">B) By half</div><div class="choice">C) By all of it</div><div class="choice">D) It didn't decrease</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥤</div>
+      <div class="qtext">What example of a small daily choice is mentioned?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Refusing a plastic straw</div><div class="choice">B) Buying more plastic bottles</div><div class="choice">C) Skipping lunch</div><div class="choice">D) Riding a bicycle to school</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "unsure" is closest in meaning to...?<div class="rule-tag">Vocabulary in Context</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) confident</div><div class="choice">B) not certain</div><div class="choice">C) excited</div><div class="choice">D) angry</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">The word "them" in "most of them now say they feel proud" refers to...?<div class="rule-tag">Reference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) the teachers</div><div class="choice">B) the students</div><div class="choice">C) the schools</div><div class="choice">D) the plastic bottles</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">What can we infer about the school's future plans?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They will stop the program</div><div class="choice">B) They believe the program is worth expanding</div><div class="choice">C) They think it failed</div><div class="choice">D) They will ignore recycling</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">What is the main message of this passage?<div class="rule-tag">Inference</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Small daily choices can make a big environmental difference</div><div class="choice">B) Plastic is impossible to reduce</div><div class="choice">C) Only teachers can help the environment</div><div class="choice">D) Recycling is too expensive for schools</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">Where is the school mentioned in the passage located?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Bangkok</div><div class="choice">B) Chiang Mai</div><div class="choice">C) Phuket</div><div class="choice">D) Khon Kaen</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">♻️</div>
+      <div class="qtext">What will the school add next year according to the plan?<div class="rule-tag">Detail</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A swimming pool</div><div class="choice">B) Recycling stations</div><div class="choice">C) A new library</div><div class="choice">D) A cafeteria</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>ข</td><td>ทั้งย่อหน้าพูดถึงร้านของสมชาย</td></tr><tr><td>2</td><td>ค</td><td>ระบุตรงในประโยคที่ 2</td></tr><tr><td>3</td><td>ข</td><td>ระบุตรง "opens at 7 AM"</td></tr><tr><td>4</td><td>ข</td><td>ระบุตรง "closes at 6 PM"</td></tr><tr><td>5</td><td>ค</td><td>ระบุตรง "except Sunday"</td></tr><tr><td>6</td><td>ข</td><td>ระบุตรงในเนื้อเรื่อง</td></tr><tr><td>7</td><td>ค</td><td>ระบุตรง "favorite fruit is mango"</td></tr><tr><td>8</td><td>ข</td><td>เดาจากบริบท "delicious...good for health"</td></tr><tr><td>9</td><td>ข</td><td>ระบุตรง "goes to the farm"</td></tr><tr><td>10</td><td>ข</td><td>อนุมานจากพฤติกรรมไปซื้อผลไม้สดทุกเช้า</td></tr><tr><td>11</td><td>ข</td><td>He แทน Somchai ซึ่งเป็นประธานของประโยคก่อนหน้า</td></tr><tr><td>12</td><td>ข</td><td>ระบุตรง "His daughter sometimes helps him"</td></tr><tr><td>13</td><td>ข</td><td>ระบุตรง "loves reading books"</td></tr><tr><td>14</td><td>ข</td><td>ระบุตรง "goes to the library"</td></tr><tr><td>15</td><td>ข</td><td>ระบุตรง "big and quiet"</td></tr><tr><td>16</td><td>ข</td><td>ระบุตรง "storybooks and comic books"</td></tr><tr><td>17</td><td>ข</td><td>ระบุตรง "a girl who travels to different countries"</td></tr><tr><td>18</td><td>ข</td><td>ระบุตรง "dreams of traveling around the world"</td></tr><tr><td>19</td><td>ข</td><td>silent ใกล้เคียงความหมายกับ quiet มากที่สุด</td></tr><tr><td>20</td><td>ข</td><td>her แทน Ploy</td></tr><tr><td>21</td><td>ข</td><td>อนุมานจากการที่เธออยากทำตามรอยตัวละครที่ชอบ</td></tr><tr><td>22</td><td>ข</td><td>ทั้งย่อหน้าพูดถึงความรักการอ่านและความฝันของ Ploy</td></tr><tr><td>23</td><td>ข</td><td>ระบุตรง "Ploy's best friend, Nam"</td></tr><tr><td>24</td><td>ก</td><td>they แทน Ploy และ Nam ซึ่งเป็นประธานร่วมของประโยค</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">⚽</td><td>A) Tum's passion for football</td><td>ทั้งย่อหน้าพูดถึงความรักในฟุตบอลของตุ้ม</td></tr><tr><td>2</td><td class="emoji-cell">⏰</td><td>B) Every afternoon after school</td><td>ระบุตรง "Every afternoon after school"</td></tr><tr><td>3</td><td class="emoji-cell">📍</td><td>B) At the field near his house</td><td>ระบุตรง "at the field near his house"</td></tr><tr><td>4</td><td class="emoji-cell">🏆</td><td>B) The district championship</td><td>ระบุตรง "won the district championship"</td></tr><tr><td>5</td><td class="emoji-cell">🥅</td><td>B) Tum</td><td>ระบุตรง "he scored the winning goal"</td></tr><tr><td>6</td><td class="emoji-cell">💪</td><td>B) skillful</td><td>talented แปลว่ามีพรสวรรค์/เก่ง ใกล้เคียงกับ skillful มากที่สุด</td></tr><tr><td>7</td><td class="emoji-cell">🔍</td><td>B) Tum</td><td>He แทน Tum ซึ่งเป็นประธานของเรื่อง</td></tr><tr><td>8</td><td class="emoji-cell">🌟</td><td>B) To become a professional football player</td><td>ระบุตรง "dreams of becoming a professional football player"</td></tr><tr><td>9</td><td class="emoji-cell">🤔</td><td>B) They support and are proud of him</td><td>อนุมานจากการที่พ่อแม่ขับรถไปส่งซ้อมทุกวันและภูมิใจในตัวเขา</td></tr><tr><td>10</td><td class="emoji-cell">📈</td><td>B) Practicing every day</td><td>ระบุตรงคำพูดของ Tum: "If you practice every day, you will improve."</td></tr><tr><td>11</td><td class="emoji-cell">🍪</td><td>A) Kate baking cookies with her mother</td><td>ทั้งย่อหน้าพูดถึงการทำคุกกี้ของเคทกับแม่</td></tr><tr><td>12</td><td class="emoji-cell">📅</td><td>B) Saturday afternoon</td><td>ระบุตรง "Saturday afternoon"</td></tr><tr><td>13</td><td class="emoji-cell">👩‍🍳</td><td>B) Her mother</td><td>ระบุตรง "Her mother is teaching her"</td></tr><tr><td>14</td><td class="emoji-cell">❌</td><td>B) She forgot to add the eggs</td><td>ระบุตรง "Kate forgets to add the eggs"</td></tr><tr><td>15</td><td class="emoji-cell">😊</td><td>B) She laughed gently and helped fix it</td><td>ระบุตรง "Her mother laughs gently and helps her fix the mistake"</td></tr><tr><td>16</td><td class="emoji-cell">🔍</td><td>A) the color of the cookies</td><td>golden brown ใช้บรรยายสีของคุกกี้ที่อบเสร็จแล้ว</td></tr><tr><td>17</td><td class="emoji-cell">🏡</td><td>B) An hour</td><td>ระบุตรง "After an hour"</td></tr><tr><td>18</td><td class="emoji-cell">🤔</td><td>B) Because this is the first time she baked alone</td><td>ระบุตรง "this is the first time she has baked something all by herself"</td></tr><tr><td>19</td><td class="emoji-cell">🔍</td><td>A) Kate and her mother</td><td>they แทน Kate และแม่ของเธอ</td></tr><tr><td>20</td><td class="emoji-cell">📜</td><td>C) Three generations</td><td>ระบุตรง "passed down for three generations"</td></tr><tr><td>21</td><td class="emoji-cell">🏖️</td><td>A) A family trip to the beach</td><td>ทั้งย่อหน้าพูดถึงทริปครอบครัวไปทะเล</td></tr><tr><td>22</td><td class="emoji-cell">🚗</td><td>C) Three hours</td><td>ระบุตรง "drove three hours"</td></tr><tr><td>23</td><td class="emoji-cell">🏰</td><td>A) Built sandcastles</td><td>ระบุตรง "built sandcastles"</td></tr><tr><td>24</td><td class="emoji-cell">⛺</td><td>B) A small tent for shade</td><td>ระบุตรง "set up a small tent for shade"</td></tr><tr><td>25</td><td class="emoji-cell">🌬️</td><td>B) The wind became strong and waves grew bigger</td><td>ระบุตรง "the wind became strong and the waves grew bigger"</td></tr><tr><td>26</td><td class="emoji-cell">🛟</td><td>B) Stay closer to the shore</td><td>ระบุตรง "asked everyone to stay closer to the shore"</td></tr><tr><td>27</td><td class="emoji-cell">🌅</td><td>A) Watched the sunset</td><td>ระบุตรง "enjoyed watching the sunset before driving home"</td></tr><tr><td>28</td><td class="emoji-cell">🔍</td><td>B) the Suksawat family</td><td>they แทนครอบครัว Suksawat ทั้งหมด</td></tr><tr><td>29</td><td class="emoji-cell">🤔</td><td>B) They enjoyed it despite the windy weather</td><td>อนุมานจาก "despite the wind, the family enjoyed..." และ "one of the best trips"</td></tr><tr><td>30</td><td class="emoji-cell">🍽️</td><td>B) On a mat near the water</td><td>ระบุตรง "ate lunch together on a large mat near the water"</td></tr><tr><td>31</td><td class="emoji-cell">📚</td><td>A) Nan's part-time job at a bookstore</td><td>ทั้งย่อหน้าพูดถึงงานพาร์ทไทม์ของแนนที่ร้านหนังสือ</td></tr><tr><td>32</td><td class="emoji-cell">🗓️</td><td>B) Every weekend</td><td>ระบุตรง "works part-time...every weekend"</td></tr><tr><td>33</td><td class="emoji-cell">📋</td><td>B) Arranging books and helping customers</td><td>ระบุตรง "arranging books on the shelves and helping customers"</td></tr><tr><td>34</td><td class="emoji-cell">😕</td><td>B) She had to remember where hundreds of books were kept</td><td>ระบุตรง "had to remember where hundreds of books were kept"</td></tr><tr><td>35</td><td class="emoji-cell">👍</td><td>B) Being responsible and polite</td><td>ระบุตรง "praises her for being responsible and polite"</td></tr><tr><td>36</td><td class="emoji-cell">💰</td><td>B) Buying books and saving for university</td><td>ระบุตรง "buy books for herself and save for university"</td></tr><tr><td>37</td><td class="emoji-cell">🔍</td><td>B) Nan</td><td>she แทน Nan</td></tr><tr><td>38</td><td class="emoji-cell">🔤</td><td>B) well-known/used to</td><td>familiar with แปลว่าคุ้นเคยกับ ใกล้เคียง "well-known/used to"</td></tr><tr><td>39</td><td class="emoji-cell">🤔</td><td>B) She has grown responsible and confident through her job</td><td>อนุมานจากการที่เธอปรับตัวได้ดีขึ้น ได้รับคำชม และตั้งใจเก็บเงินเพื่ออนาคต</td></tr><tr><td>40</td><td class="emoji-cell">🎓</td><td>B) University in the future</td><td>ระบุตรง "save for university in the future"</td></tr><tr><td>41</td><td class="emoji-cell">♻️</td><td>A) A school reducing plastic waste</td><td>ทั้งย่อหน้าพูดถึงโครงการลดขยะพลาสติกในโรงเรียน</td></tr><tr><td>42</td><td class="emoji-cell">🍶</td><td>A) Their own bottles and food containers</td><td>ระบุตรง "bring their own bottles and food containers"</td></tr><tr><td>43</td><td class="emoji-cell">📉</td><td>B) By half</td><td>ระบุตรง "decreased by half within just one semester"</td></tr><tr><td>44</td><td class="emoji-cell">🥤</td><td>A) Refusing a plastic straw</td><td>ระบุตรง "refusing a plastic straw"</td></tr><tr><td>45</td><td class="emoji-cell">🔍</td><td>B) not certain</td><td>unsure แปลว่าไม่แน่ใจ ใกล้เคียงกับ "not certain"</td></tr><tr><td>46</td><td class="emoji-cell">🔍</td><td>B) the students</td><td>them แทนนักเรียนที่ถูกกล่าวถึงก่อนหน้า</td></tr><tr><td>47</td><td class="emoji-cell">🤔</td><td>B) They believe the program is worth expanding</td><td>อนุมานจาก "plans to expand the program to include recycling stations next year"</td></tr><tr><td>48</td><td class="emoji-cell">🎯</td><td>A) Small daily choices can make a big environmental difference</td><td>สรุปใจความจากประโยค "small daily choices...can make a big difference over time"</td></tr><tr><td>49</td><td class="emoji-cell">🏫</td><td>B) Chiang Mai</td><td>ระบุตรง "One school in Chiang Mai reported..."</td></tr><tr><td>50</td><td class="emoji-cell">♻️</td><td>B) Recycling stations</td><td>ระบุตรง "plans to expand the program to include recycling stations next year"</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>3 กลยุทธ์การอ่าน</h4>
+      <table><tr><th>กลยุทธ์</th><th>ใช้เมื่อไหร่</th></tr>
+      <tr><td>Skimming</td><td>หา Main Idea</td></tr>
+      <tr><td>Scanning</td><td>หา Detail</td></tr>
+      <tr><td>Guessing from Context</td><td>หา Vocabulary</td></tr></table></div>
+    <div class="cheat-box"><h4>5 ประเภทคำถาม</h4>
+      <ul><li>Main Idea, Detail</li><li>Vocabulary in Context</li><li>Inference, Reference</li></ul></div>
+    <div class="cheat-box"><h4>เทคนิคจำเร็ว</h4>
+      <ul><li>ประโยคแรก/สุดท้าย = ใจความหลัก</li><li>สรรพนามมองย้อนกลับเสมอ</li></ul></div>
+    <div class="cheat-box"><h4>ข้อควรระวัง</h4>
+      <ul><li>Inference ต้องคิดต่อ ไม่ใช่หาคำตรง ๆ</li><li>อ่านคำถามก่อนอ่านย่อหน้าเต็ม</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกลยุทธ์ในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>สอนกลยุทธ์การอ่านก่อนให้อ่านย่อหน้าจริง เพื่อให้นักเรียนรู้จักวิธีคิดก่อนลงมือ</li>
+    <li>ฝึกให้นักเรียนอ่านคำถามก่อนอ่านย่อหน้าเต็มเสมอ เป็นนิสัยที่ช่วยประหยัดเวลาในห้องสอบ</li>
+    <li>เน้นย้ำว่าคำถาม Inference ไม่มีคำตอบบอกตรง ๆ ในเนื้อเรื่อง ต้องฝึกคิดต่อ</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Speed Skimming Race</b> — จับเวลาให้นักเรียนอ่านย่อหน้าเร็ว ๆ แล้วตอบ Main Idea ให้ถูกต้องที่สุด</li>
+    <li><b>Word Detective</b> — ปิดคำศัพท์บางคำในย่อหน้า ให้นักเรียนเดาความหมายจากบริบทรอบข้าง</li>
+    <li><b>Pronoun Hunt</b> — ให้นักเรียนวงกลมสรรพนามทุกตัวในย่อหน้าแล้วโยงเส้นไปหาคำนามที่อ้างถึง</li>
+    <li><b>Passage Swap</b> — ให้นักเรียนแต่งย่อหน้าสั้น ๆ เอง แล้วแลกกันตอบคำถามของเพื่อน</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 โดยเฉพาะคำถาม Reference และ Inference เพื่อวางแผนการสอนซ่อมเสริม</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> หาย่อหน้าภาษาอังกฤษสั้น ๆ จากหนังสือหรืออินเทอร์เน็ต 1 ย่อหน้า แล้วเขียนสรุปใจความหลัก 1 ประโยค</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> เลือกคำศัพท์ที่ไม่รู้จัก 3 คำจากย่อหน้าที่อ่าน แล้วลองเดาความหมายจากบริบทก่อนเปิดพจนานุกรมตรวจสอบ</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> อ่านย่อหน้าที่กำหนด แล้วแต่งคำถามเอง 3 ข้อ (Detail, Vocabulary, Inference อย่างละ 1 ข้อ)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> ฝึก Scanning โดยจับเวลาตัวเองหาคำตอบ Detail จากย่อหน้าในหนังสือเรียนวิชาอื่น ๆ</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"อ่านให้ฉลาด ไม่ใช่อ่านให้เร็วที่สุด" 🌟</div>
+    <div class="sub">การอ่านจับใจความไม่ได้วัดกันที่ความเร็ว แต่วัดกันที่กลยุทธ์ที่ใช้ ถ้าวันนี้เข้าใจ Skimming, Scanning และการเดาความหมายจากบริบทแล้ว การอ่านข้อสอบภาษาอังกฤษจะง่ายขึ้นมาก ไม่ต้องรู้ทุกคำศัพท์ก็เข้าใจเรื่องราวได้ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง Reading Comprehension ค่ะ มีกลยุทธ์หลัก 3 แบบ: Skimming, Scanning, Guessing from Context</div><div class="line">✅ Skimming ใช้หาใจความหลัก (Main Idea) โดยอ่านประโยคแรก/สุดท้ายของย่อหน้า</div><div class="line">✅ Scanning ใช้หาคำตอบ Detail โดยกวาดหาคำสำคัญในคำถามแล้วอ่านรอบ ๆ คำนั้น</div><div class="line">✅ Guessing from Context ใช้ตอบคำถามคำศัพท์ (Vocabulary in Context) โดยดูประโยครอบข้าง</div><div class="line">✅ Reference: สรรพนาม (it, he, she, they) ต้องมองย้อนกลับไปหาคำนามก่อนหน้าเสมอ</div><div class="line">✅ Inference: คำตอบไม่ได้บอกตรง ๆ ในเรื่อง ต้องคิดต่อจากข้อมูลที่ให้มา</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

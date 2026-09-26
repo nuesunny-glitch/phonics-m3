@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 ศูนย์รวมเกม | English M.3 Course</title>
+<meta name="description" content="ศูนย์รวมเกมฝึกภาษาอังกฤษของหลักสูตร English M.3 — Verb Adventure, Adjective Adventure, Pronoun Adventure">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Page-specific styles only — reuses style.css's CSS custom properties
+     (--primary, --bg, --surface, --radius, --shadow, dark mode via
+     data-theme) so this page matches the main site's look without touching
+     the shared/generated files. See CLAUDE.md "UI Style". */
+  .games-hero{
+    max-width:960px;margin:0 auto;padding:34px 20px 8px;text-align:center;
+  }
+  .games-hero h1{margin:0 0 12px;font-size:2.1rem;color:var(--text);}
+  .games-hero p{margin:0;color:var(--text-muted);font-size:1.15rem;}
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;color:#fff;
+    text-decoration:none;font-size:1.05rem;font-weight:600;opacity:.9;
+  }
+  .back-link:hover{opacity:1;text-decoration:underline;}
+
+  .games-grid{
+    max-width:960px;margin:28px auto 60px;padding:0 20px;
+    min-width:0;width:100%;
+    display:grid;gap:26px;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  }
+  .game-card{
+    background:var(--surface);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);padding:30px 26px;
+    display:flex;flex-direction:column;gap:14px;
+    border:1px solid var(--border);
+  }
+  .game-card-icon{font-size:3rem;line-height:1;}
+  .game-card-title{margin:0;font-size:1.45rem;font-weight:700;color:var(--text);}
+  .game-card-desc{margin:0;font-size:1.08rem;color:var(--text-muted);line-height:1.5;}
+
+  .game-card-progress-bar{
+    height:9px;border-radius:999px;background:var(--border);overflow:hidden;margin-top:6px;
+  }
+  .game-card-progress-fill{
+    height:100%;background:var(--primary);border-radius:999px;transition:width .3s ease;
+  }
+  .game-card-progress-label{font-size:1rem;color:var(--text-muted);font-weight:600;}
+
+  .game-card-scores{list-style:none;margin:4px 0 0;padding:0;font-size:1.05rem;}
+  .game-card-scores li{
+    display:flex;justify-content:space-between;padding:5px 0;
+    border-bottom:1px dashed var(--border);color:var(--text);
+  }
+  .game-card-scores li:last-child{border-bottom:none;}
+  .game-card-scores .stars{color:var(--accent-yellow-text);}
+  .game-card-empty{font-size:1.05rem;color:var(--text-muted);font-style:italic;margin:4px 0 0;}
+
+  .game-card-cta{
+    margin-top:auto;padding-top:10px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    background:var(--primary);color:#fff;text-decoration:none;
+    font-weight:700;font-size:1.15rem;padding:15px 22px;border-radius:999px;
+    transition:background .15s ease;
+  }
+  .game-card-cta:hover{background:var(--primary-dark);}
+
+  @media (max-width:480px){
+    .games-hero{padding:26px 16px 4px;}
+    .games-grid{padding:0 16px;gap:20px;margin:24px auto 48px;}
+    .game-card{padding:22px 20px;}
+    .brand-title .tag{display:none;}
+    .back-link .full{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🎮</span>
+        <div class="brand-text">
+          <span class="brand-title">ศูนย์รวมเกม <span class="tag">Games</span></span>
+          <span class="brand-subtitle">English M.3 Course</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.6rem;">
+      <a class="back-link" href="home.html">🏠 <span class="full">หน้าหลัก</span></a>
+      <a class="back-link" href="index.html">&larr; <span class="full">กลับหน้าหลักคอร์ส</span></a>
+      <button id="themeToggle" class="theme-toggle" aria-label="สลับเป็นโหมดมืด">🌙</button>
+    </div>
+  </header>
+
+  <div class="games-hero">
+    <h1>🎮 ศูนย์รวมเกมฝึกภาษาอังกฤษ</h1>
+    <p>เลือกเกมที่อยากเล่น ฝึกซ้ำได้ไม่จำกัด คะแนนล่าสุดของแต่ละเกมจะถูกบันทึกไว้ในเครื่องนี้เท่านั้น (ไม่ส่งขึ้นเซิร์ฟเวอร์)</p>
+  </div>
+
+  <div id="gamesGrid" class="games-grid"></div>
+
+  <footer class="site-footer">
+    <p class="footer-title">English M.3 Course <span class="dot">•</span> ศูนย์รวมเกม</p>
+    <p class="footer-sub">ทำด้วย 💙 เพื่อปูพื้นฐานภาษาอังกฤษตั้งแต่การอ่านออกเสียงจนถึงแนวข้อสอบจริง · © <span id="year"></span></p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- Dark mode (same key/logic as tools/script.template.js) ---------------- */
+  var THEME_KEY = 'course-theme';
+  var themeToggleBtn = document.getElementById('themeToggle');
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    if (themeToggleBtn) {
+      themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeToggleBtn.setAttribute('aria-label', theme === 'dark' ? 'สลับเป็นโหมดสว่าง' : 'สลับเป็นโหมดมืด');
+    }
+  }
+  function initTheme() {
+    var saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'dark' || saved === 'light') { applyTheme(saved); return; }
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+  initTheme();
+
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------- Game registry ---------------- */
+  var GAMES = [
+    {
+      icon: '🏃',
+      title: 'Verb Adventure',
+      desc: 'ฝึกคำกริยาพื้นฐานภาษาอังกฤษ (run, eat, sleep, play...) ผ่านเกม 3 ด่าน',
+      href: '16-Verb-Adventure/index.html',
+      chapters: [
+        { storageKey: 'verbAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1: กริยาพื้นฐาน', max: 36 }
+      ]
+    },
+    {
+      icon: '🎨',
+      title: 'Adjective Adventure',
+      desc: 'ฝึกคำคุณศัพท์พื้นฐานภาษาอังกฤษ (big, happy, hot, fast...) ผ่านเกม 3 ด่าน',
+      href: '17-Adjective-Adventure/index.html',
+      chapters: [
+        { storageKey: 'adjectiveAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1: คำคุณศัพท์พื้นฐาน', max: 36 }
+      ]
+    },
+    {
+      icon: '🎭',
+      title: 'Pronoun Adventure',
+      desc: 'ฝึกคำสรรพนามภาษาอังกฤษครบ 3 บท: Subject, Object, Possessive',
+      href: '18-Pronoun-Adventure/index.html',
+      chapters: [
+        { storageKey: 'pronounAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1: Subject', max: 21 },
+        { storageKey: 'pronounAdventureCh2Progress', dataKey: 'chapter2', label: 'บทที่ 2: Object', max: 21 },
+        { storageKey: 'pronounAdventureCh3Progress', dataKey: 'chapter3', label: 'บทที่ 3: Possessive', max: 21 }
+      ]
+    },
+    {
+      icon: '🧭',
+      title: 'Preposition Adventure',
+      desc: 'ฝึกคำบุพบทภาษาอังกฤษ (Place: in/on/under/at, Time: in/on/at) พร้อมมาสคอต "น้องคอนนี่" 🦊, เกม 3 แบบ และ Boss Quiz 20 ข้อ',
+      href: '19-Preposition-Adventure/index.html',
+      chapters: [
+        { storageKey: 'prepositionAdventureProgress', dataKey: null, label: 'Boss Quiz (Place + Time)', max: 20 }
+      ]
+    },
+    {
+      icon: '🔗',
+      title: 'Conjunction Adventure',
+      desc: 'ฝึกคำสันธานภาษาอังกฤษครบ 3 บท พร้อมมาสคอต "น้องคอนนี่" 🦊 — and/but/or, because/so, although/if/when',
+      href: '20-Conjunction-Adventure/index.html',
+      chapters: [
+        { storageKey: 'conjunctionAdventureCh1Progress', dataKey: 'chapter1', label: 'บทที่ 1: and/but/or', max: 12 },
+        { storageKey: 'conjunctionAdventureCh2Progress', dataKey: 'chapter2', label: 'บทที่ 2: because/so', max: 8 },
+        { storageKey: 'conjunctionAdventureCh3Progress', dataKey: 'chapter3', label: 'บทที่ 3: although/if/when', max: 12 }
+      ]
+    },
+    {
+      icon: '⏰',
+      title: 'Present Simple Adventure',
+      desc: 'ฝึก Present Simple ครบ 3 บท พร้อมมาสคอต "น้องคอนนี่" 🦊 — บทที่ 1: Subject/Verb/Affirmative, บทที่ 2: do/does + Negative + Yes/No Questions, บทที่ 3: WH Questions (What/Where/When/Why/Who/Which/Whose/How)',
+      href: '21-Present-Simple-Adventure/index.html',
+      chapters: [
+        { storageKey: 'presentSimpleAdventureCh1Progress', dataKey: null, label: 'บทที่ 1: Subject/Verb/Affirmative', max: 10 },
+        { storageKey: 'presentSimpleAdventureCh2Progress', dataKey: null, label: 'บทที่ 2: do/does, Negative, Yes/No', max: 10 },
+        { storageKey: 'presentSimpleAdventureCh3Progress', dataKey: null, label: 'บทที่ 3: WH Questions', max: 10 }
+      ]
+    },
+    {
+      icon: '⏳',
+      title: 'Present Continuous Adventure',
+      desc: 'ฝึก Present Continuous ครบ (am/is/are + -ing) พร้อมมาสคอต "น้องคอนนี่" 🦊 และ Boss Quiz 10 ข้อ',
+      href: '22-Present-Continuous-Adventure/index.html',
+      chapters: [
+        { storageKey: 'presentContinuousAdventureCh1Progress', dataKey: null, label: 'บทที่ 1: am/is/are + -ing', max: 10 }
+      ]
+    },
+    {
+      icon: '💬',
+      title: 'Daily Conversation Adventure',
+      desc: 'ฝึกบทสนทนาภาษาอังกฤษในชีวิตประจำวัน กับ Tom, Anna และเพื่อน ๆ พร้อมมาสคอต "น้องคอนนี่" 🦊 — Lesson 1: HELLO! (4 ฉาก + คำศัพท์ + เกม 3 แบบ + Boss Quiz 10 ข้อ)',
+      href: '23-Daily-Conversation-Adventure/index.html',
+      chapters: [
+        { storageKey: 'dailyConversationAdventureLesson1Progress', dataKey: null, label: 'Lesson 1: HELLO!', max: 10 }
+      ]
+    }
+  ];
+
+  function readChapterProgress(storageKey, dataKey) {
+    var raw = localStorage.getItem(storageKey);
+    if (!raw) return null;
+    try {
+      var data = JSON.parse(raw);
+      // dataKey === null means the game stores {bestScore,bestStars,playCount}
+      // flat at the top level (single-module games like the rebuilt
+      // Preposition Adventure), instead of nested under data.chapterN
+      // (multi-chapter games like Verb/Adjective/Pronoun/Conjunction Adventure).
+      var entry = dataKey ? data[dataKey] : data;
+      if (!entry || !entry.playCount) return null;
+      return entry;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function starsText(stars) {
+    // Colored spans, not the ★/☆ glyph pair — at small font sizes some
+    // font-fallback stacks render ★ and ☆ visually identically, making
+    // "0 stars" and "3 stars" indistinguishable (found while testing the
+    // rebuilt Preposition Adventure's own result screen).
+    var html = '';
+    for (var i = 0; i < 3; i++) {
+      html += '<span style="color:' + (i < stars ? '#FFB800' : '#ccc') + '">★</span>';
+    }
+    return html;
+  }
+
+  function renderCard(game) {
+    var results = game.chapters.map(function (ch) {
+      return { label: ch.label, max: ch.max, progress: readChapterProgress(ch.storageKey, ch.dataKey) };
+    });
+    var playedCount = results.filter(function (r) { return r.progress; }).length;
+    var totalChapters = results.length;
+
+    var card = document.createElement('div');
+    card.className = 'game-card';
+
+    var progressHtml = '';
+    if (totalChapters > 1) {
+      var pct = Math.round((playedCount / totalChapters) * 100);
+      progressHtml =
+        '<div class="game-card-progress-bar"><div class="game-card-progress-fill" style="width:' + pct + '%"></div></div>' +
+        '<div class="game-card-progress-label">ความคืบหน้า: เล่นแล้ว ' + playedCount + '/' + totalChapters + ' บท</div>';
+    }
+
+    var scoresHtml;
+    if (playedCount === 0) {
+      scoresHtml = '<p class="game-card-empty">ยังไม่เคยเล่น — กดเพื่อเริ่ม!</p>';
+    } else {
+      scoresHtml = '<ul class="game-card-scores">' + results.map(function (r) {
+        if (!r.progress) {
+          return '<li><span>' + r.label + '</span><span>ยังไม่ได้เล่น</span></li>';
+        }
+        return '<li><span>' + r.label + '</span><span>' + r.progress.bestScore + '/' + r.max +
+          ' <span class="stars">' + starsText(r.progress.bestStars) + '</span></span></li>';
+      }).join('') + '</ul>';
+    }
+
+    card.innerHTML =
+      '<div class="game-card-icon">' + game.icon + '</div>' +
+      '<h2 class="game-card-title">' + game.title + '</h2>' +
+      '<p class="game-card-desc">' + game.desc + '</p>' +
+      progressHtml +
+      scoresHtml +
+      '<a class="game-card-cta" href="' + game.href + '">เล่นเลย ▶</a>';
+
+    return card;
+  }
+
+  var grid = document.getElementById('gamesGrid');
+  GAMES.forEach(function (game) {
+    grid.appendChild(renderCard(game));
+  });
+})();
+</script>
+</body>
+</html>

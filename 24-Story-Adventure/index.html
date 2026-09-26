@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Story Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="hero-banner">
+    <div class="hero-icon">📖</div>
+    <h1>📖 Story Adventure</h1>
+    <div class="sub">Learn English by listening, speaking, reading and playing.</div>
+  </div>
+
+  <div class="game-card" style="text-align:center;margin-bottom:24px;">
+    <div id="hub-mascot"></div>
+  </div>
+
+  <p style="text-align:center;font-weight:700;color:var(--c5);margin:0 0 10px;">🗺️ แผนที่ความคืบหน้า (Progress Map)</p>
+  <div id="progress-map" class="progress-map"></div>
+
+  <p style="text-align:center;font-weight:700;color:var(--c5);margin:0 0 10px;">🎯 ภารกิจทั้งหมด (Mission List)</p>
+  <div id="episode-grid" class="episode-grid"></div>
+
+</div>
+<script src="_tools/episode-data.js"></script>
+<script src="_tools/mascot.js"></script>
+<script>
+  (function () {
+    Mascot.renderBubble('hub-mascot', 'พร้อมออกผจญภัยเรียนภาษาอังกฤษหรือยัง? เริ่มที่ Episode 1 กันเลย! 🚀');
+
+    function readEp1Progress() {
+      try {
+        var raw = localStorage.getItem('storyAdventureEpisode1Progress');
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) { return null; }
+    }
+    var ep1Progress = readEp1Progress();
+
+    // ---- Progress map (15 stepping-stone nodes) ----
+    var mapHtml = EPISODES.map(function (ep) {
+      var cls = 'map-node';
+      if (ep.unlocked) cls += ' unlocked';
+      return '<div class="' + cls + '" title="Episode ' + ep.n + ': ' + ep.title + '">' + ep.n + '</div>';
+    }).join('');
+    document.getElementById('progress-map').innerHTML = mapHtml;
+
+    // ---- Episode cards ----
+    var gridHtml = EPISODES.map(function (ep) {
+      var progressPct = ep.unlocked && ep1Progress ? (ep1Progress.percent || 0) : 0;
+      var body =
+        '<div class="ep-top">' +
+          '<div class="ep-illustration">' + ep.emoji + '</div>' +
+          '<div>' +
+            '<div class="ep-num">Episode ' + ep.n + '</div>' +
+            '<div class="ep-title">' + ep.title + '</div>' +
+            '<p class="ep-desc">' + ep.desc + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ep-meta">' +
+          '<span class="ep-badge difficulty-' + ep.difficulty + '">🎯 ' + ep.difficulty + '</span>' +
+          '<span class="ep-badge">⏱ ' + ep.time + '</span>' +
+          '<span class="ep-badge xp">⭐ ' + ep.xp + ' XP</span>' +
+        '</div>';
+
+      if (!ep.unlocked) {
+        return '<div class="episode-card locked">' + body +
+          '<div class="ep-progress-row"><span class="locked-pill">🔒 Locked</span></div>' +
+          '<div class="ep-start-btn">🔒 Locked</div>' +
+        '</div>';
+      }
+
+      return '<a class="episode-card" href="' + ep.href + '">' + body +
+        '<div class="ep-progress-row">' +
+          '<div class="ep-progress-bar"><div class="ep-progress-fill" style="width:' + progressPct + '%;"></div></div>' +
+          '<span class="ep-progress-label">' + progressPct + '%</span>' +
+        '</div>' +
+        '<div class="ep-start-btn">🚀 Start Mission</div>' +
+      '</a>';
+    }).join('');
+    document.getElementById('episode-grid').innerHTML = gridHtml;
+  })();
+</script>
+</body>
+</html>

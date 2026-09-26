@@ -1,0 +1,90 @@
+/* Global English Audio System (Phase 2) — button styling.
+   Self-contained (own colors) so it can drop into any of this site's
+   visual systems without a page-specific theme. Deliberately a distinct
+   look (indigo circle, sound-wave playing state) from the existing
+   Pronunciation-System's blue .pron-btn so the two never get visually
+   confused while both exist in the codebase during the pilot rollout. */
+
+.gaud-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #5b3df0;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0;
+  margin: 0 2px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.gaud-btn:hover { background: #4527d1; }
+.gaud-btn:active { transform: scale(0.9); }
+.gaud-btn:focus-visible {
+  outline: 2px solid #5b3df0;
+  outline-offset: 2px;
+}
+
+/* Small playing animation — pulsing scale + a tiny sound-wave glyph so
+   students can see audio is active at a glance. */
+.gaud-btn.gaud-btn-playing {
+  background: #ff9800;
+  animation: gaud-pulse 0.6s ease-in-out infinite;
+}
+@keyframes gaud-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+/* Practice ("พูดตาม" / repeat-after-me) button — same base circle styling
+   as .gaud-btn (still caught by the same click listener/pulse state) but
+   widened into a labeled pill since it carries a text label. */
+.gaud-btn.gaud-practice-btn {
+  width: auto;
+  min-width: 0;
+  height: 36px;
+  border-radius: 999px;
+  padding: 0 14px;
+  gap: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: #009688;
+  white-space: nowrap;
+}
+.gaud-btn.gaud-practice-btn:hover { background: #00786c; }
+.gaud-btn.gaud-practice-btn.gaud-btn-playing { background: #ff9800; }
+
+.gaud-fallback-msg {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #b3261e;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Choice-with-speaker-button wrapper (used where a speaker button sits
+   beside an existing clickable answer choice — a real <button> cannot be
+   nested inside another <button>, so the choice text and the speaker
+   button are siblings inside this flex wrapper instead). */
+.gaud-choice-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.gaud-choice-item > .choice-btn { flex: 1; }
+
+@media (max-width: 480px) {
+  .gaud-btn { width: 34px; min-width: 34px; height: 34px; font-size: 1rem; }
+  .gaud-btn.gaud-practice-btn { width: auto; min-width: 0; height: 34px; padding: 0 12px; font-size: 0.88rem; }
+}
+
+@media print {
+  .gaud-btn, .gaud-fallback-msg { display: none; }
+}

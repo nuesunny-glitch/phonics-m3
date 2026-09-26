@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>แผนที่การเรียน — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <div>
+      <h1 class="topbar-title">🗺️ แผนที่การเรียน</h1>
+      <div class="muted" style="font-size:.8rem;">ผ่านมาแล้ว 5 จาก 15 บท (+ 2 เกมเสริม)</div>
+    </div>
+    <a href="dashboard.html" class="icon-btn" aria-label="กลับหน้าหลัก">✕</a>
+  </header>
+
+  <div class="progress-track mb-16" style="max-width:480px;margin:0 auto 16px;">
+    <div class="progress-fill" style="width:33%;"></div>
+  </div>
+
+  <div id="mapPath" class="map-path"></div>
+
+</div>
+
+<!-- Node detail bottom sheet -->
+<div id="nodeOverlay" class="overlay">
+  <div class="sheet">
+    <div id="sheetIcon" style="font-size:3rem;">📖</div>
+    <h2 id="sheetTitle" style="margin:8px 0 4px;">ชื่อบทเรียน</h2>
+    <p id="sheetSub" class="muted mb-16">คำอธิบายสั้น ๆ</p>
+    <a id="sheetCta" href="#" class="btn btn-primary">เริ่มบทเรียน</a>
+    <button id="sheetClose" class="btn btn-ghost">ปิด</button>
+  </div>
+</div>
+
+<div id="bottomNav"></div>
+<script src="_tools/mock-data.js"></script>
+<script src="_tools/bottom-nav.js"></script>
+<script>
+  var pathEl = document.getElementById('mapPath');
+  var offsets = ['offset-left', '', 'offset-right', ''];
+
+  MOCK_MAP_NODES.forEach(function (node, i) {
+    var row = document.createElement('div');
+    row.className = 'map-node-row ' + offsets[i % offsets.length];
+
+    var btn = document.createElement('button');
+    btn.className = 'map-node ' + node.status;
+    btn.innerHTML = node.status === 'locked' ? '🔒' : node.icon;
+    btn.setAttribute('aria-label', node.title);
+    if (node.status !== 'locked') {
+      btn.addEventListener('click', function () { openSheet(node); });
+    }
+    row.appendChild(btn);
+    pathEl.appendChild(row);
+  });
+
+  var overlay = document.getElementById('nodeOverlay');
+  function openSheet(node) {
+    document.getElementById('sheetIcon').textContent = node.icon;
+    document.getElementById('sheetTitle').textContent =
+      node.status === 'bonus' ? '🎮 ' + node.title : 'บทที่ ' + node.id + ': ' + node.title;
+    document.getElementById('sheetSub').textContent =
+      node.status === 'bonus' ? 'เกมเสริม เล่นซ้ำได้ไม่จำกัด' :
+      node.status === 'done' ? 'เรียนจบแล้ว — ทบทวนได้ทุกเมื่อ' : 'พร้อมเรียนบทนี้แล้ว!';
+    document.getElementById('sheetCta').href = node.href;
+    document.getElementById('sheetCta').textContent =
+      node.status === 'bonus' ? 'เล่นเลย ▶' :
+      node.status === 'done' ? 'ทบทวนอีกครั้ง 🔁' : 'เริ่มบทเรียน ▶';
+    overlay.classList.add('open');
+  }
+  document.getElementById('sheetClose').addEventListener('click', function () {
+    overlay.classList.remove('open');
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+</body>
+</html>

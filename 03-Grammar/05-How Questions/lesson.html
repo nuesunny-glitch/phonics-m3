@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียน: How Questions (How / How much / How many / How often / How long / How far / How old)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>🤔❓ บทเรียน: How Questions (How / How much / How many / How often / How long / How far / How old)</h1>
+    <div class="sub">English Grammar Quiz Pack · เตรียมสอบเข้า ม.4</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+    <ul class="obj-list"><li>บอกความหมายและใช้ How + is/am/are ถามความเป็นอยู่หรือสภาพของคน สิ่งของ และอากาศได้ถูกต้อง</li>
+<li>ใช้ How ร่วมกับคำคุณศัพท์ (How old/tall/far/long/often ฯลฯ) ถามข้อมูลเฉพาะเจาะจงได้ถูกต้อง</li>
+<li>แยกแยะคำนามนับได้กับนับไม่ได้ เพื่อเลือกใช้ How much หรือ How many ได้ถูกต้อง รวมถึงคำนามที่ต้องระวังเป็นพิเศษ เช่น money, rice, homework</li>
+<li>ใช้ How + do/does/did ถามวิธีการหรือการเดินทางได้ถูกต้อง</li>
+<li>วิเคราะห์และแก้ไขประโยคคำถาม How ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อยเรื่อง How much/How many</li></ul>
+  </div>
+
+  
+    <div class="explain-block">
+      <h2>❓ How คืออะไร</h2>
+      <p>How แปลว่า <b>"อย่างไร"</b> ใช้ขึ้นต้นประโยคคำถามเพื่อถามเกี่ยวกับสภาพ ปริมาณ จำนวน ระยะเวลา ระยะทาง อายุ หรือวิธีการทำสิ่งต่าง ๆ How ไม่ได้มีความหมายเดียว แต่จะเปลี่ยนความหมายไปตามคำที่ตามหลังมา ดังนั้นต้องดูว่า How ตามด้วยอะไรก่อนแปลความหมาย</p><table><tr><th>รูปแบบ</th><th>ตัวอย่างสั้น ๆ</th></tr><tr><td>How + is/am/are</td><td>How are you?</td></tr><tr><td>How + adjective</td><td>How old are you?</td></tr><tr><td>How much</td><td>How much is this?</td></tr><tr><td>How many</td><td>How many books?</td></tr><tr><td>How + do/does/did</td><td>How do you go to school?</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>😊 How + Verb to Be (ถามความเป็นอยู่/สภาพ)</h2>
+      <p>ใช้ How + is/am/are ถามว่า "เป็นอย่างไรบ้าง" มักใช้ทักทายหรือถามสภาพของคน สิ่งของ หรือสถานการณ์ ไม่ได้ถามเรื่องจำนวนหรือปริมาณแต่อย่างใด</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>How + is/am/are + ประธาน?</td><td>How are you?</td><td>คุณเป็นอย่างไรบ้าง</td></tr><tr><td></td><td>How is your family?</td><td>ครอบครัวคุณเป็นอย่างไรบ้าง</td></tr><tr><td></td><td>How is the weather today?</td><td>วันนี้อากาศเป็นอย่างไรบ้าง</td></tr></table><p>คำตอบมักตอบด้วยคำคุณศัพท์บอกความรู้สึกหรือสภาพ เช่น <b>Fine, thank you.</b> / <b>It's great.</b> / <b>She's very well.</b></p>
+    </div>
+
+    <div class="explain-block">
+      <h2>📏 How + คำคุณศัพท์ (ถามข้อมูลเฉพาะเจาะจง)</h2>
+      <p>เมื่อเติมคำคุณศัพท์ (adjective) ต่อท้าย How จะได้ความหมายเฉพาะเจาะจงมากขึ้น นักเรียนต้องจำคู่คำถาม-คำตอบเหล่านี้ให้แม่น เพราะข้อสอบชอบออกบ่อยมาก</p><table><tr><th>How + adjective</th><th>ถามเรื่อง</th><th>ตัวอย่างคำถาม</th><th>ตัวอย่างคำตอบ</th></tr><tr><td>How old</td><td>อายุ</td><td>How old are you?</td><td>I'm 14 years old.</td></tr><tr><td>How tall</td><td>ความสูง</td><td>How tall is he?</td><td>He's 170 cm tall.</td></tr><tr><td>How far</td><td>ระยะทาง</td><td>How far is it to school?</td><td>It's about 2 kilometers.</td></tr><tr><td>How long</td><td>ระยะเวลา/ความยาว</td><td>How long does it take?</td><td>It takes 20 minutes.</td></tr><tr><td>How often</td><td>ความถี่</td><td>How often do you exercise?</td><td>I exercise every day.</td></tr><tr><td>How big/heavy/wide</td><td>ขนาด/น้ำหนัก/ความกว้าง</td><td>How heavy is this bag?</td><td>It's 5 kilograms.</td></tr></table><p>สังเกตคำตอบของ <b>How often</b> ต้องเป็นความถี่เท่านั้น เช่น every day, once a week, twice a month, sometimes, never — ห้ามตอบเป็นจำนวนหรือราคา</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🥛 How much (นับไม่ได้ / ถามราคา)</h2>
+      <p>ใช้ <b>How much</b> ใน 2 กรณีหลัก: (1) ถามราคาของสิ่งของ (2) ถามปริมาณของคำนามนับไม่ได้ (uncountable noun) เช่น น้ำ ข้าว เงิน ที่ไม่สามารถแยกนับเป็นชิ้น ๆ ได้ตรง ๆ</p><table><tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>ถามราคา</td><td>How much is this shirt?</td><td>เสื้อตัวนี้ราคาเท่าไหร่</td></tr><tr><td>ถามปริมาณคำนามนับไม่ได้</td><td>How much water do you drink a day?</td><td>คุณดื่มน้ำวันละเท่าไหร่</td></tr></table><p><b>โครงสร้าง:</b> How much + is/are...? (ถามราคา) หรือ How much + คำนามนับไม่ได้ + do/does...?</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🔢 How many (นับได้)</h2>
+      <p>ใช้ <b>How many</b> กับคำนามนับได้ (countable noun) เท่านั้น และคำนามหลัง How many ต้องอยู่ในรูปพหูพจน์เสมอ (เติม s)</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>How many + นามนับได้พหูพจน์ + do/does/are...?</td><td>How many books do you have?</td><td>คุณมีหนังสือกี่เล่ม</td></tr><tr><td></td><td>How many students are there in your class?</td><td>ในห้องของคุณมีนักเรียนกี่คน</td></tr></table><p><b>เทคนิคจำง่าย:</b> Many คู่กับนามที่เติม s ได้ (book→books) ส่วน Much คู่กับนามที่ไม่มีรูปพหูพจน์</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🚶 How + do/does/did (ถามวิธีการ)</h2>
+      <p>ใช้ How + do/does/did ถามวิธีการทำสิ่งใดสิ่งหนึ่ง หรือถามว่าเดินทางด้วยวิธีใด (manner/means of transport) — โครงสร้างเหมือนประโยคคำถามธรรมดาที่ขึ้นต้นด้วย Wh-word</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำตอบตัวอย่าง</th></tr><tr><td>How + do + ประธาน + กริยาช่องที่ 1?</td><td>How do you go to school?</td><td>I go to school by bus.</td></tr><tr><td>How + does + ประธาน(เอกพจน์) + กริยาช่องที่ 1?</td><td>How does she cook rice?</td><td>She boils it in a pot.</td></tr><tr><td>How + did + ประธาน + กริยาช่องที่ 1?</td><td>How did you get here?</td><td>I got here by taxi.</td></tr></table><p>คำตอบมักขึ้นต้นด้วย <b>by</b> + พาหนะ (by bus, by car, by bike) หรืออธิบายขั้นตอนการทำสิ่งนั้น</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>⚠️ คำนามที่ต้องระวัง: นับได้ (Countable) vs นับไม่ได้ (Uncountable)</h2>
+      <p>นักเรียนมักสับสนว่าคำนามใดนับได้ (ใช้ How many) หรือนับไม่ได้ (ใช้ How much) ให้จำคำนามที่เป็น "ตัวร้ายในข้อสอบ" เหล่านี้ไว้เป็นพิเศษ</p><table><tr><th>คำนาม</th><th>นับได้หรือไม่</th><th>ใช้กับ</th><th>เหตุผล</th></tr><tr><td>money (เงิน)</td><td>นับไม่ได้</td><td>How much money</td><td>เงินเป็นก้อนรวม ไม่แยกนับเป็นชิ้น แม้จะใช้ซื้อของนับได้ก็ตาม</td></tr><tr><td>rice (ข้าว)</td><td>นับไม่ได้</td><td>How much rice</td><td>เป็นเมล็ดเล็ก ๆ จำนวนมาก นับเป็นปริมาณรวม ไม่ใช่ชิ้น</td></tr><tr><td>homework (การบ้าน)</td><td>นับไม่ได้</td><td>How much homework</td><td>เป็นงานโดยรวม ไม่มีรูปพหูพจน์ homeworks</td></tr><tr><td>information (ข้อมูล)</td><td>นับไม่ได้</td><td>How much information</td><td>เป็นคำนามนามธรรม ไม่มีรูปพหูพจน์</td></tr><tr><td>luggage/baggage (สัมภาระ)</td><td>นับไม่ได้</td><td>How much luggage</td><td>ถือเป็นกลุ่มก้อนของสัมภาระทั้งหมด ไม่ใช้ luggages</td></tr><tr><td>furniture (เฟอร์นิเจอร์)</td><td>นับไม่ได้</td><td>How much furniture</td><td>เป็นกลุ่มของรวม ไม่ใช้ furnitures</td></tr><tr><td>people (ผู้คน)</td><td>นับได้ (พหูพจน์ของ person)</td><td>How many people</td><td>คนนับเป็นจำนวนได้ชัดเจน (one person, two people)</td></tr><tr><td>dollars/baht (หน่วยเงิน)</td><td>นับได้</td><td>How many dollars</td><td>หน่วยเงินนับเป็นจำนวนได้ ต่างจาก money ที่นับไม่ได้</td></tr></table><p><b>เคล็ดลับ:</b> ถ้าคำนามนั้นเติม s แล้วนับเป็นชิ้นได้ชัดเจน (book→books, student→students) มักเป็นนับได้ ใช้ How many แต่ถ้าเป็นของเหลว ผงเล็ก ๆ หรือสิ่งที่เป็นนามธรรม/กลุ่มก้อนรวม มักเป็นนับไม่ได้ ใช้ How much</p>
+    </div>
+  <div class="explain-block">
+      <h2>📊 ตารางสรุป</h2>
+      <table><tr><th>โครงสร้าง How</th><th>ใช้ถามเรื่อง</th><th>ตัวอย่างคำถาม</th><th>ตัวอย่างคำตอบ</th></tr><tr><td>How + is/am/are</td><td>สภาพ/ความเป็นอยู่</td><td>How are you?</td><td>I'm fine, thank you.</td></tr>
+<tr><td>How + adjective</td><td>อายุ/ความสูง/ระยะทาง/เวลา/ความถี่</td><td>How old are you?</td><td>I'm 14 years old.</td></tr>
+<tr><td>How much + นับไม่ได้/ราคา</td><td>ปริมาณนามนับไม่ได้ หรือราคา</td><td>How much is this bag?</td><td>It's 300 baht.</td></tr>
+<tr><td>How many + นับได้ (พหูพจน์)</td><td>จำนวนนามนับได้</td><td>How many books do you have?</td><td>I have five books.</td></tr>
+<tr><td>How + do/does/did</td><td>วิธีการ/การเดินทาง</td><td>How do you go to school?</td><td>I go by bus.</td></tr></table>
+    </div>
+
+  <div class="explain-block">
+    <h2>🧠 เทคนิคการจำ</h2>
+    <div class="tip-card">💡 จำง่าย ๆ: &lt;b&gt;How much&lt;/b&gt; คู่กับของที่ &lt;b&gt;นับไม่ได้&lt;/b&gt; (much ไม่มี s) ส่วน &lt;b&gt;How many&lt;/b&gt; คู่กับของที่ &lt;b&gt;นับได้เป็นหลายชิ้น&lt;/b&gt; (many คู่กับนามเติม s)</div>
+<div class="tip-card">💡 ท่องคู่คำถาม-คำตอบ: How old → years old, How tall → cm/meters tall, How far → kilometers, How long → minutes/hours, How often → every day/week</div>
+<div class="tip-card">💡 คำนามตัวร้าย 5 คำที่ต้องจำว่านับไม่ได้: &lt;b&gt;money, rice, homework, information, luggage&lt;/b&gt; — ท่องจำเป็นกลุ่ม "เงิน ข้าว การบ้าน ข้อมูล กระเป๋า" ห้ามเติม s เด็ดขาด</div>
+  </div>
+
+  <div class="footer-note">English Grammar Quiz Pack · How Questions</div>
+</div>
+</body>
+</html>

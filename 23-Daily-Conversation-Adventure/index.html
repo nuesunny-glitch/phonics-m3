@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Daily Conversation Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>💬 Daily Conversation Adventure</h1>
+    <div class="sub">เรียนบทสนทนาภาษาอังกฤษในชีวิตประจำวัน ผ่านภาพ เสียง และเกม — กับน้องคอนนี่ 🦊</div>
+  </div>
+
+  <div class="hub-grid">
+    <a id="lesson1Card" class="hub-card" href="lesson-1-hello/game.html">
+      <div class="icon">👋</div>
+      <div>
+        <p class="title">Lesson 1: HELLO!</p>
+        <p class="desc">ทักทายเพื่อนใหม่ — Hello / Hi / My name is... / Nice to meet you / Goodbye — 4 ฉาก + คำศัพท์ 8 คำ + เกม 3 แบบ + Boss Quiz 10 ข้อ</p>
+        <p id="lesson1Best" class="best"></p>
+      </div>
+    </a>
+
+    <div class="hub-card locked">
+      <div class="icon">🔒</div>
+      <div>
+        <p class="title">Lesson 2: เร็ว ๆ นี้</p>
+        <p class="desc">บทสนทนาต่อไปกับ Tom, Anna, Ben และ Lucy</p>
+        <span class="soon-pill">เร็ว ๆ นี้</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  (function () {
+    var raw = localStorage.getItem('dailyConversationAdventureLesson1Progress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.playCount > 0) {
+        var starsHtml = '';
+        for (var i = 0; i < 3; i++) {
+          starsHtml += '<span style="color:' + (i < data.bestStars ? 'var(--c2)' : '#ddd') + '">★</span>';
+        }
+        document.getElementById('lesson1Best').innerHTML =
+          'คะแนนดีที่สุด: ' + data.bestScore + '/10  ' + starsHtml + (data.xp ? '  · ⭐ ' + data.xp + ' XP' : '');
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+</script>
+</body>
+</html>

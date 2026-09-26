@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaTalk AI — เรียนภาษาอังกฤษกับ AI ส่วนตัว</title>
+<meta name="description" content="เรียนภาษาอังกฤษกับติวเตอร์ AI ส่วนตัว ฝึกพูด แก้ไวยากรณ์ วิเคราะห์การออกเสียงแบบเรียลไทม์ เรียนได้ทุกที่ทุกเวลา">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner container">
+    <a href="#top" class="brand">
+      <span class="brand-mark">✨</span>
+      <span class="brand-name">Nova<span class="accent">Talk</span> AI</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#features" class="nav-link">จุดเด่น</a>
+      <a href="#how" class="nav-link">วิธีเรียน</a>
+      <a href="#courses" class="nav-link">คอร์สเรียน</a>
+      <a href="#reviews" class="nav-link">รีวิว</a>
+      <a href="#faq" class="nav-link">คำถามที่พบบ่อย</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#courses" class="btn btn-ghost">เข้าสู่ระบบ</a>
+      <a href="#courses" class="btn btn-primary">ทดลองเรียนฟรี</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero container">
+    <div class="hero-text reveal">
+      <p class="eyebrow">🚀 ขับเคลื่อนด้วยปัญญาประดิษฐ์รุ่นล่าสุด</p>
+      <h1>เก่งอังกฤษไว<br>กับติวเตอร์ <span class="accent">AI ส่วนตัว</span><br>ที่รู้ใจคุณที่สุด</h1>
+      <p class="hero-sub">
+        ฝึกพูด ฟัง อ่าน เขียน แบบ 1-on-1 กับ AI ที่ปรับบทเรียนให้เข้ากับระดับของคุณ
+        แก้ไวยากรณ์และออกเสียงให้ทันทีแบบเรียลไทม์ เรียนได้ทุกที่ ทุกเวลา ไม่ต้องรอคิว
+      </p>
+      <div class="hero-actions">
+        <a href="#courses" class="btn btn-primary btn-lg">เริ่มเรียนฟรี 7 วัน</a>
+        <a href="#how" class="btn btn-outline btn-lg">
+          <span class="play-dot">▶</span> ดูวิธีการเรียน
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="50000">0</span><span class="stat-suffix">+</span>
+          <p>ผู้เรียนทั่วประเทศ</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="120">0</span><span class="stat-suffix">+</span>
+          <p>บทเรียน AI</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
+          <p>พร้อมสอนตลอดเวลา</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="4.9" data-decimal="1">0</span><span class="stat-suffix">★</span>
+          <p>คะแนนความพึงพอใจ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-card main-card">
+        <div class="chat-head">
+          <span class="dot d-ai">🤖</span>
+          <div>
+            <strong>Nova AI Tutor</strong>
+            <small>ออนไลน์ • พร้อมสอน</small>
+          </div>
+        </div>
+        <div class="chat-bubble ai">Hi! Let's practice today 👋 ลองพูดประโยคนี้ดูสิ:<br><em>"I have been studying English for two years."</em></div>
+        <div class="chat-bubble user">I have studying English two years.</div>
+        <div class="chat-bubble ai fix">
+          ✏️ เกือบถูกแล้ว! ควรพูดว่า <b>"I have been studying English for two years."</b><br>
+          <span class="tip">💡 ใช้ Present Perfect Continuous เพราะยังทำต่อเนื่องถึงตอนนี้</span>
+        </div>
+        <div class="score-row">
+          <span>ความแม่นยำการออกเสียง</span>
+          <div class="score-bar"><span style="width:88%"></span></div>
+          <b>88%</b>
+        </div>
+      </div>
+
+      <div class="float-card fc-1">📈 พัฒนาการ +34%<br><small>ใน 30 วัน</small></div>
+      <div class="float-card fc-2">🏆 คอร์สจบแล้ว 12</div>
+      <div class="float-card fc-3">🔥 ต่อเนื่อง 21 วัน</div>
+    </div>
+  </section>
+
+  <!-- ===== LOGOS / TRUST STRIP ===== -->
+  <section class="trust-strip">
+    <div class="container trust-inner">
+      <p>ได้รับความไว้วางใจจากผู้เรียนและสถาบันการศึกษาทั่วประเทศ</p>
+      <div class="trust-tags">
+        <span>โรงเรียนมัธยม 300+ แห่ง</span>
+        <span>มหาวิทยาลัย 40+ แห่ง</span>
+        <span>องค์กรเอกชน 80+ แห่ง</span>
+        <span>ผู้เรียนรายบุคคล 50,000+ คน</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow center">จุดเด่นของเรา</p>
+        <h2>ทำไมต้องเรียนกับ <span class="accent">AI</span> ของเรา</h2>
+        <p class="section-sub">เทคโนโลยีที่ทำให้การเรียนภาษาอังกฤษง่าย สนุก และเห็นผลจริง</p>
+      </div>
+
+      <div class="grid features-grid">
+        <article class="feature-card reveal">
+          <div class="feature-icon i-1">🗣️</div>
+          <h3>ฝึกพูดกับ AI 24 ชั่วโมง</h3>
+          <p>สนทนาภาษาอังกฤษกับ AI ได้ไม่จำกัด ไม่ต้องอาย ไม่ต้องรอคิวครู ฝึกได้ทุกเวลาที่สะดวก</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon i-2">🎯</div>
+          <h3>ปรับระดับให้เหมาะกับคุณ</h3>
+          <p>AI วิเคราะห์จุดอ่อน-จุดแข็งของคุณ แล้วออกแบบบทเรียนเฉพาะบุคคลแบบเรียลไทม์</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon i-3">🔊</div>
+          <h3>แก้การออกเสียงทันที</h3>
+          <p>ระบบวิเคราะห์เสียงพูดแม่นยำระดับเจ้าของภาษา พร้อมคำแนะนำแก้ไขทันทีที่พูดผิด</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon i-4">✍️</div>
+          <h3>ตรวจไวยากรณ์อัตโนมัติ</h3>
+          <p>เขียนประโยคแล้ว AI ช่วยตรวจแกรมมาร์ อธิบายเหตุผล และแนะนำวิธีพูดให้เป็นธรรมชาติ</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon i-5">📊</div>
+          <h3>ติดตามความก้าวหน้า</h3>
+          <p>แดชบอร์ดแสดงพัฒนาการทุกด้าน ให้เห็นว่าเก่งขึ้นแค่ไหนในแต่ละสัปดาห์</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon i-6">🏆</div>
+          <h3>ใบประกาศนียบัตร</h3>
+          <p>รับใบประกาศนียบัตรเมื่อจบคอร์ส ใช้ยื่นสมัครงานหรือศึกษาต่อได้จริง</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow center">ขั้นตอนง่ายๆ</p>
+        <h2>เริ่มเก่งอังกฤษได้ใน <span class="accent">4 ขั้นตอน</span></h2>
+        <p class="section-sub">ไม่ต้องมีพื้นฐาน ไม่ต้องมีประสบการณ์ เริ่มได้ทันทีวันนี้</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>ทำแบบทดสอบวัดระดับ</h3>
+          <p>AI ประเมินระดับภาษาอังกฤษของคุณภายใน 5 นาที</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>รับแผนเรียนส่วนตัว</h3>
+          <p>ระบบออกแบบหลักสูตรที่เหมาะกับเป้าหมายและเวลาว่างของคุณ</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>ฝึกฝนกับ AI ทุกวัน</h3>
+          <p>พูด ฟัง เขียน กับติวเตอร์ AI พร้อมรับฟีดแบ็กทันที</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h3>วัดผลและรับใบประกาศ</h3>
+          <p>ติดตามพัฒนาการ สอบวัดผล และรับใบประกาศนียบัตร</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COURSES / PRICING ===== -->
+  <section id="courses" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow center">แพ็กเกจเรียน</p>
+        <h2>เลือกแผนที่ <span class="accent">ใช่สำหรับคุณ</span></h2>
+        <p class="section-sub">เริ่มต้นฟรี ไม่ผูกมัด ยกเลิกได้ทุกเมื่อ</p>
+      </div>
+
+      <div class="pricing-toggle reveal">
+        <span class="active" id="labelMonthly">รายเดือน</span>
+        <button class="switch" id="billingSwitch" role="switch" aria-checked="false" aria-label="สลับรอบบิล">
+          <span class="switch-knob"></span>
+        </button>
+        <span id="labelYearly">รายปี <span class="save-tag">ประหยัด 20%</span></span>
+      </div>
+
+      <div class="grid pricing-grid">
+        <article class="price-card reveal">
+          <h3>Starter</h3>
+          <p class="price-desc">เริ่มต้นสำหรับผู้ฝึกหัด</p>
+          <div class="price"><span class="amount" data-monthly="0" data-yearly="0">฿0</span><span class="per">/เดือน</span></div>
+          <ul class="price-list">
+            <li>✔ บทสนทนา AI 20 นาที/วัน</li>
+            <li>✔ ตรวจไวยากรณ์พื้นฐาน</li>
+            <li>✔ บทเรียนคลังคำศัพท์</li>
+            <li class="disabled">✘ วิเคราะห์การออกเสียงเชิงลึก</li>
+            <li class="disabled">✘ ใบประกาศนียบัตร</li>
+          </ul>
+          <a href="#" class="btn btn-outline full">เริ่มใช้งานฟรี</a>
+        </article>
+
+        <article class="price-card featured reveal">
+          <span class="badge">ยอดนิยม</span>
+          <h3>Pro</h3>
+          <p class="price-desc">สำหรับคนที่อยากเก่งจริงจัง</p>
+          <div class="price"><span class="amount" data-monthly="399" data-yearly="319">฿399</span><span class="per">/เดือน</span></div>
+          <ul class="price-list">
+            <li>✔ บทสนทนา AI ไม่จำกัด</li>
+            <li>✔ ตรวจไวยากรณ์ + คำอธิบายเชิงลึก</li>
+            <li>✔ วิเคราะห์การออกเสียงแบบเรียลไทม์</li>
+            <li>✔ แผนเรียนส่วนตัวรายสัปดาห์</li>
+            <li>✔ ใบประกาศนียบัตรเมื่อจบคอร์ส</li>
+          </ul>
+          <a href="#" class="btn btn-primary full">เริ่มเรียนฟรี 7 วัน</a>
+        </article>
+
+        <article class="price-card reveal">
+          <h3>Premium</h3>
+          <p class="price-desc">พร้อมติวเตอร์มนุษย์เสริม</p>
+          <div class="price"><span class="amount" data-monthly="899" data-yearly="719">฿899</span><span class="per">/เดือน</span></div>
+          <ul class="price-list">
+            <li>✔ ทุกอย่างในแผน Pro</li>
+            <li>✔ คลาสสดกับครูเจ้าของภาษา 4 ครั้ง/เดือน</li>
+            <li>✔ ตรวจการบ้านโดยผู้เชี่ยวชาญ</li>
+            <li>✔ ที่ปรึกษาเป้าหมายส่วนตัว</li>
+            <li>✔ ใบประกาศนียบัตร + จดหมายรับรอง</li>
+          </ul>
+          <a href="#" class="btn btn-outline full">เลือกแผนนี้</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="reviews" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow center">เสียงจากผู้เรียนจริง</p>
+        <h2>ผลลัพธ์ที่ <span class="accent">พูดแทนเรา</span></h2>
+      </div>
+
+      <div class="grid reviews-grid">
+        <article class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"ฝึกพูดกับ AI ทุกวันแค่ 15 นาที ตอนนี้กล้าคุยกับลูกค้าต่างชาติแล้ว ไม่ประหม่าเหมือนเมื่อก่อนเลยค่ะ"</p>
+          <div class="reviewer">
+            <div class="avatar">น</div>
+            <div><strong>น้ำฝน ส.</strong><small>พนักงานฝ่ายขาย</small></div>
+          </div>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"ระบบแก้ไวยากรณ์อธิบายละเอียดมาก เข้าใจง่ายกว่าเรียนในห้องเรียนอีก ใช้เตรียมสอบเข้ามหาลัยได้ผลจริง"</p>
+          <div class="reviewer">
+            <div class="avatar">ก</div>
+            <div><strong>กันตพงศ์ ว.</strong><small>นักเรียนมัธยมปลาย</small></div>
+          </div>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"เรียนตอนดึกๆ หลังลูกนอนก็ยังได้ AI พร้อมสอนตลอด ยืดหยุ่นมากสำหรับคนไม่มีเวลาแบบเรา"</p>
+          <div class="reviewer">
+            <div class="avatar">พ</div>
+            <div><strong>พิมพ์ชนก อ.</strong><small>คุณแม่ลูกสอง</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section">
+    <div class="container narrow">
+      <div class="section-head reveal">
+        <p class="eyebrow center">คำถามที่พบบ่อย</p>
+        <h2>ยังมีข้อสงสัย?</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item open">
+          <button class="faq-q">ต้องมีพื้นฐานภาษาอังกฤษก่อนไหม?<span class="faq-icon">＋</span></button>
+          <div class="faq-a"><p>ไม่จำเป็นค่ะ ระบบ AI จะประเมินระดับของคุณตั้งแต่แบบทดสอบแรก และออกแบบบทเรียนให้เหมาะกับพื้นฐานที่มีอยู่ ไม่ว่าจะเป็นมือใหม่หรือระดับสูงก็เรียนได้</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">AI แม่นยำแค่ไหนในการแก้ไวยากรณ์และออกเสียง?<span class="faq-icon">＋</span></button>
+          <div class="faq-a"><p>ระบบของเราใช้โมเดลภาษาและการรู้จำเสียงพูดล่าสุด ผ่านการฝึกฝนด้วยข้อมูลภาษาอังกฤษหลากหลายสำเนียง ให้ความแม่นยำใกล้เคียงเจ้าของภาษา พร้อมทีมผู้เชี่ยวชาญคอยตรวจสอบคุณภาพอย่างสม่ำเสมอ</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">ยกเลิกแพ็กเกจได้ตลอดเวลาหรือไม่?<span class="faq-icon">＋</span></button>
+          <div class="faq-a"><p>ได้เลยค่ะ ไม่มีข้อผูกมัดระยะยาว สามารถยกเลิกหรือเปลี่ยนแผนได้ทุกเมื่อผ่านหน้าบัญชีผู้ใช้ของคุณ</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">ใบประกาศนียบัตรใช้ยื่นสมัครงานหรือศึกษาต่อได้จริงไหม?<span class="faq-icon">＋</span></button>
+          <div class="faq-a"><p>ใบประกาศนียบัตรของเราออกให้เมื่อผู้เรียนผ่านการวัดผลตามเกณฑ์ของคอร์ส สามารถแนบเป็นหลักฐานประกอบการสมัครงานหรือพอร์ตโฟลิโอการศึกษาได้</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">เรียนผ่านอุปกรณ์อะไรได้บ้าง?<span class="faq-icon">＋</span></button>
+          <div class="faq-a"><p>เรียนได้ทั้งบนคอมพิวเตอร์ แท็บเล็ต และสมาร์ตโฟน ผ่านเว็บเบราว์เซอร์โดยไม่ต้องติดตั้งโปรแกรมเพิ่มเติม</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-banner container reveal">
+    <div class="cta-inner">
+      <h2>พร้อมเริ่มเก่งอังกฤษกับ AI แล้วหรือยัง?</h2>
+      <p>สมัครวันนี้ รับสิทธิ์ทดลองเรียนฟรี 7 วัน ไม่ต้องผูกบัตรเครดิต</p>
+      <a href="#courses" class="btn btn-white btn-lg">เริ่มเรียนฟรีตอนนี้ →</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand">
+        <span class="brand-mark">✨</span>
+        <span class="brand-name">Nova<span class="accent">Talk</span> AI</span>
+      </a>
+      <p>แพลตฟอร์มเรียนภาษาอังกฤษด้วย AI ที่ช่วยให้คุณพูด ฟัง อ่าน เขียน ได้อย่างมั่นใจ</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="YouTube">▶️</a>
+        <a href="#" aria-label="Line">💬</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>เมนู</h4>
+      <a href="#features">จุดเด่น</a>
+      <a href="#how">วิธีเรียน</a>
+      <a href="#courses">คอร์สเรียน</a>
+      <a href="#reviews">รีวิว</a>
+      <a href="#faq">คำถามที่พบบ่อย</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>บริษัท</h4>
+      <a href="#">เกี่ยวกับเรา</a>
+      <a href="#">ร่วมงานกับเรา</a>
+      <a href="#">ติดต่อเรา</a>
+      <a href="#">นโยบายความเป็นส่วนตัว</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>รับข่าวสารและโปรโมชั่น</h4>
+      <form class="newsletter" id="newsletterForm">
+        <input type="email" placeholder="อีเมลของคุณ" required aria-label="อีเมล">
+        <button type="submit">สมัคร</button>
+      </form>
+      <p class="newsletter-msg" id="newsletterMsg"></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>© 2026 NovaTalk AI. สงวนลิขสิทธิ์ทุกประการ.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="กลับขึ้นด้านบน">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

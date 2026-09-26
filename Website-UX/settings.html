@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ตั้งค่า — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+</head>
+<body class="no-bottom-nav">
+
+<div class="container">
+
+  <header class="topbar">
+    <a href="profile.html" class="icon-btn" aria-label="ย้อนกลับ">←</a>
+    <h1 class="topbar-title">⚙️ ตั้งค่า</h1>
+    <span style="width:42px;"></span>
+  </header>
+
+  <section class="card mb-16">
+    <div class="toggle-row">
+      <span class="label">🔊 เสียงประกอบ</span>
+      <label class="switch">
+        <input type="checkbox" id="soundToggle" checked>
+        <span class="track"></span>
+      </label>
+    </div>
+    <div class="toggle-row">
+      <span class="label">🌙 โหมดมืด</span>
+      <label class="switch">
+        <input type="checkbox" id="darkToggle">
+        <span class="track"></span>
+      </label>
+    </div>
+    <div class="toggle-row">
+      <span class="label">🔔 การแจ้งเตือน</span>
+      <label class="switch">
+        <input type="checkbox" id="notifToggle" checked>
+        <span class="track"></span>
+      </label>
+    </div>
+  </section>
+
+  <section class="card mb-16">
+    <div class="field" style="margin-bottom:0;">
+      <label for="langSelect">🌐 ภาษาที่ใช้แสดงผล</label>
+      <select id="langSelect">
+        <option>ไทย</option>
+        <option>English</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="card stack mb-16">
+    <a href="profile.html" class="btn btn-outline">แก้ไขโปรไฟล์</a>
+    <a href="index.html" class="btn btn-primary" style="background:var(--danger);box-shadow:0 5px 0 #C23553;">ออกจากระบบ</a>
+  </section>
+
+  <p class="center muted" style="font-size:.72rem;padding-bottom:20px;">
+    หน้าตัวอย่าง UI เท่านั้น — การตั้งค่าเสียง/แจ้งเตือน/ภาษายังไม่มีผลจริง
+    (ยกเว้นโหมดมืดซึ่งใช้งานได้จริงและจำค่าไว้ข้ามทุกหน้า)
+  </p>
+
+</div>
+
+<script>
+  var darkToggle = document.getElementById('darkToggle');
+  darkToggle.checked = ThemeToggle.get() === 'dark';
+  darkToggle.addEventListener('change', function () {
+    ThemeToggle.set(darkToggle.checked ? 'dark' : 'light');
+  });
+</script>
+</body>
+</html>

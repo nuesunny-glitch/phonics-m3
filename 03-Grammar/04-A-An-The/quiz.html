@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>แบบทดสอบ: A / An / The (Articles)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+<link rel="stylesheet" href="../../Audio-System/audio-system.css">
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>🌈✏️ แบบทดสอบสนุก: A / An / The (Articles) 🎉</h1>
+    <div class="sub">ปรนัย 4 ตัวเลือก 50 ข้อ พร้อมภาพช่วยจำ — English Grammar Quiz Pack</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>เลขที่ <span class="fill-line" style="min-width:60px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว โดยวงกลมตัวอักษร (A/B/C/D) ในกรอบ หรือเขียนคำตอบลงในช่องว่างท้ายข้อ 🖍️ ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">
+        I have ___ cat.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍎</div>
+      <div class="qtext">
+        She is eating ___ apple.
+        <div class="rule-tag">a/an: เสียงสระ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐘</div>
+      <div class="qtext">
+        We saw ___ elephant at the zoo.
+        <div class="rule-tag">a/an: เสียงสระ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐶</div>
+      <div class="qtext">
+        He has ___ dog.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥚</div>
+      <div class="qtext">
+        I ate ___ egg for breakfast.
+        <div class="rule-tag">a/an: เสียงสระ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍌</div>
+      <div class="qtext">
+        She wants ___ banana.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎈</div>
+      <div class="qtext">
+        There is ___ balloon in the sky.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍊</div>
+      <div class="qtext">
+        He bought ___ orange.
+        <div class="rule-tag">a/an: เสียงสระ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">☀️</div>
+      <div class="qtext">
+        ___ sun rises in the east every morning.
+        <div class="rule-tag">the: สิ่งเดียวในโลก</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌙</div>
+      <div class="qtext">
+        Look at ___ moon tonight!
+        <div class="rule-tag">the: สิ่งเดียวในโลก</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐟</div>
+      <div class="qtext">
+        I saw ___ fish in the pond.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🏫</div>
+      <div class="qtext">
+        She is ___ teacher.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🦋</div>
+      <div class="qtext">
+        I caught ___ butterfly.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌍</div>
+      <div class="qtext">
+        ___ earth goes around the sun.
+        <div class="rule-tag">the: สิ่งเดียวในโลก</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">
+        He has ___ car.
+        <div class="rule-tag">a/an: เสียงพยัญชนะ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">
+        I bought a book. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I bought a book." aria-label="ฟังเสียง (Listen): I bought a book.">🔊</button> ___ book is very interesting.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🖊️</div>
+      <div class="qtext">
+        I have a pen. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I have a pen." aria-label="ฟังเสียง (Listen): I have a pen.">🔊</button> ___ pen is red.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐕</div>
+      <div class="qtext">
+        There is a dog in the yard. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="There is a dog in the yard." aria-label="ฟังเสียง (Listen): There is a dog in the yard.">🔊</button> ___ dog is barking.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍕</div>
+      <div class="qtext">
+        I ordered a pizza. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I ordered a pizza." aria-label="ฟังเสียง (Listen): I ordered a pizza.">🔊</button> ___ pizza was delicious.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏔️</div>
+      <div class="qtext">
+        He is ___ tallest boy in the class.
+        <div class="rule-tag">the: superlative</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚀</div>
+      <div class="qtext">
+        This is ___ fastest car in the world.
+        <div class="rule-tag">the: superlative</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💎</div>
+      <div class="qtext">
+        It is ___ most expensive ring in the shop.
+        <div class="rule-tag">the: superlative</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐕‍🦺</div>
+      <div class="qtext">
+        I like ___ dogs.
+        <div class="rule-tag">no article: พหูพจน์ทั่วไป</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥛</div>
+      <div class="qtext">
+        She drinks ___ milk every day.
+        <div class="rule-tag">no article: นามนับไม่ได้</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💧</div>
+      <div class="qtext">
+        We need ___ water to survive.
+        <div class="rule-tag">no article: นามนับไม่ได้</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍚</div>
+      <div class="qtext">
+        He eats ___ rice for lunch.
+        <div class="rule-tag">no article: นามนับไม่ได้</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐦</div>
+      <div class="qtext">
+        ___ birds can fly.
+        <div class="rule-tag">no article: พหูพจน์ทั่วไป</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧒</div>
+      <div class="qtext">
+        ___ children like playing games.
+        <div class="rule-tag">no article: พหูพจน์ทั่วไป</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💰</div>
+      <div class="qtext">
+        ___ money is important, but health is more important.
+        <div class="rule-tag">no article: นามนับไม่ได้</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌟</div>
+      <div class="qtext">
+        She is ___ most beautiful girl in town.
+        <div class="rule-tag">the: superlative</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📏</div>
+      <div class="qtext">
+        This is ___ longest river in Thailand.
+        <div class="rule-tag">the: superlative</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">
+        I saw a cat near my house. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I saw a cat near my house." aria-label="ฟังเสียง (Listen): I saw a cat near my house.">🔊</button> ___ cat was black.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎈</div>
+      <div class="qtext">
+        He bought a balloon. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="He bought a balloon." aria-label="ฟังเสียง (Listen): He bought a balloon.">🔊</button> ___ balloon was red.
+        <div class="rule-tag">the: กล่าวถึงครั้งที่สอง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍞</div>
+      <div class="qtext">
+        We need ___ bread for breakfast.
+        <div class="rule-tag">no article: นามนับไม่ได้</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🤝‍🧑</div>
+      <div class="qtext">
+        ___ people in Thailand are friendly.
+        <div class="rule-tag">no article: พหูพจน์ทั่วไป</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏰</div>
+      <div class="qtext">
+        I waited for ___ hour.
+        <div class="rule-tag">a/an ยกเว้น: an hour (h ไม่ออกเสียง)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎓</div>
+      <div class="qtext">
+        She studies at ___ university.
+        <div class="rule-tag">a/an ยกเว้น: a university (เสียง yoo)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌍</div>
+      <div class="qtext">
+        He married ___ European woman.
+        <div class="rule-tag">a/an ยกเว้น: a European (เสียง yoor)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">☔</div>
+      <div class="qtext">
+        I need ___ umbrella; it's raining.
+        <div class="rule-tag">a/an: เสียงสระตรงตัว</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍⚖️</div>
+      <div class="qtext">
+        He is ___ honest man; everyone trusts him.
+        <div class="rule-tag">a/an ยกเว้น: an honest man (h ไม่ออกเสียง)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">👔</div>
+      <div class="qtext">
+        The student wears ___ uniform every day.
+        <div class="rule-tag">a/an ยกเว้น: a uniform (เสียง yoo)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏛️</div>
+      <div class="qtext">
+        My aunt is ___ MP (Member of Parliament).
+        <div class="rule-tag">a/an ยกเว้น: an MP (ชื่อตัวอักษร)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🕐</div>
+      <div class="qtext">
+        We watched ___ one-hour movie last night.
+        <div class="rule-tag">a/an ยกเว้น: a one-hour (เสียง won)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🇹🇭</div>
+      <div class="qtext">
+        ___ Thailand is a beautiful country.
+        <div class="rule-tag">no article: ชื่อประเทศ</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🗼</div>
+      <div class="qtext">
+        She wants to visit ___ Paris someday.
+        <div class="rule-tag">no article: ชื่อเมือง</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) a <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="a" aria-label="ฟังเสียง (Listen): a">🔊</button></div>
+<div class="choice">B) an <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="an" aria-label="ฟังเสียง (Listen): an">🔊</button></div>
+<div class="choice">C) the <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="the" aria-label="ฟังเสียง (Listen): the">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">👦</div>
+      <div class="qtext">
+        ___ Somchai is my classmate.
+        <div class="rule-tag">no article: ชื่อคน</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏔️</div>
+      <div class="qtext">
+        ___ Mount Everest is the highest mountain in the world.
+        <div class="rule-tag">no article: ชื่อภูเขา</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) A <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="A" aria-label="ฟังเสียง (Listen): A">🔊</button></div>
+<div class="choice">B) An <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="An" aria-label="ฟังเสียง (Listen): An">🔊</button></div>
+<div class="choice">C) The <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="The" aria-label="ฟังเสียง (Listen): The">🔊</button></div>
+<div class="choice">D) (no article)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) He bought an new car. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="He bought an new car." aria-label="ฟังเสียง (Listen): He bought an new car.">🔊</button></div>
+<div class="choice">B) He bought a new car. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="He bought a new car." aria-label="ฟังเสียง (Listen): He bought a new car.">🔊</button></div>
+<div class="choice">C) He bought the new car yesterday for the first time. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="He bought the new car yesterday for the first time." aria-label="ฟังเสียง (Listen): He bought the new car yesterday for the first time.">🔊</button></div>
+<div class="choice">D) He bought new car. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="He bought new car." aria-label="ฟังเสียง (Listen): He bought new car.">🔊</button></div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I waited for a hour at the bus stop. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I waited for a hour at the bus stop." aria-label="ฟังเสียง (Listen): I waited for a hour at the bus stop.">🔊</button></div>
+<div class="choice">B) I waited for an hour at the bus stop. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I waited for an hour at the bus stop." aria-label="ฟังเสียง (Listen): I waited for an hour at the bus stop.">🔊</button></div>
+<div class="choice">C) I waited for the hour at the bus stop. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I waited for the hour at the bus stop." aria-label="ฟังเสียง (Listen): I waited for the hour at the bus stop.">🔊</button></div>
+<div class="choice">D) I waited for hour at the bus stop. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I waited for hour at the bus stop." aria-label="ฟังเสียง (Listen): I waited for hour at the bus stop.">🔊</button></div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She is a most intelligent student in class. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="She is a most intelligent student in class." aria-label="ฟังเสียง (Listen): She is a most intelligent student in class.">🔊</button></div>
+<div class="choice">B) She is most intelligent student in class. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="She is most intelligent student in class." aria-label="ฟังเสียง (Listen): She is most intelligent student in class.">🔊</button></div>
+<div class="choice">C) She is the most intelligent student in class. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="She is the most intelligent student in class." aria-label="ฟังเสียง (Listen): She is the most intelligent student in class.">🔊</button></div>
+<div class="choice">D) She is an most intelligent student in class. <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="She is an most intelligent student in class." aria-label="ฟังเสียง (Listen): She is an most intelligent student in class.">🔊</button></div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+  <div class="footer-note">English Grammar Quiz Pack · A/An/The — แบบทดสอบ 50 ข้อ</div>
+</div>
+<script src="../../Audio-System/audio-system.js"></script>
+</body>
+</html>

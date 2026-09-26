@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Grammar Summary — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 26px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 54px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 56px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 24px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 16px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 14px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 10px; color: #1e2b5c; font-size: 19px; text-align:center; }
+.cover-objectives li { margin-bottom: 8px; font-size: 14.5px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 13px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 14px 20px; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 22px; margin: 0; }
+.section-banner .eng { font-size: 12.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+.meaning-box { border-radius: 16px; padding: 14px; text-align: center; }
+.meaning-box .word { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.meaning-box .ex { font-size: 13.5px; margin-top: 8px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 6px 8px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 16px 18px; margin: 14px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 8px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 6px 0 0; padding-left: 20px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0; }
+.flash-card { border-radius: 14px; padding: 12px 8px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 34px; }
+.flash-card .fw { font-weight: 700; font-size: 14px; margin-top: 4px; }
+.flash-card .ft { font-size: 12.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 14px 18px; margin: 12px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 16px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 14px; margin-top: 6px; }
+.pattern-box .pex .th { color: #667; font-size: 12.5px; }
+
+.dialogue-wrap { margin: 14px 0 22px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 8px; font-size: 15px; }
+.bubble { max-width: 78%; padding: 9px 14px; border-radius: 16px; margin: 6px 0; font-size: 14.5px; }
+.bubble .th { font-size: 12.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 12.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 12px 16px; margin: 10px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 13.5px; color: #55607a; margin: 4px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 12px 0; }
+.tip-checklist li { display:flex; gap:10px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:14px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 18px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:20px; font-weight:800; border-radius:999px; padding:14px 30px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:18px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:12px 14px; color:#fff; font-size:13.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:14.5px; display:block; margin-bottom:4px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:12px 14px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 8px; font-size:14px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { width:100%; border-collapse: collapse; font-size:12.5px; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:4px 6px; }
+.cheat-box ul { margin:0; padding-left:18px; font-size:12.5px; }
+.cheat-box li { margin-bottom:4px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:12px 16px; margin-bottom:12px; }
+.teacher-note-box h4 { margin:0 0 6px; color:#b3261e; font-size:14.5px; }
+.teacher-note-box ul { margin:0; padding-left:20px; font-size:13.5px; }
+.teacher-note-box li { margin-bottom:4px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:12px 16px; margin-bottom:10px; font-size:14px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 30px 20px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 30px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:22px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:10px; font-size:14px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 22px 24px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:44px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:24px; margin:6px 0 14px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:9px 14px; margin-bottom:8px; font-size:14.5px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:16px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">📊 🔄 📚 🧠 ✨</div>
+    <h1 class="cover-title-en">Grammar Summary</h1>
+    <div class="cover-title-th">สรุปแกรมม่ารวม (Grammar Summary)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 บทที่ 14 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>ทบทวน Parts of Speech 8 ชนิดและ 5 Tense หลักที่เรียนมาตั้งแต่บทที่ 5-10 ได้</li><li>เลือก Tense ให้ถูกต้องตามคำสัญญาณเวลาในประโยคผสมได้</li><li>แต่งประโยคบอกเล่า ปฏิเสธ คำถาม ของแต่ละ Tense ได้อย่างถูกต้อง</li><li>ใช้ Checklist 3 ขั้นตอนในการเลือก Tense ได้อย่างเป็นระบบ</li><li>เชื่อมโยงความรู้แกรมม่าหลายบทเข้าด้วยกันก่อนสอบเข้า ม.4</li></ul>
+    </div>
+    <div class="cover-footer">Chapter 14 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 บทสรุปนี้คืออะไร?</h1><div class="eng">What is this Summary Chapter?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">บทนี้เป็น <b>"บทสรุปรวม"</b> ทบทวนแกรมม่าทั้งหมดที่เรียนมาตั้งแต่บทที่ 5-10 (Parts of Speech, Present Simple, Present Continuous, Past Simple, Future Tense, WH-Questions) มาไว้ในที่เดียว เพื่อใช้ทบทวนก่อนสอบจริงในบทที่ 15 (Entrance Exam) ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">Present Simple</div>นิสัย/ความจริง<div class="ex">She goes to school every day.<br>(เธอไปโรงเรียนทุกวัน)</div></div>
+    <div class="meaning-box mb2"><div class="word">Past Simple</div>จบไปแล้ว<div class="ex">I visited Chiang Mai last year.<br>(ฉันไปเชียงใหม่ปีที่แล้ว)</div></div>
+    <div class="meaning-box mb3"><div class="word">Future</div>ยังไม่เกิดขึ้น<div class="ex">She is going to study medicine.<br>(เธอวางแผนจะเรียนแพทย์)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าแต่ละ Tense ใช้คำสัญญาณเวลาต่างกันชัดเจน — นี่คือกุญแจสำคัญของบทนี้: จับคำสัญญาณให้ได้ก่อน แล้ว Tense ที่ถูกต้องจะตามมาเอง</p>
+  <div class="explain-block">
+    <h2>🧩 สรุป Parts of Speech (บทที่ 5)</h2>
+    <table>
+      <tr><th>ชนิดของคำ</th><th>หน้าที่</th><th>ตัวอย่าง</th></tr>
+      <tr><td>Noun</td><td>ชื่อคน สัตว์ สิ่งของ สถานที่</td><td>dog, Bangkok, book</td></tr>
+      <tr><td>Verb</td><td>บอกการกระทำ/สภาวะ</td><td>run, eat, is, seem</td></tr>
+      <tr><td>Adjective</td><td>ขยายคำนาม</td><td>big, happy, beautiful</td></tr>
+      <tr><td>Adverb</td><td>ขยายกริยา/คุณศัพท์ (-ly)</td><td>quickly, slowly, very</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ วิธีเลือก Tense ให้ถูกต้อง (Checklist 3 ขั้นตอน)</h2>
+    <table>
+      <tr><th>ขั้นตอน</th><th>รายละเอียด</th></tr>
+      <tr><td>1</td><td>หาคำสัญญาณเวลาในประโยคก่อนเสมอ (yesterday, now, tomorrow, every day)</td></tr>
+      <tr><td>2</td><td>จับคู่คำสัญญาณกับ Tense ที่ตรงกัน</td></tr>
+      <tr><td>3</td><td>เช็กประธานว่าเป็น he/she/it หรือไม่ เพื่อเลือกรูปกริยา/verb to be ให้ถูก</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 ทบทวน 5 Tense หลัก ทีละ Tense</h1><div class="eng">5 Key Tenses Recap Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">Present Simple — ความจริงทั่วไป, นิสัย, ตารางเวลา</div>
+    <p style="margin:6px 0;">โครงสร้าง: S + V(s/es) — คำสัญญาณ: always, usually, every day</p>
+    <ul><li>He studies English every day. (นิสัย)</li><li>The sun rises in the east. (ความจริงทั่วไป)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">Present Continuous — กำลังทำอยู่ตอนนี้, แผนนัดไว้</div>
+    <p style="margin:6px 0;">โครงสร้าง: S + is/am/are + V-ing — คำสัญญาณ: now, right now, Look!</p>
+    <ul><li>Look! He is running now. (กำลังทำ)</li><li>I am meeting my friend this weekend. (แผนนัดไว้)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">Past Simple — จบไปแล้วในอดีต มีเวลาชัดเจน</div>
+    <p style="margin:6px 0;">โครงสร้าง: S + V-ed / irregular — คำสัญญาณ: yesterday, last week, ...ago</p>
+    <ul><li>We visited Chiang Mai last year.</li><li>She bought a bag two days ago.</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">Future (will / going to) — ยังไม่เกิดขึ้น</div>
+    <p style="margin:6px 0;">will: ตัดสินใจทันที/สัญญา/เดาไม่มีหลักฐาน — going to: แผนที่วางไว้แล้ว/เดามีหลักฐาน</p>
+    <ul><li>I will call you tomorrow. (สัญญา)</li><li>She is going to study medicine. (แผนที่วางไว้)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุปใหญ่ (Master Table)</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>Tense</th><th>บอกเล่า</th><th>ปฏิเสธ</th><th>คำถาม</th></tr>
+      <tr><td><b>Present Simple</b></td><td>S+V(s/es)</td><td>S+do/does+not+V</td><td>Do/Does+S+V?</td></tr><tr><td><b>Present Continuous</b></td><td>S+is/am/are+V-ing</td><td>S+is/am/are+not+V-ing</td><td>Is/Am/Are+S+V-ing?</td></tr><tr><td><b>Past Simple</b></td><td>S+V-ed/irregular</td><td>S+did+not+V</td><td>Did+S+V?</td></tr><tr><td><b>Future (will)</b></td><td>S+will+V</td><td>S+will+not+V</td><td>Will+S+V?</td></tr><tr><td><b>Future (going to)</b></td><td>S+is/am/are+going to+V</td><td>S+is/am/are+not+going to+V</td><td>Is/Am/Are+S+going to+V?</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุก Tense ในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">"เช็กประธานก่อนเสมอ"</div><p>เจอประโยคให้จับผิด ให้วงกลมประธานก่อนอันดับแรก แล้วถามตัวเองว่า he/she/it ต้องเติม s ที่กริยาหรือยัง</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">"เจอ do/does/did/will/can → มองกริยาถัดไป"</div><p>ถ้าเจอกริยาช่วยเหล่านี้ กริยาที่ตามมาต้องเป็น base form เสมอ ห้ามเติม -s/-ed/-ing</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">"คำนามพิเศษ = พหูพจน์ไม่ปกติ"</div><p>ท่องจำคำนามที่ไม่เติม s แบบปกติ: children, feet, teeth, mice, men, people, leaves, knives</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">"Adjective อยู่หน้าคำนามเสมอ"</div><p>ภาษาอังกฤษเรียง Adjective ไว้หน้าคำนามเสมอ (a big dog ไม่ใช่ a dog big) ตรงข้ามกับภาษาไทย</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง: คำสัญญาณเวลา</h1><div class="eng">Signal Words Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำสัญญาณ</th><th>สัทอักษร (IPA)</th><th>Tense ที่บ่งบอก</th></tr>
+      <tr><td><b>always</b></td><td>/ˈɔːlweɪz/</td><td>Present Simple</td></tr>
+      <tr><td><b>now</b></td><td>/naʊ/</td><td>Present Continuous</td></tr>
+      <tr><td><b>yesterday</b></td><td>/ˈjestərdeɪ/</td><td>Past Simple</td></tr>
+      <tr><td><b>tomorrow</b></td><td>/təˈmɒroʊ/</td><td>Future</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: คำสัญญาณเวลาเหล่านี้มักอยู่ท้ายประโยคและออกเสียงเน้นชัดเจน — ฝึกฟังให้จับคำเหล่านี้ให้ไวจะช่วยเลือก Tense ได้เร็วขึ้นมากค่ะ!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้รวมคำสัญญาณเวลาของทุก Tense และศัพท์ไวยากรณ์พื้นฐานที่ใช้ตลอดบทนี้</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">📅</div><div class="fw">always</div><div class="ft">เสมอ (Present Simple)</div></div><div class="flash-card"><div class="fe">⏰</div><div class="fw">now</div><div class="ft">ตอนนี้ (Continuous)</div></div><div class="flash-card"><div class="fe">📆</div><div class="fw">yesterday</div><div class="ft">เมื่อวาน (Past)</div></div><div class="flash-card"><div class="fe">🗓️</div><div class="fw">tomorrow</div><div class="ft">พรุ่งนี้ (Future)</div></div><div class="flash-card"><div class="fe">🔁</div><div class="fw">usually</div><div class="ft">โดยปกติ</div></div><div class="flash-card"><div class="fe">👁️</div><div class="fw">right now</div><div class="ft">ตอนนี้เลย</div></div><div class="flash-card"><div class="fe">⏳</div><div class="fw">last week</div><div class="ft">สัปดาห์ที่แล้ว</div></div><div class="flash-card"><div class="fe">🔮</div><div class="fw">soon</div><div class="ft">เร็ว ๆ นี้</div></div><div class="flash-card"><div class="fe">📋</div><div class="fw">plan</div><div class="ft">แผนการ</div></div><div class="flash-card"><div class="fe">🔠</div><div class="fw">noun</div><div class="ft">คำนาม</div></div><div class="flash-card"><div class="fe">🎬</div><div class="fw">verb</div><div class="ft">คำกริยา</div></div><div class="flash-card"><div class="fe">🎨</div><div class="fw">adjective</div><div class="ft">คำคุณศัพท์</div></div><div class="flash-card"><div class="fe">🏃</div><div class="fw">adverb</div><div class="ft">คำกริยาวิเศษณ์</div></div><div class="flash-card"><div class="fe">❓</div><div class="fw">wh-word</div><div class="ft">คำคำถาม</div></div><div class="flash-card"><div class="fe">🔄</div><div class="fw">review</div><div class="ft">ทบทวน</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 เทียบโครงสร้างทุก Tense</h1><div class="eng">Tense Comparison Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Present Simple vs Continuous</div>
+    <div class="pex">She goes to school every day. <span class="th">(นิสัย)</span></div>
+    <div class="pex">She is going to school now. <span class="th">(กำลังทำ)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Past Simple vs Future</div>
+    <div class="pex">She went to school yesterday. <span class="th">(อดีต)</span></div>
+    <div class="pex">She will go to school tomorrow. <span class="th">(อนาคต)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">will vs be going to</div>
+    <div class="pex">I will help you. (ตัดสินใจทันที) <span class="th"></span></div>
+    <div class="pex">I am going to study medicine. (แผนที่วางไว้) <span class="th"></span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">คำถามของทุก Tense (สรุปรวม)</div>
+    <div class="pex">Do/Does...? / Is/Am/Are...? / Did...? / Will...? <span class="th">(ขึ้นอยู่กับ Tense)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>🕵️ ตัวอย่างการเลือก Tense ทีละขั้น</h1><div class="eng">Worked Examples</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🔍 ตัวอย่างที่ 1: ใช้ Checklist 3 ขั้นตอน</div>
+    <div class="bubble left" style="max-width:100%;"><b>โจทย์:</b> She ___ (visit) her grandmother last week.</div>
+    <div class="bubble right" style="max-width:100%;background:#D9F7EC;"><b>ขั้นที่ 1:</b> หาคำสัญญาณ → "last week"<br><b>ขั้นที่ 2:</b> จับคู่กับ Tense → Past Simple<br><b>ขั้นที่ 3:</b> เช็กประธาน She (ไม่ต้องเติม s ที่กริยาช่องอดีต)<br><b>คำตอบ:</b> visited</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🔍 ตัวอย่างที่ 2: ใช้ Checklist 3 ขั้นตอน</div>
+    <div class="bubble left" style="max-width:100%;"><b>โจทย์:</b> Look! They ___ (play) football now.</div>
+    <div class="bubble right" style="max-width:100%;background:#D9F7EC;"><b>ขั้นที่ 1:</b> หาคำสัญญาณ → "Look!" และ "now"<br><b>ขั้นที่ 2:</b> จับคู่กับ Tense → Present Continuous<br><b>ขั้นที่ 3:</b> เช็กประธาน They (พหูพจน์ ใช้ are)<br><b>คำตอบ:</b> are playing</div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อยข้ามทุก Tense</h1><div class="eng">Common Cross-Tense Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ I go to Chiang Mai yesterday.</div>
+    <div class="why">🤔 มีคำสัญญาณ yesterday ต้องใช้ Past Simple ไม่ใช่ Present Simple</div>
+    <div class="right">✅ I went to Chiang Mai yesterday.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She is play football now.</div>
+    <div class="why">🤔 Present Continuous ต้องเติม -ing ที่กริยา</div>
+    <div class="right">✅ She is playing football now.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ I will going to study tonight.</div>
+    <div class="why">🤔 ห้ามใช้ will และ going to ปนกันในประโยคเดียว</div>
+    <div class="right">✅ I am going to study tonight.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ He don't like coffee.</div>
+    <div class="why">🤔 ประธาน He เป็นเอกพจน์ ต้องใช้ doesn't ไม่ใช่ don't</div>
+    <div class="right">✅ He doesn't like coffee.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Who did break the window?</div>
+    <div class="why">🤔 Who เป็นประธานเอง ห้ามใช้ did ซ้ำกับกริยารูปอดีต</div>
+    <div class="right">✅ Who broke the window?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She sing very good.</div>
+    <div class="why">🤔 ต้องใช้ adverb ขยายกริยา sing และใช้ well ไม่ใช่ good</div>
+    <div class="right">✅ She sings very well.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>ใช้ Checklist 3 ขั้นตอนทุกครั้ง: หาคำสัญญาณ → จับคู่ Tense → เช็กประธาน</span></li><li><span class="num">2</span><span>จำคำสัญญาณของแต่ละ Tense ให้แม่น เพราะเป็นกุญแจสำคัญที่สุดในการเลือก Tense</span></li><li><span class="num">3</span><span>ระวังข้อที่ผสมหลาย Tense ในย่อหน้าเดียว ให้แยกแต่ละประโยคออกจากกันก่อนตอบ</span></li><li><span class="num">4</span><span>ทบทวน Parts of Speech 8 ชนิดให้แม่น เพราะมักออกเป็นข้อสอบแยกต่างหาก</span></li><li><span class="num">5</span><span>ฝึกทำโจทย์ผสม Tense บ่อย ๆ เพื่อความคุ้นเคยก่อนเข้าสู่บทที่ 15 (Entrance Exam)</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Grammar Summary</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">🔤 Parts of Speech</span>Noun, Verb, Adjective, Adverb + อีก 4 ชนิด</div>
+      <div class="mindmap-branch mb-b"><span class="bt">📅 Present Simple/Continuous</span>นิสัย/ความจริง vs กำลังทำ</div>
+      <div class="mindmap-branch mb-c"><span class="bt">⏮️ Past Simple</span>จบไปแล้วในอดีต</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🔮 Future (will/going to)</span>ตัดสินใจ/สัญญา vs แผนที่วางไว้</div>
+      <div class="mindmap-branch mb-e"><span class="bt">❓ WH-Questions</span>What/Where/When/Who/Why/How/Which/Whose</div>
+      <div class="mindmap-branch mb-f"><span class="bt">✅ Checklist 3 ขั้น</span>คำสัญญาณ → จับคู่ Tense → เช็กประธาน</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม Tense ให้ถูกต้อง (ผสมทุก Tense) (12 ข้อ)</h2><p class="part-desc">เติมคำกริยาในวงเล็บให้ถูกต้องตาม Tense ที่บริบทกำหนด</p><ol class="qlist two-col"><li>She <span class="blank"></span> (go) to school every day.</li><li>Look! They <span class="blank"></span> (play) in the park now.</li><li>I <span class="blank"></span> (visit) my grandmother last week.</li><li>We <span class="blank"></span> (call) you tomorrow. (ตัดสินใจทันที)</li><li>He <span class="blank"></span> (study) medicine next year. (แผนที่วางไว้แล้ว)</li><li>The Earth <span class="blank"></span> (go) around the sun. (ความจริงทั่วไป)</li><li>She <span class="blank"></span> (not/sleep) now.</li><li>I <span class="blank"></span> (not/see) her yesterday.</li><li><span class="blank"></span> you (like) tea? (Present Simple)</li><li><span class="blank"></span> she (study) now? (Present Continuous)</li><li><span class="blank"></span> he (finish) his homework yesterday? (Past Simple)</li><li>They <span class="blank"></span> (travel) to Japan last year.</li></ol><h2 class="part-title">ตอนที่ 2: บอกชนิดของคำที่ขีดเส้นใต้ (6 ข้อ)</h2><p class="part-desc">บอกว่าคำที่กำหนดให้เป็นชนิดของคำใดใน 8 ชนิด (Parts of Speech)</p><ol class="qlist two-col"><li>She is very kind. &rarr; <span class="blank"></span></li><li>He runs quickly. &rarr; <span class="blank"></span></li><li>The dog is barking. &rarr; <span class="blank"></span></li><li>I like tea and coffee. &rarr; <span class="blank"></span></li><li>Wow! That's amazing. &rarr; <span class="blank"></span></li><li>They live in Bangkok. &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 3: เลือก Tense ที่ถูกต้อง (6 ข้อ)</h2><p class="part-desc">เลือกคำตอบที่ถูกต้องที่สุดจากตัวเลือกที่กำหนด</p><ol class="qlist two-col"><li>She <span class="blank"></span> to school every day. (ก. go ข. goes ค. going ง. went)</li><li>Look! He <span class="blank"></span> now. (ก. run ข. runs ค. is running ง. ran)</li><li>I <span class="blank"></span> her yesterday. (ก. see ข. saw ค. sees ง. seeing)</li><li>We <span class="blank"></span> you tomorrow. (สัญญา) (ก. call ข. will call ค. called ง. calling)</li><li>She <span class="blank"></span> to Japan next year. (แผนที่วางไว้) (ก. go ข. went ค. is going ง. goes)</li><li><span class="blank"></span> she like tea? (ก. Do ข. Does ค. Is ง. Are)</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> อ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">She ___ to school every day.<div class="rule-tag">Present Simple: นิสัย/ประจำ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) go</div><div class="choice">B) goes</div><div class="choice">C) going</div><div class="choice">D) went</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">☀️</div>
+      <div class="qtext">The sun ___ in the east.<div class="rule-tag">Present Simple: ความจริงทั่วไป</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) rise</div><div class="choice">B) rises</div><div class="choice">C) rising</div><div class="choice">D) rose</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏦</div>
+      <div class="qtext">My father ___ at a bank.<div class="rule-tag">Present Simple: ตารางเวลา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) work</div><div class="choice">B) works</div><div class="choice">C) working</div><div class="choice">D) worked</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍎</div>
+      <div class="qtext">They ___ help each other.<div class="rule-tag">Present Simple: always</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) always help</div><div class="choice">B) always helps</div><div class="choice">C) helping always</div><div class="choice">D) helped always</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❓</div>
+      <div class="qtext">___ you like tea?<div class="rule-tag">Present Simple: คำถาม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Is</div><div class="choice">D) Are</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚫</div>
+      <div class="qtext">He ___ vegetables.<div class="rule-tag">Present Simple: ปฏิเสธ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't like</div><div class="choice">B) doesn't like</div><div class="choice">C) isn't like</div><div class="choice">D) not like</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">He ___ English every day.<div class="rule-tag">Present Simple: every day</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) study</div><div class="choice">B) studies</div><div class="choice">C) studying</div><div class="choice">D) studied</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">My cat ___ sleeps in the afternoon.<div class="rule-tag">Present Simple: usually</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) usually</div><div class="choice">B) now</div><div class="choice">C) yesterday</div><div class="choice">D) tomorrow</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">Look! He ___ now.<div class="rule-tag">Present Continuous: Look!</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) run</div><div class="choice">B) runs</div><div class="choice">C) is running</div><div class="choice">D) ran</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">I ___ my homework right now.<div class="rule-tag">Present Continuous: right now</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) am doing</div><div class="choice">C) did</div><div class="choice">D) does</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌧️</div>
+      <div class="qtext">It ___ heavily at the moment.<div class="rule-tag">Present Continuous: at the moment</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) rain</div><div class="choice">B) rains</div><div class="choice">C) is raining</div><div class="choice">D) rained</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚫</div>
+      <div class="qtext">She ___ now.<div class="rule-tag">Present Continuous: ปฏิเสธ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) doesn't sleep</div><div class="choice">B) isn't sleeping</div><div class="choice">C) don't sleep</div><div class="choice">D) not sleeping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❓</div>
+      <div class="qtext">___ they playing football now?<div class="rule-tag">Present Continuous: คำถาม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Are</div><div class="choice">D) Is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎨</div>
+      <div class="qtext">I ___ my friend this weekend.<div class="rule-tag">Present Continuous: แผนนัดไว้</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) meet</div><div class="choice">B) meets</div><div class="choice">C) am meeting</div><div class="choice">D) met</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">We ___ a party at present.<div class="rule-tag">Present Continuous: at present</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) have</div><div class="choice">B) has</div><div class="choice">C) are having</div><div class="choice">D) had</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">✈️</div>
+      <div class="qtext">I ___ her yesterday.<div class="rule-tag">Past Simple: yesterday</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) see</div><div class="choice">B) saw</div><div class="choice">C) sees</div><div class="choice">D) seeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏖️</div>
+      <div class="qtext">We ___ Chiang Mai last year.<div class="rule-tag">Past Simple: last year</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) visit</div><div class="choice">B) visits</div><div class="choice">C) visited</div><div class="choice">D) visiting</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚫</div>
+      <div class="qtext">I ___ to school yesterday.<div class="rule-tag">Past Simple: ปฏิเสธ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) don't go</div><div class="choice">B) doesn't go</div><div class="choice">C) didn't go</div><div class="choice">D) isn't go</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❓</div>
+      <div class="qtext">___ she finish her homework yesterday?<div class="rule-tag">Past Simple: คำถาม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Did</div><div class="choice">D) Is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛍️</div>
+      <div class="qtext">She bought a bag two days ___.<div class="rule-tag">Past Simple: ago</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ago</div><div class="choice">B) last</div><div class="choice">C) yesterday</div><div class="choice">D) next</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌙</div>
+      <div class="qtext">We ___ at home last night.<div class="rule-tag">Past Simple: last night</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) are</div><div class="choice">B) were</div><div class="choice">C) is</div><div class="choice">D) was</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📞</div>
+      <div class="qtext">I promise I ___ help you.<div class="rule-tag">Future (will): สัญญา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am</div><div class="choice">B) will</div><div class="choice">C) do</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔮</div>
+      <div class="qtext">We ___ meet again soon.<div class="rule-tag">Future (will): soon</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎓</div>
+      <div class="qtext">She ___ study medicine next year.<div class="rule-tag">Future (going to): แผน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) went</div><div class="choice">D) goes</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">☁️</div>
+      <div class="qtext">Look at those clouds! It ___ rain.<div class="rule-tag">Future (going to): หลักฐาน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) was</div><div class="choice">D) rained</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚫</div>
+      <div class="qtext">He ___ not going to come to the party.<div class="rule-tag">Future: ปฏิเสธ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) is</div><div class="choice">D) will</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❓</div>
+      <div class="qtext">___ they going to join us?<div class="rule-tag">Future: คำถาม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Do</div><div class="choice">B) Does</div><div class="choice">C) Are</div><div class="choice">D) Will</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎁</div>
+      <div class="qtext">The phone is ringing. I ___ answer it.<div class="rule-tag">Future (will): ตัดสินใจทันที</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) am going to</div><div class="choice">B) will</div><div class="choice">C) was</div><div class="choice">D) did</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏠</div>
+      <div class="qtext">We ___ move to a new house. We signed the contract already.<div class="rule-tag">Future (going to): จองไว้แล้ว</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) are going to</div><div class="choice">C) moved</div><div class="choice">D) move</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😊</div>
+      <div class="qtext">"kind" in "She is very kind" is a...?<div class="rule-tag">Parts of Speech: Adjective</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Verb</div><div class="choice">C) Adjective</div><div class="choice">D) Adverb</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">"quickly" in "He runs quickly" is a...?<div class="rule-tag">Parts of Speech: Adverb</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Adjective</div><div class="choice">C) Adverb</div><div class="choice">D) Preposition</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐕</div>
+      <div class="qtext">"dog" in "The dog is barking" is a...?<div class="rule-tag">Parts of Speech: Noun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Verb</div><div class="choice">C) Adjective</div><div class="choice">D) Pronoun</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">☕</div>
+      <div class="qtext">"and" in "I like tea and coffee" is a...?<div class="rule-tag">Parts of Speech: Conjunction</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Preposition</div><div class="choice">B) Conjunction</div><div class="choice">C) Adverb</div><div class="choice">D) Interjection</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😲</div>
+      <div class="qtext">"Wow!" in "Wow! That's amazing" is a...?<div class="rule-tag">Parts of Speech: Interjection</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Verb</div><div class="choice">C) Adverb</div><div class="choice">D) Interjection</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📍</div>
+      <div class="qtext">"in" in "They live in Bangkok" is a...?<div class="rule-tag">Parts of Speech: Preposition</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Preposition</div><div class="choice">C) Adjective</div><div class="choice">D) Verb</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙋</div>
+      <div class="qtext">"she" in "She is a teacher" is a...?<div class="rule-tag">Parts of Speech: Pronoun</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Pronoun</div><div class="choice">C) Verb</div><div class="choice">D) Adjective</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎤</div>
+      <div class="qtext">"sings" in "She sings beautifully" is a...?<div class="rule-tag">Parts of Speech: Verb</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Noun</div><div class="choice">B) Verb</div><div class="choice">C) Adverb</div><div class="choice">D) Adjective</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">"___ is your birthday?" asks about...?<div class="rule-tag">WH-Questions: When</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Place</div><div class="choice">B) Time</div><div class="choice">C) Person</div><div class="choice">D) Reason</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📍</div>
+      <div class="qtext">"___ do you live?" asks about...?<div class="rule-tag">WH-Questions: Where</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Place</div><div class="choice">B) Time</div><div class="choice">C) Person</div><div class="choice">D) Reason</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🤝‍🧑</div>
+      <div class="qtext">___ broke the window?<div class="rule-tag">WH-Questions: Who เป็นประธาน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who did break</div><div class="choice">B) Who broke</div><div class="choice">C) Did who break</div><div class="choice">D) Who does break</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔢</div>
+      <div class="qtext">___ homework do you have?<div class="rule-tag">WH-Questions: How many/much</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">☑️</div>
+      <div class="qtext">There are two buses. ___ one do you take?<div class="rule-tag">WH-Questions: Which</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">According to the schedule, the train ___ leave at 9 AM tomorrow.<div class="rule-tag">สรุปรวม: เลือก Tense</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) left</div><div class="choice">D) leaves</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">Nobody knows for sure, but she ___ probably win the competition.<div class="rule-tag">สรุปรวม: เลือก Tense</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will</div><div class="choice">B) is going to</div><div class="choice">C) won</div><div class="choice">D) wins</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: S-V Agreement</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She go to school every day.</div><div class="choice">B) She goes to school every day.</div><div class="choice">C) She going to school every day.</div><div class="choice">D) She went to school every day. (ถ้าหมายถึงปัจจุบัน)</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: Verb Form หลัง Aux</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She did not played football.</div><div class="choice">B) She did not play football.</div><div class="choice">C) She does not played football.</div><div class="choice">D) She not played football.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">Error Detection: Article</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I have a apple.</div><div class="choice">B) I have an apple.</div><div class="choice">C) I have the apple always.</div><div class="choice">D) I have apple.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏁</div>
+      <div class="qtext">ขั้นตอนแรกในการเลือก Tense ที่ถูกต้องคืออะไร?<div class="rule-tag">สรุปรวม: Checklist เลือก Tense</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) หาคำสัญญาณเวลาในประโยค</div><div class="choice">B) เช็กประธานก่อน</div><div class="choice">C) ท่องสูตรให้ขึ้นใจ</div><div class="choice">D) อ่านตัวเลือกทั้งหมดก่อน</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏆</div>
+      <div class="qtext">By the time we arrive, the movie ___ already.<div class="rule-tag">สรุปรวม: มิกซ์ Tense</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) will start</div><div class="choice">B) is going to start</div><div class="choice">C) will have started</div><div class="choice">D) starts</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📋</div>
+      <div class="qtext">หลังจากจับคู่คำสัญญาณกับ Tense แล้ว ขั้นตอนสุดท้ายของ Checklist คืออะไร?<div class="rule-tag">สรุปรวม: Checklist ขั้นที่ 3</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ท่องสูตรซ้ำ 3 รอบ</div><div class="choice">B) เช็กประธานว่าเป็น he/she/it หรือไม่</div><div class="choice">C) อ่านคำถามใหม่อีกครั้ง</div><div class="choice">D) เขียนคำตอบให้เร็วที่สุด</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>goes</td><td>ประธาน She ต้องเติม s (Present Simple)</td></tr><tr><td>2</td><td>are playing</td><td>มีคำสัญญาณ now ใช้ Present Continuous</td></tr><tr><td>3</td><td>visited</td><td>มีคำสัญญาณ last week ใช้ Past Simple</td></tr><tr><td>4</td><td>will call</td><td>ตัดสินใจทันที ใช้ will</td></tr><tr><td>5</td><td>is going to study</td><td>แผนที่วางไว้แล้ว ใช้ be going to</td></tr><tr><td>6</td><td>goes</td><td>ความจริงทั่วไป ใช้ Present Simple</td></tr><tr><td>7</td><td>is not sleeping</td><td>ปฏิเสธ Present Continuous</td></tr><tr><td>8</td><td>did not see</td><td>ปฏิเสธ Past Simple</td></tr><tr><td>9</td><td>Do...like</td><td>คำถาม Present Simple</td></tr><tr><td>10</td><td>Is...studying</td><td>คำถาม Present Continuous</td></tr><tr><td>11</td><td>Did...finish</td><td>คำถาม Past Simple</td></tr><tr><td>12</td><td>traveled</td><td>มีคำสัญญาณ last year ใช้ Past Simple</td></tr><tr><td>13</td><td>Adjective</td><td>kind ขยายคำนาม She → Adjective</td></tr><tr><td>14</td><td>Adverb</td><td>quickly ขยายกริยา runs → Adverb</td></tr><tr><td>15</td><td>Noun</td><td>dog เป็นชื่อสัตว์ → Noun</td></tr><tr><td>16</td><td>Conjunction</td><td>and เชื่อมคำ → Conjunction</td></tr><tr><td>17</td><td>Interjection</td><td>Wow! แสดงอารมณ์ → Interjection</td></tr><tr><td>18</td><td>Preposition</td><td>in บอกสถานที่ → Preposition</td></tr><tr><td>19</td><td>ข. goes</td><td>ประธาน She ต้องเติม s</td></tr><tr><td>20</td><td>ค. is running</td><td>มีคำสัญญาณ now ใช้ Present Continuous</td></tr><tr><td>21</td><td>ข. saw</td><td>มีคำสัญญาณ yesterday ใช้ Past Simple</td></tr><tr><td>22</td><td>ข. will call</td><td>สัญญา ใช้ will</td></tr><tr><td>23</td><td>ค. is going</td><td>แผนที่วางไว้แล้ว ใช้ be going to</td></tr><tr><td>24</td><td>ข. Does</td><td>ประธาน she เป็นเอกพจน์ ใช้ Does</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">🏫</td><td>B) goes</td><td>ประธาน She ต้องเติม s ที่กริยา และ every day บ่งบอก Present Simple</td></tr><tr><td>2</td><td class="emoji-cell">☀️</td><td>B) rises</td><td>ความจริงทั่วไปใช้ Present Simple ประธาน The sun เติม s</td></tr><tr><td>3</td><td class="emoji-cell">🏦</td><td>B) works</td><td>อาชีพ/นิสัยประจำใช้ Present Simple ประธาน My father เติม s</td></tr><tr><td>4</td><td class="emoji-cell">🍎</td><td>A) always help</td><td>always เป็นคำสัญญาณ Present Simple ประธาน They ไม่เติม s</td></tr><tr><td>5</td><td class="emoji-cell">❓</td><td>A) Do</td><td>ประธาน you ใช้ Do ในคำถาม Present Simple</td></tr><tr><td>6</td><td class="emoji-cell">🚫</td><td>B) doesn't like</td><td>ประธาน He ใช้ doesn't ในปฏิเสธ Present Simple</td></tr><tr><td>7</td><td class="emoji-cell">📖</td><td>B) studies</td><td>every day บ่งบอก Present Simple ประธาน He เติม s (study→studies)</td></tr><tr><td>8</td><td class="emoji-cell">🐱</td><td>A) usually</td><td>usually เป็นคำสัญญาณของ Present Simple</td></tr><tr><td>9</td><td class="emoji-cell">🏃</td><td>C) is running</td><td>Look! และ now บ่งบอก Present Continuous</td></tr><tr><td>10</td><td class="emoji-cell">📚</td><td>B) am doing</td><td>right now บ่งบอก Present Continuous</td></tr><tr><td>11</td><td class="emoji-cell">🌧️</td><td>C) is raining</td><td>at the moment บ่งบอก Present Continuous</td></tr><tr><td>12</td><td class="emoji-cell">🚫</td><td>B) isn't sleeping</td><td>ปฏิเสธ Present Continuous ใช้ is/am/are + not + V-ing</td></tr><tr><td>13</td><td class="emoji-cell">❓</td><td>C) Are</td><td>ประธาน they ใช้ Are ในคำถาม Present Continuous</td></tr><tr><td>14</td><td class="emoji-cell">🎨</td><td>C) am meeting</td><td>แผนที่นัดไว้ในอนาคตอันใกล้ใช้ Present Continuous</td></tr><tr><td>15</td><td class="emoji-cell">🎉</td><td>C) are having</td><td>at present บ่งบอก Present Continuous</td></tr><tr><td>16</td><td class="emoji-cell">✈️</td><td>B) saw</td><td>yesterday บ่งบอก Past Simple (see→saw)</td></tr><tr><td>17</td><td class="emoji-cell">🏖️</td><td>C) visited</td><td>last year บ่งบอก Past Simple</td></tr><tr><td>18</td><td class="emoji-cell">🚫</td><td>C) didn't go</td><td>ปฏิเสธ Past Simple ใช้ did not + base form</td></tr><tr><td>19</td><td class="emoji-cell">❓</td><td>C) Did</td><td>คำถามอดีตใช้ Did กับทุกประธาน</td></tr><tr><td>20</td><td class="emoji-cell">🛍️</td><td>A) ago</td><td>ago เป็นคำสัญญาณของ Past Simple (two days ago)</td></tr><tr><td>21</td><td class="emoji-cell">🌙</td><td>B) were</td><td>last night บ่งบอก Past Simple ประธาน We ใช้ were</td></tr><tr><td>22</td><td class="emoji-cell">📞</td><td>B) will</td><td>promise เป็นสัญญา ใช้ will</td></tr><tr><td>23</td><td class="emoji-cell">🔮</td><td>A) will</td><td>soon เป็นคำสัญญาณของ Future ใช้ will</td></tr><tr><td>24</td><td class="emoji-cell">🎓</td><td>B) is going to</td><td>แผนที่วางไว้แล้วใช้ be going to</td></tr><tr><td>25</td><td class="emoji-cell">☁️</td><td>B) is going to</td><td>มีหลักฐาน (เมฆดำ) ใช้ be going to</td></tr><tr><td>26</td><td class="emoji-cell">🚫</td><td>C) is</td><td>ปฏิเสธ be going to ใช้ is/am/are + not + going to</td></tr><tr><td>27</td><td class="emoji-cell">❓</td><td>C) Are</td><td>ประธาน they + be going to ใช้ Are</td></tr><tr><td>28</td><td class="emoji-cell">🎁</td><td>B) will</td><td>ตัดสินใจทันทีตอนพูดใช้ will</td></tr><tr><td>29</td><td class="emoji-cell">🏠</td><td>B) are going to</td><td>เซ็นสัญญาแล้ว = แผนที่วางไว้แน่นอน ใช้ be going to</td></tr><tr><td>30</td><td class="emoji-cell">😊</td><td>C) Adjective</td><td>kind ขยายคำนาม (She) จึงเป็น Adjective</td></tr><tr><td>31</td><td class="emoji-cell">🏃</td><td>C) Adverb</td><td>quickly ขยายกริยา runs จึงเป็น Adverb</td></tr><tr><td>32</td><td class="emoji-cell">🐕</td><td>A) Noun</td><td>dog เป็นชื่อสัตว์ จึงเป็น Noun</td></tr><tr><td>33</td><td class="emoji-cell">☕</td><td>B) Conjunction</td><td>and เชื่อมคำสองคำเข้าด้วยกัน จึงเป็น Conjunction</td></tr><tr><td>34</td><td class="emoji-cell">😲</td><td>D) Interjection</td><td>Wow! แสดงอารมณ์ตกใจ/ประทับใจ จึงเป็น Interjection</td></tr><tr><td>35</td><td class="emoji-cell">📍</td><td>B) Preposition</td><td>in บอกตำแหน่ง/สถานที่ จึงเป็น Preposition</td></tr><tr><td>36</td><td class="emoji-cell">🙋</td><td>B) Pronoun</td><td>she แทนคำนาม จึงเป็น Pronoun</td></tr><tr><td>37</td><td class="emoji-cell">🎤</td><td>B) Verb</td><td>sings บอกการกระทำ จึงเป็น Verb</td></tr><tr><td>38</td><td class="emoji-cell">📅</td><td>B) Time</td><td>When ถามเรื่องเวลา</td></tr><tr><td>39</td><td class="emoji-cell">📍</td><td>A) Place</td><td>Where ถามเรื่องสถานที่</td></tr><tr><td>40</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>B) Who broke</td><td>Who เป็นประธานเอง ไม่ต้องใช้ did</td></tr><tr><td>41</td><td class="emoji-cell">🔢</td><td>B) How much</td><td>homework นับไม่ได้ ใช้ How much</td></tr><tr><td>42</td><td class="emoji-cell">☑️</td><td>B) Which</td><td>มีตัวเลือกจำกัดชัดเจน ใช้ Which</td></tr><tr><td>43</td><td class="emoji-cell">🎯</td><td>B) is going to</td><td>ตารางเวลาที่กำหนดไว้แล้ว = แผนล่วงหน้า ใช้ be going to</td></tr><tr><td>44</td><td class="emoji-cell">🎯</td><td>A) will</td><td>"probably" + ไม่มีใครรู้แน่ชัด = คาดเดาไม่มีหลักฐาน ใช้ will</td></tr><tr><td>45</td><td class="emoji-cell">🔍</td><td>B) She goes to school every day.</td><td>every day บ่งบอก Present Simple ประธาน She ต้องเติม s</td></tr><tr><td>46</td><td class="emoji-cell">🔍</td><td>B) She did not play football.</td><td>หลัง did not ต้องใช้กริยารูปเดิม (base form)</td></tr><tr><td>47</td><td class="emoji-cell">🔍</td><td>B) I have an apple.</td><td>apple ขึ้นต้นเสียงสระ ต้องใช้ an</td></tr><tr><td>48</td><td class="emoji-cell">🏁</td><td>A) หาคำสัญญาณเวลาในประโยค</td><td>Checklist ขั้นที่ 1 คือหาคำสัญญาณเวลาในประโยคก่อนเสมอ</td></tr><tr><td>49</td><td class="emoji-cell">🏆</td><td>C) will have started</td><td>โครงสร้างนี้เป็นความรู้เสริมระดับสูง (Future Perfect) แสดงเหตุการณ์ที่จะเสร็จสิ้นก่อนอีกเหตุการณ์ในอนาคต — ทบทวนเป็นความรู้เสริมนอกเหนือจาก 5 Tense หลักที่เรียนมา</td></tr><tr><td>50</td><td class="emoji-cell">📋</td><td>B) เช็กประธานว่าเป็น he/she/it หรือไม่</td><td>Checklist ขั้นที่ 3 คือเช็กประธานเพื่อเลือกรูปกริยา/verb to be ให้ถูกต้อง</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>5 Tense หลัก</h4>
+      <table><tr><th>Tense</th><th>คำสัญญาณ</th></tr>
+      <tr><td>Present Simple</td><td>always, every day</td></tr>
+      <tr><td>Present Continuous</td><td>now, Look!</td></tr>
+      <tr><td>Past Simple</td><td>yesterday, ...ago</td></tr>
+      <tr><td>Future</td><td>tomorrow, soon</td></tr></table></div>
+    <div class="cheat-box"><h4>8 ชนิดของคำ</h4>
+      <ul><li>Noun, Pronoun, Verb, Adjective</li><li>Adverb, Preposition, Conjunction, Interjection</li></ul></div>
+    <div class="cheat-box"><h4>8 คำ WH-</h4>
+      <ul><li>What, Where, When, Who</li><li>Why, How, Which, Whose</li></ul></div>
+    <div class="cheat-box"><h4>Checklist 3 ขั้น</h4>
+      <ul><li>1. หาคำสัญญาณเวลา</li><li>2. จับคู่กับ Tense</li><li>3. เช็กประธาน</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุก Tense ในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>ใช้บทนี้เป็นการทบทวนแบบรวบยอด ไม่ใช่การสอนเนื้อหาใหม่ เน้นการเชื่อมโยงความรู้เก่า</li>
+    <li>ให้นักเรียนฝึกใช้ Checklist 3 ขั้นตอนซ้ำ ๆ จนกลายเป็นความเคยชิน</li>
+    <li>เน้นย้ำว่าคำสัญญาณเวลาคือกุญแจสำคัญที่สุดในการเลือก Tense ให้ถูกต้อง</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Tense Relay Race</b> — แบ่งกลุ่มแข่งกันเติม Tense ให้ถูกต้องในเวลาจำกัด ทีมไหนถูกมากที่สุดชนะ</li>
+    <li><b>Signal Word Sort</b> — แจกบัตรคำสัญญาณเวลา ให้นักเรียนจัดกลุ่มตาม Tense ที่ตรงกัน</li>
+    <li><b>Parts of Speech Charades</b> — นักเรียนแสดงท่าทางแทนชนิดของคำ ให้เพื่อนทาย</li>
+    <li><b>Grand Review Quiz Bowl</b> — จัดแข่งตอบคำถามรวมทุกบทที่เรียนมาแบบเกมโชว์</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>ใช้ผลจากบทนี้ประเมินว่านักเรียนคนไหนต้องกลับไปทบทวนบทที่ 5-10 เป็นพิเศษก่อนเข้าสู่บทที่ 15</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> ทำตารางสรุปคำสัญญาณเวลาของทุก Tense ด้วยลายมือตัวเอง แล้วติดไว้ที่โต๊ะเรียน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> เขียนย่อหน้าสั้น 5 ประโยคเล่าเรื่องราวในชีวิตประจำวัน โดยใช้ให้ครบทั้ง 5 Tense ที่เรียนมา</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> ทบทวนแบบฝึกหัดของบทที่ 6-10 อีกครั้ง แล้วจดบันทึกจุดที่ยังไม่แม่น</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> ฝึกแต่งประโยคคำถาม Wh- ผสมกับ Tense ต่าง ๆ อย่างน้อย 5 ประโยค</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"ทบทวนวันนี้ เพื่อมั่นใจในวันสอบ" 🌟</div>
+    <div class="sub">บทนี้คือการรวบรวมทุกอย่างที่นักเรียนเรียนมาตลอดหลายบท ถ้าวันนี้ทบทวนได้ครบและเข้าใจแน่นแล้ว นักเรียนก็พร้อมมากสำหรับบทสุดท้ายคือ Entrance Exam อย่ากังวลไป เพราะทุกอย่างที่เรียนมาอยู่ในตัวนักเรียนแล้ว แค่ทบทวนให้แน่นขึ้นอีกนิด 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เป็นบทสรุปรวมแกรมม่าตั้งแต่บทที่ 5-10 ค่ะ ทั้ง Parts of Speech และ 5 Tense หลัก</div><div class="line">✅ Present Simple ใช้กับความจริงทั่วไป/นิสัย ส่วน Present Continuous ใช้กับสิ่งที่กำลังทำอยู่ตอนนี้</div><div class="line">✅ Past Simple ใช้กับเหตุการณ์ที่จบไปแล้วในอดีต มีเวลาชัดเจน</div><div class="line">✅ Future มี 2 แบบ: will (ตัดสินใจทันที/สัญญา) และ be going to (แผนที่วางไว้แล้ว)</div><div class="line">✅ WH-Questions มี 8 คำหลัก แต่ละคำถามหาข้อมูลคนละแบบ</div><div class="line">✅ ใช้ Checklist 3 ขั้นตอนเสมอ: หาคำสัญญาณ → จับคู่ Tense → เช็กประธาน</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะพร้อมสำหรับบทสุดท้ายแน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

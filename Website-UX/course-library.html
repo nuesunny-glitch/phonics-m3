@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>คลังบทเรียน — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+<style>
+  .lib-card{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .lib-card .icon{font-size:2rem;flex-shrink:0;}
+  .lib-card .body{flex:1;min-width:0;}
+  .lib-card .title{font-weight:700;}
+  .lib-card .progress-track{height:8px;margin-top:6px;}
+  .lib-card .cta{color:var(--primary);font-weight:700;font-size:.85rem;flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <h1 class="topbar-title">📚 คลังบทเรียน</h1>
+    <a href="dashboard.html" class="icon-btn" aria-label="กลับหน้าหลัก">✕</a>
+  </header>
+
+  <div class="chip-row mb-16">
+    <span class="chip active" data-filter="all">ทั้งหมด</span>
+    <span class="chip" data-filter="basic">พื้นฐาน</span>
+    <span class="chip" data-filter="grammar">ไวยากรณ์</span>
+    <span class="chip" data-filter="skills">ทักษะรวม</span>
+    <span class="chip" data-filter="game">🎮 เกม</span>
+  </div>
+
+  <div id="libList" class="stack"></div>
+
+</div>
+
+<div id="bottomNav"></div>
+<script src="_tools/bottom-nav.js"></script>
+<script>
+  var ITEMS = [
+    { icon:'🔤', title:'1. Phonics', cat:'basic', pct:100, href:'../index.html#c1-1' },
+    { icon:'✏️', title:'2. Spelling', cat:'basic', pct:100, href:'../index.html#c2-1' },
+    { icon:'👀', title:'3. Sight Words', cat:'basic', pct:100, href:'../index.html#c3-1' },
+    { icon:'📖', title:'4. Vocabulary', cat:'basic', pct:100, href:'../index.html#c4-1' },
+    { icon:'🧩', title:'5. Parts of Speech', cat:'basic', pct:100, href:'../index.html#c5-1' },
+    { icon:'⏰', title:'6. Present Simple', cat:'grammar', pct:60, href:'../index.html#c6-1' },
+    { icon:'🏃', title:'7. Present Continuous', cat:'grammar', pct:0, href:'../index.html#c7-1' },
+    { icon:'⏳', title:'8. Past Simple', cat:'grammar', pct:0, href:'../index.html#c8-1' },
+    { icon:'🔮', title:'9. Future Tense', cat:'grammar', pct:0, href:'../index.html#c9-1' },
+    { icon:'❓', title:'10. WH-Questions', cat:'grammar', pct:0, href:'../index.html#c10-1' },
+    { icon:'💬', title:'11. Conversation', cat:'skills', pct:0, href:'../index.html#c11-1' },
+    { icon:'📰', title:'12. Reading', cat:'skills', pct:0, href:'../index.html#c12-1' },
+    { icon:'🔍', title:'13. Error Detection', cat:'skills', pct:0, href:'../index.html#c13-1' },
+    { icon:'📋', title:'14. Grammar Summary', cat:'grammar', pct:0, href:'../index.html#c14-1' },
+    { icon:'📝', title:'15. Entrance Exam', cat:'skills', pct:0, href:'../index.html#c15-1' },
+    { icon:'🏃', title:'Verb Adventure', cat:'game', pct:0, href:'../16-Verb-Adventure/index.html' },
+    { icon:'🎨', title:'Adjective Adventure', cat:'game', pct:0, href:'../17-Adjective-Adventure/index.html' },
+    { icon:'🎭', title:'Pronoun Adventure', cat:'game', pct:0, href:'../18-Pronoun-Adventure/index.html' },
+    { icon:'🧭', title:'Preposition Adventure', cat:'game', pct:0, href:'../19-Preposition-Adventure/index.html' },
+    { icon:'🔗', title:'Conjunction Adventure', cat:'game', pct:0, href:'../20-Conjunction-Adventure/index.html' },
+    { icon:'⏰', title:'Present Simple Adventure', cat:'game', pct:0, href:'../21-Present-Simple-Adventure/index.html' }
+  ];
+
+  var listEl = document.getElementById('libList');
+
+  function render(filter) {
+    listEl.innerHTML = '';
+    ITEMS.filter(function (it) { return filter === 'all' || it.cat === filter; }).forEach(function (it) {
+      var a = document.createElement('a');
+      a.className = 'card lib-card';
+      a.href = it.href;
+      var ctaLabel = it.cat === 'game' ? 'เล่น ▶' : (it.pct >= 100 ? 'ทบทวน 🔁' : it.pct > 0 ? 'เรียนต่อ ▶' : 'เริ่มเรียน ▶');
+      a.innerHTML =
+        '<span class="icon">' + it.icon + '</span>' +
+        '<span class="body">' +
+        '<span class="title">' + it.title + '</span>' +
+        (it.cat !== 'game' ? '<span class="progress-track"><span class="progress-fill" style="width:' + it.pct + '%"></span></span>' : '') +
+        '</span>' +
+        '<span class="cta">' + ctaLabel + '</span>';
+      listEl.appendChild(a);
+    });
+  }
+
+  document.querySelectorAll('.chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      render(chip.getAttribute('data-filter'));
+    });
+  });
+
+  render('all');
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Conjunction Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>🔗 Conjunction Adventure</h1>
+    <div class="sub">เกมฝึกคำสันธานภาษาอังกฤษ พร้อมมาสคอต "น้องคอนนี่" 🦊 — เล่นซ้ำได้ไม่จำกัด ไม่มีการบันทึกคะแนนลงเซิร์ฟเวอร์</div>
+  </div>
+
+  <div class="hub-grid">
+    <a id="chapter1Card" class="hub-card" href="chapter-1-and-but-or/game.html">
+      <div class="icon">➕</div>
+      <div>
+        <p class="title">บทที่ 1: คำสันธานพื้นฐาน (and, but, or)</p>
+        <p class="desc">and, but, or — 3 คำ — Learn → เทคนิคการจำ → ตัวอย่าง → Mini Practice → Game → Boss Quiz</p>
+        <p id="chapter1Best" class="best"></p>
+      </div>
+    </a>
+
+    <a id="chapter2Card" class="hub-card" href="chapter-2-because-so/game.html">
+      <div class="icon">🌧️</div>
+      <div>
+        <p class="title">บทที่ 2: คำสันธานบอกเหตุผล (because, so)</p>
+        <p class="desc">because, so — 2 คำ — Learn → เทคนิคการจำ → ตัวอย่าง → Mini Practice → Game → Boss Quiz</p>
+        <p id="chapter2Best" class="best"></p>
+      </div>
+    </a>
+
+    <a id="chapter3Card" class="hub-card" href="chapter-3-although-if-when/game.html">
+      <div class="icon">☔</div>
+      <div>
+        <p class="title">บทที่ 3: คำสันธานขั้นสูง (although, if, when)</p>
+        <p class="desc">although, if, when — 3 คำ — Learn → เทคนิคการจำ → ตัวอย่าง → Mini Practice → Game → Boss Quiz</p>
+        <p id="chapter3Best" class="best"></p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<script>
+  (function () {
+    var chapters = [
+      { storageKey: 'conjunctionAdventureCh1Progress', dataKey: 'chapter1', elId: 'chapter1Best', max: 12 },
+      { storageKey: 'conjunctionAdventureCh2Progress', dataKey: 'chapter2', elId: 'chapter2Best', max: 8 },
+      { storageKey: 'conjunctionAdventureCh3Progress', dataKey: 'chapter3', elId: 'chapter3Best', max: 12 }
+    ];
+    chapters.forEach(function (ch) {
+      var raw = localStorage.getItem(ch.storageKey);
+      if (!raw) return;
+      try {
+        var data = JSON.parse(raw);
+        var entry = data[ch.dataKey];
+        if (entry && entry.playCount > 0) {
+          var stars = '★★★☆☆☆'.slice(3 - entry.bestStars, 6 - entry.bestStars);
+          document.getElementById(ch.elId).textContent =
+            'คะแนนดีที่สุด: ' + entry.bestScore + '/' + ch.max + '  ' + stars;
+        }
+      } catch (e) { /* ignore corrupt storage */ }
+    });
+  })();
+</script>
+</body>
+</html>

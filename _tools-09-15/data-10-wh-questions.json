@@ -1,0 +1,167 @@
+{
+  "id": "10",
+  "folder": "10-WH-Questions",
+  "titleThai": "WH-Questions (What / Where / When / Who / Why / How / Which / Whose)",
+  "titleShort": "WH-Questions",
+  "emojiTitle": "❓🔍",
+  "objectives": [
+    "บอกความหมายและหน้าที่ของคำ WH- ทั้ง 8 คำได้ถูกต้อง",
+    "แต่งประโยคคำถามด้วย Wh-word ให้ถูกโครงสร้างตาม Tense ต่าง ๆ ได้",
+    "แยกแยะกรณีพิเศษเมื่อ Who/What ทำหน้าที่เป็นประธานของประโยคเอง",
+    "ใช้กลุ่ม How + Adjective (How old, How much, How many, How far, How long, How often) ได้ถูกต้อง",
+    "สังเกตและแก้ไขประโยคคำถาม Wh- ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย"
+  ],
+  "summaryTable": {
+    "headers": ["Wh-word", "ถามอะไร", "ตัวอย่าง"],
+    "rows": [
+      ["What", "สิ่งของ/การกระทำ", "What is this? — It is a pen."],
+      ["Where", "สถานที่", "Where do you study? — At home."],
+      ["When", "เวลา", "When is the meeting? — At 3 PM."],
+      ["Who", "บุคคล (ประธาน)", "Who is singing? — Nid is."],
+      ["Why", "เหตุผล (ตอบด้วย Because)", "Why are you tired? — Because I ran."],
+      ["How", "วิธีการ/สภาพ/ปริมาณ", "How do you feel? — I feel great."],
+      ["Which", "เลือกจากตัวเลือกที่จำกัด", "Which bag is yours?"],
+      ["Whose", "ความเป็นเจ้าของ", "Whose pen is this? — It's mine."]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เลือกคำ WH- ที่ถูกต้อง (10 ข้อ)",
+        "instructions": "เลือกคำ Wh- ที่เหมาะสมที่สุดเติมในช่องว่าง",
+        "items": [
+          "___ is your favorite subject? (What/Who)",
+          "___ do you go swimming? (When/Where)",
+          "___ is the concert? (When/Which)",
+          "___ is knocking on the door? (Who/What)",
+          "___ are you smiling? (Why/How)",
+          "___ far is the airport from here? (How/What)",
+          "___ pen do you want, this one or that one? (Which/Whose)",
+          "___ bike is this? (Whose/Which)",
+          "___ many pencils do you need? (How/What)",
+          "___ often do you go to the library? (How/Why)"
+        ],
+        "answers": ["What", "Where", "When", "Who", "Why", "How", "Which", "Whose", "How", "How"],
+        "reasons": [
+          "ถามสิ่งของ/หัวข้อ ใช้ What",
+          "ถามสถานที่ ใช้ Where",
+          "ถามเวลา ใช้ When",
+          "ถามบุคคล (ประธาน) ใช้ Who",
+          "ถามเหตุผล ใช้ Why",
+          "How far ถามระยะทาง",
+          "Which ใช้เมื่อมีตัวเลือกจำกัดให้เลือก",
+          "Whose ถามความเป็นเจ้าของ",
+          "How many ถามจำนวนนับได้",
+          "How often ถามความถี่"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เรียงคำให้เป็นประโยคคำถามที่ถูกต้อง (8 ข้อ)",
+        "instructions": "เรียงคำที่กำหนดให้เป็นประโยคคำถามที่ถูกต้อง",
+        "items": [
+          "you / where / do / study / ?",
+          "is / this / whose / bag / ?",
+          "you / feel / how / do / ?",
+          "the / when / start / did / movie / ?",
+          "broke / who / window / the / ?",
+          "crying / why / you / are / ?",
+          "one / which / you / do / want / ?",
+          "does / long / take / how / it / ?"
+        ],
+        "answers": [
+          "Where do you study?",
+          "Whose bag is this?",
+          "How do you feel?",
+          "When did the movie start?",
+          "Who broke the window?",
+          "Why are you crying?",
+          "Which one do you want?",
+          "How long does it take?"
+        ],
+        "reasons": [
+          "Where + do + you + study?",
+          "Whose + bag + is + this?",
+          "How + do + you + feel?",
+          "When + did + the movie + start?",
+          "Who เป็นประธานเอง ไม่ต้องใช้ did",
+          "Why + are + you + crying?",
+          "Which one + do + you + want?",
+          "How long + does + it + take?"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: ตอบคำถามให้สอดคล้องกับคำ WH- ที่ถาม (6 ข้อ)",
+        "instructions": "เลือกคำตอบที่สอดคล้องกับคำถามที่กำหนดให้ถูกต้อง",
+        "items": [
+          "Where is your school? — It ___ near the market. (is/are)",
+          "Who is your best friend? — ___ is. (She/Her)",
+          "Why is he late? — ___ he missed the bus. (Because/So)",
+          "How many sisters do you have? — I have ___ sister. (one/much)",
+          "How much does it cost? — It costs ___ baht. (20/many)",
+          "Whose book is this? — It's ___. (mine/I)"
+        ],
+        "answers": ["is", "She", "Because", "one", "20", "mine"],
+        "reasons": [
+          "ประธาน It (school) ใช้ is",
+          "ใช้แทนบุคคลเพศหญิงในฐานะประธาน",
+          "ตอบเหตุผลของ Why ด้วย Because",
+          "sister นับได้ ตอบด้วยตัวเลข",
+          "ตอบราคาเป็นตัวเลข",
+          "ตอบความเป็นเจ้าของด้วย mine"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "📚", "tag": "What: ถามสิ่งของ", "difficulty": 1, "q": "___ is your favorite subject?", "choices": ["What", "Who", "When", "Whose"], "answer": 0, "explain": "ถามสิ่งของ/หัวข้อ ใช้ What" },
+    { "emoji": "🏠", "tag": "Where: ถามสถานที่", "difficulty": 1, "q": "___ do you live?", "choices": ["When", "Where", "Who", "Why"], "answer": 1, "explain": "ถามสถานที่ ใช้ Where" },
+    { "emoji": "🎂", "tag": "When: ถามเวลา", "difficulty": 1, "q": "___ is your birthday?", "choices": ["What", "Where", "When", "Who"], "answer": 2, "explain": "ถามเวลา ใช้ When" },
+    { "emoji": "👩‍🏫", "tag": "Who: ถามบุคคล", "difficulty": 1, "q": "___ is your teacher?", "choices": ["What", "Who", "Where", "Whose"], "answer": 1, "explain": "ถามบุคคล ใช้ Who" },
+    { "emoji": "😢", "tag": "Why: ถามเหตุผล", "difficulty": 1, "q": "___ are you crying?", "choices": ["How", "Why", "When", "What"], "answer": 1, "explain": "ถามเหตุผล ใช้ Why" },
+    { "emoji": "🙋", "tag": "How: ถามสภาพ", "difficulty": 1, "q": "___ are you today?", "choices": ["What", "How", "Which", "Whose"], "answer": 1, "explain": "ถามสภาพ/ความรู้สึก ใช้ How" },
+    { "emoji": "🚌", "tag": "How: ถามวิธีการ", "difficulty": 1, "q": "___ do you go to school?", "choices": ["What", "How", "Why", "When"], "answer": 1, "explain": "ถามวิธีการ ใช้ How" },
+    { "emoji": "🎈", "tag": "How old: ถามอายุ", "difficulty": 1, "q": "___ old are you?", "choices": ["What", "How", "Which", "Who"], "answer": 1, "explain": "How old ถามอายุ" },
+    { "emoji": "💰", "tag": "How much: ราคา", "difficulty": 1, "q": "___ much is this shirt?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "How much ถามราคา/ปริมาณนับไม่ได้" },
+    { "emoji": "📖", "tag": "How many: จำนวน", "difficulty": 1, "q": "___ many books do you have?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "How many ถามจำนวนนับได้" },
+    { "emoji": "☑️", "tag": "Which: เลือกจากตัวเลือก", "difficulty": 1, "q": "___ color do you like, red or blue?", "choices": ["What", "Which", "Who", "Whose"], "answer": 1, "explain": "Which ใช้เมื่อมีตัวเลือกจำกัดให้เลือก" },
+    { "emoji": "🎒", "tag": "Whose: ความเป็นเจ้าของ", "difficulty": 1, "q": "___ bag is this?", "choices": ["Who", "Which", "Whose", "What"], "answer": 2, "explain": "ถามความเป็นเจ้าของ ใช้ Whose" },
+    { "emoji": "⏰", "tag": "What time: ถามเวลา", "difficulty": 1, "q": "___ time is it?", "choices": ["What", "Which", "Whose", "Who"], "answer": 0, "explain": "What time ถามเวลาปัจจุบัน" },
+    { "emoji": "📏", "tag": "How far: ระยะทาง", "difficulty": 1, "q": "___ far is the school from here?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "How far ถามระยะทาง" },
+    { "emoji": "⏳", "tag": "How long: ระยะเวลา", "difficulty": 1, "q": "___ long does the movie take?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "How long ถามระยะเวลา" },
+    { "emoji": "🔁", "tag": "How often: ความถี่", "difficulty": 2, "q": "___ often do you exercise?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "How often ถามความถี่" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "Who เป็นประธาน: ไม่ใช้ did", "difficulty": 2, "q": "___ broke the window?", "choices": ["Who did break", "Who broke", "Did who break", "Who does break"], "answer": 1, "explain": "Who เป็นประธานของประโยคเอง ไม่ต้องใช้ do/does/did" },
+    { "emoji": "🏃", "tag": "Present Continuous: What + is", "difficulty": 2, "q": "___ is she doing?", "choices": ["What", "Who", "Which", "Whose"], "answer": 0, "explain": "ถามการกระทำที่กำลังทำอยู่ ใช้ What + is + doing" },
+    { "emoji": "🕰️", "tag": "Past Simple: When + did", "difficulty": 2, "q": "___ did he arrive?", "choices": ["When is", "When did", "When does", "When was"], "answer": 1, "explain": "คำถามอดีตใช้ did กับทุกประธาน" },
+    { "emoji": "🧔", "tag": "Verb to be: Who + is", "difficulty": 2, "q": "___ is that man?", "choices": ["Who", "Whose", "Which", "What"], "answer": 0, "explain": "ถามบุคคลด้วย Verb to be ใช้ Who + is" },
+    { "emoji": "🎓", "tag": "โครงสร้าง Wh + aux + S + V", "difficulty": 2, "q": "___ do you study at school?", "choices": ["What", "Which", "Whose", "Who"], "answer": 0, "explain": "ถามสิ่งของ/วิชา ใช้ What + do + you + study" },
+    { "emoji": "🐶", "tag": "Whose + noun", "difficulty": 2, "q": "___ dog is barking outside?", "choices": ["Who", "Whose", "Which", "What"], "answer": 1, "explain": "Whose + คำนาม ถามความเป็นเจ้าของ" },
+    { "emoji": "🍕", "tag": "Which + noun: ตัวเลือกจำกัด", "difficulty": 2, "q": "___ pizza do you want, this one or that one?", "choices": ["What", "Which", "Whose", "Who"], "answer": 1, "explain": "มีตัวเลือกจำกัด (this one or that one) ใช้ Which" },
+    { "emoji": "🚕", "tag": "How: วิธีการเดินทาง", "difficulty": 2, "q": "___ did you get here?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "ถามวิธีการ ใช้ How" },
+    { "emoji": "🙅", "tag": "Why + Because", "difficulty": 2, "q": "___ didn't you come to the party?", "choices": ["How", "Why", "When", "Which"], "answer": 1, "explain": "ถามเหตุผล ใช้ Why (ตอบด้วย Because)" },
+    { "emoji": "👧", "tag": "Who เป็นประธาน (ปัจจุบัน)", "difficulty": 2, "q": "___ sings in the school choir?", "choices": ["Who does sing", "Who sings", "Does who sing", "Who sing"], "answer": 1, "explain": "Who เป็นประธานในปัจจุบัน ไม่ต้องใช้ does และประธานเอกพจน์เติม -s" },
+    { "emoji": "📅", "tag": "When + is (นัดหมาย)", "difficulty": 2, "q": "___ is the meeting?", "choices": ["When", "Who", "Whose", "Which"], "answer": 0, "explain": "ถามเวลาของนัดหมาย ใช้ When" },
+    { "emoji": "🧳", "tag": "Whose: กระเป๋าใคร", "difficulty": 2, "q": "___ suitcase is that?", "choices": ["Who", "Whose", "Which", "What"], "answer": 1, "explain": "ถามความเป็นเจ้าของ ใช้ Whose" },
+    { "emoji": "🥤", "tag": "How much: ปริมาณนับไม่ได้", "difficulty": 2, "q": "___ much water do you drink every day?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "water นับไม่ได้ ใช้ How much" },
+    { "emoji": "🍪", "tag": "How many: ปริมาณนับได้", "difficulty": 2, "q": "___ many cookies are left?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "cookies นับได้ ใช้ How many" },
+    { "emoji": "🏫", "tag": "Where + be", "difficulty": 2, "q": "___ is the nearest hospital?", "choices": ["What", "Where", "When", "Which"], "answer": 1, "explain": "ถามสถานที่ ใช้ Where" },
+    { "emoji": "🧑‍⚕️", "tag": "What + do: อาชีพ", "difficulty": 2, "q": "___ does your father do?", "choices": ["What", "Who", "Whose", "Which"], "answer": 0, "explain": "\"What does...do?\" ถามอาชีพ" },
+    { "emoji": "📞", "tag": "Who + is speaking", "difficulty": 2, "q": "___ is calling, please?", "choices": ["What", "Who", "Whose", "Which"], "answer": 1, "explain": "ถามบุคคล (ผู้โทรมา) ใช้ Who" },
+    { "emoji": "🎁", "tag": "What + for: จุดประสงค์", "difficulty": 2, "q": "___ is this box for?", "choices": ["What", "Which", "Whose", "Who"], "answer": 0, "explain": "\"What...for?\" ถามจุดประสงค์การใช้งาน" },
+    { "emoji": "🚗", "tag": "Whose car: เจ้าของ", "difficulty": 2, "q": "___ car is parked outside?", "choices": ["Who", "Whose", "Which", "What"], "answer": 1, "explain": "ถามความเป็นเจ้าของรถ ใช้ Whose" },
+    { "emoji": "🌍", "tag": "Where are you from", "difficulty": 3, "q": "___ are you from?", "choices": ["What", "Where", "When", "Which"], "answer": 1, "explain": "\"Where are you from?\" ถามถิ่นกำเนิด/สัญชาติ" },
+    { "emoji": "🔍", "tag": "Who as object: ต้องใช้ aux", "difficulty": 3, "q": "___ did you meet at the party?", "choices": ["Who", "Who did", "Whom did", "Who does"], "answer": 0, "explain": "Who ในที่นี้เป็นกรรม (object) จึงต้องมี did ตามด้วยประธาน — คำถามเต็มคือ \"Who did you meet?\" ตัวเลือกที่ถูกคือ Who เพราะระดับ ม.3 ใช้ Who แทน Whom ได้ในบทสนทนาทั่วไป" },
+    { "emoji": "🍦", "tag": "Which one: เลือกจากที่เห็น", "difficulty": 3, "q": "There are two flavors left. ___ one do you want?", "choices": ["What", "Which", "Whose", "Who"], "answer": 1, "explain": "มีตัวเลือกจำกัดชัดเจน (two flavors) ใช้ Which ไม่ใช่ What" },
+    { "emoji": "🎤", "tag": "What is... like: ถามลักษณะ", "difficulty": 3, "q": "___ is your new teacher like?", "choices": ["How", "What", "Which", "Who"], "answer": 1, "explain": "\"What is...like?\" ถามลักษณะนิสัย/บุคลิก (ต่างจาก How are you? ที่ถามความรู้สึก)" },
+    { "emoji": "🏆", "tag": "Who เป็นประธาน + won", "difficulty": 3, "q": "___ won the competition?", "choices": ["Who did win", "Who won", "Did who win", "Who does win"], "answer": 1, "explain": "Who เป็นประธานของประโยคอดีต ไม่ต้องใช้ did — กริยาใช้รูปอดีตตรง ๆ (won)" },
+    { "emoji": "🧭", "tag": "How: ถามความคิดเห็น", "difficulty": 3, "q": "___ was your trip to Chiang Mai?", "choices": ["What", "How", "Which", "Who"], "answer": 1, "explain": "\"How was...?\" ถามความรู้สึก/ความคิดเห็นเกี่ยวกับประสบการณ์ที่ผ่านมา" },
+    { "emoji": "📰", "tag": "What + happened", "difficulty": 3, "q": "___ happened to your arm?", "choices": ["What", "Which", "Whose", "Who"], "answer": 0, "explain": "What เป็นประธานถามเหตุการณ์ที่เกิดขึ้น ไม่ต้องใช้ did (What happened...?)" },
+    { "emoji": "🧾", "tag": "How much: ราคารวม", "difficulty": 3, "q": "___ much do these two shirts cost altogether?", "choices": ["How", "What", "Which", "Who"], "answer": 0, "explain": "ถามราคารวม (นับไม่ได้ในฐานะจำนวนเงิน) ใช้ How much" },
+    { "emoji": "🚦", "tag": "Whose + turn", "difficulty": 3, "q": "___ turn is it to answer next?", "choices": ["Who", "Whose", "Which", "What"], "answer": 1, "explain": "ถามความเป็นเจ้าของ \"ตา/คิว\" ของใคร ใช้ Whose" },
+    { "emoji": "🔦", "tag": "Error Detection: Who + did + V", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Who did broke the vase?", "Who broke the vase?", "Who does broke the vase?", "Did who broke the vase?"], "answer": 1, "explain": "Who เป็นประธานเอง ห้ามใช้ did ร่วมกับกริยาอดีตซ้ำซ้อน" },
+    { "emoji": "🔦", "tag": "Error Detection: How old", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["What old are you?", "How old are you?", "How old you are?", "How olds are you?"], "answer": 1, "explain": "How old เป็นวลีคงที่ ใช้ How ไม่ใช่ What และเรียงคำถามปกติ Be + S" },
+    { "emoji": "🔦", "tag": "Error Detection: Which vs What", "difficulty": 3, "q": "There are only two buses. ข้อใดถูกต้อง?", "choices": ["What bus do you take?", "Which bus do you take?", "Whose bus do you take?", "Who bus do you take?"], "answer": 1, "explain": "มีตัวเลือกจำกัดชัดเจน (only two buses) ต้องใช้ Which ไม่ใช่ What" },
+    { "emoji": "🎯", "tag": "สรุปรวม: Who เป็นประธาน", "difficulty": 3, "q": "___ is knocking on the door right now?", "choices": ["Who is knocking", "Who does knock", "Who did knock", "Does who knock"], "answer": 0, "explain": "Who เป็นประธานของ Present Continuous ใช้รูปเดิม is + V-ing ไม่ต้องใช้ does" },
+    { "emoji": "🏁", "tag": "สรุปรวม: How many vs How much", "difficulty": 3, "q": "___ homework do you have tonight?", "choices": ["How many", "How much", "How old", "How far"], "answer": 1, "explain": "homework เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🎬", "tag": "สรุปรวม: What...about", "difficulty": 3, "q": "___ is the movie about?", "choices": ["What", "Which", "Whose", "Who"], "answer": 0, "explain": "\"What...about?\" ถามเนื้อหา/หัวข้อของสิ่งใดสิ่งหนึ่ง" }
+  ]
+}

@@ -1,0 +1,299 @@
+/* Present Continuous Adventure — shared styles for hub (index.html) and
+   chapter game.html flows. Copied as-is from
+   21-Present-Simple-Adventure/_tools/game.css to reuse the proven,
+   already-tested component set (banner/card/choice-grid/hub-card/
+   drag & drop/mascot/timer-bar etc. — this game's spec explicitly asks to
+   "reuse existing CSS"). Chapter 1 doesn't use the Speed Challenge timer
+   classes but they're left in place unmodified for future chapters that
+   may need them. See CLAUDE.md "UI Style". */
+
+:root{
+  --c1:#FF5D5D; --c1-light:#FFE1E1;
+  --c2:#FFA800; --c2-light:#FFEFD1;
+  --c3:#2F9BFF; --c3-light:#DCEEFF;
+  --c4:#21C38D; --c4-light:#DBF7EC;
+  --c5:#9B5DE5; --c5-light:#EFE1FB;
+  --c6:#FF5FA2; --c6-light:#FFE1EE;
+  --ink:#2b2b3a;
+  --bg:#F6F7FB;
+  --card-bg:#ffffff;
+  --radius:18px;
+  --shadow:0 8px 24px rgba(43,43,58,0.10);
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Kanit','Sarabun','Tahoma',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+}
+h1,h2,h3,.display{font-family:'Mali','Kanit',sans-serif;}
+
+a{color:inherit;}
+
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px;}
+
+/* ---------- Banner (shared by hub + game) ---------- */
+.banner{
+  border-radius:var(--radius);
+  padding:36px 30px;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(120deg,var(--c6),var(--c2) 55%,var(--c3));
+  box-shadow:var(--shadow);
+  margin-bottom:24px;
+}
+.banner h1{margin:0 0 6px;font-size:2rem;}
+.banner .sub{opacity:.95;font-size:1.15rem;}
+.home-link{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-bottom:14px;font-size:.9rem;color:var(--c6);
+  text-decoration:none;font-weight:600;
+}
+.home-link:hover{text-decoration:underline;}
+
+/* ---------- Hub cards ---------- */
+.hub-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+.hub-card{
+  background:var(--card-bg);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:28px;
+  display:flex;align-items:center;gap:16px;
+  border:3px solid var(--c2-light);
+  text-decoration:none;color:var(--ink);
+  transition:transform .15s ease;
+}
+.hub-card:hover{transform:translateY(-2px);}
+.hub-card .icon{font-size:2.8rem;flex-shrink:0;}
+.hub-card .title{font-family:'Mali',sans-serif;font-weight:700;font-size:1.45rem;margin:0 0 6px;}
+.hub-card .desc{font-size:1.1rem;color:#555;margin:0;}
+.hub-card .best{
+  margin-top:8px;font-size:1.05rem;font-weight:600;color:var(--c4);
+}
+.hub-card.locked{
+  opacity:.55;border-color:#e2e2ea;cursor:default;pointer-events:none;
+}
+.hub-card.locked .icon{filter:grayscale(1);}
+.soon-pill{
+  display:inline-block;margin-top:6px;font-size:.95rem;
+  background:#eee;color:#888;padding:2px 10px;border-radius:999px;
+}
+
+/* ---------- Game screens ---------- */
+.game-shell{max-width:640px;margin:0 auto;padding:20px 16px 60px;}
+.screen{display:block;}
+.screen.hidden{display:none;}
+/* Generic .hidden — used by non-.screen elements (g4-done/g5-done "finished"
+   panels) that get toggled the same way but aren't full screens themselves. */
+.hidden{display:none;}
+
+.stage-progress{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:1.05rem;color:#666;margin-bottom:12px;font-weight:600;
+}
+.stage-bar{
+  height:8px;border-radius:999px;background:#e7e7f0;overflow:hidden;margin-bottom:18px;
+}
+.stage-bar-fill{
+  height:100%;background:linear-gradient(90deg,var(--c6),var(--c3));
+  border-radius:999px;transition:width .3s ease;
+}
+
+.game-card{
+  background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:36px 28px;text-align:center;
+}
+
+.big-emoji{font-size:5rem;margin:10px 0 10px;line-height:1;}
+.s1-sentence{
+  font-size:1.1rem;font-weight:600;color:var(--ink);
+  margin:0 0 18px;line-height:1.5;
+}
+.s1-sentence .blank{
+  display:inline-block;min-width:56px;border-bottom:3px solid var(--c6);
+}
+.audio-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--c3);color:#fff;border:none;border-radius:999px;
+  padding:15px 30px;font-size:1.3rem;font-family:inherit;font-weight:600;
+  cursor:pointer;margin:6px 0 18px;
+}
+.audio-btn:hover{background:#1c86ef;}
+
+.choice-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;
+}
+.choice-btn{
+  font-family:'Kanit',sans-serif;font-size:1.35rem;font-weight:600;
+  padding:23px 14px;border-radius:14px;border:2.5px solid #e2e2ea;
+  background:#fff;cursor:pointer;transition:.15s;color:var(--ink);
+}
+.choice-btn:hover{border-color:var(--c6);}
+.choice-btn.correct{background:var(--c4-light);border-color:var(--c4);color:#0d7a52;}
+.choice-btn.wrong{background:var(--c1-light);border-color:var(--c1);color:#b23a3a;}
+.choice-btn:disabled{cursor:default;}
+
+.feedback-line{min-height:28px;font-weight:700;margin-top:16px;font-size:1.3rem;}
+.feedback-line.good{color:var(--c4);}
+.feedback-line.bad{color:var(--c1);}
+
+/* Stage 3 — matching game */
+.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+.match-tile{
+  border:2.5px solid #e2e2ea;background:#fff;border-radius:14px;
+  padding:18px 10px;font-size:1.75rem;cursor:pointer;transition:.15s;
+  display:flex;align-items:center;justify-content:center;min-height:64px;
+}
+.match-tile.word{font-size:.9rem;font-weight:600;font-family:'Kanit',sans-serif;}
+.match-tile.selected{border-color:var(--c6);background:var(--c6-light);}
+.match-tile.matched{border-color:var(--c4);background:var(--c4-light);opacity:.6;pointer-events:none;}
+.match-tile.shake{border-color:var(--c1);background:var(--c1-light);}
+.mistake-counter{font-size:1.05rem;color:#888;margin-top:16px;}
+
+@keyframes shakeAnim{
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-6px);}
+  75%{transform:translateX(6px);}
+}
+.match-tile.shake{animation:shakeAnim .3s;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  font-family:'Kanit',sans-serif;font-size:1.3rem;font-weight:600;
+  padding:17px 36px;border-radius:999px;border:none;cursor:pointer;
+  margin:6px;
+}
+.btn-primary{background:var(--c6);color:#fff;}
+.btn-primary:hover{background:#e14b8c;}
+.btn-secondary{background:#eee;color:#555;}
+.btn-secondary:hover{background:#e0e0e0;}
+
+/* ---------- Result screen ---------- */
+.stars-display{font-size:3rem;letter-spacing:6px;margin:14px 0;}
+.result-score{font-size:1.7rem;font-weight:700;margin:8px 0 2px;}
+.result-sub{color:#666;font-size:1.1rem;margin-bottom:20px;}
+
+/* ---------- Intro screen ---------- */
+.story-text{font-size:1.32rem;line-height:1.7;color:#444;margin:10px 0 24px;}
+
+/* ---------- Mascot (Connie the Fox 🦊) ---------- */
+.mascot-row{display:flex;align-items:center;gap:14px;}
+.mascot-avatar{font-size:2.6rem;line-height:1;flex-shrink:0;}
+.mascot-avatar-lg{font-size:4.5rem;}
+.mascot-bubble{
+  position:relative;background:var(--c6-light);color:var(--ink);
+  border-radius:14px;padding:12px 16px;font-size:.92rem;flex:1;text-align:left;
+}
+.mascot-bubble b{color:var(--c6);}
+
+/* ---------- Large word illustration ("large illustration" requirement) ---------- */
+.word-illustration{font-size:6rem;line-height:1;margin:8px 0 12px;}
+
+/* ---------- Memory trick card ---------- */
+.tip-card{
+  background:var(--c2-light);border-left:5px solid var(--c2);
+  border-radius:10px;padding:14px 16px;text-align:left;
+  font-size:.92rem;font-weight:600;color:#5a4200;margin:12px 0;
+}
+.trick-grid{display:grid;gap:10px;margin-top:10px;}
+
+/* ---------- Example card ---------- */
+.example-card{
+  background:var(--card-bg);border:2px solid var(--c4-light);
+  border-radius:14px;padding:14px;margin:10px 0;text-align:left;font-size:.95rem;
+}
+.example-card .en{font-weight:700;}
+.example-card .th{color:#666;font-size:.85rem;}
+
+/* ---------- Timeline chips (Prepositions of Time) ---------- */
+.timeline-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px;}
+.timeline-chip{
+  background:var(--c3-light);color:#0d4c8c;font-weight:700;
+  border-radius:999px;padding:8px 16px;font-size:.9rem;
+}
+
+/* ---------- Carousel nav ---------- */
+.carousel-nav{display:flex;justify-content:center;gap:10px;margin-top:16px;}
+.carousel-dots{font-size:.8rem;color:#888;margin-top:8px;}
+
+/* ---------- Mini Practice (ungraded) / practice badge ---------- */
+.mini-badge{
+  display:inline-block;background:#eee;color:#666;font-size:.78rem;
+  font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;
+}
+
+/* ---------- Drag & Drop ---------- */
+.drag-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0;}
+.drag-chip{
+  background:var(--c3);color:#fff;font-weight:700;font-size:1rem;
+  border-radius:12px;padding:12px 20px;cursor:grab;touch-action:none;
+  user-select:none;box-shadow:0 3px 0 #1c86ef;position:relative;
+}
+.drag-chip.dragging{opacity:.85;box-shadow:0 8px 20px rgba(0,0,0,.25);cursor:grabbing;z-index:60;}
+.drag-chip.placed{opacity:0;pointer-events:none;}
+.drop-zone{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:84px;min-height:44px;border:3px dashed #c9c4e6;border-radius:12px;
+  font-weight:700;color:#aaa;margin:0 4px;vertical-align:middle;
+}
+.drop-zone.over{border-color:var(--c6);background:var(--c6-light);}
+.drop-zone.filled{border-style:solid;border-color:var(--c4);background:var(--c4-light);color:#0d7a52;}
+
+/* ---------- Rescue Mission ---------- */
+.rescue-track{
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;margin:20px 0 30px;padding:0 4px;
+}
+.rescue-track:before{
+  content:'';position:absolute;left:20px;right:20px;top:50%;height:4px;
+  background:#e2e2ea;border-radius:2px;z-index:0;
+}
+.rescue-stone{
+  width:34px;height:34px;border-radius:50%;background:#e2e2ea;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+  position:relative;z-index:1;flex-shrink:0;
+}
+.rescue-stone.done{background:var(--c4);color:#fff;}
+.rescue-token{
+  position:absolute;top:-34px;font-size:1.8rem;transition:left .5s ease;
+  z-index:2;left:0;
+}
+.rescue-goal{font-size:1.8rem;}
+
+/* ---------- Explanation line (Boss Quiz) ---------- */
+.explain-line{
+  background:var(--c3-light);border-radius:10px;padding:10px 14px;
+  font-size:.85rem;color:#0d4c8c;margin-top:10px;text-align:left;
+}
+
+/* ---------- Speed Challenge timer (Game 4 — no existing equivalent) ---------- */
+.timer-count{
+  font-family:'Mali',sans-serif;font-weight:800;font-size:2.4rem;
+  color:var(--c1);margin-bottom:6px;
+}
+.timer-bar{
+  height:10px;border-radius:999px;background:#e7e7f0;overflow:hidden;margin-bottom:16px;
+}
+.timer-bar-fill{
+  height:100%;background:linear-gradient(90deg,var(--c1),var(--c2));
+  border-radius:999px;transition:width 1s linear;
+}
+.speed-score{font-size:1rem;font-weight:700;color:var(--c4);margin-top:10px;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:640px){
+  .wrap,.game-shell{padding-left:14px;padding-right:14px;}
+  .banner h1{font-size:1.65rem;}
+  .choice-grid{grid-template-columns:1fr;}
+  .match-grid{grid-template-columns:repeat(2,1fr);}
+  .big-emoji{font-size:4.4rem;}
+  .word-illustration{font-size:4.5rem;}
+  .hub-card{flex-direction:column;text-align:center;}
+  .mascot-bubble{font-size:.88rem;}
+}
+@media (max-width:400px){
+  .banner{padding:24px 18px;}
+  .game-card{padding:24px 18px;}
+  .drag-chip{padding:10px 16px;font-size:.92rem;}
+}

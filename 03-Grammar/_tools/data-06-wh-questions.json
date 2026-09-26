@@ -1,0 +1,185 @@
+{
+  "id": "06",
+  "folder": "06-WH Questions",
+  "titleThai": "WH-Questions (What/Where/When/Who/Why/Which/Whose)",
+  "titleShort": "WH-Questions",
+  "emojiTitle": "❓🔍",
+  "objectives": [
+    "บอกความหมายและหน้าที่ของคำคำถาม WH-word ทั้ง 7 คำ (What, Where, When, Who, Why, Which, Whose) ได้ถูกต้อง",
+    "แต่งประโยคคำถามด้วย WH-word + Verb to Be (is/am/are/was/were) ให้ตรงกับประธานและกาลเวลาได้",
+    "แต่งประโยคคำถามด้วย WH-word + do/does/did ให้สอดคล้องกับประธานและกาลเวลาของกริยาได้",
+    "แยกความแตกต่างและเลือกใช้ Which กับ What ในสถานการณ์ที่มีตัวเลือกจำกัดหรือเปิดกว้างได้ถูกต้อง",
+    "เลือกใช้ WH-word และกริยาช่วยที่ถูกต้องในประโยคคำถามที่ซับซ้อน รวมถึงจับผิดประโยคคำถามที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อย"
+  ],
+  "explanation": [
+    {
+      "heading": "❓ WH-Question คืออะไร",
+      "html": "<p>WH-Question คือประโยคคำถามที่ขึ้นต้นด้วยคำคำถามกลุ่ม <b>WH</b> (What, Where, When, Who, Why, Which, Whose) ใช้ถามหาข้อมูลที่เฉพาะเจาะจง เช่น สิ่งของ สถานที่ เวลา บุคคล เหตุผล ตัวเลือก หรือเจ้าของ ต่างจากคำถาม Yes/No ที่ตอบแค่ Yes หรือ No เพราะ WH-Question ต้องตอบเป็นข้อมูลจริง ๆ ไม่ใช่แค่ Yes/No</p><table><tr><th>WH-word</th><th>ใช้ถามเกี่ยวกับ</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>What</td><td>สิ่งของ/การกระทำ (แบบเปิดกว้าง)</td><td>What is this?</td><td>นี่คืออะไร</td></tr><tr><td>Where</td><td>สถานที่</td><td>Where do you live?</td><td>คุณอาศัยอยู่ที่ไหน</td></tr><tr><td>When</td><td>เวลา</td><td>When did you arrive?</td><td>คุณมาถึงเมื่อไหร่</td></tr><tr><td>Who</td><td>บุคคล (มักเป็นประธาน)</td><td>Who is that man?</td><td>ผู้ชายคนนั้นเป็นใคร</td></tr><tr><td>Why</td><td>เหตุผล (มักตอบด้วย Because...)</td><td>Why are you late?</td><td>ทำไมคุณถึงมาสาย</td></tr><tr><td>Which</td><td>ตัวเลือกที่จำกัด/รู้อยู่แล้ว</td><td>Which color do you like, red or blue?</td><td>คุณชอบสีไหน (แดงหรือน้ำเงิน)</td></tr><tr><td>Whose</td><td>ความเป็นเจ้าของ</td><td>Whose bag is this?</td><td>กระเป๋าใบนี้เป็นของใคร</td></tr></table>"
+    },
+    {
+      "heading": "🔤 WH + Verb to Be (is/am/are/was/were)",
+      "html": "<p>เมื่อประโยคคำถามใช้ Verb to Be ให้เรียงคำตามโครงสร้าง: <b>WH + is/am/are/was/were + ประธาน + ส่วนขยาย?</b> โดยเลือก Verb to Be ให้ตรงกับประธาน เหมือนกับที่เคยเรียนมาในเรื่อง Verb to Be</p><table><tr><th>ประธาน</th><th>Verb to Be</th><th>ตัวอย่าง</th></tr><tr><td>I</td><td>am</td><td>What am I supposed to do?</td></tr><tr><td>He / She / It / นามเอกพจน์</td><td>is</td><td>Who is that man?</td></tr><tr><td>You / We / They / นามพหูพจน์</td><td>are</td><td>Where are you from?</td></tr><tr><td>I / He / She / It / นามเอกพจน์ (อดีต)</td><td>was</td><td>Why was she absent?</td></tr><tr><td>You / We / They / นามพหูพจน์ (อดีต)</td><td>were</td><td>Where were you last night?</td></tr></table>"
+    },
+    {
+      "heading": "🏃 WH + do/does/did",
+      "html": "<p>เมื่อประโยคคำถามมีกริยาแท้ (action verb เช่น live, like, go, eat) ต้องใช้ <b>do/does/did</b> ช่วย ตามโครงสร้าง: <b>WH + do/does/did + ประธาน + กริยาช่อง 1 (กริยาไม่ผัน)?</b> ข้อสำคัญมาก: เมื่อมี do/does/did อยู่แล้ว กริยาตัวหลักต้องเป็น <b>กริยาช่อง 1 เสมอ</b> ห้ามเติม -s และห้ามผันเป็นอดีต เพราะ does/did ทำหน้าที่แสดงกาลเวลาแทนกริยาไปแล้ว</p><table><tr><th>ประธาน/กาล</th><th>กริยาช่วย</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They (ปัจจุบัน)</td><td>do</td><td>Where do you live?</td></tr><tr><td>He / She / It / นามเอกพจน์ (ปัจจุบัน)</td><td>does</td><td>What does she want?</td></tr><tr><td>ทุกประธาน (อดีต)</td><td>did</td><td>When did they arrive?</td></tr></table>"
+    },
+    {
+      "heading": "🆚 Which กับ What ต่างกันอย่างไร",
+      "html": "<p><b>What</b> ใช้ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัด (ผู้ถามไม่รู้ล่วงหน้าว่าคำตอบจะเป็นอะไร) ส่วน <b>Which</b> ใช้ถามเมื่อมีตัวเลือกจำกัดหรือรู้ตัวเลือกอยู่แล้ว (มักมีคำว่า \"...or...\" หรือมีการระบุตัวเลือกไว้ในประโยคหรือบริบท)</p><table><tr><th>สถานการณ์</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>ถามแบบเปิดกว้าง ไม่จำกัดตัวเลือก</td><td>What</td><td>What is your favorite food?</td></tr><tr><td>มีตัวเลือกจำกัดให้เลือก (ระบุใน or)</td><td>Which</td><td>Which one do you want, tea or coffee?</td></tr><tr><td>มีของให้เลือกอยู่ตรงหน้า (จำนวนจำกัด)</td><td>Which</td><td>Which bag is yours? (เลือกจากกระเป๋าที่วางอยู่)</td></tr></table>"
+    },
+    {
+      "heading": "👑 Whose ใช้ถามความเป็นเจ้าของ",
+      "html": "<p><b>Whose</b> แปลว่า \"ของใคร\" ใช้ถามความเป็นเจ้าของ โดยมีโครงสร้าง 2 แบบ:</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>Whose + นาม + is/are + ...?</td><td>Whose bag is this?</td><td>กระเป๋าใบนี้เป็นของใคร</td></tr><tr><td>Whose + นาม + do/does/did + ประธาน + กริยา?</td><td>Whose pen do you have?</td><td>คุณมีปากกาของใคร</td></tr></table><p><b>ระวัง!</b> <b>Whose</b> (ถามความเป็นเจ้าของ) กับ <b>Who's</b> (ย่อมาจาก Who is หรือ Who has) สะกดคล้ายกันมากแต่ความหมายต่างกันสิ้นเชิง ข้อสอบชอบเอามาสลับให้จับผิด: <b>Whose</b> book is this? (หนังสือเล่มนี้เป็นของใคร) ≠ <b>Who's</b> that woman? (= Who is that woman? ผู้หญิงคนนั้นเป็นใคร)</p>"
+    },
+    {
+      "heading": "⚠️ จุดที่ต้องระวังที่สุด: เลือก WH-word และกริยาช่วยให้ตรงกัน (ข้อสอบชอบออก)",
+      "html": "<p>เวลาแต่งหรือเลือกคำตอบ WH-Question ต้องดู 2 อย่างพร้อมกันเสมอ: (1) ต้องใช้ <b>WH-word คำไหน</b> และ (2) ต้องใช้ <b>กริยาช่วยตัวไหน</b> (is/are/was/were หรือ do/does/did) ให้ตรงกับประธานและกาลเวลา</p><table><tr><th>กรณี</th><th>หลักการ</th><th>ตัวอย่าง</th></tr><tr><td>Who เป็น<b>ประธาน</b>ของประโยค (ใครเป็นคนทำ)</td><td>ห้ามใช้ do/does/did เติมกริยาผันตามกาลได้เลย</td><td>Who <b>made</b> this cake? (ไม่ใช่ Who did make...)</td></tr><tr><td>Who เป็น<b>กรรม</b>ของประโยค (ถามว่าทำอะไรกับใคร)</td><td>ต้องมี do/does/did ช่วยตามปกติ</td><td>Who <b>did</b> you <b>meet</b> at the party?</td></tr><tr><td>หลัง WH มีคำนาม/คุณศัพท์/สถานที่ (ไม่มีกริยาแท้)</td><td>ใช้ WH + is/are/was/were</td><td>Where <b>is</b> your school?</td></tr><tr><td>หลัง WH มีกริยาแท้ (live, like, go, want ฯลฯ)</td><td>ใช้ WH + do/does/did + กริยาช่อง 1</td><td>Where <b>do</b> you <b>live</b>?</td></tr></table><p>เทคนิคเช็กเร็ว: ถ้าในประโยคยังไม่มีกริยา (มีแต่คำนาม/คุณศัพท์) แปลว่าต้องเติม Verb to Be แต่ถ้ามีกริยาแท้อยู่แล้วในรูปดั้งเดิม (base form) ให้เติม do/does/did ตามประธานและกาลเวลาให้ถูกต้อง และอย่าลืมว่า Who ที่เป็นประธานไม่ต้องมี do/does/did เลย</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["WH-word", "ใช้ถามเกี่ยวกับ", "โครงสร้าง", "ตัวอย่าง"],
+    "rows": [
+      ["What / Which", "สิ่งของ/ตัวเลือก", "WH + is/are/do/does/did + ...?", "What is this? / Which do you like?"],
+      ["Where / When", "สถานที่/เวลา", "WH + is/are/do/does/did + ...?", "Where do you live? / When did you arrive?"],
+      ["Who / Whose", "บุคคล/เจ้าของ", "Who + กริยา (ถ้าเป็นประธาน) หรือ Whose + นาม + is/are", "Who made this? / Whose bag is this?"],
+      ["Why", "เหตุผล", "WH + is/are/do/does/did + ...?", "Why are you late? / Why did she cry?"]
+    ]
+  },
+  "tips": [
+    "ท่องให้คล่องปาก: What=อะไร, Where=ที่ไหน, When=เมื่อไหร่, Who=ใคร, Why=ทำไม, Which=อันไหน, Whose=ของใคร",
+    "จำง่าย ๆ: ถ้าหลัง WH ตามด้วยคำนาม/คุณศัพท์ (ไม่มีกริยาแท้) ให้ใช้ WH + is/are/was/were แต่ถ้ามีกริยาแท้อยู่แล้ว ให้ใช้ WH + do/does/did + กริยาช่อง 1",
+    "จำ Who ประธาน ไม่ต้องมี do/does/did: ใครทำ ก็ถาม Who + กริยาผันตรง ๆ เลย เช่น Who broke the window? (ไม่ใช่ Who did break...)"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม WH-word หรือ Verb to Be ให้ถูกต้อง (8 ข้อ)",
+        "instructions": "เติมคำคำถาม (What/Where/When/Who/Why/Which/Whose) หรือ Verb to Be (is/are/was/were) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค",
+        "items": [
+          "___ is your name?",
+          "Where ___ you from?",
+          "___ is that girl? She is my sister.",
+          "___ were they absent yesterday? Because they were sick.",
+          "___ bag is this? It is Ann's.",
+          "___ day is the meeting, Monday or Tuesday?",
+          "Why ___ you late this morning?",
+          "___ are your shoes? They are under the bed."
+        ],
+        "answers": ["What", "are", "Who", "Why", "Whose", "Which", "were", "Where"],
+        "reasons": [
+          "ถามชื่อซึ่งเป็นข้อมูลแบบเปิดกว้าง ใช้ What",
+          "ประธาน you ใช้ are",
+          "ถามถึงบุคคล (ใคร) ที่เป็นประธานประโยค ใช้ Who",
+          "ประโยคมีคำตอบ Because... (บอกเหตุผล) ใช้ Why",
+          "ถามความเป็นเจ้าของกระเป๋า ใช้ Whose",
+          "มีตัวเลือกจำกัดให้เลือก (Monday or Tuesday) ใช้ Which",
+          "ประธาน you ในประโยคอดีต ใช้ were",
+          "ถามสถานที่ (รองเท้าอยู่ที่ไหน) ใช้ Where"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติม WH-word หรือ do/does/did ให้ถูกต้อง (8 ข้อ)",
+        "instructions": "เติมคำคำถาม (What/Where/When/Who/Which) หรือกริยาช่วย (do/does/did) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค",
+        "items": [
+          "___ do you live? I live in Chiang Mai.",
+          "What ___ she want for lunch?",
+          "___ did you arrive? I arrived at 6 pm.",
+          "___ way does he go to school, by bus or by bike?",
+          "Who ___ you meet at the party?",
+          "___ made this delicious cake? Mom did.",
+          "Why ___ you cry?",
+          "___ do they need for the trip? They need a map and some money."
+        ],
+        "answers": ["Where", "does", "When", "Which", "did", "Who", "did", "What"],
+        "reasons": [
+          "ถามสถานที่ที่อยู่อาศัย ใช้ Where",
+          "ประธาน she (เอกพจน์) ปัจจุบัน ใช้ does + กริยาช่อง 1",
+          "ถามเวลาที่มาถึง ใช้ When",
+          "มีตัวเลือกจำกัดให้เลือก (by bus or by bike) ใช้ Which",
+          "Who ในที่นี้เป็นกรรม (คุณเจอใครที่งานปาร์ตี้) ต้องมี did ช่วย",
+          "Who เป็นประธานของประโยค (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ did กริยาผันอดีตตรง ๆ ได้เลย (made)",
+          "ถามเหตุผลในอดีต ต้องมี did ช่วย",
+          "ถามสิ่งของที่ต้องการแบบเปิดกว้าง ใช้ What"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: Whose, Which vs What และจุดที่ต้องระวัง (7 ข้อ)",
+        "instructions": "เติมคำคำถามที่ถูกต้อง (What/Which/Who/Whose/Where) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค",
+        "items": [
+          "___ pen is this on the desk? It is mine.",
+          "___ car is parked outside, the red one or the blue one?",
+          "___ do you usually do after school? I usually do my homework.",
+          "___ broke the window? Tom did.",
+          "___ did you buy that shirt? I bought it at the mall.",
+          "___ shoes are these under the table?",
+          "___ is the correct answer, A or B?"
+        ],
+        "answers": ["Whose", "Which", "What", "Who", "Where", "Whose", "Which"],
+        "reasons": [
+          "ถามความเป็นเจ้าของปากกา ใช้ Whose",
+          "มีตัวเลือกจำกัดให้เลือก (คันสีแดงหรือสีน้ำเงิน) ใช้ Which",
+          "ถามกิจกรรมทั่วไปแบบเปิดกว้าง ใช้ What",
+          "Who เป็นประธานของประโยค (ใครเป็นคนทำหน้าต่างแตก) ไม่ต้องใช้ do/does/did",
+          "ถามสถานที่ที่ซื้อของ ใช้ Where",
+          "ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose",
+          "มีตัวเลือกจำกัดให้เลือก (A หรือ B) ใช้ Which"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "📛", "tag": "What + is", "difficulty": 1, "q": "___ is your name?", "choices": ["What","Where","When","Who"], "answer": 0, "explain": "ถามชื่อ (ข้อมูลแบบเปิดกว้าง) ใช้ What" },
+    { "emoji": "🌍", "tag": "Where + are", "difficulty": 1, "q": "___ are you from?", "choices": ["What","Where","Who","Which"], "answer": 1, "explain": "ถามสถานที่ ใช้ Where" },
+    { "emoji": "🎂", "tag": "When + is", "difficulty": 1, "q": "___ is your birthday?", "choices": ["When","Where","Who","Why"], "answer": 0, "explain": "ถามเวลา/วันที่ ใช้ When" },
+    { "emoji": "🧔", "tag": "Who + is", "difficulty": 1, "q": "___ is that man?", "choices": ["What","Who","Where","Which"], "answer": 1, "explain": "ถามถึงบุคคล ใช้ Who" },
+    { "emoji": "😢", "tag": "Why + are", "difficulty": 1, "q": "___ are you crying?", "choices": ["What","When","Why","Where"], "answer": 2, "explain": "ถามเหตุผล ใช้ Why" },
+    { "emoji": "🎒", "tag": "Whose + is", "difficulty": 1, "q": "___ is this bag?", "choices": ["Who","Whose","What","Which"], "answer": 1, "explain": "ถามความเป็นเจ้าของ ใช้ Whose" },
+    { "emoji": "👗", "tag": "Which + is", "difficulty": 1, "q": "___ dress is prettier, the red one or the blue one?", "choices": ["What","Which","Where","Who"], "answer": 1, "explain": "มีตัวเลือกจำกัดให้เลือก ใช้ Which" },
+    { "emoji": "🏠", "tag": "Where + is", "difficulty": 1, "q": "___ is your house?", "choices": ["What","When","Where","Who"], "answer": 2, "explain": "ถามสถานที่ ใช้ Where" },
+    { "emoji": "🕐", "tag": "When + is", "difficulty": 1, "q": "___ is the party?", "choices": ["When","Who","Whose","Which"], "answer": 0, "explain": "ถามเวลา ใช้ When" },
+    { "emoji": "👩‍🏫", "tag": "Who + is", "difficulty": 1, "q": "___ is your English teacher?", "choices": ["What","Who","Where","When"], "answer": 1, "explain": "ถามถึงบุคคล ใช้ Who" },
+    { "emoji": "🍕", "tag": "What + is", "difficulty": 1, "q": "___ is your favorite food?", "choices": ["What","Which","Whose","Where"], "answer": 0, "explain": "ถามสิ่งของ/ของโปรดแบบเปิดกว้าง ใช้ What" },
+    { "emoji": "🐱", "tag": "Whose + are", "difficulty": 1, "q": "___ are these cats?", "choices": ["Who","Which","Whose","What"], "answer": 2, "explain": "ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose" },
+    { "emoji": "👨", "tag": "Where + was", "difficulty": 1, "q": "___ was your father last night?", "choices": ["What","When","Where","Who"], "answer": 2, "explain": "ถามสถานที่ในอดีต ใช้ Where + was" },
+    { "emoji": "🎈", "tag": "When + was", "difficulty": 1, "q": "___ was your last birthday party?", "choices": ["When","Where","Who","Why"], "answer": 0, "explain": "ถามเวลาในอดีต ใช้ When + was" },
+    { "emoji": "👧", "tag": "Who + were", "difficulty": 1, "q": "___ were those girls at the door?", "choices": ["What","Who","Whose","Which"], "answer": 1, "explain": "ถามถึงบุคคล (พหูพจน์) ในอดีต ใช้ Who + were" },
+
+    { "emoji": "🏫", "tag": "Where + do", "difficulty": 2, "q": "Where ___ you go to school?", "choices": ["do","does","did","is"], "answer": 0, "explain": "ประธาน you ปัจจุบัน ใช้ do" },
+    { "emoji": "👩‍🍳", "tag": "What + does", "difficulty": 2, "q": "What ___ your mother cook for dinner?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน your mother (เอกพจน์) ปัจจุบัน ใช้ does" },
+    { "emoji": "⏰", "tag": "When + did", "difficulty": 2, "q": "When ___ you arrive at school yesterday?", "choices": ["do","does","did","was"], "answer": 2, "explain": "ประโยคอดีต (yesterday) ใช้ did" },
+    { "emoji": "🍦", "tag": "Which + do", "difficulty": 2, "q": "___ ice cream flavor do you like, chocolate or vanilla?", "choices": ["What","Which","Where","Whose"], "answer": 1, "explain": "มีตัวเลือกจำกัดให้เลือก ใช้ Which" },
+    { "emoji": "📚", "tag": "What + do", "difficulty": 2, "q": "___ do you study on Mondays?", "choices": ["What","Which","Whose","Where"], "answer": 0, "explain": "ถามสิ่งของ/วิชาแบบเปิดกว้าง ใช้ What" },
+    { "emoji": "🚌", "tag": "Where + does", "difficulty": 2, "q": "Where ___ the bus stop?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน the bus (เอกพจน์) ปัจจุบัน ใช้ does" },
+    { "emoji": "🎨", "tag": "What + did", "difficulty": 2, "q": "What ___ you draw yesterday?", "choices": ["do","does","did","were"], "answer": 2, "explain": "ประโยคอดีต (yesterday) ใช้ did" },
+    { "emoji": "❤️", "tag": "Who (กรรม) + do", "difficulty": 2, "q": "Who ___ you like the most in your family?", "choices": ["do","does","did","is"], "answer": 0, "explain": "Who ในที่นี้เป็นกรรม (คุณชอบใคร) ประธาน you ปัจจุบัน ใช้ do" },
+    { "emoji": "🎁", "tag": "What + does", "difficulty": 2, "q": "What ___ she want for her birthday?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน she เอกพจน์ ปัจจุบัน ใช้ does" },
+    { "emoji": "🚲", "tag": "Where + did", "difficulty": 2, "q": "Where ___ they go last weekend?", "choices": ["do","does","did","were"], "answer": 2, "explain": "ประโยคอดีต (last weekend) ใช้ did" },
+    { "emoji": "🎤", "tag": "Why + do", "difficulty": 2, "q": "Why ___ you like singing?", "choices": ["do","does","did","are"], "answer": 0, "explain": "ประธาน you ปัจจุบัน ใช้ do" },
+    { "emoji": "🍔", "tag": "Which + do", "difficulty": 2, "q": "___ burger do you want, the big one or the small one?", "choices": ["What","Which","Whose","Where"], "answer": 1, "explain": "มีตัวเลือกจำกัดให้เลือก ใช้ Which" },
+    { "emoji": "🕰️", "tag": "When + does", "difficulty": 2, "q": "When ___ the movie start?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน the movie เอกพจน์ ปัจจุบัน ใช้ does" },
+    { "emoji": "🧹", "tag": "What + did", "difficulty": 2, "q": "What ___ you do after school yesterday?", "choices": ["do","does","did","were"], "answer": 2, "explain": "ประโยคอดีต (yesterday) ใช้ did" },
+    { "emoji": "🐦", "tag": "Where + do", "difficulty": 2, "q": "Where ___ birds fly in winter?", "choices": ["do","does","did","is"], "answer": 0, "explain": "ประธาน birds (พหูพจน์) ปัจจุบัน ใช้ do" },
+    { "emoji": "📖", "tag": "What + does", "difficulty": 2, "q": "What ___ this word mean?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน this word (เอกพจน์) ปัจจุบัน ใช้ does" },
+    { "emoji": "🎣", "tag": "Where + did", "difficulty": 2, "q": "Where ___ your father go fishing last month?", "choices": ["do","does","did","was"], "answer": 2, "explain": "ประโยคอดีต (last month) ใช้ did" },
+    { "emoji": "🍩", "tag": "Which + do", "difficulty": 2, "q": "___ donut do you prefer, chocolate or strawberry?", "choices": ["What","Which","Whose","Who"], "answer": 1, "explain": "มีตัวเลือกจำกัดให้เลือก ใช้ Which" },
+    { "emoji": "🚗", "tag": "Why + does", "difficulty": 2, "q": "Why ___ he drive to work every day?", "choices": ["do","does","did","is"], "answer": 1, "explain": "ประธาน he เอกพจน์ ปัจจุบัน ใช้ does" },
+    { "emoji": "🏖️", "tag": "When + did", "difficulty": 2, "q": "When ___ your family go on vacation last year?", "choices": ["do","does","did","were"], "answer": 2, "explain": "ประโยคอดีต (last year) ใช้ did" },
+
+    { "emoji": "🎧", "tag": "Whose + are", "difficulty": 3, "q": "___ headphones are these on the table?", "choices": ["Who","Whose","Which","What"], "answer": 1, "explain": "ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose" },
+    { "emoji": "📱", "tag": "Whose vs Who's", "difficulty": 3, "q": "___ phone is ringing?", "choices": ["Who's","Whose","Who","Which"], "answer": 1, "explain": "Whose (ไม่มี apostrophe) ใช้ถามความเป็นเจ้าของ ต่างจาก Who's ที่แปลว่า Who is" },
+    { "emoji": "🚙", "tag": "Whose + did", "difficulty": 3, "q": "___ car did you borrow yesterday?", "choices": ["Who","Whose","Which","What"], "answer": 1, "explain": "ถามความเป็นเจ้าของรถที่ยืมมา ใช้ Whose + did" },
+    { "emoji": "🍰", "tag": "Who (ประธาน) ไม่มี do", "difficulty": 3, "q": "___ this cake?", "choices": ["Who made","Who did make","Who does make","Whose made"], "answer": 0, "explain": "Who เป็นประธาน (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ do/does/did กริยาผันอดีตตรง ๆ ได้เลย (made)" },
+    { "emoji": "🪟", "tag": "Who (ประธาน) ไม่มี did", "difficulty": 3, "q": "___ the window?", "choices": ["Who broke","Who did break","Who does broke","Whose broke"], "answer": 0, "explain": "Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ ไม่ต้องมี did ช่วย" },
+    { "emoji": "🧁", "tag": "What + does (รวม)", "difficulty": 3, "q": "___ she usually eat for breakfast?", "choices": ["What is","What does","What did","What do"], "answer": 1, "explain": "ประธาน she เอกพจน์ ปัจจุบัน ต้องใช้ What + does" },
+    { "emoji": "🚴", "tag": "Where + did (รวม)", "difficulty": 3, "q": "___ you go last Sunday?", "choices": ["Where do","Where does","Where did","Where were"], "answer": 2, "explain": "ประโยคอดีต (last Sunday) ต้องใช้ Where + did" },
+    { "emoji": "🎁", "tag": "Whose + is (รวม)", "difficulty": 3, "q": "___ present is on the table?", "choices": ["Who is","Whose is","Who's is","Which are"], "answer": 1, "explain": "ถามความเป็นเจ้าของของขวัญ (เอกพจน์) ใช้ Whose + is" },
+    { "emoji": "🍽️", "tag": "Which vs What (ยาก)", "difficulty": 3, "q": "There are two menus here. ___ one do you want?", "choices": ["What","Which","Whose","Who"], "answer": 1, "explain": "มีตัวเลือกจำกัด 2 อย่างที่ระบุไว้ (two menus) ใช้ Which" },
+    { "emoji": "🎓", "tag": "Which vs What (ยาก)", "difficulty": 3, "q": "___ university do you want to go to in the future?", "choices": ["What","Which","Whose","Who"], "answer": 0, "explain": "ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัดให้ ใช้ What" },
+    { "emoji": "👟", "tag": "Whose + are (รวม)", "difficulty": 3, "q": "___ shoes are those under the bed?", "choices": ["Who are","Whose are","Who's are","Which is"], "answer": 1, "explain": "ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose + are" },
+    { "emoji": "🥤", "tag": "Which vs What (ยาก)", "difficulty": 3, "q": "We have coffee and tea. ___ do you prefer?", "choices": ["What","Which","Whose","Who"], "answer": 1, "explain": "มีตัวเลือกจำกัด (coffee หรือ tea) ใช้ Which" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Who did make this cake?","Who made this cake?","Who does made this cake?","Whose made this cake?"], "answer": 1, "explain": "Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ (made) ไม่ต้องมี did ช่วย" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Who's bag is this?","Whose bag is this?","Who bag is this?","Whose is bag this?"], "answer": 1, "explain": "Whose + นาม + is ใช้ถามความเป็นเจ้าของอย่างถูกต้อง (Who's แปลว่า Who is จึงใช้ผิดที่นี่)" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["Where does you live?","Where do you live?","Do where you live?","Where you do live?"], "answer": 1, "explain": "ประธาน you ปัจจุบัน ต้องใช้ Where + do + กริยาช่อง 1 เรียงคำให้ถูกต้อง" }
+  ]
+}

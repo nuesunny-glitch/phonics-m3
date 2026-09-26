@@ -1,0 +1,192 @@
+{
+  "id": "05",
+  "folder": "05-How Questions",
+  "titleThai": "How Questions (How / How much / How many / How often / How long / How far / How old)",
+  "titleShort": "How Questions",
+  "emojiTitle": "🤔❓",
+  "objectives": [
+    "บอกความหมายและใช้ How + is/am/are ถามความเป็นอยู่หรือสภาพของคน สิ่งของ และอากาศได้ถูกต้อง",
+    "ใช้ How ร่วมกับคำคุณศัพท์ (How old/tall/far/long/often ฯลฯ) ถามข้อมูลเฉพาะเจาะจงได้ถูกต้อง",
+    "แยกแยะคำนามนับได้กับนับไม่ได้ เพื่อเลือกใช้ How much หรือ How many ได้ถูกต้อง รวมถึงคำนามที่ต้องระวังเป็นพิเศษ เช่น money, rice, homework",
+    "ใช้ How + do/does/did ถามวิธีการหรือการเดินทางได้ถูกต้อง",
+    "วิเคราะห์และแก้ไขประโยคคำถาม How ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อยเรื่อง How much/How many"
+  ],
+  "explanation": [
+    {
+      "heading": "❓ How คืออะไร",
+      "html": "<p>How แปลว่า <b>\"อย่างไร\"</b> ใช้ขึ้นต้นประโยคคำถามเพื่อถามเกี่ยวกับสภาพ ปริมาณ จำนวน ระยะเวลา ระยะทาง อายุ หรือวิธีการทำสิ่งต่าง ๆ How ไม่ได้มีความหมายเดียว แต่จะเปลี่ยนความหมายไปตามคำที่ตามหลังมา ดังนั้นต้องดูว่า How ตามด้วยอะไรก่อนแปลความหมาย</p><table><tr><th>รูปแบบ</th><th>ตัวอย่างสั้น ๆ</th></tr><tr><td>How + is/am/are</td><td>How are you?</td></tr><tr><td>How + adjective</td><td>How old are you?</td></tr><tr><td>How much</td><td>How much is this?</td></tr><tr><td>How many</td><td>How many books?</td></tr><tr><td>How + do/does/did</td><td>How do you go to school?</td></tr></table>"
+    },
+    {
+      "heading": "😊 How + Verb to Be (ถามความเป็นอยู่/สภาพ)",
+      "html": "<p>ใช้ How + is/am/are ถามว่า \"เป็นอย่างไรบ้าง\" มักใช้ทักทายหรือถามสภาพของคน สิ่งของ หรือสถานการณ์ ไม่ได้ถามเรื่องจำนวนหรือปริมาณแต่อย่างใด</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>How + is/am/are + ประธาน?</td><td>How are you?</td><td>คุณเป็นอย่างไรบ้าง</td></tr><tr><td></td><td>How is your family?</td><td>ครอบครัวคุณเป็นอย่างไรบ้าง</td></tr><tr><td></td><td>How is the weather today?</td><td>วันนี้อากาศเป็นอย่างไรบ้าง</td></tr></table><p>คำตอบมักตอบด้วยคำคุณศัพท์บอกความรู้สึกหรือสภาพ เช่น <b>Fine, thank you.</b> / <b>It's great.</b> / <b>She's very well.</b></p>"
+    },
+    {
+      "heading": "📏 How + คำคุณศัพท์ (ถามข้อมูลเฉพาะเจาะจง)",
+      "html": "<p>เมื่อเติมคำคุณศัพท์ (adjective) ต่อท้าย How จะได้ความหมายเฉพาะเจาะจงมากขึ้น นักเรียนต้องจำคู่คำถาม-คำตอบเหล่านี้ให้แม่น เพราะข้อสอบชอบออกบ่อยมาก</p><table><tr><th>How + adjective</th><th>ถามเรื่อง</th><th>ตัวอย่างคำถาม</th><th>ตัวอย่างคำตอบ</th></tr><tr><td>How old</td><td>อายุ</td><td>How old are you?</td><td>I'm 14 years old.</td></tr><tr><td>How tall</td><td>ความสูง</td><td>How tall is he?</td><td>He's 170 cm tall.</td></tr><tr><td>How far</td><td>ระยะทาง</td><td>How far is it to school?</td><td>It's about 2 kilometers.</td></tr><tr><td>How long</td><td>ระยะเวลา/ความยาว</td><td>How long does it take?</td><td>It takes 20 minutes.</td></tr><tr><td>How often</td><td>ความถี่</td><td>How often do you exercise?</td><td>I exercise every day.</td></tr><tr><td>How big/heavy/wide</td><td>ขนาด/น้ำหนัก/ความกว้าง</td><td>How heavy is this bag?</td><td>It's 5 kilograms.</td></tr></table><p>สังเกตคำตอบของ <b>How often</b> ต้องเป็นความถี่เท่านั้น เช่น every day, once a week, twice a month, sometimes, never — ห้ามตอบเป็นจำนวนหรือราคา</p>"
+    },
+    {
+      "heading": "🥛 How much (นับไม่ได้ / ถามราคา)",
+      "html": "<p>ใช้ <b>How much</b> ใน 2 กรณีหลัก: (1) ถามราคาของสิ่งของ (2) ถามปริมาณของคำนามนับไม่ได้ (uncountable noun) เช่น น้ำ ข้าว เงิน ที่ไม่สามารถแยกนับเป็นชิ้น ๆ ได้ตรง ๆ</p><table><tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>ถามราคา</td><td>How much is this shirt?</td><td>เสื้อตัวนี้ราคาเท่าไหร่</td></tr><tr><td>ถามปริมาณคำนามนับไม่ได้</td><td>How much water do you drink a day?</td><td>คุณดื่มน้ำวันละเท่าไหร่</td></tr></table><p><b>โครงสร้าง:</b> How much + is/are...? (ถามราคา) หรือ How much + คำนามนับไม่ได้ + do/does...?</p>"
+    },
+    {
+      "heading": "🔢 How many (นับได้)",
+      "html": "<p>ใช้ <b>How many</b> กับคำนามนับได้ (countable noun) เท่านั้น และคำนามหลัง How many ต้องอยู่ในรูปพหูพจน์เสมอ (เติม s)</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>How many + นามนับได้พหูพจน์ + do/does/are...?</td><td>How many books do you have?</td><td>คุณมีหนังสือกี่เล่ม</td></tr><tr><td></td><td>How many students are there in your class?</td><td>ในห้องของคุณมีนักเรียนกี่คน</td></tr></table><p><b>เทคนิคจำง่าย:</b> Many คู่กับนามที่เติม s ได้ (book→books) ส่วน Much คู่กับนามที่ไม่มีรูปพหูพจน์</p>"
+    },
+    {
+      "heading": "🚶 How + do/does/did (ถามวิธีการ)",
+      "html": "<p>ใช้ How + do/does/did ถามวิธีการทำสิ่งใดสิ่งหนึ่ง หรือถามว่าเดินทางด้วยวิธีใด (manner/means of transport) — โครงสร้างเหมือนประโยคคำถามธรรมดาที่ขึ้นต้นด้วย Wh-word</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำตอบตัวอย่าง</th></tr><tr><td>How + do + ประธาน + กริยาช่องที่ 1?</td><td>How do you go to school?</td><td>I go to school by bus.</td></tr><tr><td>How + does + ประธาน(เอกพจน์) + กริยาช่องที่ 1?</td><td>How does she cook rice?</td><td>She boils it in a pot.</td></tr><tr><td>How + did + ประธาน + กริยาช่องที่ 1?</td><td>How did you get here?</td><td>I got here by taxi.</td></tr></table><p>คำตอบมักขึ้นต้นด้วย <b>by</b> + พาหนะ (by bus, by car, by bike) หรืออธิบายขั้นตอนการทำสิ่งนั้น</p>"
+    },
+    {
+      "heading": "⚠️ คำนามที่ต้องระวัง: นับได้ (Countable) vs นับไม่ได้ (Uncountable)",
+      "html": "<p>นักเรียนมักสับสนว่าคำนามใดนับได้ (ใช้ How many) หรือนับไม่ได้ (ใช้ How much) ให้จำคำนามที่เป็น \"ตัวร้ายในข้อสอบ\" เหล่านี้ไว้เป็นพิเศษ</p><table><tr><th>คำนาม</th><th>นับได้หรือไม่</th><th>ใช้กับ</th><th>เหตุผล</th></tr><tr><td>money (เงิน)</td><td>นับไม่ได้</td><td>How much money</td><td>เงินเป็นก้อนรวม ไม่แยกนับเป็นชิ้น แม้จะใช้ซื้อของนับได้ก็ตาม</td></tr><tr><td>rice (ข้าว)</td><td>นับไม่ได้</td><td>How much rice</td><td>เป็นเมล็ดเล็ก ๆ จำนวนมาก นับเป็นปริมาณรวม ไม่ใช่ชิ้น</td></tr><tr><td>homework (การบ้าน)</td><td>นับไม่ได้</td><td>How much homework</td><td>เป็นงานโดยรวม ไม่มีรูปพหูพจน์ homeworks</td></tr><tr><td>information (ข้อมูล)</td><td>นับไม่ได้</td><td>How much information</td><td>เป็นคำนามนามธรรม ไม่มีรูปพหูพจน์</td></tr><tr><td>luggage/baggage (สัมภาระ)</td><td>นับไม่ได้</td><td>How much luggage</td><td>ถือเป็นกลุ่มก้อนของสัมภาระทั้งหมด ไม่ใช้ luggages</td></tr><tr><td>furniture (เฟอร์นิเจอร์)</td><td>นับไม่ได้</td><td>How much furniture</td><td>เป็นกลุ่มของรวม ไม่ใช้ furnitures</td></tr><tr><td>people (ผู้คน)</td><td>นับได้ (พหูพจน์ของ person)</td><td>How many people</td><td>คนนับเป็นจำนวนได้ชัดเจน (one person, two people)</td></tr><tr><td>dollars/baht (หน่วยเงิน)</td><td>นับได้</td><td>How many dollars</td><td>หน่วยเงินนับเป็นจำนวนได้ ต่างจาก money ที่นับไม่ได้</td></tr></table><p><b>เคล็ดลับ:</b> ถ้าคำนามนั้นเติม s แล้วนับเป็นชิ้นได้ชัดเจน (book→books, student→students) มักเป็นนับได้ ใช้ How many แต่ถ้าเป็นของเหลว ผงเล็ก ๆ หรือสิ่งที่เป็นนามธรรม/กลุ่มก้อนรวม มักเป็นนับไม่ได้ ใช้ How much</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["โครงสร้าง How", "ใช้ถามเรื่อง", "ตัวอย่างคำถาม", "ตัวอย่างคำตอบ"],
+    "rows": [
+      ["How + is/am/are", "สภาพ/ความเป็นอยู่", "How are you?", "I'm fine, thank you."],
+      ["How + adjective", "อายุ/ความสูง/ระยะทาง/เวลา/ความถี่", "How old are you?", "I'm 14 years old."],
+      ["How much + นับไม่ได้/ราคา", "ปริมาณนามนับไม่ได้ หรือราคา", "How much is this bag?", "It's 300 baht."],
+      ["How many + นับได้ (พหูพจน์)", "จำนวนนามนับได้", "How many books do you have?", "I have five books."],
+      ["How + do/does/did", "วิธีการ/การเดินทาง", "How do you go to school?", "I go by bus."]
+    ]
+  },
+  "tips": [
+    "จำง่าย ๆ: <b>How much</b> คู่กับของที่ <b>นับไม่ได้</b> (much ไม่มี s) ส่วน <b>How many</b> คู่กับของที่ <b>นับได้เป็นหลายชิ้น</b> (many คู่กับนามเติม s)",
+    "ท่องคู่คำถาม-คำตอบ: How old → years old, How tall → cm/meters tall, How far → kilometers, How long → minutes/hours, How often → every day/week",
+    "คำนามตัวร้าย 5 คำที่ต้องจำว่านับไม่ได้: <b>money, rice, homework, information, luggage</b> — ท่องจำเป็นกลุ่ม \"เงิน ข้าว การบ้าน ข้อมูล กระเป๋า\" ห้ามเติม s เด็ดขาด"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม How + Verb to Be และ How + Adjective (8 ข้อ)",
+        "instructions": "เติมคำถามให้สมบูรณ์โดยใช้ How, How old, How tall, How far, How long หรือ How often ให้เหมาะสมกับคำตอบที่ให้มา",
+        "items": [
+          "A: ___ is your mother? B: She's fine, thank you.",
+          "A: ___ are you today? B: I'm very well.",
+          "A: ___ are you? B: I'm 15 years old.",
+          "A: ___ is your brother? B: He's 180 cm tall.",
+          "A: ___ is it from your house to school? B: It's about 3 kilometers.",
+          "A: ___ does it take to get to Bangkok by bus? B: It takes about 2 hours.",
+          "A: ___ do you go to the gym? B: I go three times a week.",
+          "A: ___ is the weather in your hometown? B: It's usually sunny and hot."
+        ],
+        "answers": ["How", "How", "How old", "How tall", "How far", "How long", "How often", "How"],
+        "reasons": [
+          "ถามความเป็นอยู่ของแม่ ใช้ How + is เฉย ๆ",
+          "ถามความเป็นอยู่ทั่วไป ใช้ How + are",
+          "ถามอายุ ต้องใช้ How old",
+          "ถามความสูง ต้องใช้ How tall",
+          "ถามระยะทาง ต้องใช้ How far",
+          "ถามระยะเวลาที่ใช้ ต้องใช้ How long",
+          "ถามความถี่ ต้องใช้ How often",
+          "ถามสภาพอากาศ ใช้ How + is เฉย ๆ"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติม How much หรือ How many (9 ข้อ)",
+        "instructions": "เติม How much หรือ How many ให้ถูกต้องตามคำนามที่ตามมา (นับได้ใช้ How many, นับไม่ได้ใช้ How much)",
+        "items": [
+          "___ money do you have in your wallet?",
+          "___ books are there on the shelf?",
+          "___ rice do you eat every day?",
+          "___ students are there in your class?",
+          "___ water do you drink a day?",
+          "___ apples do you want?",
+          "___ homework do you have tonight?",
+          "___ sisters do you have?",
+          "___ is this pair of shoes?"
+        ],
+        "answers": ["How much", "How many", "How much", "How many", "How much", "How many", "How much", "How many", "How much"],
+        "reasons": [
+          "money เป็นคำนามนับไม่ได้ ใช้ How much",
+          "books เป็นคำนามนับได้ (พหูพจน์) ใช้ How many",
+          "rice เป็นคำนามนับไม่ได้ ใช้ How much",
+          "students เป็นคำนามนับได้ ใช้ How many",
+          "water เป็นคำนามนับไม่ได้ ใช้ How much",
+          "apples เป็นคำนามนับได้ ใช้ How many",
+          "homework เป็นคำนามนับไม่ได้ ใช้ How much",
+          "sisters เป็นคำนามนับได้ ใช้ How many",
+          "ถามราคาของสิ่งของ ใช้ How much is...?"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม How + do/does/did และทบทวนรวม (7 ข้อ)",
+        "instructions": "เติมคำถาม How ให้สมบูรณ์ โดยเลือกจาก How, How much, How many ให้เหมาะสมกับสถานการณ์",
+        "items": [
+          "___ do you go to school? — I go by bicycle.",
+          "___ did you get to the airport? — I got there by taxi.",
+          "___ does your mother cook Tom Yum soup? — She boils the water first and adds shrimp.",
+          "___ do you spend on lunch every day?",
+          "___ times a week do you play football? — I play twice a week.",
+          "___ people are there in your family?",
+          "___ old is your grandmother?"
+        ],
+        "answers": ["How", "How", "How", "How much", "How many", "How many", "How"],
+        "reasons": [
+          "ถามวิธีการเดินทางไปโรงเรียน ใช้ How + do",
+          "ถามวิธีการเดินทางในอดีต ใช้ How + did",
+          "ถามวิธีทำอาหาร ใช้ How + does",
+          "ถามจำนวนเงินที่ใช้จ่าย (เงินนับไม่ได้) ใช้ How much",
+          "ถามจำนวนครั้งต่อสัปดาห์ ใช้ How many times",
+          "people เป็นคำนามนับได้ (พหูพจน์ของ person) ใช้ How many",
+          "ถามอายุ ใช้ How old"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "😊", "tag": "How + are (ทักทาย)", "difficulty": 1, "q": "___ are you today?", "choices": ["How", "What", "Who", "Where"], "answer": 0, "explain": "ถามความเป็นอยู่ ใช้ How are you?" },
+    { "emoji": "👪", "tag": "How + is (ถามครอบครัว)", "difficulty": 1, "q": "___ is your family?", "choices": ["How", "What", "How much", "How many"], "answer": 0, "explain": "ถามความเป็นอยู่ของครอบครัว ใช้ How is...?" },
+    { "emoji": "🎂", "tag": "How old (อายุ)", "difficulty": 1, "q": "___ are you? — I'm 14 years old.", "choices": ["How old", "How much", "How many", "How long"], "answer": 0, "explain": "ถามอายุ ใช้ How old" },
+    { "emoji": "📏", "tag": "How tall (ความสูง)", "difficulty": 1, "q": "___ is your brother? — He's 175 cm tall.", "choices": ["How tall", "How old", "How far", "How often"], "answer": 0, "explain": "ถามความสูง ใช้ How tall" },
+    { "emoji": "🚏", "tag": "How far (ระยะทาง)", "difficulty": 1, "q": "___ is it to the bus stop? — It's about 500 meters.", "choices": ["How far", "How long", "How old", "How much"], "answer": 0, "explain": "ถามระยะทาง ใช้ How far" },
+    { "emoji": "⏱️", "tag": "How long (ระยะเวลา)", "difficulty": 1, "q": "___ does the movie last? — It lasts two hours.", "choices": ["How long", "How often", "How far", "How old"], "answer": 0, "explain": "ถามระยะเวลา ใช้ How long" },
+    { "emoji": "🔁", "tag": "How often (ความถี่)", "difficulty": 1, "q": "___ do you brush your teeth? — Twice a day.", "choices": ["How often", "How long", "How far", "How much"], "answer": 0, "explain": "ถามความถี่ ใช้ How often" },
+    { "emoji": "🌤️", "tag": "How + is (สภาพอากาศ)", "difficulty": 1, "q": "___ is the weather today? — It's sunny.", "choices": ["How", "What", "Where", "Why"], "answer": 0, "explain": "ถามสภาพอากาศ ใช้ How is...?" },
+    { "emoji": "👵", "tag": "How old (อายุ)", "difficulty": 1, "q": "___ is your grandmother? — She's 70 years old.", "choices": ["How old", "How long", "How far", "How many"], "answer": 0, "explain": "ถามอายุ ใช้ How old" },
+    { "emoji": "🏔️", "tag": "How tall (ความสูง)", "difficulty": 1, "q": "___ is that mountain? — It's 1,000 meters tall.", "choices": ["How tall", "How far", "How old", "How often"], "answer": 0, "explain": "ถามความสูงของภูเขา ใช้ How tall" },
+    { "emoji": "🚌", "tag": "How far (ระยะทาง)", "difficulty": 1, "q": "___ is your school from your house?", "choices": ["How far", "How long", "How much", "How many"], "answer": 0, "explain": "ถามระยะทาง ใช้ How far" },
+    { "emoji": "⏳", "tag": "How long (ระยะเวลา)", "difficulty": 1, "q": "___ do you sleep every night? — About 8 hours.", "choices": ["How long", "How often", "How old", "How far"], "answer": 0, "explain": "ถามระยะเวลาการนอน ใช้ How long" },
+    { "emoji": "🩺", "tag": "How + are (ถามอาการ)", "difficulty": 1, "q": "___ are you feeling now? — I'm feeling better.", "choices": ["How", "What", "Who", "How much"], "answer": 0, "explain": "ถามอาการความรู้สึก ใช้ How are you feeling?" },
+    { "emoji": "🏃", "tag": "How often (ความถี่)", "difficulty": 1, "q": "___ do you go jogging? — Every morning.", "choices": ["How often", "How long", "How old", "How far"], "answer": 0, "explain": "ถามความถี่ ใช้ How often" },
+    { "emoji": "👶", "tag": "How old (อายุ)", "difficulty": 1, "q": "___ is your baby sister? — She's one year old.", "choices": ["How old", "How tall", "How far", "How long"], "answer": 0, "explain": "ถามอายุของทารก ใช้ How old" },
+
+    { "emoji": "💰", "tag": "How much (นับไม่ได้: money)", "difficulty": 2, "q": "___ money do you have with you?", "choices": ["How much", "How many", "How old", "How often"], "answer": 0, "explain": "money เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "📚", "tag": "How many (นับได้: books)", "difficulty": 2, "q": "___ books do you read a month?", "choices": ["How many", "How much", "How old", "How far"], "answer": 0, "explain": "books เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "💧", "tag": "How much (นับไม่ได้: water)", "difficulty": 2, "q": "___ water should we drink every day?", "choices": ["How much", "How many", "How long", "How often"], "answer": 0, "explain": "water เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🍎", "tag": "How many (นับได้: apples)", "difficulty": 2, "q": "___ apples are there in the basket?", "choices": ["How many", "How much", "How old", "How long"], "answer": 0, "explain": "apples เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "👩‍🎓", "tag": "How many (นับได้: students)", "difficulty": 2, "q": "___ students are there in your classroom?", "choices": ["How many", "How much", "How often", "How far"], "answer": 0, "explain": "students เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "👟", "tag": "How much (ถามราคา)", "difficulty": 2, "q": "___ is this pair of shoes?", "choices": ["How much", "How many", "How long", "How often"], "answer": 0, "explain": "ถามราคาสิ่งของ ใช้ How much" },
+    { "emoji": "🥛", "tag": "How much (นับไม่ได้: milk)", "difficulty": 2, "q": "___ milk is left in the fridge?", "choices": ["How much", "How many", "How old", "How far"], "answer": 0, "explain": "milk เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🐶", "tag": "How many (นับได้: dogs)", "difficulty": 2, "q": "___ dogs does your neighbor have?", "choices": ["How many", "How much", "How often", "How long"], "answer": 0, "explain": "dogs เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "🕐", "tag": "How often (คำตอบ: every day)", "difficulty": 2, "q": "How often do you check your email? — I check it ___.", "choices": ["every day", "two kilograms", "three books", "five dollars"], "answer": 0, "explain": "คำตอบของ How often ต้องเป็นความถี่ เช่น every day ไม่ใช่ปริมาณหรือจำนวนเงิน" },
+    { "emoji": "📅", "tag": "How often (คำตอบ: once a week)", "difficulty": 2, "q": "How often do you visit your grandparents? — ___.", "choices": ["Once a week", "Two kilograms", "Three books", "Five dollars"], "answer": 0, "explain": "คำตอบของ How often ต้องเป็นความถี่ เช่น once a week" },
+    { "emoji": "🚗", "tag": "How + do (วิธีการเดินทาง)", "difficulty": 2, "q": "___ do you go to work? — I go by car.", "choices": ["How", "How much", "How many", "How old"], "answer": 0, "explain": "ถามวิธีการเดินทาง ใช้ How + do" },
+    { "emoji": "🚲", "tag": "How + does (วิธีการเดินทาง)", "difficulty": 2, "q": "___ does your sister go to school? — She goes by bike.", "choices": ["How", "How much", "How many", "How far"], "answer": 0, "explain": "ถามวิธีการเดินทาง ใช้ How + does" },
+    { "emoji": "✈️", "tag": "How + did (วิธีการเดินทางในอดีต)", "difficulty": 2, "q": "___ did you travel to Japan? — I traveled by plane.", "choices": ["How", "How much", "How many", "How often"], "answer": 0, "explain": "ถามวิธีการเดินทางในอดีต ใช้ How + did" },
+    { "emoji": "🍚", "tag": "How much (นับไม่ได้: rice)", "difficulty": 2, "q": "___ rice do you cook for dinner?", "choices": ["How much", "How many", "How old", "How long"], "answer": 0, "explain": "rice เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🧃", "tag": "How much (นับไม่ได้: juice)", "difficulty": 2, "q": "___ juice do you want?", "choices": ["How much", "How many", "How often", "How far"], "answer": 0, "explain": "juice เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🥚", "tag": "How many (นับได้: eggs)", "difficulty": 2, "q": "___ eggs do we need for the cake?", "choices": ["How many", "How much", "How old", "How long"], "answer": 0, "explain": "eggs เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "🖊️", "tag": "How many (นับได้: pens)", "difficulty": 2, "q": "___ pens are there in your pencil case?", "choices": ["How many", "How much", "How often", "How far"], "answer": 0, "explain": "pens เป็นคำนามนับได้ ใช้ How many" },
+    { "emoji": "🍬", "tag": "How many (นับได้: candies)", "difficulty": 2, "q": "___ candies did you buy?", "choices": ["How many", "How much", "How old", "How far"], "answer": 0, "explain": "candies เป็นคำนามนับได้ (นับเป็นชิ้น) ใช้ How many" },
+    { "emoji": "🧂", "tag": "How much (นับไม่ได้: salt)", "difficulty": 2, "q": "___ salt do you put in the soup?", "choices": ["How much", "How many", "How often", "How far"], "answer": 0, "explain": "salt เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🚶‍♀️", "tag": "How + do (วิธีการ)", "difficulty": 2, "q": "___ do you usually get to the market? — I usually walk.", "choices": ["How", "How much", "How many", "How old"], "answer": 0, "explain": "ถามวิธีการเดินทาง ใช้ How + do" },
+
+    { "emoji": "💵", "tag": "How much (นับไม่ได้พิเศษ: money)", "difficulty": 3, "q": "___ money did your father spend on the new phone?", "choices": ["How much", "How many", "How old", "How often"], "answer": 0, "explain": "money เป็นคำนามนับไม่ได้เสมอ แม้จะใช้ซื้อของนับได้ ใช้ How much" },
+    { "emoji": "📖", "tag": "How much (นับไม่ได้พิเศษ: homework)", "difficulty": 3, "q": "___ homework do you have this weekend?", "choices": ["How much", "How many", "How old", "How far"], "answer": 0, "explain": "homework เป็นคำนามนับไม่ได้ (ไม่มีรูปพหูพจน์) ใช้ How much" },
+    { "emoji": "🧳", "tag": "How much (นับไม่ได้พิเศษ: luggage)", "difficulty": 3, "q": "___ luggage are you taking on the trip?", "choices": ["How much", "How many", "How old", "How long"], "answer": 0, "explain": "luggage เป็นคำนามนับไม่ได้ (ไม่มีรูป luggages) ใช้ How much" },
+    { "emoji": "ℹ️", "tag": "How much (นับไม่ได้พิเศษ: information)", "difficulty": 3, "q": "___ information do you need for your project?", "choices": ["How much", "How many", "How often", "How far"], "answer": 0, "explain": "information เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🛋️", "tag": "How much (นับไม่ได้พิเศษ: furniture)", "difficulty": 3, "q": "___ furniture is there in your new house?", "choices": ["How much", "How many", "How old", "How far"], "answer": 0, "explain": "furniture เป็นคำนามนับไม่ได้ (ไม่มีรูป furnitures) ใช้ How much" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "How many (นับได้พิเศษ: people)", "difficulty": 3, "q": "___ people are there in your big family?", "choices": ["How many", "How much", "How old", "How often"], "answer": 0, "explain": "people เป็นรูปพหูพจน์ของ person นับได้ ใช้ How many" },
+    { "emoji": "💴", "tag": "How many (นับได้: dollars)", "difficulty": 3, "q": "___ dollars did you pay for that bag?", "choices": ["How many", "How much", "How old", "How long"], "answer": 0, "explain": "dollars เป็นหน่วยเงินที่นับเป็นจำนวนได้ ใช้ How many (ต่างจาก money ที่นับไม่ได้)" },
+    { "emoji": "🍞", "tag": "How much (นับไม่ได้: bread)", "difficulty": 3, "q": "___ bread did you buy from the bakery?", "choices": ["How much", "How many", "How old", "How often"], "answer": 0, "explain": "bread เป็นคำนามนับไม่ได้ (ก้อนขนมปังทั้งก้อน) ใช้ How much" },
+    { "emoji": "🧑‍🎓", "tag": "ระบุชนิดคำถาม How (ผสม)", "difficulty": 3, "q": "'How often do you study English?' ถามเกี่ยวกับอะไร", "choices": ["ความถี่", "ราคา", "อายุ", "ระยะทาง"], "answer": 0, "explain": "How often ใช้ถามความถี่ในการทำสิ่งใดสิ่งหนึ่ง" },
+    { "emoji": "🏙️", "tag": "ระบุชนิดคำถาม How (ผสม)", "difficulty": 3, "q": "'How far is it from Bangkok to Chiang Mai?' ถามเกี่ยวกับอะไร", "choices": ["ระยะทาง", "ราคา", "จำนวน", "วิธีการ"], "answer": 0, "explain": "How far ใช้ถามระยะทาง" },
+    { "emoji": "🎒", "tag": "How much vs How many (ผสม)", "difficulty": 3, "q": "___ bags do you need for the trip?", "choices": ["How many", "How much", "How old", "How far"], "answer": 0, "explain": "bags เป็นคำนามนับได้ ใช้ How many (ต่างจาก luggage ที่นับไม่ได้)" },
+    { "emoji": "🍜", "tag": "How much (นับไม่ได้: soup)", "difficulty": 3, "q": "___ soup would you like?", "choices": ["How much", "How many", "How old", "How often"], "answer": 0, "explain": "soup เป็นคำนามนับไม่ได้ ใช้ How much" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["How much money do you have?", "How many money do you have?", "How much moneys do you have?", "How many moneys do you have?"], "answer": 0, "explain": "money เป็นคำนามนับไม่ได้ ต้องใช้ How much money และห้ามเติม s" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["How many student are there in your school?", "How much students are there in your school?", "How many students are there in your school?", "How students are there in your school?"], "answer": 2, "explain": "students เป็นคำนามนับได้ ต้องใช้ How many + นามพหูพจน์ (students มี s)" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["How old is your grandmother?", "How olds is your grandmother?", "How much old is your grandmother?", "How many old is your grandmother?"], "answer": 0, "explain": "How old เป็นวลีคงที่ ไม่เติม s และไม่ใช้ How much/How many นำหน้า adjective old" }
+  ]
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Conjunction Adventure บทที่ 1: and, but, or</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_tools/game.css">
+<link rel="stylesheet" href="../../Pronunciation-System/pronunciation.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้า Conjunction Adventure</a>
+
+  <!-- ===== 1. Learn ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>🔗 Conjunction Adventure</h1>
+      <div class="sub">บทที่ 1 — คำสันธานพื้นฐาน (and, but, or)</div>
+    </div>
+    <div class="game-card">
+      <div id="intro-mascot"></div>
+      <p class="story-text">
+        คำสันธาน (Conjunction) ใช้เชื่อมคำหรือประโยคเข้าด้วยกัน บทนี้เรียน 3
+        คำ: <b>and</b> (และ) เชื่อมของที่ไปด้วยกัน, <b>but</b> (แต่) บอกความ
+        ขัดแย้ง, <b>or</b> (หรือ) ให้เลือก
+      </p>
+      <button id="toTechniqueBtn" class="btn btn-primary">ไปเทคนิคการจำ ➡️</button>
+    </div>
+  </div>
+
+  <!-- ===== 2. เทคนิคการจำ ===== -->
+  <div id="screen-technique" class="screen hidden">
+    <div class="stage-progress"><span>เทคนิคการจำ</span></div>
+    <div class="game-card">
+      <div id="technique-mascot"></div>
+      <div id="technique-word" style="font-size:1.3rem;font-weight:700;margin:8px 0;"></div>
+      <div class="carousel-nav">
+        <button id="techPrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="techNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+      <div id="technique-dots" class="carousel-dots"></div>
+    </div>
+  </div>
+
+  <!-- ===== 3. ตัวอย่าง ===== -->
+  <div id="screen-examples" class="screen hidden">
+    <div class="stage-progress"><span>ตัวอย่างการใช้งาน</span></div>
+    <div class="game-card">
+      <div id="example-word-label" class="example-word-label"></div>
+      <div id="example-scene" class="picture-scene"></div>
+      <div class="example-card">
+        <div id="example-en" class="example-en"></div>
+        <div id="example-th" class="example-th"></div>
+      </div>
+      <button id="example-audio-btn" class="audio-btn" data-audio="word">🔊 ฟังประโยค</button>
+      <div class="carousel-nav">
+        <button id="exPrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="exNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+      <div id="example-dots" class="carousel-dots"></div>
+    </div>
+  </div>
+
+  <!-- ===== 4. Mini Practice (ungraded) ===== -->
+  <div id="screen-mini" class="screen hidden">
+    <div class="stage-progress">
+      <span>Mini Practice</span>
+      <span id="mini-progress-label">1 / 3</span>
+    </div>
+    <div class="game-card">
+      <span class="mini-badge">🎯 ฝึกซ้อม ไม่นับคะแนน</span>
+      <p id="mini-sentence" class="s1-sentence">I like apples ____ bananas.</p>
+      <div id="mini-choices" class="choice-grid"></div>
+      <div id="mini-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 5. Game ด่าน 1 ===== -->
+  <div id="screen-stage1" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 1/3 — เติมคำสันธานในประโยค</span>
+      <span id="s1-progress-label">1 / 3</span>
+    </div>
+    <div class="stage-bar"><div id="s1-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="s1-emoji" class="big-emoji">➕</div>
+      <p id="s1-sentence" class="s1-sentence">I like apples ____ bananas.</p>
+      <div id="s1-choices" class="choice-grid"></div>
+      <div id="s1-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 6. Game ด่าน 2 ===== -->
+  <div id="screen-stage2" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 2/3 — ฟังแล้วเลือกความหมาย</span>
+      <span id="s2-progress-label">1 / 3</span>
+    </div>
+    <div class="stage-bar"><div id="s2-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <button id="s2-audio-btn" class="audio-btn" data-audio="word">🔊 ฟังคำศัพท์</button>
+      <div id="s2-choices" class="choice-grid"></div>
+      <div id="s2-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 7. Game ด่าน 3 ===== -->
+  <div id="screen-stage3" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 3/3 — จับคู่คำกับภาพ</span>
+      <span id="s3-progress-label">0 / 3 คู่</span>
+    </div>
+    <div class="stage-bar"><div id="s3-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="s3-grid" class="match-grid"></div>
+      <div id="s3-mistakes" class="mistake-counter">พลาด 0 ครั้ง</div>
+    </div>
+  </div>
+
+  <!-- ===== 8. Boss Quiz ===== -->
+  <div id="screen-boss" class="screen hidden">
+    <div class="stage-progress">
+      <span class="boss-progress-label">👹 Boss Quiz</span>
+      <span id="boss-progress-label">1 / 3</span>
+    </div>
+    <div class="stage-bar"><div id="boss-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="boss-mascot"></div>
+      <div id="boss-content"></div>
+      <div id="boss-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 9. Result ===== -->
+  <div id="screen-result" class="screen hidden">
+    <div class="banner">
+      <h1>🎉 ผ่านด่านสำเร็จ!</h1>
+      <div class="sub">Conjunction Adventure บทที่ 1 — and, but, or</div>
+    </div>
+    <div class="game-card">
+      <div id="result-stars" class="stars-display">☆☆☆</div>
+      <div id="result-score" class="result-score">0 / 12 คะแนน</div>
+      <div id="result-sub" class="result-sub"></div>
+      <a href="../chapter-2-because-so/game.html" class="btn btn-primary" style="text-decoration:none;display:inline-block;">ไปบทที่ 2: because, so ➡️</a>
+      <button id="replayBtn" class="btn btn-secondary">เล่นอีกครั้ง 🔁</button>
+      <a href="../index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="../_tools/and-but-or-data.js"></script>
+<script src="../_tools/game-audio.js"></script>
+<script src="../../Pronunciation-System/pronunciation.js"></script>
+<script src="../_tools/mascot.js"></script>
+<script src="../_tools/game-engine-ch1.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Story Adventure — Episode 1: First Day at School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_tools/game.css">
+<link rel="stylesheet" href="../../Pronunciation-System/pronunciation.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้า Story Adventure</a>
+
+  <!-- ===== Intro ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>🏫 Episode 1: First Day at School</h1>
+      <div class="sub">Story Adventure — วันแรกที่โรงเรียน</div>
+    </div>
+    <div class="game-card">
+      <div id="intro-mascot"></div>
+      <p class="story-text">
+        นี่คือ<b>โครงร่าง (framework)</b> ของ Episode 1 — ยังไม่มีเนื้อหาบทเรียนจริง
+        ในตอนนี้ แต่ละหน้าจะแสดงเป็นพื้นที่ "🚧 เนื้อหาจะเพิ่มเร็ว ๆ นี้" กดปุ่ม
+        ถัดไปเพื่อดูโครงสร้างทั้งหมดของภารกิจนี้ได้เลย
+      </p>
+      <button id="startBtn" class="btn btn-primary">เริ่มดูโครงร่าง 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== Placeholder screens (Scene 1-3, Vocabulary, Listening,
+       Speaking, Mini Game, Boss Quiz, Mission Complete) ===== -->
+  <div id="screen-placeholder" class="screen hidden">
+    <div class="stage-progress">
+      <span id="ph-name">Scene 1</span>
+      <span id="ph-progress-label">1 / 9</span>
+    </div>
+    <div class="stage-bar"><div id="ph-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="placeholder-card">
+      <div id="ph-icon" class="placeholder-icon">🎬</div>
+      <div id="ph-label" class="placeholder-label">Scene 1</div>
+      <div class="placeholder-note">🚧 เนื้อหาจะเพิ่มเร็ว ๆ นี้ (Coming soon)</div>
+    </div>
+    <div class="carousel-nav">
+      <button id="phPrevBtn" class="btn btn-secondary">◀ ย้อนกลับ</button>
+      <button id="phNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+    </div>
+  </div>
+
+  <!-- ===== Mission Complete (placeholder) ===== -->
+  <div id="screen-complete" class="screen hidden">
+    <div class="banner">
+      <h1>🎉 Mission Framework Complete!</h1>
+      <div class="sub">Episode 1 — First Day at School (โครงร่าง)</div>
+    </div>
+    <div class="game-card">
+      <div id="complete-mascot"></div>
+      <div class="placeholder-card" style="margin-top:16px;">
+        <div class="placeholder-icon">🏆</div>
+        <div class="placeholder-label">Mission Complete</div>
+        <div class="placeholder-note">🚧 Boss Quiz และรางวัล XP จริงจะเปิดใช้งานเมื่อเนื้อหาบทเรียนพร้อม</div>
+      </div>
+      <a href="../index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;margin-top:16px;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="../_tools/mascot.js"></script>
+<script src="../../Pronunciation-System/pronunciation.js"></script>
+<script src="../_tools/episode1-engine.js"></script>
+</body>
+</html>

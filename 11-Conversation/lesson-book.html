@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Conversation — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 26px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 54px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 56px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 24px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 16px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 14px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 10px; color: #1e2b5c; font-size: 19px; text-align:center; }
+.cover-objectives li { margin-bottom: 8px; font-size: 14.5px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 13px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 14px 20px; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 22px; margin: 0; }
+.section-banner .eng { font-size: 12.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+.meaning-box { border-radius: 16px; padding: 14px; text-align: center; }
+.meaning-box .word { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.meaning-box .ex { font-size: 13.5px; margin-top: 8px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 6px 8px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 16px 18px; margin: 14px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 8px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 6px 0 0; padding-left: 20px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0; }
+.flash-card { border-radius: 14px; padding: 12px 8px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 34px; }
+.flash-card .fw { font-weight: 700; font-size: 14px; margin-top: 4px; }
+.flash-card .ft { font-size: 12.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 14px 18px; margin: 12px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 16px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 14px; margin-top: 6px; }
+.pattern-box .pex .th { color: #667; font-size: 12.5px; }
+
+.dialogue-wrap { margin: 14px 0 22px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 8px; font-size: 15px; }
+.bubble { max-width: 78%; padding: 9px 14px; border-radius: 16px; margin: 6px 0; font-size: 14.5px; }
+.bubble .th { font-size: 12.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 12.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 12px 16px; margin: 10px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 13.5px; color: #55607a; margin: 4px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 12px 0; }
+.tip-checklist li { display:flex; gap:10px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:10px 14px; margin-bottom:8px; font-size:14px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 18px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:20px; font-weight:800; border-radius:999px; padding:14px 30px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:18px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:12px 14px; color:#fff; font-size:13.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:14.5px; display:block; margin-bottom:4px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:12px 14px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 8px; font-size:14px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { width:100%; border-collapse: collapse; font-size:12.5px; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:4px 6px; }
+.cheat-box ul { margin:0; padding-left:18px; font-size:12.5px; }
+.cheat-box li { margin-bottom:4px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:12px 16px; margin-bottom:12px; }
+.teacher-note-box h4 { margin:0 0 6px; color:#b3261e; font-size:14.5px; }
+.teacher-note-box ul { margin:0; padding-left:20px; font-size:13.5px; }
+.teacher-note-box li { margin-bottom:4px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:12px 16px; margin-bottom:10px; font-size:14px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 30px 20px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 30px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:22px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:10px; font-size:14px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 22px 24px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:44px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:24px; margin:6px 0 14px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:9px 14px; margin-bottom:8px; font-size:14.5px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:16px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">💬 🤝 📞 🛍️ ✨</div>
+    <h1 class="cover-title-en">Conversation</h1>
+    <div class="cover-title-th">บทสนทนาในชีวิตประจำวัน (Everyday Conversation)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 บทที่ 11 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>จำสำนวนภาษาอังกฤษที่ใช้บ่อยที่สุดใน 7 สถานการณ์ประจำวันได้</li><li>เลือกประโยคตอบรับที่เหมาะสมกับบทสนทนาที่กำหนดให้ได้ถูกต้อง</li><li>เรียงลำดับบทสนทนาให้ต่อเนื่องและสมเหตุสมผลได้</li><li>ใช้สำนวนขอร้อง ขออนุญาต และขอบคุณ-ขอโทษได้อย่างสุภาพ</li><li>รับมือกับข้อสอบแบบ Conversation Completion ที่พบบ่อยในข้อสอบเข้า ม.4</li></ul>
+    </div>
+    <div class="cover-footer">Chapter 11 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 ทำไมต้องเรียนบทสนทนา?</h1><div class="eng">Why Learn Conversation?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">บทสนทนาในชีวิตประจำวัน (Everyday Conversation) เป็นทักษะที่ข้อสอบเข้า ม.4 ชอบออกในรูปแบบ <b>"บทสนทนาเว้นช่องว่าง"</b> (Conversation Completion) คือให้อ่านบทสนทนาแล้วเลือกประโยคที่เหมาะสมที่สุดมาเติม บทนี้รวบรวมสำนวนที่ใช้บ่อยที่สุด 7 สถานการณ์ ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">ทักทาย</div>เริ่มบทสนทนา<div class="ex">Hello! What's your name?<br>(สวัสดี คุณชื่ออะไร)</div></div>
+    <div class="meaning-box mb2"><div class="word">ขอร้อง</div>ขอความช่วยเหลือ<div class="ex">Could you help me, please?<br>(คุณช่วยฉันได้ไหม)</div></div>
+    <div class="meaning-box mb3"><div class="word">กล่าวลา</div>จบบทสนทนา<div class="ex">See you tomorrow!<br>(แล้วเจอกันพรุ่งนี้)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าแต่ละสถานการณ์มี "คู่สำนวน" เปิด-ตอบที่ค่อนข้างตายตัว — ถ้าจำคู่สำนวนเหล่านี้ให้แม่น จะตอบข้อสอบ Conversation Completion ได้เร็วและแม่นยำขึ้นมาก</p>
+  <div class="explain-block">
+    <h2>🧩 7 สถานการณ์หลักที่ต้องรู้</h2>
+    <table>
+      <tr><th>สถานการณ์</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>ทักทาย/แนะนำตัว</td><td>Nice to meet you.</td><td>ยินดีที่ได้รู้จัก</td></tr>
+      <tr><td>ขอบคุณ/ขอโทษ</td><td>You're welcome.</td><td>ยินดี/ไม่เป็นไร</td></tr>
+      <tr><td>ขอร้อง/ขออนุญาต</td><td>May I come in?</td><td>ฉันขอเข้ามาได้ไหม</td></tr>
+      <tr><td>ซื้อของ</td><td>I'll take it.</td><td>ฉันจะซื้ออันนี้</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>How are you? — I'm fine, thank you.</td><td>สบายดีไหม — สบายดี ขอบคุณ</td></tr>
+      <tr><td>Excuse me, where is the bank?</td><td>ขอโทษนะคะ ธนาคารอยู่ที่ไหน</td></tr>
+      <tr><td>May I speak to Somsak, please?</td><td>ขอสายคุณสมชายหน่อยค่ะ</td></tr>
+      <tr><td>Can I help you?</td><td>ให้ช่วยอะไรไหมคะ/ครับ</td></tr>
+      <tr><td>I'm sorry. — That's okay.</td><td>ขอโทษ — ไม่เป็นไร</td></tr>
+      <tr><td>Take care. Goodbye!</td><td>ดูแลตัวเองด้วยนะ ลาก่อน</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 7 สถานการณ์หลัก ทีละสถานการณ์</h1><div class="eng">7 Key Situations Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">ทักทาย/แนะนำตัว และ ขอบคุณ/ขอโทษ</div>
+    <p style="margin:6px 0;">ใช้เปิดบทสนทนาและแสดงมารยาทพื้นฐาน — จำสูตร "ทัก-แนะนำตัว-ถามชื่อ" และ "ขอบคุณ-ตอบรับ / ขอโทษ-ให้อภัย"</p>
+    <ul><li>Hello! My name is Nid. What's your name? (ทักทาย/แนะนำตัว)</li><li>Thank you very much. — You're welcome. (ขอบคุณ)</li><li>I'm sorry. — That's okay. (ขอโทษ)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">ขอร้อง/ขออนุญาต และ ซื้อของ</div>
+    <p style="margin:6px 0;">ขอร้องใช้ Could/Can/May นำหน้า ส่วนซื้อของเน้นถามราคาและตัดสินใจซื้อ</p>
+    <ul><li>Could you help me, please? — Sure, no problem. (ขอร้อง)</li><li>How much is this? — It's 100 baht. I'll take it. (ซื้อของ)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">ถามทาง และ คุยโทรศัพท์</div>
+    <p style="margin:6px 0;">ถามทางใช้ Excuse me + Where เปิดประโยค ตอบด้วยทิศทาง ส่วนโทรศัพท์ใช้ May I speak to...? เป็นสูตรมาตรฐาน</p>
+    <ul><li>Excuse me, where is the nearest bank? — Go straight ahead. (ถามทาง)</li><li>May I speak to Somsak? — This is Somsak speaking. (โทรศัพท์)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">กล่าวลา</div>
+    <p style="margin:6px 0;">ใช้จบบทสนทนาอย่างสุภาพ มีทั้งแบบเป็นทางการและเป็นกันเอง</p>
+    <ul><li>Goodbye. / Bye. — See you later! (เป็นกันเอง)</li><li>Take care. Have a nice day! (เป็นทางการกว่า)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>สถานการณ์</th><th>สำนวนเปิดบทสนทนา</th><th>สำนวนตอบรับ</th></tr>
+      <tr><td><b>ทักทาย/แนะนำตัว</b></td><td>Hello! What's your name?</td><td>I'm... Nice to meet you.</td></tr><tr><td><b>ขอบคุณ/ขอโทษ</b></td><td>Thank you. / I'm sorry.</td><td>You're welcome. / That's okay.</td></tr><tr><td><b>ขอร้อง/ขออนุญาต</b></td><td>Could you...? / May I...?</td><td>Sure. / I'm afraid not.</td></tr><tr><td><b>ซื้อของ</b></td><td>Can I help you? / How much...?</td><td>It's... baht. / I'll take it.</td></tr><tr><td><b>ถามทาง</b></td><td>Where is...?</td><td>Go straight. / Turn left/right.</td></tr><tr><td><b>โทรศัพท์</b></td><td>May I speak to...?</td><td>This is...speaking.</td></tr><tr><td><b>กล่าวลา</b></td><td>Goodbye. / See you...</td><td>Take care. / Bye.</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกสำนวนในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">จำเป็นคู่ ไม่ใช่ทีละประโยค</div><p>ทุกสำนวนมี "คู่" ของมันเสมอ (Thank you ↔ You're welcome) ท่องเป็นคู่จะจำได้แม่นกว่าท่องทีละประโยค</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">ฟังคำถามให้จับ "ประเภทคำตอบ"</div><p>ถ้าคำถามถามราคา คำตอบต้องมีจำนวนเงิน ถ้าถามทาง คำตอบต้องมีทิศทาง — จับคู่ประเภทให้ตรงก่อนเลือกคำตอบ</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">May I...? สุภาพกว่า Can I...?</div><p>ทั้งสองคำถามความหมายเดียวกัน (ขออนุญาต) แต่ May สุภาพและเป็นทางการกว่า Can เล็กน้อย</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">7 สถานการณ์ = 7 นิ้วมือ</div><p>นับสถานการณ์ด้วยนิ้วมือ: ทักทาย-ขอบคุณ-ขอร้อง-ซื้อของ-ถามทาง-โทรศัพท์-กล่าวลา ท่องซ้ำจนขึ้นใจ</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🎵 มุมน้ำเสียงและมารยาท</h1><div class="eng">Intonation &amp; Politeness Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>สำนวน</th><th>น้ำเสียงที่ควรใช้</th><th>ตัวอย่างสถานการณ์</th></tr>
+      <tr><td><b>Excuse me...</b></td><td>เสียงสุภาพ ขึ้นเบา ๆ ท้ายประโยค</td><td>เรียกความสนใจก่อนถามทาง/ขัดจังหวะ</td></tr>
+      <tr><td><b>Could you...?</b></td><td>เสียงอ่อนโยน ลงท้ายแบบคำถาม</td><td>ขอร้องอย่างสุภาพ ฟังดูไม่สั่ง</td></tr>
+      <tr><td><b>I'm so sorry...</b></td><td>เสียงจริงใจ ช้าลงเล็กน้อย</td><td>ขอโทษเรื่องที่ทำผิดพลาด</td></tr>
+      <tr><td><b>Thank you very much.</b></td><td>เสียงอบอุ่น เน้นคำว่า "very much"</td><td>ขอบคุณอย่างจริงใจ</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดมารยาท: ในภาษาอังกฤษ การพูด "please" และยิ้มเวลาขอร้อง/ขอบคุณเป็นเรื่องสำคัญมาก แม้แต่ประโยคเดียวกัน ถ้าพูดด้วยน้ำเสียงห้วนก็อาจฟังดูไม่สุภาพได้ ลองฝึกพูดด้วยน้ำเสียงนุ่มนวลนะคะ!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้เป็นชื่อเรียกของแต่ละสถานการณ์บทสนทนา ช่วยให้จัดหมวดหมู่สำนวนในหัวได้ง่ายขึ้น</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">👋</div><div class="fw">greeting</div><div class="ft">การทักทาย</div></div><div class="flash-card"><div class="fe">🙏</div><div class="fw">thanks</div><div class="ft">การขอบคุณ</div></div><div class="flash-card"><div class="fe">😔</div><div class="fw">apology</div><div class="ft">การขอโทษ</div></div><div class="flash-card"><div class="fe">🙋</div><div class="fw">request</div><div class="ft">การขอร้อง</div></div><div class="flash-card"><div class="fe">🚪</div><div class="fw">permission</div><div class="ft">การขออนุญาต</div></div><div class="flash-card"><div class="fe">🛍️</div><div class="fw">shopping</div><div class="ft">การซื้อของ</div></div><div class="flash-card"><div class="fe">🧭</div><div class="fw">direction</div><div class="ft">ทิศทาง</div></div><div class="flash-card"><div class="fe">📞</div><div class="fw">phone call</div><div class="ft">การโทรศัพท์</div></div><div class="flash-card"><div class="fe">👋</div><div class="fw">farewell</div><div class="ft">การกล่าวลา</div></div><div class="flash-card"><div class="fe">💰</div><div class="fw">price</div><div class="ft">ราคา</div></div><div class="flash-card"><div class="fe">📍</div><div class="fw">nearest</div><div class="ft">ใกล้ที่สุด</div></div><div class="flash-card"><div class="fe">↔️</div><div class="fw">straight ahead</div><div class="ft">ตรงไป</div></div><div class="flash-card"><div class="fe">↩️</div><div class="fw">turn left/right</div><div class="ft">เลี้ยวซ้าย/ขวา</div></div><div class="flash-card"><div class="fe">🤝</div><div class="fw">polite</div><div class="ft">สุภาพ</div></div><div class="flash-card"><div class="fe">💬</div><div class="fw">expression</div><div class="ft">สำนวน</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">ทักทาย/ขอบคุณ: เปิด → ตอบ</div>
+    <div class="pex">Hello! What's your name? → My name is... <span class="th">(ทักทาย/แนะนำตัว)</span></div>
+    <div class="pex">Thank you. → You're welcome. <span class="th">(ขอบคุณ)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">ขอร้อง/ขออนุญาต: Could/Can/May + S + V? → Sure/I'm afraid not</div>
+    <div class="pex">Could you help me? → Sure, no problem. <span class="th">(ขอร้อง)</span></div>
+    <div class="pex">May I come in? → Sure, come in. <span class="th">(ขออนุญาต)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">ซื้อของ/ถามทาง: How much...? / Where is...? → บอกราคา/ทิศทาง</div>
+    <div class="pex">How much is this? → It's 100 baht. <span class="th">(ซื้อของ)</span></div>
+    <div class="pex">Where is the bank? → Go straight ahead. <span class="th">(ถามทาง)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">โทรศัพท์/กล่าวลา: May I speak to...? → This is...speaking</div>
+    <div class="pex">May I speak to Ben? → This is Ben speaking. <span class="th">(โทรศัพท์)</span></div>
+    <div class="pex">Goodbye! See you soon. → Bye! Take care. <span class="th">(กล่าวลา)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาตัวอย่าง 5 สถานการณ์</h1><div class="eng">Sample Dialogues</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🧑‍🤝‍🧑 สถานการณ์ที่ 1: การแนะนำตัว</div>
+    <div class="bubble left"><div class="speaker">Nid</div>Hello! My name is Nid. What's your name?<div class="th">สวัสดี! ฉันชื่อนิด คุณชื่ออะไร</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Hi! I'm Ben. Nice to meet you.<div class="th">สวัสดี! ผมชื่อเบน ยินดีที่ได้รู้จัก</div></div>
+    <div class="bubble left"><div class="speaker">Nid</div>Nice to meet you too. How are you?<div class="th">ยินดีที่ได้รู้จักเช่นกัน คุณเป็นอย่างไรบ้าง</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>I'm fine, thank you. And you?<div class="th">สบายดีครับ ขอบคุณ แล้วคุณล่ะ</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🛍️ สถานการณ์ที่ 2: การซื้อของ</div>
+    <div class="bubble left"><div class="speaker">Ben</div>Can I help you?<div class="th">ให้ช่วยอะไรไหมคะ</div></div>
+    <div class="bubble right"><div class="speaker">Nid</div>Yes, how much is this shirt?<div class="th">ค่ะ เสื้อตัวนี้ราคาเท่าไหร่</div></div>
+    <div class="bubble left"><div class="speaker">Ben</div>It's 250 baht. Do you have a smaller size?<div class="th">250 บาทค่ะ ต้องการไซส์เล็กกว่านี้ไหม</div></div>
+    <div class="bubble right"><div class="speaker">Nid</div>Yes, here you are. Great, I'll take it.<div class="th">มีค่ะ นี่ค่ะ ดีเลย ฉันจะซื้ออันนี้</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🧭 สถานการณ์ที่ 3: การถามทาง</div>
+    <div class="bubble left"><div class="speaker">Nid</div>Excuse me, where is the nearest hospital?<div class="th">ขอโทษค่ะ โรงพยาบาลที่ใกล้ที่สุดอยู่ที่ไหน</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Go straight ahead, then turn left at the corner.<div class="th">ตรงไปข้างหน้า แล้วเลี้ยวซ้ายที่มุมถนน</div></div>
+    <div class="bubble left"><div class="speaker">Nid</div>Is it far from here?<div class="th">ไกลจากที่นี่ไหมคะ</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>No, it's just 5 minutes away.<div class="th">ไม่ไกลค่ะ แค่ 5 นาทีเอง</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">📞 สถานการณ์ที่ 4: การคุยโทรศัพท์</div>
+    <div class="bubble left"><div class="speaker">Nid</div>Hello, may I speak to Somsak, please?<div class="th">สวัสดีค่ะ ขอสายคุณสมชายหน่อยค่ะ</div></div>
+    <div class="bubble right"><div class="speaker">Somsak</div>This is Somsak speaking.<div class="th">สมชายพูดครับ</div></div>
+    <div class="bubble left"><div class="speaker">Nid</div>Hi, this is Nid. Are you free tomorrow?<div class="th">สวัสดีค่ะ นี่นิดนะ พรุ่งนี้ว่างไหม</div></div>
+    <div class="bubble right"><div class="speaker">Somsak</div>Sure, what's up? Let's meet at the library.<div class="th">ว่างครับ มีอะไรหรือเปล่า ไปเจอกันที่ห้องสมุดนะ</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🙋 สถานการณ์ที่ 5: การขอร้อง/ขออนุญาต</div>
+    <div class="bubble left"><div class="speaker">Nid</div>Could you help me with my homework?<div class="th">ช่วยฉันทำการบ้านหน่อยได้ไหม</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Sure, no problem. Could I borrow your pen too?<div class="th">ได้เลย ไม่มีปัญหา ขอยืมปากกาด้วยได้ไหม</div></div>
+    <div class="bubble left"><div class="speaker">Nid</div>Of course, here you are. Thank you so much.<div class="th">ได้เลย นี่จ้ะ ขอบคุณมากนะ</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>You're welcome.<div class="th">ไม่เป็นไร ยินดี</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ A: Thank you. B: It's 100 baht.</div>
+    <div class="why">🤔 ตอบคำขอบคุณต้องใช้ You're welcome ไม่ใช่ตอบราคาซึ่งเป็นคนละสถานการณ์</div>
+    <div class="right">✅ A: Thank you. B: You're welcome.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ A: How much is this? B: Nice to meet you.</div>
+    <div class="why">🤔 คำถามถามราคาต้องตอบด้วยจำนวนเงิน ไม่ใช่คำทักทาย</div>
+    <div class="right">✅ A: How much is this? B: It's 100 baht.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ A: Can I help you? B: Turn left.</div>
+    <div class="why">🤔 คำเสนอช่วยเหลือในร้านค้าต้องตอบรับ/ปฏิเสธ ไม่ใช่บอกทิศทาง</div>
+    <div class="right">✅ A: Can I help you? B: Yes, please.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ A: May I speak to Ben? B: I'm fine, thanks.</div>
+    <div class="why">🤔 คำขอสายโทรศัพท์ต้องตอบด้วย This is...speaking หรือ Hold on</div>
+    <div class="right">✅ A: May I speak to Ben? B: This is Ben speaking.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ A: I'm sorry. B: How much is it?</div>
+    <div class="why">🤔 คำขอโทษต้องตอบด้วยการให้อภัย ไม่ใช่ถามราคา</div>
+    <div class="right">✅ A: I'm sorry. B: That's okay.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ A: Goodbye! B: It's 50 baht.</div>
+    <div class="why">🤔 การกล่าวลาต้องตอบด้วยการกล่าวลาเช่นกัน</div>
+    <div class="right">✅ A: Goodbye! B: Bye! Take care.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>ก่อนเลือกคำตอบ ให้จับ "ประเภท" ของคำถามก่อนเสมอ (ถามราคา/ทิศทาง/ตอบรับขอบคุณ ฯลฯ)</span></li><li><span class="num">2</span><span>ตัวลวงที่พบบ่อยที่สุดคือคำตอบจากสถานการณ์อื่นที่ฟังดูสุภาพแต่ไม่ตรงบริบท (เช่น "Nice to meet you" ตอบคำถามราคา)</span></li><li><span class="num">3</span><span>สังเกตคำสำคัญในประโยคถาม (how much, where, may I) เพื่อคาดเดาประเภทคำตอบก่อนอ่านตัวเลือก</span></li><li><span class="num">4</span><span>ข้อสอบเรียงประโยคบทสนทนา ให้หาประโยคเปิดก่อน (มักมีคำทักทาย/Excuse me) แล้วไล่ลำดับตามความสมเหตุสมผล</span></li><li><span class="num">5</span><span>จำสำนวนตอบรับมาตรฐานให้แม่น เพราะข้อสอบมักออกแบบเดียวกันซ้ำในสถานการณ์เดิม</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Conversation</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">👋 ทักทาย/ขอบคุณ</span>Hello! What's your name? / Thank you → You're welcome</div>
+      <div class="mindmap-branch mb-b"><span class="bt">🙋 ขอร้อง/ขออนุญาต</span>Could you...? / May I...? → Sure / I'm afraid not</div>
+      <div class="mindmap-branch mb-c"><span class="bt">🛍️ ซื้อของ</span>How much...? → It's...baht. I'll take it.</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🧭 ถามทาง</span>Where is...? → Go straight/turn left-right</div>
+      <div class="mindmap-branch mb-e"><span class="bt">📞 โทรศัพท์</span>May I speak to...? → This is...speaking</div>
+      <div class="mindmap-branch mb-f"><span class="bt">👋 กล่าวลา</span>Goodbye/See you → Take care/Bye</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เลือกประโยคตอบรับที่เหมาะสม (12 ข้อ)</h2><p class="part-desc">เลือกประโยคที่เหมาะสมที่สุดมาเติมในบทสนทนา</p><ol class="qlist two-col"><li>A: What's your name? B: <span class="blank"></span></li><li>A: Thank you so much. B: <span class="blank"></span></li><li>A: I'm sorry I broke your pen. B: <span class="blank"></span></li><li>A: Could you help me carry this? B: <span class="blank"></span></li><li>A: How much is this hat? B: <span class="blank"></span></li><li>A: Excuse me, where is the museum? B: <span class="blank"></span></li><li>A: May I speak to Mr. Somsak? B: <span class="blank"></span></li><li>A: Goodbye! See you tomorrow! B: <span class="blank"></span></li><li>A: Can I help you find something? B: <span class="blank"></span></li><li>A: May I borrow your book? B: <span class="blank"></span></li><li>A: Is it far from here? B: <span class="blank"></span></li><li>A: Nice to meet you. B: <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 2: เรียงประโยคบทสนทนาให้ถูกลำดับ (2 ข้อ — เขียนหมายเลข 1-4)</h2><p class="part-desc">เรียงลำดับบทสนทนาที่กำหนดให้ถูกต้อง</p><ol class="qlist two-col"><li>บทสนทนาการถามทาง:
+<span class="blank"></span> Go straight and turn left at the corner.
+___ Excuse me, where is the bank?
+___ Thank you very much.
+___ You're welcome.</li><li>บทสนทนาการคุยโทรศัพท์:
+<span class="blank"></span> Hi, this is Nid. Is Somsak there?
+___ Hello?
+___ Sure, hold on please.
+___ Thank you.</li></ol><h2 class="part-title">ตอนที่ 3: เลือกสำนวนที่ถูกต้องตามสถานการณ์ (10 ข้อ)</h2><p class="part-desc">เลือกสำนวนภาษาอังกฤษที่เหมาะสมกับสถานการณ์ที่กำหนดให้</p><ol class="qlist two-col"><li>ต้องการขออนุญาตเข้าห้อง: <span class="blank"></span> (Can I help you? / May I come in?)</li><li>ต้องการถามราคาสินค้า: <span class="blank"></span> (How much is this? / How are you?)</li><li>ต้องการขอบคุณอย่างสุภาพ: <span class="blank"></span> (Thank you very much. / Excuse me.)</li><li>ต้องการบอกทางตรงไปข้างหน้า: <span class="blank"></span> (Go straight ahead. / Turn left.)</li><li>ต้องการแนะนำตัวเอง: <span class="blank"></span> (My name is... / This is...speaking.)</li><li>ต้องการรับสายโทรศัพท์: <span class="blank"></span> (This is...speaking. / See you soon.)</li><li>ต้องการขอโทษที่มาสาย: <span class="blank"></span> (I'm sorry I'm late. / Can I help you?)</li><li>ต้องการกล่าวลาแบบเป็นกันเอง: <span class="blank"></span> (Bye! / How much is this?)</li><li>ต้องการขอความช่วยเหลือสุภาพ: <span class="blank"></span> (Could you help me, please? / It's 100 baht.)</li><li>ต้องการถามไซส์เสื้อผ้า: <span class="blank"></span> (Do you have a smaller size? / Turn right.)</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> อ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👋</div>
+      <div class="qtext">A: Hello! What's your name? B: ___<div class="rule-tag">ทักทาย: What's your name?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I'm fine, thank you.</div><div class="choice">B) My name is Malee.</div><div class="choice">C) Goodbye!</div><div class="choice">D) It's 50 baht.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙏</div>
+      <div class="qtext">A: Thank you very much. B: ___<div class="rule-tag">ขอบคุณ: You're welcome</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) You're welcome.</div><div class="choice">B) I'm sorry.</div><div class="choice">C) See you.</div><div class="choice">D) How much?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😔</div>
+      <div class="qtext">A: I'm sorry I'm late. B: ___<div class="rule-tag">ขอโทษ: That's okay</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 100 baht.</div><div class="choice">B) That's okay.</div><div class="choice">C) Turn left.</div><div class="choice">D) My name is Ben.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💰</div>
+      <div class="qtext">A: How much is this shirt? B: ___<div class="rule-tag">ซื้อของ: ราคา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's next to the bank.</div><div class="choice">B) It's 250 baht.</div><div class="choice">C) I'm fine.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧭</div>
+      <div class="qtext">A: Excuse me, where is the post office? B: ___<div class="rule-tag">ถามทาง: บอกทิศทาง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 50 baht.</div><div class="choice">B) Go straight and turn right.</div><div class="choice">C) My name is Somsak.</div><div class="choice">D) You're welcome.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📞</div>
+      <div class="qtext">A: May I speak to Dara, please? B: ___<div class="rule-tag">โทรศัพท์: This is...speaking</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) This is Dara speaking.</div><div class="choice">B) It's 20 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙋</div>
+      <div class="qtext">A: Could you help me, please? B: ___<div class="rule-tag">ขอร้อง: Sure, no problem</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, no problem.</div><div class="choice">B) It's 10 baht.</div><div class="choice">C) Goodbye.</div><div class="choice">D) How are you?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛍️</div>
+      <div class="qtext">A: Can I help you? B: ___<div class="rule-tag">ซื้อของ: Can I help you?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, how much is this shirt?</div><div class="choice">B) See you tomorrow.</div><div class="choice">C) I'm sorry.</div><div class="choice">D) Turn right.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👋</div>
+      <div class="qtext">A: See you tomorrow! B: ___<div class="rule-tag">กล่าวลา: Okay, bye!</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 100 baht.</div><div class="choice">B) Okay, bye!</div><div class="choice">C) Excuse me.</div><div class="choice">D) I'm fine.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶</div>
+      <div class="qtext">A: Is the hospital far from here? B: ___<div class="rule-tag">ถามทาง: ระยะทาง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) No, it's just 5 minutes away.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) My name is Ben.</div><div class="choice">D) You're welcome.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤝</div>
+      <div class="qtext">A: Nice to meet you. B: ___<div class="rule-tag">ทักทาย: Nice to meet you too</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Nice to meet you too.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Goodbye.</div><div class="choice">D) I'm sorry.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚪</div>
+      <div class="qtext">A: May I come in? B: ___<div class="rule-tag">ขออนุญาต: May I come in?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, come in.</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) See you later.</div><div class="choice">D) How much is this?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📏</div>
+      <div class="qtext">A: Do you have a smaller size? B: ___<div class="rule-tag">ซื้อของ: ขอไซส์อื่น</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, here you are.</div><div class="choice">B) It's next to the bank.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) I'm sorry.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔁</div>
+      <div class="qtext">A: Sorry, wrong number. B: ___<div class="rule-tag">โทรศัพท์: ผิดเบอร์</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) That's okay.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Go straight.</div><div class="choice">D) I'm fine.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙋‍♀️</div>
+      <div class="qtext">A: Could I borrow your pen? B: ___<div class="rule-tag">ขออนุญาต: ยืมของ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Of course, here you are.</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) Go straight.</div><div class="choice">D) See you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">☀️</div>
+      <div class="qtext">A: Have a nice day! B: ___<div class="rule-tag">กล่าวลา: Have a nice day</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) You too, thanks!</div><div class="choice">B) It's 30 baht.</div><div class="choice">C) My name is Dara.</div><div class="choice">D) Turn left.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏥</div>
+      <div class="qtext">A: Excuse me, where is the nearest hospital? B: ___<div class="rule-tag">ถามทาง: โรงพยาบาล</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 200 baht.</div><div class="choice">B) Go straight ahead, then turn left.</div><div class="choice">C) My name is Ann.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎂</div>
+      <div class="qtext">A: How are you? B: ___<div class="rule-tag">ทักทาย: How are you?</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I'm fine, thank you.</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) Turn right.</div><div class="choice">D) Goodbye.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙅</div>
+      <div class="qtext">A: May I use your phone? B: ___<div class="rule-tag">ขออนุญาต: ปฏิเสธสุภาพ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I'm afraid not, sorry.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🕐</div>
+      <div class="qtext">A: May I speak to the manager, please? B: ___<div class="rule-tag">โทรศัพท์: รอสักครู่</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Hold on, please.</div><div class="choice">B) It's 20 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💵</div>
+      <div class="qtext">A: It's 250 baht. B: ___<div class="rule-tag">ซื้อของ: ตัดสินใจซื้อ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I'll take it.</div><div class="choice">B) Go straight.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) See you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧳</div>
+      <div class="qtext">A: Is it near here? B: ___<div class="rule-tag">ถามทาง: ใกล้-ไกล</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, it's very close.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) My name is Ben.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">A: I have to go now. B: ___<div class="rule-tag">กล่าวลา: Take care</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Okay, take care!</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) How much is this?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤔</div>
+      <div class="qtext">A: Could you lend me some money? B: ___<div class="rule-tag">ขอร้อง: ปฏิเสธพร้อมเหตุผล</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sorry, I don't have any with me.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛒</div>
+      <div class="qtext">A: Do you have this in red? B: ___<div class="rule-tag">ซื้อของ: ถามมีของไหม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, we do.</div><div class="choice">B) Go straight.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) See you tomorrow.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🗺️</div>
+      <div class="qtext">A: How can I get to the library? B: ___<div class="rule-tag">ถามทาง: ทางซ้าย-ขวา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Turn right at the traffic light.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) My name is Ann.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">A: He is not here right now. B: ___<div class="rule-tag">โทรศัพท์: โทรกลับ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Okay, I'll call back later.</div><div class="choice">B) It's 20 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎁</div>
+      <div class="qtext">A: Can I open my present now? B: ___<div class="rule-tag">ขออนุญาต: เปิดของขวัญ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, go ahead.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">A: Could I have the menu, please? B: ___<div class="rule-tag">ขอร้อง: ในร้านอาหาร</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, here you are.</div><div class="choice">B) It's 200 baht.</div><div class="choice">C) Turn right.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙋‍♂️</div>
+      <div class="qtext">A: Hi! Long time no see! How have you been? B: ___<div class="rule-tag">ทักทาย: บทสนทนายาว</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) I've been great, thanks! How about you?</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Turn left.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧾</div>
+      <div class="qtext">A: Can you make it cheaper? B: ___<div class="rule-tag">ซื้อของ: ต่อรองราคา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sorry, this is the fixed price.</div><div class="choice">B) Nice to meet you.</div><div class="choice">C) Go straight.</div><div class="choice">D) See you tomorrow.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚦</div>
+      <div class="qtext">A: How do I get to the stadium from here? B: Go straight for two blocks, then ___<div class="rule-tag">ถามทาง: ซับซ้อนหลายขั้นตอน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) turn left at the traffic light.</div><div class="choice">B) it's 100 baht.</div><div class="choice">C) nice to meet you.</div><div class="choice">D) you're welcome.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📴</div>
+      <div class="qtext">A: I'm sorry, the line is busy right now. B: ___<div class="rule-tag">โทรศัพท์: สายไม่ว่าง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Okay, I'll try again later.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎊</div>
+      <div class="qtext">A: I'm leaving for Chiang Mai tomorrow. B: ___<div class="rule-tag">กล่าวลา: อวยพรก่อนเดินทาง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Have a safe trip!</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Turn left.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🙇</div>
+      <div class="qtext">A: I'm so sorry, I broke your vase. B: ___<div class="rule-tag">ขอโทษ: ทำของเสียหาย</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Don't worry, it's not a big deal.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤝</div>
+      <div class="qtext">A: This bag looks heavy. B: ___<div class="rule-tag">ขอร้อง: เสนอความช่วยเหลือ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Let me help you carry it.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍💼</div>
+      <div class="qtext">A: He's out for lunch. Would you like to leave a message? B: ___<div class="rule-tag">โทรศัพท์: ฝากข้อความ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, please tell him I called.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛍️</div>
+      <div class="qtext">A: Could I have a receipt, please? B: ___<div class="rule-tag">ซื้อของ: ขอใบเสร็จ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, here you are.</div><div class="choice">B) Turn left.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) See you tomorrow.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚕</div>
+      <div class="qtext">A: Where can I catch a taxi around here? B: ___<div class="rule-tag">ถามทาง: เรียกแท็กซี่</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) There's a taxi stand right around the corner.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) Go straight.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">A: How much is this bag? ข้อใดคือคำตอบที่ถูกต้อง?<div class="rule-tag">Error Detection: คำตอบไม่สอดคล้อง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's next to the bank.</div><div class="choice">B) It's 300 baht.</div><div class="choice">C) I'm fine, thanks.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">A: Could you help me, please? ข้อใดคือคำตอบที่ถูกต้อง?<div class="rule-tag">Error Detection: บทสนทนาไม่สอดคล้อง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 100 baht.</div><div class="choice">B) Sure, no problem.</div><div class="choice">C) Turn left.</div><div class="choice">D) Goodbye.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">A: I have to leave now. Bye! ข้อใดคือคำตอบที่ถูกต้อง?<div class="rule-tag">Error Detection: การกล่าวลา</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) It's 50 baht.</div><div class="choice">B) Bye! Take care!</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) How much is this?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">สถานการณ์ใดที่ควรพูดว่า "Excuse me, where is the nearest bank?"<div class="rule-tag">สรุปรวม: เลือกสถานการณ์ถูกต้อง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ถามทาง</div><div class="choice">B) ซื้อของ</div><div class="choice">C) คุยโทรศัพท์</div><div class="choice">D) กล่าวลา</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎯</div>
+      <div class="qtext">สถานการณ์ใดที่ควรพูดว่า "May I speak to Somsak, please?"<div class="rule-tag">สรุปรวม: เลือกสถานการณ์ถูกต้อง</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ถามทาง</div><div class="choice">B) ซื้อของ</div><div class="choice">C) คุยโทรศัพท์</div><div class="choice">D) กล่าวลา</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏁</div>
+      <div class="qtext">ข้อใดคือสำนวนตอบรับคำขอบคุณที่ถูกต้องที่สุด?<div class="rule-tag">สรุปรวม: ครบทุกสถานการณ์</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) You're welcome.</div><div class="choice">B) Go straight.</div><div class="choice">C) It's 100 baht.</div><div class="choice">D) This is speaking.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">A: Hi! Are you a new student here? B: ___<div class="rule-tag">ทักทาย: แนะนำที่โรงเรียน</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, I am. My name is Somchai.</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) Go straight.</div><div class="choice">D) Take care.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌦️</div>
+      <div class="qtext">A: Nice weather today, isn't it? B: ___<div class="rule-tag">ทักทาย: พูดคุยเรื่องทั่วไป</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, it's really nice.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) This is speaking.</div><div class="choice">D) Turn left.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎈</div>
+      <div class="qtext">A: Could I have some more water, please? B: ___<div class="rule-tag">ขอร้อง: ขอของเพิ่ม</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, here you are.</div><div class="choice">B) Go straight.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) See you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚉</div>
+      <div class="qtext">A: Excuse me, is this the way to the train station? B: ___<div class="rule-tag">ถามทาง: สถานีรถไฟ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Yes, it's straight ahead.</div><div class="choice">B) It's 50 baht.</div><div class="choice">C) Nice to meet you.</div><div class="choice">D) This is speaking.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📲</div>
+      <div class="qtext">A: Could you give me your phone number? B: ___<div class="rule-tag">โทรศัพท์: ขอเบอร์ติดต่อ</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Sure, it's 08X-XXX-XXXX.</div><div class="choice">B) It's 100 baht.</div><div class="choice">C) Go straight.</div><div class="choice">D) Nice to meet you.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>My name is Anan.</td><td>ตอบคำถามชื่อโดยตรง</td></tr><tr><td>2</td><td>You're welcome.</td><td>ตอบรับคำขอบคุณ</td></tr><tr><td>3</td><td>That's okay.</td><td>ตอบรับคำขอโทษ</td></tr><tr><td>4</td><td>Sure, no problem.</td><td>ตอบรับคำขอร้อง</td></tr><tr><td>5</td><td>It's 150 baht.</td><td>ตอบราคาสิ่งของ</td></tr><tr><td>6</td><td>Go straight and turn left.</td><td>บอกทิศทาง</td></tr><tr><td>7</td><td>Hold on, please.</td><td>ขอให้รอสายโทรศัพท์</td></tr><tr><td>8</td><td>Bye! See you tomorrow!</td><td>ตอบรับการกล่าวลา</td></tr><tr><td>9</td><td>Yes, I'm looking for a birthday gift.</td><td>ตอบรับข้อเสนอช่วยเหลือในร้านค้า</td></tr><tr><td>10</td><td>Of course, here you are.</td><td>ตอบรับคำขออนุญาตยืมของ</td></tr><tr><td>11</td><td>No, it's just 10 minutes away.</td><td>ตอบระยะทาง</td></tr><tr><td>12</td><td>Nice to meet you too.</td><td>ตอบรับการทักทายแนะนำตัว</td></tr><tr><td>13</td><td>2 → 1 → 4 → 3</td><td>Excuse me... → Go straight... → Thank you... → You're welcome.</td></tr><tr><td>14</td><td>2 → 1 → 3 → 4</td><td>Hello? → Hi, this is Nid... → Sure, hold on please. → Thank you.</td></tr><tr><td>15</td><td>May I come in?</td><td>สำนวนขออนุญาตเข้าห้อง</td></tr><tr><td>16</td><td>How much is this?</td><td>สำนวนถามราคา</td></tr><tr><td>17</td><td>Thank you very much.</td><td>สำนวนขอบคุณ</td></tr><tr><td>18</td><td>Go straight ahead.</td><td>สำนวนบอกทาง</td></tr><tr><td>19</td><td>My name is...</td><td>สำนวนแนะนำตัว</td></tr><tr><td>20</td><td>This is...speaking.</td><td>สำนวนรับสายโทรศัพท์</td></tr><tr><td>21</td><td>I'm sorry I'm late.</td><td>สำนวนขอโทษ</td></tr><tr><td>22</td><td>Bye!</td><td>สำนวนกล่าวลาแบบเป็นกันเอง</td></tr><tr><td>23</td><td>Could you help me, please?</td><td>สำนวนขอความช่วยเหลือ</td></tr><tr><td>24</td><td>Do you have a smaller size?</td><td>สำนวนซื้อของถามไซส์</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">👋</td><td>B) My name is Malee.</td><td>ตอบคำถามชื่อโดยตรง</td></tr><tr><td>2</td><td class="emoji-cell">🙏</td><td>A) You're welcome.</td><td>ตอบรับคำขอบคุณ</td></tr><tr><td>3</td><td class="emoji-cell">😔</td><td>B) That's okay.</td><td>ตอบรับคำขอโทษ</td></tr><tr><td>4</td><td class="emoji-cell">💰</td><td>B) It's 250 baht.</td><td>ตอบราคาสิ่งของ</td></tr><tr><td>5</td><td class="emoji-cell">🧭</td><td>B) Go straight and turn right.</td><td>บอกทิศทาง</td></tr><tr><td>6</td><td class="emoji-cell">📞</td><td>A) This is Dara speaking.</td><td>ตอบรับสายโทรศัพท์</td></tr><tr><td>7</td><td class="emoji-cell">🙋</td><td>A) Sure, no problem.</td><td>ตอบรับคำขอร้อง</td></tr><tr><td>8</td><td class="emoji-cell">🛍️</td><td>A) Yes, how much is this shirt?</td><td>ตอบรับข้อเสนอช่วยเหลือในร้านค้า</td></tr><tr><td>9</td><td class="emoji-cell">👋</td><td>B) Okay, bye!</td><td>ตอบรับการกล่าวลา</td></tr><tr><td>10</td><td class="emoji-cell">🚶</td><td>A) No, it's just 5 minutes away.</td><td>ตอบระยะทาง</td></tr><tr><td>11</td><td class="emoji-cell">🤝</td><td>A) Nice to meet you too.</td><td>ตอบรับการแนะนำตัว</td></tr><tr><td>12</td><td class="emoji-cell">🚪</td><td>A) Sure, come in.</td><td>ตอบรับคำขออนุญาต</td></tr><tr><td>13</td><td class="emoji-cell">📏</td><td>A) Yes, here you are.</td><td>ตอบรับคำขอไซส์อื่น</td></tr><tr><td>14</td><td class="emoji-cell">🔁</td><td>A) That's okay.</td><td>ตอบรับการขอโทษที่โทรผิดเบอร์</td></tr><tr><td>15</td><td class="emoji-cell">🙋‍♀️</td><td>A) Of course, here you are.</td><td>ตอบรับคำขอยืมของ</td></tr><tr><td>16</td><td class="emoji-cell">☀️</td><td>A) You too, thanks!</td><td>ตอบรับคำอวยพร Have a nice day</td></tr><tr><td>17</td><td class="emoji-cell">🏥</td><td>B) Go straight ahead, then turn left.</td><td>บอกทิศทางไปโรงพยาบาล</td></tr><tr><td>18</td><td class="emoji-cell">🎂</td><td>A) I'm fine, thank you.</td><td>ตอบรับคำถามสารทุกข์สุกดิบ</td></tr><tr><td>19</td><td class="emoji-cell">🙅</td><td>A) I'm afraid not, sorry.</td><td>การปฏิเสธคำขออนุญาตอย่างสุภาพ</td></tr><tr><td>20</td><td class="emoji-cell">🕐</td><td>A) Hold on, please.</td><td>ขอให้ผู้โทรรอสักครู่</td></tr><tr><td>21</td><td class="emoji-cell">💵</td><td>A) I'll take it.</td><td>แสดงการตัดสินใจซื้อสินค้า</td></tr><tr><td>22</td><td class="emoji-cell">🧳</td><td>A) Yes, it's very close.</td><td>ตอบระยะทางใกล้-ไกล</td></tr><tr><td>23</td><td class="emoji-cell">🎉</td><td>A) Okay, take care!</td><td>กล่าวลาด้วยการบอกให้ดูแลตัวเอง</td></tr><tr><td>24</td><td class="emoji-cell">🤔</td><td>A) Sorry, I don't have any with me.</td><td>ปฏิเสธคำขอร้องอย่างสุภาพพร้อมเหตุผล</td></tr><tr><td>25</td><td class="emoji-cell">🛒</td><td>A) Yes, we do.</td><td>ตอบคำถามว่ามีสินค้าสีที่ถามหรือไม่</td></tr><tr><td>26</td><td class="emoji-cell">🗺️</td><td>A) Turn right at the traffic light.</td><td>บอกทิศทางไปห้องสมุด</td></tr><tr><td>27</td><td class="emoji-cell">📱</td><td>A) Okay, I'll call back later.</td><td>แสดงว่าจะโทรกลับภายหลัง</td></tr><tr><td>28</td><td class="emoji-cell">🎁</td><td>A) Sure, go ahead.</td><td>อนุญาตให้ทำสิ่งใดสิ่งหนึ่งได้</td></tr><tr><td>29</td><td class="emoji-cell">🍽️</td><td>A) Sure, here you are.</td><td>ตอบรับคำขอร้องในร้านอาหาร</td></tr><tr><td>30</td><td class="emoji-cell">🙋‍♂️</td><td>A) I've been great, thanks! How about you?</td><td>ตอบรับการทักทายเพื่อนที่ไม่ได้เจอกันนาน</td></tr><tr><td>31</td><td class="emoji-cell">🧾</td><td>A) Sorry, this is the fixed price.</td><td>ปฏิเสธการต่อรองราคาอย่างสุภาพ</td></tr><tr><td>32</td><td class="emoji-cell">🚦</td><td>A) turn left at the traffic light.</td><td>บอกทิศทางแบบมีหลายขั้นตอนต่อเนื่องกัน</td></tr><tr><td>33</td><td class="emoji-cell">📴</td><td>A) Okay, I'll try again later.</td><td>ตอบรับเมื่อสายโทรศัพท์ไม่ว่าง</td></tr><tr><td>34</td><td class="emoji-cell">🎊</td><td>A) Have a safe trip!</td><td>อวยพรก่อนเพื่อนเดินทาง</td></tr><tr><td>35</td><td class="emoji-cell">🙇</td><td>A) Don't worry, it's not a big deal.</td><td>ตอบรับคำขอโทษที่ทำของเสียหายอย่างให้อภัย</td></tr><tr><td>36</td><td class="emoji-cell">🤝</td><td>A) Let me help you carry it.</td><td>เสนอความช่วยเหลือโดยไม่ต้องมีคนขอก่อน</td></tr><tr><td>37</td><td class="emoji-cell">🧑‍💼</td><td>A) Yes, please tell him I called.</td><td>ตอบรับการฝากข้อความทางโทรศัพท์</td></tr><tr><td>38</td><td class="emoji-cell">🛍️</td><td>A) Sure, here you are.</td><td>ตอบรับคำขอใบเสร็จหลังซื้อของ</td></tr><tr><td>39</td><td class="emoji-cell">🚕</td><td>A) There's a taxi stand right around the corner.</td><td>บอกตำแหน่งที่เรียกรถแท็กซี่ได้</td></tr><tr><td>40</td><td class="emoji-cell">🔍</td><td>B) It's 300 baht.</td><td>คำถามถามราคา ต้องตอบด้วยจำนวนเงิน ไม่ใช่สถานที่หรือความรู้สึก</td></tr><tr><td>41</td><td class="emoji-cell">🔍</td><td>B) Sure, no problem.</td><td>คำขอร้องต้องตอบรับหรือปฏิเสธการช่วยเหลือ ไม่ใช่ตอบราคาหรือทิศทาง</td></tr><tr><td>42</td><td class="emoji-cell">🔍</td><td>B) Bye! Take care!</td><td>การกล่าวลาต้องตอบรับด้วยการกล่าวลาเช่นกัน</td></tr><tr><td>43</td><td class="emoji-cell">🎯</td><td>A) ถามทาง</td><td>ประโยคนี้ใช้ในสถานการณ์ถามทาง</td></tr><tr><td>44</td><td class="emoji-cell">🎯</td><td>C) คุยโทรศัพท์</td><td>ประโยคนี้ใช้ในสถานการณ์คุยโทรศัพท์</td></tr><tr><td>45</td><td class="emoji-cell">🏁</td><td>A) You're welcome.</td><td>You're welcome เป็นสำนวนมาตรฐานสำหรับตอบรับคำขอบคุณ</td></tr><tr><td>46</td><td class="emoji-cell">🏫</td><td>A) Yes, I am. My name is Somchai.</td><td>ตอบรับคำถามยืนยัน (Yes, I am) พร้อมแนะนำตัว</td></tr><tr><td>47</td><td class="emoji-cell">🌦️</td><td>A) Yes, it's really nice.</td><td>ตอบรับการพูดคุยทักทายเรื่องทั่วไป (small talk)</td></tr><tr><td>48</td><td class="emoji-cell">🎈</td><td>A) Sure, here you are.</td><td>ตอบรับคำขอสิ่งของเพิ่มเติมอย่างสุภาพ</td></tr><tr><td>49</td><td class="emoji-cell">🚉</td><td>A) Yes, it's straight ahead.</td><td>ตอบยืนยันทิศทางที่ถามพร้อมบอกตำแหน่ง</td></tr><tr><td>50</td><td class="emoji-cell">📲</td><td>A) Sure, it's 08X-XXX-XXXX.</td><td>ตอบรับคำขอเบอร์โทรศัพท์ด้วยการให้เบอร์</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>7 สถานการณ์หลัก</h4>
+      <table><tr><th>สถานการณ์</th><th>สำนวนสำคัญ</th></tr>
+      <tr><td>ทักทาย</td><td>Hello! Nice to meet you.</td></tr>
+      <tr><td>ขอบคุณ/ขอโทษ</td><td>You're welcome. / That's okay.</td></tr>
+      <tr><td>ขอร้อง/ขออนุญาต</td><td>Could you...? / May I...?</td></tr></table></div>
+    <div class="cheat-box"><h4>อีก 4 สถานการณ์</h4>
+      <ul><li>ซื้อของ: How much...? I'll take it.</li><li>ถามทาง: Where is...? Go straight.</li><li>โทรศัพท์: May I speak to...?</li><li>กล่าวลา: Goodbye! Take care.</li></ul></div>
+    <div class="cheat-box"><h4>คู่สำนวนตอบรับ</h4>
+      <ul><li>Thank you → You're welcome</li><li>I'm sorry → That's okay</li><li>May I...? → Sure/I'm afraid not</li></ul></div>
+    <div class="cheat-box"><h4>ข้อควรระวัง</h4>
+      <ul><li>จับ "ประเภทคำตอบ" ให้ตรงกับคำถามเสมอ</li><li>ระวังตัวลวงที่สุภาพแต่ผิดบริบท</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกสถานการณ์ในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากสถานการณ์ใกล้ตัวนักเรียนก่อน (แนะนำตัว, ขอบคุณ) แล้วค่อยขยายไปสถานการณ์ที่ซับซ้อนขึ้น</li>
+    <li>ให้นักเรียนฝึกจำเป็น "คู่สำนวน" เปิด-ตอบ ไม่ใช่ท่องประโยคเดี่ยว ๆ</li>
+    <li>เน้นย้ำมารยาทและน้ำเสียงสุภาพ ไม่ใช่แค่ความถูกต้องทางไวยากรณ์</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Role-Play Stations</b> — แบ่งมุมห้องเป็น 7 สถานการณ์ ให้นักเรียนหมุนเวียนเล่นบทสนทนาแต่ละมุม</li>
+    <li><b>Phone Call Simulation</b> — ใช้โทรศัพท์ของเล่นฝึกบทสนทนาโทรศัพท์เป็นคู่ ๆ</li>
+    <li><b>Shopping Market Day</b> — จัดร้านค้าจำลองในห้อง ให้นักเรียนฝึกซื้อ-ขายด้วยสำนวนที่เรียน</li>
+    <li><b>Direction Maze</b> — วาดแผนที่ห้องเรียน/โรงเรียน ให้นักเรียนฝึกถามและบอกทาง</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 โดยเฉพาะการตอบไม่ตรงประเภทคำถาม เพื่อวางแผนการสอนซ่อมเสริม</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> เขียนบทสนทนาสั้น 6 ประโยคระหว่างเพื่อน 2 คนที่เจอกันครั้งแรก โดยใช้สำนวนทักทาย/แนะนำตัว</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> สัมภาษณ์คนในครอบครัว 1 คน ด้วยการขอร้อง/ขออนุญาตอย่างน้อย 2 ประโยค แล้วจดคำตอบมาเล่าในห้องเรียน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> ฝึกพูดบทสนทนาถามทางกับเพื่อน โดยใช้แผนที่จริงในหมู่บ้าน/ชุมชนของตัวเอง</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> หาบทสนทนาภาษาอังกฤษจากหนังหรือซีรีส์ที่ชอบ 1 ฉาก แล้วเขียนบทและแปลไทย</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"การพูดคุยที่ดีเริ่มจากคำง่าย ๆ ไม่กี่คำ" 🌟</div>
+    <div class="sub">บทสนทนาในชีวิตประจำวันคือภาษาอังกฤษที่ใช้ได้จริงที่สุด ถ้าวันนี้จำสำนวนพื้นฐาน 7 สถานการณ์ได้แม่นแล้ว จะกล้าพูดภาษาอังกฤษกับใครก็ได้มากขึ้นเยอะเลย อย่ากลัวที่จะพูดผิด เพราะการสื่อสารสำคัญกว่าความสมบูรณ์แบบ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง Conversation ค่ะ รวมสำนวนสำคัญ 7 สถานการณ์ในชีวิตประจำวัน</div><div class="line">✅ ทักทาย/ขอบคุณ/ขอโทษ ใช้เปิดบทสนทนาและแสดงมารยาทพื้นฐาน</div><div class="line">✅ ขอร้อง/ขออนุญาต ใช้ Could/Can/May นำหน้า ตอบรับด้วย Sure หรือปฏิเสธอย่างสุภาพ</div><div class="line">✅ ซื้อของและถามทาง เน้นตอบให้ตรงประเภท (ราคา หรือ ทิศทาง)</div><div class="line">✅ โทรศัพท์ใช้สูตร May I speak to...? — This is...speaking. เป็นมาตรฐาน</div><div class="line">✅ กล่าวลาให้เลือกใช้ให้เหมาะกับความสนิทสนม (เป็นทางการ vs เป็นกันเอง)</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

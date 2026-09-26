@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>English M.3 — เรียนภาษาอังกฤษให้สนุกทุกวัน กับน้องปัน 🐼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="แอปเรียนภาษาอังกฤษสำหรับนักเรียน ม.3 — สนุก สีสันสด สะสม XP และ Streak ทุกวัน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+</head>
+<body class="no-bottom-nav">
+
+<div class="container">
+
+  <header class="topbar" style="justify-content:flex-end;">
+    <button id="themeToggleBtn" class="icon-btn" aria-label="สลับโหมดมืด">🌙</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="center mt-16">
+    <div class="mascot-avatar mascot-avatar-lg">🐼</div>
+    <h1 style="font-size:1.9rem;margin:12px 0 8px;">เรียนภาษาอังกฤษ<br>ให้สนุกทุกวัน</h1>
+    <p class="muted" style="font-size:1rem;">กับน้องปัน เพื่อนคู่ใจนักผจญภัยภาษาอังกฤษ<br>สำหรับนักเรียน ม.3 พื้นฐานอ่อนก็เริ่มได้</p>
+  </section>
+
+  <div class="stack mt-24">
+    <a href="login.html" class="btn btn-primary">เริ่มเรียนฟรี 🚀</a>
+    <a href="login.html" class="btn btn-outline">เข้าสู่ระบบ</a>
+  </div>
+
+  <!-- Feature highlights -->
+  <section class="mt-24">
+    <div class="grid-2">
+      <div class="card center">
+        <div style="font-size:2rem;">🎮</div>
+        <div style="font-weight:700;margin-top:6px;">เกมสนุก 5 เกม</div>
+        <div class="muted" style="font-size:.82rem;">ฝึกคำศัพท์ผ่านการเล่น</div>
+      </div>
+      <div class="card center">
+        <div style="font-size:2rem;">📚</div>
+        <div style="font-weight:700;margin-top:6px;">15 บทเรียนครบ</div>
+        <div class="muted" style="font-size:.82rem;">ตั้งแต่พื้นฐานถึงสอบเข้า</div>
+      </div>
+      <div class="card center">
+        <div style="font-size:2rem;">🔥</div>
+        <div style="font-weight:700;margin-top:6px;">สร้าง Streak</div>
+        <div class="muted" style="font-size:.82rem;">เรียนต่อเนื่องทุกวัน</div>
+      </div>
+      <div class="card center">
+        <div style="font-size:2rem;">⭐</div>
+        <div style="font-weight:700;margin-top:6px;">สะสม XP และดาว</div>
+        <div class="muted" style="font-size:.82rem;">ปลดล็อกรางวัลใหม่ ๆ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="card mt-24 row" style="justify-content:space-around;text-align:center;">
+    <div><div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--primary);">15+</div><div class="muted" style="font-size:.78rem;">บทเรียน</div></div>
+    <div><div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--streak);">5</div><div class="muted" style="font-size:.78rem;">เกมสนุก</div></div>
+    <div><div style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent-dark);">100%</div><div class="muted" style="font-size:.78rem;">ฟรี</div></div>
+  </section>
+
+  <footer class="center muted mt-24" style="font-size:.8rem;padding:20px 0 30px;">
+    English M.3 Course · ทำด้วย 💜 เพื่อนักเรียนไทย
+  </footer>
+
+</div>
+
+<script>
+  var btn = document.getElementById('themeToggleBtn');
+  function syncIcon(){ btn.textContent = ThemeToggle.get() === 'dark' ? '☀️' : '🌙'; }
+  syncIcon();
+  btn.addEventListener('click', function(){ ThemeToggle.toggle(); syncIcon(); });
+</script>
+</body>
+</html>

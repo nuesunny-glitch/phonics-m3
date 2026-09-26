@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เข้าสู่ระบบ — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+</head>
+<body class="no-bottom-nav">
+
+<div class="container">
+
+  <header class="topbar">
+    <a href="index.html" class="icon-btn" aria-label="กลับหน้าแรก">←</a>
+    <button id="themeToggleBtn" class="icon-btn" aria-label="สลับโหมดมืด">🌙</button>
+  </header>
+
+  <section class="center mt-16 mb-16">
+    <div class="mascot-avatar mascot-avatar-lg">🐼</div>
+    <h1 style="font-size:1.5rem;margin:10px 0 4px;">ยินดีต้อนรับกลับมา!</h1>
+    <p class="muted">เข้าสู่ระบบเพื่อเรียนต่อจากที่ค้างไว้</p>
+  </section>
+
+  <form id="loginForm" class="card-lg card">
+    <div class="field">
+      <label for="username">ชื่อผู้ใช้ หรือ อีเมล</label>
+      <input type="text" id="username" placeholder="เช่น minmin_study" autocomplete="username">
+    </div>
+    <div class="field" style="margin-bottom:8px;">
+      <label for="password">รหัสผ่าน</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <div class="row-between mb-16">
+      <label class="row" style="gap:8px;font-size:.85rem;color:var(--ink-muted);">
+        <input type="checkbox" style="width:16px;height:16px;"> จำฉันไว้
+      </label>
+      <a href="#" class="muted" style="font-size:.85rem;">ลืมรหัสผ่าน?</a>
+    </div>
+    <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+  </form>
+
+  <p class="center muted mt-16" style="font-size:.9rem;">
+    ยังไม่มีบัญชี? <a href="login.html?mode=signup" id="signupLink" style="color:var(--primary);font-weight:700;">สมัครเลย</a>
+  </p>
+
+  <p class="center muted mt-24" style="font-size:.72rem;padding-bottom:20px;">
+    หน้าตัวอย่าง UI เท่านั้น — ยังไม่มีระบบยืนยันตัวตนจริง
+  </p>
+
+</div>
+
+<script>
+  var btn = document.getElementById('themeToggleBtn');
+  function syncIcon(){ btn.textContent = ThemeToggle.get() === 'dark' ? '☀️' : '🌙'; }
+  syncIcon();
+  btn.addEventListener('click', function(){ ThemeToggle.toggle(); syncIcon(); });
+
+  // Phase 2 is UI-only — no backend/auth yet, so "login" just proceeds to
+  // the dashboard mockup. Wire this up to a real auth call later.
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    window.location.href = 'dashboard.html';
+  });
+
+  if (window.location.search.indexOf('mode=signup') !== -1) {
+    document.querySelector('h1').textContent = 'สร้างบัญชีใหม่';
+    document.querySelector('.container > section p.muted').textContent = 'สมัครฟรี เริ่มเรียนได้ทันที';
+    document.querySelector('button[type="submit"]').textContent = 'สมัครสมาชิก';
+  }
+</script>
+</body>
+</html>

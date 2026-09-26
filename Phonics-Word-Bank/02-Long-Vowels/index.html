@@ -1,0 +1,4415 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>02-Long-Vowels Phonics Word Bank</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 17px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 16px 22px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 14px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 25px;
+  margin: 0 0 4px;
+}
+.banner .sub { font-size: 14px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px 18px 14px;
+  margin: 26px 0 22px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+  padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; }
+.emoji-badge {
+  font-size: 42px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 78px; height: 78px; min-width: 78px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 19px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 2px 8px; margin-top: 4px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin: 14px 0 12px; }
+.choice { font-size: 17px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; }
+.write-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; }
+.write-row .letters { display: flex; gap: 8px; }
+.write-row .letter-box {
+  width: 30px; height: 30px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 26px; border: 3px dashed #2952e3; border-radius: 16px; padding: 14px 18px;
+  font-size: 17px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 20px; font-size: 11.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 15px; color: #fff; background: #2952e3; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px;
+}
+.part-desc { font-size: 12.5px; color: #55607a; margin: -4px 0 10px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 15px; padding: 8px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 8px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 24px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 28px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 8px 14px; margin-bottom: 8px; font-size: 15px;
+}
+.explain-block { margin-bottom: 22px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 19px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 4px; margin-bottom: 10px;
+}
+.explain-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 10px 16px; margin-bottom: 10px; font-size: 14.5px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+}
+.answer-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 16px; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 7px 10px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 20px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+:root {
+  --font-en: 'Inter', 'Noto Sans Thai', sans-serif;
+  --font-title: 'Nunito', 'Noto Sans Thai', sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { font-family: var(--font-en); font-size: 18px; line-height: 1.75; color: #24304a; }
+
+@page { size: A4; margin: 16mm 12mm; }
+
+/* ---------- COVER ---------- */
+.cover-page {
+  min-height: 235mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28mm 18mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-kicker { font-size: 16px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; opacity: 0.92; margin-bottom: 6px; }
+.cover-title-en { font-family: var(--font-title); font-weight: 900; font-size: 68px; margin: 0; line-height: 1.05; text-shadow: 0 6px 16px rgba(0,0,0,0.28); }
+.cover-title-th { font-family: var(--font-title); font-size: 27px; font-weight: 800; margin-top: 14px; }
+.cover-subtitle { font-size: 19px; font-weight: 600; margin-top: 10px; opacity: 0.97; font-style: italic; }
+.cover-desc { font-size: 15.5px; font-weight: 500; margin-top: 18px; opacity: 0.95; max-width: 130mm; line-height: 1.6; }
+.cover-stats { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.cover-stat { background: rgba(255,255,255,0.97); color:#24304a; border-radius: 18px; padding: 12px 22px; font-weight: 800; font-size: 15.5px; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+.cover-credit { margin-top: 28px; font-size: 14px; font-weight: 600; background: rgba(255,255,255,0.22); padding: 7px 20px; border-radius: 999px; }
+
+/* ---------- TABLE OF CONTENTS ---------- */
+.toc-page { padding: 8mm 4mm 4mm; }
+.toc-page h2 { font-family: var(--font-title); font-weight: 800; text-align:center; color:#1e2b5c; font-size: 30px; margin-bottom: 8px; }
+.toc-page > p { text-align:center; color:#55607a; font-size: 17px; line-height: 1.7; max-width: 150mm; margin: 0 auto 22px; }
+.toc-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-top: 10px; }
+.toc-card { border-radius: 18px; padding: 20px 10px; text-align: center; color: #fff; font-weight: 800; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.toc-card .tc-letter { font-family: var(--font-title); font-size: 26px; font-weight: 900; }
+.toc-card .tc-thai { font-size: 14px; font-weight: 600; margin-top: 6px; line-height: 1.5; }
+.toc-card .tc-count { font-size: 13px; margin-top: 10px; opacity: 0.92; }
+.toc-page .tip-card { font-size: 16px; line-height: 1.7; padding: 18px 22px; margin-top: 28px; }
+
+/* ---------- GROUP SECTION ---------- */
+.group-page { page-break-before: always; padding-top: 4mm; }
+.group-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 20px; padding: 22px 28px; margin-bottom: 22px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.group-banner h1 { font-family: var(--font-title); font-weight: 800; font-size: 32px; margin: 0; }
+.group-banner .eng { font-size: 15px; font-weight: 600; opacity: 0.95; margin-top: 2px; }
+.group-banner .chip { background: rgba(255,255,255,0.3); border-radius: 999px; padding: 8px 20px; font-size: 15px; font-weight: 800; white-space: nowrap; }
+.gb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.gb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.gb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.gb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.gb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+
+/* ---------- WORD TABLE ---------- */
+.word-table { width: 100%; border-collapse: collapse; font-size: 17px; margin-bottom: 6mm; table-layout: fixed; }
+.word-table col.c-num    { width: 4%; }
+.word-table col.c-word   { width: 13%; }
+.word-table col.c-pattern{ width: 11%; }
+.word-table col.c-thai   { width: 13%; }
+.word-table col.c-meaning{ width: 15%; }
+.word-table col.c-en     { width: 25%; }
+.word-table col.c-th     { width: 19%; }
+
+.word-table thead th {
+  background: #2952e3; color: #fff; font-family: var(--font-title); font-weight: 800;
+  font-size: 22px; padding: 14px 12px; text-align: center; line-height: 1.3;
+}
+.word-table tbody td {
+  padding: 14px 14px; border-bottom: 1px solid #e4e8f5; vertical-align: middle;
+  line-height: 1.65;
+}
+.word-table tbody tr:nth-child(odd) td { background: #ffffff; }
+.word-table tbody tr:nth-child(even) td { background: #f4f5f8; }
+
+.word-table .num-col     { text-align: center; color: #a3abc0; font-weight: 700; font-size: 14px; }
+.word-table .word-col    { text-align: center; font-weight: 800; color: #1e2b5c; font-size: 21px; letter-spacing: 0.2px; }
+.word-table .pattern-col { text-align: center; color: #2952e3; font-weight: 700; font-size: 16px; }
+.word-table .thai-col    { text-align: center; color: #b3261e; font-weight: 700; font-size: 17px; }
+.word-table .meaning-col { text-align: center; font-size: 16.5px; }
+.word-table .en-col      { text-align: left; color: #24304a; font-size: 16.5px; }
+.word-table .th-col      { text-align: left; color: #5c6785; font-size: 15.5px; }
+
+.vowel-hl { color: #e8531f; font-weight: 900; }
+
+.continued-tag { font-size: 13px; font-weight: 700; color: #8891a8; margin: -12px 0 14px; text-align: right; }
+
+@media print {
+  .group-page { page-break-before: always; }
+  thead { display: table-header-group; }
+}
+</style>
+</head>
+<body>
+<div class="sheet cover-page" id="cover">
+  <div class="cover-kicker">English M.3 · Phonics Word Bank</div>
+  <h1 class="cover-title-en">Long Vowels<br>Word Bank</h1>
+  <div class="cover-title-th">คลังคำศัพท์ สระเสียงยาว 5 ตัว (a, e, i, o, u)</div>
+  <div class="cover-subtitle">Phonics Reading System for Thai Students</div>
+  <div class="cover-desc">หนังสือเรียนภาษาอังกฤษ ม.3 · หัวข้อที่ 2: Long Vowels · เตรียมสอบเข้า ม.4</div>
+  <div class="cover-stats">
+    <div class="cover-stat">📚 5 กลุ่มสระ</div>
+    <div class="cover-stat">🔤 500 คำศัพท์</div>
+    <div class="cover-stat">🗣️ คำอ่านไทย + คำแปล</div>
+    <div class="cover-stat">✏️ ตัวอย่างประโยค</div>
+  </div>
+  <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+</div>
+<div class="sheet toc-page">
+  <h2>📖 สารบัญ 5 กลุ่มสระเสียงยาว</h2>
+  <p>แต่ละกลุ่มมี 100 คำศัพท์ พร้อมรูปแบบการสะกด (Phonics Pattern), คำอ่านภาษาไทย, คำแปล, และตัวอย่างประโยค</p>
+  <div class="toc-grid"><div class="toc-card gb-c1">
+    <div class="tc-letter">Long A</div>
+    <div class="tc-thai">สระเสียงยาว A (เอ)</div>
+    <div class="tc-count">100 คำ</div>
+  </div><div class="toc-card gb-c2">
+    <div class="tc-letter">Long E</div>
+    <div class="tc-thai">สระเสียงยาว E (อี)</div>
+    <div class="tc-count">100 คำ</div>
+  </div><div class="toc-card gb-c3">
+    <div class="tc-letter">Long I</div>
+    <div class="tc-thai">สระเสียงยาว I (ไอ)</div>
+    <div class="tc-count">100 คำ</div>
+  </div><div class="toc-card gb-c4">
+    <div class="tc-letter">Long O</div>
+    <div class="tc-thai">สระเสียงยาว O (โอ)</div>
+    <div class="tc-count">100 คำ</div>
+  </div><div class="toc-card gb-c5">
+    <div class="tc-letter">Long U</div>
+    <div class="tc-thai">สระเสียงยาว U (อู)</div>
+    <div class="tc-count">100 คำ</div>
+  </div></div>
+  <div class="tip-card">💡 <b>วิธีใช้:</b> อ่านคำในตารางออกเสียงตามคำอ่านภาษาไทยที่กำกับไว้ (เป็นการประมาณเสียง ไม่ใช่การสะกดแบบไทยแท้) แล้วลองแต่งประโยคของตัวเองโดยเลียนแบบตัวอย่างที่ให้ไว้ — ตัวอักษรสระที่ไฮไลต์สีส้มในแต่ละคำคือกลุ่มตัวอักษรที่ออกเสียงสระเสียงยาวที่กำลังฝึก</div>
+</div>
+<div class="sheet group-page" id="group-a">
+  <div class="group-banner gb-c1">
+    <div><h1>🔤 Long A</h1><div class="eng">สระเสียงยาว A (เอ)</div></div>
+    <div class="chip">100 คำ</div>
+  </div>
+  <table class="word-table">
+    <colgroup>
+      <col class="c-num"><col class="c-word"><col class="c-pattern"><col class="c-thai">
+      <col class="c-meaning"><col class="c-en"><col class="c-th">
+    </colgroup>
+    <thead>
+      <tr><th>#</th><th>Word</th><th>Pattern</th><th>คำอ่าน</th><th>คำแปล</th><th>ตัวอย่างประโยค</th><th>คำแปลประโยค</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="num-col">1</td>
+    <td class="word-col">c<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เค้ก</td>
+    <td class="meaning-col">ขนมเค้ก</td>
+    <td class="en-col">I eat a cake.</td>
+    <td class="th-col">ฉันกินเค้ก</td>
+  </tr><tr>
+    <td class="num-col">2</td>
+    <td class="word-col">b<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เบก</td>
+    <td class="meaning-col">อบ(ขนม)</td>
+    <td class="en-col">She likes to bake cookies.</td>
+    <td class="th-col">เธอชอบอบคุกกี้</td>
+  </tr><tr>
+    <td class="num-col">3</td>
+    <td class="word-col">l<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เลก</td>
+    <td class="meaning-col">ทะเลสาบ</td>
+    <td class="en-col">We swim in the lake.</td>
+    <td class="th-col">เราว่ายน้ำในทะเลสาบ</td>
+  </tr><tr>
+    <td class="num-col">4</td>
+    <td class="word-col">m<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เมก</td>
+    <td class="meaning-col">ทำ</td>
+    <td class="en-col">I make my bed every day.</td>
+    <td class="th-col">ฉันจัดเตียงทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">5</td>
+    <td class="word-col">t<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เทก</td>
+    <td class="meaning-col">เอาไป/พา</td>
+    <td class="en-col">Please take a seat.</td>
+    <td class="th-col">กรุณานั่งลง</td>
+  </tr><tr>
+    <td class="num-col">6</td>
+    <td class="word-col">w<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เวก</td>
+    <td class="meaning-col">ตื่น</td>
+    <td class="en-col">I wake up early.</td>
+    <td class="th-col">ฉันตื่นเช้า</td>
+  </tr><tr>
+    <td class="num-col">7</td>
+    <td class="word-col">r<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เรก</td>
+    <td class="meaning-col">คราด</td>
+    <td class="en-col">He rakes the leaves.</td>
+    <td class="th-col">เขาคราดใบไม้</td>
+  </tr><tr>
+    <td class="num-col">8</td>
+    <td class="word-col">f<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เฟก</td>
+    <td class="meaning-col">ปลอม</td>
+    <td class="en-col">This watch is fake.</td>
+    <td class="th-col">นาฬิกาเรือนนี้เป็นของปลอม</td>
+  </tr><tr>
+    <td class="num-col">9</td>
+    <td class="word-col">br<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เบรก</td>
+    <td class="meaning-col">เบรก/ห้ามล้อ</td>
+    <td class="en-col">Press the brake now.</td>
+    <td class="th-col">เหยียบเบรกเดี๋ยวนี้</td>
+  </tr><tr>
+    <td class="num-col">10</td>
+    <td class="word-col">sh<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เชก</td>
+    <td class="meaning-col">เขย่า</td>
+    <td class="en-col">Shake the bottle well.</td>
+    <td class="th-col">เขย่าขวดให้ดี</td>
+  </tr><tr>
+    <td class="num-col">11</td>
+    <td class="word-col">sn<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">สเนก</td>
+    <td class="meaning-col">งู</td>
+    <td class="en-col">A snake hides in the grass.</td>
+    <td class="th-col">งูซ่อนอยู่ในหญ้า</td>
+  </tr><tr>
+    <td class="num-col">12</td>
+    <td class="word-col">fl<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เฟลก</td>
+    <td class="meaning-col">เกล็ด</td>
+    <td class="en-col">A flake of snow fell.</td>
+    <td class="th-col">เกล็ดหิมะเกล็ดหนึ่งตกลงมา</td>
+  </tr><tr>
+    <td class="num-col">13</td>
+    <td class="word-col">st<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">สเต็ก</td>
+    <td class="meaning-col">หลักไม้/เดิมพัน</td>
+    <td class="en-col">The player raised the stake.</td>
+    <td class="th-col">ผู้เล่นเพิ่มเงินเดิมพัน</td>
+  </tr><tr>
+    <td class="num-col">14</td>
+    <td class="word-col">qu<span class="vowel-hl">ake</span></td>
+    <td class="pattern-col">-ake</td>
+    <td class="thai-col">เควก</td>
+    <td class="meaning-col">แผ่นดินไหว/สั่นสะเทือน</td>
+    <td class="en-col">The ground began to quake.</td>
+    <td class="th-col">พื้นดินเริ่มสั่นสะเทือน</td>
+  </tr><tr>
+    <td class="num-col">15</td>
+    <td class="word-col">g<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เกม</td>
+    <td class="meaning-col">เกม</td>
+    <td class="en-col">We play a fun game.</td>
+    <td class="th-col">เราเล่นเกมสนุก</td>
+  </tr><tr>
+    <td class="num-col">16</td>
+    <td class="word-col">n<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เนม</td>
+    <td class="meaning-col">ชื่อ</td>
+    <td class="en-col">What is your name?</td>
+    <td class="th-col">คุณชื่ออะไร</td>
+  </tr><tr>
+    <td class="num-col">17</td>
+    <td class="word-col">s<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เซม</td>
+    <td class="meaning-col">เหมือนกัน</td>
+    <td class="en-col">We wear the same shirt.</td>
+    <td class="th-col">เราใส่เสื้อเหมือนกัน</td>
+  </tr><tr>
+    <td class="num-col">18</td>
+    <td class="word-col">c<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เคม</td>
+    <td class="meaning-col">มา(อดีต)</td>
+    <td class="en-col">She came to my house.</td>
+    <td class="th-col">เธอมาที่บ้านฉัน</td>
+  </tr><tr>
+    <td class="num-col">19</td>
+    <td class="word-col">f<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เฟม</td>
+    <td class="meaning-col">ชื่อเสียง</td>
+    <td class="en-col">The singer found fame.</td>
+    <td class="th-col">นักร้องคนนั้นมีชื่อเสียง</td>
+  </tr><tr>
+    <td class="num-col">20</td>
+    <td class="word-col">t<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เทม</td>
+    <td class="meaning-col">เชื่อง</td>
+    <td class="en-col">The tiger is very tame.</td>
+    <td class="th-col">เสือตัวนั้นเชื่องมาก</td>
+  </tr><tr>
+    <td class="num-col">21</td>
+    <td class="word-col">bl<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เบลม</td>
+    <td class="meaning-col">ตำหนิ/โทษ</td>
+    <td class="en-col">Don't blame me for this.</td>
+    <td class="th-col">อย่าโทษฉันสำหรับเรื่องนี้</td>
+  </tr><tr>
+    <td class="num-col">22</td>
+    <td class="word-col">fl<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เฟลม</td>
+    <td class="meaning-col">เปลวไฟ</td>
+    <td class="en-col">The flame is very hot.</td>
+    <td class="th-col">เปลวไฟร้อนมาก</td>
+  </tr><tr>
+    <td class="num-col">23</td>
+    <td class="word-col">fr<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เฟรม</td>
+    <td class="meaning-col">กรอบ</td>
+    <td class="en-col">Put the photo in a frame.</td>
+    <td class="th-col">ใส่รูปถ่ายในกรอบ</td>
+  </tr><tr>
+    <td class="num-col">24</td>
+    <td class="word-col">sh<span class="vowel-hl">ame</span></td>
+    <td class="pattern-col">-ame</td>
+    <td class="thai-col">เชม</td>
+    <td class="meaning-col">ความอับอาย</td>
+    <td class="en-col">He felt shame after losing.</td>
+    <td class="th-col">เขารู้สึกอับอายหลังจากแพ้</td>
+  </tr><tr>
+    <td class="num-col">25</td>
+    <td class="word-col">g<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เกท</td>
+    <td class="meaning-col">ประตูรั้ว</td>
+    <td class="en-col">Close the gate, please.</td>
+    <td class="th-col">กรุณาปิดประตูรั้ว</td>
+  </tr><tr>
+    <td class="num-col">26</td>
+    <td class="word-col">l<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เลท</td>
+    <td class="meaning-col">สาย(เวลา)</td>
+    <td class="en-col">I am late for school.</td>
+    <td class="th-col">ฉันไปโรงเรียนสาย</td>
+  </tr><tr>
+    <td class="num-col">27</td>
+    <td class="word-col">d<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เดท</td>
+    <td class="meaning-col">วันที่/เดท</td>
+    <td class="en-col">What is the date today?</td>
+    <td class="th-col">วันนี้วันที่เท่าไหร่</td>
+  </tr><tr>
+    <td class="num-col">28</td>
+    <td class="word-col">r<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เรท</td>
+    <td class="meaning-col">อัตรา</td>
+    <td class="en-col">The interest rate is high.</td>
+    <td class="th-col">อัตราดอกเบี้ยสูง</td>
+  </tr><tr>
+    <td class="num-col">29</td>
+    <td class="word-col">h<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เฮท</td>
+    <td class="meaning-col">เกลียด</td>
+    <td class="en-col">I hate spicy food.</td>
+    <td class="th-col">ฉันเกลียดอาหารเผ็ด</td>
+  </tr><tr>
+    <td class="num-col">30</td>
+    <td class="word-col">f<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เฟท</td>
+    <td class="meaning-col">โชคชะตา</td>
+    <td class="en-col">Fate brought us together.</td>
+    <td class="th-col">โชคชะตานำเรามาพบกัน</td>
+  </tr><tr>
+    <td class="num-col">31</td>
+    <td class="word-col">pl<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เพลท</td>
+    <td class="meaning-col">จาน</td>
+    <td class="en-col">Put the food on a plate.</td>
+    <td class="th-col">ใส่อาหารลงบนจาน</td>
+  </tr><tr>
+    <td class="num-col">32</td>
+    <td class="word-col">sk<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">สเกท</td>
+    <td class="meaning-col">เล่นสเก็ต</td>
+    <td class="en-col">They skate on the ice.</td>
+    <td class="th-col">พวกเขาเล่นสเก็ตบนน้ำแข็ง</td>
+  </tr><tr>
+    <td class="num-col">33</td>
+    <td class="word-col">cr<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เครท</td>
+    <td class="meaning-col">ลัง</td>
+    <td class="en-col">The crate is full of fruit.</td>
+    <td class="th-col">ลังใบนี้เต็มไปด้วยผลไม้</td>
+  </tr><tr>
+    <td class="num-col">34</td>
+    <td class="word-col">st<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">สเตท</td>
+    <td class="meaning-col">รัฐ/สภาพ</td>
+    <td class="en-col">New York is a famous state.</td>
+    <td class="th-col">นิวยอร์กเป็นรัฐที่มีชื่อเสียง</td>
+  </tr><tr>
+    <td class="num-col">35</td>
+    <td class="word-col">gr<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">เกรท</td>
+    <td class="meaning-col">ขูด(ชีส)</td>
+    <td class="en-col">Grate the cheese finely.</td>
+    <td class="th-col">ขูดชีสให้ละเอียด</td>
+  </tr><tr>
+    <td class="num-col">36</td>
+    <td class="word-col">sl<span class="vowel-hl">ate</span></td>
+    <td class="pattern-col">-ate</td>
+    <td class="thai-col">สเลท</td>
+    <td class="meaning-col">หินชนวน</td>
+    <td class="en-col">The roof is made of slate.</td>
+    <td class="th-col">หลังคาทำจากหินชนวน</td>
+  </tr><tr>
+    <td class="num-col">37</td>
+    <td class="word-col">f<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เฟซ</td>
+    <td class="meaning-col">ใบหน้า</td>
+    <td class="en-col">Wash your face now.</td>
+    <td class="th-col">ล้างหน้าเดี๋ยวนี้</td>
+  </tr><tr>
+    <td class="num-col">38</td>
+    <td class="word-col">r<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เรซ</td>
+    <td class="meaning-col">การแข่งขัน</td>
+    <td class="en-col">He won the race.</td>
+    <td class="th-col">เขาชนะการแข่งขัน</td>
+  </tr><tr>
+    <td class="num-col">39</td>
+    <td class="word-col">pl<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เพลซ</td>
+    <td class="meaning-col">สถานที่</td>
+    <td class="en-col">This is a nice place.</td>
+    <td class="th-col">ที่นี่เป็นสถานที่ที่ดี</td>
+  </tr><tr>
+    <td class="num-col">40</td>
+    <td class="word-col">sp<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">สเปซ</td>
+    <td class="meaning-col">อวกาศ/พื้นที่</td>
+    <td class="en-col">Rockets fly into space.</td>
+    <td class="th-col">จรวดบินสู่อวกาศ</td>
+  </tr><tr>
+    <td class="num-col">41</td>
+    <td class="word-col">l<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เลซ</td>
+    <td class="meaning-col">ลูกไม้/ผูกเชือก</td>
+    <td class="en-col">Her dress has lace.</td>
+    <td class="th-col">ชุดของเธอมีลูกไม้</td>
+  </tr><tr>
+    <td class="num-col">42</td>
+    <td class="word-col">p<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เพซ</td>
+    <td class="meaning-col">จังหวะก้าว</td>
+    <td class="en-col">He walks at a slow pace.</td>
+    <td class="th-col">เขาเดินด้วยจังหวะช้า</td>
+  </tr><tr>
+    <td class="num-col">43</td>
+    <td class="word-col">tr<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เทรซ</td>
+    <td class="meaning-col">ร่องรอย</td>
+    <td class="en-col">There is no trace of him.</td>
+    <td class="th-col">ไม่มีร่องรอยของเขาเลย</td>
+  </tr><tr>
+    <td class="num-col">44</td>
+    <td class="word-col">br<span class="vowel-hl">ace</span></td>
+    <td class="pattern-col">-ace</td>
+    <td class="thai-col">เบรซ</td>
+    <td class="meaning-col">ที่ยึด/เหล็กดัดฟัน</td>
+    <td class="en-col">She wears a brace on her teeth.</td>
+    <td class="th-col">เธอใส่เหล็กดัดฟัน</td>
+  </tr><tr>
+    <td class="num-col">45</td>
+    <td class="word-col">m<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เมด</td>
+    <td class="meaning-col">ทำ(อดีต)</td>
+    <td class="en-col">This cake is made by mom.</td>
+    <td class="th-col">เค้กนี้ทำโดยแม่</td>
+  </tr><tr>
+    <td class="num-col">46</td>
+    <td class="word-col">f<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เฟด</td>
+    <td class="meaning-col">จางหาย</td>
+    <td class="en-col">The color will fade in the sun.</td>
+    <td class="th-col">สีจะจางหายในแดด</td>
+  </tr><tr>
+    <td class="num-col">47</td>
+    <td class="word-col">sh<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เชด</td>
+    <td class="meaning-col">ร่มเงา</td>
+    <td class="en-col">We sit in the shade.</td>
+    <td class="th-col">เรานั่งในที่ร่ม</td>
+  </tr><tr>
+    <td class="num-col">48</td>
+    <td class="word-col">tr<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เทรด</td>
+    <td class="meaning-col">ค้าขาย</td>
+    <td class="en-col">They trade goods every week.</td>
+    <td class="th-col">พวกเขาค้าขายสินค้าทุกสัปดาห์</td>
+  </tr><tr>
+    <td class="num-col">49</td>
+    <td class="word-col">gr<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เกรด</td>
+    <td class="meaning-col">เกรด/ระดับชั้น</td>
+    <td class="en-col">She got a good grade.</td>
+    <td class="th-col">เธอได้เกรดดี</td>
+  </tr><tr>
+    <td class="num-col">50</td>
+    <td class="word-col">bl<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">เบลด</td>
+    <td class="meaning-col">ใบมีด</td>
+    <td class="en-col">The blade is very sharp.</td>
+    <td class="th-col">ใบมีดคมมาก</td>
+  </tr><tr>
+    <td class="num-col">51</td>
+    <td class="word-col">sp<span class="vowel-hl">ade</span></td>
+    <td class="pattern-col">-ade</td>
+    <td class="thai-col">สเปด</td>
+    <td class="meaning-col">พลั่ว/โพดำ</td>
+    <td class="en-col">He digs with a spade.</td>
+    <td class="th-col">เขาขุดด้วยพลั่ว</td>
+  </tr><tr>
+    <td class="num-col">52</td>
+    <td class="word-col">c<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เคฟ</td>
+    <td class="meaning-col">ถ้ำ</td>
+    <td class="en-col">They explore the cave.</td>
+    <td class="th-col">พวกเขาสำรวจถ้ำ</td>
+  </tr><tr>
+    <td class="num-col">53</td>
+    <td class="word-col">s<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เซฟ</td>
+    <td class="meaning-col">ออม/ช่วยชีวิต</td>
+    <td class="en-col">I save my money.</td>
+    <td class="th-col">ฉันออมเงิน</td>
+  </tr><tr>
+    <td class="num-col">54</td>
+    <td class="word-col">w<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เวฟ</td>
+    <td class="meaning-col">คลื่น/โบกมือ</td>
+    <td class="en-col">The wave is very big.</td>
+    <td class="th-col">คลื่นลูกนี้ใหญ่มาก</td>
+  </tr><tr>
+    <td class="num-col">55</td>
+    <td class="word-col">g<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เกฟ</td>
+    <td class="meaning-col">ให้(อดีต)</td>
+    <td class="en-col">She gave me a gift.</td>
+    <td class="th-col">เธอให้ของขวัญฉัน</td>
+  </tr><tr>
+    <td class="num-col">56</td>
+    <td class="word-col">br<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เบรฟ</td>
+    <td class="meaning-col">กล้าหาญ</td>
+    <td class="en-col">The brave boy saved the cat.</td>
+    <td class="th-col">เด็กชายผู้กล้าหาญช่วยแมวไว้</td>
+  </tr><tr>
+    <td class="num-col">57</td>
+    <td class="word-col">sh<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เชฟ</td>
+    <td class="meaning-col">โกน(หนวด)</td>
+    <td class="en-col">He shaves every morning.</td>
+    <td class="th-col">เขาโกนหนวดทุกเช้า</td>
+  </tr><tr>
+    <td class="num-col">58</td>
+    <td class="word-col">cr<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เครฟ</td>
+    <td class="meaning-col">อยากได้มาก</td>
+    <td class="en-col">I crave chocolate today.</td>
+    <td class="th-col">วันนี้ฉันอยากกินช็อกโกแลตมาก</td>
+  </tr><tr>
+    <td class="num-col">59</td>
+    <td class="word-col">gr<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เกรฟ</td>
+    <td class="meaning-col">หลุมศพ</td>
+    <td class="en-col">The grave is very old.</td>
+    <td class="th-col">หลุมศพนี้เก่ามาก</td>
+  </tr><tr>
+    <td class="num-col">60</td>
+    <td class="word-col">p<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">เพฟ</td>
+    <td class="meaning-col">ปูพื้น(ถนน)</td>
+    <td class="en-col">Workers pave the new road.</td>
+    <td class="th-col">คนงานปูถนนใหม่</td>
+  </tr><tr>
+    <td class="num-col">61</td>
+    <td class="word-col">sl<span class="vowel-hl">ave</span></td>
+    <td class="pattern-col">-ave</td>
+    <td class="thai-col">สเลฟ</td>
+    <td class="meaning-col">ทาส</td>
+    <td class="en-col">The slave worked all day.</td>
+    <td class="th-col">ทาสทำงานทั้งวัน</td>
+  </tr><tr>
+    <td class="num-col">62</td>
+    <td class="word-col">c<span class="vowel-hl">ane</span></td>
+    <td class="pattern-col">-ane</td>
+    <td class="thai-col">เคน</td>
+    <td class="meaning-col">ไม้เท้า/อ้อย</td>
+    <td class="en-col">Grandpa walks with a cane.</td>
+    <td class="th-col">คุณตาเดินด้วยไม้เท้า</td>
+  </tr><tr>
+    <td class="num-col">63</td>
+    <td class="word-col">l<span class="vowel-hl">ane</span></td>
+    <td class="pattern-col">-ane</td>
+    <td class="thai-col">เลน</td>
+    <td class="meaning-col">ช่องทางเดินรถ</td>
+    <td class="en-col">Stay in your lane.</td>
+    <td class="th-col">อยู่ในช่องทางของคุณ</td>
+  </tr><tr>
+    <td class="num-col">64</td>
+    <td class="word-col">m<span class="vowel-hl">ane</span></td>
+    <td class="pattern-col">-ane</td>
+    <td class="thai-col">เมน</td>
+    <td class="meaning-col">ขนคอ(สิงโต/ม้า)</td>
+    <td class="en-col">The lion has a big mane.</td>
+    <td class="th-col">สิงโตมีขนคอใหญ่</td>
+  </tr><tr>
+    <td class="num-col">65</td>
+    <td class="word-col">pl<span class="vowel-hl">ane</span></td>
+    <td class="pattern-col">-ane</td>
+    <td class="thai-col">เพลน</td>
+    <td class="meaning-col">เครื่องบิน</td>
+    <td class="en-col">We travel by plane.</td>
+    <td class="th-col">เราเดินทางโดยเครื่องบิน</td>
+  </tr><tr>
+    <td class="num-col">66</td>
+    <td class="word-col">cr<span class="vowel-hl">ane</span></td>
+    <td class="pattern-col">-ane</td>
+    <td class="thai-col">เครน</td>
+    <td class="meaning-col">นกกระเรียน/ปั้นจั่น</td>
+    <td class="en-col">The crane lifts heavy things.</td>
+    <td class="th-col">ปั้นจั่นยกของหนัก</td>
+  </tr><tr>
+    <td class="num-col">67</td>
+    <td class="word-col">d<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เดย์</td>
+    <td class="meaning-col">วัน</td>
+    <td class="en-col">Today is a nice day.</td>
+    <td class="th-col">วันนี้เป็นวันที่ดี</td>
+  </tr><tr>
+    <td class="num-col">68</td>
+    <td class="word-col">w<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เวย์</td>
+    <td class="meaning-col">ทาง/วิธี</td>
+    <td class="en-col">This is the way to school.</td>
+    <td class="th-col">นี่คือทางไปโรงเรียน</td>
+  </tr><tr>
+    <td class="num-col">69</td>
+    <td class="word-col">s<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เซย์</td>
+    <td class="meaning-col">พูด</td>
+    <td class="en-col">What did you say?</td>
+    <td class="th-col">คุณพูดว่าอะไร</td>
+  </tr><tr>
+    <td class="num-col">70</td>
+    <td class="word-col">pl<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เพลย์</td>
+    <td class="meaning-col">เล่น</td>
+    <td class="en-col">Kids play in the park.</td>
+    <td class="th-col">เด็ก ๆ เล่นในสวนสาธารณะ</td>
+  </tr><tr>
+    <td class="num-col">71</td>
+    <td class="word-col">st<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">สเตย์</td>
+    <td class="meaning-col">อยู่</td>
+    <td class="en-col">Please stay here.</td>
+    <td class="th-col">กรุณาอยู่ที่นี่</td>
+  </tr><tr>
+    <td class="num-col">72</td>
+    <td class="word-col">gr<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เกรย์</td>
+    <td class="meaning-col">สีเทา</td>
+    <td class="en-col">The sky is gray today.</td>
+    <td class="th-col">วันนี้ท้องฟ้าสีเทา</td>
+  </tr><tr>
+    <td class="num-col">73</td>
+    <td class="word-col">tr<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เทรย์</td>
+    <td class="meaning-col">ถาด</td>
+    <td class="en-col">Put the cups on the tray.</td>
+    <td class="th-col">วางแก้วบนถาด</td>
+  </tr><tr>
+    <td class="num-col">74</td>
+    <td class="word-col">cl<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เคลย์</td>
+    <td class="meaning-col">ดินเหนียว</td>
+    <td class="en-col">She makes a pot with clay.</td>
+    <td class="th-col">เธอปั้นหม้อด้วยดินเหนียว</td>
+  </tr><tr>
+    <td class="num-col">75</td>
+    <td class="word-col">pr<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เพรย์</td>
+    <td class="meaning-col">สวดมนต์</td>
+    <td class="en-col">We pray before we eat.</td>
+    <td class="th-col">เราสวดมนต์ก่อนกินข้าว</td>
+  </tr><tr>
+    <td class="num-col">76</td>
+    <td class="word-col">r<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เรย์</td>
+    <td class="meaning-col">ลำแสง</td>
+    <td class="en-col">A ray of light comes in.</td>
+    <td class="th-col">ลำแสงส่องเข้ามา</td>
+  </tr><tr>
+    <td class="num-col">77</td>
+    <td class="word-col">h<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เฮย์</td>
+    <td class="meaning-col">หญ้าแห้ง</td>
+    <td class="en-col">The horse eats hay.</td>
+    <td class="th-col">ม้ากินหญ้าแห้ง</td>
+  </tr><tr>
+    <td class="num-col">78</td>
+    <td class="word-col">m<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เมย์</td>
+    <td class="meaning-col">อาจจะ</td>
+    <td class="en-col">It may rain today.</td>
+    <td class="th-col">วันนี้ฝนอาจจะตก</td>
+  </tr><tr>
+    <td class="num-col">79</td>
+    <td class="word-col">p<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เพย์</td>
+    <td class="meaning-col">จ่ายเงิน</td>
+    <td class="en-col">I pay for my lunch.</td>
+    <td class="th-col">ฉันจ่ายค่าอาหารกลางวัน</td>
+  </tr><tr>
+    <td class="num-col">80</td>
+    <td class="word-col">l<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">เลย์</td>
+    <td class="meaning-col">วางไข่/วาง</td>
+    <td class="en-col">The hen will lay an egg.</td>
+    <td class="th-col">แม่ไก่จะออกไข่</td>
+  </tr><tr>
+    <td class="num-col">81</td>
+    <td class="word-col">str<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">สเทรย์</td>
+    <td class="meaning-col">พลัดหลง/จรจัด</td>
+    <td class="en-col">The stray dog is hungry.</td>
+    <td class="th-col">สุนัขจรจัดหิว</td>
+  </tr><tr>
+    <td class="num-col">82</td>
+    <td class="word-col">sw<span class="vowel-hl">ay</span></td>
+    <td class="pattern-col">-ay</td>
+    <td class="thai-col">สเวย์</td>
+    <td class="meaning-col">แกว่งไกว</td>
+    <td class="en-col">The trees sway in the wind.</td>
+    <td class="th-col">ต้นไม้แกว่งไกวในสายลม</td>
+  </tr><tr>
+    <td class="num-col">83</td>
+    <td class="word-col">r<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เรน</td>
+    <td class="meaning-col">ฝน</td>
+    <td class="en-col">The rain falls all day.</td>
+    <td class="th-col">ฝนตกทั้งวัน</td>
+  </tr><tr>
+    <td class="num-col">84</td>
+    <td class="word-col">p<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เพน</td>
+    <td class="meaning-col">ความเจ็บปวด</td>
+    <td class="en-col">He feels pain in his leg.</td>
+    <td class="th-col">เขารู้สึกเจ็บปวดที่ขา</td>
+  </tr><tr>
+    <td class="num-col">85</td>
+    <td class="word-col">m<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เมน</td>
+    <td class="meaning-col">หลัก/สำคัญ</td>
+    <td class="en-col">This is the main road.</td>
+    <td class="th-col">นี่คือถนนสายหลัก</td>
+  </tr><tr>
+    <td class="num-col">86</td>
+    <td class="word-col">tr<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เทรน</td>
+    <td class="meaning-col">รถไฟ</td>
+    <td class="en-col">We take the train to work.</td>
+    <td class="th-col">เราขึ้นรถไฟไปทำงาน</td>
+  </tr><tr>
+    <td class="num-col">87</td>
+    <td class="word-col">br<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เบรน</td>
+    <td class="meaning-col">สมอง</td>
+    <td class="en-col">The brain controls the body.</td>
+    <td class="th-col">สมองควบคุมร่างกาย</td>
+  </tr><tr>
+    <td class="num-col">88</td>
+    <td class="word-col">ch<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เชน</td>
+    <td class="meaning-col">โซ่</td>
+    <td class="en-col">The dog is on a chain.</td>
+    <td class="th-col">สุนัขถูกล่ามด้วยโซ่</td>
+  </tr><tr>
+    <td class="num-col">89</td>
+    <td class="word-col">pl<span class="vowel-hl">ai</span>n</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เพลน</td>
+    <td class="meaning-col">เรียบง่าย/ที่ราบ</td>
+    <td class="en-col">She wears a plain dress.</td>
+    <td class="th-col">เธอใส่ชุดเรียบง่าย</td>
+  </tr><tr>
+    <td class="num-col">90</td>
+    <td class="word-col">p<span class="vowel-hl">ai</span>nt</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เพนท์</td>
+    <td class="meaning-col">สี(ทาบ้าน)</td>
+    <td class="en-col">He paints the wall blue.</td>
+    <td class="th-col">เขาทาสีผนังเป็นสีฟ้า</td>
+  </tr><tr>
+    <td class="num-col">91</td>
+    <td class="word-col">w<span class="vowel-hl">ai</span>t</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เวท</td>
+    <td class="meaning-col">รอ</td>
+    <td class="en-col">Please wait for me.</td>
+    <td class="th-col">กรุณารอฉันด้วย</td>
+  </tr><tr>
+    <td class="num-col">92</td>
+    <td class="word-col">t<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เทล</td>
+    <td class="meaning-col">หาง</td>
+    <td class="en-col">The dog wags its tail.</td>
+    <td class="th-col">สุนัขกระดิกหาง</td>
+  </tr><tr>
+    <td class="num-col">93</td>
+    <td class="word-col">s<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เซล</td>
+    <td class="meaning-col">แล่นเรือ/ใบเรือ</td>
+    <td class="en-col">The boat sails on the sea.</td>
+    <td class="th-col">เรือแล่นในทะเล</td>
+  </tr><tr>
+    <td class="num-col">94</td>
+    <td class="word-col">n<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เนล</td>
+    <td class="meaning-col">เล็บ/ตะปู</td>
+    <td class="en-col">She paints her nails pink.</td>
+    <td class="th-col">เธอทาเล็บสีชมพู</td>
+  </tr><tr>
+    <td class="num-col">95</td>
+    <td class="word-col">m<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เมล</td>
+    <td class="meaning-col">จดหมาย</td>
+    <td class="en-col">I send mail every week.</td>
+    <td class="th-col">ฉันส่งจดหมายทุกสัปดาห์</td>
+  </tr><tr>
+    <td class="num-col">96</td>
+    <td class="word-col">f<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เฟล</td>
+    <td class="meaning-col">ล้มเหลว/สอบตก</td>
+    <td class="en-col">Don't be afraid to fail.</td>
+    <td class="th-col">อย่ากลัวที่จะล้มเหลว</td>
+  </tr><tr>
+    <td class="num-col">97</td>
+    <td class="word-col">j<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เจล</td>
+    <td class="meaning-col">คุก</td>
+    <td class="en-col">The thief is in jail.</td>
+    <td class="th-col">โจรอยู่ในคุก</td>
+  </tr><tr>
+    <td class="num-col">98</td>
+    <td class="word-col">sn<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">สเนล</td>
+    <td class="meaning-col">หอยทาก</td>
+    <td class="en-col">A snail moves very slowly.</td>
+    <td class="th-col">หอยทากเคลื่อนที่ช้ามาก</td>
+  </tr><tr>
+    <td class="num-col">99</td>
+    <td class="word-col">tr<span class="vowel-hl">ai</span>l</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เทรล</td>
+    <td class="meaning-col">เส้นทางเดินป่า</td>
+    <td class="en-col">We walk on the trail.</td>
+    <td class="th-col">เราเดินบนเส้นทางเดินป่า</td>
+  </tr><tr>
+    <td class="num-col">100</td>
+    <td class="word-col">m<span class="vowel-hl">ai</span>d</td>
+    <td class="pattern-col">-ai</td>
+    <td class="thai-col">เมด</td>
+    <td class="meaning-col">แม่บ้าน</td>
+    <td class="en-col">The maid cleans the room.</td>
+    <td class="th-col">แม่บ้านทำความสะอาดห้อง</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+<div class="sheet group-page" id="group-e">
+  <div class="group-banner gb-c2">
+    <div><h1>🔤 Long E</h1><div class="eng">สระเสียงยาว E (อี)</div></div>
+    <div class="chip">100 คำ</div>
+  </div>
+  <table class="word-table">
+    <colgroup>
+      <col class="c-num"><col class="c-word"><col class="c-pattern"><col class="c-thai">
+      <col class="c-meaning"><col class="c-en"><col class="c-th">
+    </colgroup>
+    <thead>
+      <tr><th>#</th><th>Word</th><th>Pattern</th><th>คำอ่าน</th><th>คำแปล</th><th>ตัวอย่างประโยค</th><th>คำแปลประโยค</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="num-col">1</td>
+    <td class="word-col"><span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">อีท</td>
+    <td class="meaning-col">กิน</td>
+    <td class="en-col">I eat rice every day.</td>
+    <td class="th-col">ฉันกินข้าวทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">2</td>
+    <td class="word-col">s<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">ซีท</td>
+    <td class="meaning-col">ที่นั่ง</td>
+    <td class="en-col">This seat is empty.</td>
+    <td class="th-col">ที่นั่งนี้ว่าง</td>
+  </tr><tr>
+    <td class="num-col">3</td>
+    <td class="word-col">m<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">มีท</td>
+    <td class="meaning-col">เนื้อสัตว์</td>
+    <td class="en-col">I don't eat meat.</td>
+    <td class="th-col">ฉันไม่กินเนื้อสัตว์</td>
+  </tr><tr>
+    <td class="num-col">4</td>
+    <td class="word-col">h<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">ฮีท</td>
+    <td class="meaning-col">ความร้อน</td>
+    <td class="en-col">The heat is too strong today.</td>
+    <td class="th-col">วันนี้ความร้อนแรงเกินไป</td>
+  </tr><tr>
+    <td class="num-col">5</td>
+    <td class="word-col">b<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">บีท</td>
+    <td class="meaning-col">ตี/จังหวะ</td>
+    <td class="en-col">My heart began to beat fast.</td>
+    <td class="th-col">หัวใจของฉันเริ่มเต้นเร็ว</td>
+  </tr><tr>
+    <td class="num-col">6</td>
+    <td class="word-col">n<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">นีท</td>
+    <td class="meaning-col">เรียบร้อย</td>
+    <td class="en-col">Keep your room neat.</td>
+    <td class="th-col">ทำห้องของคุณให้เรียบร้อย</td>
+  </tr><tr>
+    <td class="num-col">7</td>
+    <td class="word-col">wh<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">วีท</td>
+    <td class="meaning-col">ข้าวสาลี</td>
+    <td class="en-col">Bread is made from wheat.</td>
+    <td class="th-col">ขนมปังทำจากข้าวสาลี</td>
+  </tr><tr>
+    <td class="num-col">8</td>
+    <td class="word-col">tr<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">ทรีท</td>
+    <td class="meaning-col">ปฏิบัติ/ของกินพิเศษ</td>
+    <td class="en-col">She gave the dog a treat.</td>
+    <td class="th-col">เธอให้ขนมพิเศษแก่สุนัข</td>
+  </tr><tr>
+    <td class="num-col">9</td>
+    <td class="word-col">ch<span class="vowel-hl">eat</span></td>
+    <td class="pattern-col">-eat</td>
+    <td class="thai-col">ชีท</td>
+    <td class="meaning-col">โกง</td>
+    <td class="en-col">Don't cheat on the test.</td>
+    <td class="th-col">อย่าโกงข้อสอบ</td>
+  </tr><tr>
+    <td class="num-col">10</td>
+    <td class="word-col">s<span class="vowel-hl">ea</span></td>
+    <td class="pattern-col">-ea</td>
+    <td class="thai-col">ซี</td>
+    <td class="meaning-col">ทะเล</td>
+    <td class="en-col">We swim in the sea.</td>
+    <td class="th-col">เราว่ายน้ำในทะเล</td>
+  </tr><tr>
+    <td class="num-col">11</td>
+    <td class="word-col">t<span class="vowel-hl">ea</span></td>
+    <td class="pattern-col">-ea</td>
+    <td class="thai-col">ที</td>
+    <td class="meaning-col">ชา</td>
+    <td class="en-col">I drink tea every morning.</td>
+    <td class="th-col">ฉันดื่มชาทุกเช้า</td>
+  </tr><tr>
+    <td class="num-col">12</td>
+    <td class="word-col">p<span class="vowel-hl">ea</span></td>
+    <td class="pattern-col">-ea</td>
+    <td class="thai-col">พี</td>
+    <td class="meaning-col">ถั่วลันเตา</td>
+    <td class="en-col">I don't like green peas.</td>
+    <td class="th-col">ฉันไม่ชอบถั่วลันเตา</td>
+  </tr><tr>
+    <td class="num-col">13</td>
+    <td class="word-col">sp<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">สปีก</td>
+    <td class="meaning-col">พูด</td>
+    <td class="en-col">Can you speak English?</td>
+    <td class="th-col">คุณพูดภาษาอังกฤษได้ไหม</td>
+  </tr><tr>
+    <td class="num-col">14</td>
+    <td class="word-col">w<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">วีก</td>
+    <td class="meaning-col">อ่อนแอ</td>
+    <td class="en-col">He feels weak today.</td>
+    <td class="th-col">วันนี้เขารู้สึกอ่อนแอ</td>
+  </tr><tr>
+    <td class="num-col">15</td>
+    <td class="word-col">l<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">ลีก</td>
+    <td class="meaning-col">รั่ว</td>
+    <td class="en-col">The pipe has a leak.</td>
+    <td class="th-col">ท่อน้ำรั่ว</td>
+  </tr><tr>
+    <td class="num-col">16</td>
+    <td class="word-col">p<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">พีก</td>
+    <td class="meaning-col">ยอดเขา/จุดสูงสุด</td>
+    <td class="en-col">We reached the peak of the mountain.</td>
+    <td class="th-col">เราไปถึงยอดเขา</td>
+  </tr><tr>
+    <td class="num-col">17</td>
+    <td class="word-col">b<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">บีก</td>
+    <td class="meaning-col">จะงอยปาก</td>
+    <td class="en-col">The bird has a sharp beak.</td>
+    <td class="th-col">นกมีจะงอยปากแหลม</td>
+  </tr><tr>
+    <td class="num-col">18</td>
+    <td class="word-col">squ<span class="vowel-hl">eak</span></td>
+    <td class="pattern-col">-eak</td>
+    <td class="thai-col">สควีก</td>
+    <td class="meaning-col">เสียงแหลมเอี๊ยด</td>
+    <td class="en-col">The door began to squeak.</td>
+    <td class="th-col">ประตูเริ่มมีเสียงเอี๊ยด</td>
+  </tr><tr>
+    <td class="num-col">19</td>
+    <td class="word-col">s<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">ซีล</td>
+    <td class="meaning-col">แมวน้ำ/ปิดผนึก</td>
+    <td class="en-col">The seal swims in cold water.</td>
+    <td class="th-col">แมวน้ำว่ายน้ำในน้ำเย็น</td>
+  </tr><tr>
+    <td class="num-col">20</td>
+    <td class="word-col">m<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">มีล</td>
+    <td class="meaning-col">มื้ออาหาร</td>
+    <td class="en-col">We eat a meal together.</td>
+    <td class="th-col">เรากินอาหารมื้อหนึ่งด้วยกัน</td>
+  </tr><tr>
+    <td class="num-col">21</td>
+    <td class="word-col">h<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">ฮีล</td>
+    <td class="meaning-col">รักษาให้หาย</td>
+    <td class="en-col">The wound will heal soon.</td>
+    <td class="th-col">แผลจะหายเร็ว ๆ นี้</td>
+  </tr><tr>
+    <td class="num-col">22</td>
+    <td class="word-col">r<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">รีล</td>
+    <td class="meaning-col">จริง</td>
+    <td class="en-col">This is a real diamond.</td>
+    <td class="th-col">นี่คือเพชรแท้</td>
+  </tr><tr>
+    <td class="num-col">23</td>
+    <td class="word-col">d<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">ดีล</td>
+    <td class="meaning-col">ข้อตกลง/จัดการ</td>
+    <td class="en-col">We made a good deal.</td>
+    <td class="th-col">เราทำข้อตกลงที่ดี</td>
+  </tr><tr>
+    <td class="num-col">24</td>
+    <td class="word-col">v<span class="vowel-hl">eal</span></td>
+    <td class="pattern-col">-eal</td>
+    <td class="thai-col">วีล</td>
+    <td class="meaning-col">เนื้อลูกวัว</td>
+    <td class="en-col">He cooked veal for dinner.</td>
+    <td class="th-col">เขาทำเนื้อลูกวัวเป็นอาหารเย็น</td>
+  </tr><tr>
+    <td class="num-col">25</td>
+    <td class="word-col">t<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">ทีม</td>
+    <td class="meaning-col">ทีม</td>
+    <td class="en-col">Our team won the game.</td>
+    <td class="th-col">ทีมของเราชนะเกม</td>
+  </tr><tr>
+    <td class="num-col">26</td>
+    <td class="word-col">dr<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">ดรีม</td>
+    <td class="meaning-col">ความฝัน/ฝัน</td>
+    <td class="en-col">I had a strange dream.</td>
+    <td class="th-col">ฉันฝันแปลก ๆ</td>
+  </tr><tr>
+    <td class="num-col">27</td>
+    <td class="word-col">cr<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">ครีม</td>
+    <td class="meaning-col">ครีม</td>
+    <td class="en-col">She puts cream on her face.</td>
+    <td class="th-col">เธอทาครีมบนใบหน้า</td>
+  </tr><tr>
+    <td class="num-col">28</td>
+    <td class="word-col">str<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">สตรีม</td>
+    <td class="meaning-col">ลำธาร</td>
+    <td class="en-col">Fish swim in the stream.</td>
+    <td class="th-col">ปลาว่ายน้ำในลำธาร</td>
+  </tr><tr>
+    <td class="num-col">29</td>
+    <td class="word-col">scr<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">สกรีม</td>
+    <td class="meaning-col">กรีดร้อง</td>
+    <td class="en-col">She began to scream loudly.</td>
+    <td class="th-col">เธอเริ่มกรีดร้องเสียงดัง</td>
+  </tr><tr>
+    <td class="num-col">30</td>
+    <td class="word-col">b<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">บีม</td>
+    <td class="meaning-col">ลำแสง/คาน</td>
+    <td class="en-col">A beam of light shines through.</td>
+    <td class="th-col">ลำแสงส่องผ่านเข้ามา</td>
+  </tr><tr>
+    <td class="num-col">31</td>
+    <td class="word-col">s<span class="vowel-hl">eam</span></td>
+    <td class="pattern-col">-eam</td>
+    <td class="thai-col">ซีม</td>
+    <td class="meaning-col">ตะเข็บ</td>
+    <td class="en-col">The seam on my shirt is torn.</td>
+    <td class="th-col">ตะเข็บเสื้อของฉันขาด</td>
+  </tr><tr>
+    <td class="num-col">32</td>
+    <td class="word-col">l<span class="vowel-hl">eaf</span></td>
+    <td class="pattern-col">-eaf</td>
+    <td class="thai-col">ลีฟ</td>
+    <td class="meaning-col">ใบไม้</td>
+    <td class="en-col">A leaf fell from the tree.</td>
+    <td class="th-col">ใบไม้ร่วงจากต้นไม้</td>
+  </tr><tr>
+    <td class="num-col">33</td>
+    <td class="word-col">b<span class="vowel-hl">ean</span></td>
+    <td class="pattern-col">-ean</td>
+    <td class="thai-col">บีน</td>
+    <td class="meaning-col">ถั่ว</td>
+    <td class="en-col">I eat bean soup.</td>
+    <td class="th-col">ฉันกินซุปถั่ว</td>
+  </tr><tr>
+    <td class="num-col">34</td>
+    <td class="word-col">cl<span class="vowel-hl">ean</span></td>
+    <td class="pattern-col">-ean</td>
+    <td class="thai-col">คลีน</td>
+    <td class="meaning-col">สะอาด</td>
+    <td class="en-col">Keep your hands clean.</td>
+    <td class="th-col">ล้างมือให้สะอาด</td>
+  </tr><tr>
+    <td class="num-col">35</td>
+    <td class="word-col">l<span class="vowel-hl">ean</span></td>
+    <td class="pattern-col">-ean</td>
+    <td class="thai-col">ลีน</td>
+    <td class="meaning-col">ผอมเพรียว/เอนตัว</td>
+    <td class="en-col">He leans against the wall.</td>
+    <td class="th-col">เขาเอนตัวพิงกำแพง</td>
+  </tr><tr>
+    <td class="num-col">36</td>
+    <td class="word-col">m<span class="vowel-hl">ean</span></td>
+    <td class="pattern-col">-ean</td>
+    <td class="thai-col">มีน</td>
+    <td class="meaning-col">หมายความว่า/ใจร้าย</td>
+    <td class="en-col">What does this word mean?</td>
+    <td class="th-col">คำนี้หมายความว่าอะไร</td>
+  </tr><tr>
+    <td class="num-col">37</td>
+    <td class="word-col">b<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">บี</td>
+    <td class="meaning-col">ผึ้ง</td>
+    <td class="en-col">A bee flies to the flower.</td>
+    <td class="th-col">ผึ้งบินไปที่ดอกไม้</td>
+  </tr><tr>
+    <td class="num-col">38</td>
+    <td class="word-col">s<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">ซี</td>
+    <td class="meaning-col">เห็น</td>
+    <td class="en-col">I can see the moon.</td>
+    <td class="th-col">ฉันเห็นดวงจันทร์</td>
+  </tr><tr>
+    <td class="num-col">39</td>
+    <td class="word-col">tr<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">ทรี</td>
+    <td class="meaning-col">ต้นไม้</td>
+    <td class="en-col">The tree is very tall.</td>
+    <td class="th-col">ต้นไม้ต้นนี้สูงมาก</td>
+  </tr><tr>
+    <td class="num-col">40</td>
+    <td class="word-col">fr<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">ฟรี</td>
+    <td class="meaning-col">อิสระ/ฟรี</td>
+    <td class="en-col">The ticket is free today.</td>
+    <td class="th-col">วันนี้ตั๋วฟรี</td>
+  </tr><tr>
+    <td class="num-col">41</td>
+    <td class="word-col">thr<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">ธรี</td>
+    <td class="meaning-col">สาม</td>
+    <td class="en-col">I have three books.</td>
+    <td class="th-col">ฉันมีหนังสือสามเล่ม</td>
+  </tr><tr>
+    <td class="num-col">42</td>
+    <td class="word-col">kn<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">นี</td>
+    <td class="meaning-col">เข่า</td>
+    <td class="en-col">He hurt his knee.</td>
+    <td class="th-col">เขาเจ็บเข่า</td>
+  </tr><tr>
+    <td class="num-col">43</td>
+    <td class="word-col">gl<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">กลี</td>
+    <td class="meaning-col">ความปีติยินดี</td>
+    <td class="en-col">She jumped with glee.</td>
+    <td class="th-col">เธอกระโดดด้วยความดีใจ</td>
+  </tr><tr>
+    <td class="num-col">44</td>
+    <td class="word-col">f<span class="vowel-hl">ee</span></td>
+    <td class="pattern-col">-ee</td>
+    <td class="thai-col">ฟี</td>
+    <td class="meaning-col">ค่าธรรมเนียม</td>
+    <td class="en-col">We pay a small fee.</td>
+    <td class="th-col">เราจ่ายค่าธรรมเนียมเล็กน้อย</td>
+  </tr><tr>
+    <td class="num-col">45</td>
+    <td class="word-col">m<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">มีท</td>
+    <td class="meaning-col">พบ</td>
+    <td class="en-col">I will meet you tomorrow.</td>
+    <td class="th-col">ฉันจะพบคุณพรุ่งนี้</td>
+  </tr><tr>
+    <td class="num-col">46</td>
+    <td class="word-col">f<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">ฟีท</td>
+    <td class="meaning-col">เท้า(พหูพจน์)</td>
+    <td class="en-col">My feet hurt today.</td>
+    <td class="th-col">เท้าของฉันเจ็บวันนี้</td>
+  </tr><tr>
+    <td class="num-col">47</td>
+    <td class="word-col">sw<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">สวีท</td>
+    <td class="meaning-col">หวาน</td>
+    <td class="en-col">The candy is very sweet.</td>
+    <td class="th-col">ลูกอมนี้หวานมาก</td>
+  </tr><tr>
+    <td class="num-col">48</td>
+    <td class="word-col">str<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">สตรีท</td>
+    <td class="meaning-col">ถนน</td>
+    <td class="en-col">Cars drive on the street.</td>
+    <td class="th-col">รถวิ่งบนถนน</td>
+  </tr><tr>
+    <td class="num-col">49</td>
+    <td class="word-col">gr<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">กรีท</td>
+    <td class="meaning-col">ทักทาย</td>
+    <td class="en-col">We greet our teacher every morning.</td>
+    <td class="th-col">เราทักทายครูทุกเช้า</td>
+  </tr><tr>
+    <td class="num-col">50</td>
+    <td class="word-col">sh<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">ชีท</td>
+    <td class="meaning-col">แผ่นกระดาษ/ผ้าปูที่นอน</td>
+    <td class="en-col">Put a sheet on the bed.</td>
+    <td class="th-col">ปูผ้าปูที่นอน</td>
+  </tr><tr>
+    <td class="num-col">51</td>
+    <td class="word-col">fl<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">ฟลีท</td>
+    <td class="meaning-col">กองเรือ</td>
+    <td class="en-col">The fleet sails to the island.</td>
+    <td class="th-col">กองเรือแล่นไปยังเกาะ</td>
+  </tr><tr>
+    <td class="num-col">52</td>
+    <td class="word-col">tw<span class="vowel-hl">eet</span></td>
+    <td class="pattern-col">-eet</td>
+    <td class="thai-col">ทวีท</td>
+    <td class="meaning-col">เสียงนกร้อง/ทวีต</td>
+    <td class="en-col">The little bird gives a tweet.</td>
+    <td class="th-col">นกตัวเล็กร้องเสียงจิ๊บ</td>
+  </tr><tr>
+    <td class="num-col">53</td>
+    <td class="word-col">d<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">ดีพ</td>
+    <td class="meaning-col">ลึก</td>
+    <td class="en-col">The lake is very deep.</td>
+    <td class="th-col">ทะเลสาบนี้ลึกมาก</td>
+  </tr><tr>
+    <td class="num-col">54</td>
+    <td class="word-col">k<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">คีพ</td>
+    <td class="meaning-col">เก็บไว้</td>
+    <td class="en-col">Keep this secret, please.</td>
+    <td class="th-col">กรุณาเก็บความลับนี้ไว้</td>
+  </tr><tr>
+    <td class="num-col">55</td>
+    <td class="word-col">sl<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">สลีพ</td>
+    <td class="meaning-col">นอนหลับ</td>
+    <td class="en-col">I sleep eight hours a night.</td>
+    <td class="th-col">ฉันนอนหลับแปดชั่วโมงต่อคืน</td>
+  </tr><tr>
+    <td class="num-col">56</td>
+    <td class="word-col">sh<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">ชีพ</td>
+    <td class="meaning-col">แกะ</td>
+    <td class="en-col">The sheep eats grass.</td>
+    <td class="th-col">แกะกินหญ้า</td>
+  </tr><tr>
+    <td class="num-col">57</td>
+    <td class="word-col">j<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">จี๊ป</td>
+    <td class="meaning-col">รถจี๊ป</td>
+    <td class="en-col">We ride a jeep to the farm.</td>
+    <td class="th-col">เรานั่งรถจี๊ปไปฟาร์ม</td>
+  </tr><tr>
+    <td class="num-col">58</td>
+    <td class="word-col">sw<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">สวีพ</td>
+    <td class="meaning-col">กวาด</td>
+    <td class="en-col">She sweeps the floor every day.</td>
+    <td class="th-col">เธอกวาดพื้นทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">59</td>
+    <td class="word-col">st<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">สตีพ</td>
+    <td class="meaning-col">ชัน</td>
+    <td class="en-col">The hill is very steep.</td>
+    <td class="th-col">เนินเขานี้ชันมาก</td>
+  </tr><tr>
+    <td class="num-col">60</td>
+    <td class="word-col">cr<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">ครีพ</td>
+    <td class="meaning-col">คลาน/ย่อง</td>
+    <td class="en-col">The cat creeps toward the mouse.</td>
+    <td class="th-col">แมวย่องเข้าหาหนู</td>
+  </tr><tr>
+    <td class="num-col">61</td>
+    <td class="word-col">w<span class="vowel-hl">eep</span></td>
+    <td class="pattern-col">-eep</td>
+    <td class="thai-col">วีพ</td>
+    <td class="meaning-col">ร้องไห้</td>
+    <td class="en-col">She began to weep softly.</td>
+    <td class="th-col">เธอเริ่มร้องไห้เบา ๆ</td>
+  </tr><tr>
+    <td class="num-col">62</td>
+    <td class="word-col">f<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">ฟีด</td>
+    <td class="meaning-col">ให้อาหาร</td>
+    <td class="en-col">I feed my dog every morning.</td>
+    <td class="th-col">ฉันให้อาหารสุนัขทุกเช้า</td>
+  </tr><tr>
+    <td class="num-col">63</td>
+    <td class="word-col">n<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">นีด</td>
+    <td class="meaning-col">ต้องการ</td>
+    <td class="en-col">I need some water.</td>
+    <td class="th-col">ฉันต้องการน้ำหน่อย</td>
+  </tr><tr>
+    <td class="num-col">64</td>
+    <td class="word-col">s<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">ซีด</td>
+    <td class="meaning-col">เมล็ดพันธุ์</td>
+    <td class="en-col">Plant this seed in the soil.</td>
+    <td class="th-col">ปลูกเมล็ดนี้ลงในดิน</td>
+  </tr><tr>
+    <td class="num-col">65</td>
+    <td class="word-col">w<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">วีด</td>
+    <td class="meaning-col">วัชพืช</td>
+    <td class="en-col">He pulls the weeds in the garden.</td>
+    <td class="th-col">เขาถอนวัชพืชในสวน</td>
+  </tr><tr>
+    <td class="num-col">66</td>
+    <td class="word-col">sp<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">สปีด</td>
+    <td class="meaning-col">ความเร็ว</td>
+    <td class="en-col">The car has great speed.</td>
+    <td class="th-col">รถคันนี้มีความเร็วสูง</td>
+  </tr><tr>
+    <td class="num-col">67</td>
+    <td class="word-col">gr<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">กรีด</td>
+    <td class="meaning-col">ความโลภ</td>
+    <td class="en-col">Greed is not good.</td>
+    <td class="th-col">ความโลภไม่ใช่สิ่งที่ดี</td>
+  </tr><tr>
+    <td class="num-col">68</td>
+    <td class="word-col">bl<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">บลีด</td>
+    <td class="meaning-col">เลือดออก</td>
+    <td class="en-col">His hand began to bleed.</td>
+    <td class="th-col">มือของเขาเริ่มมีเลือดออก</td>
+  </tr><tr>
+    <td class="num-col">69</td>
+    <td class="word-col">fr<span class="vowel-hl">eed</span></td>
+    <td class="pattern-col">-eed</td>
+    <td class="thai-col">ฟรีด</td>
+    <td class="meaning-col">ปลดปล่อย(อดีต)</td>
+    <td class="en-col">The bird was freed from the cage.</td>
+    <td class="th-col">นกถูกปล่อยจากกรง</td>
+  </tr><tr>
+    <td class="num-col">70</td>
+    <td class="word-col">bab<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เบบี้</td>
+    <td class="meaning-col">ทารก</td>
+    <td class="en-col">The baby sleeps all day.</td>
+    <td class="th-col">ทารกนอนทั้งวัน</td>
+  </tr><tr>
+    <td class="num-col">71</td>
+    <td class="word-col">lad<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เลดี้</td>
+    <td class="meaning-col">สุภาพสตรี</td>
+    <td class="en-col">The lady wears a nice dress.</td>
+    <td class="th-col">สุภาพสตรีสวมชุดสวย</td>
+  </tr><tr>
+    <td class="num-col">72</td>
+    <td class="word-col">cit<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ซิตี้</td>
+    <td class="meaning-col">เมือง</td>
+    <td class="en-col">Bangkok is a big city.</td>
+    <td class="th-col">กรุงเทพเป็นเมืองใหญ่</td>
+  </tr><tr>
+    <td class="num-col">73</td>
+    <td class="word-col">part<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ปาร์ตี้</td>
+    <td class="meaning-col">งานปาร์ตี้</td>
+    <td class="en-col">We have a party tonight.</td>
+    <td class="th-col">คืนนี้เรามีงานปาร์ตี้</td>
+  </tr><tr>
+    <td class="num-col">74</td>
+    <td class="word-col">pupp<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">พัพพี้</td>
+    <td class="meaning-col">ลูกสุนัข</td>
+    <td class="en-col">The puppy is very cute.</td>
+    <td class="th-col">ลูกสุนัขน่ารักมาก</td>
+  </tr><tr>
+    <td class="num-col">75</td>
+    <td class="word-col">cand<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">แคนดี้</td>
+    <td class="meaning-col">ลูกอม</td>
+    <td class="en-col">Kids love candy.</td>
+    <td class="th-col">เด็ก ๆ ชอบลูกอม</td>
+  </tr><tr>
+    <td class="num-col">76</td>
+    <td class="word-col">stor<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">สตอรี้</td>
+    <td class="meaning-col">เรื่องราว/นิทาน</td>
+    <td class="en-col">She tells a funny story.</td>
+    <td class="th-col">เธอเล่าเรื่องตลก</td>
+  </tr><tr>
+    <td class="num-col">77</td>
+    <td class="word-col">famil<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">แฟมิลี้</td>
+    <td class="meaning-col">ครอบครัว</td>
+    <td class="en-col">I love my family.</td>
+    <td class="th-col">ฉันรักครอบครัวของฉัน</td>
+  </tr><tr>
+    <td class="num-col">78</td>
+    <td class="word-col">stud<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">สตัดดี้</td>
+    <td class="meaning-col">เรียน/ศึกษา</td>
+    <td class="en-col">I study English every day.</td>
+    <td class="th-col">ฉันเรียนภาษาอังกฤษทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">79</td>
+    <td class="word-col">luck<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ลักกี้</td>
+    <td class="meaning-col">โชคดี</td>
+    <td class="en-col">You are very lucky.</td>
+    <td class="th-col">คุณโชคดีมาก</td>
+  </tr><tr>
+    <td class="num-col">80</td>
+    <td class="word-col">sunn<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ซันนี้</td>
+    <td class="meaning-col">แดดจ้า</td>
+    <td class="en-col">Today is sunny.</td>
+    <td class="th-col">วันนี้แดดจ้า</td>
+  </tr><tr>
+    <td class="num-col">81</td>
+    <td class="word-col">sill<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ซิลลี้</td>
+    <td class="meaning-col">โง่/ตลก</td>
+    <td class="en-col">Don't be silly.</td>
+    <td class="th-col">อย่าทำตัวโง่ ๆ</td>
+  </tr><tr>
+    <td class="num-col">82</td>
+    <td class="word-col">dirt<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เดอร์ตี้</td>
+    <td class="meaning-col">สกปรก</td>
+    <td class="en-col">Your shoes are dirty.</td>
+    <td class="th-col">รองเท้าของคุณสกปรก</td>
+  </tr><tr>
+    <td class="num-col">83</td>
+    <td class="word-col">thirt<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เธอร์ตี้</td>
+    <td class="meaning-col">สามสิบ</td>
+    <td class="en-col">She is thirty years old.</td>
+    <td class="th-col">เธออายุสามสิบปี</td>
+  </tr><tr>
+    <td class="num-col">84</td>
+    <td class="word-col">fort<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ฟอร์ตี้</td>
+    <td class="meaning-col">สี่สิบ</td>
+    <td class="en-col">My uncle is forty years old.</td>
+    <td class="th-col">ลุงของฉันอายุสี่สิบปี</td>
+  </tr><tr>
+    <td class="num-col">85</td>
+    <td class="word-col">fift<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ฟิฟตี้</td>
+    <td class="meaning-col">ห้าสิบ</td>
+    <td class="en-col">The shirt costs fifty baht.</td>
+    <td class="th-col">เสื้อตัวนี้ราคาห้าสิบบาท</td>
+  </tr><tr>
+    <td class="num-col">86</td>
+    <td class="word-col">sixt<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ซิกตี้</td>
+    <td class="meaning-col">หกสิบ</td>
+    <td class="en-col">My grandma is sixty years old.</td>
+    <td class="th-col">คุณยายอายุหกสิบปี</td>
+  </tr><tr>
+    <td class="num-col">87</td>
+    <td class="word-col">sevent<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เซเว่นตี้</td>
+    <td class="meaning-col">เจ็ดสิบ</td>
+    <td class="en-col">My grandpa is seventy years old.</td>
+    <td class="th-col">คุณตาอายุเจ็ดสิบปี</td>
+  </tr><tr>
+    <td class="num-col">88</td>
+    <td class="word-col">eight<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เอทตี้</td>
+    <td class="meaning-col">แปดสิบ</td>
+    <td class="en-col">The old man is eighty years old.</td>
+    <td class="th-col">ชายชรามีอายุแปดสิบปี</td>
+  </tr><tr>
+    <td class="num-col">89</td>
+    <td class="word-col">ninet<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ไนน์ตี้</td>
+    <td class="meaning-col">เก้าสิบ</td>
+    <td class="en-col">She scored ninety points.</td>
+    <td class="th-col">เธอทำคะแนนได้เก้าสิบคะแนน</td>
+  </tr><tr>
+    <td class="num-col">90</td>
+    <td class="word-col">plent<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เพลนตี้</td>
+    <td class="meaning-col">มากมาย</td>
+    <td class="en-col">We have plenty of food.</td>
+    <td class="th-col">เรามีอาหารมากมาย</td>
+  </tr><tr>
+    <td class="num-col">91</td>
+    <td class="word-col">count<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เคาน์ตี้</td>
+    <td class="meaning-col">เทศมณฑล</td>
+    <td class="en-col">This county has many farms.</td>
+    <td class="th-col">เทศมณฑลนี้มีฟาร์มมากมาย</td>
+  </tr><tr>
+    <td class="num-col">92</td>
+    <td class="word-col">hungr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ฮังกรี้</td>
+    <td class="meaning-col">หิว</td>
+    <td class="en-col">I am very hungry now.</td>
+    <td class="th-col">ตอนนี้ฉันหิวมาก</td>
+  </tr><tr>
+    <td class="num-col">93</td>
+    <td class="word-col">angr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">แองกรี้</td>
+    <td class="meaning-col">โกรธ</td>
+    <td class="en-col">My mom is angry with me.</td>
+    <td class="th-col">แม่ของฉันโกรธฉัน</td>
+  </tr><tr>
+    <td class="num-col">94</td>
+    <td class="word-col">thirst<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เธอร์สตี้</td>
+    <td class="meaning-col">กระหายน้ำ</td>
+    <td class="en-col">I feel thirsty after running.</td>
+    <td class="th-col">ฉันรู้สึกกระหายน้ำหลังวิ่ง</td>
+  </tr><tr>
+    <td class="num-col">95</td>
+    <td class="word-col">dust<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ดัสตี้</td>
+    <td class="meaning-col">เต็มไปด้วยฝุ่น</td>
+    <td class="en-col">The old book is dusty.</td>
+    <td class="th-col">หนังสือเก่าเล่มนี้เต็มไปด้วยฝุ่น</td>
+  </tr><tr>
+    <td class="num-col">96</td>
+    <td class="word-col">rust<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">รัสตี้</td>
+    <td class="meaning-col">เป็นสนิม</td>
+    <td class="en-col">The old bike is rusty.</td>
+    <td class="th-col">จักรยานเก่าเป็นสนิม</td>
+  </tr><tr>
+    <td class="num-col">97</td>
+    <td class="word-col">mist<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">มิสตี้</td>
+    <td class="meaning-col">มีหมอก</td>
+    <td class="en-col">The morning is misty.</td>
+    <td class="th-col">ตอนเช้ามีหมอก</td>
+  </tr><tr>
+    <td class="num-col">98</td>
+    <td class="word-col">mudd<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">มัดดี้</td>
+    <td class="meaning-col">เป็นโคลน</td>
+    <td class="en-col">The road is muddy after rain.</td>
+    <td class="th-col">ถนนเป็นโคลนหลังฝนตก</td>
+  </tr><tr>
+    <td class="num-col">99</td>
+    <td class="word-col">budd<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">บัดดี้</td>
+    <td class="meaning-col">เพื่อนสนิท</td>
+    <td class="en-col">He is my best buddy.</td>
+    <td class="th-col">เขาเป็นเพื่อนสนิทของฉัน</td>
+  </tr><tr>
+    <td class="num-col">100</td>
+    <td class="word-col">penn<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">เพนนี้</td>
+    <td class="meaning-col">เหรียญเพนนี</td>
+    <td class="en-col">I found a penny on the floor.</td>
+    <td class="th-col">ฉันเจอเหรียญเพนนีบนพื้น</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+<div class="sheet group-page" id="group-i">
+  <div class="group-banner gb-c3">
+    <div><h1>🔤 Long I</h1><div class="eng">สระเสียงยาว I (ไอ)</div></div>
+    <div class="chip">100 คำ</div>
+  </div>
+  <table class="word-table">
+    <colgroup>
+      <col class="c-num"><col class="c-word"><col class="c-pattern"><col class="c-thai">
+      <col class="c-meaning"><col class="c-en"><col class="c-th">
+    </colgroup>
+    <thead>
+      <tr><th>#</th><th>Word</th><th>Pattern</th><th>คำอ่าน</th><th>คำแปล</th><th>ตัวอย่างประโยค</th><th>คำแปลประโยค</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="num-col">1</td>
+    <td class="word-col">b<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">ไบก์</td>
+    <td class="meaning-col">จักรยาน</td>
+    <td class="en-col">I ride my bike to school.</td>
+    <td class="th-col">ฉันขี่จักรยานไปโรงเรียน</td>
+  </tr><tr>
+    <td class="num-col">2</td>
+    <td class="word-col">l<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">ไลก์</td>
+    <td class="meaning-col">ชอบ</td>
+    <td class="en-col">I like ice cream.</td>
+    <td class="th-col">ฉันชอบไอศกรีม</td>
+  </tr><tr>
+    <td class="num-col">3</td>
+    <td class="word-col">h<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">ไฮก์</td>
+    <td class="meaning-col">เดินป่า</td>
+    <td class="en-col">We hike up the mountain.</td>
+    <td class="th-col">เราเดินป่าขึ้นภูเขา</td>
+  </tr><tr>
+    <td class="num-col">4</td>
+    <td class="word-col">p<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">ไพก์</td>
+    <td class="meaning-col">หอก/ปลาไพค์</td>
+    <td class="en-col">The soldier holds a pike.</td>
+    <td class="th-col">ทหารถือหอก</td>
+  </tr><tr>
+    <td class="num-col">5</td>
+    <td class="word-col">sp<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">สไปก์</td>
+    <td class="meaning-col">หนามแหลม/ตะปูยาว</td>
+    <td class="en-col">The fence has a spike.</td>
+    <td class="th-col">รั้วมีหนามแหลม</td>
+  </tr><tr>
+    <td class="num-col">6</td>
+    <td class="word-col">str<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">สไตรก์</td>
+    <td class="meaning-col">โจมตี/นัดหยุดงาน</td>
+    <td class="en-col">Workers plan to strike.</td>
+    <td class="th-col">คนงานวางแผนนัดหยุดงาน</td>
+  </tr><tr>
+    <td class="num-col">7</td>
+    <td class="word-col">d<span class="vowel-hl">ike</span></td>
+    <td class="pattern-col">-ike</td>
+    <td class="thai-col">ไดก์</td>
+    <td class="meaning-col">เขื่อนกั้นน้ำ</td>
+    <td class="en-col">The dike stops the flood.</td>
+    <td class="th-col">เขื่อนกั้นน้ำหยุดน้ำท่วม</td>
+  </tr><tr>
+    <td class="num-col">8</td>
+    <td class="word-col">t<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไทม์</td>
+    <td class="meaning-col">เวลา</td>
+    <td class="en-col">What time is it now?</td>
+    <td class="th-col">ตอนนี้กี่โมงแล้ว</td>
+  </tr><tr>
+    <td class="num-col">9</td>
+    <td class="word-col">d<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไดม์</td>
+    <td class="meaning-col">เหรียญสิบเซนต์</td>
+    <td class="en-col">He has a dime in his pocket.</td>
+    <td class="th-col">เขามีเหรียญสิบเซนต์ในกระเป๋า</td>
+  </tr><tr>
+    <td class="num-col">10</td>
+    <td class="word-col">l<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไลม์</td>
+    <td class="meaning-col">มะนาว</td>
+    <td class="en-col">She squeezes a lime into water.</td>
+    <td class="th-col">เธอบีบมะนาวลงในน้ำ</td>
+  </tr><tr>
+    <td class="num-col">11</td>
+    <td class="word-col">cr<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไครม์</td>
+    <td class="meaning-col">อาชญากรรม</td>
+    <td class="en-col">Crime is bad for the city.</td>
+    <td class="th-col">อาชญากรรมไม่ดีต่อเมือง</td>
+  </tr><tr>
+    <td class="num-col">12</td>
+    <td class="word-col">pr<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไพรม์</td>
+    <td class="meaning-col">สำคัญที่สุด/ช่วงเวลาทอง</td>
+    <td class="en-col">This is prime time for shopping.</td>
+    <td class="th-col">นี่คือช่วงเวลาทองสำหรับการช้อปปิ้ง</td>
+  </tr><tr>
+    <td class="num-col">13</td>
+    <td class="word-col">ch<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">ไชม์</td>
+    <td class="meaning-col">เสียงระฆัง</td>
+    <td class="en-col">The clock will chime at noon.</td>
+    <td class="th-col">นาฬิกาจะส่งเสียงระฆังตอนเที่ยง</td>
+  </tr><tr>
+    <td class="num-col">14</td>
+    <td class="word-col">sl<span class="vowel-hl">ime</span></td>
+    <td class="pattern-col">-ime</td>
+    <td class="thai-col">สไลม์</td>
+    <td class="meaning-col">เมือก/สไลม์</td>
+    <td class="en-col">The slime feels sticky.</td>
+    <td class="th-col">สไลม์รู้สึกเหนียว</td>
+  </tr><tr>
+    <td class="num-col">15</td>
+    <td class="word-col">r<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไรด์</td>
+    <td class="meaning-col">ขี่/นั่ง(พาหนะ)</td>
+    <td class="en-col">I ride my bike every day.</td>
+    <td class="th-col">ฉันขี่จักรยานทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">16</td>
+    <td class="word-col">s<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไซด์</td>
+    <td class="meaning-col">ด้านข้าง</td>
+    <td class="en-col">Sit on this side of the room.</td>
+    <td class="th-col">นั่งด้านนี้ของห้อง</td>
+  </tr><tr>
+    <td class="num-col">17</td>
+    <td class="word-col">h<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไฮด์</td>
+    <td class="meaning-col">ซ่อน</td>
+    <td class="en-col">The cat likes to hide.</td>
+    <td class="th-col">แมวชอบซ่อนตัว</td>
+  </tr><tr>
+    <td class="num-col">18</td>
+    <td class="word-col">w<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไวด์</td>
+    <td class="meaning-col">กว้าง</td>
+    <td class="en-col">The river is very wide.</td>
+    <td class="th-col">แม่น้ำสายนี้กว้างมาก</td>
+  </tr><tr>
+    <td class="num-col">19</td>
+    <td class="word-col">t<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไทด์</td>
+    <td class="meaning-col">กระแสน้ำขึ้นลง</td>
+    <td class="en-col">The tide is high tonight.</td>
+    <td class="th-col">คืนนี้น้ำขึ้นสูง</td>
+  </tr><tr>
+    <td class="num-col">20</td>
+    <td class="word-col">br<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไบรด์</td>
+    <td class="meaning-col">เจ้าสาว</td>
+    <td class="en-col">The bride wears a white dress.</td>
+    <td class="th-col">เจ้าสาวสวมชุดสีขาว</td>
+  </tr><tr>
+    <td class="num-col">21</td>
+    <td class="word-col">sl<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">สไลด์</td>
+    <td class="meaning-col">ลื่นไถล/สไลด์</td>
+    <td class="en-col">Kids play on the slide.</td>
+    <td class="th-col">เด็ก ๆ เล่นสไลด์</td>
+  </tr><tr>
+    <td class="num-col">22</td>
+    <td class="word-col">pr<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไพรด์</td>
+    <td class="meaning-col">ความภาคภูมิใจ</td>
+    <td class="en-col">He feels pride in his work.</td>
+    <td class="th-col">เขารู้สึกภาคภูมิใจในงานของเขา</td>
+  </tr><tr>
+    <td class="num-col">23</td>
+    <td class="word-col">gl<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">ไกลด์</td>
+    <td class="meaning-col">ร่อน(บิน)ไป</td>
+    <td class="en-col">The bird glides through the sky.</td>
+    <td class="th-col">นกร่อนไปในท้องฟ้า</td>
+  </tr><tr>
+    <td class="num-col">24</td>
+    <td class="word-col">str<span class="vowel-hl">ide</span></td>
+    <td class="pattern-col">-ide</td>
+    <td class="thai-col">สไตรด์</td>
+    <td class="meaning-col">ก้าวเดินยาว ๆ</td>
+    <td class="en-col">He walks with a long stride.</td>
+    <td class="th-col">เขาเดินก้าวยาว ๆ</td>
+  </tr><tr>
+    <td class="num-col">25</td>
+    <td class="word-col">l<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไลน์</td>
+    <td class="meaning-col">เส้น/แถว</td>
+    <td class="en-col">Stand in a line, please.</td>
+    <td class="th-col">กรุณายืนเข้าแถว</td>
+  </tr><tr>
+    <td class="num-col">26</td>
+    <td class="word-col">n<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไนน์</td>
+    <td class="meaning-col">เก้า</td>
+    <td class="en-col">I have nine pencils.</td>
+    <td class="th-col">ฉันมีดินสอเก้าแท่ง</td>
+  </tr><tr>
+    <td class="num-col">27</td>
+    <td class="word-col">p<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไพน์</td>
+    <td class="meaning-col">ต้นสน</td>
+    <td class="en-col">The pine tree is tall.</td>
+    <td class="th-col">ต้นสนต้นนี้สูง</td>
+  </tr><tr>
+    <td class="num-col">28</td>
+    <td class="word-col">f<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไฟน์</td>
+    <td class="meaning-col">สบายดี/ค่าปรับ</td>
+    <td class="en-col">I am fine, thank you.</td>
+    <td class="th-col">ฉันสบายดี ขอบคุณ</td>
+  </tr><tr>
+    <td class="num-col">29</td>
+    <td class="word-col">m<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไมน์</td>
+    <td class="meaning-col">ของฉัน/เหมือง</td>
+    <td class="en-col">This book is mine.</td>
+    <td class="th-col">หนังสือเล่มนี้เป็นของฉัน</td>
+  </tr><tr>
+    <td class="num-col">30</td>
+    <td class="word-col">d<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไดน์</td>
+    <td class="meaning-col">รับประทานอาหาร</td>
+    <td class="en-col">We dine at a nice restaurant.</td>
+    <td class="th-col">เรารับประทานอาหารที่ร้านดี ๆ</td>
+  </tr><tr>
+    <td class="num-col">31</td>
+    <td class="word-col">sh<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไชน์</td>
+    <td class="meaning-col">ส่องแสง</td>
+    <td class="en-col">The sun shines brightly.</td>
+    <td class="th-col">ดวงอาทิตย์ส่องแสงจ้า</td>
+  </tr><tr>
+    <td class="num-col">32</td>
+    <td class="word-col">sp<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">สไปน์</td>
+    <td class="meaning-col">กระดูกสันหลัง</td>
+    <td class="en-col">The spine supports the body.</td>
+    <td class="th-col">กระดูกสันหลังพยุงร่างกาย</td>
+  </tr><tr>
+    <td class="num-col">33</td>
+    <td class="word-col">v<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ไวน์</td>
+    <td class="meaning-col">เถาวัลย์</td>
+    <td class="en-col">Grapes grow on a vine.</td>
+    <td class="th-col">องุ่นเติบโตบนเถาวัลย์</td>
+  </tr><tr>
+    <td class="num-col">34</td>
+    <td class="word-col">tw<span class="vowel-hl">ine</span></td>
+    <td class="pattern-col">-ine</td>
+    <td class="thai-col">ทไวน์</td>
+    <td class="meaning-col">เชือก/ป่าน</td>
+    <td class="en-col">Tie the box with twine.</td>
+    <td class="th-col">มัดกล่องด้วยเชือก</td>
+  </tr><tr>
+    <td class="num-col">35</td>
+    <td class="word-col">k<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไคท์</td>
+    <td class="meaning-col">ว่าว</td>
+    <td class="en-col">We fly a kite in the park.</td>
+    <td class="th-col">เราเล่นว่าวในสวนสาธารณะ</td>
+  </tr><tr>
+    <td class="num-col">36</td>
+    <td class="word-col">b<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไบท์</td>
+    <td class="meaning-col">กัด</td>
+    <td class="en-col">The dog will not bite.</td>
+    <td class="th-col">สุนัขจะไม่กัด</td>
+  </tr><tr>
+    <td class="num-col">37</td>
+    <td class="word-col">s<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไซท์</td>
+    <td class="meaning-col">สถานที่/เว็บไซต์</td>
+    <td class="en-col">This is a good camping site.</td>
+    <td class="th-col">ที่นี่เป็นสถานที่ตั้งแคมป์ที่ดี</td>
+  </tr><tr>
+    <td class="num-col">38</td>
+    <td class="word-col">wh<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไวท์</td>
+    <td class="meaning-col">สีขาว</td>
+    <td class="en-col">She wears a white shirt.</td>
+    <td class="th-col">เธอสวมเสื้อสีขาว</td>
+  </tr><tr>
+    <td class="num-col">39</td>
+    <td class="word-col">qu<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไควท์</td>
+    <td class="meaning-col">ค่อนข้าง</td>
+    <td class="en-col">It is quite hot today.</td>
+    <td class="th-col">วันนี้ค่อนข้างร้อน</td>
+  </tr><tr>
+    <td class="num-col">40</td>
+    <td class="word-col">wr<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ไรท์</td>
+    <td class="meaning-col">เขียน</td>
+    <td class="en-col">I write in my notebook.</td>
+    <td class="th-col">ฉันเขียนในสมุดของฉัน</td>
+  </tr><tr>
+    <td class="num-col">41</td>
+    <td class="word-col">sp<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">สไปท์</td>
+    <td class="meaning-col">ความอาฆาต/ทั้งที่</td>
+    <td class="en-col">He smiled in spite of the pain.</td>
+    <td class="th-col">เขายิ้มทั้งที่เจ็บปวด</td>
+  </tr><tr>
+    <td class="num-col">42</td>
+    <td class="word-col">un<span class="vowel-hl">ite</span></td>
+    <td class="pattern-col">-ite</td>
+    <td class="thai-col">ยูไนท์</td>
+    <td class="meaning-col">รวมเป็นหนึ่งเดียว</td>
+    <td class="en-col">The team will unite for the win.</td>
+    <td class="th-col">ทีมจะรวมพลังเพื่อชัยชนะ</td>
+  </tr><tr>
+    <td class="num-col">43</td>
+    <td class="word-col">sk<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">สกาย</td>
+    <td class="meaning-col">ท้องฟ้า</td>
+    <td class="en-col">The sky is blue today.</td>
+    <td class="th-col">วันนี้ท้องฟ้าเป็นสีฟ้า</td>
+  </tr><tr>
+    <td class="num-col">44</td>
+    <td class="word-col">fl<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ฟลาย</td>
+    <td class="meaning-col">บิน/แมลงวัน</td>
+    <td class="en-col">Birds fly in the sky.</td>
+    <td class="th-col">นกบินบนท้องฟ้า</td>
+  </tr><tr>
+    <td class="num-col">45</td>
+    <td class="word-col">m<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">มาย</td>
+    <td class="meaning-col">ของฉัน</td>
+    <td class="en-col">This is my bag.</td>
+    <td class="th-col">นี่คือกระเป๋าของฉัน</td>
+  </tr><tr>
+    <td class="num-col">46</td>
+    <td class="word-col">cr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">คราย</td>
+    <td class="meaning-col">ร้องไห้</td>
+    <td class="en-col">The baby will cry at night.</td>
+    <td class="th-col">ทารกจะร้องไห้ตอนกลางคืน</td>
+  </tr><tr>
+    <td class="num-col">47</td>
+    <td class="word-col">tr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ทราย</td>
+    <td class="meaning-col">พยายาม</td>
+    <td class="en-col">Please try your best.</td>
+    <td class="th-col">กรุณาพยายามให้เต็มที่</td>
+  </tr><tr>
+    <td class="num-col">48</td>
+    <td class="word-col">dr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ดราย</td>
+    <td class="meaning-col">แห้ง</td>
+    <td class="en-col">The clothes are dry now.</td>
+    <td class="th-col">ตอนนี้เสื้อผ้าแห้งแล้ว</td>
+  </tr><tr>
+    <td class="num-col">49</td>
+    <td class="word-col">sh<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ชาย</td>
+    <td class="meaning-col">ขี้อาย</td>
+    <td class="en-col">The little girl is shy.</td>
+    <td class="th-col">เด็กหญิงตัวเล็กขี้อาย</td>
+  </tr><tr>
+    <td class="num-col">50</td>
+    <td class="word-col">wh<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">วาย</td>
+    <td class="meaning-col">ทำไม</td>
+    <td class="en-col">Why are you late?</td>
+    <td class="th-col">ทำไมคุณถึงมาสาย</td>
+  </tr><tr>
+    <td class="num-col">51</td>
+    <td class="word-col">sp<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">สปาย</td>
+    <td class="meaning-col">สายลับ</td>
+    <td class="en-col">The spy hides in the dark.</td>
+    <td class="th-col">สายลับซ่อนตัวในความมืด</td>
+  </tr><tr>
+    <td class="num-col">52</td>
+    <td class="word-col">fr<span class="vowel-hl">y</span></td>
+    <td class="pattern-col">-y</td>
+    <td class="thai-col">ฟราย</td>
+    <td class="meaning-col">ทอด</td>
+    <td class="en-col">She will fry the fish.</td>
+    <td class="th-col">เธอจะทอดปลา</td>
+  </tr><tr>
+    <td class="num-col">53</td>
+    <td class="word-col">h<span class="vowel-hl">igh</span></td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไฮ</td>
+    <td class="meaning-col">สูง</td>
+    <td class="en-col">The bird flies high in the sky.</td>
+    <td class="th-col">นกบินสูงบนท้องฟ้า</td>
+  </tr><tr>
+    <td class="num-col">54</td>
+    <td class="word-col">s<span class="vowel-hl">igh</span></td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไซ</td>
+    <td class="meaning-col">ถอนหายใจ</td>
+    <td class="en-col">He gave a long sigh.</td>
+    <td class="th-col">เขาถอนหายใจยาว</td>
+  </tr><tr>
+    <td class="num-col">55</td>
+    <td class="word-col">s<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไซท์</td>
+    <td class="meaning-col">สายตา/ภาพที่เห็น</td>
+    <td class="en-col">The mountain is a beautiful sight.</td>
+    <td class="th-col">ภูเขานี้เป็นภาพที่สวยงาม</td>
+  </tr><tr>
+    <td class="num-col">56</td>
+    <td class="word-col">l<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไลท์</td>
+    <td class="meaning-col">แสง/เบา</td>
+    <td class="en-col">Turn on the light, please.</td>
+    <td class="th-col">กรุณาเปิดไฟ</td>
+  </tr><tr>
+    <td class="num-col">57</td>
+    <td class="word-col">n<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไนท์</td>
+    <td class="meaning-col">กลางคืน</td>
+    <td class="en-col">We sleep at night.</td>
+    <td class="th-col">เรานอนตอนกลางคืน</td>
+  </tr><tr>
+    <td class="num-col">58</td>
+    <td class="word-col">r<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไรท์</td>
+    <td class="meaning-col">ถูกต้อง/ขวา</td>
+    <td class="en-col">Turn right at the corner.</td>
+    <td class="th-col">เลี้ยวขวาที่หัวมุม</td>
+  </tr><tr>
+    <td class="num-col">59</td>
+    <td class="word-col">t<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไทท์</td>
+    <td class="meaning-col">แน่น/คับ</td>
+    <td class="en-col">These shoes are too tight.</td>
+    <td class="th-col">รองเท้าคู่นี้คับเกินไป</td>
+  </tr><tr>
+    <td class="num-col">60</td>
+    <td class="word-col">f<span class="vowel-hl">igh</span>t</td>
+    <td class="pattern-col">-igh</td>
+    <td class="thai-col">ไฟท์</td>
+    <td class="meaning-col">ต่อสู้/ทะเลาะ</td>
+    <td class="en-col">Don't fight with your brother.</td>
+    <td class="th-col">อย่าทะเลาะกับพี่ชายของเธอ</td>
+  </tr><tr>
+    <td class="num-col">61</td>
+    <td class="word-col">f<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">ไฟนด์</td>
+    <td class="meaning-col">พบ/ค้นหา</td>
+    <td class="en-col">Help me find my keys.</td>
+    <td class="th-col">ช่วยฉันหากุญแจหน่อย</td>
+  </tr><tr>
+    <td class="num-col">62</td>
+    <td class="word-col">m<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">ไมนด์</td>
+    <td class="meaning-col">จิตใจ/สมอง</td>
+    <td class="en-col">Keep your mind calm.</td>
+    <td class="th-col">ทำใจให้สงบ</td>
+  </tr><tr>
+    <td class="num-col">63</td>
+    <td class="word-col">k<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">ไคนด์</td>
+    <td class="meaning-col">ใจดี/ประเภท</td>
+    <td class="en-col">She is very kind to everyone.</td>
+    <td class="th-col">เธอใจดีกับทุกคนมาก</td>
+  </tr><tr>
+    <td class="num-col">64</td>
+    <td class="word-col">bl<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">ไบลนด์</td>
+    <td class="meaning-col">ตาบอด</td>
+    <td class="en-col">The blind man uses a cane.</td>
+    <td class="th-col">ชายตาบอดใช้ไม้เท้า</td>
+  </tr><tr>
+    <td class="num-col">65</td>
+    <td class="word-col">gr<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">ไกรนด์</td>
+    <td class="meaning-col">บด/โม่</td>
+    <td class="en-col">Grind the coffee beans well.</td>
+    <td class="th-col">บดเมล็ดกาแฟให้ดี</td>
+  </tr><tr>
+    <td class="num-col">66</td>
+    <td class="word-col">beh<span class="vowel-hl">ind</span></td>
+    <td class="pattern-col">-ind</td>
+    <td class="thai-col">บิไฮนด์</td>
+    <td class="meaning-col">ข้างหลัง</td>
+    <td class="en-col">The cat hides behind the sofa.</td>
+    <td class="th-col">แมวซ่อนอยู่ข้างหลังโซฟา</td>
+  </tr><tr>
+    <td class="num-col">67</td>
+    <td class="word-col">m<span class="vowel-hl">ild</span></td>
+    <td class="pattern-col">-ild</td>
+    <td class="thai-col">ไมลด์</td>
+    <td class="meaning-col">อ่อนโยน/ไม่รุนแรง</td>
+    <td class="en-col">The weather is mild today.</td>
+    <td class="th-col">วันนี้อากาศไม่ร้อนไม่หนาว</td>
+  </tr><tr>
+    <td class="num-col">68</td>
+    <td class="word-col">ch<span class="vowel-hl">ild</span></td>
+    <td class="pattern-col">-ild</td>
+    <td class="thai-col">ไชลด์</td>
+    <td class="meaning-col">เด็ก</td>
+    <td class="en-col">The child plays with a toy.</td>
+    <td class="th-col">เด็กคนนั้นเล่นของเล่น</td>
+  </tr><tr>
+    <td class="num-col">69</td>
+    <td class="word-col">w<span class="vowel-hl">ild</span></td>
+    <td class="pattern-col">-ild</td>
+    <td class="thai-col">ไวลด์</td>
+    <td class="meaning-col">ป่า/ดุร้าย</td>
+    <td class="en-col">Lions live in the wild.</td>
+    <td class="th-col">สิงโตอาศัยอยู่ในป่า</td>
+  </tr><tr>
+    <td class="num-col">70</td>
+    <td class="word-col">p<span class="vowel-hl">ie</span></td>
+    <td class="pattern-col">-ie</td>
+    <td class="thai-col">พาย</td>
+    <td class="meaning-col">พาย(ขนม)</td>
+    <td class="en-col">I eat apple pie.</td>
+    <td class="th-col">ฉันกินพายแอปเปิ้ล</td>
+  </tr><tr>
+    <td class="num-col">71</td>
+    <td class="word-col">t<span class="vowel-hl">ie</span></td>
+    <td class="pattern-col">-ie</td>
+    <td class="thai-col">ไท</td>
+    <td class="meaning-col">เนคไท/ผูก</td>
+    <td class="en-col">He wears a blue tie.</td>
+    <td class="th-col">เขาผูกเนคไทสีฟ้า</td>
+  </tr><tr>
+    <td class="num-col">72</td>
+    <td class="word-col">d<span class="vowel-hl">ie</span></td>
+    <td class="pattern-col">-ie</td>
+    <td class="thai-col">ได</td>
+    <td class="meaning-col">ตาย</td>
+    <td class="en-col">Plants die without water.</td>
+    <td class="th-col">ต้นไม้ตายถ้าไม่มีน้ำ</td>
+  </tr><tr>
+    <td class="num-col">73</td>
+    <td class="word-col">l<span class="vowel-hl">ie</span></td>
+    <td class="pattern-col">-ie</td>
+    <td class="thai-col">ไล</td>
+    <td class="meaning-col">โกหก/นอนราบ</td>
+    <td class="en-col">Don't lie to your parents.</td>
+    <td class="th-col">อย่าโกหกพ่อแม่ของคุณ</td>
+  </tr><tr>
+    <td class="num-col">74</td>
+    <td class="word-col">v<span class="vowel-hl">ie</span></td>
+    <td class="pattern-col">-ie</td>
+    <td class="thai-col">ไว</td>
+    <td class="meaning-col">แข่งขันชิงชัย</td>
+    <td class="en-col">Two teams vie for first place.</td>
+    <td class="th-col">สองทีมแข่งขันชิงตำแหน่งที่หนึ่ง</td>
+  </tr><tr>
+    <td class="num-col">75</td>
+    <td class="word-col">f<span class="vowel-hl">ive</span></td>
+    <td class="pattern-col">-ive</td>
+    <td class="thai-col">ไฟว์</td>
+    <td class="meaning-col">ห้า</td>
+    <td class="en-col">I have five fingers.</td>
+    <td class="th-col">ฉันมีนิ้วห้านิ้ว</td>
+  </tr><tr>
+    <td class="num-col">76</td>
+    <td class="word-col">d<span class="vowel-hl">ive</span></td>
+    <td class="pattern-col">-ive</td>
+    <td class="thai-col">ไดว์</td>
+    <td class="meaning-col">ดำน้ำ/กระโดดน้ำ</td>
+    <td class="en-col">He dives into the pool.</td>
+    <td class="th-col">เขากระโดดลงสระว่ายน้ำ</td>
+  </tr><tr>
+    <td class="num-col">77</td>
+    <td class="word-col">h<span class="vowel-hl">ive</span></td>
+    <td class="pattern-col">-ive</td>
+    <td class="thai-col">ไฮว์</td>
+    <td class="meaning-col">รังผึ้ง</td>
+    <td class="en-col">Bees live in a hive.</td>
+    <td class="th-col">ผึ้งอาศัยอยู่ในรังผึ้ง</td>
+  </tr><tr>
+    <td class="num-col">78</td>
+    <td class="word-col">dr<span class="vowel-hl">ive</span></td>
+    <td class="pattern-col">-ive</td>
+    <td class="thai-col">ไดรว์</td>
+    <td class="meaning-col">ขับรถ</td>
+    <td class="en-col">My dad drives to work.</td>
+    <td class="th-col">พ่อของฉันขับรถไปทำงาน</td>
+  </tr><tr>
+    <td class="num-col">79</td>
+    <td class="word-col">al<span class="vowel-hl">ive</span></td>
+    <td class="pattern-col">-ive</td>
+    <td class="thai-col">อะไลว์</td>
+    <td class="meaning-col">มีชีวิตอยู่</td>
+    <td class="en-col">The fish is still alive.</td>
+    <td class="th-col">ปลาตัวนี้ยังมีชีวิตอยู่</td>
+  </tr><tr>
+    <td class="num-col">80</td>
+    <td class="word-col"><span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไอซ์</td>
+    <td class="meaning-col">น้ำแข็ง</td>
+    <td class="en-col">Put some ice in the drink.</td>
+    <td class="th-col">ใส่น้ำแข็งลงในเครื่องดื่ม</td>
+  </tr><tr>
+    <td class="num-col">81</td>
+    <td class="word-col">r<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไรซ์</td>
+    <td class="meaning-col">ข้าว</td>
+    <td class="en-col">We eat rice every meal.</td>
+    <td class="th-col">เรากินข้าวทุกมื้อ</td>
+  </tr><tr>
+    <td class="num-col">82</td>
+    <td class="word-col">n<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไนซ์</td>
+    <td class="meaning-col">ดี/น่ารัก</td>
+    <td class="en-col">She is a nice person.</td>
+    <td class="th-col">เธอเป็นคนดี</td>
+  </tr><tr>
+    <td class="num-col">83</td>
+    <td class="word-col">m<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไมซ์</td>
+    <td class="meaning-col">หนู(พหูพจน์)</td>
+    <td class="en-col">The cat catches mice.</td>
+    <td class="th-col">แมวจับหนู</td>
+  </tr><tr>
+    <td class="num-col">84</td>
+    <td class="word-col">d<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไดซ์</td>
+    <td class="meaning-col">ลูกเต๋า</td>
+    <td class="en-col">Roll the dice to play.</td>
+    <td class="th-col">ทอยลูกเต๋าเพื่อเล่น</td>
+  </tr><tr>
+    <td class="num-col">85</td>
+    <td class="word-col">pr<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">ไพรซ์</td>
+    <td class="meaning-col">ราคา</td>
+    <td class="en-col">The price is very high.</td>
+    <td class="th-col">ราคาแพงมาก</td>
+  </tr><tr>
+    <td class="num-col">86</td>
+    <td class="word-col">sl<span class="vowel-hl">ice</span></td>
+    <td class="pattern-col">-ice</td>
+    <td class="thai-col">สไลซ์</td>
+    <td class="meaning-col">ชิ้น(หั่น)</td>
+    <td class="en-col">Cut a slice of bread.</td>
+    <td class="th-col">หั่นขนมปังหนึ่งแผ่น</td>
+  </tr><tr>
+    <td class="num-col">87</td>
+    <td class="word-col">w<span class="vowel-hl">ise</span></td>
+    <td class="pattern-col">-ise</td>
+    <td class="thai-col">ไวซ์</td>
+    <td class="meaning-col">ฉลาด/มีปัญญา</td>
+    <td class="en-col">The old man is very wise.</td>
+    <td class="th-col">ชายชรามีปัญญามาก</td>
+  </tr><tr>
+    <td class="num-col">88</td>
+    <td class="word-col">s<span class="vowel-hl">i</span>ze</td>
+    <td class="pattern-col">-ise</td>
+    <td class="thai-col">ไซส์</td>
+    <td class="meaning-col">ขนาด</td>
+    <td class="en-col">What size do you wear?</td>
+    <td class="th-col">คุณใส่ไซส์อะไร</td>
+  </tr><tr>
+    <td class="num-col">89</td>
+    <td class="word-col">pr<span class="vowel-hl">i</span>ze</td>
+    <td class="pattern-col">-ise</td>
+    <td class="thai-col">ไพรส์</td>
+    <td class="meaning-col">รางวัล</td>
+    <td class="en-col">She won first prize.</td>
+    <td class="th-col">เธอได้รางวัลที่หนึ่ง</td>
+  </tr><tr>
+    <td class="num-col">90</td>
+    <td class="word-col">r<span class="vowel-hl">ise</span></td>
+    <td class="pattern-col">-ise</td>
+    <td class="thai-col">ไรส์</td>
+    <td class="meaning-col">ลุกขึ้น/ขึ้น</td>
+    <td class="en-col">The sun will rise soon.</td>
+    <td class="th-col">ดวงอาทิตย์จะขึ้นเร็ว ๆ นี้</td>
+  </tr><tr>
+    <td class="num-col">91</td>
+    <td class="word-col">p<span class="vowel-hl">ipe</span></td>
+    <td class="pattern-col">-ipe</td>
+    <td class="thai-col">ไพพ์</td>
+    <td class="meaning-col">ท่อ</td>
+    <td class="en-col">Water flows through the pipe.</td>
+    <td class="th-col">น้ำไหลผ่านท่อ</td>
+  </tr><tr>
+    <td class="num-col">92</td>
+    <td class="word-col">w<span class="vowel-hl">ipe</span></td>
+    <td class="pattern-col">-ipe</td>
+    <td class="thai-col">ไวพ์</td>
+    <td class="meaning-col">เช็ด</td>
+    <td class="en-col">Wipe the table clean.</td>
+    <td class="th-col">เช็ดโต๊ะให้สะอาด</td>
+  </tr><tr>
+    <td class="num-col">93</td>
+    <td class="word-col">r<span class="vowel-hl">ipe</span></td>
+    <td class="pattern-col">-ipe</td>
+    <td class="thai-col">ไรพ์</td>
+    <td class="meaning-col">สุก(ผลไม้)</td>
+    <td class="en-col">The banana is ripe.</td>
+    <td class="th-col">กล้วยลูกนี้สุกแล้ว</td>
+  </tr><tr>
+    <td class="num-col">94</td>
+    <td class="word-col">str<span class="vowel-hl">ipe</span></td>
+    <td class="pattern-col">-ipe</td>
+    <td class="thai-col">สไตรพ์</td>
+    <td class="meaning-col">ลายเส้น</td>
+    <td class="en-col">The shirt has a red stripe.</td>
+    <td class="th-col">เสื้อมีลายเส้นสีแดง</td>
+  </tr><tr>
+    <td class="num-col">95</td>
+    <td class="word-col">m<span class="vowel-hl">ile</span></td>
+    <td class="pattern-col">-ile</td>
+    <td class="thai-col">ไมล์</td>
+    <td class="meaning-col">ไมล์</td>
+    <td class="en-col">We ran one mile today.</td>
+    <td class="th-col">วันนี้เราวิ่งหนึ่งไมล์</td>
+  </tr><tr>
+    <td class="num-col">96</td>
+    <td class="word-col">f<span class="vowel-hl">ile</span></td>
+    <td class="pattern-col">-ile</td>
+    <td class="thai-col">ไฟล์</td>
+    <td class="meaning-col">แฟ้ม/ไฟล์</td>
+    <td class="en-col">Save the file on the computer.</td>
+    <td class="th-col">บันทึกไฟล์ในคอมพิวเตอร์</td>
+  </tr><tr>
+    <td class="num-col">97</td>
+    <td class="word-col">p<span class="vowel-hl">ile</span></td>
+    <td class="pattern-col">-ile</td>
+    <td class="thai-col">ไพล์</td>
+    <td class="meaning-col">กอง(ของ)</td>
+    <td class="en-col">There is a pile of clothes.</td>
+    <td class="th-col">มีกองเสื้อผ้ากองหนึ่ง</td>
+  </tr><tr>
+    <td class="num-col">98</td>
+    <td class="word-col">sm<span class="vowel-hl">ile</span></td>
+    <td class="pattern-col">-ile</td>
+    <td class="thai-col">สไมล์</td>
+    <td class="meaning-col">ยิ้ม</td>
+    <td class="en-col">She always has a big smile.</td>
+    <td class="th-col">เธอยิ้มกว้างเสมอ</td>
+  </tr><tr>
+    <td class="num-col">99</td>
+    <td class="word-col">t<span class="vowel-hl">i</span>ger</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ไทเกอร์</td>
+    <td class="meaning-col">เสือ</td>
+    <td class="en-col">The tiger runs very fast.</td>
+    <td class="th-col">เสือวิ่งเร็วมาก</td>
+  </tr><tr>
+    <td class="num-col">100</td>
+    <td class="word-col"><span class="vowel-hl">eye</span></td>
+    <td class="pattern-col">eye</td>
+    <td class="thai-col">ไอ</td>
+    <td class="meaning-col">ตา</td>
+    <td class="en-col">Close your eyes and sleep.</td>
+    <td class="th-col">หลับตาแล้วนอน</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+<div class="sheet group-page" id="group-o">
+  <div class="group-banner gb-c4">
+    <div><h1>🔤 Long O</h1><div class="eng">สระเสียงยาว O (โอ)</div></div>
+    <div class="chip">100 คำ</div>
+  </div>
+  <table class="word-table">
+    <colgroup>
+      <col class="c-num"><col class="c-word"><col class="c-pattern"><col class="c-thai">
+      <col class="c-meaning"><col class="c-en"><col class="c-th">
+    </colgroup>
+    <thead>
+      <tr><th>#</th><th>Word</th><th>Pattern</th><th>คำอ่าน</th><th>คำแปล</th><th>ตัวอย่างประโยค</th><th>คำแปลประโยค</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="num-col">1</td>
+    <td class="word-col">j<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">โจก</td>
+    <td class="meaning-col">เรื่องตลก/มุก</td>
+    <td class="en-col">He told a funny joke.</td>
+    <td class="th-col">เขาเล่าเรื่องตลกที่ตลกมาก</td>
+  </tr><tr>
+    <td class="num-col">2</td>
+    <td class="word-col">p<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">โพก</td>
+    <td class="meaning-col">จิ้ม/แหย่</td>
+    <td class="en-col">Don't poke your friend.</td>
+    <td class="th-col">อย่าจิ้มเพื่อนของคุณ</td>
+  </tr><tr>
+    <td class="num-col">3</td>
+    <td class="word-col">c<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">โค้ก</td>
+    <td class="meaning-col">โค้ก(น้ำอัดลม)</td>
+    <td class="en-col">I drink a cold coke.</td>
+    <td class="th-col">ฉันดื่มโค้กเย็น ๆ</td>
+  </tr><tr>
+    <td class="num-col">4</td>
+    <td class="word-col">sm<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">สโมก</td>
+    <td class="meaning-col">ควัน</td>
+    <td class="en-col">Smoke rises from the fire.</td>
+    <td class="th-col">ควันลอยขึ้นจากกองไฟ</td>
+  </tr><tr>
+    <td class="num-col">5</td>
+    <td class="word-col">br<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">โบรก</td>
+    <td class="meaning-col">พัง/ไม่มีเงิน(อดีต)</td>
+    <td class="en-col">The old chair broke yesterday.</td>
+    <td class="th-col">เก้าอี้เก่าพังเมื่อวาน</td>
+  </tr><tr>
+    <td class="num-col">6</td>
+    <td class="word-col">sp<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">สโปก</td>
+    <td class="meaning-col">พูด(อดีต)</td>
+    <td class="en-col">She spoke to the teacher.</td>
+    <td class="th-col">เธอพูดกับครู</td>
+  </tr><tr>
+    <td class="num-col">7</td>
+    <td class="word-col">ch<span class="vowel-hl">oke</span></td>
+    <td class="pattern-col">-oke</td>
+    <td class="thai-col">โชก</td>
+    <td class="meaning-col">สำลัก/อุดตัน</td>
+    <td class="en-col">Don't choke on your food.</td>
+    <td class="th-col">อย่าสำลักอาหาร</td>
+  </tr><tr>
+    <td class="num-col">8</td>
+    <td class="word-col">b<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">โบน</td>
+    <td class="meaning-col">กระดูก</td>
+    <td class="en-col">The dog chews a bone.</td>
+    <td class="th-col">สุนัขแทะกระดูก</td>
+  </tr><tr>
+    <td class="num-col">9</td>
+    <td class="word-col">c<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">โคน</td>
+    <td class="meaning-col">โคน(ไอศกรีม)/กรวย</td>
+    <td class="en-col">I want an ice cream cone.</td>
+    <td class="th-col">ฉันอยากได้ไอศกรีมโคน</td>
+  </tr><tr>
+    <td class="num-col">10</td>
+    <td class="word-col">t<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">โทน</td>
+    <td class="meaning-col">น้ำเสียง</td>
+    <td class="en-col">She spoke in a soft tone.</td>
+    <td class="th-col">เธอพูดด้วยน้ำเสียงนุ่มนวล</td>
+  </tr><tr>
+    <td class="num-col">11</td>
+    <td class="word-col">z<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">โซน</td>
+    <td class="meaning-col">เขต/โซน</td>
+    <td class="en-col">This is a quiet zone.</td>
+    <td class="th-col">นี่คือเขตเงียบสงบ</td>
+  </tr><tr>
+    <td class="num-col">12</td>
+    <td class="word-col">st<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">สโตน</td>
+    <td class="meaning-col">หิน</td>
+    <td class="en-col">He threw a small stone.</td>
+    <td class="th-col">เขาขว้างก้อนหินเล็ก ๆ</td>
+  </tr><tr>
+    <td class="num-col">13</td>
+    <td class="word-col">ph<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">โฟน</td>
+    <td class="meaning-col">โทรศัพท์</td>
+    <td class="en-col">I talk on the phone.</td>
+    <td class="th-col">ฉันคุยโทรศัพท์</td>
+  </tr><tr>
+    <td class="num-col">14</td>
+    <td class="word-col">al<span class="vowel-hl">one</span></td>
+    <td class="pattern-col">-one</td>
+    <td class="thai-col">อะโลน</td>
+    <td class="meaning-col">โดดเดี่ยว/คนเดียว</td>
+    <td class="en-col">She likes to be alone.</td>
+    <td class="th-col">เธอชอบอยู่คนเดียว</td>
+  </tr><tr>
+    <td class="num-col">15</td>
+    <td class="word-col">h<span class="vowel-hl">ope</span></td>
+    <td class="pattern-col">-ope</td>
+    <td class="thai-col">โฮป</td>
+    <td class="meaning-col">หวัง/ความหวัง</td>
+    <td class="en-col">I hope you feel better.</td>
+    <td class="th-col">ฉันหวังว่าคุณจะดีขึ้น</td>
+  </tr><tr>
+    <td class="num-col">16</td>
+    <td class="word-col">r<span class="vowel-hl">ope</span></td>
+    <td class="pattern-col">-ope</td>
+    <td class="thai-col">โรป</td>
+    <td class="meaning-col">เชือก</td>
+    <td class="en-col">Tie the rope tightly.</td>
+    <td class="th-col">ผูกเชือกให้แน่น</td>
+  </tr><tr>
+    <td class="num-col">17</td>
+    <td class="word-col">c<span class="vowel-hl">ope</span></td>
+    <td class="pattern-col">-ope</td>
+    <td class="thai-col">โคป</td>
+    <td class="meaning-col">รับมือ/จัดการ</td>
+    <td class="en-col">She copes well with stress.</td>
+    <td class="th-col">เธอรับมือกับความเครียดได้ดี</td>
+  </tr><tr>
+    <td class="num-col">18</td>
+    <td class="word-col">sl<span class="vowel-hl">ope</span></td>
+    <td class="pattern-col">-ope</td>
+    <td class="thai-col">สโลป</td>
+    <td class="meaning-col">ทางลาด</td>
+    <td class="en-col">The road has a steep slope.</td>
+    <td class="th-col">ถนนมีทางลาดชัน</td>
+  </tr><tr>
+    <td class="num-col">19</td>
+    <td class="word-col">sc<span class="vowel-hl">ope</span></td>
+    <td class="pattern-col">-ope</td>
+    <td class="thai-col">สโคป</td>
+    <td class="meaning-col">ขอบเขต/กล้องส่อง</td>
+    <td class="en-col">This is beyond the scope of the test.</td>
+    <td class="th-col">นี่อยู่นอกขอบเขตของข้อสอบ</td>
+  </tr><tr>
+    <td class="num-col">20</td>
+    <td class="word-col">r<span class="vowel-hl">ose</span></td>
+    <td class="pattern-col">-ose</td>
+    <td class="thai-col">โรส</td>
+    <td class="meaning-col">ดอกกุหลาบ</td>
+    <td class="en-col">She gave me a red rose.</td>
+    <td class="th-col">เธอให้ดอกกุหลาบสีแดงแก่ฉัน</td>
+  </tr><tr>
+    <td class="num-col">21</td>
+    <td class="word-col">n<span class="vowel-hl">ose</span></td>
+    <td class="pattern-col">-ose</td>
+    <td class="thai-col">โนส</td>
+    <td class="meaning-col">จมูก</td>
+    <td class="en-col">My nose is itchy.</td>
+    <td class="th-col">จมูกของฉันคัน</td>
+  </tr><tr>
+    <td class="num-col">22</td>
+    <td class="word-col">cl<span class="vowel-hl">ose</span></td>
+    <td class="pattern-col">-ose</td>
+    <td class="thai-col">โคลส</td>
+    <td class="meaning-col">ปิด</td>
+    <td class="en-col">Please close the door.</td>
+    <td class="th-col">กรุณาปิดประตู</td>
+  </tr><tr>
+    <td class="num-col">23</td>
+    <td class="word-col">p<span class="vowel-hl">ose</span></td>
+    <td class="pattern-col">-ose</td>
+    <td class="thai-col">โพส</td>
+    <td class="meaning-col">ท่าโพส/วางท่า</td>
+    <td class="en-col">She poses for the photo.</td>
+    <td class="th-col">เธอโพสท่าถ่ายรูป</td>
+  </tr><tr>
+    <td class="num-col">24</td>
+    <td class="word-col">ch<span class="vowel-hl">ose</span></td>
+    <td class="pattern-col">-ose</td>
+    <td class="thai-col">โชส</td>
+    <td class="meaning-col">เลือก(อดีต)</td>
+    <td class="en-col">He chose the blue shirt.</td>
+    <td class="th-col">เขาเลือกเสื้อสีฟ้า</td>
+  </tr><tr>
+    <td class="num-col">25</td>
+    <td class="word-col">h<span class="vowel-hl">ole</span></td>
+    <td class="pattern-col">-ole</td>
+    <td class="thai-col">โฮล</td>
+    <td class="meaning-col">รู</td>
+    <td class="en-col">There is a hole in my sock.</td>
+    <td class="th-col">มีรูอยู่ที่ถุงเท้าของฉัน</td>
+  </tr><tr>
+    <td class="num-col">26</td>
+    <td class="word-col">p<span class="vowel-hl">ole</span></td>
+    <td class="pattern-col">-ole</td>
+    <td class="thai-col">โพล</td>
+    <td class="meaning-col">เสา</td>
+    <td class="en-col">The flag is on a pole.</td>
+    <td class="th-col">ธงอยู่บนเสา</td>
+  </tr><tr>
+    <td class="num-col">27</td>
+    <td class="word-col">r<span class="vowel-hl">ole</span></td>
+    <td class="pattern-col">-ole</td>
+    <td class="thai-col">โรล</td>
+    <td class="meaning-col">บทบาท</td>
+    <td class="en-col">She plays the main role.</td>
+    <td class="th-col">เธอเล่นบทบาทหลัก</td>
+  </tr><tr>
+    <td class="num-col">28</td>
+    <td class="word-col">wh<span class="vowel-hl">ole</span></td>
+    <td class="pattern-col">-ole</td>
+    <td class="thai-col">โฮล</td>
+    <td class="meaning-col">ทั้งหมด</td>
+    <td class="en-col">I ate the whole cake.</td>
+    <td class="th-col">ฉันกินเค้กทั้งก้อน</td>
+  </tr><tr>
+    <td class="num-col">29</td>
+    <td class="word-col">s<span class="vowel-hl">ole</span></td>
+    <td class="pattern-col">-ole</td>
+    <td class="thai-col">โซล</td>
+    <td class="meaning-col">พื้นรองเท้า/เพียงหนึ่งเดียว</td>
+    <td class="en-col">The sole of my shoe is torn.</td>
+    <td class="th-col">พื้นรองเท้าของฉันขาด</td>
+  </tr><tr>
+    <td class="num-col">30</td>
+    <td class="word-col">sn<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">สโนว์</td>
+    <td class="meaning-col">หิมะ</td>
+    <td class="en-col">Snow falls in winter.</td>
+    <td class="th-col">หิมะตกในฤดูหนาว</td>
+  </tr><tr>
+    <td class="num-col">31</td>
+    <td class="word-col">gr<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โกรว์</td>
+    <td class="meaning-col">เติบโต</td>
+    <td class="en-col">Plants grow with sunlight.</td>
+    <td class="th-col">ต้นไม้เติบโตด้วยแสงแดด</td>
+  </tr><tr>
+    <td class="num-col">32</td>
+    <td class="word-col">kn<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โนว์</td>
+    <td class="meaning-col">รู้</td>
+    <td class="en-col">I know the answer.</td>
+    <td class="th-col">ฉันรู้คำตอบ</td>
+  </tr><tr>
+    <td class="num-col">33</td>
+    <td class="word-col">sh<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โชว์</td>
+    <td class="meaning-col">แสดง/โชว์</td>
+    <td class="en-col">Please show me your book.</td>
+    <td class="th-col">กรุณาโชว์หนังสือของคุณให้ฉันดู</td>
+  </tr><tr>
+    <td class="num-col">34</td>
+    <td class="word-col">sl<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">สโลว์</td>
+    <td class="meaning-col">ช้า</td>
+    <td class="en-col">The turtle is very slow.</td>
+    <td class="th-col">เต่าเดินช้ามาก</td>
+  </tr><tr>
+    <td class="num-col">35</td>
+    <td class="word-col">bl<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โบลว์</td>
+    <td class="meaning-col">เป่า</td>
+    <td class="en-col">Blow out the candles.</td>
+    <td class="th-col">เป่าเทียนให้ดับ</td>
+  </tr><tr>
+    <td class="num-col">36</td>
+    <td class="word-col">fl<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โฟลว์</td>
+    <td class="meaning-col">ไหล</td>
+    <td class="en-col">Water flows down the river.</td>
+    <td class="th-col">น้ำไหลลงแม่น้ำ</td>
+  </tr><tr>
+    <td class="num-col">37</td>
+    <td class="word-col">gl<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โกลว์</td>
+    <td class="meaning-col">เรืองแสง</td>
+    <td class="en-col">The stars glow at night.</td>
+    <td class="th-col">ดวงดาวเรืองแสงตอนกลางคืน</td>
+  </tr><tr>
+    <td class="num-col">38</td>
+    <td class="word-col">l<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โลว์</td>
+    <td class="meaning-col">ต่ำ</td>
+    <td class="en-col">The bridge is very low.</td>
+    <td class="th-col">สะพานนี้ต่ำมาก</td>
+  </tr><tr>
+    <td class="num-col">39</td>
+    <td class="word-col">r<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โรว์</td>
+    <td class="meaning-col">แถว/พาย(เรือ)</td>
+    <td class="en-col">We sit in the front row.</td>
+    <td class="th-col">เรานั่งแถวหน้า</td>
+  </tr><tr>
+    <td class="num-col">40</td>
+    <td class="word-col">thr<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โธรว์</td>
+    <td class="meaning-col">ขว้าง</td>
+    <td class="en-col">Throw the ball to me.</td>
+    <td class="th-col">ขว้างลูกบอลมาให้ฉัน</td>
+  </tr><tr>
+    <td class="num-col">41</td>
+    <td class="word-col">cr<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โครว์</td>
+    <td class="meaning-col">อีกา</td>
+    <td class="en-col">A crow sits on the fence.</td>
+    <td class="th-col">อีกาเกาะอยู่บนรั้ว</td>
+  </tr><tr>
+    <td class="num-col">42</td>
+    <td class="word-col"><span class="vowel-hl">ow</span>n</td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โอน</td>
+    <td class="meaning-col">เป็นเจ้าของ</td>
+    <td class="en-col">I own a small shop.</td>
+    <td class="th-col">ฉันเป็นเจ้าของร้านเล็ก ๆ</td>
+  </tr><tr>
+    <td class="num-col">43</td>
+    <td class="word-col">m<span class="vowel-hl">ow</span></td>
+    <td class="pattern-col">-ow</td>
+    <td class="thai-col">โมว์</td>
+    <td class="meaning-col">ตัด(หญ้า)</td>
+    <td class="en-col">He mows the lawn every week.</td>
+    <td class="th-col">เขาตัดหญ้าทุกสัปดาห์</td>
+  </tr><tr>
+    <td class="num-col">44</td>
+    <td class="word-col">b<span class="vowel-hl">oat</span></td>
+    <td class="pattern-col">-oat</td>
+    <td class="thai-col">โบท</td>
+    <td class="meaning-col">เรือ</td>
+    <td class="en-col">We ride a boat on the lake.</td>
+    <td class="th-col">เรานั่งเรือในทะเลสาบ</td>
+  </tr><tr>
+    <td class="num-col">45</td>
+    <td class="word-col">c<span class="vowel-hl">oat</span></td>
+    <td class="pattern-col">-oat</td>
+    <td class="thai-col">โคท</td>
+    <td class="meaning-col">เสื้อโค้ท</td>
+    <td class="en-col">Wear your coat, it's cold.</td>
+    <td class="th-col">ใส่เสื้อโค้ทสิ อากาศหนาว</td>
+  </tr><tr>
+    <td class="num-col">46</td>
+    <td class="word-col">g<span class="vowel-hl">oat</span></td>
+    <td class="pattern-col">-oat</td>
+    <td class="thai-col">โกท</td>
+    <td class="meaning-col">แพะ</td>
+    <td class="en-col">The goat eats grass.</td>
+    <td class="th-col">แพะกินหญ้า</td>
+  </tr><tr>
+    <td class="num-col">47</td>
+    <td class="word-col">fl<span class="vowel-hl">oat</span></td>
+    <td class="pattern-col">-oat</td>
+    <td class="thai-col">โฟลท</td>
+    <td class="meaning-col">ลอย</td>
+    <td class="en-col">The boat can float on water.</td>
+    <td class="th-col">เรือลอยอยู่บนน้ำได้</td>
+  </tr><tr>
+    <td class="num-col">48</td>
+    <td class="word-col">thr<span class="vowel-hl">oat</span></td>
+    <td class="pattern-col">-oat</td>
+    <td class="thai-col">โธรท</td>
+    <td class="meaning-col">ลำคอ</td>
+    <td class="en-col">My throat hurts today.</td>
+    <td class="th-col">คอของฉันเจ็บวันนี้</td>
+  </tr><tr>
+    <td class="num-col">49</td>
+    <td class="word-col">c<span class="vowel-hl">oast</span></td>
+    <td class="pattern-col">-oast</td>
+    <td class="thai-col">โคสท์</td>
+    <td class="meaning-col">ชายฝั่ง</td>
+    <td class="en-col">We walk along the coast.</td>
+    <td class="th-col">เราเดินไปตามชายฝั่ง</td>
+  </tr><tr>
+    <td class="num-col">50</td>
+    <td class="word-col">r<span class="vowel-hl">oast</span></td>
+    <td class="pattern-col">-oast</td>
+    <td class="thai-col">โรสท์</td>
+    <td class="meaning-col">ย่าง/อบ</td>
+    <td class="en-col">Mom will roast the chicken.</td>
+    <td class="th-col">แม่จะย่างไก่</td>
+  </tr><tr>
+    <td class="num-col">51</td>
+    <td class="word-col">t<span class="vowel-hl">oast</span></td>
+    <td class="pattern-col">-oast</td>
+    <td class="thai-col">โทสต์</td>
+    <td class="meaning-col">ขนมปังปิ้ง</td>
+    <td class="en-col">I eat toast for breakfast.</td>
+    <td class="th-col">ฉันกินขนมปังปิ้งเป็นอาหารเช้า</td>
+  </tr><tr>
+    <td class="num-col">52</td>
+    <td class="word-col">c<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โคลด์</td>
+    <td class="meaning-col">หนาว/เย็น</td>
+    <td class="en-col">It is very cold today.</td>
+    <td class="th-col">วันนี้อากาศหนาวมาก</td>
+  </tr><tr>
+    <td class="num-col">53</td>
+    <td class="word-col">g<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โกลด์</td>
+    <td class="meaning-col">ทอง</td>
+    <td class="en-col">She wears a gold necklace.</td>
+    <td class="th-col">เธอสวมสร้อยคอทองคำ</td>
+  </tr><tr>
+    <td class="num-col">54</td>
+    <td class="word-col">h<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โฮลด์</td>
+    <td class="meaning-col">ถือ/จับ</td>
+    <td class="en-col">Hold my hand, please.</td>
+    <td class="th-col">จับมือฉันไว้ด้วย</td>
+  </tr><tr>
+    <td class="num-col">55</td>
+    <td class="word-col">t<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โทลด์</td>
+    <td class="meaning-col">บอก(อดีต)</td>
+    <td class="en-col">She told me a secret.</td>
+    <td class="th-col">เธอบอกความลับกับฉัน</td>
+  </tr><tr>
+    <td class="num-col">56</td>
+    <td class="word-col">f<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โฟลด์</td>
+    <td class="meaning-col">พับ</td>
+    <td class="en-col">Fold the paper in half.</td>
+    <td class="th-col">พับกระดาษครึ่งหนึ่ง</td>
+  </tr><tr>
+    <td class="num-col">57</td>
+    <td class="word-col">b<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โบลด์</td>
+    <td class="meaning-col">ตัวหนา/กล้าหาญ</td>
+    <td class="en-col">The title is written in bold.</td>
+    <td class="th-col">หัวข้อเขียนด้วยตัวหนา</td>
+  </tr><tr>
+    <td class="num-col">58</td>
+    <td class="word-col">s<span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โซลด์</td>
+    <td class="meaning-col">ขาย(อดีต)</td>
+    <td class="en-col">He sold his old car.</td>
+    <td class="th-col">เขาขายรถเก่าของเขา</td>
+  </tr><tr>
+    <td class="num-col">59</td>
+    <td class="word-col"><span class="vowel-hl">old</span></td>
+    <td class="pattern-col">-old</td>
+    <td class="thai-col">โอลด์</td>
+    <td class="meaning-col">เก่า/แก่</td>
+    <td class="en-col">This is an old house.</td>
+    <td class="th-col">นี่คือบ้านเก่า</td>
+  </tr><tr>
+    <td class="num-col">60</td>
+    <td class="word-col">r<span class="vowel-hl">oad</span></td>
+    <td class="pattern-col">-oad</td>
+    <td class="thai-col">โรด</td>
+    <td class="meaning-col">ถนน</td>
+    <td class="en-col">Cars drive on the road.</td>
+    <td class="th-col">รถวิ่งบนถนน</td>
+  </tr><tr>
+    <td class="num-col">61</td>
+    <td class="word-col">l<span class="vowel-hl">oad</span></td>
+    <td class="pattern-col">-oad</td>
+    <td class="thai-col">โหลด</td>
+    <td class="meaning-col">บรรทุก/ภาระ</td>
+    <td class="en-col">The truck has a heavy load.</td>
+    <td class="th-col">รถบรรทุกมีของหนัก</td>
+  </tr><tr>
+    <td class="num-col">62</td>
+    <td class="word-col">t<span class="vowel-hl">oad</span></td>
+    <td class="pattern-col">-oad</td>
+    <td class="thai-col">โทด</td>
+    <td class="meaning-col">คางคก</td>
+    <td class="en-col">A toad hops in the garden.</td>
+    <td class="th-col">คางคกกระโดดในสวน</td>
+  </tr><tr>
+    <td class="num-col">63</td>
+    <td class="word-col">g<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">โก</td>
+    <td class="meaning-col">ไป</td>
+    <td class="en-col">Let's go to the park.</td>
+    <td class="th-col">ไปสวนสาธารณะกันเถอะ</td>
+  </tr><tr>
+    <td class="num-col">64</td>
+    <td class="word-col">s<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">โซ</td>
+    <td class="meaning-col">ดังนั้น/มาก</td>
+    <td class="en-col">I am so happy today.</td>
+    <td class="th-col">วันนี้ฉันมีความสุขมาก</td>
+  </tr><tr>
+    <td class="num-col">65</td>
+    <td class="word-col">n<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">โน</td>
+    <td class="meaning-col">ไม่</td>
+    <td class="en-col">No, thank you.</td>
+    <td class="th-col">ไม่ ขอบคุณ</td>
+  </tr><tr>
+    <td class="num-col">66</td>
+    <td class="word-col">her<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">ฮีโร่</td>
+    <td class="meaning-col">วีรบุรุษ/ฮีโร่</td>
+    <td class="en-col">The hero saves the city.</td>
+    <td class="th-col">วีรบุรุษช่วยเมืองไว้</td>
+  </tr><tr>
+    <td class="num-col">67</td>
+    <td class="word-col">zer<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">ซีโร่</td>
+    <td class="meaning-col">ศูนย์</td>
+    <td class="en-col">The score is zero.</td>
+    <td class="th-col">คะแนนคือศูนย์</td>
+  </tr><tr>
+    <td class="num-col">68</td>
+    <td class="word-col">hal<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">เฮโล</td>
+    <td class="meaning-col">รัศมี(รอบหัว)</td>
+    <td class="en-col">The angel has a halo.</td>
+    <td class="th-col">เทวดามีรัศมีรอบหัว</td>
+  </tr><tr>
+    <td class="num-col">69</td>
+    <td class="word-col">s<span class="vowel-hl">o</span>lo</td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">โซโล</td>
+    <td class="meaning-col">เดี่ยว</td>
+    <td class="en-col">She sings a solo.</td>
+    <td class="th-col">เธอร้องเพลงเดี่ยว</td>
+  </tr><tr>
+    <td class="num-col">70</td>
+    <td class="word-col">ech<span class="vowel-hl">o</span></td>
+    <td class="pattern-col">-o</td>
+    <td class="thai-col">เอคโค</td>
+    <td class="meaning-col">เสียงสะท้อน</td>
+    <td class="en-col">I hear an echo in the cave.</td>
+    <td class="th-col">ฉันได้ยินเสียงสะท้อนในถ้ำ</td>
+  </tr><tr>
+    <td class="num-col">71</td>
+    <td class="word-col">f<span class="vowel-hl">oa</span>m</td>
+    <td class="pattern-col">-oa</td>
+    <td class="thai-col">โฟม</td>
+    <td class="meaning-col">ฟอง</td>
+    <td class="en-col">The soap makes foam.</td>
+    <td class="th-col">สบู่ทำให้เกิดฟอง</td>
+  </tr><tr>
+    <td class="num-col">72</td>
+    <td class="word-col">r<span class="vowel-hl">oa</span>m</td>
+    <td class="pattern-col">-oa</td>
+    <td class="thai-col">โรม</td>
+    <td class="meaning-col">ท่องเที่ยวไปเรื่อย ๆ</td>
+    <td class="en-col">Cows roam in the field.</td>
+    <td class="th-col">วัวเดินเล่นไปเรื่อย ๆ ในทุ่ง</td>
+  </tr><tr>
+    <td class="num-col">73</td>
+    <td class="word-col">m<span class="vowel-hl">oa</span>n</td>
+    <td class="pattern-col">-oa</td>
+    <td class="thai-col">โมน</td>
+    <td class="meaning-col">คร่ำครวญ</td>
+    <td class="en-col">He began to moan in pain.</td>
+    <td class="th-col">เขาเริ่มคร่ำครวญด้วยความเจ็บปวด</td>
+  </tr><tr>
+    <td class="num-col">74</td>
+    <td class="word-col">l<span class="vowel-hl">oa</span>n</td>
+    <td class="pattern-col">-oa</td>
+    <td class="thai-col">โลน</td>
+    <td class="meaning-col">เงินกู้</td>
+    <td class="en-col">He got a loan from the bank.</td>
+    <td class="th-col">เขากู้เงินจากธนาคาร</td>
+  </tr><tr>
+    <td class="num-col">75</td>
+    <td class="word-col">m<span class="vowel-hl">ost</span></td>
+    <td class="pattern-col">-ost</td>
+    <td class="thai-col">โมสต์</td>
+    <td class="meaning-col">มากที่สุด</td>
+    <td class="en-col">She has the most books.</td>
+    <td class="th-col">เธอมีหนังสือมากที่สุด</td>
+  </tr><tr>
+    <td class="num-col">76</td>
+    <td class="word-col">p<span class="vowel-hl">ost</span></td>
+    <td class="pattern-col">-ost</td>
+    <td class="thai-col">โพสต์</td>
+    <td class="meaning-col">โพสต์/เสา</td>
+    <td class="en-col">I post a photo online.</td>
+    <td class="th-col">ฉันโพสต์รูปภาพออนไลน์</td>
+  </tr><tr>
+    <td class="num-col">77</td>
+    <td class="word-col">h<span class="vowel-hl">ost</span></td>
+    <td class="pattern-col">-ost</td>
+    <td class="thai-col">โฮสต์</td>
+    <td class="meaning-col">เจ้าภาพ</td>
+    <td class="en-col">He is the host of the party.</td>
+    <td class="th-col">เขาเป็นเจ้าภาพงานปาร์ตี้</td>
+  </tr><tr>
+    <td class="num-col">78</td>
+    <td class="word-col">gh<span class="vowel-hl">ost</span></td>
+    <td class="pattern-col">-ost</td>
+    <td class="thai-col">โกสต์</td>
+    <td class="meaning-col">ผี</td>
+    <td class="en-col">The story is about a ghost.</td>
+    <td class="th-col">เรื่องนี้เกี่ยวกับผี</td>
+  </tr><tr>
+    <td class="num-col">79</td>
+    <td class="word-col">gr<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โกรว์น</td>
+    <td class="meaning-col">เติบโต(กริยาช่องสาม)</td>
+    <td class="en-col">The plant has grown tall.</td>
+    <td class="th-col">ต้นไม้เติบโตสูงขึ้น</td>
+  </tr><tr>
+    <td class="num-col">80</td>
+    <td class="word-col">kn<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โนว์น</td>
+    <td class="meaning-col">รู้จัก(กริยาช่องสาม)</td>
+    <td class="en-col">She is known for her kindness.</td>
+    <td class="th-col">เธอเป็นที่รู้จักในเรื่องความใจดี</td>
+  </tr><tr>
+    <td class="num-col">81</td>
+    <td class="word-col">thr<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โธรว์น</td>
+    <td class="meaning-col">ถูกขว้าง(กริยาช่องสาม)</td>
+    <td class="en-col">The ball was thrown far.</td>
+    <td class="th-col">ลูกบอลถูกขว้างไปไกล</td>
+  </tr><tr>
+    <td class="num-col">82</td>
+    <td class="word-col">bl<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โบลว์น</td>
+    <td class="meaning-col">ถูกเป่า(กริยาช่องสาม)</td>
+    <td class="en-col">The candle was blown out.</td>
+    <td class="th-col">เทียนถูกเป่าดับ</td>
+  </tr><tr>
+    <td class="num-col">83</td>
+    <td class="word-col">sh<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โชว์น</td>
+    <td class="meaning-col">ถูกแสดง(กริยาช่องสาม)</td>
+    <td class="en-col">The movie was shown last night.</td>
+    <td class="th-col">หนังเรื่องนี้ถูกฉายเมื่อคืน</td>
+  </tr><tr>
+    <td class="num-col">84</td>
+    <td class="word-col">fl<span class="vowel-hl">own</span></td>
+    <td class="pattern-col">-own</td>
+    <td class="thai-col">โฟลว์น</td>
+    <td class="meaning-col">บิน(กริยาช่องสาม)</td>
+    <td class="en-col">The bird has flown away.</td>
+    <td class="th-col">นกได้บินจากไปแล้ว</td>
+  </tr><tr>
+    <td class="num-col">85</td>
+    <td class="word-col">c<span class="vowel-hl">ode</span></td>
+    <td class="pattern-col">-ode</td>
+    <td class="thai-col">โค้ด</td>
+    <td class="meaning-col">รหัส/โค้ด</td>
+    <td class="en-col">Enter the secret code.</td>
+    <td class="th-col">ใส่รหัสลับ</td>
+  </tr><tr>
+    <td class="num-col">86</td>
+    <td class="word-col">m<span class="vowel-hl">ode</span></td>
+    <td class="pattern-col">-ode</td>
+    <td class="thai-col">โหมด</td>
+    <td class="meaning-col">โหมด</td>
+    <td class="en-col">Switch to silent mode.</td>
+    <td class="th-col">เปลี่ยนเป็นโหมดเงียบ</td>
+  </tr><tr>
+    <td class="num-col">87</td>
+    <td class="word-col">n<span class="vowel-hl">ode</span></td>
+    <td class="pattern-col">-ode</td>
+    <td class="thai-col">โหนด</td>
+    <td class="meaning-col">โหนด(จุดเชื่อมต่อ)</td>
+    <td class="en-col">Each node connects to the network.</td>
+    <td class="th-col">แต่ละโหนดเชื่อมต่อกับเครือข่าย</td>
+  </tr><tr>
+    <td class="num-col">88</td>
+    <td class="word-col">r<span class="vowel-hl">ode</span></td>
+    <td class="pattern-col">-ode</td>
+    <td class="thai-col">โรด</td>
+    <td class="meaning-col">ขี่(อดีต)</td>
+    <td class="en-col">She rode her bike to school.</td>
+    <td class="th-col">เธอขี่จักรยานไปโรงเรียน</td>
+  </tr><tr>
+    <td class="num-col">89</td>
+    <td class="word-col">dr<span class="vowel-hl">ove</span></td>
+    <td class="pattern-col">-ove</td>
+    <td class="thai-col">โดรฟ</td>
+    <td class="meaning-col">ขับรถ(อดีต)</td>
+    <td class="en-col">He drove to the city.</td>
+    <td class="th-col">เขาขับรถไปเมือง</td>
+  </tr><tr>
+    <td class="num-col">90</td>
+    <td class="word-col">w<span class="vowel-hl">ove</span></td>
+    <td class="pattern-col">-ove</td>
+    <td class="thai-col">โวฟ</td>
+    <td class="meaning-col">ทอ(ผ้า)(อดีต)</td>
+    <td class="en-col">She wove a beautiful basket.</td>
+    <td class="th-col">เธอทอตะกร้าสวย ๆ</td>
+  </tr><tr>
+    <td class="num-col">91</td>
+    <td class="word-col">st<span class="vowel-hl">ove</span></td>
+    <td class="pattern-col">-ove</td>
+    <td class="thai-col">สโตฟ</td>
+    <td class="meaning-col">เตา</td>
+    <td class="en-col">Mom cooks on the stove.</td>
+    <td class="th-col">แม่ทำอาหารบนเตา</td>
+  </tr><tr>
+    <td class="num-col">92</td>
+    <td class="word-col">c<span class="vowel-hl">ove</span></td>
+    <td class="pattern-col">-ove</td>
+    <td class="thai-col">โคฟ</td>
+    <td class="meaning-col">อ่าวเล็ก ๆ</td>
+    <td class="en-col">The boat hides in the cove.</td>
+    <td class="th-col">เรือซ่อนอยู่ในอ่าวเล็ก ๆ</td>
+  </tr><tr>
+    <td class="num-col">93</td>
+    <td class="word-col">gr<span class="vowel-hl">ove</span></td>
+    <td class="pattern-col">-ove</td>
+    <td class="thai-col">โกรฟ</td>
+    <td class="meaning-col">ป่าละเมาะ/สวนผลไม้</td>
+    <td class="en-col">They walk through the orange grove.</td>
+    <td class="th-col">พวกเขาเดินผ่านสวนส้ม</td>
+  </tr><tr>
+    <td class="num-col">94</td>
+    <td class="word-col">c<span class="vowel-hl">oal</span></td>
+    <td class="pattern-col">-oal</td>
+    <td class="thai-col">โคล</td>
+    <td class="meaning-col">ถ่านหิน</td>
+    <td class="en-col">The train burns coal.</td>
+    <td class="th-col">รถไฟเผาถ่านหิน</td>
+  </tr><tr>
+    <td class="num-col">95</td>
+    <td class="word-col">g<span class="vowel-hl">oal</span></td>
+    <td class="pattern-col">-oal</td>
+    <td class="thai-col">โกล</td>
+    <td class="meaning-col">ประตู(ฟุตบอล)/เป้าหมาย</td>
+    <td class="en-col">He scored a goal.</td>
+    <td class="th-col">เขายิงประตูได้</td>
+  </tr><tr>
+    <td class="num-col">96</td>
+    <td class="word-col"><span class="vowel-hl">o</span>nly</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">โอนลี่</td>
+    <td class="meaning-col">เท่านั้น/เพียง</td>
+    <td class="en-col">I only have one dollar.</td>
+    <td class="th-col">ฉันมีเงินแค่หนึ่งดอลลาร์</td>
+  </tr><tr>
+    <td class="num-col">97</td>
+    <td class="word-col"><span class="vowel-hl">o</span>pen</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">โอเพ่น</td>
+    <td class="meaning-col">เปิด</td>
+    <td class="en-col">Please open the window.</td>
+    <td class="th-col">กรุณาเปิดหน้าต่าง</td>
+  </tr><tr>
+    <td class="num-col">98</td>
+    <td class="word-col"><span class="vowel-hl">o</span>ver</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">โอเวอร์</td>
+    <td class="meaning-col">เหนือ/จบ</td>
+    <td class="en-col">The game is over now.</td>
+    <td class="th-col">เกมจบแล้วตอนนี้</td>
+  </tr><tr>
+    <td class="num-col">99</td>
+    <td class="word-col">m<span class="vowel-hl">o</span>tor</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">มอเตอร์</td>
+    <td class="meaning-col">มอเตอร์</td>
+    <td class="en-col">The motor makes the fan spin.</td>
+    <td class="th-col">มอเตอร์ทำให้พัดลมหมุน</td>
+  </tr><tr>
+    <td class="num-col">100</td>
+    <td class="word-col">t<span class="vowel-hl">o</span>tal</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">โทเทิล</td>
+    <td class="meaning-col">รวมทั้งหมด</td>
+    <td class="en-col">The total is one hundred baht.</td>
+    <td class="th-col">ยอดรวมคือหนึ่งร้อยบาท</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+<div class="sheet group-page" id="group-u">
+  <div class="group-banner gb-c5">
+    <div><h1>🔤 Long U</h1><div class="eng">สระเสียงยาว U (อู)</div></div>
+    <div class="chip">100 คำ</div>
+  </div>
+  <table class="word-table">
+    <colgroup>
+      <col class="c-num"><col class="c-word"><col class="c-pattern"><col class="c-thai">
+      <col class="c-meaning"><col class="c-en"><col class="c-th">
+    </colgroup>
+    <thead>
+      <tr><th>#</th><th>Word</th><th>Pattern</th><th>คำอ่าน</th><th>คำแปล</th><th>ตัวอย่างประโยค</th><th>คำแปลประโยค</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="num-col">1</td>
+    <td class="word-col">c<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">คิวท์</td>
+    <td class="meaning-col">น่ารัก</td>
+    <td class="en-col">The puppy is so cute.</td>
+    <td class="th-col">ลูกสุนัขน่ารักมาก</td>
+  </tr><tr>
+    <td class="num-col">2</td>
+    <td class="word-col">m<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">มิวท์</td>
+    <td class="meaning-col">เงียบ/ปิดเสียง</td>
+    <td class="en-col">Please mute your phone.</td>
+    <td class="th-col">กรุณาปิดเสียงโทรศัพท์ของคุณ</td>
+  </tr><tr>
+    <td class="num-col">3</td>
+    <td class="word-col">fl<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">ฟลูท</td>
+    <td class="meaning-col">ขลุ่ย/ฟลูท</td>
+    <td class="en-col">She plays the flute well.</td>
+    <td class="th-col">เธอเล่นฟลูทเก่ง</td>
+  </tr><tr>
+    <td class="num-col">4</td>
+    <td class="word-col">ch<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">ชูท</td>
+    <td class="meaning-col">ทางลาดเลื่อน/ร่มชูชีพ</td>
+    <td class="en-col">Kids slide down the chute.</td>
+    <td class="th-col">เด็ก ๆ เลื่อนลงมาตามทางลาด</td>
+  </tr><tr>
+    <td class="num-col">5</td>
+    <td class="word-col">l<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">ลูท</td>
+    <td class="meaning-col">พิณ(เครื่องดนตรี)</td>
+    <td class="en-col">He plays an old lute.</td>
+    <td class="th-col">เขาเล่นพิณเก่า</td>
+  </tr><tr>
+    <td class="num-col">6</td>
+    <td class="word-col">sal<span class="vowel-hl">ute</span></td>
+    <td class="pattern-col">-ute</td>
+    <td class="thai-col">ซาลูท</td>
+    <td class="meaning-col">ทำความเคารพ</td>
+    <td class="en-col">The soldiers salute the flag.</td>
+    <td class="th-col">ทหารทำความเคารพธง</td>
+  </tr><tr>
+    <td class="num-col">7</td>
+    <td class="word-col">c<span class="vowel-hl">ube</span></td>
+    <td class="pattern-col">-ube</td>
+    <td class="thai-col">คิวบ์</td>
+    <td class="meaning-col">ลูกบาศก์</td>
+    <td class="en-col">Ice comes in a cube shape.</td>
+    <td class="th-col">น้ำแข็งมาในรูปทรงลูกบาศก์</td>
+  </tr><tr>
+    <td class="num-col">8</td>
+    <td class="word-col">t<span class="vowel-hl">ube</span></td>
+    <td class="pattern-col">-ube</td>
+    <td class="thai-col">ทิวบ์</td>
+    <td class="meaning-col">ท่อ/หลอด</td>
+    <td class="en-col">Squeeze the toothpaste tube.</td>
+    <td class="th-col">บีบหลอดยาสีฟัน</td>
+  </tr><tr>
+    <td class="num-col">9</td>
+    <td class="word-col">J<span class="vowel-hl">une</span></td>
+    <td class="pattern-col">-une</td>
+    <td class="thai-col">จูน</td>
+    <td class="meaning-col">เดือนมิถุนายน</td>
+    <td class="en-col">My birthday is in June.</td>
+    <td class="th-col">วันเกิดของฉันอยู่ในเดือนมิถุนายน</td>
+  </tr><tr>
+    <td class="num-col">10</td>
+    <td class="word-col">t<span class="vowel-hl">une</span></td>
+    <td class="pattern-col">-une</td>
+    <td class="thai-col">ทูน</td>
+    <td class="meaning-col">ทำนองเพลง</td>
+    <td class="en-col">She hums a happy tune.</td>
+    <td class="th-col">เธอฮัมทำนองเพลงที่ร่าเริง</td>
+  </tr><tr>
+    <td class="num-col">11</td>
+    <td class="word-col">pr<span class="vowel-hl">une</span></td>
+    <td class="pattern-col">-une</td>
+    <td class="thai-col">พรูน</td>
+    <td class="meaning-col">ลูกพรุน/ตัดแต่งกิ่ง</td>
+    <td class="en-col">Prune the plant every spring.</td>
+    <td class="th-col">ตัดแต่งกิ่งต้นไม้ทุกฤดูใบไม้ผลิ</td>
+  </tr><tr>
+    <td class="num-col">12</td>
+    <td class="word-col">d<span class="vowel-hl">une</span></td>
+    <td class="pattern-col">-une</td>
+    <td class="thai-col">ดูน</td>
+    <td class="meaning-col">เนินทราย</td>
+    <td class="en-col">Camels walk over the dune.</td>
+    <td class="th-col">อูฐเดินข้ามเนินทราย</td>
+  </tr><tr>
+    <td class="num-col">13</td>
+    <td class="word-col">r<span class="vowel-hl">ude</span></td>
+    <td class="pattern-col">-ude</td>
+    <td class="thai-col">รูด</td>
+    <td class="meaning-col">หยาบคาย</td>
+    <td class="en-col">It is rude to shout.</td>
+    <td class="th-col">การตะโกนเป็นเรื่องหยาบคาย</td>
+  </tr><tr>
+    <td class="num-col">14</td>
+    <td class="word-col">d<span class="vowel-hl">ude</span></td>
+    <td class="pattern-col">-ude</td>
+    <td class="thai-col">ดูด</td>
+    <td class="meaning-col">เพื่อน/หนุ่ม(สแลง)</td>
+    <td class="en-col">Hey dude, how are you?</td>
+    <td class="th-col">เฮ้เพื่อน เป็นอย่างไรบ้าง</td>
+  </tr><tr>
+    <td class="num-col">15</td>
+    <td class="word-col">cr<span class="vowel-hl">ude</span></td>
+    <td class="pattern-col">-ude</td>
+    <td class="thai-col">ครูด</td>
+    <td class="meaning-col">หยาบ/ดิบ</td>
+    <td class="en-col">Crude oil comes from the ground.</td>
+    <td class="th-col">น้ำมันดิบมาจากพื้นดิน</td>
+  </tr><tr>
+    <td class="num-col">16</td>
+    <td class="word-col"><span class="vowel-hl">use</span></td>
+    <td class="pattern-col">-use</td>
+    <td class="thai-col">ยูส</td>
+    <td class="meaning-col">ใช้</td>
+    <td class="en-col">I use a pencil to write.</td>
+    <td class="th-col">ฉันใช้ดินสอเขียน</td>
+  </tr><tr>
+    <td class="num-col">17</td>
+    <td class="word-col">f<span class="vowel-hl">use</span></td>
+    <td class="pattern-col">-use</td>
+    <td class="thai-col">ฟิวส์</td>
+    <td class="meaning-col">ฟิวส์</td>
+    <td class="en-col">The fuse blew out.</td>
+    <td class="th-col">ฟิวส์ขาด</td>
+  </tr><tr>
+    <td class="num-col">18</td>
+    <td class="word-col">m<span class="vowel-hl">use</span></td>
+    <td class="pattern-col">-use</td>
+    <td class="thai-col">มิวส์</td>
+    <td class="meaning-col">ครุ่นคิด/แรงบันดาลใจ</td>
+    <td class="en-col">She muses about her future.</td>
+    <td class="th-col">เธอครุ่นคิดถึงอนาคตของเธอ</td>
+  </tr><tr>
+    <td class="num-col">19</td>
+    <td class="word-col">h<span class="vowel-hl">uge</span></td>
+    <td class="pattern-col">-uge</td>
+    <td class="thai-col">ฮิวจ์</td>
+    <td class="meaning-col">ใหญ่มาก</td>
+    <td class="en-col">The elephant is huge.</td>
+    <td class="th-col">ช้างตัวใหญ่มาก</td>
+  </tr><tr>
+    <td class="num-col">20</td>
+    <td class="word-col">bl<span class="vowel-hl">ue</span></td>
+    <td class="pattern-col">-ue</td>
+    <td class="thai-col">บลู</td>
+    <td class="meaning-col">สีฟ้า</td>
+    <td class="en-col">The sky is blue.</td>
+    <td class="th-col">ท้องฟ้าเป็นสีฟ้า</td>
+  </tr><tr>
+    <td class="num-col">21</td>
+    <td class="word-col">gl<span class="vowel-hl">ue</span></td>
+    <td class="pattern-col">-ue</td>
+    <td class="thai-col">กลู</td>
+    <td class="meaning-col">กาว</td>
+    <td class="en-col">Use glue to stick the paper.</td>
+    <td class="th-col">ใช้กาวติดกระดาษ</td>
+  </tr><tr>
+    <td class="num-col">22</td>
+    <td class="word-col">tr<span class="vowel-hl">ue</span></td>
+    <td class="pattern-col">-ue</td>
+    <td class="thai-col">ทรู</td>
+    <td class="meaning-col">จริง</td>
+    <td class="en-col">This story is true.</td>
+    <td class="th-col">เรื่องนี้เป็นเรื่องจริง</td>
+  </tr><tr>
+    <td class="num-col">23</td>
+    <td class="word-col">cl<span class="vowel-hl">ue</span></td>
+    <td class="pattern-col">-ue</td>
+    <td class="thai-col">คลู</td>
+    <td class="meaning-col">เบาะแส</td>
+    <td class="en-col">Give me a clue, please.</td>
+    <td class="th-col">ขอเบาะแสให้ฉันหน่อย</td>
+  </tr><tr>
+    <td class="num-col">24</td>
+    <td class="word-col">d<span class="vowel-hl">ue</span></td>
+    <td class="pattern-col">-ue</td>
+    <td class="thai-col">ดิว</td>
+    <td class="meaning-col">ครบกำหนด</td>
+    <td class="en-col">The homework is due tomorrow.</td>
+    <td class="th-col">การบ้านครบกำหนดพรุ่งนี้</td>
+  </tr><tr>
+    <td class="num-col">25</td>
+    <td class="word-col">m<span class="vowel-hl">oon</span></td>
+    <td class="pattern-col">-oon</td>
+    <td class="thai-col">มูน</td>
+    <td class="meaning-col">ดวงจันทร์</td>
+    <td class="en-col">The moon is bright tonight.</td>
+    <td class="th-col">คืนนี้ดวงจันทร์สว่างมาก</td>
+  </tr><tr>
+    <td class="num-col">26</td>
+    <td class="word-col">s<span class="vowel-hl">oon</span></td>
+    <td class="pattern-col">-oon</td>
+    <td class="thai-col">ซูน</td>
+    <td class="meaning-col">เร็ว ๆ นี้</td>
+    <td class="en-col">See you soon.</td>
+    <td class="th-col">แล้วเจอกันเร็ว ๆ นี้</td>
+  </tr><tr>
+    <td class="num-col">27</td>
+    <td class="word-col">n<span class="vowel-hl">oon</span></td>
+    <td class="pattern-col">-oon</td>
+    <td class="thai-col">นูน</td>
+    <td class="meaning-col">เที่ยงวัน</td>
+    <td class="en-col">We eat lunch at noon.</td>
+    <td class="th-col">เรากินอาหารกลางวันตอนเที่ยง</td>
+  </tr><tr>
+    <td class="num-col">28</td>
+    <td class="word-col">sp<span class="vowel-hl">oon</span></td>
+    <td class="pattern-col">-oon</td>
+    <td class="thai-col">สปูน</td>
+    <td class="meaning-col">ช้อน</td>
+    <td class="en-col">Eat the soup with a spoon.</td>
+    <td class="th-col">กินซุปด้วยช้อน</td>
+  </tr><tr>
+    <td class="num-col">29</td>
+    <td class="word-col">c<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">คูล</td>
+    <td class="meaning-col">เย็น/เท่</td>
+    <td class="en-col">The water feels cool.</td>
+    <td class="th-col">น้ำรู้สึกเย็น</td>
+  </tr><tr>
+    <td class="num-col">30</td>
+    <td class="word-col">p<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">พูล</td>
+    <td class="meaning-col">สระว่ายน้ำ</td>
+    <td class="en-col">We swim in the pool.</td>
+    <td class="th-col">เราว่ายน้ำในสระ</td>
+  </tr><tr>
+    <td class="num-col">31</td>
+    <td class="word-col">t<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">ทูล</td>
+    <td class="meaning-col">เครื่องมือ</td>
+    <td class="en-col">A hammer is a useful tool.</td>
+    <td class="th-col">ค้อนเป็นเครื่องมือที่มีประโยชน์</td>
+  </tr><tr>
+    <td class="num-col">32</td>
+    <td class="word-col">sch<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">สคูล</td>
+    <td class="meaning-col">โรงเรียน</td>
+    <td class="en-col">I go to school every day.</td>
+    <td class="th-col">ฉันไปโรงเรียนทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">33</td>
+    <td class="word-col">f<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">ฟูล</td>
+    <td class="meaning-col">คนโง่/หลอก</td>
+    <td class="en-col">Don't fool your friends.</td>
+    <td class="th-col">อย่าหลอกเพื่อนของคุณ</td>
+  </tr><tr>
+    <td class="num-col">34</td>
+    <td class="word-col">st<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">สตูล</td>
+    <td class="meaning-col">เก้าอี้สตูล</td>
+    <td class="en-col">She sits on a small stool.</td>
+    <td class="th-col">เธอนั่งบนเก้าอี้สตูลตัวเล็ก</td>
+  </tr><tr>
+    <td class="num-col">35</td>
+    <td class="word-col">sp<span class="vowel-hl">ool</span></td>
+    <td class="pattern-col">-ool</td>
+    <td class="thai-col">สปูล</td>
+    <td class="meaning-col">แกนม้วนด้าย</td>
+    <td class="en-col">Wind the thread on the spool.</td>
+    <td class="th-col">พันด้ายรอบแกน</td>
+  </tr><tr>
+    <td class="num-col">36</td>
+    <td class="word-col">r<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">รูม</td>
+    <td class="meaning-col">ห้อง</td>
+    <td class="en-col">Clean your room, please.</td>
+    <td class="th-col">กรุณาทำความสะอาดห้องของคุณ</td>
+  </tr><tr>
+    <td class="num-col">37</td>
+    <td class="word-col">br<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">บรูม</td>
+    <td class="meaning-col">ไม้กวาด</td>
+    <td class="en-col">Sweep the floor with a broom.</td>
+    <td class="th-col">กวาดพื้นด้วยไม้กวาด</td>
+  </tr><tr>
+    <td class="num-col">38</td>
+    <td class="word-col">bl<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">บลูม</td>
+    <td class="meaning-col">บาน(ดอกไม้)</td>
+    <td class="en-col">Flowers bloom in spring.</td>
+    <td class="th-col">ดอกไม้บานในฤดูใบไม้ผลิ</td>
+  </tr><tr>
+    <td class="num-col">39</td>
+    <td class="word-col">gr<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">กรูม</td>
+    <td class="meaning-col">เจ้าบ่าว/แต่งตัว(สัตว์)</td>
+    <td class="en-col">The groom wears a black suit.</td>
+    <td class="th-col">เจ้าบ่าวสวมสูทสีดำ</td>
+  </tr><tr>
+    <td class="num-col">40</td>
+    <td class="word-col">z<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">ซูม</td>
+    <td class="meaning-col">ซูม(ขยาย)</td>
+    <td class="en-col">Zoom in on the photo.</td>
+    <td class="th-col">ซูมภาพเข้ามา</td>
+  </tr><tr>
+    <td class="num-col">41</td>
+    <td class="word-col">b<span class="vowel-hl">oom</span></td>
+    <td class="pattern-col">-oom</td>
+    <td class="thai-col">บูม</td>
+    <td class="meaning-col">เสียงดังสนั่น/เฟื่องฟู</td>
+    <td class="en-col">The economy is in a boom.</td>
+    <td class="th-col">เศรษฐกิจกำลังเฟื่องฟู</td>
+  </tr><tr>
+    <td class="num-col">42</td>
+    <td class="word-col">h<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">ฮูป</td>
+    <td class="meaning-col">ห่วง</td>
+    <td class="en-col">She spins the hula hoop.</td>
+    <td class="th-col">เธอหมุนห่วงฮูล่าฮูป</td>
+  </tr><tr>
+    <td class="num-col">43</td>
+    <td class="word-col">l<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">ลูป</td>
+    <td class="meaning-col">วนซ้ำ/ห่วง</td>
+    <td class="en-col">The song plays on a loop.</td>
+    <td class="th-col">เพลงเล่นวนซ้ำ</td>
+  </tr><tr>
+    <td class="num-col">44</td>
+    <td class="word-col">sc<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">สคูป</td>
+    <td class="meaning-col">ตัก</td>
+    <td class="en-col">Scoop the ice cream into the bowl.</td>
+    <td class="th-col">ตักไอศกรีมใส่ถ้วย</td>
+  </tr><tr>
+    <td class="num-col">45</td>
+    <td class="word-col">dr<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">ดรูป</td>
+    <td class="meaning-col">ห้อยลง/เหี่ยว</td>
+    <td class="en-col">The flower begins to droop.</td>
+    <td class="th-col">ดอกไม้เริ่มเหี่ยวห้อยลง</td>
+  </tr><tr>
+    <td class="num-col">46</td>
+    <td class="word-col">tr<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">ทรูป</td>
+    <td class="meaning-col">กองทหาร</td>
+    <td class="en-col">The troop marches down the road.</td>
+    <td class="th-col">กองทหารเดินสวนสนามไปตามถนน</td>
+  </tr><tr>
+    <td class="num-col">47</td>
+    <td class="word-col">sn<span class="vowel-hl">oop</span></td>
+    <td class="pattern-col">-oop</td>
+    <td class="thai-col">สนูป</td>
+    <td class="meaning-col">สอดแนม</td>
+    <td class="en-col">Don't snoop in my room.</td>
+    <td class="th-col">อย่าสอดแนมในห้องของฉัน</td>
+  </tr><tr>
+    <td class="num-col">48</td>
+    <td class="word-col">b<span class="vowel-hl">oot</span></td>
+    <td class="pattern-col">-oot</td>
+    <td class="thai-col">บูท</td>
+    <td class="meaning-col">รองเท้าบูท</td>
+    <td class="en-col">He wears a leather boot.</td>
+    <td class="th-col">เขาสวมรองเท้าบูทหนัง</td>
+  </tr><tr>
+    <td class="num-col">49</td>
+    <td class="word-col">r<span class="vowel-hl">oot</span></td>
+    <td class="pattern-col">-oot</td>
+    <td class="thai-col">รูท</td>
+    <td class="meaning-col">ราก</td>
+    <td class="en-col">The root grows under the ground.</td>
+    <td class="th-col">รากเติบโตอยู่ใต้ดิน</td>
+  </tr><tr>
+    <td class="num-col">50</td>
+    <td class="word-col">h<span class="vowel-hl">oot</span></td>
+    <td class="pattern-col">-oot</td>
+    <td class="thai-col">ฮูท</td>
+    <td class="meaning-col">เสียงร้องนกฮูก</td>
+    <td class="en-col">The owl gives a loud hoot.</td>
+    <td class="th-col">นกฮูกร้องเสียงดัง</td>
+  </tr><tr>
+    <td class="num-col">51</td>
+    <td class="word-col">sh<span class="vowel-hl">oot</span></td>
+    <td class="pattern-col">-oot</td>
+    <td class="thai-col">ชูท</td>
+    <td class="meaning-col">ยิง/ถ่ายภาพ</td>
+    <td class="en-col">He shoots the ball into the net.</td>
+    <td class="th-col">เขายิงลูกบอลเข้าตาข่าย</td>
+  </tr><tr>
+    <td class="num-col">52</td>
+    <td class="word-col">sc<span class="vowel-hl">oot</span></td>
+    <td class="pattern-col">-oot</td>
+    <td class="thai-col">สคูท</td>
+    <td class="meaning-col">เลื่อนไปเร็ว ๆ</td>
+    <td class="en-col">Scoot over and make room.</td>
+    <td class="th-col">เลื่อนไปแล้วเว้นที่ให้หน่อย</td>
+  </tr><tr>
+    <td class="num-col">53</td>
+    <td class="word-col">f<span class="vowel-hl">ood</span></td>
+    <td class="pattern-col">-ood</td>
+    <td class="thai-col">ฟู้ด</td>
+    <td class="meaning-col">อาหาร</td>
+    <td class="en-col">I love Thai food.</td>
+    <td class="th-col">ฉันชอบอาหารไทย</td>
+  </tr><tr>
+    <td class="num-col">54</td>
+    <td class="word-col">m<span class="vowel-hl">ood</span></td>
+    <td class="pattern-col">-ood</td>
+    <td class="thai-col">มู้ด</td>
+    <td class="meaning-col">อารมณ์</td>
+    <td class="en-col">She is in a good mood today.</td>
+    <td class="th-col">วันนี้เธออารมณ์ดี</td>
+  </tr><tr>
+    <td class="num-col">55</td>
+    <td class="word-col">t<span class="vowel-hl">oo</span></td>
+    <td class="pattern-col">-oo</td>
+    <td class="thai-col">ทู</td>
+    <td class="meaning-col">เช่นกัน/มากเกินไป</td>
+    <td class="en-col">I want to go too.</td>
+    <td class="th-col">ฉันอยากไปเช่นกัน</td>
+  </tr><tr>
+    <td class="num-col">56</td>
+    <td class="word-col">z<span class="vowel-hl">oo</span></td>
+    <td class="pattern-col">-oo</td>
+    <td class="thai-col">ซู</td>
+    <td class="meaning-col">สวนสัตว์</td>
+    <td class="en-col">We visit the zoo on Sunday.</td>
+    <td class="th-col">เราไปสวนสัตว์วันอาทิตย์</td>
+  </tr><tr>
+    <td class="num-col">57</td>
+    <td class="word-col">m<span class="vowel-hl">oo</span></td>
+    <td class="pattern-col">-oo</td>
+    <td class="thai-col">มู</td>
+    <td class="meaning-col">เสียงวัวร้อง</td>
+    <td class="en-col">The cow says moo.</td>
+    <td class="th-col">วัวร้องเสียงมอ</td>
+  </tr><tr>
+    <td class="num-col">58</td>
+    <td class="word-col">b<span class="vowel-hl">oo</span></td>
+    <td class="pattern-col">-oo</td>
+    <td class="thai-col">บู</td>
+    <td class="meaning-col">เสียงโห่/ทำให้ตกใจ</td>
+    <td class="en-col">The crowd began to boo.</td>
+    <td class="th-col">ฝูงชนเริ่มโห่</td>
+  </tr><tr>
+    <td class="num-col">59</td>
+    <td class="word-col">sh<span class="vowel-hl">oo</span></td>
+    <td class="pattern-col">-oo</td>
+    <td class="thai-col">ชู</td>
+    <td class="meaning-col">ไล่ไป</td>
+    <td class="en-col">Shoo the fly away.</td>
+    <td class="th-col">ไล่แมลงวันไป</td>
+  </tr><tr>
+    <td class="num-col">60</td>
+    <td class="word-col">g<span class="vowel-hl">oose</span></td>
+    <td class="pattern-col">-oose</td>
+    <td class="thai-col">กูส</td>
+    <td class="meaning-col">ห่าน</td>
+    <td class="en-col">The goose swims in the pond.</td>
+    <td class="th-col">ห่านว่ายน้ำในบ่อ</td>
+  </tr><tr>
+    <td class="num-col">61</td>
+    <td class="word-col">l<span class="vowel-hl">oose</span></td>
+    <td class="pattern-col">-oose</td>
+    <td class="thai-col">ลูส</td>
+    <td class="meaning-col">หลวม/หลุด</td>
+    <td class="en-col">This shirt is too loose.</td>
+    <td class="th-col">เสื้อตัวนี้หลวมเกินไป</td>
+  </tr><tr>
+    <td class="num-col">62</td>
+    <td class="word-col">m<span class="vowel-hl">oose</span></td>
+    <td class="pattern-col">-oose</td>
+    <td class="thai-col">มูส</td>
+    <td class="meaning-col">กวางมูส</td>
+    <td class="en-col">A moose lives in the forest.</td>
+    <td class="th-col">กวางมูสอาศัยอยู่ในป่า</td>
+  </tr><tr>
+    <td class="num-col">63</td>
+    <td class="word-col">n<span class="vowel-hl">oose</span></td>
+    <td class="pattern-col">-oose</td>
+    <td class="thai-col">นูส</td>
+    <td class="meaning-col">บ่วง</td>
+    <td class="en-col">He tied a noose in the rope.</td>
+    <td class="th-col">เขาผูกบ่วงในเชือก</td>
+  </tr><tr>
+    <td class="num-col">64</td>
+    <td class="word-col">t<span class="vowel-hl">ooth</span></td>
+    <td class="pattern-col">-ooth</td>
+    <td class="thai-col">ทูธ</td>
+    <td class="meaning-col">ฟัน</td>
+    <td class="en-col">I have a loose tooth.</td>
+    <td class="th-col">ฉันมีฟันที่โยก</td>
+  </tr><tr>
+    <td class="num-col">65</td>
+    <td class="word-col">b<span class="vowel-hl">ooth</span></td>
+    <td class="pattern-col">-ooth</td>
+    <td class="thai-col">บูธ</td>
+    <td class="meaning-col">บูธ</td>
+    <td class="en-col">We have a booth at the fair.</td>
+    <td class="th-col">เรามีบูธที่งาน</td>
+  </tr><tr>
+    <td class="num-col">66</td>
+    <td class="word-col">sm<span class="vowel-hl">ooth</span></td>
+    <td class="pattern-col">-ooth</td>
+    <td class="thai-col">สมูธ</td>
+    <td class="meaning-col">เรียบ/นุ่มนวล</td>
+    <td class="en-col">The road is very smooth.</td>
+    <td class="th-col">ถนนเส้นนี้เรียบมาก</td>
+  </tr><tr>
+    <td class="num-col">67</td>
+    <td class="word-col">n<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">นิว</td>
+    <td class="meaning-col">ใหม่</td>
+    <td class="en-col">I have a new bike.</td>
+    <td class="th-col">ฉันมีจักรยานคันใหม่</td>
+  </tr><tr>
+    <td class="num-col">68</td>
+    <td class="word-col">f<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ฟิว</td>
+    <td class="meaning-col">เล็กน้อย/ไม่กี่</td>
+    <td class="en-col">I have a few friends here.</td>
+    <td class="th-col">ฉันมีเพื่อนไม่กี่คนที่นี่</td>
+  </tr><tr>
+    <td class="num-col">69</td>
+    <td class="word-col">ch<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ชิว</td>
+    <td class="meaning-col">เคี้ยว</td>
+    <td class="en-col">Chew your food well.</td>
+    <td class="th-col">เคี้ยวอาหารให้ละเอียด</td>
+  </tr><tr>
+    <td class="num-col">70</td>
+    <td class="word-col">bl<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">บลิว</td>
+    <td class="meaning-col">เป่า(อดีต)</td>
+    <td class="en-col">The wind blew hard.</td>
+    <td class="th-col">ลมพัดแรง</td>
+  </tr><tr>
+    <td class="num-col">71</td>
+    <td class="word-col">gr<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">กรู</td>
+    <td class="meaning-col">เติบโต(อดีต)</td>
+    <td class="en-col">The tree grew very tall.</td>
+    <td class="th-col">ต้นไม้เติบโตสูงมาก</td>
+  </tr><tr>
+    <td class="num-col">72</td>
+    <td class="word-col">thr<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ธรู</td>
+    <td class="meaning-col">ขว้าง(อดีต)</td>
+    <td class="en-col">He threw the ball far.</td>
+    <td class="th-col">เขาขว้างลูกบอลไปไกล</td>
+  </tr><tr>
+    <td class="num-col">73</td>
+    <td class="word-col">fl<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ฟลิว</td>
+    <td class="meaning-col">บิน(อดีต)</td>
+    <td class="en-col">The plane flew over the sea.</td>
+    <td class="th-col">เครื่องบินบินข้ามทะเล</td>
+  </tr><tr>
+    <td class="num-col">74</td>
+    <td class="word-col">dr<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ดรู</td>
+    <td class="meaning-col">วาด(อดีต)</td>
+    <td class="en-col">She drew a nice picture.</td>
+    <td class="th-col">เธอวาดภาพสวย</td>
+  </tr><tr>
+    <td class="num-col">75</td>
+    <td class="word-col">cr<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">ครูว์</td>
+    <td class="meaning-col">ลูกเรือ/ทีมงาน</td>
+    <td class="en-col">The crew works on the ship.</td>
+    <td class="th-col">ลูกเรือทำงานบนเรือ</td>
+  </tr><tr>
+    <td class="num-col">76</td>
+    <td class="word-col">scr<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">สกรู</td>
+    <td class="meaning-col">สกรู/ไข(น็อต)</td>
+    <td class="en-col">Screw the bolt in tightly.</td>
+    <td class="th-col">ไขน็อตให้แน่น</td>
+  </tr><tr>
+    <td class="num-col">77</td>
+    <td class="word-col">st<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">สตูว์</td>
+    <td class="meaning-col">สตูว์</td>
+    <td class="en-col">Mom cooks beef stew.</td>
+    <td class="th-col">แม่ทำสตูว์เนื้อ</td>
+  </tr><tr>
+    <td class="num-col">78</td>
+    <td class="word-col">kn<span class="vowel-hl">ew</span></td>
+    <td class="pattern-col">-ew</td>
+    <td class="thai-col">นิว</td>
+    <td class="meaning-col">รู้(อดีต)</td>
+    <td class="en-col">I knew the answer already.</td>
+    <td class="th-col">ฉันรู้คำตอบอยู่แล้ว</td>
+  </tr><tr>
+    <td class="num-col">79</td>
+    <td class="word-col">m<span class="vowel-hl">u</span>sic</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">มิวสิค</td>
+    <td class="meaning-col">ดนตรี/เพลง</td>
+    <td class="en-col">I listen to music every day.</td>
+    <td class="th-col">ฉันฟังเพลงทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">80</td>
+    <td class="word-col">st<span class="vowel-hl">u</span>dent</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">สตูเดนท์</td>
+    <td class="meaning-col">นักเรียน</td>
+    <td class="en-col">She is a good student.</td>
+    <td class="th-col">เธอเป็นนักเรียนที่ดี</td>
+  </tr><tr>
+    <td class="num-col">81</td>
+    <td class="word-col">h<span class="vowel-hl">u</span>man</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ฮิวแมน</td>
+    <td class="meaning-col">มนุษย์</td>
+    <td class="en-col">Every human needs food.</td>
+    <td class="th-col">มนุษย์ทุกคนต้องการอาหาร</td>
+  </tr><tr>
+    <td class="num-col">82</td>
+    <td class="word-col"><span class="vowel-hl">u</span>nit</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ยูนิท</td>
+    <td class="meaning-col">หน่วย</td>
+    <td class="en-col">This lesson has five units.</td>
+    <td class="th-col">บทเรียนนี้มีห้าหน่วย</td>
+  </tr><tr>
+    <td class="num-col">83</td>
+    <td class="word-col">s<span class="vowel-hl">u</span>per</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ซูเปอร์</td>
+    <td class="meaning-col">เยี่ยม/สุดยอด</td>
+    <td class="en-col">That movie was super fun.</td>
+    <td class="th-col">หนังเรื่องนั้นสนุกสุดยอด</td>
+  </tr><tr>
+    <td class="num-col">84</td>
+    <td class="word-col">t<span class="vowel-hl">u</span>lip</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ทิวลิป</td>
+    <td class="meaning-col">ดอกทิวลิป</td>
+    <td class="en-col">The tulip is a pretty flower.</td>
+    <td class="th-col">ดอกทิวลิปเป็นดอกไม้ที่สวย</td>
+  </tr><tr>
+    <td class="num-col">85</td>
+    <td class="word-col">r<span class="vowel-hl">u</span>ler</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">รูเลอร์</td>
+    <td class="meaning-col">ไม้บรรทัด</td>
+    <td class="en-col">Use a ruler to draw a line.</td>
+    <td class="th-col">ใช้ไม้บรรทัดขีดเส้น</td>
+  </tr><tr>
+    <td class="num-col">86</td>
+    <td class="word-col">m<span class="vowel-hl">o</span>vie</td>
+    <td class="pattern-col">o</td>
+    <td class="thai-col">มูฟวี่</td>
+    <td class="meaning-col">หนัง/ภาพยนตร์</td>
+    <td class="en-col">We watch a movie together.</td>
+    <td class="th-col">เราดูหนังด้วยกัน</td>
+  </tr><tr>
+    <td class="num-col">87</td>
+    <td class="word-col">fr<span class="vowel-hl">uit</span></td>
+    <td class="pattern-col">-uit</td>
+    <td class="thai-col">ฟรุต</td>
+    <td class="meaning-col">ผลไม้</td>
+    <td class="en-col">I eat fruit every day.</td>
+    <td class="th-col">ฉันกินผลไม้ทุกวัน</td>
+  </tr><tr>
+    <td class="num-col">88</td>
+    <td class="word-col">s<span class="vowel-hl">uit</span></td>
+    <td class="pattern-col">-uit</td>
+    <td class="thai-col">สูท</td>
+    <td class="meaning-col">สูท</td>
+    <td class="en-col">He wears a black suit.</td>
+    <td class="th-col">เขาสวมสูทสีดำ</td>
+  </tr><tr>
+    <td class="num-col">89</td>
+    <td class="word-col">d<span class="vowel-hl">uke</span></td>
+    <td class="pattern-col">-uke</td>
+    <td class="thai-col">ดยุค</td>
+    <td class="meaning-col">ดยุค(ตำแหน่งขุนนาง)</td>
+    <td class="en-col">The duke lives in a castle.</td>
+    <td class="th-col">ดยุคอาศัยอยู่ในปราสาท</td>
+  </tr><tr>
+    <td class="num-col">90</td>
+    <td class="word-col">fl<span class="vowel-hl">uke</span></td>
+    <td class="pattern-col">-uke</td>
+    <td class="thai-col">ฟลุค</td>
+    <td class="meaning-col">เรื่องบังเอิญ/ฟลุค</td>
+    <td class="en-col">Winning was just a fluke.</td>
+    <td class="th-col">การชนะเป็นแค่เรื่องบังเอิญ</td>
+  </tr><tr>
+    <td class="num-col">91</td>
+    <td class="word-col">m<span class="vowel-hl">ule</span></td>
+    <td class="pattern-col">-ule</td>
+    <td class="thai-col">มิวล์</td>
+    <td class="meaning-col">ล่อ(สัตว์)</td>
+    <td class="en-col">The mule carries heavy bags.</td>
+    <td class="th-col">ล่อแบกกระเป๋าหนัก</td>
+  </tr><tr>
+    <td class="num-col">92</td>
+    <td class="word-col">r<span class="vowel-hl">ule</span></td>
+    <td class="pattern-col">-ule</td>
+    <td class="thai-col">รูล</td>
+    <td class="meaning-col">กฎ</td>
+    <td class="en-col">Follow the classroom rule.</td>
+    <td class="th-col">ปฏิบัติตามกฎของห้องเรียน</td>
+  </tr><tr>
+    <td class="num-col">93</td>
+    <td class="word-col">f<span class="vowel-hl">ume</span></td>
+    <td class="pattern-col">-ume</td>
+    <td class="thai-col">ฟูม</td>
+    <td class="meaning-col">ควันพิษ/โมโห</td>
+    <td class="en-col">The car gives off fumes.</td>
+    <td class="th-col">รถปล่อยควันพิษ</td>
+  </tr><tr>
+    <td class="num-col">94</td>
+    <td class="word-col">pl<span class="vowel-hl">ume</span></td>
+    <td class="pattern-col">-ume</td>
+    <td class="thai-col">พลูม</td>
+    <td class="meaning-col">ขนนก(ที่สวยงาม)</td>
+    <td class="en-col">The bird has a bright plume.</td>
+    <td class="th-col">นกมีขนที่สดใส</td>
+  </tr><tr>
+    <td class="num-col">95</td>
+    <td class="word-col">s<span class="vowel-hl">oup</span></td>
+    <td class="pattern-col">-oup</td>
+    <td class="thai-col">ซุป</td>
+    <td class="meaning-col">ซุป</td>
+    <td class="en-col">I eat soup for lunch.</td>
+    <td class="th-col">ฉันกินซุปเป็นอาหารกลางวัน</td>
+  </tr><tr>
+    <td class="num-col">96</td>
+    <td class="word-col">gr<span class="vowel-hl">oup</span></td>
+    <td class="pattern-col">-oup</td>
+    <td class="thai-col">กรุ๊ป</td>
+    <td class="meaning-col">กลุ่ม</td>
+    <td class="en-col">We work in a group.</td>
+    <td class="th-col">เราทำงานเป็นกลุ่ม</td>
+  </tr><tr>
+    <td class="num-col">97</td>
+    <td class="word-col">j<span class="vowel-hl">u</span>ice</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">จูซ</td>
+    <td class="meaning-col">น้ำผลไม้</td>
+    <td class="en-col">I drink orange juice.</td>
+    <td class="th-col">ฉันดื่มน้ำส้ม</td>
+  </tr><tr>
+    <td class="num-col">98</td>
+    <td class="word-col">cr<span class="vowel-hl">u</span>ise</td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">ครูซ</td>
+    <td class="meaning-col">การล่องเรือ</td>
+    <td class="en-col">They go on a cruise.</td>
+    <td class="th-col">พวกเขาไปล่องเรือ</td>
+  </tr><tr>
+    <td class="num-col">99</td>
+    <td class="word-col">fl<span class="vowel-hl">u</span></td>
+    <td class="pattern-col">CVC</td>
+    <td class="thai-col">ฟลู</td>
+    <td class="meaning-col">ไข้หวัดใหญ่</td>
+    <td class="en-col">I have the flu today.</td>
+    <td class="th-col">วันนี้ฉันเป็นไข้หวัดใหญ่</td>
+  </tr><tr>
+    <td class="num-col">100</td>
+    <td class="word-col">men<span class="vowel-hl">u</span></td>
+    <td class="pattern-col">CVC+CV</td>
+    <td class="thai-col">เมนู</td>
+    <td class="meaning-col">เมนู</td>
+    <td class="en-col">Look at the menu first.</td>
+    <td class="th-col">ดูเมนูก่อน</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

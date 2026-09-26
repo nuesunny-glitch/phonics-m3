@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เฉลย: การเติม s และ es (Adding S and ES)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="banner teacher">
+    <h1>✅ เฉลย: การเติม s และ es (Adding S and ES)</h1>
+    <div class="sub">เฉลยใบงานฝึกหัด + แบบทดสอบ พร้อมเหตุผลย่อ</div>
+  </div>
+
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>cats</td><td>cat เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>2</td><td>books</td><td>book เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>3</td><td>buses</td><td>bus ลงท้ายด้วย s ต้องเติม -es เป็น buses</td></tr>
+<tr><td>4</td><td>boxes</td><td>box ลงท้ายด้วย x ต้องเติม -es เป็น boxes</td></tr>
+<tr><td>5</td><td>watches</td><td>watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches</td></tr>
+<tr><td>6</td><td>classes</td><td>class ลงท้ายด้วย ss ต้องเติม -es เป็น classes</td></tr>
+<tr><td>7</td><td>dishes</td><td>dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes</td></tr>
+<tr><td>8</td><td>brushes</td><td>brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes</td></tr>
+<tr><td>9</td><td>babies</td><td>baby ลงท้ายพยัญชนะ+y (b+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: babies</td></tr>
+<tr><td>10</td><td>cities</td><td>city ลงท้ายพยัญชนะ+y (t+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: cities</td></tr>
+<tr><td>11</td><td>boys</td><td>boy ลงท้ายสระ+y (o+y) เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys</td></tr>
+<tr><td>12</td><td>days</td><td>day ลงท้ายสระ+y (a+y) เติม s ได้เลย: days</td></tr>
+<tr><td>13</td><td>leaves</td><td>leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves</td></tr>
+<tr><td>14</td><td>knives</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives</td></tr>
+<tr><td>15</td><td>potatoes</td><td>potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes</td></tr>
+<tr><td>16</td><td>photos</td><td>photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น: photos</td></tr>
+<tr><td>17</td><td>plays</td><td>He เป็นประธานเอกพจน์ (he/she/it) กริยา play ลงท้ายสระ+y เติม s ได้เลย: plays</td></tr>
+<tr><td>18</td><td>studies</td><td>She เป็นประธานเอกพจน์ กริยา study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: studies</td></tr>
+<tr><td>19</td><td>watches</td><td>กริยา watch ลงท้าย ch ต้องเติม -es: watches</td></tr>
+<tr><td>20</td><td>goes</td><td>กริยา go ลงท้ายเสียงสระ ต้องเติม -es: goes</td></tr>
+<tr><td>21</td><td>washes</td><td>กริยา wash ลงท้าย sh ต้องเติม -es: washes</td></tr>
+<tr><td>22</td><td>tries</td><td>กริยา try ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: tries</td></tr>
+<tr><td>23</td><td>teeth</td><td>tooth เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น teeth</td></tr>
+<tr><td>24</td><td>children</td><td>child เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น children</td></tr>
+</table>
+
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">🐱</td><td>A) cats</td><td>cat เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>2</td><td class="emoji-cell">📕</td><td>B) books</td><td>book เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>3</td><td class="emoji-cell">🐶</td><td>C) dogs</td><td>dog เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>4</td><td class="emoji-cell">🚗</td><td>D) cars</td><td>car เป็นคำนามปกติ เติม s ได้เลย ไม่ใช่ carries (นั่นคือกริยา carry)</td></tr>
+<tr><td>5</td><td class="emoji-cell">🚌</td><td>A) buses</td><td>bus ลงท้ายด้วยเสียง s ต้องเติม -es เป็น buses</td></tr>
+<tr><td>6</td><td class="emoji-cell">📦</td><td>B) boxes</td><td>box ลงท้ายด้วย x ต้องเติม -es เป็น boxes</td></tr>
+<tr><td>7</td><td class="emoji-cell">⌚</td><td>C) watches</td><td>watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches</td></tr>
+<tr><td>8</td><td class="emoji-cell">🍽️</td><td>D) dishes</td><td>dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes</td></tr>
+<tr><td>9</td><td class="emoji-cell">🏫</td><td>A) classes</td><td>class ลงท้ายด้วย ss ต้องเติม -es เป็น classes</td></tr>
+<tr><td>10</td><td class="emoji-cell">🖌️</td><td>B) brushes</td><td>brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes</td></tr>
+<tr><td>11</td><td class="emoji-cell">🦊</td><td>C) foxes</td><td>fox ลงท้ายด้วย x ต้องเติม -es เป็น foxes</td></tr>
+<tr><td>12</td><td class="emoji-cell">🪑</td><td>D) chairs</td><td>chair เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>13</td><td class="emoji-cell">🖊️</td><td>A) pens</td><td>pen เป็นคำนามปกติ เติม s ได้เลย</td></tr>
+<tr><td>14</td><td class="emoji-cell">🥛</td><td>B) glasses</td><td>glass ลงท้ายด้วย ss ต้องเติม -es เป็น glasses</td></tr>
+<tr><td>15</td><td class="emoji-cell">📝</td><td>C) quizzes</td><td>quiz ลงท้ายด้วย z ต้องเติม z ซ้ำแล้วเติม -es เป็น quizzes</td></tr>
+<tr><td>16</td><td class="emoji-cell">👶</td><td>D) babies</td><td>baby ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: babies</td></tr>
+<tr><td>17</td><td class="emoji-cell">🏙️</td><td>A) cities</td><td>city ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: cities</td></tr>
+<tr><td>18</td><td class="emoji-cell">👨‍👩‍👧‍👦</td><td>B) families</td><td>family ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: families</td></tr>
+<tr><td>19</td><td class="emoji-cell">📖</td><td>C) stories</td><td>story ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: stories</td></tr>
+<tr><td>20</td><td class="emoji-cell">🌍</td><td>D) countries</td><td>country ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: countries</td></tr>
+<tr><td>21</td><td class="emoji-cell">👦</td><td>A) boys</td><td>boy ลงท้ายสระ+y เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys</td></tr>
+<tr><td>22</td><td class="emoji-cell">📅</td><td>B) days</td><td>day ลงท้ายสระ+y เติม s ได้เลย: days</td></tr>
+<tr><td>23</td><td class="emoji-cell">🐒</td><td>C) monkeys</td><td>monkey ลงท้ายสระ+y (e+y) เติม s ได้เลย: monkeys</td></tr>
+<tr><td>24</td><td class="emoji-cell">🍃</td><td>D) leaves</td><td>leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves</td></tr>
+<tr><td>25</td><td class="emoji-cell">🔪</td><td>A) knives</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives</td></tr>
+<tr><td>26</td><td class="emoji-cell">💍</td><td>B) wives</td><td>wife ลงท้าย fe ต้องเปลี่ยนเป็น ves: wives</td></tr>
+<tr><td>27</td><td class="emoji-cell">🍕</td><td>C) halves</td><td>half ลงท้าย f ต้องเปลี่ยนเป็น ves: halves</td></tr>
+<tr><td>28</td><td class="emoji-cell">📚</td><td>D) shelves</td><td>shelf ลงท้าย f ต้องเปลี่ยนเป็น ves: shelves</td></tr>
+<tr><td>29</td><td class="emoji-cell">🥔</td><td>A) potatoes</td><td>potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes</td></tr>
+<tr><td>30</td><td class="emoji-cell">🍅</td><td>B) tomatoes</td><td>tomato ลงท้าย o ต้องเติม -es: tomatoes</td></tr>
+<tr><td>31</td><td class="emoji-cell">🦸</td><td>C) heroes</td><td>hero ลงท้าย o ต้องเติม -es: heroes</td></tr>
+<tr><td>32</td><td class="emoji-cell">📔</td><td>D) studies</td><td>study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ he/she/it: studies</td></tr>
+<tr><td>33</td><td class="emoji-cell">🎒</td><td>A) carries</td><td>carry ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: carries</td></tr>
+<tr><td>34</td><td class="emoji-cell">⚽</td><td>B) plays</td><td>play ลงท้ายสระ+y เติม s ได้เลยเมื่อใช้กับ he/she/it: plays</td></tr>
+<tr><td>35</td><td class="emoji-cell">🧼</td><td>C) washes</td><td>wash ลงท้าย sh ต้องเติม -es เมื่อใช้กับ he/she/it: washes</td></tr>
+<tr><td>36</td><td class="emoji-cell">🧑</td><td>D) men</td><td>man เป็นพหูพจน์รูปแปลก ไม่เติม s แต่เปลี่ยนเป็น men</td></tr>
+<tr><td>37</td><td class="emoji-cell">👩</td><td>A) women</td><td>woman เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น women</td></tr>
+<tr><td>38</td><td class="emoji-cell">🧒</td><td>B) children</td><td>child เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น children</td></tr>
+<tr><td>39</td><td class="emoji-cell">🦷</td><td>C) teeth</td><td>tooth เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น teeth</td></tr>
+<tr><td>40</td><td class="emoji-cell">🦶</td><td>D) feet</td><td>foot เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น feet</td></tr>
+<tr><td>41</td><td class="emoji-cell">🐭</td><td>A) mice</td><td>mouse เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น mice</td></tr>
+<tr><td>42</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>B) people</td><td>person เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น people</td></tr>
+<tr><td>43</td><td class="emoji-cell">🐑</td><td>C) sheep</td><td>sheep เป็นคำที่รูปเอกพจน์และพหูพจน์เหมือนกัน ไม่เติมอะไรเลย</td></tr>
+<tr><td>44</td><td class="emoji-cell">📷</td><td>B) photos</td><td>photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ photoes</td></tr>
+<tr><td>45</td><td class="emoji-cell">🎹</td><td>C) pianos</td><td>piano เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ pianoes</td></tr>
+<tr><td>46</td><td class="emoji-cell">🐺</td><td>D) wolves</td><td>wolf ลงท้าย f ต้องเปลี่ยนเป็น ves: wolves</td></tr>
+<tr><td>47</td><td class="emoji-cell">🐦</td><td>A) flies</td><td>fly ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ it (the bird): flies</td></tr>
+<tr><td>48</td><td class="emoji-cell">📦</td><td>B) There are three boxes in the room.</td><td>box ลงท้าย x ต้องเติม -es เป็น boxes ไม่ใช่ boxs หรือ boxies</td></tr>
+<tr><td>49</td><td class="emoji-cell">🧑‍🎓</td><td>C) She studies English every day.</td><td>ประธาน She (he/she/it) กับกริยาที่ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น ies: study → studies</td></tr>
+<tr><td>50</td><td class="emoji-cell">🔪</td><td>B) My father has two knives in the kitchen.</td><td>knife ลงท้าย fe ต้องเปลี่ยนเป็น ves สะกดว่า knives (ระวังสะกดผิดเป็น knifes หรือ knives)</td></tr></table>
+
+  <div class="footer-note">English Grammar Quiz Pack · Adding S and ES — เฉลย (สำหรับครู)</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เฉลย: WH-Questions (What/Where/When/Who/Why/Which/Whose)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="banner teacher">
+    <h1>✅ เฉลย: WH-Questions (What/Where/When/Who/Why/Which/Whose)</h1>
+    <div class="sub">เฉลยใบงานฝึกหัด + แบบทดสอบ พร้อมเหตุผลย่อ</div>
+  </div>
+
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>What</td><td>ถามชื่อซึ่งเป็นข้อมูลแบบเปิดกว้าง ใช้ What</td></tr>
+<tr><td>2</td><td>are</td><td>ประธาน you ใช้ are</td></tr>
+<tr><td>3</td><td>Who</td><td>ถามถึงบุคคล (ใคร) ที่เป็นประธานประโยค ใช้ Who</td></tr>
+<tr><td>4</td><td>Why</td><td>ประโยคมีคำตอบ Because... (บอกเหตุผล) ใช้ Why</td></tr>
+<tr><td>5</td><td>Whose</td><td>ถามความเป็นเจ้าของกระเป๋า ใช้ Whose</td></tr>
+<tr><td>6</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (Monday or Tuesday) ใช้ Which</td></tr>
+<tr><td>7</td><td>were</td><td>ประธาน you ในประโยคอดีต ใช้ were</td></tr>
+<tr><td>8</td><td>Where</td><td>ถามสถานที่ (รองเท้าอยู่ที่ไหน) ใช้ Where</td></tr>
+<tr><td>9</td><td>Where</td><td>ถามสถานที่ที่อยู่อาศัย ใช้ Where</td></tr>
+<tr><td>10</td><td>does</td><td>ประธาน she (เอกพจน์) ปัจจุบัน ใช้ does + กริยาช่อง 1</td></tr>
+<tr><td>11</td><td>When</td><td>ถามเวลาที่มาถึง ใช้ When</td></tr>
+<tr><td>12</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (by bus or by bike) ใช้ Which</td></tr>
+<tr><td>13</td><td>did</td><td>Who ในที่นี้เป็นกรรม (คุณเจอใครที่งานปาร์ตี้) ต้องมี did ช่วย</td></tr>
+<tr><td>14</td><td>Who</td><td>Who เป็นประธานของประโยค (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ did กริยาผันอดีตตรง ๆ ได้เลย (made)</td></tr>
+<tr><td>15</td><td>did</td><td>ถามเหตุผลในอดีต ต้องมี did ช่วย</td></tr>
+<tr><td>16</td><td>What</td><td>ถามสิ่งของที่ต้องการแบบเปิดกว้าง ใช้ What</td></tr>
+<tr><td>17</td><td>Whose</td><td>ถามความเป็นเจ้าของปากกา ใช้ Whose</td></tr>
+<tr><td>18</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (คันสีแดงหรือสีน้ำเงิน) ใช้ Which</td></tr>
+<tr><td>19</td><td>What</td><td>ถามกิจกรรมทั่วไปแบบเปิดกว้าง ใช้ What</td></tr>
+<tr><td>20</td><td>Who</td><td>Who เป็นประธานของประโยค (ใครเป็นคนทำหน้าต่างแตก) ไม่ต้องใช้ do/does/did</td></tr>
+<tr><td>21</td><td>Where</td><td>ถามสถานที่ที่ซื้อของ ใช้ Where</td></tr>
+<tr><td>22</td><td>Whose</td><td>ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose</td></tr>
+<tr><td>23</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (A หรือ B) ใช้ Which</td></tr>
+</table>
+
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">📛</td><td>A) What</td><td>ถามชื่อ (ข้อมูลแบบเปิดกว้าง) ใช้ What</td></tr>
+<tr><td>2</td><td class="emoji-cell">🌍</td><td>B) Where</td><td>ถามสถานที่ ใช้ Where</td></tr>
+<tr><td>3</td><td class="emoji-cell">🎂</td><td>A) When</td><td>ถามเวลา/วันที่ ใช้ When</td></tr>
+<tr><td>4</td><td class="emoji-cell">🧔</td><td>B) Who</td><td>ถามถึงบุคคล ใช้ Who</td></tr>
+<tr><td>5</td><td class="emoji-cell">😢</td><td>C) Why</td><td>ถามเหตุผล ใช้ Why</td></tr>
+<tr><td>6</td><td class="emoji-cell">🎒</td><td>B) Whose</td><td>ถามความเป็นเจ้าของ ใช้ Whose</td></tr>
+<tr><td>7</td><td class="emoji-cell">👗</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr>
+<tr><td>8</td><td class="emoji-cell">🏠</td><td>C) Where</td><td>ถามสถานที่ ใช้ Where</td></tr>
+<tr><td>9</td><td class="emoji-cell">🕐</td><td>A) When</td><td>ถามเวลา ใช้ When</td></tr>
+<tr><td>10</td><td class="emoji-cell">👩‍🏫</td><td>B) Who</td><td>ถามถึงบุคคล ใช้ Who</td></tr>
+<tr><td>11</td><td class="emoji-cell">🍕</td><td>A) What</td><td>ถามสิ่งของ/ของโปรดแบบเปิดกว้าง ใช้ What</td></tr>
+<tr><td>12</td><td class="emoji-cell">🐱</td><td>C) Whose</td><td>ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose</td></tr>
+<tr><td>13</td><td class="emoji-cell">👨</td><td>C) Where</td><td>ถามสถานที่ในอดีต ใช้ Where + was</td></tr>
+<tr><td>14</td><td class="emoji-cell">🎈</td><td>A) When</td><td>ถามเวลาในอดีต ใช้ When + was</td></tr>
+<tr><td>15</td><td class="emoji-cell">👧</td><td>B) Who</td><td>ถามถึงบุคคล (พหูพจน์) ในอดีต ใช้ Who + were</td></tr>
+<tr><td>16</td><td class="emoji-cell">🏫</td><td>A) do</td><td>ประธาน you ปัจจุบัน ใช้ do</td></tr>
+<tr><td>17</td><td class="emoji-cell">👩‍🍳</td><td>B) does</td><td>ประธาน your mother (เอกพจน์) ปัจจุบัน ใช้ does</td></tr>
+<tr><td>18</td><td class="emoji-cell">⏰</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr>
+<tr><td>19</td><td class="emoji-cell">🍦</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr>
+<tr><td>20</td><td class="emoji-cell">📚</td><td>A) What</td><td>ถามสิ่งของ/วิชาแบบเปิดกว้าง ใช้ What</td></tr>
+<tr><td>21</td><td class="emoji-cell">🚌</td><td>B) does</td><td>ประธาน the bus (เอกพจน์) ปัจจุบัน ใช้ does</td></tr>
+<tr><td>22</td><td class="emoji-cell">🎨</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr>
+<tr><td>23</td><td class="emoji-cell">❤️</td><td>A) do</td><td>Who ในที่นี้เป็นกรรม (คุณชอบใคร) ประธาน you ปัจจุบัน ใช้ do</td></tr>
+<tr><td>24</td><td class="emoji-cell">🎁</td><td>B) does</td><td>ประธาน she เอกพจน์ ปัจจุบัน ใช้ does</td></tr>
+<tr><td>25</td><td class="emoji-cell">🚲</td><td>C) did</td><td>ประโยคอดีต (last weekend) ใช้ did</td></tr>
+<tr><td>26</td><td class="emoji-cell">🎤</td><td>A) do</td><td>ประธาน you ปัจจุบัน ใช้ do</td></tr>
+<tr><td>27</td><td class="emoji-cell">🍔</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr>
+<tr><td>28</td><td class="emoji-cell">🕰️</td><td>B) does</td><td>ประธาน the movie เอกพจน์ ปัจจุบัน ใช้ does</td></tr>
+<tr><td>29</td><td class="emoji-cell">🧹</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr>
+<tr><td>30</td><td class="emoji-cell">🐦</td><td>A) do</td><td>ประธาน birds (พหูพจน์) ปัจจุบัน ใช้ do</td></tr>
+<tr><td>31</td><td class="emoji-cell">📖</td><td>B) does</td><td>ประธาน this word (เอกพจน์) ปัจจุบัน ใช้ does</td></tr>
+<tr><td>32</td><td class="emoji-cell">🎣</td><td>C) did</td><td>ประโยคอดีต (last month) ใช้ did</td></tr>
+<tr><td>33</td><td class="emoji-cell">🍩</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr>
+<tr><td>34</td><td class="emoji-cell">🚗</td><td>B) does</td><td>ประธาน he เอกพจน์ ปัจจุบัน ใช้ does</td></tr>
+<tr><td>35</td><td class="emoji-cell">🏖️</td><td>C) did</td><td>ประโยคอดีต (last year) ใช้ did</td></tr>
+<tr><td>36</td><td class="emoji-cell">🎧</td><td>B) Whose</td><td>ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose</td></tr>
+<tr><td>37</td><td class="emoji-cell">📱</td><td>B) Whose</td><td>Whose (ไม่มี apostrophe) ใช้ถามความเป็นเจ้าของ ต่างจาก Who's ที่แปลว่า Who is</td></tr>
+<tr><td>38</td><td class="emoji-cell">🚙</td><td>B) Whose</td><td>ถามความเป็นเจ้าของรถที่ยืมมา ใช้ Whose + did</td></tr>
+<tr><td>39</td><td class="emoji-cell">🍰</td><td>A) Who made</td><td>Who เป็นประธาน (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ do/does/did กริยาผันอดีตตรง ๆ ได้เลย (made)</td></tr>
+<tr><td>40</td><td class="emoji-cell">🪟</td><td>A) Who broke</td><td>Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ ไม่ต้องมี did ช่วย</td></tr>
+<tr><td>41</td><td class="emoji-cell">🧁</td><td>B) What does</td><td>ประธาน she เอกพจน์ ปัจจุบัน ต้องใช้ What + does</td></tr>
+<tr><td>42</td><td class="emoji-cell">🚴</td><td>C) Where did</td><td>ประโยคอดีต (last Sunday) ต้องใช้ Where + did</td></tr>
+<tr><td>43</td><td class="emoji-cell">🎁</td><td>B) Whose is</td><td>ถามความเป็นเจ้าของของขวัญ (เอกพจน์) ใช้ Whose + is</td></tr>
+<tr><td>44</td><td class="emoji-cell">🍽️</td><td>B) Which</td><td>มีตัวเลือกจำกัด 2 อย่างที่ระบุไว้ (two menus) ใช้ Which</td></tr>
+<tr><td>45</td><td class="emoji-cell">🎓</td><td>A) What</td><td>ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัดให้ ใช้ What</td></tr>
+<tr><td>46</td><td class="emoji-cell">👟</td><td>B) Whose are</td><td>ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose + are</td></tr>
+<tr><td>47</td><td class="emoji-cell">🥤</td><td>B) Which</td><td>มีตัวเลือกจำกัด (coffee หรือ tea) ใช้ Which</td></tr>
+<tr><td>48</td><td class="emoji-cell">🔍</td><td>B) Who made this cake?</td><td>Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ (made) ไม่ต้องมี did ช่วย</td></tr>
+<tr><td>49</td><td class="emoji-cell">🔍</td><td>B) Whose bag is this?</td><td>Whose + นาม + is ใช้ถามความเป็นเจ้าของอย่างถูกต้อง (Who's แปลว่า Who is จึงใช้ผิดที่นี่)</td></tr>
+<tr><td>50</td><td class="emoji-cell">🔍</td><td>B) Where do you live?</td><td>ประธาน you ปัจจุบัน ต้องใช้ Where + do + กริยาช่อง 1 เรียงคำให้ถูกต้อง</td></tr></table>
+
+  <div class="footer-note">English Grammar Quiz Pack · WH-Questions — เฉลย (สำหรับครู)</div>
+</div>
+</body>
+</html>

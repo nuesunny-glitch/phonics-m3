@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียน: Spelling</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Phonics-only additions on top of the base above ---- */
+.audio-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: none; cursor: pointer; font-family: 'Kanit','Sarabun',sans-serif;
+  font-size: 17px; font-weight: 600; padding: 9px 19px; border-radius: 999px;
+  background: #2952e3; color: #fff; box-shadow: 0 2px 6px rgba(41,82,227,0.35);
+}
+.audio-btn:hover { filter: brightness(1.08); }
+.audio-btn:active { transform: translateY(1px); }
+.audio-btn.split { background: #9B5DE5; box-shadow: 0 2px 6px rgba(155,93,229,0.35); }
+.audio-btn.sentence { background: #21C38D; box-shadow: 0 2px 6px rgba(33,195,141,0.35); }
+.audio-row { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; }
+.audio-note {
+  font-size: 15.5px; color: #7a84a3; background: #f5f7fd; border-radius: 10px;
+  padding: 10px 15px; margin: 13px 0; border-left: 4px solid #c7cfe8;
+}
+
+.word-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.word-card {
+  background: #fff; border: 2px solid #dbe2f5; border-radius: 16px;
+  padding: 18px 16px; text-align: center;
+}
+.word-card .we { font-size: 44px; line-height: 1; margin-bottom: 6px; }
+.word-card .breakdown { font-size: 15px; font-weight: 700; color: #2952e3; margin-bottom: 4px; }
+.word-card .ww { font-size: 22px; font-weight: 800; color: #1e2b5c; }
+.word-card .ww .reading { font-size: 16px; font-weight: 500; color: #7a84a3; }
+.word-card .wm { font-size: 15.5px; color: #667; margin-bottom: 10px; }
+.word-card .audio-row { justify-content: center; margin-top: 8px; }
+
+.sentence-list { margin: 16px 0; }
+.sentence-card {
+  background: #F0FBF7; border: 2px solid #21C38D; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px;
+}
+.sentence-card .stext { font-size: 19px; font-weight: 600; color: #0d7a53; }
+.sentence-card .smeaning { font-size: 16px; color: #55607a; margin: 5px 0 10px; }
+
+.sound-table-word { display: inline-flex; align-items: center; gap: 8px; }
+
+.speed-toggle {
+  position: fixed; right: 16px; bottom: 16px; z-index: 999;
+  display: flex; align-items: center; gap: 8px;
+  background: #1e2b5c; color: #fff; border-radius: 999px;
+  padding: 10px 15px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-family: 'Kanit','Sarabun',sans-serif;
+}
+.speed-toggle .st-label { font-size: 15px; font-weight: 600; margin-right: 2px; white-space: nowrap; }
+.speed-toggle .st-btn {
+  border: none; cursor: pointer; font-family: inherit; font-size: 15.5px; font-weight: 700;
+  padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.15); color: #fff;
+}
+.speed-toggle .st-btn.active { background: #FFA800; color: #2a1a00; }
+
+body.no-speech .audio-btn, body.no-speech .speed-toggle, body.no-speech .audio-note { display: none; }
+
+@media print {
+  .audio-btn, .speed-toggle, .audio-note { display: none !important; }
+}
+
+/* ---- lesson-book.html only: cover page + section banners + mind map + mistake cards ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff; text-align: center; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start; padding: 22mm 16mm;
+  position: relative; overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en { font-family: 'Mali','Kanit',sans-serif; font-size: 60px; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+.cover-title-th { font-size: 27px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives { margin-top: 28px; background: rgba(255,255,255,0.95); color: #2a2a3a; border-radius: 20px; padding: 22px 28px; max-width: 150mm; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.teacher-poster { background: linear-gradient(135deg,#FFD54F,#FF9800); border-radius: 22px; padding: 26px 28px; color:#3a2a00; }
+.teacher-poster .avatar { font-size:52px; }
+.teacher-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.teacher-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.teacher-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+@media print {
+  .cover-page { min-height: 0; }
+}
+</style>
+<link rel="stylesheet" href="../Audio-System/audio-system.css">
+</head>
+<body>
+<a href="../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>✏️ บทเรียน: Spelling (กฎการสะกดคำ) <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="Spelling" aria-label="ฟังเสียง (Listen): Spelling">🔊</button></h1>
+    <div class="sub">บทที่ 2 · ต่อยอดจาก Phonics · เตรียมพื้นฐานก่อนเข้าเรียน ม.4</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+    <ul class="obj-list">
+      <li>ใช้กฎเติม -s/-es สำหรับคำนามพหูพจน์และกริยา he/she/it ได้ถูกต้อง</li>
+      <li>จำคำนามพหูพจน์ไม่ปกติ (irregular plurals) ได้</li>
+      <li>ใช้กฎเติม -ing และ -ed ได้ถูกต้อง รวมถึงกฎ Silent E และกฎ CVC Double พยัญชนะ</li>
+      <li>ฟังและออกเสียงคำที่เปลี่ยนรูปแล้วตามสำเนียงอังกฤษได้ถูกต้อง</li>
+    </ul>
+  </div>
+
+  <div class="audio-note">🔊 กดปุ่มลำโพงเพื่อฟังเสียงคำศัพท์ภาษาอังกฤษ (สำเนียงอังกฤษ/อเมริกัน) ฟังซ้ำได้ไม่จำกัด ปรับความเร็วช้า/ปกติได้ที่แถบมุมขวาล่าง</div>
+
+  <div class="explain-block">
+    <h2>📖 2.1 กฎเติม -s / -es สำหรับพหูพจน์ (Plural Nouns) <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="Plural Nouns" aria-label="ฟังเสียง (Listen): Plural Nouns">🔊</button></h2>
+    <table>
+      <tr><th>กรณี</th><th>กฎ</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปกติ</td><td>เติม -s ตรง ๆ</td><td>cat→cats, book→books, pen→pens <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="cat, cats, book, books, pen, pens" aria-label="ฟังเสียง (Listen): cat, cats, book, books, pen, pens">🔊</button></td></tr>
+      <tr><td>ลงท้าย s, ss, sh, ch, x, z</td><td>เติม -es</td><td>bus→buses, box→boxes, watch→watches <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="bus, buses, box, boxes, watch, watches" aria-label="ฟังเสียง (Listen): bus, buses, box, boxes, watch, watches">🔊</button></td></tr>
+      <tr><td>ลงท้าย พยัญชนะ + y</td><td>เปลี่ยน y เป็น i แล้วเติม es</td><td>baby→babies, city→cities <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="baby, babies, city, cities" aria-label="ฟังเสียง (Listen): baby, babies, city, cities">🔊</button></td></tr>
+      <tr><td>ลงท้าย สระ + y</td><td>เติม -s ตรง ๆ (ไม่เปลี่ยน y)</td><td>boy→boys, day→days <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="boy, boys, day, days" aria-label="ฟังเสียง (Listen): boy, boys, day, days">🔊</button></td></tr>
+      <tr><td>ลงท้าย f หรือ fe (บางคำ)</td><td>เปลี่ยนเป็น ves</td><td>leaf→leaves, knife→knives <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="leaf, leaves, knife, knives" aria-label="ฟังเสียง (Listen): leaf, leaves, knife, knives">🔊</button></td></tr>
+      <tr><td>ลงท้าย o (บางคำ)</td><td>เติม -es</td><td>potato→potatoes (แต่ photo→photos เป็นข้อยกเว้น) <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="potato, potatoes, photo, photos" aria-label="ฟังเสียง (Listen): potato, potatoes, photo, photos">🔊</button></td></tr>
+    </table>
+  </div>
+
+  <div class="explain-block">
+    <h2>📖 2.2 คำนามพหูพจน์ไม่ปกติ (Irregular Plurals) <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="Irregular Plurals" aria-label="ฟังเสียง (Listen): Irregular Plurals">🔊</button></h2>
+    <p style="font-size:14px;color:#55607a;">ต้องท่องจำเป็นคำ ไม่มีกฎตายตัว</p>
+    <table>
+      <tr><th>เอกพจน์</th><th>พหูพจน์</th><th>คำแปล</th></tr>
+      <tr><td>man <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="man" aria-label="ฟังเสียง (Listen): man">🔊</button></td><td>men <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="men" aria-label="ฟังเสียง (Listen): men">🔊</button></td><td>ผู้ชาย</td></tr>
+      <tr><td>woman <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="woman" aria-label="ฟังเสียง (Listen): woman">🔊</button></td><td>women <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="women" aria-label="ฟังเสียง (Listen): women">🔊</button></td><td>ผู้หญิง</td></tr>
+      <tr><td>child <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="child" aria-label="ฟังเสียง (Listen): child">🔊</button></td><td>children <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="children" aria-label="ฟังเสียง (Listen): children">🔊</button></td><td>เด็ก</td></tr>
+      <tr><td>foot <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="foot" aria-label="ฟังเสียง (Listen): foot">🔊</button></td><td>feet <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="feet" aria-label="ฟังเสียง (Listen): feet">🔊</button></td><td>เท้า</td></tr>
+      <tr><td>tooth <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="tooth" aria-label="ฟังเสียง (Listen): tooth">🔊</button></td><td>teeth <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="teeth" aria-label="ฟังเสียง (Listen): teeth">🔊</button></td><td>ฟัน</td></tr>
+      <tr><td>mouse <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="mouse" aria-label="ฟังเสียง (Listen): mouse">🔊</button></td><td>mice <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="mice" aria-label="ฟังเสียง (Listen): mice">🔊</button></td><td>หนู</td></tr>
+      <tr><td>person <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="person" aria-label="ฟังเสียง (Listen): person">🔊</button></td><td>people <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="people" aria-label="ฟังเสียง (Listen): people">🔊</button></td><td>คน</td></tr>
+      <tr><td>sheep <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="sheep" aria-label="ฟังเสียง (Listen): sheep">🔊</button></td><td>sheep <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="sheep" aria-label="ฟังเสียง (Listen): sheep">🔊</button></td><td>แกะ (รูปเดียวกัน)</td></tr>
+    </table>
+  </div>
+
+  <div class="explain-block">
+    <h2>📖 2.3 กฎเติม -s / -es สำหรับกริยา (he, she, it) <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="he, she, it" aria-label="ฟังเสียง (Listen): he, she, it">🔊</button></h2>
+    <p style="font-size:14px;color:#55607a;">ใช้กฎ<b>เดียวกันเป๊ะ</b>กับพหูพจน์นามในข้อ 2.1 (จะใช้จริงในบทที่ 6 Present Simple)</p>
+    <table>
+      <tr><th>กรณี</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปกติเติม -s</td><td>play→plays, like→likes <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, plays, like, likes" aria-label="ฟังเสียง (Listen): play, plays, like, likes">🔊</button></td></tr>
+      <tr><td>ลงท้าย s/ss/sh/ch/x/z เติม -es</td><td>wash→washes, watch→watches, fix→fixes <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="wash, washes, watch, watches, fix, fixes" aria-label="ฟังเสียง (Listen): wash, washes, watch, watches, fix, fixes">🔊</button></td></tr>
+      <tr><td>พยัญชนะ + y เปลี่ยนเป็น ies</td><td>study→studies, cry→cries, fly→flies <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="study, studies, cry, cries, fly, flies" aria-label="ฟังเสียง (Listen): study, studies, cry, cries, fly, flies">🔊</button></td></tr>
+      <tr><td>สระ + y เติม s ตรง</td><td>play→plays, enjoy→enjoys <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, plays, enjoy, enjoys" aria-label="ฟังเสียง (Listen): play, plays, enjoy, enjoys">🔊</button></td></tr>
+    </table>
+  </div>
+
+  <div class="explain-block">
+    <h2>📖 2.4 กฎเติม -ing (Present Continuous / Gerund) <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="Present Continuous, Gerund" aria-label="ฟังเสียง (Listen): Present Continuous, Gerund">🔊</button></h2>
+    <table>
+      <tr><th>กรณี</th><th>กฎ</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปกติ</td><td>เติม -ing ตรง ๆ</td><td>play→playing, read→reading, go→going <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, playing, read, reading, go, going" aria-label="ฟังเสียง (Listen): play, playing, read, reading, go, going">🔊</button></td></tr>
+      <tr><td>ลงท้ายด้วย e ที่ไม่ออกเสียง (Silent E)</td><td>ตัด e ทิ้งก่อนเติม -ing</td><td>make→making, hope→hoping, dance→dancing <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="make, making, hope, hoping, dance, dancing" aria-label="ฟังเสียง (Listen): make, making, hope, hoping, dance, dancing">🔊</button></td></tr>
+      <tr><td>พยางค์เดียว CVC (พยัญชนะ-สระ-พยัญชนะ)</td><td>เพิ่มพยัญชนะตัวสุดท้ายเป็น 2 ตัวก่อนเติม -ing</td><td>stop→stopping, run→running, sit→sitting <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="stop, stopping, run, running, sit, sitting" aria-label="ฟังเสียง (Listen): stop, stopping, run, running, sit, sitting">🔊</button></td></tr>
+      <tr><td>ลงท้ายด้วย w, x, y</td><td>ไม่ต้อง double พยัญชนะ</td><td>play→playing, fix→fixing, snow→snowing <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, playing, fix, fixing, snow, snowing" aria-label="ฟังเสียง (Listen): play, playing, fix, fixing, snow, snowing">🔊</button></td></tr>
+    </table>
+  </div>
+
+  <div class="explain-block">
+    <h2>📖 2.5 กฎเติม -ed (Past Simple ที่เป็นกริยาปกติ) <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="Past Simple" aria-label="ฟังเสียง (Listen): Past Simple">🔊</button></h2>
+    <table>
+      <tr><th>กรณี</th><th>กฎ</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปกติ</td><td>เติม -ed ตรง ๆ</td><td>play→played, walk→walked <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, played, walk, walked" aria-label="ฟังเสียง (Listen): play, played, walk, walked">🔊</button></td></tr>
+      <tr><td>ลงท้ายด้วย e (Silent E)</td><td>เติมแค่ -d</td><td>like→liked, hope→hoped, live→lived <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="like, liked, hope, hoped, live, lived" aria-label="ฟังเสียง (Listen): like, liked, hope, hoped, live, lived">🔊</button></td></tr>
+      <tr><td>ลงท้าย พยัญชนะ + y</td><td>เปลี่ยน y เป็น i แล้วเติม -ed</td><td>study→studied, cry→cried, try→tried <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="study, studied, cry, cried, try, tried" aria-label="ฟังเสียง (Listen): study, studied, cry, cried, try, tried">🔊</button></td></tr>
+      <tr><td>ลงท้าย สระ + y</td><td>เติม -ed ตรง ๆ</td><td>play→played, stay→stayed <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="play, played, stay, stayed" aria-label="ฟังเสียง (Listen): play, played, stay, stayed">🔊</button></td></tr>
+      <tr><td>พยางค์เดียว CVC</td><td>เพิ่มพยัญชนะตัวสุดท้ายเป็น 2 ตัวก่อนเติม -ed</td><td>stop→stopped, plan→planned, chat→chatted <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="stop, stopped, plan, planned, chat, chatted" aria-label="ฟังเสียง (Listen): stop, stopped, plan, planned, chat, chatted">🔊</button></td></tr>
+    </table>
+    <div class="tip-card">⚠️ ข้อสังเกต: กฎ "พยางค์เดียว CVC ต้อง double พยัญชนะ" ใช้เหมือนกันทั้ง -ing และ -ed เพราะถ้าไม่ double สระตัวหน้าจะถูกอ่านเป็นเสียงยาวผิดไป (stoping จะอ่านเหมือนมี Magic E)</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🧩 คลังคำศัพท์ฝึกฟังเสียง (Word Bank) <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="Word Bank" aria-label="ฟังเสียง (Listen): Word Bank">🔊</button></h2>
+    <p style="font-size:13.5px;color:#55607a;">กดปุ่ม 🔊 เพื่อฟังเสียงคำก่อนเปลี่ยนรูปและหลังเปลี่ยนรูป เทียบเสียงกัน ฝึกพูดตามซ้ำได้ไม่จำกัด</p>
+    <div class="word-grid">
+      <div class="word-card"><div class="we">🐱</div><div class="ww">cat &rarr; cats</div><div class="wm">แมว &rarr; แมว (หลายตัว)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="cat" aria-label="ฟังเสียง (Listen): cat">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="cats" aria-label="ฟังเสียง (Listen): cats">🔊</button></div></div>
+      <div class="word-card"><div class="we">📦</div><div class="ww">box &rarr; boxes</div><div class="wm">กล่อง &rarr; กล่อง (หลายใบ)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="box" aria-label="ฟังเสียง (Listen): box">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="boxes" aria-label="ฟังเสียง (Listen): boxes">🔊</button></div></div>
+      <div class="word-card"><div class="we">👶</div><div class="ww">baby &rarr; babies</div><div class="wm">ทารก &rarr; ทารก (หลายคน)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="baby" aria-label="ฟังเสียง (Listen): baby">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="babies" aria-label="ฟังเสียง (Listen): babies">🔊</button></div></div>
+      <div class="word-card"><div class="we">🍃</div><div class="ww">leaf &rarr; leaves</div><div class="wm">ใบไม้ &rarr; ใบไม้ (หลายใบ)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="leaf" aria-label="ฟังเสียง (Listen): leaf">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="leaves" aria-label="ฟังเสียง (Listen): leaves">🔊</button></div></div>
+      <div class="word-card"><div class="we">🧒</div><div class="ww">child &rarr; children</div><div class="wm">เด็ก &rarr; เด็ก (หลายคน)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="child" aria-label="ฟังเสียง (Listen): child">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="children" aria-label="ฟังเสียง (Listen): children">🔊</button></div></div>
+      <div class="word-card"><div class="we">⚽</div><div class="ww">play &rarr; plays</div><div class="wm">เล่น &rarr; เล่น (he/she/it)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="play" aria-label="ฟังเสียง (Listen): play">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="plays" aria-label="ฟังเสียง (Listen): plays">🔊</button></div></div>
+      <div class="word-card"><div class="we">⌚</div><div class="ww">watch &rarr; watches</div><div class="wm">ดู/นาฬิกา &rarr; ดู (he/she/it)</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="watch" aria-label="ฟังเสียง (Listen): watch">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="watches" aria-label="ฟังเสียง (Listen): watches">🔊</button></div></div>
+      <div class="word-card"><div class="we">🏃</div><div class="ww">run &rarr; running</div><div class="wm">วิ่ง &rarr; กำลังวิ่ง</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="run" aria-label="ฟังเสียง (Listen): run">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="running" aria-label="ฟังเสียง (Listen): running">🔊</button></div></div>
+      <div class="word-card"><div class="we">🎨</div><div class="ww">make &rarr; making</div><div class="wm">ทำ &rarr; กำลังทำ</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="make" aria-label="ฟังเสียง (Listen): make">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="making" aria-label="ฟังเสียง (Listen): making">🔊</button></div></div>
+      <div class="word-card"><div class="we">🛑</div><div class="ww">stop &rarr; stopped</div><div class="wm">หยุด &rarr; หยุดแล้ว</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="stop" aria-label="ฟังเสียง (Listen): stop">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="stopped" aria-label="ฟังเสียง (Listen): stopped">🔊</button></div></div>
+      <div class="word-card"><div class="we">📚</div><div class="ww">study &rarr; studied</div><div class="wm">เรียน &rarr; เรียนแล้ว</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="study" aria-label="ฟังเสียง (Listen): study">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="studied" aria-label="ฟังเสียง (Listen): studied">🔊</button></div></div>
+      <div class="word-card"><div class="we">😊</div><div class="ww">like &rarr; liked</div><div class="wm">ชอบ &rarr; ชอบแล้ว</div><div class="audio-row"><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="like" aria-label="ฟังเสียง (Listen): like">🔊</button><button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="liked" aria-label="ฟังเสียง (Listen): liked">🔊</button></div></div>
+    </div>
+  </div>
+
+  <div class="explain-block">
+    <h2>💬 ฝึกอ่านประโยค</h2>
+    <div class="sentence-list">
+      <div class="sentence-card"><div class="stext">She studies English every day.</div><div class="smeaning">เธอเรียนภาษาอังกฤษทุกวัน</div><button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="She studies English every day." aria-label="ฟังเสียง (Listen): She studies English every day.">🔊</button></div>
+      <div class="sentence-card"><div class="stext">I am playing football.</div><div class="smeaning">ฉันกำลังเล่นฟุตบอล</div><button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="I am playing football." aria-label="ฟังเสียง (Listen): I am playing football.">🔊</button></div>
+      <div class="sentence-card"><div class="stext">They stopped the car.</div><div class="smeaning">พวกเขาหยุดรถ</div><button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="They stopped the car." aria-label="ฟังเสียง (Listen): They stopped the car.">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🧠 เทคนิคการจำ</h2>
+    <div class="tip-card">💡 กฎ CVC Double ใช้เหมือนกันทั้ง -ing และ -ed: พยางค์เดียว + พยัญชนะ-สระ-พยัญชนะ → เพิ่มพยัญชนะตัวท้ายเป็น 2 ตัวก่อนเติมปัจจัยเสมอ</div>
+    <div class="tip-card">💡 กฎ y แยกตามตัวหน้า y เสมอ: พยัญชนะ+y → เปลี่ยนเป็น i, สระ+y → เติมตรง ไม่เปลี่ยน</div>
+    <div class="tip-card">💡 ท่องคำนามพหูพจน์ไม่ปกติเป็นกลุ่มคล้องจอง: man-men, woman-women, foot-feet, tooth-teeth, mouse-mice <button type="button" class="gaud-btn" data-gaud-type="sentence" data-gaud-text="man, men, woman, women, foot, feet, tooth, teeth, mouse, mice" aria-label="ฟังเสียง (Listen): man, men, woman, women, foot, feet, tooth, teeth, mouse, mice">🔊</button></div>
+  </div>
+
+  <div class="footer-note">English M.3 Course · บทที่ 2 — Spelling</div>
+</div>
+<script src="../Audio-System/audio-system.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var SOUND_MAP = {
+    'b': 'buh', 'c': 'kuh', 'd': 'duh', 'f': 'ffff', 'g': 'guh',
+    'h': 'huh', 'j': 'juh', 'k': 'kuh', 'l': 'luh', 'm': 'mmm',
+    'n': 'nnn', 'p': 'puh', 'qu': 'kwuh', 'r': 'ruh', 's': 'sss',
+    't': 'tuh', 'v': 'vuh', 'w': 'wuh', 'x': 'ks', 'y': 'yuh', 'z': 'zzz',
+    'sh': 'shh', 'ch': 'chuh', 'th': 'th', 'wh': 'wuh', 'ph': 'ffff',
+    'ng': 'ng', 'ck': 'kuh',
+    'a': 'ah', 'e': 'eh', 'i': 'ih', 'o': 'aw', 'u': 'uh',
+    'ee': 'ee', 'ea': 'ee', 'ai': 'ay', 'ay': 'ay', 'oa': 'oh', 'ow': 'oh',
+    'ie': 'eye', 'igh': 'eye', 'oo': 'oo', 'ue': 'oo', 'ui': 'oo',
+    'au': 'aw', 'aw': 'aw', 'oi': 'oy', 'oy': 'oy',
+    'ar': 'ar', 'er': 'er', 'ir': 'er', 'ur': 'er', 'or': 'or',
+    'air': 'air', 'ear': 'ear', 'eer': 'eer'
+  };
+
+  var RATE_VALUES = { slow: 0.55, normal: 1.0 };
+  var currentRateMode = 'normal';
+  try {
+    var saved = window.localStorage && localStorage.getItem('phonicsAudioRate');
+    if (saved && RATE_VALUES[saved]) currentRateMode = saved;
+  } catch (e) { /* localStorage unavailable (privacy mode etc.) */ }
+
+  var cachedVoices = [];
+  function loadVoices() {
+    if (window.speechSynthesis) cachedVoices = window.speechSynthesis.getVoices();
+  }
+  if (window.speechSynthesis) {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function pickVoice() {
+    if (!cachedVoices.length) loadVoices();
+    var enVoices = cachedVoices.filter(function (v) { return /^en/i.test(v.lang); });
+    var us = enVoices.filter(function (v) { return /^en-US/i.test(v.lang); })[0];
+    if (us) return us;
+    var gb = enVoices.filter(function (v) { return /^en-GB/i.test(v.lang); })[0];
+    if (gb) return gb;
+    return enVoices[0] || null;
+  }
+
+  function getRateValue() { return RATE_VALUES[currentRateMode] || 1.0; }
+
+  function wait(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
+
+  function speak(text, opts) {
+    opts = opts || {};
+    return new Promise(function (resolve) {
+      if (!window.speechSynthesis || !text) { resolve(); return; }
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      var v = pickVoice();
+      if (v) u.voice = v;
+      u.rate = opts.rate || getRateValue();
+      u.pitch = 1;
+      u.onend = function () { resolve(); };
+      u.onerror = function () { resolve(); };
+      window.speechSynthesis.speak(u);
+    });
+  }
+
+  function playWord(word) {
+    if (!window.speechSynthesis || !word) return;
+    window.speechSynthesis.cancel();
+    speak(word);
+  }
+
+  function playSentence(sentence) {
+    if (!window.speechSynthesis || !sentence) return;
+    window.speechSynthesis.cancel();
+    speak(sentence);
+  }
+
+  function playSplit(word, partsCsv) {
+    if (!window.speechSynthesis || !word) return;
+    window.speechSynthesis.cancel();
+    var parts = (partsCsv || '').split(',').map(function (p) { return p.trim(); }).filter(Boolean);
+    var chain = Promise.resolve();
+    parts.forEach(function (p) {
+      var say = SOUND_MAP[p.toLowerCase()] || p;
+      chain = chain.then(function () { return speak(say, { rate: Math.min(getRateValue(), 0.85) }); })
+                   .then(function () { return wait(180); });
+    });
+    chain.then(function () { return wait(150); }).then(function () { return speak(word); });
+  }
+
+  function setRate(mode) {
+    if (!RATE_VALUES[mode]) return;
+    currentRateMode = mode;
+    try { window.localStorage && localStorage.setItem('phonicsAudioRate', mode); } catch (e) {}
+    updateToggleUI();
+  }
+
+  function updateToggleUI() {
+    var bar = document.getElementById('phonicsSpeedToggle');
+    if (!bar) return;
+    var btns = bar.querySelectorAll('.st-btn');
+    for (var i = 0; i < btns.length; i++) {
+      var b = btns[i];
+      if (b.getAttribute('data-rate') === currentRateMode) b.classList.add('active');
+      else b.classList.remove('active');
+    }
+  }
+
+  function buildToggleUI() {
+    if (document.getElementById('phonicsSpeedToggle')) return;
+    var bar = document.createElement('div');
+    bar.className = 'speed-toggle';
+    bar.id = 'phonicsSpeedToggle';
+    bar.innerHTML = '<span class="st-label">🔊 ความเร็ว</span>' +
+      '<button type="button" class="st-btn" data-rate="slow">🐢 ช้า</button>' +
+      '<button type="button" class="st-btn" data-rate="normal">🐇 ปกติ</button>';
+    document.body.appendChild(bar);
+    updateToggleUI();
+  }
+
+  function onClick(e) {
+    var audioEl = e.target.closest('[data-audio]');
+    if (audioEl) {
+      var kind = audioEl.getAttribute('data-audio');
+      if (kind === 'word') playWord(audioEl.getAttribute('data-text'));
+      else if (kind === 'sentence') playSentence(audioEl.getAttribute('data-text'));
+      else if (kind === 'split') playSplit(audioEl.getAttribute('data-word'), audioEl.getAttribute('data-parts'));
+      return;
+    }
+    var rateBtn = e.target.closest('.st-btn');
+    if (rateBtn) setRate(rateBtn.getAttribute('data-rate'));
+  }
+
+  function init() {
+    if (!window.speechSynthesis) {
+      document.body.classList.add('no-speech');
+      return;
+    }
+    buildToggleUI();
+    document.addEventListener('click', onClick);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  window.PhonicsAudio = { playWord: playWord, playSentence: playSentence, playSplit: playSplit, setRate: setRate };
+})();
+</script>
+</body>
+</html>

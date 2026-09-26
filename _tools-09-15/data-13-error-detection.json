@@ -1,0 +1,167 @@
+{
+  "id": "13",
+  "folder": "13-Error-Detection",
+  "titleThai": "Error Detection (จับผิดประโยค)",
+  "titleShort": "Error Detection",
+  "emojiTitle": "🔍⚠️",
+  "objectives": [
+    "หาส่วนที่ผิดหลักไวยากรณ์ในประโยคที่แบ่งเป็น 4 ส่วน (A/B/C/D) ได้ถูกต้อง",
+    "จำ 8 จุดที่ข้อสอบเข้า ม.4 ชอบออกจับผิดมากที่สุด",
+    "แก้ไขประโยคที่ผิดให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมาในบทก่อนหน้า",
+    "แยกแยะประโยคที่ถูกต้องทั้งหมดออกจากประโยคที่มีจุดผิด (ไม่เดามั่ว)",
+    "เชื่อมโยงความรู้จากหลายบทเข้าด้วยกันเพื่อจับผิดประโยคได้อย่างมั่นใจ"
+  ],
+  "summaryTable": {
+    "headers": ["จุดที่ควรตรวจสอบ", "คำถามที่ต้องถามตัวเอง", "ตัวอย่าง"],
+    "rows": [
+      ["Subject-Verb Agreement", "ประธานเป็น he/she/it ไหม? กริยาเติม s/es หรือยัง?", "She goes (ไม่ใช่ go)"],
+      ["Tense", "มีคำสัญญาณเวลาไหม? Tense ตรงกันไหม?", "yesterday → went"],
+      ["Verb form หลัง Auxiliary", "มี do/does/did/will/can ไหม? กริยาเป็น base form ไหม?", "did not go (ไม่ใช่ went)"],
+      ["Article (a/an)", "คำถัดไปขึ้นต้นเสียงพยัญชนะหรือสระ?", "an apple (ไม่ใช่ a apple)"],
+      ["Preposition", "เป็นวัน(on)? เดือน/ปี(in)? เวลาที่แน่นอน(at)?", "in 2010, on Monday, at 9 AM"],
+      ["Plural Noun", "เป็นคำนามพหูพจน์ไม่ปกติไหม?", "children, feet, mice"],
+      ["Adjective/Adverb", "ขยายคำนาม(adj) หรือขยายกริยา(adv,-ly)?", "sings beautifully"],
+      ["Word Order", "Adjective อยู่หน้าคำนามหรือยัง?", "a big dog (ไม่ใช่ a dog big)"]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: Subject-Verb Agreement และ Tense (6 ข้อ)",
+        "instructions": "หาส่วนที่ผิด (A/B/C/D) ในแต่ละประโยค แล้วเขียนคำที่ถูกต้อง",
+        "items": [
+          "She (A)go (B)to the market (C)every (D)Sunday.",
+          "The baby (A)cry (B)a lot (C)at (D)night.",
+          "My parents (A)works (B)hard (C)every (D)day.",
+          "She (A)go (B)to the cinema (C)last (D)Friday.",
+          "They (A)are play (B)football (C)right (D)now.",
+          "He (A)will goes (B)to the party (C)next (D)week."
+        ],
+        "answers": ["A: goes", "A: cries", "A: work", "A: went", "A: are playing", "A: will go"],
+        "reasons": [
+          "ประธาน She ต้องเติม s ที่กริยา",
+          "ประธาน The baby (it) ต้องเติม s ที่กริยา",
+          "ประธาน My parents เป็นพหูพจน์ ต้องไม่เติม s",
+          "มีคำสัญญาณ last Friday ต้องใช้ Past Simple",
+          "มีคำสัญญาณ right now ต้องใช้ Present Continuous",
+          "หลัง will ต้องใช้กริยารูปเดิม (base form)"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: Verb Form หลัง Auxiliary และ Article (6 ข้อ)",
+        "instructions": "หาส่วนที่ผิด (A/B/C/D) ในแต่ละประโยค แล้วเขียนคำที่ถูกต้อง",
+        "items": [
+          "(A)Does (B)she (C)likes (D)tea?",
+          "I (A)didn't (B)went (C)to school (D)yesterday.",
+          "They (A)can (B)plays (C)the guitar (D)well.",
+          "He (A)has (B)a (C)orange (D)in his bag.",
+          "She is (A)an (B)tall (C)girl (D)in our class.",
+          "I saw (A)a (B)umbrella (C)on (D)the chair."
+        ],
+        "answers": ["C: like", "B: go", "B: play", "C: an", "A: a", "B: an"],
+        "reasons": [
+          "หลัง Does ต้องใช้กริยารูปเดิม (base form)",
+          "หลัง didn't ต้องใช้กริยารูปเดิม (base form)",
+          "หลัง can ต้องใช้กริยารูปเดิม (base form)",
+          "orange ขึ้นต้นเสียงสระ ต้องใช้ an",
+          "tall ขึ้นต้นเสียงพยัญชนะ ต้องใช้ a",
+          "umbrella ขึ้นต้นเสียงสระ ต้องใช้ an"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: Preposition และ Plural Noun (6 ข้อ)",
+        "instructions": "หาส่วนที่ผิด (A/B/C/D) ในแต่ละประโยค แล้วเขียนคำที่ถูกต้อง",
+        "items": [
+          "The party is (A)in (B)Saturday (C)at (D)my house.",
+          "We will meet (A)in (B)3 o'clock (C)at (D)the park.",
+          "She was born (A)on (B)1998 (C)in (D)Thailand.",
+          "I have two (A)knifes (B)in (C)the (D)drawer.",
+          "There are five (A)mans (B)in (C)the (D)room.",
+          "She bought three (A)leafs (B)for (C)her (D)project."
+        ],
+        "answers": ["A: on", "A: at", "A: in", "A: knives", "A: men", "A: leaves"],
+        "reasons": [
+          "วันใช้ on ไม่ใช่ in",
+          "เวลาที่แน่นอนใช้ at ไม่ใช่ in",
+          "ปีใช้ in ไม่ใช่ on",
+          "พหูพจน์ไม่ปกติของ knife คือ knives",
+          "พหูพจน์ไม่ปกติของ man คือ men",
+          "พหูพจน์ไม่ปกติของ leaf คือ leaves"
+        ]
+      },
+      {
+        "title": "ตอนที่ 4: Adjective/Adverb และ Word Order (6 ข้อ)",
+        "instructions": "หาส่วนที่ผิด (A/B/C/D) ในแต่ละประโยค แล้วเขียนคำที่ถูกต้อง",
+        "items": [
+          "He (A)quick (B)finished (C)his (D)homework.",
+          "She looks (A)happily (B)today (C)at (D)school.",
+          "They walked (A)quiet (B)into (C)the (D)room.",
+          "I saw (A)a (B)cat (C)small (D)yesterday.",
+          "She has (A)a (B)car (C)red (D)and shiny.",
+          "We met (A)a (B)man (C)tall (D)at the station."
+        ],
+        "answers": ["A: quickly", "A: happy", "A: quietly", "C: (move before cat) a small cat", "C: (move before car) a red car", "C: (move before man) a tall man"],
+        "reasons": [
+          "ต้องใช้ adverb ขยายกริยา finished",
+          "looks เป็น linking verb ต้องตามด้วย adjective ไม่ใช่ adverb",
+          "ต้องใช้ adverb ขยายกริยา walked",
+          "Adjective ต้องอยู่หน้าคำนามเสมอ: a small cat",
+          "Adjective ต้องอยู่หน้าคำนามเสมอ: a red car",
+          "Adjective ต้องอยู่หน้าคำนามเสมอ: a tall man"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🚶", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "She (A)go (B)to work (C)every day (D)by car.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน She ต้องเติม s: goes" },
+    { "emoji": "🍦", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "He (A)like (B)ice cream (C)very much (D)indeed.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน He ต้องเติม s: likes" },
+    { "emoji": "⚽", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "My brother (A)play (B)football (C)every weekend (D)with friends.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน My brother (he) ต้องเติม s: plays" },
+    { "emoji": "🐶", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "The dog (A)bark (B)loudly (C)at night (D)sometimes.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน The dog (it) ต้องเติม s: barks" },
+    { "emoji": "🚌", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "They (A)goes (B)to school (C)by bus (D)every morning.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน They เป็นพหูพจน์ ต้องไม่เติม s: go" },
+    { "emoji": "📚", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "We (A)likes (B)to read books (C)in our (D)free time.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน We เป็นพหูพจน์ ต้องไม่เติม s: like" },
+    { "emoji": "🌧️", "tag": "Subject-Verb Agreement", "difficulty": 1, "q": "It (A)rain (B)a lot (C)in the rainy (D)season.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ประธาน It ต้องเติม s: rains" },
+    { "emoji": "🏔️", "tag": "Tense", "difficulty": 2, "q": "I (A)go (B)to Chiang Mai (C)yesterday (D)with my family.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "มีคำสัญญาณ yesterday ต้องใช้ Past Simple: went" },
+    { "emoji": "🎹", "tag": "Tense", "difficulty": 2, "q": "She (A)plays (B)the piano (C)right now (D)in the living room.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "มีคำสัญญาณ right now ต้องใช้ Present Continuous: is playing" },
+    { "emoji": "📋", "tag": "Tense", "difficulty": 2, "q": "They (A)will finished (B)the project (C)by next week (D)for sure.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "หลัง will ต้องใช้กริยารูปเดิม: will finish" },
+    { "emoji": "📖", "tag": "Tense", "difficulty": 2, "q": "He (A)did not (B)finished (C)his homework (D)last night.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง did not ต้องใช้กริยารูปเดิม: finish" },
+    { "emoji": "🏛️", "tag": "Tense", "difficulty": 2, "q": "We (A)are going to (B)visited (C)the museum (D)next month.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง going to ต้องใช้กริยารูปเดิม: visit" },
+    { "emoji": "📝", "tag": "Tense", "difficulty": 2, "q": "I (A)am (B)finish (C)my homework (D)right now.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "มีคำสัญญาณ right now ต้องใช้ Present Continuous: finishing" },
+    { "emoji": "🎉", "tag": "Tense", "difficulty": 2, "q": "She (A)didn't (B)goes (C)to the party (D)last night.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง didn't ต้องใช้กริยารูปเดิม: go" },
+    { "emoji": "❓", "tag": "Verb Form หลัง Auxiliary", "difficulty": 1, "q": "(A)Does (B)he (C)likes (D)coffee?", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "หลัง Does ต้องใช้กริยารูปเดิม: like" },
+    { "emoji": "⚽", "tag": "Verb Form หลัง Auxiliary", "difficulty": 1, "q": "I (A)will (B)goes (C)to the market (D)tomorrow.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง will ต้องใช้กริยารูปเดิม: go" },
+    { "emoji": "🗣️", "tag": "Verb Form หลัง Auxiliary", "difficulty": 1, "q": "(A)Can (B)she (C)speaks (D)English?", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "หลัง Can ต้องใช้กริยารูปเดิม: speak" },
+    { "emoji": "🌳", "tag": "Verb Form หลัง Auxiliary", "difficulty": 2, "q": "He (A)doesn't (B)wants (C)to go (D)outside.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง doesn't ต้องใช้กริยารูปเดิม: want" },
+    { "emoji": "✅", "tag": "Verb Form หลัง Auxiliary", "difficulty": 2, "q": "They (A)should (B)finishes (C)the work (D)today.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง should ต้องใช้กริยารูปเดิม: finish" },
+    { "emoji": "🎸", "tag": "Verb Form หลัง Auxiliary", "difficulty": 2, "q": "She (A)did not (B)played (C)the guitar (D)yesterday.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "หลัง did not ต้องใช้กริยารูปเดิม: play" },
+    { "emoji": "🍎", "tag": "Article a/an", "difficulty": 1, "q": "I have (A)a (B)apple (C)in my (D)bag.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "apple ขึ้นต้นเสียงสระ ต้องใช้ an" },
+    { "emoji": "🎓", "tag": "Article a/an", "difficulty": 1, "q": "She is (A)an (B)good (C)student (D)at school.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "good ขึ้นต้นเสียงพยัญชนะ ต้องใช้ a" },
+    { "emoji": "🐘", "tag": "Article a/an", "difficulty": 1, "q": "He (A)saw (B)a (C)elephant (D)at the zoo.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "elephant ขึ้นต้นเสียงสระ ต้องใช้ an" },
+    { "emoji": "🤥", "tag": "Article a/an", "difficulty": 2, "q": "This is (A)a (B)honest (C)mistake (D)to make.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "honest ขึ้นต้นด้วยตัว h ที่ไม่ออกเสียง (silent h) เสียงจริงคือสระ ต้องใช้ an" },
+    { "emoji": "✏️", "tag": "Article a/an", "difficulty": 2, "q": "I need (A)an (B)pen (C)to write (D)my name.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "pen ขึ้นต้นเสียงพยัญชนะ ต้องใช้ a" },
+    { "emoji": "🏫", "tag": "Article a/an (ไม่มีจุดผิด)", "difficulty": 2, "q": "She works at (A)a (B)university (C)in (D)Bangkok.", "choices": ["A", "B", "C", "ไม่มีจุดผิด"], "answer": 3, "explain": "university ขึ้นต้นด้วยเสียง /j/ (ยู) ซึ่งเป็นเสียงพยัญชนะ จึงใช้ a ถูกต้องแล้ว ประโยคนี้ไม่มีจุดผิด" },
+    { "emoji": "📅", "tag": "Preposition", "difficulty": 2, "q": "I was born (A)on (B)2010 (C)in (D)Bangkok.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ปีใช้ in ไม่ใช่ on" },
+    { "emoji": "📆", "tag": "Preposition", "difficulty": 2, "q": "We meet (A)in (B)Monday (C)at (D)school.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "วันใช้ on ไม่ใช่ in" },
+    { "emoji": "⏰", "tag": "Preposition", "difficulty": 2, "q": "The meeting starts (A)in (B)9 o'clock (C)in the (D)morning.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "เวลาที่แน่นอนใช้ at ไม่ใช่ in" },
+    { "emoji": "🎂", "tag": "Preposition", "difficulty": 2, "q": "My birthday is (A)on (B)December (C)every (D)year.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "เดือนใช้ in ไม่ใช่ on" },
+    { "emoji": "📖", "tag": "Preposition", "difficulty": 2, "q": "The book is (A)in (B)the table (C)in (D)the classroom.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ตำแหน่งบนพื้นผิวใช้ on ไม่ใช่ in" },
+    { "emoji": "🚉", "tag": "Preposition", "difficulty": 2, "q": "We arrived (A)at (B)the station (C)on (D)8 AM.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "เวลาที่แน่นอนใช้ at ไม่ใช่ on" },
+    { "emoji": "👶", "tag": "Plural Noun", "difficulty": 2, "q": "I have two (A)childs (B)at (C)home (D)now.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "พหูพจน์ไม่ปกติของ child คือ children" },
+    { "emoji": "🐟", "tag": "Plural Noun", "difficulty": 2, "q": "There are many (A)fishs (B)in (C)the (D)pond.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "fish เป็นคำนามที่รูปเอกพจน์และพหูพจน์เหมือนกัน ไม่เติม s" },
+    { "emoji": "🦷", "tag": "Plural Noun", "difficulty": 3, "q": "She has three (A)tooths (B)that (C)hurt (D)badly.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "พหูพจน์ไม่ปกติของ tooth คือ teeth" },
+    { "emoji": "🐭", "tag": "Plural Noun", "difficulty": 3, "q": "We saw two (A)mouses (B)in (C)the (D)kitchen.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "พหูพจน์ไม่ปกติของ mouse คือ mice" },
+    { "emoji": "🦶", "tag": "Plural Noun", "difficulty": 3, "q": "He has small (A)foots (B)but (C)big (D)hands.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "พหูพจน์ไม่ปกติของ foot คือ feet" },
+    { "emoji": "👥", "tag": "Plural Noun", "difficulty": 3, "q": "Many (A)persons (B)came (C)to (D)the party.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "พหูพจน์ที่ใช้บ่อยที่สุดของ person คือ people" },
+    { "emoji": "🎤", "tag": "Adjective/Adverb", "difficulty": 2, "q": "She sings (A)beautiful (B)every (C)morning (D)at school.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ต้องใช้ adverb ขยายกริยา sings: beautifully" },
+    { "emoji": "🏃", "tag": "Adjective/Adverb", "difficulty": 2, "q": "He is (A)a (B)quickly (C)runner (D)in our class.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "ต้องใช้ adjective ขยายคำนาม runner: quick" },
+    { "emoji": "🗣️", "tag": "Adjective/Adverb", "difficulty": 3, "q": "They speak English (A)very (B)good (C)for their (D)age.", "choices": ["A", "B", "C", "D"], "answer": 1, "explain": "ต้องใช้ adverb ขยายกริยา speak: well" },
+    { "emoji": "🎵", "tag": "Adjective/Adverb", "difficulty": 3, "q": "The music sounds (A)badly (B)tonight (C)at the (D)concert.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "sounds เป็น linking verb ต้องตามด้วย adjective ไม่ใช่ adverb: bad" },
+    { "emoji": "✍️", "tag": "Adjective/Adverb", "difficulty": 3, "q": "She (A)careful (B)wrote (C)the (D)answer.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ต้องใช้ adverb ขยายกริยา wrote: carefully" },
+    { "emoji": "🚶‍♂️", "tag": "Adjective/Adverb", "difficulty": 3, "q": "He walks (A)slow (B)because (C)he is (D)tired.", "choices": ["A", "B", "C", "D"], "answer": 0, "explain": "ต้องใช้ adverb ขยายกริยา walks: slowly" },
+    { "emoji": "🐕", "tag": "Word Order", "difficulty": 3, "q": "I have (A)a (B)dog (C)big (D)at home.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a big dog" },
+    { "emoji": "👗", "tag": "Word Order", "difficulty": 3, "q": "She bought (A)a (B)dress (C)beautiful (D)yesterday.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a beautiful dress" },
+    { "emoji": "👦", "tag": "Word Order", "difficulty": 3, "q": "He is (A)a (B)boy (C)tall (D)and strong.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a tall boy" },
+    { "emoji": "🐈‍⬛", "tag": "Word Order", "difficulty": 3, "q": "We saw (A)a (B)cat (C)black (D)in the garden.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a black cat" },
+    { "emoji": "🚗", "tag": "Word Order", "difficulty": 3, "q": "I bought (A)a (B)car (C)new (D)last week.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a new car" },
+    { "emoji": "🏠", "tag": "Word Order", "difficulty": 3, "q": "They live in (A)a (B)house (C)small (D)near the park.", "choices": ["A", "B", "C", "D"], "answer": 2, "explain": "Adjective ต้องอยู่หน้าคำนามเสมอ: a small house" }
+  ]
+}

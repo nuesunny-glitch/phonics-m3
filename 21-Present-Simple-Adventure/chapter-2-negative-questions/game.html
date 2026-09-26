@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Present Simple Adventure — บทที่ 2: Negative &amp; Questions — เรียนกับน้องคอนนี่ 🦊</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_tools/game.css">
+<link rel="stylesheet" href="../../Game-Standards/feedback-standard.css">
+<link rel="stylesheet" href="../../Pronunciation-System/pronunciation.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้า Present Simple Adventure</a>
+
+  <!-- ===== 1. Intro ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>⏰ Present Simple Adventure</h1>
+      <div class="sub">บทที่ 2: do/does, Negative &amp; Yes/No Questions — กับน้องคอนนี่ 🦊</div>
+    </div>
+    <div class="game-card">
+      <div id="intro-mascot"></div>
+      <p class="story-text">เรียนวิธีใช้ do/does สร้างประโยคปฏิเสธ (don't/doesn't)
+      และคำถาม Yes/No — พร้อมตัวอย่าง 18 ประโยคและเกมสนุก!<br>เริ่มกันเลย</p>
+      <button id="startBtn" class="btn btn-primary">เริ่มเรียน 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== 2. Learn (4 grammar cards) ===== -->
+  <div id="screen-learn" class="screen hidden">
+    <div class="stage-progress"><span>Learn</span><span id="learn-dots">1 / 4</span></div>
+    <div class="game-card">
+      <div id="learn-emoji" class="word-illustration" style="font-size:4rem;">❓</div>
+      <h2 id="learn-title" style="margin:6px 0 2px;">do / does</h2>
+      <p id="learn-en" class="s1-sentence"></p>
+      <div id="learn-th" class="muted" style="font-weight:600;color:var(--c6);"></div>
+      <button id="learn-audio-btn" class="audio-btn" data-audio="word">🔊 ออกเสียง</button>
+      <div id="learn-example"></div>
+      <div class="carousel-nav">
+        <button id="learnPrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="learnNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. Memory Trick ===== -->
+  <div id="screen-memoryTrick" class="screen hidden">
+    <div class="stage-progress"><span>Memory Trick</span></div>
+    <div class="game-card">
+      <div id="mt-mascot"></div>
+      <p class="s1-sentence" style="font-weight:800;color:var(--c6);">Affirmative → Negative → Question 🔁</p>
+      <div id="mt-grid" class="trick-grid"></div>
+      <button id="toPEBtn" class="btn btn-primary mt-16">ดูตัวอย่างภาพ ➡️</button>
+    </div>
+  </div>
+
+  <!-- ===== 4. Picture Examples (18 cards) ===== -->
+  <div id="screen-pictureExamples" class="screen hidden">
+    <div class="stage-progress"><span>Picture Examples</span><span id="pe-dots">1 / 18</span></div>
+    <div class="game-card">
+      <div id="pe-emoji" class="word-illustration">🍵</div>
+      <button id="pe-audio-btn" class="audio-btn" data-audio="word">🔊 ออกเสียง</button>
+      <h2 id="pe-en"></h2>
+      <div id="pe-pron" class="muted" style="font-size:.85rem;"></div>
+      <div id="pe-th" class="muted" style="font-weight:600;color:var(--c6);"></div>
+      <div class="carousel-nav">
+        <button id="pePrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="peNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 5. Mini Practice (ungraded, 4 rotating formats) ===== -->
+  <div id="screen-mini" class="screen hidden">
+    <div class="stage-progress"><span>Mini Practice</span><span id="mini-progress-label">1 / 8</span></div>
+    <div class="stage-bar"><div id="mini-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <span class="mini-badge">🎯 ฝึกซ้อม ไม่นับคะแนน</span>
+      <div id="mini-content"></div>
+      <div id="mini-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 6. Game 1 — Choose the correct sentence ===== -->
+  <div id="screen-game1" class="screen hidden">
+    <div class="stage-progress"><span>🎮 Game 1 — Choose the correct sentence</span><span id="g1-progress-label">1 / 18</span></div>
+    <div class="stage-bar"><div id="g1-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g1-content"></div>
+      <div id="g1-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 7. Game 2 — Choose the correct picture ===== -->
+  <div id="screen-game2" class="screen hidden">
+    <div class="stage-progress"><span>🎮 Game 2 — Choose the correct picture</span><span id="g2-progress-label">1 / 18</span></div>
+    <div class="stage-bar"><div id="g2-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g2-content"></div>
+      <div id="g2-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 8. Game 3 — Drag the words ===== -->
+  <div id="screen-game3" class="screen hidden">
+    <div class="stage-progress"><span>🎮 Game 3 — Drag the words</span><span id="g3-progress-label">1 / 6</span></div>
+    <div class="stage-bar"><div id="g3-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g3-content"></div>
+      <div id="g3-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 9. Game 4 — Speed Challenge ===== -->
+  <div id="screen-game4" class="screen hidden">
+    <div class="stage-progress"><span>🎮 Game 4 — Speed Challenge</span></div>
+    <div class="game-card">
+      <div id="g4-timer-count" class="timer-count">40s</div>
+      <div class="timer-bar"><div id="g4-timer-fill" class="timer-bar-fill" style="width:100%"></div></div>
+      <div id="g4-content"></div>
+      <div id="g4-feedback" class="feedback-line"></div>
+      <div id="g4-done" class="hidden">
+        <div style="font-size:3rem;">⏱️🎉</div>
+        <p id="g4-result" class="speed-score"></p>
+        <button id="toGame5Btn" class="btn btn-primary">ไปกิจวัตรของคอนนี่ ➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 10. Game 5 — Connie's Daily Routine ===== -->
+  <div id="screen-game5" class="screen hidden">
+    <div class="stage-progress"><span>🎮 Game 5 — Connie's Daily Routine</span><span id="g5-time">6:00 AM</span></div>
+    <div class="game-card">
+      <p class="story-text" style="margin:0 0 10px;">เลือกประโยคที่ถูกต้องเพื่อช่วยคอนนี่ทำกิจวัตรประจำวัน!</p>
+      <div id="g5-track" class="rescue-track"></div>
+      <div id="g5-content"></div>
+      <div id="g5-feedback" class="feedback-line"></div>
+      <div id="g5-done" class="hidden">
+        <div style="font-size:3rem;">🎉🌙</div>
+        <p class="story-text">คอนนี่ทำกิจวัตรประจำวันครบแล้ว!</p>
+        <button id="toBossBtn" class="btn btn-primary">ไปบอสยักษ์ ➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 11. Boss Quiz (10 questions) ===== -->
+  <div id="screen-boss" class="screen hidden">
+    <div class="banner boss-banner">
+      <h1>👹 Boss Quiz</h1>
+      <div class="sub" id="boss-progress-label">ข้อ 1 / 10</div>
+    </div>
+    <div class="stage-bar"><div id="boss-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="boss-content"></div>
+      <div id="boss-feedback" class="feedback-line"></div>
+      <div id="boss-explain" class="explain-line hidden"></div>
+    </div>
+  </div>
+
+  <!-- ===== 12. Result ===== -->
+  <div id="screen-result" class="screen hidden">
+    <div class="banner">
+      <h1>🏆 เก่งมาก!</h1>
+      <div class="sub">Present Simple Adventure — บทที่ 2 สรุปผล</div>
+    </div>
+    <div class="game-card">
+      <div id="result-mascot"></div>
+      <div id="result-stars-extra" class="stars-display">☆☆☆</div>
+      <div id="result-score" class="result-score">0 / 10 คะแนน</div>
+      <div id="result-standard" style="margin-top:6px;"></div>
+      <button id="replayBtn" class="btn btn-secondary" style="margin-top:10px;">เล่นใหม่ตั้งแต่ต้น 🔁</button>
+      <a href="../index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="../_tools/negative-questions-data.js"></script>
+<script src="../_tools/game-audio.js"></script>
+<script src="../_tools/mascot.js"></script>
+<script src="../_tools/drag-drop.js"></script>
+<script src="../../Game-Standards/feedback-standard.js"></script>
+<script src="../../Pronunciation-System/pronunciation.js"></script>
+<script src="../_tools/game-engine-ch2.js"></script>
+</body>
+</html>

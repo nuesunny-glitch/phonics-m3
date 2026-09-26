@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: Adding ING — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 64px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 29px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 22px 28px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0; }
+.meaning-box { border-radius: 16px; padding: 18px; text-align: center; }
+.meaning-box .word { font-size: 32px; font-weight: 800; margin-bottom: 5px; }
+.meaning-box .ex { font-size: 16.5px; margin-top: 10px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 8px 10px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 20px 22px; margin: 18px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 16px; padding: 5px 14px; border-radius: 999px; margin-bottom: 10px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 8px 0 0; padding-left: 24px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.flash-card { border-radius: 14px; padding: 16px 12px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 42px; }
+.flash-card .fw { font-weight: 700; font-size: 17px; margin-top: 6px; }
+.flash-card .ft { font-size: 15.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 18px 22px; margin: 16px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 17px; margin-top: 8px; }
+.pattern-box .pex .th { color: #667; font-size: 15.5px; }
+
+.dialogue-wrap { margin: 18px 0 26px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 10px; font-size: 18.5px; }
+.bubble { max-width: 78%; padding: 12px 18px; border-radius: 16px; margin: 8px 0; font-size: 18px; }
+.bubble .th { font-size: 15.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 15.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 16px 0; }
+.tip-checklist li { display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:17.5px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:30px; height:30px; min-width:30px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:16px 18px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 10px; font-size:17px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { display:block; max-width:100%; overflow-x:auto; width:100%; border-collapse: collapse; font-size:15.5px; -webkit-overflow-scrolling: touch; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:6px 8px; }
+.cheat-box ul { margin:0; padding-left:22px; font-size:15.5px; }
+.cheat-box li { margin-bottom:6px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:16px 20px; margin-bottom:16px; }
+.teacher-note-box h4 { margin:0 0 8px; color:#b3261e; font-size:17.5px; }
+.teacher-note-box ul { margin:0; padding-left:24px; font-size:16.5px; }
+.teacher-note-box li { margin-bottom:6px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:16px 20px; margin-bottom:14px; font-size:17px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 38px 24px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 34px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:27px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:12px; font-size:17px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 26px 28px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:52px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+.toc { list-style: none; padding:0; margin: 14px 0; columns: 2; column-gap: 26px; }
+.toc li { font-size: 16.5px; padding: 7px 0; border-bottom: 1px dashed #dde2ee; }
+.toc .n { color:#2952e3; font-weight:700; margin-right:6px; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">🏃 ✍️ 🎬 📚 ✏️</div>
+    <h1 class="cover-title-en">Adding ING</h1>
+    <div class="cover-title-th">การเติม -ing (Present Continuous: am/is/are + Ving)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 เล่มที่ 8 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกกฎการเติม -ing แบบปกติ (regular) ให้กับคำกริยาทั่วไปได้ถูกต้อง</li><li>ใช้กฎตัด e ทิ้งก่อนเติม -ing กับคำกริยาที่ลงท้ายด้วย e ที่ไม่ออกเสียง (silent e) ได้ถูกต้อง</li><li>ใช้กฎเบิ้ลพยัญชนะตัวท้ายก่อนเติม -ing กับคำกริยาพยางค์เดียวแบบ CVC ได้ถูกต้อง รวมถึงจำข้อยกเว้นคำที่ลงท้ายด้วย w, x, y</li><li>แต่งประโยค Present Continuous (am/is/are + Ving) เพื่อบอกเหตุการณ์ที่กำลังเกิดขึ้นในขณะพูดหรือสถานการณ์ชั่วคราวได้ถูกต้อง</li><li>สะกดคำกริยาเติม -ing ได้ถูกต้องแม่นยำ และแก้ไขประโยคที่สะกดผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกสอบบ่อยเรื่องการสะกดคำ Ving</li></ul>
+    </div>
+    <div class="cover-footer">Lesson 08 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>📖 การเติม -ing คืออะไร?</h1><div class="eng">What is Adding ING?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">จำบทที่ 1 ได้ไหมคะ ที่เราเรียนเรื่อง <b>Verb to Be</b> (am / is / are) กันไปแล้ว? บทนี้เราจะนำ am/is/are มาใช้ต่อยอดกับกริยาที่เติม <b>-ing</b> เพื่อสร้างโครงสร้างที่เรียกว่า <b>Present Continuous</b> ซึ่งใช้บอกว่า "กำลังทำอะไรอยู่" นั่นเองค่ะ</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">กำลังทำอยู่ตอนนี้</div>เหตุการณ์ที่เกิดขึ้นขณะพูด<div class="ex">I am reading now.<br>(ฉันกำลังอ่านหนังสืออยู่)</div></div>
+    <div class="meaning-box mb2"><div class="word">สถานการณ์ชั่วคราว</div>ไม่ใช่สิ่งที่ทำเป็นประจำ<div class="ex">She is staying with her aunt.<br>(เธอกำลังพักอยู่กับป้าชั่วคราว)</div></div>
+    <div class="meaning-box mb3"><div class="word">Be + Ving</div>โครงสร้างหลักที่ต้องจำ<div class="ex">They are playing.<br>(พวกเขากำลังเล่นอยู่)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตว่าทุกประโยคต้องมี <b>am/is/are</b> (จากบทที่ 1) ควบคู่กับกริยาเติม <b>-ing</b> เสมอ ขาดตัวใดตัวหนึ่งไปไม่ได้ — นี่คือกฎเหล็กของ Present Continuous</p>
+  <div class="explain-block">
+    <h2>🧩 ใช้เมื่อไหร่บ้าง?</h2>
+    <table>
+      <tr><th>การใช้</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>กำลังทำอยู่ ณ ขณะพูด</td><td>I am doing my homework.</td><td>ฉันกำลังทำการบ้านอยู่</td></tr>
+      <tr><td>เห็นเหตุการณ์ต่อหน้า (Look! Listen!)</td><td>Look! He is running.</td><td>ดูสิ! เขากำลังวิ่งอยู่</td></tr>
+      <tr><td>สถานการณ์ชั่วคราว ไม่ถาวร</td><td>We are living in Bangkok this year.</td><td>ปีนี้พวกเรากำลังอาศัยอยู่ที่กรุงเทพฯ (ชั่วคราว)</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>I am eating lunch now.</td><td>ฉันกำลังกินข้าวเที่ยงอยู่</td></tr>
+      <tr><td>My brother is playing football.</td><td>พี่ชายของฉันกำลังเล่นฟุตบอลอยู่</td></tr>
+      <tr><td>They are studying at the library.</td><td>พวกเขากำลังอ่านหนังสือที่ห้องสมุด</td></tr>
+      <tr><td>It is raining outside.</td><td>ข้างนอกฝนกำลังตก</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">ปกติ (Regular) — เติม -ing ต่อท้ายได้เลย</div>
+    <p style="margin:6px 0;">คำกริยาส่วนใหญ่ในภาษาอังกฤษใช้กฎนี้ ไม่ต้องเปลี่ยนตัวสะกดใด ๆ ทั้งสิ้น</p>
+    <ul><li>play &rarr; playing (เล่น)</li><li>read &rarr; reading (อ่าน)</li><li>watch &rarr; watching (ดู)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">ลงท้ายด้วย e ที่ไม่ออกเสียง (Silent E) — ตัด e ทิ้งก่อนเติม -ing</div>
+    <p style="margin:6px 0;">ถ้าคำกริยาลงท้ายด้วย e เงียบ ๆ (ไม่ออกเสียง) ให้ตัด e ตัวสุดท้ายทิ้งก่อน แล้วค่อยเติม -ing</p>
+    <ul><li>make &rarr; making (ทำ) — ไม่ใช่ makeing</li><li>write &rarr; writing (เขียน) — ไม่ใช่ writeing</li><li>dance &rarr; dancing (เต้น)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">พยางค์เดียว แบบ CVC — เบิ้ลพยัญชนะตัวท้ายก่อนเติม -ing</div>
+    <p style="margin:6px 0;">ถ้าคำกริยา<b>พยางค์เดียว</b> สะกดแบบ <b>C-V-C</b> (พยัญชนะ-สระเดี่ยวเสียงสั้น-พยัญชนะ) ต้อง<b>เบิ้ล</b>พยัญชนะตัวสุดท้ายก่อนเติม -ing <br><b>ยกเว้น</b> ถ้าลงท้ายด้วย <b>w, x, y</b> ห้ามเบิ้ลเด็ดขาด เติม -ing ตามปกติ</p>
+    <ul><li>run &rarr; running (วิ่ง)</li><li>sit &rarr; sitting (นั่ง)</li><li>fix &rarr; fixing (ซ่อม) — ลงท้าย x ห้ามเบิ้ล</li><li>snow &rarr; snowing (หิมะตก) — ลงท้าย w ห้ามเบิ้ล</li></ul>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 4</span>
+    <div class="qtext" style="font-size:17px;">คำ 2 พยางค์ เน้นเสียงพยางค์ท้าย — ใช้กฎเบิ้ลเหมือน CVC</div>
+    <p style="margin:6px 0;">ถ้าคำกริยามี <b>2 พยางค์</b> และ<b>เน้นเสียงหนักที่พยางค์ท้าย</b> ให้ใช้กฎเดียวกับ CVC คือ<b>เบิ้ล</b>พยัญชนะตัวสุดท้ายก่อนเติม -ing <br><b>แต่ถ้า</b>เน้นเสียงพยางค์แรก (ไม่ใช่ท้ายคำ) จะ<b>ไม่ต้องเบิ้ล</b></p>
+    <ul><li>be<b>GIN</b> &rarr; beginning (เริ่ม) — เน้นเสียงท้าย ต้องเบิ้ล</li><li>for<b>GET</b> &rarr; forgetting (ลืม) — เน้นเสียงท้าย ต้องเบิ้ล</li><li><b>O</b>pen &rarr; opening (เปิด) — เน้นเสียงแรก ไม่ต้องเบิ้ล</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">ลงท้ายด้วย -ie — เปลี่ยนเป็น y ก่อนเติม -ing</div>
+    <p style="margin:6px 0;">มีคำพิเศษ 3 คำที่ต้องเปลี่ยน <b>ie เป็น y</b> ก่อนเติม -ing เพราะภาษาอังกฤษไม่มีการสะกด "iing"</p>
+    <ul><li>die &rarr; dying (ตาย)</li><li>lie &rarr; lying (นอน/โกหก)</li><li>tie &rarr; tying (ผูก)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>กฎการเติม -ing</th><th>วิธีทำ</th><th>ตัวอย่าง</th></tr>
+      <tr><td><b>1. ปกติ (Regular)</b></td><td>เติม -ing ต่อท้ายได้เลย</td><td>play &rarr; playing</td></tr><tr><td><b>2. ตัด e ทิ้ง (Silent-e)</b></td><td>ตัด e ตัวท้ายทิ้ง แล้วเติม -ing</td><td>make &rarr; making</td></tr><tr><td><b>3. เบิ้ลตัวท้าย (CVC)</b></td><td>เบิ้ลพยัญชนะตัวสุดท้าย แล้วเติม -ing (ยกเว้นลงท้าย w, x, y)</td><td>run &rarr; running</td></tr><tr><td><b>4. -ie &amp;rarr; y</b></td><td>เปลี่ยน ie เป็น y แล้วเติม -ing</td><td>die &rarr; dying</td></tr><tr><td><b>5. เน้นเสียงท้าย (2 พยางค์)</b></td><td>เบิ้ลพยัญชนะตัวสุดท้ายเหมือน CVC (ถ้าเน้นเสียงพยางค์ท้าย)</td><td>begin &rarr; beginning</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎการสะกด -ing ในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด! และอย่าลืมว่าทุกครั้งที่ใช้ Ving ต้องมี am/is/are นำหน้าเสมอ</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">"e หายไป เมื่อมี ing มา"</div><p>เห็น e เงียบ ๆ ท้ายคำ อย่ามัวรอช้า ต้องตัดทิ้งก่อนเสมอแล้วค่อยเติม ing เช่น make &rarr; making, hope &rarr; hoping</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">"พยางค์เดียวสั้น ๆ ต้อง double ตัวท้าย"</div><p>คำสั้นพยางค์เดียว สระเดียวเสียงสั้น พยัญชนะปิดท้าย (CVC) ให้เบิ้ลตัวท้ายก่อนเติม ing เหมือนเสียงกระแทกซ้ำ run-n-ing, sit-t-ing</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">คล้องจอง CVC: "สั้น-ตัน-ซ้ำ"</div><p>ท่องจังหวะ "สระสั้น พยัญชนะตัน ต้องเบิ้ลซ้ำ แล้วค่อยเติม ing" — run running, sit sitting, swim swimming, stop stopping</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">"w x y ไม่ต้อง double"</div><p>ถ้าคำลงท้ายด้วย <b>w, x, y</b> ห้ามเบิ้ลตัวท้ายเด็ดขาด! เติม -ing ตรง ๆ เลย: snow &rarr; snowing, fix &rarr; fixing, play &rarr; playing และจำ 3 คำพิเศษ "ตาย นอน ผูก ต้องใช้ y": die &rarr; dying, lie &rarr; lying, tie &rarr; tying</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">ตัวลงท้าย <b>-ing</b> ออกเสียงว่า <b>/ɪŋ/</b> (อิง) เสมอ ไม่ว่าคำนั้นจะสะกดยังไงมาก่อนหน้า ลองฟังและออกเสียงตามตัวอย่างด้านล่างนี้</p>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำ</th><th>สัทอักษร (IPA)</th><th>เสียงอ่านแบบไทย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>playing</b></td><td>/ˈpleɪɪŋ/</td><td>เพลอิง</td><td>They are playing. (พวกเขากำลังเล่นอยู่)</td></tr>
+      <tr><td><b>running</b></td><td>/ˈrʌnɪŋ/</td><td>รันนิง</td><td>She is running. (เธอกำลังวิ่งอยู่)</td></tr>
+      <tr><td><b>making</b></td><td>/ˈmeɪkɪŋ/</td><td>เมกิง</td><td>I am making a cake. (ฉันกำลังทำเค้ก)</td></tr>
+      <tr><td><b>writing</b></td><td>/ˈraɪtɪŋ/</td><td>ไรทิง</td><td>He is writing. (เขากำลังเขียนอยู่)</td></tr>
+      <tr><td><b>sitting</b></td><td>/ˈsɪtɪŋ/</td><td>ซิททิง</td><td>We are sitting. (พวกเรากำลังนั่งอยู่)</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: เสียง /ŋ/ ท้าย -ing เป็นเสียงขึ้นจมูก (เหมือนเสียง "ง" ในภาษาไทย) ให้ปิดปากแล้วปล่อยลมออกทางจมูกเบา ๆ ไม่ใช่ออกเสียง "อิน-กึ" แบบแยกพยางค์นะคะ!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำกริยาแสดงการกระทำ (action verbs) กลุ่มนี้ใช้บ่อยที่สุดเวลาแต่งประโยค Present Continuous — ลองฝึกเปลี่ยนแต่ละคำให้เป็นรูป -ing ดูนะคะ</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">🏃</div><div class="fw">run</div><div class="ft">วิ่ง</div></div><div class="flash-card"><div class="fe">🏊</div><div class="fw">swim</div><div class="ft">ว่ายน้ำ</div></div><div class="flash-card"><div class="fe">✍️</div><div class="fw">write</div><div class="ft">เขียน</div></div><div class="flash-card"><div class="fe">💃</div><div class="fw">dance</div><div class="ft">เต้น</div></div><div class="flash-card"><div class="fe">⚽</div><div class="fw">play</div><div class="ft">เล่น</div></div><div class="flash-card"><div class="fe">🍰</div><div class="fw">make</div><div class="ft">ทำ</div></div><div class="flash-card"><div class="fe">📖</div><div class="fw">read</div><div class="ft">อ่าน</div></div><div class="flash-card"><div class="fe">😴</div><div class="fw">sleep</div><div class="ft">นอนหลับ</div></div><div class="flash-card"><div class="fe">🍽️</div><div class="fw">eat</div><div class="ft">กิน</div></div><div class="flash-card"><div class="fe">🚴</div><div class="fw">ride</div><div class="ft">ขี่</div></div><div class="flash-card"><div class="fe">🛑</div><div class="fw">stop</div><div class="ft">หยุด</div></div><div class="flash-card"><div class="fe">🎨</div><div class="fw">draw</div><div class="ft">วาดรูป</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">Positive: Subject + am/is/are + Ving + ...</div>
+    <div class="pex">I am reading a book. <span class="th">(ฉันกำลังอ่านหนังสืออยู่)</span></div>
+    <div class="pex">They are playing football. <span class="th">(พวกเขากำลังเล่นฟุตบอลอยู่)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">Negative: Subject + am/is/are + not + Ving + ...</div>
+    <div class="pex">I am not sleeping. <span class="th">(ฉันไม่ได้กำลังนอนหลับ)</span></div>
+    <div class="pex">She is not studying now. (She isn't studying.) <span class="th">(เธอไม่ได้กำลังเรียนอยู่ตอนนี้)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Question: Am/Is/Are + Subject + Ving + ...?</div>
+    <div class="pex">Are you doing your homework? <span class="th">(เธอกำลังทำการบ้านอยู่หรือเปล่า)</span></div>
+    <div class="pex">Is he sleeping? <span class="th">(เขากำลังนอนหลับอยู่หรือเปล่า)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Short Answer: Yes, S + am/is/are. / No, S + am/is/are + not.</div>
+    <div class="pex">Yes, I am. / No, I'm not. <span class="th">(ใช่ ฉันกำลังทำอยู่ / ไม่ ฉันไม่ได้ทำ)</span></div>
+    <div class="pex">Yes, she is. / No, she isn't. <span class="th">(ใช่ เธอกำลังทำอยู่ / ไม่ เธอไม่ได้ทำ)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">📱 บทสนทนาที่ 1: ตอนนี้ทำอะไรอยู่ (What Are You Doing Now?)</div>
+    <div class="bubble left"><div class="speaker">Nid (โทรศัพท์)</div>Hi! What are you doing now?<div class="th">สวัสดี ตอนนี้เธอกำลังทำอะไรอยู่</div></div>
+    <div class="bubble right"><div class="speaker">Tam</div>I'm doing my homework. I am writing an English essay.<div class="th">ฉันกำลังทำการบ้านอยู่ ฉันกำลังเขียนเรียงความภาษาอังกฤษ</div></div>
+    <div class="bubble left"><div class="speaker">Nid</div>Wow! Is it difficult?<div class="th">โห ยากไหม</div></div>
+    <div class="bubble right"><div class="speaker">Tam</div>A little. My sister is helping me right now.<div class="th">นิดหน่อย ตอนนี้น้องสาวของฉันกำลังช่วยฉันอยู่</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🌳 บทสนทนาที่ 2: ที่สวนสาธารณะ (At the Park)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Look! That boy is running so fast.<div class="th">ดูสิ! เด็กผู้ชายคนนั้นกำลังวิ่งเร็วมากเลย</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>Yes, and his friends are swimming in the lake.<div class="th">ใช่ แล้วเพื่อนของเขาก็กำลังว่ายน้ำอยู่ในทะเลสาบ</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>What is that girl doing over there?<div class="th">เด็กผู้หญิงคนนั้นกำลังทำอะไรอยู่ตรงนั้น</div></div>
+    <div class="bubble right"><div class="speaker">Ben</div>She is dancing, and her dog is sitting next to her.<div class="th">เธอกำลังเต้นอยู่ แล้วสุนัขของเธอก็กำลังนั่งอยู่ข้าง ๆ</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ She is runing.</div>
+    <div class="why">🤔 run เป็นคำ CVC ต้องเบิ้ลตัวท้าย n สองตัว ไม่ใช่ตัวเดียว</div>
+    <div class="right">✅ She is running.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ He is writeing a letter.</div>
+    <div class="why">🤔 write ลงท้ายด้วย silent e ต้องตัด e ทิ้งก่อนเติม -ing</div>
+    <div class="right">✅ He is writing a letter.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ I am play football.</div>
+    <div class="why">🤔 ลืมเติม -ing หลังกริยา เมื่อใช้ am/is/are ต้องมี Ving เสมอ</div>
+    <div class="right">✅ I am playing football.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ She is siting.</div>
+    <div class="why">🤔 sit เป็นคำ CVC ต้องเบิ้ล t สองตัว ไม่ใช่ตัวเดียว</div>
+    <div class="right">✅ She is sitting.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ They are stayying at a hotel.</div>
+    <div class="why">🤔 stay ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย</div>
+    <div class="right">✅ They are staying at a hotel.</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ The plant is dieing.</div>
+    <div class="why">🤔 die ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing ไม่ใช่เติม -ing ต่อจาก ie ตรง ๆ</div>
+    <div class="right">✅ The plant is dying.</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>มองตัวสะกด 3 ตัวสุดท้ายของกริยาก่อนเสมอ แล้วถามตัวเอง "ลงท้ายด้วย e เงียบ ๆ ไหม? เป็นคำ CVC ไหม? ลงท้ายด้วย w/x/y ไหม?"</span></li><li><span class="num">2</span><span>ถ้าลงท้ายด้วย e ที่ไม่ออกเสียง ให้ตัด e ทิ้งก่อนเสมอ (make → making) แต่ถ้าไม่แน่ใจว่า e ออกเสียงหรือไม่ ลองอ่านออกเสียงคำนั้นดู</span></li><li><span class="num">3</span><span>ถ้าเป็นคำพยางค์เดียวแบบ CVC (สระสั้น พยัญชนะปิดท้าย) ต้องเบิ้ลตัวท้ายก่อนเติม -ing เสมอ (run → running) ยกเว้นลงท้ายด้วย w, x, y</span></li><li><span class="num">4</span><span>อย่าลืมว่า Ving ต้องมี am/is/are นำหน้าเสมอ ห้ามใช้ Ving ลอย ๆ โดยไม่มี Verb to Be ช่วย</span></li><li><span class="num">5</span><span>ระวังคำพิเศษ 3 คำ die/lie/tie ที่ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing และอย่าสับสนกับ dyeing/laying ที่หน้าตาคล้ายกัน</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">Adding ING</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">🌱 ปกติ (Regular)</span>เติม -ing ต่อท้ายได้เลย เช่น play &rarr; playing</div>
+      <div class="mindmap-branch mb-b"><span class="bt">✂️ ตัด e ทิ้ง (Silent-e)</span>ตัด e ทิ้งก่อนเติม -ing เช่น make &rarr; making</div>
+      <div class="mindmap-branch mb-c"><span class="bt">👯 เบิ้ลตัวท้าย (CVC)</span>เบิ้ลพยัญชนะตัวท้ายก่อนเติม -ing เช่น run &rarr; running</div>
+      <div class="mindmap-branch mb-d"><span class="bt">⚠️ ข้อยกเว้น w/x/y</span>ห้ามเบิ้ล เติม -ing ตามปกติ เช่น snow &rarr; snowing</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🎭 -ie &rarr; y</span>เปลี่ยน ie เป็น y ก่อนเติม -ing เช่น die &rarr; dying</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เปลี่ยนคำกริยาเป็นรูป Ving — กฎปกติและกฎตัด e (8 ข้อ)</h2><p class="part-desc">เติมรูป Ving ของคำกริยาต่อไปนี้ให้ถูกต้อง</p><ol class="qlist two-col"><li>play &rarr; <span class="blank"></span></li><li>watch &rarr; <span class="blank"></span></li><li>read &rarr; <span class="blank"></span></li><li>go &rarr; <span class="blank"></span></li><li>make &rarr; <span class="blank"></span></li><li>write &rarr; <span class="blank"></span></li><li>dance &rarr; <span class="blank"></span></li><li>hope &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 2: เปลี่ยนคำกริยาเป็นรูป Ving — กฎเบิ้ลตัวท้าย (CVC) และข้อยกเว้น w/x/y (8 ข้อ)</h2><p class="part-desc">เติมรูป Ving ของคำกริยาต่อไปนี้ โดยระวังกฎการเบิ้ลตัวสะกด และข้อยกเว้นคำที่ลงท้ายด้วย w, x, y</p><ol class="qlist two-col"><li>run &rarr; <span class="blank"></span></li><li>sit &rarr; <span class="blank"></span></li><li>swim &rarr; <span class="blank"></span></li><li>stop &rarr; <span class="blank"></span></li><li>plan &rarr; <span class="blank"></span></li><li>fix &rarr; <span class="blank"></span></li><li>snow &rarr; <span class="blank"></span></li><li>stay &rarr; <span class="blank"></span></li></ol><h2 class="part-title">ตอนที่ 3: เติม Present Continuous ในประโยค (8 ข้อ)</h2><p class="part-desc">เติมกริยาในวงเล็บให้อยู่ในรูป Present Continuous (am/is/are + Ving) ให้ถูกต้อง</p><ol class="qlist two-col"><li>I <span class="blank"></span> (write) a letter now.</li><li>She <span class="blank"></span> (run) in the park now.</li><li>They <span class="blank"></span> (play) football now.</li><li>He <span class="blank"></span> (sit) on the chair right now.</li><li>We <span class="blank"></span> (watch) TV at the moment.</li><li>The baby <span class="blank"></span> (lie) on the bed now.</li><li>I <span class="blank"></span> (make) a cake now.</li><li>Look! It <span class="blank"></span> (snow) outside.</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📺</div>
+      <div class="qtext">I am ___ TV now.<div class="rule-tag">กฎปกติ: watch→watching</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) watchting</div><div class="choice">B) wachting</div><div class="choice">C) watching</div><div class="choice">D) watchig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">She is ___ a book.<div class="rule-tag">กฎปกติ: read→reading</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) readding</div><div class="choice">B) reading</div><div class="choice">C) raeding</div><div class="choice">D) readng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶</div>
+      <div class="qtext">They are ___ to school.<div class="rule-tag">กฎปกติ: go→going</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) goeing</div><div class="choice">B) gooing</div><div class="choice">C) goign</div><div class="choice">D) going</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎧</div>
+      <div class="qtext">He is ___ to music.<div class="rule-tag">กฎปกติ: listen→listening</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) listening</div><div class="choice">B) listenning</div><div class="choice">C) listning</div><div class="choice">D) listeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💼</div>
+      <div class="qtext">We are ___ hard today.<div class="rule-tag">กฎปกติ: work→working</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) workking</div><div class="choice">B) workin</div><div class="choice">C) working</div><div class="choice">D) woking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍳</div>
+      <div class="qtext">My mom is ___ dinner now.<div class="rule-tag">กฎปกติ: cook→cooking</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cookking</div><div class="choice">B) cooking</div><div class="choice">C) coocking</div><div class="choice">D) cookin</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎤</div>
+      <div class="qtext">I am ___ a song.<div class="rule-tag">กฎปกติ: sing→singing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) singging</div><div class="choice">B) singin</div><div class="choice">C) sining</div><div class="choice">D) singing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">They are ___ on the phone.<div class="rule-tag">กฎปกติ: talk→talking</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) talking</div><div class="choice">B) talkking</div><div class="choice">C) talkin</div><div class="choice">D) takling</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶‍♂️</div>
+      <div class="qtext">He is ___ to the park.<div class="rule-tag">กฎปกติ: walk→walking</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) walkking</div><div class="choice">B) walkin</div><div class="choice">C) walking</div><div class="choice">D) waklking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤸</div>
+      <div class="qtext">The kids are ___ on the bed.<div class="rule-tag">กฎปกติ: jump→jumping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) jumpping</div><div class="choice">B) jumping</div><div class="choice">C) jumpin</div><div class="choice">D) jummping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧹</div>
+      <div class="qtext">She is ___ her room.<div class="rule-tag">กฎปกติ: clean→cleaning</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cleanning</div><div class="choice">B) cleaing</div><div class="choice">C) cleannig</div><div class="choice">D) cleaning</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧼</div>
+      <div class="qtext">I am ___ the dishes.<div class="rule-tag">กฎปกติ: wash→washing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) washing</div><div class="choice">B) washhing</div><div class="choice">C) washig</div><div class="choice">D) wasing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😴</div>
+      <div class="qtext">The baby is ___ now.<div class="rule-tag">กฎปกติ: sleep→sleeping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) sleepping</div><div class="choice">B) sleepin</div><div class="choice">C) sleeping</div><div class="choice">D) sleeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">We are ___ lunch together.<div class="rule-tag">กฎปกติ: eat→eating</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) eatting</div><div class="choice">B) eating</div><div class="choice">C) eaing</div><div class="choice">D) eatng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">He is ___ English for the test right now.<div class="rule-tag">กฎปกติ: study→studying</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) studying</div><div class="choice">B) studing</div><div class="choice">C) studyying</div><div class="choice">D) studiing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">✍️</div>
+      <div class="qtext">I am ___ a letter to my friend.<div class="rule-tag">Silent-e: write→writing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) writeing</div><div class="choice">B) writing</div><div class="choice">C) writting</div><div class="choice">D) writeng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">She is ___ very fast in the race.<div class="rule-tag">CVC Double: run→running</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) runing</div><div class="choice">B) runnning</div><div class="choice">C) running</div><div class="choice">D) runnig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💃</div>
+      <div class="qtext">They are ___ at the party now.<div class="rule-tag">Silent-e: dance→dancing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dancing</div><div class="choice">B) danceing</div><div class="choice">C) dancceing</div><div class="choice">D) dansing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤞</div>
+      <div class="qtext">I am ___ to see you soon.<div class="rule-tag">Silent-e: hope→hoping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) hopeing</div><div class="choice">B) hopping</div><div class="choice">C) hopin</div><div class="choice">D) hoping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🪑</div>
+      <div class="qtext">He is ___ on the sofa.<div class="rule-tag">CVC Double: sit→sitting</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) siting</div><div class="choice">B) sitting</div><div class="choice">C) sittting</div><div class="choice">D) sittign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍰</div>
+      <div class="qtext">Mom is ___ a cake for my birthday.<div class="rule-tag">Silent-e: make→making</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) makeing</div><div class="choice">B) makking</div><div class="choice">C) making</div><div class="choice">D) makng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏊</div>
+      <div class="qtext">We are ___ in the pool.<div class="rule-tag">CVC Double: swim→swimming</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) swimming</div><div class="choice">B) swiming</div><div class="choice">C) swimmming</div><div class="choice">D) swimmign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚴</div>
+      <div class="qtext">He is ___ his bike to school.<div class="rule-tag">Silent-e: ride→riding</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) rideing</div><div class="choice">B) ridding</div><div class="choice">C) ridng</div><div class="choice">D) riding</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛑</div>
+      <div class="qtext">The car is ___ at the red light.<div class="rule-tag">CVC Double: stop→stopping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) stoping</div><div class="choice">B) stopping</div><div class="choice">C) stoppping</div><div class="choice">D) stoppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">Dad is ___ home now.<div class="rule-tag">Silent-e: come→coming</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) comeing</div><div class="choice">B) comming</div><div class="choice">C) coming</div><div class="choice">D) comng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">We are ___ a trip for next week.<div class="rule-tag">CVC Double: plan→planning</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) planning</div><div class="choice">B) planing</div><div class="choice">C) plannning</div><div class="choice">D) plannign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚙</div>
+      <div class="qtext">My uncle is ___ to Chiang Mai.<div class="rule-tag">Silent-e: drive→driving</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) driveing</div><div class="choice">B) drivving</div><div class="choice">C) drivng</div><div class="choice">D) driving</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚾</div>
+      <div class="qtext">He is ___ the ball hard.<div class="rule-tag">CVC Double: hit→hitting</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) hiting</div><div class="choice">B) hitting</div><div class="choice">C) hittting</div><div class="choice">D) hittign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">😊</div>
+      <div class="qtext">The baby is ___ at everyone.<div class="rule-tag">Silent-e: smile→smiling</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) smileing</div><div class="choice">B) smilling</div><div class="choice">C) smiling</div><div class="choice">D) smiing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛍️</div>
+      <div class="qtext">They are ___ at the mall today.<div class="rule-tag">CVC Double: shop→shopping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) shopping</div><div class="choice">B) shoping</div><div class="choice">C) shoppping</div><div class="choice">D) shoppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📸</div>
+      <div class="qtext">I am ___ a photo of the sunset.<div class="rule-tag">Silent-e: take→taking</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) takeing</div><div class="choice">B) takking</div><div class="choice">C) takng</div><div class="choice">D) taking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📦</div>
+      <div class="qtext">The leaves are ___ from the tree.<div class="rule-tag">CVC Double: drop→dropping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) droping</div><div class="choice">B) dropping</div><div class="choice">C) droppping</div><div class="choice">D) droppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚪</div>
+      <div class="qtext">She is ___ the door quietly.<div class="rule-tag">Silent-e: close→closing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) closeing</div><div class="choice">B) clossing</div><div class="choice">C) closing</div><div class="choice">D) closng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤲</div>
+      <div class="qtext">He is ___ a snack from the shelf.<div class="rule-tag">CVC Double: grab→grabbing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) grabbing</div><div class="choice">B) grabing</div><div class="choice">C) grabbbing</div><div class="choice">D) grabbign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👏</div>
+      <div class="qtext">The crowd is ___ for the singer.<div class="rule-tag">CVC Double: clap→clapping</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) claping</div><div class="choice">B) clappping</div><div class="choice">C) clappign</div><div class="choice">D) clapping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚽</div>
+      <div class="qtext">They are ___ football in the yard.<div class="rule-tag">ข้อยกเว้น w/x/y: play→playing (ห้ามเบิ้ล y)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) playying</div><div class="choice">B) playing</div><div class="choice">C) plaing</div><div class="choice">D) playeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔧</div>
+      <div class="qtext">He is ___ his bike now.<div class="rule-tag">ข้อยกเว้น w/x/y: fix→fixing (ห้ามเบิ้ล x)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) fixxing</div><div class="choice">B) fixing</div><div class="choice">C) fixeing</div><div class="choice">D) fising</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">❄️</div>
+      <div class="qtext">Look! It is ___ outside.<div class="rule-tag">ข้อยกเว้น w/x/y: snow→snowing (ห้ามเบิ้ล w)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) snowwing</div><div class="choice">B) snoing</div><div class="choice">C) snowing</div><div class="choice">D) snoweing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎨</div>
+      <div class="qtext">She is ___ the paint colors.<div class="rule-tag">ข้อยกเว้น w/x/y: mix→mixing (ห้ามเบิ้ล x)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) mixxing</div><div class="choice">B) mixeing</div><div class="choice">C) mixing</div><div class="choice">D) misxing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏨</div>
+      <div class="qtext">We are ___ at a hotel this week.<div class="rule-tag">ข้อยกเว้น w/x/y: stay→staying (ห้ามเบิ้ล y)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) stayying</div><div class="choice">B) staing</div><div class="choice">C) stayeing</div><div class="choice">D) staying</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥀</div>
+      <div class="qtext">The plant is ___ because of no water.<div class="rule-tag">คำพิเศษ -ie→y: die→dying</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dieing</div><div class="choice">B) dying</div><div class="choice">C) diing</div><div class="choice">D) dyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">The cat is ___ on the sofa all day.<div class="rule-tag">คำพิเศษ -ie→y: lie→lying</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) lieing</div><div class="choice">B) lying</div><div class="choice">C) liing</div><div class="choice">D) laying</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎀</div>
+      <div class="qtext">She is ___ her shoelaces.<div class="rule-tag">คำพิเศษ -ie→y: tie→tying</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) tieing</div><div class="choice">B) tying</div><div class="choice">C) tiing</div><div class="choice">D) tyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎬</div>
+      <div class="qtext">The movie is ___ now.<div class="rule-tag">คำ 2 พยางค์เน้นเสียงท้าย CVC: begin→beginning</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) begining</div><div class="choice">B) beginning</div><div class="choice">C) beginnning</div><div class="choice">D) beginnig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔑</div>
+      <div class="qtext">I am ___ something important.<div class="rule-tag">คำ 2 พยางค์เน้นเสียงท้าย CVC: forget→forgetting</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) forgeting</div><div class="choice">B) forgetting</div><div class="choice">C) forgettting</div><div class="choice">D) forgettign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💬</div>
+      <div class="qtext">They are ___ about the game.<div class="rule-tag">Silent-e ขั้นสูง: argue→arguing</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) argueing</div><div class="choice">B) arguing</div><div class="choice">C) arguuing</div><div class="choice">D) arguign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">We are ___ the party.<div class="rule-tag">ข้อยกเว้น w/x/y (2 พยางค์): enjoy→enjoying</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) enjoyying</div><div class="choice">B) enjoying</div><div class="choice">C) enjoing</div><div class="choice">D) enjoyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃‍♀️</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She is runing in the park.</div><div class="choice">B) She is running in the park.</div><div class="choice">C) She are running in the park.</div><div class="choice">D) She is run in the park.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥅</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They are playying football now.</div><div class="choice">B) They is playing football now.</div><div class="choice">C) They are playing football now.</div><div class="choice">D) They are play football now.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📝</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) He is writting a letter now.</div><div class="choice">B) He is writeing a letter now.</div><div class="choice">C) He is writing a letter now.</div><div class="choice">D) He writing a letter now.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>playing</td><td>คำกริยาปกติ เติม -ing ต่อท้ายได้เลย</td></tr><tr><td>2</td><td>watching</td><td>คำกริยาปกติ เติม -ing ต่อท้ายได้เลย</td></tr><tr><td>3</td><td>reading</td><td>คำกริยาปกติ เติม -ing ต่อท้ายได้เลย</td></tr><tr><td>4</td><td>going</td><td>คำกริยาปกติ เติม -ing ต่อท้ายได้เลย</td></tr><tr><td>5</td><td>making</td><td>ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing</td></tr><tr><td>6</td><td>writing</td><td>ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing</td></tr><tr><td>7</td><td>dancing</td><td>ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing</td></tr><tr><td>8</td><td>hoping</td><td>ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing (ระวังสับสนกับ hopping จาก hop)</td></tr><tr><td>9</td><td>running</td><td>พยางค์เดียว สะกดแบบ CVC (r-u-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing</td></tr><tr><td>10</td><td>sitting</td><td>พยางค์เดียว สะกดแบบ CVC (s-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing</td></tr><tr><td>11</td><td>swimming</td><td>พยางค์เดียว สะกดแบบ CVC (s-w-i-m) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing</td></tr><tr><td>12</td><td>stopping</td><td>พยางค์เดียว สะกดแบบ CVC (s-t-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing</td></tr><tr><td>13</td><td>planning</td><td>พยางค์เดียว สะกดแบบ CVC (p-l-a-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing</td></tr><tr><td>14</td><td>fixing</td><td>ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ</td></tr><tr><td>15</td><td>snowing</td><td>ลงท้ายด้วย w ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ</td></tr><tr><td>16</td><td>staying</td><td>ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ</td></tr><tr><td>17</td><td>am writing</td><td>ประธาน I ใช้ am + Ving และ write ต้องตัด e ทิ้งก่อนเติม -ing</td></tr><tr><td>18</td><td>is running</td><td>ประธาน She ใช้ is + Ving และ run เป็นคำ CVC ต้องเบิ้ลตัวสะกด</td></tr><tr><td>19</td><td>are playing</td><td>ประธาน They ใช้ are + Ving และ play ลงท้าย y ห้ามเบิ้ล เติม -ing ตามปกติ</td></tr><tr><td>20</td><td>is sitting</td><td>ประธาน He ใช้ is + Ving และ sit เป็นคำ CVC ต้องเบิ้ลตัวสะกด</td></tr><tr><td>21</td><td>are watching</td><td>ประธาน We ใช้ are + Ving และ watch เป็นคำกริยาปกติ เติม -ing ได้เลย</td></tr><tr><td>22</td><td>is lying</td><td>ประธาน The baby ใช้ is + Ving และ lie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing</td></tr><tr><td>23</td><td>am making</td><td>ประธาน I ใช้ am + Ving และ make ต้องตัด e ทิ้งก่อนเติม -ing</td></tr><tr><td>24</td><td>is snowing</td><td>ประธาน It ใช้ is + Ving และ snow ลงท้าย w ห้ามเบิ้ล เติม -ing ตามปกติ</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">📺</td><td>C) watching</td><td>watch เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>2</td><td class="emoji-cell">📖</td><td>B) reading</td><td>read เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>3</td><td class="emoji-cell">🚶</td><td>D) going</td><td>go เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>4</td><td class="emoji-cell">🎧</td><td>A) listening</td><td>listen เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>5</td><td class="emoji-cell">💼</td><td>C) working</td><td>work เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>6</td><td class="emoji-cell">🍳</td><td>B) cooking</td><td>cook เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>7</td><td class="emoji-cell">🎤</td><td>D) singing</td><td>sing เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>8</td><td class="emoji-cell">📱</td><td>A) talking</td><td>talk เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>9</td><td class="emoji-cell">🚶‍♂️</td><td>C) walking</td><td>walk เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>10</td><td class="emoji-cell">🤸</td><td>B) jumping</td><td>jump เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>11</td><td class="emoji-cell">🧹</td><td>D) cleaning</td><td>clean เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>12</td><td class="emoji-cell">🧼</td><td>A) washing</td><td>wash เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>13</td><td class="emoji-cell">😴</td><td>C) sleeping</td><td>sleep เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>14</td><td class="emoji-cell">🍽️</td><td>B) eating</td><td>eat เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด</td></tr><tr><td>15</td><td class="emoji-cell">📚</td><td>A) studying</td><td>study เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย (ไม่เปลี่ยน y เป็น i แบบการเติม s/es)</td></tr><tr><td>16</td><td class="emoji-cell">✍️</td><td>B) writing</td><td>write ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น writing</td></tr><tr><td>17</td><td class="emoji-cell">🏃</td><td>C) running</td><td>run เป็นคำพยางค์เดียวแบบ CVC (r-u-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น running</td></tr><tr><td>18</td><td class="emoji-cell">💃</td><td>A) dancing</td><td>dance ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น dancing</td></tr><tr><td>19</td><td class="emoji-cell">🤞</td><td>D) hoping</td><td>hope ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น hoping (ระวังสับสนกับ hopping จาก hop)</td></tr><tr><td>20</td><td class="emoji-cell">🪑</td><td>B) sitting</td><td>sit เป็นคำพยางค์เดียวแบบ CVC (s-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น sitting</td></tr><tr><td>21</td><td class="emoji-cell">🍰</td><td>C) making</td><td>make ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น making</td></tr><tr><td>22</td><td class="emoji-cell">🏊</td><td>A) swimming</td><td>swim เป็นคำพยางค์เดียวแบบ CVC (s-w-i-m) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น swimming</td></tr><tr><td>23</td><td class="emoji-cell">🚴</td><td>D) riding</td><td>ride ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น riding (ระวังสับสนกับ ridding จาก rid)</td></tr><tr><td>24</td><td class="emoji-cell">🛑</td><td>B) stopping</td><td>stop เป็นคำพยางค์เดียวแบบ CVC (s-t-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น stopping</td></tr><tr><td>25</td><td class="emoji-cell">🚗</td><td>C) coming</td><td>come ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น coming</td></tr><tr><td>26</td><td class="emoji-cell">📅</td><td>A) planning</td><td>plan เป็นคำพยางค์เดียวแบบ CVC (p-l-a-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น planning</td></tr><tr><td>27</td><td class="emoji-cell">🚙</td><td>D) driving</td><td>drive ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น driving</td></tr><tr><td>28</td><td class="emoji-cell">⚾</td><td>B) hitting</td><td>hit เป็นคำพยางค์เดียวแบบ CVC (h-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น hitting</td></tr><tr><td>29</td><td class="emoji-cell">😊</td><td>C) smiling</td><td>smile ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น smiling</td></tr><tr><td>30</td><td class="emoji-cell">🛍️</td><td>A) shopping</td><td>shop เป็นคำพยางค์เดียวแบบ CVC (s-h-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น shopping</td></tr><tr><td>31</td><td class="emoji-cell">📸</td><td>D) taking</td><td>take ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น taking</td></tr><tr><td>32</td><td class="emoji-cell">📦</td><td>B) dropping</td><td>drop เป็นคำพยางค์เดียวแบบ CVC (d-r-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น dropping</td></tr><tr><td>33</td><td class="emoji-cell">🚪</td><td>C) closing</td><td>close ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น closing</td></tr><tr><td>34</td><td class="emoji-cell">🤲</td><td>A) grabbing</td><td>grab เป็นคำพยางค์เดียวแบบ CVC (g-r-a-b) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น grabbing</td></tr><tr><td>35</td><td class="emoji-cell">👏</td><td>D) clapping</td><td>clap เป็นคำพยางค์เดียวแบบ CVC (c-l-a-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น clapping</td></tr><tr><td>36</td><td class="emoji-cell">⚽</td><td>B) playing</td><td>play ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (playing ไม่ใช่ playying)</td></tr><tr><td>37</td><td class="emoji-cell">🔧</td><td>B) fixing</td><td>fix ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (fixing ไม่ใช่ fixxing)</td></tr><tr><td>38</td><td class="emoji-cell">❄️</td><td>C) snowing</td><td>snow ลงท้ายด้วย w ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (snowing ไม่ใช่ snowwing)</td></tr><tr><td>39</td><td class="emoji-cell">🎨</td><td>C) mixing</td><td>mix ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (mixing ไม่ใช่ mixxing)</td></tr><tr><td>40</td><td class="emoji-cell">🏨</td><td>D) staying</td><td>stay ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (staying ไม่ใช่ stayying)</td></tr><tr><td>41</td><td class="emoji-cell">🥀</td><td>B) dying</td><td>die ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น dying ระวังสับสนกับ dyeing (จากคำว่า dye แปลว่าย้อมสี)</td></tr><tr><td>42</td><td class="emoji-cell">🐱</td><td>B) lying</td><td>lie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น lying ระวังสับสนกับ laying (จากคำว่า lay แปลว่าวาง)</td></tr><tr><td>43</td><td class="emoji-cell">🎀</td><td>B) tying</td><td>tie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น tying</td></tr><tr><td>44</td><td class="emoji-cell">🎬</td><td>B) beginning</td><td>begin มี 2 พยางค์ แต่เน้นเสียงพยางค์หลัง (be-GIN) และลงท้ายแบบ CVC จึงต้องเบิ้ลตัวสะกด n ก่อนเติม -ing</td></tr><tr><td>45</td><td class="emoji-cell">🔑</td><td>B) forgetting</td><td>forget มี 2 พยางค์ แต่เน้นเสียงพยางค์หลัง (for-GET) และลงท้ายแบบ CVC จึงต้องเบิ้ลตัวสะกด t ก่อนเติม -ing</td></tr><tr><td>46</td><td class="emoji-cell">💬</td><td>B) arguing</td><td>argue ลงท้ายด้วย e ที่ไม่ออกเสียง (แม้จะเป็น ue) ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น arguing</td></tr><tr><td>47</td><td class="emoji-cell">🎉</td><td>B) enjoying</td><td>enjoy มี 2 พยางค์ ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ</td></tr><tr><td>48</td><td class="emoji-cell">🏃‍♀️</td><td>B) She is running in the park.</td><td>running ต้องเบิ้ล n เพราะ run เป็นคำ CVC พยางค์เดียว และประธาน She ต้องใช้ is + Ving ไม่ใช่ are หรือกริยาช่องที่ 1 เฉย ๆ</td></tr><tr><td>49</td><td class="emoji-cell">🥅</td><td>C) They are playing football now.</td><td>playing ห้ามเบิ้ล y (ข้อยกเว้น) และประธาน They ต้องใช้ are + Ving ให้ครบทั้งสองส่วน</td></tr><tr><td>50</td><td class="emoji-cell">📝</td><td>C) He is writing a letter now.</td><td>write ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น writing ไม่ใช่ writting หรือ writeing และประโยคต้องมี is อยู่หน้า Ving เสมอ</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>กฎการเติม -ing</h4>
+      <table><tr><th>กรณี</th><th>ตัวอย่าง</th></tr>
+      <tr><td>ปกติ</td><td>play &rarr; playing</td></tr>
+      <tr><td>ตัด e ทิ้ง</td><td>make &rarr; making</td></tr>
+      <tr><td>เบิ้ลตัวท้าย (CVC)</td><td>run &rarr; running</td></tr>
+      <tr><td>-ie &rarr; y</td><td>die &rarr; dying</td></tr>
+      <tr><td>เน้นเสียงท้าย (2 พยางค์)</td><td>begin &rarr; beginning</td></tr></table></div>
+    <div class="cheat-box"><h4>โครงสร้าง Present Continuous</h4>
+      <ul><li>Positive: S + am/is/are + Ving</li><li>Negative: S + am/is/are + not + Ving</li><li>Question: Am/Is/Are + S + Ving?</li><li>ต้องมี am/is/are คู่กับ Ving เสมอ</li></ul></div>
+    <div class="cheat-box"><h4>⚠️ ข้อยกเว้น w/x/y</h4>
+      <ul><li>ลงท้าย w, x, y &rarr; ห้ามเบิ้ลตัวท้าย</li><li>snow &rarr; snowing</li><li>fix &rarr; fixing</li><li>play &rarr; playing</li></ul></div>
+    <div class="cheat-box"><h4>เทคนิคจำเร็ว</h4>
+      <ul><li>e หายไปเมื่อมี ing มา</li><li>พยางค์เดียวสั้น ๆ ต้อง double ตัวท้าย</li><li>w x y ไม่ต้อง double</li><li>ตาย นอน ผูก ต้องใช้ y</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>ทบทวน Verb to Be (บทที่ 1) ก่อนเข้าเนื้อหา เพราะ Present Continuous ต้องใช้ am/is/are ควบคู่กับ Ving เสมอ</li>
+    <li>สอนกฎการสะกดทีละขั้นตามลำดับความยาก: ปกติ &rarr; silent-e &rarr; CVC double &rarr; ข้อยกเว้น w/x/y &rarr; ie&rarr;y</li>
+    <li>ให้นักเรียนฝึกแยกประเภทคำกริยาก่อนเติม -ing ทุกครั้ง แทนที่จะท่องจำรูปสำเร็จ เพื่อให้นำไปใช้กับคำใหม่ ๆ ได้เอง</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Charades -ing</b> — นักเรียนคนหนึ่งแสดงท่าทางกริยา (วิ่ง เต้น ว่ายน้ำ) เพื่อนทายและพูดประโยคเต็ม "He/She is ___ing."</li>
+    <li><b>Freeze Dance</b> — เปิดเพลงให้นักเรียนเต้น พอหยุดเพลงให้ครูชี้ถามว่า "What are you doing?" นักเรียนต้องตอบด้วยท่าที่ค้างอยู่ เช่น "I am jumping."</li>
+    <li><b>Spelling Relay</b> — แบ่งทีม ให้ตัวแทนแต่ละทีมวิ่งมาสะกดรูป -ing ของคำที่ครูให้บนกระดานให้ถูกต้องเร็วที่สุด (เน้นคำที่มีกฎพิเศษ เช่น run, write, stay)</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 (โดยเฉพาะการลืมเบิ้ลตัวสะกดและลืมตัด silent e) เพื่อวางแผนการสอนซ่อมเสริมรายบุคคล</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> เขียนประโยค 5 ประโยค บรรยายว่าคนในครอบครัวของตัวเองกำลังทำอะไรอยู่ตอนนี้ โดยใช้ am/is/are + Ving (เช่น My mom is cooking dinner now.)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> ฝึกสะกดคำกริยาเติม -ing ที่มักสะกดผิด 10 คำต่อไปนี้ให้ถูกต้อง: run, sit, make, write, stop, swim, play, stay, die, dance</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> วาดภาพเหตุการณ์ที่กำลังเกิดขึ้นในสวนสาธารณะ แล้วเขียนบรรยาย 3 ประโยคโดยใช้ Present Continuous</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> ดูรูปเพื่อนในห้องแล้วเขียนคำถาม "What is he/she doing?" พร้อมคำตอบ 3 คู่</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"แค่จำกฎ 4 ข้อให้แม่น การสะกด -ing ก็ไม่ใช่เรื่องยากอีกต่อไป" 🌟</div>
+    <div class="sub">การเติม -ing อาจดูมีกฎเยอะในตอนแรก แต่ถ้าฝึกสังเกตตัวสะกดท้ายคำบ่อย ๆ นักเรียนจะสะกดถูกได้เองโดยอัตโนมัติ อย่ากลัวที่จะเขียนผิดในตอนฝึกซ้อม เพราะทุกครั้งที่แก้ไขคือก้าวหนึ่งของความเก่งขึ้น 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่องการเติม -ing เพื่อสร้างรูป Present Continuous (กำลังทำอยู่) ค่ะ</div><div class="line">✅ กฎที่ 1 ปกติ เติม -ing ต่อท้ายได้เลย เช่น play &rarr; playing</div><div class="line">✅ กฎที่ 2 ลงท้ายด้วย silent e ให้ตัด e ทิ้งก่อนเติม -ing เช่น make &rarr; making</div><div class="line">✅ กฎที่ 3 คำพยางค์เดียวแบบ CVC ต้องเบิ้ลตัวท้ายก่อนเติม -ing เช่น run &rarr; running แต่ถ้าลงท้าย w, x, y ห้ามเบิ้ลเด็ดขาด</div><div class="line">✅ กฎที่ 4 คำพิเศษ die, lie, tie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing</div><div class="line">✅ อย่าลืม! ทุกครั้งที่ใช้ Ving ต้องมี am/is/are (จากบทที่ 1) นำหน้าเสมอ ขาดไม่ได้เด็ดขาด</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะสะกดคำ -ing ได้แม่นยำแน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

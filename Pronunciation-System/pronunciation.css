@@ -1,0 +1,92 @@
+/* Global English Pronunciation System — button styling.
+   Deliberately self-contained (own colors, not the host page's CSS
+   variables) since this component is reused across very different visual
+   systems on this site: the main site's blue theme, the rainbow-print
+   System-B lesson pages, and each Adventure game's own palette. A single
+   consistent "pronunciation button" identity (small blue circle, 🔊) is
+   easier to recognize site-wide than trying to theme-match every page. */
+
+.pron-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #4A5AE8;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0;
+  margin: 0 2px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.pron-btn:hover { background: #3846c9; }
+.pron-btn:active { transform: scale(0.9); }
+.pron-btn:focus-visible {
+  outline: 2px solid #4A5AE8;
+  outline-offset: 2px;
+}
+
+/* Playing state — brief pulse so students can see audio is active. */
+.pron-btn.pron-btn-playing {
+  background: #21c38d;
+  animation: pron-pulse 0.6s ease-in-out infinite;
+}
+@keyframes pron-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Practice ("พูดตาม" / repeat-after-me) button — same base circle styling
+   as .pron-btn (still caught by the same click listener/pulse state) but
+   widened into a labeled pill since it carries a text label, not just the
+   speaker emoji, and uses a distinct warm color so it reads as "your turn"
+   rather than "listen". */
+.pron-btn.pron-practice-btn {
+  width: auto;
+  min-width: 0;
+  height: 36px;
+  border-radius: 999px;
+  padding: 0 14px;
+  gap: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: #f59e0b;
+  white-space: nowrap;
+}
+.pron-btn.pron-practice-btn:hover { background: #d97706; }
+.pron-btn.pron-practice-btn.pron-btn-playing { background: #21c38d; }
+
+.pron-fallback-msg {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #b3261e;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Choice-with-speaker-button wrapper (used where a speaker button sits
+   beside an existing clickable answer choice — a real <button> cannot be
+   nested inside another <button>, so the choice text and the speaker
+   button are siblings inside this flex wrapper instead). */
+.pron-choice-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pron-choice-item > .choice-btn { flex: 1; }
+
+@media (max-width: 480px) {
+  .pron-btn { width: 34px; height: 34px; font-size: 1rem; }
+  .pron-btn.pron-practice-btn { width: auto; height: 34px; padding: 0 12px; font-size: 0.88rem; }
+}
+
+@media print {
+  .pron-btn, .pron-fallback-msg { display: none; }
+}

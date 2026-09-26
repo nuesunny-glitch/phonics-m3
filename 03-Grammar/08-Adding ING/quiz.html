@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>แบบทดสอบ: การเติม -ing (Adding ING)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>🌈✏️ แบบทดสอบสนุก: การเติม -ing (Adding ING) 🎉</h1>
+    <div class="sub">ปรนัย 4 ตัวเลือก 50 ข้อ พร้อมภาพช่วยจำ — English Grammar Quiz Pack</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>เลขที่ <span class="fill-line" style="min-width:60px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว โดยวงกลมตัวอักษร (A/B/C/D) ในกรอบ หรือเขียนคำตอบลงในช่องว่างท้ายข้อ 🖍️ ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📺</div>
+      <div class="qtext">
+        I am ___ TV now.
+        <div class="rule-tag">กฎปกติ: watch→watching</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) watchting</div>
+<div class="choice">B) wachting</div>
+<div class="choice">C) watching</div>
+<div class="choice">D) watchig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">
+        She is ___ a book.
+        <div class="rule-tag">กฎปกติ: read→reading</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) readding</div>
+<div class="choice">B) reading</div>
+<div class="choice">C) raeding</div>
+<div class="choice">D) readng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶</div>
+      <div class="qtext">
+        They are ___ to school.
+        <div class="rule-tag">กฎปกติ: go→going</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) goeing</div>
+<div class="choice">B) gooing</div>
+<div class="choice">C) goign</div>
+<div class="choice">D) going</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎧</div>
+      <div class="qtext">
+        He is ___ to music.
+        <div class="rule-tag">กฎปกติ: listen→listening</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) listening</div>
+<div class="choice">B) listenning</div>
+<div class="choice">C) listning</div>
+<div class="choice">D) listeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">💼</div>
+      <div class="qtext">
+        We are ___ hard today.
+        <div class="rule-tag">กฎปกติ: work→working</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) workking</div>
+<div class="choice">B) workin</div>
+<div class="choice">C) working</div>
+<div class="choice">D) woking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍳</div>
+      <div class="qtext">
+        My mom is ___ dinner now.
+        <div class="rule-tag">กฎปกติ: cook→cooking</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cookking</div>
+<div class="choice">B) cooking</div>
+<div class="choice">C) coocking</div>
+<div class="choice">D) cookin</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎤</div>
+      <div class="qtext">
+        I am ___ a song.
+        <div class="rule-tag">กฎปกติ: sing→singing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) singging</div>
+<div class="choice">B) singin</div>
+<div class="choice">C) sining</div>
+<div class="choice">D) singing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">
+        They are ___ on the phone.
+        <div class="rule-tag">กฎปกติ: talk→talking</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) talking</div>
+<div class="choice">B) talkking</div>
+<div class="choice">C) talkin</div>
+<div class="choice">D) takling</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶‍♂️</div>
+      <div class="qtext">
+        He is ___ to the park.
+        <div class="rule-tag">กฎปกติ: walk→walking</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) walkking</div>
+<div class="choice">B) walkin</div>
+<div class="choice">C) walking</div>
+<div class="choice">D) waklking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤸</div>
+      <div class="qtext">
+        The kids are ___ on the bed.
+        <div class="rule-tag">กฎปกติ: jump→jumping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) jumpping</div>
+<div class="choice">B) jumping</div>
+<div class="choice">C) jumpin</div>
+<div class="choice">D) jummping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧹</div>
+      <div class="qtext">
+        She is ___ her room.
+        <div class="rule-tag">กฎปกติ: clean→cleaning</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) cleanning</div>
+<div class="choice">B) cleaing</div>
+<div class="choice">C) cleannig</div>
+<div class="choice">D) cleaning</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧼</div>
+      <div class="qtext">
+        I am ___ the dishes.
+        <div class="rule-tag">กฎปกติ: wash→washing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) washing</div>
+<div class="choice">B) washhing</div>
+<div class="choice">C) washig</div>
+<div class="choice">D) wasing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😴</div>
+      <div class="qtext">
+        The baby is ___ now.
+        <div class="rule-tag">กฎปกติ: sleep→sleeping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) sleepping</div>
+<div class="choice">B) sleepin</div>
+<div class="choice">C) sleeping</div>
+<div class="choice">D) sleeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">
+        We are ___ lunch together.
+        <div class="rule-tag">กฎปกติ: eat→eating</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) eatting</div>
+<div class="choice">B) eating</div>
+<div class="choice">C) eaing</div>
+<div class="choice">D) eatng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">
+        He is ___ English for the test right now.
+        <div class="rule-tag">กฎปกติ: study→studying</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) studying</div>
+<div class="choice">B) studing</div>
+<div class="choice">C) studyying</div>
+<div class="choice">D) studiing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">✍️</div>
+      <div class="qtext">
+        I am ___ a letter to my friend.
+        <div class="rule-tag">Silent-e: write→writing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) writeing</div>
+<div class="choice">B) writing</div>
+<div class="choice">C) writting</div>
+<div class="choice">D) writeng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">
+        She is ___ very fast in the race.
+        <div class="rule-tag">CVC Double: run→running</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) runing</div>
+<div class="choice">B) runnning</div>
+<div class="choice">C) running</div>
+<div class="choice">D) runnig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💃</div>
+      <div class="qtext">
+        They are ___ at the party now.
+        <div class="rule-tag">Silent-e: dance→dancing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dancing</div>
+<div class="choice">B) danceing</div>
+<div class="choice">C) dancceing</div>
+<div class="choice">D) dansing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤞</div>
+      <div class="qtext">
+        I am ___ to see you soon.
+        <div class="rule-tag">Silent-e: hope→hoping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) hopeing</div>
+<div class="choice">B) hopping</div>
+<div class="choice">C) hopin</div>
+<div class="choice">D) hoping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🪑</div>
+      <div class="qtext">
+        He is ___ on the sofa.
+        <div class="rule-tag">CVC Double: sit→sitting</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) siting</div>
+<div class="choice">B) sitting</div>
+<div class="choice">C) sittting</div>
+<div class="choice">D) sittign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍰</div>
+      <div class="qtext">
+        Mom is ___ a cake for my birthday.
+        <div class="rule-tag">Silent-e: make→making</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) makeing</div>
+<div class="choice">B) makking</div>
+<div class="choice">C) making</div>
+<div class="choice">D) makng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏊</div>
+      <div class="qtext">
+        We are ___ in the pool.
+        <div class="rule-tag">CVC Double: swim→swimming</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) swimming</div>
+<div class="choice">B) swiming</div>
+<div class="choice">C) swimmming</div>
+<div class="choice">D) swimmign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚴</div>
+      <div class="qtext">
+        He is ___ his bike to school.
+        <div class="rule-tag">Silent-e: ride→riding</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) rideing</div>
+<div class="choice">B) ridding</div>
+<div class="choice">C) ridng</div>
+<div class="choice">D) riding</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛑</div>
+      <div class="qtext">
+        The car is ___ at the red light.
+        <div class="rule-tag">CVC Double: stop→stopping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) stoping</div>
+<div class="choice">B) stopping</div>
+<div class="choice">C) stoppping</div>
+<div class="choice">D) stoppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">
+        Dad is ___ home now.
+        <div class="rule-tag">Silent-e: come→coming</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) comeing</div>
+<div class="choice">B) comming</div>
+<div class="choice">C) coming</div>
+<div class="choice">D) comng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">
+        We are ___ a trip for next week.
+        <div class="rule-tag">CVC Double: plan→planning</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) planning</div>
+<div class="choice">B) planing</div>
+<div class="choice">C) plannning</div>
+<div class="choice">D) plannign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚙</div>
+      <div class="qtext">
+        My uncle is ___ to Chiang Mai.
+        <div class="rule-tag">Silent-e: drive→driving</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) driveing</div>
+<div class="choice">B) drivving</div>
+<div class="choice">C) drivng</div>
+<div class="choice">D) driving</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚾</div>
+      <div class="qtext">
+        He is ___ the ball hard.
+        <div class="rule-tag">CVC Double: hit→hitting</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) hiting</div>
+<div class="choice">B) hitting</div>
+<div class="choice">C) hittting</div>
+<div class="choice">D) hittign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">😊</div>
+      <div class="qtext">
+        The baby is ___ at everyone.
+        <div class="rule-tag">Silent-e: smile→smiling</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) smileing</div>
+<div class="choice">B) smilling</div>
+<div class="choice">C) smiling</div>
+<div class="choice">D) smiing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛍️</div>
+      <div class="qtext">
+        They are ___ at the mall today.
+        <div class="rule-tag">CVC Double: shop→shopping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) shopping</div>
+<div class="choice">B) shoping</div>
+<div class="choice">C) shoppping</div>
+<div class="choice">D) shoppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📸</div>
+      <div class="qtext">
+        I am ___ a photo of the sunset.
+        <div class="rule-tag">Silent-e: take→taking</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) takeing</div>
+<div class="choice">B) takking</div>
+<div class="choice">C) takng</div>
+<div class="choice">D) taking</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📦</div>
+      <div class="qtext">
+        The leaves are ___ from the tree.
+        <div class="rule-tag">CVC Double: drop→dropping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) droping</div>
+<div class="choice">B) dropping</div>
+<div class="choice">C) droppping</div>
+<div class="choice">D) droppign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚪</div>
+      <div class="qtext">
+        She is ___ the door quietly.
+        <div class="rule-tag">Silent-e: close→closing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) closeing</div>
+<div class="choice">B) clossing</div>
+<div class="choice">C) closing</div>
+<div class="choice">D) closng</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🤲</div>
+      <div class="qtext">
+        He is ___ a snack from the shelf.
+        <div class="rule-tag">CVC Double: grab→grabbing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) grabbing</div>
+<div class="choice">B) grabing</div>
+<div class="choice">C) grabbbing</div>
+<div class="choice">D) grabbign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👏</div>
+      <div class="qtext">
+        The crowd is ___ for the singer.
+        <div class="rule-tag">CVC Double: clap→clapping</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) claping</div>
+<div class="choice">B) clappping</div>
+<div class="choice">C) clappign</div>
+<div class="choice">D) clapping</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">⚽</div>
+      <div class="qtext">
+        They are ___ football in the yard.
+        <div class="rule-tag">ข้อยกเว้น w/x/y: play→playing (ห้ามเบิ้ล y)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) playying</div>
+<div class="choice">B) playing</div>
+<div class="choice">C) plaing</div>
+<div class="choice">D) playeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔧</div>
+      <div class="qtext">
+        He is ___ his bike now.
+        <div class="rule-tag">ข้อยกเว้น w/x/y: fix→fixing (ห้ามเบิ้ล x)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) fixxing</div>
+<div class="choice">B) fixing</div>
+<div class="choice">C) fixeing</div>
+<div class="choice">D) fising</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">❄️</div>
+      <div class="qtext">
+        Look! It is ___ outside.
+        <div class="rule-tag">ข้อยกเว้น w/x/y: snow→snowing (ห้ามเบิ้ล w)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) snowwing</div>
+<div class="choice">B) snoing</div>
+<div class="choice">C) snowing</div>
+<div class="choice">D) snoweing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎨</div>
+      <div class="qtext">
+        She is ___ the paint colors.
+        <div class="rule-tag">ข้อยกเว้น w/x/y: mix→mixing (ห้ามเบิ้ล x)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) mixxing</div>
+<div class="choice">B) mixeing</div>
+<div class="choice">C) mixing</div>
+<div class="choice">D) misxing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏨</div>
+      <div class="qtext">
+        We are ___ at a hotel this week.
+        <div class="rule-tag">ข้อยกเว้น w/x/y: stay→staying (ห้ามเบิ้ล y)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) stayying</div>
+<div class="choice">B) staing</div>
+<div class="choice">C) stayeing</div>
+<div class="choice">D) staying</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥀</div>
+      <div class="qtext">
+        The plant is ___ because of no water.
+        <div class="rule-tag">คำพิเศษ -ie→y: die→dying</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) dieing</div>
+<div class="choice">B) dying</div>
+<div class="choice">C) diing</div>
+<div class="choice">D) dyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">
+        The cat is ___ on the sofa all day.
+        <div class="rule-tag">คำพิเศษ -ie→y: lie→lying</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) lieing</div>
+<div class="choice">B) lying</div>
+<div class="choice">C) liing</div>
+<div class="choice">D) laying</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎀</div>
+      <div class="qtext">
+        She is ___ her shoelaces.
+        <div class="rule-tag">คำพิเศษ -ie→y: tie→tying</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) tieing</div>
+<div class="choice">B) tying</div>
+<div class="choice">C) tiing</div>
+<div class="choice">D) tyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎬</div>
+      <div class="qtext">
+        The movie is ___ now.
+        <div class="rule-tag">คำ 2 พยางค์เน้นเสียงท้าย CVC: begin→beginning</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) begining</div>
+<div class="choice">B) beginning</div>
+<div class="choice">C) beginnning</div>
+<div class="choice">D) beginnig</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔑</div>
+      <div class="qtext">
+        I am ___ something important.
+        <div class="rule-tag">คำ 2 พยางค์เน้นเสียงท้าย CVC: forget→forgetting</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) forgeting</div>
+<div class="choice">B) forgetting</div>
+<div class="choice">C) forgettting</div>
+<div class="choice">D) forgettign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💬</div>
+      <div class="qtext">
+        They are ___ about the game.
+        <div class="rule-tag">Silent-e ขั้นสูง: argue→arguing</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) argueing</div>
+<div class="choice">B) arguing</div>
+<div class="choice">C) arguuing</div>
+<div class="choice">D) arguign</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎉</div>
+      <div class="qtext">
+        We are ___ the party.
+        <div class="rule-tag">ข้อยกเว้น w/x/y (2 พยางค์): enjoy→enjoying</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) enjoyying</div>
+<div class="choice">B) enjoying</div>
+<div class="choice">C) enjoing</div>
+<div class="choice">D) enjoyeing</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃‍♀️</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) She is runing in the park.</div>
+<div class="choice">B) She is running in the park.</div>
+<div class="choice">C) She are running in the park.</div>
+<div class="choice">D) She is run in the park.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥅</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) They are playying football now.</div>
+<div class="choice">B) They is playing football now.</div>
+<div class="choice">C) They are playing football now.</div>
+<div class="choice">D) They are play football now.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+<div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📝</div>
+      <div class="qtext">
+        ข้อใดถูกต้อง?
+        <div class="rule-tag">จับผิดประโยค (Error Detection)</div>
+      </div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) He is writting a letter now.</div>
+<div class="choice">B) He is writeing a letter now.</div>
+<div class="choice">C) He is writing a letter now.</div>
+<div class="choice">D) He writing a letter now.</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+  <div class="footer-note">English Grammar Quiz Pack · Adding ING — แบบทดสอบ 50 ข้อ</div>
+</div>
+</body>
+</html>

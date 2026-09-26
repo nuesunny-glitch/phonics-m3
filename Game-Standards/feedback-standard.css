@@ -1,0 +1,98 @@
+/* Game Feedback Standard — visual styles for feedback-standard.js.
+   Prefixed with fbstd- so these classes never collide with any existing
+   game's own game.css. Purely a text/logic layer — each game keeps its
+   own color theme; this only styles the feedback line, speaker button,
+   confetti burst, and the 3 score-tier result cards. */
+
+.fbstd-feedback {
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+.fbstd-feedback.fbstd-good { color: #21c38d; }
+/* Amber, not red — the standard avoids "wrong" framing, so the incorrect
+   phrase shouldn't look alarming either. */
+.fbstd-feedback.fbstd-bad { color: #e08900; }
+
+.fbstd-speaker-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #7c4dff;
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  padding: 0;
+}
+.fbstd-speaker-btn:hover { filter: brightness(1.1); }
+.fbstd-speaker-btn:active { transform: scale(0.92); }
+
+.fbstd-result {
+  text-align: center;
+  padding: 32px 22px;
+  border-radius: 20px;
+  margin: 16px 0;
+}
+.fbstd-result-win {
+  background: linear-gradient(135deg, #ffd54a, #ff8a65);
+  color: #3a2400;
+}
+.fbstd-result-retry {
+  background: #fff4dc;
+  color: #7a5300;
+}
+.fbstd-result-review {
+  background: #ffe8e8;
+  color: #7a1f1f;
+}
+.fbstd-title {
+  font-weight: 800;
+  font-size: 1.65rem;
+  margin-bottom: 8px;
+}
+.fbstd-sub {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+}
+.fbstd-btn {
+  display: inline-block;
+  font-weight: 700;
+  padding: 17px 34px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  margin: 6px;
+  font-size: 1.3rem;
+}
+.fbstd-btn-primary { background: #7c4dff; color: #fff; }
+.fbstd-btn-outline { background: #fff; color: #7c4dff; border: 2px solid #7c4dff; }
+.fbstd-btn:active { transform: scale(0.97); }
+
+.fbstd-confetti-burst {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+.fbstd-confetti-piece {
+  position: absolute;
+  top: -10%;
+  animation: fbstd-fall 2.2s ease-in forwards;
+}
+@keyframes fbstd-fall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .fbstd-title { font-size: 1.45rem; }
+  .fbstd-sub { font-size: 1.15rem; }
+  .fbstd-btn { padding: 14px 26px; font-size: 1.15rem; }
+  .fbstd-speaker-btn { width: 36px; height: 36px; font-size: 1.05rem; }
+}

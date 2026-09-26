@@ -1,0 +1,155 @@
+{
+  "id": "14",
+  "folder": "14-Grammar-Summary",
+  "titleThai": "Grammar Summary (สรุปแกรมม่ารวม)",
+  "titleShort": "Grammar Summary",
+  "emojiTitle": "📊🔄",
+  "objectives": [
+    "ทบทวน Parts of Speech 8 ชนิดและ 5 Tense หลักที่เรียนมาตั้งแต่บทที่ 5-10 ได้",
+    "เลือก Tense ให้ถูกต้องตามคำสัญญาณเวลาในประโยคผสมได้",
+    "แต่งประโยคบอกเล่า ปฏิเสธ คำถาม ของแต่ละ Tense ได้อย่างถูกต้อง",
+    "ใช้ Checklist 3 ขั้นตอนในการเลือก Tense ได้อย่างเป็นระบบ",
+    "เชื่อมโยงความรู้แกรมม่าหลายบทเข้าด้วยกันก่อนสอบเข้า ม.4"
+  ],
+  "summaryTable": {
+    "headers": ["Tense", "บอกเล่า", "ปฏิเสธ", "คำถาม"],
+    "rows": [
+      ["Present Simple", "S+V(s/es)", "S+do/does+not+V", "Do/Does+S+V?"],
+      ["Present Continuous", "S+is/am/are+V-ing", "S+is/am/are+not+V-ing", "Is/Am/Are+S+V-ing?"],
+      ["Past Simple", "S+V-ed/irregular", "S+did+not+V", "Did+S+V?"],
+      ["Future (will)", "S+will+V", "S+will+not+V", "Will+S+V?"],
+      ["Future (going to)", "S+is/am/are+going to+V", "S+is/am/are+not+going to+V", "Is/Am/Are+S+going to+V?"]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม Tense ให้ถูกต้อง (ผสมทุก Tense) (12 ข้อ)",
+        "instructions": "เติมคำกริยาในวงเล็บให้ถูกต้องตาม Tense ที่บริบทกำหนด",
+        "items": [
+          "She ___ (go) to school every day.",
+          "Look! They ___ (play) in the park now.",
+          "I ___ (visit) my grandmother last week.",
+          "We ___ (call) you tomorrow. (ตัดสินใจทันที)",
+          "He ___ (study) medicine next year. (แผนที่วางไว้แล้ว)",
+          "The Earth ___ (go) around the sun. (ความจริงทั่วไป)",
+          "She ___ (not/sleep) now.",
+          "I ___ (not/see) her yesterday.",
+          "___ you (like) tea? (Present Simple)",
+          "___ she (study) now? (Present Continuous)",
+          "___ he (finish) his homework yesterday? (Past Simple)",
+          "They ___ (travel) to Japan last year."
+        ],
+        "answers": ["goes", "are playing", "visited", "will call", "is going to study", "goes", "is not sleeping", "did not see", "Do...like", "Is...studying", "Did...finish", "traveled"],
+        "reasons": [
+          "ประธาน She ต้องเติม s (Present Simple)",
+          "มีคำสัญญาณ now ใช้ Present Continuous",
+          "มีคำสัญญาณ last week ใช้ Past Simple",
+          "ตัดสินใจทันที ใช้ will",
+          "แผนที่วางไว้แล้ว ใช้ be going to",
+          "ความจริงทั่วไป ใช้ Present Simple",
+          "ปฏิเสธ Present Continuous",
+          "ปฏิเสธ Past Simple",
+          "คำถาม Present Simple",
+          "คำถาม Present Continuous",
+          "คำถาม Past Simple",
+          "มีคำสัญญาณ last year ใช้ Past Simple"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: บอกชนิดของคำที่ขีดเส้นใต้ (6 ข้อ)",
+        "instructions": "บอกว่าคำที่กำหนดให้เป็นชนิดของคำใดใน 8 ชนิด (Parts of Speech)",
+        "items": [
+          "She is very kind.",
+          "He runs quickly.",
+          "The dog is barking.",
+          "I like tea and coffee.",
+          "Wow! That's amazing.",
+          "They live in Bangkok."
+        ],
+        "answers": ["Adjective", "Adverb", "Noun", "Conjunction", "Interjection", "Preposition"],
+        "reasons": [
+          "kind ขยายคำนาม She → Adjective",
+          "quickly ขยายกริยา runs → Adverb",
+          "dog เป็นชื่อสัตว์ → Noun",
+          "and เชื่อมคำ → Conjunction",
+          "Wow! แสดงอารมณ์ → Interjection",
+          "in บอกสถานที่ → Preposition"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เลือก Tense ที่ถูกต้อง (6 ข้อ)",
+        "instructions": "เลือกคำตอบที่ถูกต้องที่สุดจากตัวเลือกที่กำหนด",
+        "items": [
+          "She ___ to school every day. (ก. go ข. goes ค. going ง. went)",
+          "Look! He ___ now. (ก. run ข. runs ค. is running ง. ran)",
+          "I ___ her yesterday. (ก. see ข. saw ค. sees ง. seeing)",
+          "We ___ you tomorrow. (สัญญา) (ก. call ข. will call ค. called ง. calling)",
+          "She ___ to Japan next year. (แผนที่วางไว้) (ก. go ข. went ค. is going ง. goes)",
+          "___ she like tea? (ก. Do ข. Does ค. Is ง. Are)"
+        ],
+        "answers": ["ข. goes", "ค. is running", "ข. saw", "ข. will call", "ค. is going", "ข. Does"],
+        "reasons": [
+          "ประธาน She ต้องเติม s",
+          "มีคำสัญญาณ now ใช้ Present Continuous",
+          "มีคำสัญญาณ yesterday ใช้ Past Simple",
+          "สัญญา ใช้ will",
+          "แผนที่วางไว้แล้ว ใช้ be going to",
+          "ประธาน she เป็นเอกพจน์ ใช้ Does"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🏫", "tag": "Present Simple: นิสัย/ประจำ", "difficulty": 1, "q": "She ___ to school every day.", "choices": ["go", "goes", "going", "went"], "answer": 1, "explain": "ประธาน She ต้องเติม s ที่กริยา และ every day บ่งบอก Present Simple" },
+    { "emoji": "☀️", "tag": "Present Simple: ความจริงทั่วไป", "difficulty": 1, "q": "The sun ___ in the east.", "choices": ["rise", "rises", "rising", "rose"], "answer": 1, "explain": "ความจริงทั่วไปใช้ Present Simple ประธาน The sun เติม s" },
+    { "emoji": "🏦", "tag": "Present Simple: ตารางเวลา", "difficulty": 1, "q": "My father ___ at a bank.", "choices": ["work", "works", "working", "worked"], "answer": 1, "explain": "อาชีพ/นิสัยประจำใช้ Present Simple ประธาน My father เติม s" },
+    { "emoji": "🍎", "tag": "Present Simple: always", "difficulty": 1, "q": "They ___ help each other.", "choices": ["always help", "always helps", "helping always", "helped always"], "answer": 0, "explain": "always เป็นคำสัญญาณ Present Simple ประธาน They ไม่เติม s" },
+    { "emoji": "❓", "tag": "Present Simple: คำถาม", "difficulty": 2, "q": "___ you like tea?", "choices": ["Do", "Does", "Is", "Are"], "answer": 0, "explain": "ประธาน you ใช้ Do ในคำถาม Present Simple" },
+    { "emoji": "🚫", "tag": "Present Simple: ปฏิเสธ", "difficulty": 2, "q": "He ___ vegetables.", "choices": ["don't like", "doesn't like", "isn't like", "not like"], "answer": 1, "explain": "ประธาน He ใช้ doesn't ในปฏิเสธ Present Simple" },
+    { "emoji": "📖", "tag": "Present Simple: every day", "difficulty": 1, "q": "He ___ English every day.", "choices": ["study", "studies", "studying", "studied"], "answer": 1, "explain": "every day บ่งบอก Present Simple ประธาน He เติม s (study→studies)" },
+    { "emoji": "🐱", "tag": "Present Simple: usually", "difficulty": 1, "q": "My cat ___ sleeps in the afternoon.", "choices": ["usually", "now", "yesterday", "tomorrow"], "answer": 0, "explain": "usually เป็นคำสัญญาณของ Present Simple" },
+    { "emoji": "🏃", "tag": "Present Continuous: Look!", "difficulty": 1, "q": "Look! He ___ now.", "choices": ["run", "runs", "is running", "ran"], "answer": 2, "explain": "Look! และ now บ่งบอก Present Continuous" },
+    { "emoji": "📚", "tag": "Present Continuous: right now", "difficulty": 1, "q": "I ___ my homework right now.", "choices": ["do", "am doing", "did", "does"], "answer": 1, "explain": "right now บ่งบอก Present Continuous" },
+    { "emoji": "🌧️", "tag": "Present Continuous: at the moment", "difficulty": 1, "q": "It ___ heavily at the moment.", "choices": ["rain", "rains", "is raining", "rained"], "answer": 2, "explain": "at the moment บ่งบอก Present Continuous" },
+    { "emoji": "🚫", "tag": "Present Continuous: ปฏิเสธ", "difficulty": 2, "q": "She ___ now.", "choices": ["doesn't sleep", "isn't sleeping", "don't sleep", "not sleeping"], "answer": 1, "explain": "ปฏิเสธ Present Continuous ใช้ is/am/are + not + V-ing" },
+    { "emoji": "❓", "tag": "Present Continuous: คำถาม", "difficulty": 2, "q": "___ they playing football now?", "choices": ["Do", "Does", "Are", "Is"], "answer": 2, "explain": "ประธาน they ใช้ Are ในคำถาม Present Continuous" },
+    { "emoji": "🎨", "tag": "Present Continuous: แผนนัดไว้", "difficulty": 2, "q": "I ___ my friend this weekend.", "choices": ["meet", "meets", "am meeting", "met"], "answer": 2, "explain": "แผนที่นัดไว้ในอนาคตอันใกล้ใช้ Present Continuous" },
+    { "emoji": "🎉", "tag": "Present Continuous: at present", "difficulty": 1, "q": "We ___ a party at present.", "choices": ["have", "has", "are having", "had"], "answer": 2, "explain": "at present บ่งบอก Present Continuous" },
+    { "emoji": "✈️", "tag": "Past Simple: yesterday", "difficulty": 1, "q": "I ___ her yesterday.", "choices": ["see", "saw", "sees", "seeing"], "answer": 1, "explain": "yesterday บ่งบอก Past Simple (see→saw)" },
+    { "emoji": "🏖️", "tag": "Past Simple: last year", "difficulty": 1, "q": "We ___ Chiang Mai last year.", "choices": ["visit", "visits", "visited", "visiting"], "answer": 2, "explain": "last year บ่งบอก Past Simple" },
+    { "emoji": "🚫", "tag": "Past Simple: ปฏิเสธ", "difficulty": 2, "q": "I ___ to school yesterday.", "choices": ["don't go", "doesn't go", "didn't go", "isn't go"], "answer": 2, "explain": "ปฏิเสธ Past Simple ใช้ did not + base form" },
+    { "emoji": "❓", "tag": "Past Simple: คำถาม", "difficulty": 2, "q": "___ she finish her homework yesterday?", "choices": ["Do", "Does", "Did", "Is"], "answer": 2, "explain": "คำถามอดีตใช้ Did กับทุกประธาน" },
+    { "emoji": "🛍️", "tag": "Past Simple: ago", "difficulty": 1, "q": "She bought a bag two days ___.", "choices": ["ago", "last", "yesterday", "next"], "answer": 0, "explain": "ago เป็นคำสัญญาณของ Past Simple (two days ago)" },
+    { "emoji": "🌙", "tag": "Past Simple: last night", "difficulty": 1, "q": "We ___ at home last night.", "choices": ["are", "were", "is", "was"], "answer": 1, "explain": "last night บ่งบอก Past Simple ประธาน We ใช้ were" },
+    { "emoji": "📞", "tag": "Future (will): สัญญา", "difficulty": 1, "q": "I promise I ___ help you.", "choices": ["am", "will", "do", "did"], "answer": 1, "explain": "promise เป็นสัญญา ใช้ will" },
+    { "emoji": "🔮", "tag": "Future (will): soon", "difficulty": 1, "q": "We ___ meet again soon.", "choices": ["will", "are", "did", "were"], "answer": 0, "explain": "soon เป็นคำสัญญาณของ Future ใช้ will" },
+    { "emoji": "🎓", "tag": "Future (going to): แผน", "difficulty": 2, "q": "She ___ study medicine next year.", "choices": ["will", "is going to", "went", "goes"], "answer": 1, "explain": "แผนที่วางไว้แล้วใช้ be going to" },
+    { "emoji": "☁️", "tag": "Future (going to): หลักฐาน", "difficulty": 2, "q": "Look at those clouds! It ___ rain.", "choices": ["will", "is going to", "was", "rained"], "answer": 1, "explain": "มีหลักฐาน (เมฆดำ) ใช้ be going to" },
+    { "emoji": "🚫", "tag": "Future: ปฏิเสธ", "difficulty": 2, "q": "He ___ not going to come to the party.", "choices": ["do", "does", "is", "will"], "answer": 2, "explain": "ปฏิเสธ be going to ใช้ is/am/are + not + going to" },
+    { "emoji": "❓", "tag": "Future: คำถาม", "difficulty": 2, "q": "___ they going to join us?", "choices": ["Do", "Does", "Are", "Will"], "answer": 2, "explain": "ประธาน they + be going to ใช้ Are" },
+    { "emoji": "🎁", "tag": "Future (will): ตัดสินใจทันที", "difficulty": 1, "q": "The phone is ringing. I ___ answer it.", "choices": ["am going to", "will", "was", "did"], "answer": 1, "explain": "ตัดสินใจทันทีตอนพูดใช้ will" },
+    { "emoji": "🏠", "tag": "Future (going to): จองไว้แล้ว", "difficulty": 2, "q": "We ___ move to a new house. We signed the contract already.", "choices": ["will", "are going to", "moved", "move"], "answer": 1, "explain": "เซ็นสัญญาแล้ว = แผนที่วางไว้แน่นอน ใช้ be going to" },
+    { "emoji": "😊", "tag": "Parts of Speech: Adjective", "difficulty": 1, "q": "\"kind\" in \"She is very kind\" is a...?", "choices": ["Noun", "Verb", "Adjective", "Adverb"], "answer": 2, "explain": "kind ขยายคำนาม (She) จึงเป็น Adjective" },
+    { "emoji": "🏃", "tag": "Parts of Speech: Adverb", "difficulty": 1, "q": "\"quickly\" in \"He runs quickly\" is a...?", "choices": ["Noun", "Adjective", "Adverb", "Preposition"], "answer": 2, "explain": "quickly ขยายกริยา runs จึงเป็น Adverb" },
+    { "emoji": "🐕", "tag": "Parts of Speech: Noun", "difficulty": 1, "q": "\"dog\" in \"The dog is barking\" is a...?", "choices": ["Noun", "Verb", "Adjective", "Pronoun"], "answer": 0, "explain": "dog เป็นชื่อสัตว์ จึงเป็น Noun" },
+    { "emoji": "☕", "tag": "Parts of Speech: Conjunction", "difficulty": 1, "q": "\"and\" in \"I like tea and coffee\" is a...?", "choices": ["Preposition", "Conjunction", "Adverb", "Interjection"], "answer": 1, "explain": "and เชื่อมคำสองคำเข้าด้วยกัน จึงเป็น Conjunction" },
+    { "emoji": "😲", "tag": "Parts of Speech: Interjection", "difficulty": 1, "q": "\"Wow!\" in \"Wow! That's amazing\" is a...?", "choices": ["Noun", "Verb", "Adverb", "Interjection"], "answer": 3, "explain": "Wow! แสดงอารมณ์ตกใจ/ประทับใจ จึงเป็น Interjection" },
+    { "emoji": "📍", "tag": "Parts of Speech: Preposition", "difficulty": 2, "q": "\"in\" in \"They live in Bangkok\" is a...?", "choices": ["Noun", "Preposition", "Adjective", "Verb"], "answer": 1, "explain": "in บอกตำแหน่ง/สถานที่ จึงเป็น Preposition" },
+    { "emoji": "🙋", "tag": "Parts of Speech: Pronoun", "difficulty": 1, "q": "\"she\" in \"She is a teacher\" is a...?", "choices": ["Noun", "Pronoun", "Verb", "Adjective"], "answer": 1, "explain": "she แทนคำนาม จึงเป็น Pronoun" },
+    { "emoji": "🎤", "tag": "Parts of Speech: Verb", "difficulty": 1, "q": "\"sings\" in \"She sings beautifully\" is a...?", "choices": ["Noun", "Verb", "Adverb", "Adjective"], "answer": 1, "explain": "sings บอกการกระทำ จึงเป็น Verb" },
+    { "emoji": "📅", "tag": "WH-Questions: When", "difficulty": 1, "q": "\"___ is your birthday?\" asks about...?", "choices": ["Place", "Time", "Person", "Reason"], "answer": 1, "explain": "When ถามเรื่องเวลา" },
+    { "emoji": "📍", "tag": "WH-Questions: Where", "difficulty": 1, "q": "\"___ do you live?\" asks about...?", "choices": ["Place", "Time", "Person", "Reason"], "answer": 0, "explain": "Where ถามเรื่องสถานที่" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "WH-Questions: Who เป็นประธาน", "difficulty": 2, "q": "___ broke the window?", "choices": ["Who did break", "Who broke", "Did who break", "Who does break"], "answer": 1, "explain": "Who เป็นประธานเอง ไม่ต้องใช้ did" },
+    { "emoji": "🔢", "tag": "WH-Questions: How many/much", "difficulty": 2, "q": "___ homework do you have?", "choices": ["How many", "How much", "How old", "How far"], "answer": 1, "explain": "homework นับไม่ได้ ใช้ How much" },
+    { "emoji": "☑️", "tag": "WH-Questions: Which", "difficulty": 2, "q": "There are two buses. ___ one do you take?", "choices": ["What", "Which", "Whose", "Who"], "answer": 1, "explain": "มีตัวเลือกจำกัดชัดเจน ใช้ Which" },
+    { "emoji": "🎯", "tag": "สรุปรวม: เลือก Tense", "difficulty": 3, "q": "According to the schedule, the train ___ leave at 9 AM tomorrow.", "choices": ["will", "is going to", "left", "leaves"], "answer": 1, "explain": "ตารางเวลาที่กำหนดไว้แล้ว = แผนล่วงหน้า ใช้ be going to" },
+    { "emoji": "🎯", "tag": "สรุปรวม: เลือก Tense", "difficulty": 3, "q": "Nobody knows for sure, but she ___ probably win the competition.", "choices": ["will", "is going to", "won", "wins"], "answer": 0, "explain": "\"probably\" + ไม่มีใครรู้แน่ชัด = คาดเดาไม่มีหลักฐาน ใช้ will" },
+    { "emoji": "🔍", "tag": "Error Detection: S-V Agreement", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She go to school every day.", "She goes to school every day.", "She going to school every day.", "She went to school every day. (ถ้าหมายถึงปัจจุบัน)"], "answer": 1, "explain": "every day บ่งบอก Present Simple ประธาน She ต้องเติม s" },
+    { "emoji": "🔍", "tag": "Error Detection: Verb Form หลัง Aux", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She did not played football.", "She did not play football.", "She does not played football.", "She not played football."], "answer": 1, "explain": "หลัง did not ต้องใช้กริยารูปเดิม (base form)" },
+    { "emoji": "🔍", "tag": "Error Detection: Article", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["I have a apple.", "I have an apple.", "I have the apple always.", "I have apple."], "answer": 1, "explain": "apple ขึ้นต้นเสียงสระ ต้องใช้ an" },
+    { "emoji": "🏁", "tag": "สรุปรวม: Checklist เลือก Tense", "difficulty": 2, "q": "ขั้นตอนแรกในการเลือก Tense ที่ถูกต้องคืออะไร?", "choices": ["หาคำสัญญาณเวลาในประโยค", "เช็กประธานก่อน", "ท่องสูตรให้ขึ้นใจ", "อ่านตัวเลือกทั้งหมดก่อน"], "answer": 0, "explain": "Checklist ขั้นที่ 1 คือหาคำสัญญาณเวลาในประโยคก่อนเสมอ" },
+    { "emoji": "🏆", "tag": "สรุปรวม: มิกซ์ Tense", "difficulty": 3, "q": "By the time we arrive, the movie ___ already.", "choices": ["will start", "is going to start", "will have started", "starts"], "answer": 2, "explain": "โครงสร้างนี้เป็นความรู้เสริมระดับสูง (Future Perfect) แสดงเหตุการณ์ที่จะเสร็จสิ้นก่อนอีกเหตุการณ์ในอนาคต — ทบทวนเป็นความรู้เสริมนอกเหนือจาก 5 Tense หลักที่เรียนมา" },
+    { "emoji": "📋", "tag": "สรุปรวม: Checklist ขั้นที่ 3", "difficulty": 2, "q": "หลังจากจับคู่คำสัญญาณกับ Tense แล้ว ขั้นตอนสุดท้ายของ Checklist คืออะไร?", "choices": ["ท่องสูตรซ้ำ 3 รอบ", "เช็กประธานว่าเป็น he/she/it หรือไม่", "อ่านคำถามใหม่อีกครั้ง", "เขียนคำตอบให้เร็วที่สุด"], "answer": 1, "explain": "Checklist ขั้นที่ 3 คือเช็กประธานเพื่อเลือกรูปกริยา/verb to be ให้ถูกต้อง" }
+  ]
+}

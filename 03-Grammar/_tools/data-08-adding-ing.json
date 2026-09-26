@@ -1,0 +1,188 @@
+{
+  "id": "08",
+  "folder": "08-Adding ING",
+  "titleThai": "การเติม -ing (Adding ING)",
+  "titleShort": "Adding ING",
+  "emojiTitle": "🏃✍️",
+  "objectives": [
+    "บอกกฎการเติม -ing แบบปกติ (regular) ให้กับคำกริยาทั่วไปได้ถูกต้อง",
+    "ใช้กฎตัด e ทิ้งก่อนเติม -ing กับคำกริยาที่ลงท้ายด้วย e ที่ไม่ออกเสียง (silent e) ได้ถูกต้อง",
+    "ใช้กฎเบิ้ลพยัญชนะตัวท้ายก่อนเติม -ing กับคำกริยาพยางค์เดียวแบบ CVC ได้ถูกต้อง รวมถึงจำข้อยกเว้นคำที่ลงท้ายด้วย w, x, y",
+    "แต่งประโยค Present Continuous (am/is/are + Ving) เพื่อบอกเหตุการณ์ที่กำลังเกิดขึ้นในขณะพูดหรือสถานการณ์ชั่วคราวได้ถูกต้อง",
+    "สะกดคำกริยาเติม -ing ได้ถูกต้องแม่นยำ และแก้ไขประโยคที่สะกดผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกสอบบ่อยเรื่องการสะกดคำ Ving"
+  ],
+  "explanation": [
+    {
+      "heading": "🌱 การเติม -ing แบบปกติ (Regular +ing)",
+      "html": "<p>คำกริยาส่วนใหญ่ในภาษาอังกฤษ เวลาจะเปลี่ยนเป็นรูป <b>Ving</b> (กำลังทำ) แค่<b>เติม -ing ต่อท้ายคำเดิมได้เลย</b> ไม่ต้องเปลี่ยนตัวสะกดใด ๆ ทั้งสิ้น</p><table><tr><th>คำกริยาเดิม</th><th>เติม -ing</th></tr><tr><td>play (เล่น)</td><td>playing</td></tr><tr><td>read (อ่าน)</td><td>reading</td></tr><tr><td>go (ไป)</td><td>going</td></tr><tr><td>watch (ดู)</td><td>watching</td></tr><tr><td>listen (ฟัง)</td><td>listening</td></tr></table><p>กฎนี้เป็นกฎพื้นฐานที่สุด ถ้าคำกริยาไม่เข้าเงื่อนไขพิเศษข้อใดเลย (ไม่ได้ลงท้ายด้วย e ที่ไม่ออกเสียง และไม่ใช่คำพยางค์เดียวแบบ CVC) ให้ใช้กฎนี้ได้เลย</p>"
+    },
+    {
+      "heading": "✂️ ตัด e ทิ้งก่อนเติม -ing (Silent-e Drop)",
+      "html": "<p>ถ้าคำกริยาลงท้ายด้วยตัว <b>e ที่ไม่ออกเสียง</b> (silent e) เช่น make, write, dance, hope ให้<b>ตัดตัว e ตัวสุดท้ายทิ้งก่อน แล้วค่อยเติม -ing</b></p><table><tr><th>คำกริยาเดิม</th><th>ตัด e ออก</th><th>เติม -ing</th></tr><tr><td>make (ทำ)</td><td>mak-</td><td>making</td></tr><tr><td>write (เขียน)</td><td>writ-</td><td>writing</td></tr><tr><td>dance (เต้น)</td><td>danc-</td><td>dancing</td></tr><tr><td>hope (หวัง)</td><td>hop-</td><td>hoping</td></tr><tr><td>ride (ขี่)</td><td>rid-</td><td>riding</td></tr></table><p><b>ข้อสังเกต:</b> ถ้าเติม -ing ต่อจาก e ตรง ๆ โดยไม่ตัดทิ้ง จะได้คำที่สะกดผิด เช่น <b>makeing</b> (ผิด) ต้องเป็น <b>making</b> (ถูก)</p>"
+    },
+    {
+      "heading": "👯 เบิ้ลพยัญชนะตัวท้าย (CVC Doubling Rule) และข้อยกเว้น w, x, y",
+      "html": "<p>คำกริยา<b>พยางค์เดียว</b>ที่สะกดแบบ <b>C-V-C</b> (พยัญชนะ-สระเดี่ยว-พยัญชนะ) คือ ลงท้ายด้วยสระตัวเดียวเสียงสั้น ตามด้วยพยัญชนะตัวเดียว เช่น run, sit, swim, stop ให้<b>เบิ้ล (ซ้ำ) พยัญชนะตัวสุดท้ายก่อนเติม -ing</b></p><table><tr><th>คำกริยาเดิม</th><th>เบิ้ลตัวท้าย</th><th>เติม -ing</th></tr><tr><td>run (วิ่ง)</td><td>runn-</td><td>running</td></tr><tr><td>sit (นั่ง)</td><td>sitt-</td><td>sitting</td></tr><tr><td>swim (ว่ายน้ำ)</td><td>swimm-</td><td>swimming</td></tr><tr><td>stop (หยุด)</td><td>stopp-</td><td>stopping</td></tr></table><p><b>⚠️ ข้อยกเว้นสำคัญ:</b> ถ้าคำกริยาลงท้ายด้วยตัวอักษร <b>w, x, y</b> ห้ามเบิ้ลตัวสุดท้ายเด็ดขาด ให้เติม -ing ต่อท้ายแบบปกติเลย</p><table><tr><th>คำกริยาเดิม</th><th>เติม -ing (ไม่เบิ้ล)</th><th>เหตุผล</th></tr><tr><td>play (เล่น)</td><td>playing</td><td>ลงท้าย y</td></tr><tr><td>fix (ซ่อม)</td><td>fixing</td><td>ลงท้าย x</td></tr><tr><td>snow (หิมะตก)</td><td>snowing</td><td>ลงท้าย w</td></tr></table>"
+    },
+    {
+      "heading": "⏰ Present Continuous: am/is/are + Ving ใช้ทำอะไร",
+      "html": "<p>เมื่อเปลี่ยนคำกริยาเป็นรูป Ving แล้ว เรานำไปใช้ในโครงสร้าง <b>Present Continuous</b> คือ <b>am/is/are + Ving</b> เพื่อบอกว่า...</p><table><tr><th>โครงสร้าง</th><th>ใช้บอก</th><th>ตัวอย่าง</th></tr><tr><td>I + am + Ving</td><td>สิ่งที่กำลังเกิดขึ้น \"ตอนนี้ เดี๋ยวนี้\"</td><td>I am reading a book now. (ฉันกำลังอ่านหนังสืออยู่ตอนนี้)</td></tr><tr><td>He/She/It + is + Ving</td><td>สิ่งที่กำลังเกิดขึ้น หรือสถานการณ์ชั่วคราว</td><td>Look! She is running. (ดูสิ! เธอกำลังวิ่งอยู่)</td></tr><tr><td>You/We/They + are + Ving</td><td>สิ่งที่กำลังเกิดขึ้น หรือสถานการณ์ชั่วคราว</td><td>They are studying English now. (พวกเขากำลังเรียนภาษาอังกฤษอยู่ตอนนี้)</td></tr></table><p>สังเกตคำสัญญาณที่มักเจอในประโยค Present Continuous: <b>now, right now, at the moment, Look!, Listen!</b></p>"
+    },
+    {
+      "heading": "⚖️ Present Continuous vs Present Simple",
+      "html": "<p>อย่าสับสนกับ <b>Present Simple</b> (กริยาช่องที่ 1 เฉย ๆ หรือเติม s/es) ซึ่งใช้บอกสิ่งที่ทำเป็นประจำหรือความจริงทั่วไป ส่วน <b>Present Continuous</b> ใช้บอกสิ่งที่กำลังทำอยู่ในขณะพูดเท่านั้น</p><table><tr><th>ประเภท</th><th>ตัวอย่าง</th><th>ความหมาย</th></tr><tr><td>Present Simple</td><td>I read books every day.</td><td>ฉันอ่านหนังสือทุกวัน (เป็นกิจวัตร)</td></tr><tr><td>Present Continuous</td><td>I am reading a book now.</td><td>ฉันกำลังอ่านหนังสืออยู่ตอนนี้ (ขณะพูด)</td></tr></table>"
+    },
+    {
+      "heading": "🎭 คำกริยาพิเศษสุดท้าย: -ie เปลี่ยนเป็น y (die, lie, tie)",
+      "html": "<p>มีคำกริยาพิเศษ 3 คำที่ลงท้ายด้วย <b>-ie</b> เวลาเติม -ing จะ<b>เปลี่ยน ie เป็น y ก่อน แล้วค่อยเติม -ing</b> (เพราะถ้าเติม -ing ต่อจาก ie ตรง ๆ จะกลายเป็น \"iing\" ซึ่งไม่มีการสะกดแบบนี้ในภาษาอังกฤษ)</p><table><tr><th>คำกริยาเดิม</th><th>เปลี่ยน ie เป็น y</th><th>เติม -ing</th></tr><tr><td>die (ตาย)</td><td>dy-</td><td>dying</td></tr><tr><td>lie (นอน/โกหก)</td><td>ly-</td><td>lying</td></tr><tr><td>tie (ผูก)</td><td>ty-</td><td>tying</td></tr></table><p><b>⚠️ ระวังสับสน:</b> dying (กำลังจะตาย จาก die) ต่างจาก <b>dyeing</b> (กำลังย้อมสี จาก dye) และ lying (กำลังนอน/โกหก จาก lie) ต่างจาก <b>laying</b> (กำลังวาง จาก lay) — คำเหล่านี้ออกเสียงคล้ายกันแต่สะกดและความหมายต่างกัน ข้อสอบชอบเอามาหลอก!</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["กฎการเติม -ing", "วิธีทำ", "ตัวอย่าง"],
+    "rows": [
+      ["1. ปกติ (Regular)", "เติม -ing ต่อท้ายได้เลย", "play &rarr; playing"],
+      ["2. ตัด e ทิ้ง (Silent-e)", "ตัด e ตัวท้ายทิ้ง แล้วเติม -ing", "make &rarr; making"],
+      ["3. เบิ้ลตัวท้าย (CVC)", "เบิ้ลพยัญชนะตัวสุดท้าย แล้วเติม -ing (ยกเว้นลงท้าย w, x, y)", "run &rarr; running"],
+      ["4. -ie &rarr; y", "เปลี่ยน ie เป็น y แล้วเติม -ing", "die &rarr; dying"],
+      ["5. เน้นเสียงท้าย (2 พยางค์)", "เบิ้ลพยัญชนะตัวสุดท้ายเหมือน CVC (ถ้าเน้นเสียงพยางค์ท้าย)", "begin &rarr; beginning"]
+    ]
+  },
+  "tips": [
+    "เห็น e เงียบ ๆ ท้ายคำ อย่ามัวรอช้า ต้องตัดทิ้งก่อนเสมอ แล้วค่อยเติม ing — 'e หาย ing มา'",
+    "คำสั้นพยางค์เดียว สระเดียวเสียงสั้น พยัญชนะปิดท้าย ให้เบิ้ลตัวท้ายก่อนเติม ing เหมือนเสียงกระแทกซ้ำ (run-n-ing, sit-t-ing) แต่ถ้าจบด้วย w, x, y ห้ามเบิ้ลเด็ดขาด!",
+    "จำ 3 คำพิเศษ ตาย-นอน-ผูก (die-lie-tie) ต้องตัด ie ทิ้งเปลี่ยนเป็น y แล้วค่อยเติม ing: dying, lying, tying — ท่องคล้องจอง 'ตาย นอน ผูก ต้องใช้ y'"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เปลี่ยนคำกริยาเป็นรูป Ving — กฎปกติและกฎตัด e (8 ข้อ)",
+        "instructions": "เติมรูป Ving ของคำกริยาต่อไปนี้ให้ถูกต้อง",
+        "items": [
+          "play",
+          "watch",
+          "read",
+          "go",
+          "make",
+          "write",
+          "dance",
+          "hope"
+        ],
+        "answers": ["playing", "watching", "reading", "going", "making", "writing", "dancing", "hoping"],
+        "reasons": [
+          "คำกริยาปกติ เติม -ing ต่อท้ายได้เลย",
+          "คำกริยาปกติ เติม -ing ต่อท้ายได้เลย",
+          "คำกริยาปกติ เติม -ing ต่อท้ายได้เลย",
+          "คำกริยาปกติ เติม -ing ต่อท้ายได้เลย",
+          "ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing",
+          "ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing",
+          "ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing",
+          "ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing (ระวังสับสนกับ hopping จาก hop)"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เปลี่ยนคำกริยาเป็นรูป Ving — กฎเบิ้ลตัวท้าย (CVC) และข้อยกเว้น w/x/y (8 ข้อ)",
+        "instructions": "เติมรูป Ving ของคำกริยาต่อไปนี้ โดยระวังกฎการเบิ้ลตัวสะกด และข้อยกเว้นคำที่ลงท้ายด้วย w, x, y",
+        "items": [
+          "run",
+          "sit",
+          "swim",
+          "stop",
+          "plan",
+          "fix",
+          "snow",
+          "stay"
+        ],
+        "answers": ["running", "sitting", "swimming", "stopping", "planning", "fixing", "snowing", "staying"],
+        "reasons": [
+          "พยางค์เดียว สะกดแบบ CVC (r-u-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing",
+          "พยางค์เดียว สะกดแบบ CVC (s-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing",
+          "พยางค์เดียว สะกดแบบ CVC (s-w-i-m) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing",
+          "พยางค์เดียว สะกดแบบ CVC (s-t-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing",
+          "พยางค์เดียว สะกดแบบ CVC (p-l-a-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing",
+          "ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ",
+          "ลงท้ายด้วย w ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ",
+          "ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม Present Continuous ในประโยค (8 ข้อ)",
+        "instructions": "เติมกริยาในวงเล็บให้อยู่ในรูป Present Continuous (am/is/are + Ving) ให้ถูกต้อง",
+        "items": [
+          "I ___ (write) a letter now.",
+          "She ___ (run) in the park now.",
+          "They ___ (play) football now.",
+          "He ___ (sit) on the chair right now.",
+          "We ___ (watch) TV at the moment.",
+          "The baby ___ (lie) on the bed now.",
+          "I ___ (make) a cake now.",
+          "Look! It ___ (snow) outside."
+        ],
+        "answers": ["am writing", "is running", "are playing", "is sitting", "are watching", "is lying", "am making", "is snowing"],
+        "reasons": [
+          "ประธาน I ใช้ am + Ving และ write ต้องตัด e ทิ้งก่อนเติม -ing",
+          "ประธาน She ใช้ is + Ving และ run เป็นคำ CVC ต้องเบิ้ลตัวสะกด",
+          "ประธาน They ใช้ are + Ving และ play ลงท้าย y ห้ามเบิ้ล เติม -ing ตามปกติ",
+          "ประธาน He ใช้ is + Ving และ sit เป็นคำ CVC ต้องเบิ้ลตัวสะกด",
+          "ประธาน We ใช้ are + Ving และ watch เป็นคำกริยาปกติ เติม -ing ได้เลย",
+          "ประธาน The baby ใช้ is + Ving และ lie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing",
+          "ประธาน I ใช้ am + Ving และ make ต้องตัด e ทิ้งก่อนเติม -ing",
+          "ประธาน It ใช้ is + Ving และ snow ลงท้าย w ห้ามเบิ้ล เติม -ing ตามปกติ"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "📺", "tag": "กฎปกติ: watch→watching", "difficulty": 1, "q": "I am ___ TV now.", "choices": ["watchting", "wachting", "watching", "watchig"], "answer": 2, "explain": "watch เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "📖", "tag": "กฎปกติ: read→reading", "difficulty": 1, "q": "She is ___ a book.", "choices": ["readding", "reading", "raeding", "readng"], "answer": 1, "explain": "read เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🚶", "tag": "กฎปกติ: go→going", "difficulty": 1, "q": "They are ___ to school.", "choices": ["goeing", "gooing", "goign", "going"], "answer": 3, "explain": "go เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🎧", "tag": "กฎปกติ: listen→listening", "difficulty": 1, "q": "He is ___ to music.", "choices": ["listening", "listenning", "listning", "listeing"], "answer": 0, "explain": "listen เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "💼", "tag": "กฎปกติ: work→working", "difficulty": 1, "q": "We are ___ hard today.", "choices": ["workking", "workin", "working", "woking"], "answer": 2, "explain": "work เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🍳", "tag": "กฎปกติ: cook→cooking", "difficulty": 1, "q": "My mom is ___ dinner now.", "choices": ["cookking", "cooking", "coocking", "cookin"], "answer": 1, "explain": "cook เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🎤", "tag": "กฎปกติ: sing→singing", "difficulty": 1, "q": "I am ___ a song.", "choices": ["singging", "singin", "sining", "singing"], "answer": 3, "explain": "sing เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "📱", "tag": "กฎปกติ: talk→talking", "difficulty": 1, "q": "They are ___ on the phone.", "choices": ["talking", "talkking", "talkin", "takling"], "answer": 0, "explain": "talk เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🚶‍♂️", "tag": "กฎปกติ: walk→walking", "difficulty": 1, "q": "He is ___ to the park.", "choices": ["walkking", "walkin", "walking", "waklking"], "answer": 2, "explain": "walk เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🤸", "tag": "กฎปกติ: jump→jumping", "difficulty": 1, "q": "The kids are ___ on the bed.", "choices": ["jumpping", "jumping", "jumpin", "jummping"], "answer": 1, "explain": "jump เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🧹", "tag": "กฎปกติ: clean→cleaning", "difficulty": 1, "q": "She is ___ her room.", "choices": ["cleanning", "cleaing", "cleannig", "cleaning"], "answer": 3, "explain": "clean เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🧼", "tag": "กฎปกติ: wash→washing", "difficulty": 1, "q": "I am ___ the dishes.", "choices": ["washing", "washhing", "washig", "wasing"], "answer": 0, "explain": "wash เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "😴", "tag": "กฎปกติ: sleep→sleeping", "difficulty": 1, "q": "The baby is ___ now.", "choices": ["sleepping", "sleepin", "sleeping", "sleeing"], "answer": 2, "explain": "sleep เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "🍽️", "tag": "กฎปกติ: eat→eating", "difficulty": 1, "q": "We are ___ lunch together.", "choices": ["eatting", "eating", "eaing", "eatng"], "answer": 1, "explain": "eat เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย ไม่ต้องเปลี่ยนตัวสะกด" },
+    { "emoji": "📚", "tag": "กฎปกติ: study→studying", "difficulty": 1, "q": "He is ___ English for the test right now.", "choices": ["studying", "studing", "studyying", "studiing"], "answer": 0, "explain": "study เป็นคำกริยาปกติ เติม -ing ต่อท้ายได้เลย (ไม่เปลี่ยน y เป็น i แบบการเติม s/es)" },
+
+    { "emoji": "✍️", "tag": "Silent-e: write→writing", "difficulty": 2, "q": "I am ___ a letter to my friend.", "choices": ["writeing", "writing", "writting", "writeng"], "answer": 1, "explain": "write ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น writing" },
+    { "emoji": "🏃", "tag": "CVC Double: run→running", "difficulty": 2, "q": "She is ___ very fast in the race.", "choices": ["runing", "runnning", "running", "runnig"], "answer": 2, "explain": "run เป็นคำพยางค์เดียวแบบ CVC (r-u-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น running" },
+    { "emoji": "💃", "tag": "Silent-e: dance→dancing", "difficulty": 2, "q": "They are ___ at the party now.", "choices": ["dancing", "danceing", "dancceing", "dansing"], "answer": 0, "explain": "dance ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น dancing" },
+    { "emoji": "🤞", "tag": "Silent-e: hope→hoping", "difficulty": 2, "q": "I am ___ to see you soon.", "choices": ["hopeing", "hopping", "hopin", "hoping"], "answer": 3, "explain": "hope ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น hoping (ระวังสับสนกับ hopping จาก hop)" },
+    { "emoji": "🪑", "tag": "CVC Double: sit→sitting", "difficulty": 2, "q": "He is ___ on the sofa.", "choices": ["siting", "sitting", "sittting", "sittign"], "answer": 1, "explain": "sit เป็นคำพยางค์เดียวแบบ CVC (s-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น sitting" },
+    { "emoji": "🍰", "tag": "Silent-e: make→making", "difficulty": 2, "q": "Mom is ___ a cake for my birthday.", "choices": ["makeing", "makking", "making", "makng"], "answer": 2, "explain": "make ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น making" },
+    { "emoji": "🏊", "tag": "CVC Double: swim→swimming", "difficulty": 2, "q": "We are ___ in the pool.", "choices": ["swimming", "swiming", "swimmming", "swimmign"], "answer": 0, "explain": "swim เป็นคำพยางค์เดียวแบบ CVC (s-w-i-m) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น swimming" },
+    { "emoji": "🚴", "tag": "Silent-e: ride→riding", "difficulty": 2, "q": "He is ___ his bike to school.", "choices": ["rideing", "ridding", "ridng", "riding"], "answer": 3, "explain": "ride ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น riding (ระวังสับสนกับ ridding จาก rid)" },
+    { "emoji": "🛑", "tag": "CVC Double: stop→stopping", "difficulty": 2, "q": "The car is ___ at the red light.", "choices": ["stoping", "stopping", "stoppping", "stoppign"], "answer": 1, "explain": "stop เป็นคำพยางค์เดียวแบบ CVC (s-t-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น stopping" },
+    { "emoji": "🚗", "tag": "Silent-e: come→coming", "difficulty": 2, "q": "Dad is ___ home now.", "choices": ["comeing", "comming", "coming", "comng"], "answer": 2, "explain": "come ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น coming" },
+    { "emoji": "📅", "tag": "CVC Double: plan→planning", "difficulty": 2, "q": "We are ___ a trip for next week.", "choices": ["planning", "planing", "plannning", "plannign"], "answer": 0, "explain": "plan เป็นคำพยางค์เดียวแบบ CVC (p-l-a-n) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น planning" },
+    { "emoji": "🚙", "tag": "Silent-e: drive→driving", "difficulty": 2, "q": "My uncle is ___ to Chiang Mai.", "choices": ["driveing", "drivving", "drivng", "driving"], "answer": 3, "explain": "drive ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น driving" },
+    { "emoji": "⚾", "tag": "CVC Double: hit→hitting", "difficulty": 2, "q": "He is ___ the ball hard.", "choices": ["hiting", "hitting", "hittting", "hittign"], "answer": 1, "explain": "hit เป็นคำพยางค์เดียวแบบ CVC (h-i-t) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น hitting" },
+    { "emoji": "😊", "tag": "Silent-e: smile→smiling", "difficulty": 2, "q": "The baby is ___ at everyone.", "choices": ["smileing", "smilling", "smiling", "smiing"], "answer": 2, "explain": "smile ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น smiling" },
+    { "emoji": "🛍️", "tag": "CVC Double: shop→shopping", "difficulty": 2, "q": "They are ___ at the mall today.", "choices": ["shopping", "shoping", "shoppping", "shoppign"], "answer": 0, "explain": "shop เป็นคำพยางค์เดียวแบบ CVC (s-h-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น shopping" },
+    { "emoji": "📸", "tag": "Silent-e: take→taking", "difficulty": 2, "q": "I am ___ a photo of the sunset.", "choices": ["takeing", "takking", "takng", "taking"], "answer": 3, "explain": "take ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น taking" },
+    { "emoji": "📦", "tag": "CVC Double: drop→dropping", "difficulty": 2, "q": "The leaves are ___ from the tree.", "choices": ["droping", "dropping", "droppping", "droppign"], "answer": 1, "explain": "drop เป็นคำพยางค์เดียวแบบ CVC (d-r-o-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น dropping" },
+    { "emoji": "🚪", "tag": "Silent-e: close→closing", "difficulty": 2, "q": "She is ___ the door quietly.", "choices": ["closeing", "clossing", "closing", "closng"], "answer": 2, "explain": "close ลงท้ายด้วย e ที่ไม่ออกเสียง ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น closing" },
+    { "emoji": "🤲", "tag": "CVC Double: grab→grabbing", "difficulty": 2, "q": "He is ___ a snack from the shelf.", "choices": ["grabbing", "grabing", "grabbbing", "grabbign"], "answer": 0, "explain": "grab เป็นคำพยางค์เดียวแบบ CVC (g-r-a-b) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น grabbing" },
+    { "emoji": "👏", "tag": "CVC Double: clap→clapping", "difficulty": 2, "q": "The crowd is ___ for the singer.", "choices": ["claping", "clappping", "clappign", "clapping"], "answer": 3, "explain": "clap เป็นคำพยางค์เดียวแบบ CVC (c-l-a-p) ต้องเบิ้ลตัวสะกดตัวท้ายก่อนเติม -ing กลายเป็น clapping" },
+
+    { "emoji": "⚽", "tag": "ข้อยกเว้น w/x/y: play→playing (ห้ามเบิ้ล y)", "difficulty": 3, "q": "They are ___ football in the yard.", "choices": ["playying", "playing", "plaing", "playeing"], "answer": 1, "explain": "play ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (playing ไม่ใช่ playying)" },
+    { "emoji": "🔧", "tag": "ข้อยกเว้น w/x/y: fix→fixing (ห้ามเบิ้ล x)", "difficulty": 3, "q": "He is ___ his bike now.", "choices": ["fixxing", "fixing", "fixeing", "fising"], "answer": 1, "explain": "fix ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (fixing ไม่ใช่ fixxing)" },
+    { "emoji": "❄️", "tag": "ข้อยกเว้น w/x/y: snow→snowing (ห้ามเบิ้ล w)", "difficulty": 3, "q": "Look! It is ___ outside.", "choices": ["snowwing", "snoing", "snowing", "snoweing"], "answer": 2, "explain": "snow ลงท้ายด้วย w ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (snowing ไม่ใช่ snowwing)" },
+    { "emoji": "🎨", "tag": "ข้อยกเว้น w/x/y: mix→mixing (ห้ามเบิ้ล x)", "difficulty": 3, "q": "She is ___ the paint colors.", "choices": ["mixxing", "mixeing", "mixing", "misxing"], "answer": 2, "explain": "mix ลงท้ายด้วย x ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (mixing ไม่ใช่ mixxing)" },
+    { "emoji": "🏨", "tag": "ข้อยกเว้น w/x/y: stay→staying (ห้ามเบิ้ล y)", "difficulty": 3, "q": "We are ___ at a hotel this week.", "choices": ["stayying", "staing", "stayeing", "staying"], "answer": 3, "explain": "stay ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ (staying ไม่ใช่ stayying)" },
+    { "emoji": "🥀", "tag": "คำพิเศษ -ie→y: die→dying", "difficulty": 3, "q": "The plant is ___ because of no water.", "choices": ["dieing", "dying", "diing", "dyeing"], "answer": 1, "explain": "die ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น dying ระวังสับสนกับ dyeing (จากคำว่า dye แปลว่าย้อมสี)" },
+    { "emoji": "🐱", "tag": "คำพิเศษ -ie→y: lie→lying", "difficulty": 3, "q": "The cat is ___ on the sofa all day.", "choices": ["lieing", "lying", "liing", "laying"], "answer": 1, "explain": "lie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น lying ระวังสับสนกับ laying (จากคำว่า lay แปลว่าวาง)" },
+    { "emoji": "🎀", "tag": "คำพิเศษ -ie→y: tie→tying", "difficulty": 3, "q": "She is ___ her shoelaces.", "choices": ["tieing", "tying", "tiing", "tyeing"], "answer": 1, "explain": "tie ต้องเปลี่ยน ie เป็น y ก่อนเติม -ing กลายเป็น tying" },
+    { "emoji": "🎬", "tag": "คำ 2 พยางค์เน้นเสียงท้าย CVC: begin→beginning", "difficulty": 3, "q": "The movie is ___ now.", "choices": ["begining", "beginning", "beginnning", "beginnig"], "answer": 1, "explain": "begin มี 2 พยางค์ แต่เน้นเสียงพยางค์หลัง (be-GIN) และลงท้ายแบบ CVC จึงต้องเบิ้ลตัวสะกด n ก่อนเติม -ing" },
+    { "emoji": "🔑", "tag": "คำ 2 พยางค์เน้นเสียงท้าย CVC: forget→forgetting", "difficulty": 3, "q": "I am ___ something important.", "choices": ["forgeting", "forgetting", "forgettting", "forgettign"], "answer": 1, "explain": "forget มี 2 พยางค์ แต่เน้นเสียงพยางค์หลัง (for-GET) และลงท้ายแบบ CVC จึงต้องเบิ้ลตัวสะกด t ก่อนเติม -ing" },
+    { "emoji": "💬", "tag": "Silent-e ขั้นสูง: argue→arguing", "difficulty": 3, "q": "They are ___ about the game.", "choices": ["argueing", "arguing", "arguuing", "arguign"], "answer": 1, "explain": "argue ลงท้ายด้วย e ที่ไม่ออกเสียง (แม้จะเป็น ue) ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น arguing" },
+    { "emoji": "🎉", "tag": "ข้อยกเว้น w/x/y (2 พยางค์): enjoy→enjoying", "difficulty": 3, "q": "We are ___ the party.", "choices": ["enjoyying", "enjoying", "enjoing", "enjoyeing"], "answer": 1, "explain": "enjoy มี 2 พยางค์ ลงท้ายด้วย y ซึ่งเป็นข้อยกเว้น ห้ามเบิ้ลตัวท้าย เติม -ing ตามปกติ" },
+    { "emoji": "🏃‍♀️", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She is runing in the park.", "She is running in the park.", "She are running in the park.", "She is run in the park."], "answer": 1, "explain": "running ต้องเบิ้ล n เพราะ run เป็นคำ CVC พยางค์เดียว และประธาน She ต้องใช้ is + Ving ไม่ใช่ are หรือกริยาช่องที่ 1 เฉย ๆ" },
+    { "emoji": "🥅", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["They are playying football now.", "They is playing football now.", "They are playing football now.", "They are play football now."], "answer": 2, "explain": "playing ห้ามเบิ้ล y (ข้อยกเว้น) และประธาน They ต้องใช้ are + Ving ให้ครบทั้งสองส่วน" },
+    { "emoji": "📝", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["He is writting a letter now.", "He is writeing a letter now.", "He is writing a letter now.", "He writing a letter now."], "answer": 2, "explain": "write ต้องตัด e ทิ้งก่อนเติม -ing กลายเป็น writing ไม่ใช่ writting หรือ writeing และประโยคต้องมี is อยู่หน้า Ving เสมอ" }
+  ]
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>โปรไฟล์ — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+<style>
+  .menu-item{
+    display:flex;align-items:center;gap:14px;padding:16px 4px;
+    border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item .icon{font-size:1.3rem;width:28px;text-align:center;}
+  .menu-item .arrow{margin-left:auto;color:var(--ink-muted);}
+  .name-input{
+    text-align:center;font-family:var(--font-display);font-weight:700;
+    font-size:1.2rem;border:none;background:transparent;color:var(--ink);
+    width:100%;
+  }
+  .name-input:focus{outline:none;border-bottom:2px solid var(--primary);}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <h1 class="topbar-title">👤 โปรไฟล์</h1>
+    <a href="settings.html" class="icon-btn" aria-label="ตั้งค่า">⚙️</a>
+  </header>
+
+  <section class="center mt-8 mb-16">
+    <div class="mascot-avatar mascot-avatar-lg">🐼</div>
+    <input id="nameInput" class="name-input mt-8" value="น้องมิน">
+    <div class="pill pill-star mt-8" style="display:inline-flex;">🎓 Level 4</div>
+    <div class="muted mt-8" style="font-size:.8rem;">เข้าร่วมเมื่อ 12 มิ.ย. 2569</div>
+  </section>
+
+  <section class="grid-3 mb-16">
+    <div class="card center">
+      <div style="font-size:1.5rem;">⚡</div>
+      <div style="font-weight:800;font-family:var(--font-display);">1,240</div>
+      <div class="muted" style="font-size:.7rem;">XP</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.5rem;">🔥</div>
+      <div style="font-weight:800;font-family:var(--font-display);">7</div>
+      <div class="muted" style="font-size:.7rem;">Streak</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.5rem;">⭐</div>
+      <div style="font-weight:800;font-family:var(--font-display);">23</div>
+      <div class="muted" style="font-size:.7rem;">ดาว</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <a href="course-library.html" class="menu-item">
+      <span class="icon">📚</span> บทเรียนของฉัน <span class="arrow">›</span>
+    </a>
+    <a href="achievements.html" class="menu-item">
+      <span class="icon">🏆</span> ความสำเร็จ <span class="arrow">›</span>
+    </a>
+    <a href="settings.html" class="menu-item">
+      <span class="icon">⚙️</span> ตั้งค่า <span class="arrow">›</span>
+    </a>
+    <a href="index.html" id="logoutBtn" class="menu-item" style="color:var(--danger);">
+      <span class="icon">🚪</span> ออกจากระบบ
+    </a>
+  </section>
+
+</div>
+
+<div id="bottomNav"></div>
+<script src="_tools/bottom-nav.js"></script>
+<script>
+  // Small bonus: persist the display name locally so it survives reloads,
+  // even though there's no real backend account yet.
+  var nameKey = 'ux-display-name';
+  var nameInput = document.getElementById('nameInput');
+  var saved = localStorage.getItem(nameKey);
+  if (saved) nameInput.value = saved;
+  nameInput.addEventListener('change', function () {
+    localStorage.setItem(nameKey, nameInput.value || 'น้องมิน');
+  });
+</script>
+</body>
+</html>

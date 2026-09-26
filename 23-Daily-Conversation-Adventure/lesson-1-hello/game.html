@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Daily Conversation Adventure — Lesson 1: HELLO!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_tools/game.css">
+<link rel="stylesheet" href="../../Pronunciation-System/pronunciation.css">
+<link rel="stylesheet" href="../../Game-Standards/feedback-standard.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้า Daily Conversation Adventure</a>
+
+  <!-- ===== 1. Intro ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>💬 Daily Conversation Adventure</h1>
+      <div class="sub">Lesson 1 — HELLO! (ทักทายเพื่อนใหม่)</div>
+    </div>
+    <div class="game-card">
+      <div id="intro-mascot"></div>
+      <p class="story-text">
+        มาเรียนรู้การทักทายเพื่อนใหม่เป็นภาษาอังกฤษกันเถอะ! ดูการ์ตูน ฟังเสียง
+        พูดตาม แล้วลองเล่นเกมสนุก ๆ ก่อนไปท้าทาย Boss Quiz กัน 🚀
+      </p>
+      <p style="font-weight:700;color:var(--c5);margin-bottom:4px;">🧑‍🤝‍🧑 มาทำความรู้จักตัวละครกันก่อน</p>
+      <div id="cast-row" class="cast-row"></div>
+      <button id="startBtn" class="btn btn-primary" style="margin-top:18px;">เริ่มเรียน 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== 2. Scenes (4 dialogue scenes) ===== -->
+  <div id="screen-scenes" class="screen hidden">
+    <div class="stage-progress">
+      <span>ฉาก (Scene)</span>
+      <span id="scene-dots">1 / 4</span>
+    </div>
+    <div class="stage-bar"><div id="scene-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="scene-location" class="scene-location"></div>
+      <div id="scene-illustration" class="scene-illustration"></div>
+      <div id="scene-lines"></div>
+      <div class="carousel-nav">
+        <button id="scenePrevBtn" class="btn btn-secondary">◀ ย้อนกลับ</button>
+        <button id="sceneNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. Vocabulary ===== -->
+  <div id="screen-vocab" class="screen hidden">
+    <div class="banner">
+      <h1>🧩 คลังคำศัพท์</h1>
+      <div class="sub">Vocabulary — กดปุ่ม 🔊 เพื่อฟังเสียง และ 🗣️ เพื่อฝึกพูดตาม</div>
+    </div>
+    <div class="game-card">
+      <div id="vocab-grid" class="vocab-grid"></div>
+      <button id="toMiniBtn" class="btn btn-primary" style="margin-top:20px;">ไปฝึกซ้อม ➡️</button>
+    </div>
+  </div>
+
+  <!-- ===== 4. Mini Practice (ungraded) ===== -->
+  <div id="screen-mini" class="screen hidden">
+    <div class="stage-progress">
+      <span>ฝึกซ้อม (Mini Practice)</span>
+      <span id="mini-progress-label">1 / 6</span>
+    </div>
+    <div class="stage-bar"><div id="mini-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <span class="mini-badge">ฝึกซ้อม ไม่มีคะแนน</span>
+      <div id="mini-content"></div>
+      <div id="mini-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 5. Game 1 — Choose the Correct Reply ===== -->
+  <div id="screen-game1" class="screen hidden">
+    <div class="stage-progress">
+      <span>🎮 เกม 1/3 — เลือกคำตอบที่ถูกต้อง</span>
+      <span id="g1-progress-label">1 / 4</span>
+    </div>
+    <div class="stage-bar"><div id="g1-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g1-content"></div>
+      <div id="g1-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 6. Game 2 — Picture Word Match ===== -->
+  <div id="screen-game2" class="screen hidden">
+    <div class="stage-progress">
+      <span>🎮 เกม 2/3 — จับคู่รูปกับคำศัพท์</span>
+      <span id="g2-progress-label">0 / 8 คู่</span>
+    </div>
+    <div class="stage-bar"><div id="g2-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g2-grid" class="match-grid"></div>
+      <div id="g2-mistakes" class="mistake-counter">พลาด 0 ครั้ง</div>
+    </div>
+  </div>
+
+  <!-- ===== 7. Game 3 — Build the Sentence ===== -->
+  <div id="screen-game3" class="screen hidden">
+    <div class="stage-progress">
+      <span>🎮 เกม 3/3 — เรียงประโยค</span>
+      <span id="g3-progress-label">1 / 6</span>
+    </div>
+    <div class="stage-bar"><div id="g3-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g3-content"></div>
+      <div id="g3-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 8. Boss Quiz ===== -->
+  <div id="screen-boss" class="screen hidden">
+    <div class="stage-progress">
+      <span>🏆 Boss Quiz</span>
+      <span id="boss-progress-label">ข้อ 1 / 10</span>
+    </div>
+    <div class="stage-bar"><div id="boss-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="boss-content"></div>
+      <div id="boss-feedback" class="feedback-line"></div>
+      <div id="boss-explain" class="explain-line hidden"></div>
+    </div>
+  </div>
+
+  <!-- ===== 9. Result ===== -->
+  <div id="screen-result" class="screen hidden">
+    <div class="banner">
+      <h1>🎉 จบ Lesson 1 แล้ว!</h1>
+      <div class="sub">Daily Conversation Adventure — HELLO!</div>
+    </div>
+    <div class="game-card">
+      <div id="result-mascot"></div>
+      <div id="result-stars-extra" class="stars-display"></div>
+      <div id="result-score" class="result-score">0 / 10 คะแนน</div>
+      <div id="result-standard"></div>
+      <a href="../index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="../_tools/conversation-data.js"></script>
+<script src="../_tools/mascot.js"></script>
+<script src="../_tools/drag-drop.js"></script>
+<script src="../_tools/game-audio.js"></script>
+<script src="../../Pronunciation-System/pronunciation.js"></script>
+<script src="../../Game-Standards/feedback-standard.js"></script>
+<script src="../_tools/game-engine.js"></script>
+</body>
+</html>

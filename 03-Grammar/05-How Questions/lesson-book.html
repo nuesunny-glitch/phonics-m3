@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: How Questions — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 64px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 29px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 22px 28px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0; }
+.meaning-box { border-radius: 16px; padding: 18px; text-align: center; }
+.meaning-box .word { font-size: 32px; font-weight: 800; margin-bottom: 5px; }
+.meaning-box .ex { font-size: 16.5px; margin-top: 10px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 8px 10px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 20px 22px; margin: 18px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 16px; padding: 5px 14px; border-radius: 999px; margin-bottom: 10px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 8px 0 0; padding-left: 24px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.flash-card { border-radius: 14px; padding: 16px 12px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 42px; }
+.flash-card .fw { font-weight: 700; font-size: 17px; margin-top: 6px; }
+.flash-card .ft { font-size: 15.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 18px 22px; margin: 16px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 17px; margin-top: 8px; }
+.pattern-box .pex .th { color: #667; font-size: 15.5px; }
+
+.dialogue-wrap { margin: 18px 0 26px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 10px; font-size: 18.5px; }
+.bubble { max-width: 78%; padding: 12px 18px; border-radius: 16px; margin: 8px 0; font-size: 18px; }
+.bubble .th { font-size: 15.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 15.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 16px 0; }
+.tip-checklist li { display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:17.5px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:30px; height:30px; min-width:30px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:16px 18px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 10px; font-size:17px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { display:block; max-width:100%; overflow-x:auto; width:100%; border-collapse: collapse; font-size:15.5px; -webkit-overflow-scrolling: touch; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:6px 8px; }
+.cheat-box ul { margin:0; padding-left:22px; font-size:15.5px; }
+.cheat-box li { margin-bottom:6px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:16px 20px; margin-bottom:16px; }
+.teacher-note-box h4 { margin:0 0 8px; color:#b3261e; font-size:17.5px; }
+.teacher-note-box ul { margin:0; padding-left:24px; font-size:16.5px; }
+.teacher-note-box li { margin-bottom:6px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:16px 20px; margin-bottom:14px; font-size:17px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 38px 24px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 34px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:27px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:12px; font-size:17px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 26px 28px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:52px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+.toc { list-style: none; padding:0; margin: 14px 0; columns: 2; column-gap: 26px; }
+.toc li { font-size: 16.5px; padding: 7px 0; border-bottom: 1px dashed #dde2ee; }
+.toc .n { color:#2952e3; font-weight:700; margin-right:6px; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">🤔 ❓ 💰 📏 🚌</div>
+    <h1 class="cover-title-en">How Questions</h1>
+    <div class="cover-title-th">คำถามขึ้นต้นด้วย How (How much / How many / How often / How long / How far / How old)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 เล่มที่ 5 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกความหมายและใช้ How + is/am/are ถามความเป็นอยู่หรือสภาพของคน สิ่งของ และอากาศได้ถูกต้อง</li><li>ใช้ How ร่วมกับคำคุณศัพท์ (How old/tall/far/long/often ฯลฯ) ถามข้อมูลเฉพาะเจาะจงได้ถูกต้อง</li><li>แยกแยะคำนามนับได้กับนับไม่ได้ เพื่อเลือกใช้ How much หรือ How many ได้ถูกต้อง รวมถึงคำนามที่ต้องระวังเป็นพิเศษ เช่น money, rice, homework</li><li>ใช้ How + do/does/did ถามวิธีการหรือการเดินทางได้ถูกต้อง</li><li>วิเคราะห์และแก้ไขประโยคคำถาม How ที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อยเรื่อง How much/How many</li></ul>
+    </div>
+    <div class="cover-footer">Lesson 05 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>🤔 How Questions คืออะไร?</h1><div class="eng">What are How Questions?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">How แปลว่า "อย่างไร" แต่ How ไม่ได้ถามแค่แบบเดียว มันใช้ถามได้หลายเรื่องมาก ขึ้นอยู่กับคำที่ตามมา — ตั้งแต่ถามความรู้สึก ถามลักษณะ/ปริมาณ ถามจำนวน ไปจนถึงถามวิธีการ ลองดูตัวอย่างด้านล่างนี้ก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">อาการ</div>ถามความเป็นอยู่<div class="ex">How are you?<br>(คุณเป็นอย่างไรบ้าง)</div></div>
+    <div class="meaning-box mb2"><div class="word">ลักษณะ</div>ถามอายุ/ความสูง/ระยะทาง<div class="ex">How old are you?<br>(คุณอายุเท่าไหร่)</div></div>
+    <div class="meaning-box mb3"><div class="word">จำนวน</div>ถามปริมาณ/ราคา<div class="ex">How much is this?<br>(นี่ราคาเท่าไหร่)</div></div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตไหมว่าทุกประโยคขึ้นต้นด้วย <b>How</b> เหมือนกัน แต่ความหมายต่างกันมากตามคำที่ตามมา — นี่คือเหตุผลที่ต้องสังเกต "คำหลัง How" ให้ดีก่อนแปลหรือตอบคำถาม</p>
+  <div class="explain-block">
+    <h2>🧩 ใช้เมื่อไหร่บ้าง?</h2>
+    <table>
+      <tr><th>รูปแบบ</th><th>ใช้เมื่อ</th><th>ตัวอย่าง</th></tr>
+      <tr><td>How + is/am/are</td><td>ถามความเป็นอยู่/สภาพ</td><td>How is the weather?</td></tr>
+      <tr><td>How + adjective</td><td>ถามอายุ/ความสูง/ระยะทาง/เวลา/ความถี่</td><td>How far is it?</td></tr>
+      <tr><td>How much</td><td>ถามปริมาณนามนับไม่ได้ หรือราคา</td><td>How much is this bag?</td></tr>
+      <tr><td>How many</td><td>ถามจำนวนนามนับได้</td><td>How many books?</td></tr>
+      <tr><td>How + do/does/did</td><td>ถามวิธีการ/การเดินทาง</td><td>How do you go to school?</td></tr>
+    </table>
+  </div>
+  <div class="explain-block">
+    <h2>✏️ ตัวอย่างง่าย ๆ</h2>
+    <table>
+      <tr><th>ประโยค</th><th>คำแปล</th></tr>
+      <tr><td>How are you today?</td><td>วันนี้คุณเป็นอย่างไรบ้าง</td></tr>
+      <tr><td>How old is your brother?</td><td>น้องชายคุณอายุเท่าไหร่</td></tr>
+      <tr><td>How much is this shirt?</td><td>เสื้อตัวนี้ราคาเท่าไหร่</td></tr>
+      <tr><td>How many students are there?</td><td>มีนักเรียนกี่คน</td></tr>
+      <tr><td>How do you go to school?</td><td>คุณไปโรงเรียนอย่างไร</td></tr>
+      <tr><td>How often do you exercise?</td><td>คุณออกกำลังกายบ่อยแค่ไหน</td></tr>
+    </table>
+  </div>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">How + is/am/are — ถามความเป็นอยู่หรือสภาพ</div>
+    <p style="margin:6px 0;">ใช้ทักทายหรือถามสภาพของคน สิ่งของ หรืออากาศ ไม่ได้ถามจำนวนหรือปริมาณเลย</p>
+    <ul><li>How are you? (คุณเป็นอย่างไรบ้าง)</li><li>How is the weather? (อากาศเป็นอย่างไรบ้าง)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">How + adjective — ถามข้อมูลเฉพาะเจาะจง</div>
+    <p style="margin:6px 0;">เติมคำคุณศัพท์ต่อท้าย How เพื่อถามเรื่องเฉพาะ เช่น อายุ ความสูง ระยะทาง ระยะเวลา ความถี่</p>
+    <ul><li>How old are you? (คุณอายุเท่าไหร่)</li><li>How often do you exercise? (คุณออกกำลังกายบ่อยแค่ไหน)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">How much (นับไม่ได้/ราคา) vs How many (นับได้)</div>
+    <p style="margin:6px 0;">How much ใช้กับนามนับไม่ได้หรือถามราคา ส่วน How many ใช้กับนามนับได้ที่ต้องเป็นรูปพหูพจน์เสมอ</p>
+    <ul><li>How much water do you drink? (คุณดื่มน้ำเท่าไหร่)</li><li>How many books do you have? (คุณมีหนังสือกี่เล่ม)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">How + do/does/did — ถามวิธีการ</div>
+    <p style="margin:6px 0;">ใช้ถามวิธีการทำสิ่งใดสิ่งหนึ่ง หรือถามว่าเดินทางด้วยวิธีใด โครงสร้างเหมือนประโยคคำถามธรรมดา</p>
+    <ul><li>How do you go to school? (คุณไปโรงเรียนอย่างไร)</li><li>How did you get here? (คุณมาถึงที่นี่ได้อย่างไร)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>How-question type</th><th>Example</th><th>ใช้กับ</th></tr>
+      <tr><td><b>How + is/am/are</b></td><td>How are you?</td><td>สภาพ/ความเป็นอยู่</td></tr><tr><td><b>How + adjective</b></td><td>How old are you?</td><td>อายุ/ความสูง/ระยะทาง/เวลา/ความถี่</td></tr><tr><td><b>How much + นับไม่ได้/ราคา</b></td><td>How much is this bag?</td><td>ปริมาณนามนับไม่ได้ หรือราคา</td></tr><tr><td><b>How many + นับได้ (พหูพจน์)</b></td><td>How many books do you have?</td><td>จำนวนนามนับได้</td></tr><tr><td><b>How + do/does/did</b></td><td>How do you go to school?</td><td>วิธีการ/การเดินทาง</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">How much = นับไม่ได้</div><p>How much ใช้กับของที่นับเป็นชิ้นไม่ได้ เช่น เงิน น้ำ ข้าว — จำคล้องจอง "much ไม่มี s เหมือนเงิน น้ำ ข้าว ที่นับไม่ได้"</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">How many = นับได้</div><p>How many ใช้กับของที่นับเป็นชิ้นได้ เช่น คน หนังสือ ต้องเติม s เสมอ — จำว่า "many มี s เหมือนนามพหูพจน์"</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">คาถา "5 ตัวร้ายนับไม่ได้"</div><p>ท่องจำกลุ่มคำที่ดูเหมือนนับได้แต่จริง ๆ นับไม่ได้: <b>money, rice, homework, information, luggage</b> — "เงิน ข้าว การบ้าน ข้อมูล กระเป๋า" ห้ามเติม s เด็ดขาด!</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">คำคล้องจอง How + adjective</div><p>ท่องจังหวะ "How OLD is your age, How TALL is your height, How FAR is the way, How LONG through the day, How OFTEN every week!" ช่วยจำคู่คำถามได้แม่นขึ้นมาก</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำ</th><th>สัทอักษร (IPA)</th><th>เสียงอ่านแบบไทย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>how</b></td><td>/haʊ/</td><td>ฮาว</td><td>How are you? (ฮาว อาร์ ยู)</td></tr>
+      <tr><td><b>much</b></td><td>/mʌtʃ/</td><td>มัช</td><td>How much is it? (ฮาว มัช อิส อิท)</td></tr>
+      <tr><td><b>many</b></td><td>/ˈmɛni/</td><td>เมนี</td><td>How many books? (ฮาว เมนี บุ๊คส์)</td></tr>
+      <tr><td><b>often</b></td><td>/ˈɒfən/ หรือ /ˈɒftən/</td><td>ออฟเฟิน หรือ อ็อฟเทิน</td><td>How often do you go? (ฮาว ออฟเฟิน ดู ยู โก)</td></tr>
+      <tr><td><b>far</b></td><td>/fɑːr/</td><td>ฟาร์</td><td>How far is it? (ฮาว ฟาร์ อิส อิท)</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: คำว่า often มีคนพูดได้สองแบบ บางคนออกเสียง t (อ็อฟเทิน) บางคนไม่ออกเสียง t (ออฟเฟิน) ทั้งสองแบบถูกต้อง เลือกแบบไหนก็ได้ให้ถนัดปาก!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้ใช้บ่อยที่สุดเวลาแต่งประโยคหรือตอบคำถามกับ How — แบ่งเป็น 3 หมวด: ความถี่, เงิน/ราคา, และระยะทาง/เวลา</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">⭐</div><div class="fw">always</div><div class="ft">เสมอ</div></div><div class="flash-card"><div class="fe">🔁</div><div class="fw">often</div><div class="ft">บ่อย ๆ</div></div><div class="flash-card"><div class="fe">🤏</div><div class="fw">sometimes</div><div class="ft">บางครั้ง</div></div><div class="flash-card"><div class="fe">🚫</div><div class="fw">never</div><div class="ft">ไม่เคย</div></div><div class="flash-card"><div class="fe">💵</div><div class="fw">money</div><div class="ft">เงิน</div></div><div class="flash-card"><div class="fe">🏷️</div><div class="fw">price</div><div class="ft">ราคา</div></div><div class="flash-card"><div class="fe">💰</div><div class="fw">baht</div><div class="ft">บาท</div></div><div class="flash-card"><div class="fe">📏</div><div class="fw">kilometer</div><div class="ft">กิโลเมตร</div></div><div class="flash-card"><div class="fe">📐</div><div class="fw">meter</div><div class="ft">เมตร</div></div><div class="flash-card"><div class="fe">⏱️</div><div class="fw">minute</div><div class="ft">นาที</div></div><div class="flash-card"><div class="fe">🕐</div><div class="fw">hour</div><div class="ft">ชั่วโมง</div></div><div class="flash-card"><div class="fe">📅</div><div class="fw">week</div><div class="ft">สัปดาห์</div></div><div class="flash-card"><div class="fe">🎂</div><div class="fw">age</div><div class="ft">อายุ</div></div><div class="flash-card"><div class="fe">📏</div><div class="fw">height</div><div class="ft">ความสูง</div></div><div class="flash-card"><div class="fe">🚌</div><div class="fw">distance</div><div class="ft">ระยะทาง</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">How + adjective + is/are + Subject?</div>
+    <div class="pex">How old is your sister? <span class="th">(น้องสาวคุณอายุเท่าไหร่)</span></div>
+    <div class="pex">How far is it to school? <span class="th">(จากที่นี่ไปโรงเรียนไกลแค่ไหน)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">How much/many + noun + do/does + Subject + have?</div>
+    <div class="pex">How much money do you have? <span class="th">(คุณมีเงินเท่าไหร่)</span></div>
+    <div class="pex">How many books do you have? <span class="th">(คุณมีหนังสือกี่เล่ม)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">How often + do/does + Subject + verb?</div>
+    <div class="pex">How often do you play football? <span class="th">(คุณเล่นฟุตบอลบ่อยแค่ไหน)</span></div>
+    <div class="pex">— Twice a week. / Every day. / Sometimes. <span class="th">(ตอบด้วยคำบอกความถี่เท่านั้น)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">How + do/does/did + Subject + verb (ถามวิธีการ)?</div>
+    <div class="pex">How do you go to school? — By bus. <span class="th">(คุณไปโรงเรียนอย่างไร — โดยรถบัส)</span></div>
+    <div class="pex">How did you get here? — I walked. <span class="th">(คุณมาที่นี่อย่างไร — ฉันเดินมา)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🚌 บทสนทนาที่ 1: ไปโรงเรียนยังไง (How do you go to school?)</div>
+    <div class="bubble left"><div class="speaker">Ann</div>How do you go to school every day?<div class="th">ทุกวันเธอไปโรงเรียนยังไง</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>I go by bus. How about you?<div class="th">ผมไปโดยรถบัส แล้วเธอล่ะ</div></div>
+    <div class="bubble left"><div class="speaker">Ann</div>I usually walk. How long does the bus ride take?<div class="th">ฉันมักจะเดินไป แล้วนั่งรถบัสใช้เวลานานแค่ไหน</div></div>
+    <div class="bubble right"><div class="speaker">Somchai</div>It takes about 20 minutes. How far is your house from school?<div class="th">ใช้เวลาประมาณ 20 นาที แล้วบ้านเธอไกลจากโรงเรียนแค่ไหน</div></div>
+    <div class="bubble left"><div class="speaker">Ann</div>It's very close, only 500 meters.<div class="th">ใกล้มากเลย แค่ 500 เมตรเอง</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🛍️ บทสนทนาที่ 2: ซื้อของที่ตลาด (Shopping at the Market)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Excuse me, how much is this bag?<div class="th">ขอโทษนะคะ กระเป๋าใบนี้ราคาเท่าไหร่</div></div>
+    <div class="bubble right"><div class="speaker">Vendor</div>It's 250 baht. How many do you want?<div class="th">250 บาทค่ะ อยากได้กี่ใบคะ</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Just one, please. How much are these apples?<div class="th">ขอใบเดียวค่ะ แล้วแอปเปิ้ลพวกนี้ราคาเท่าไหร่คะ</div></div>
+    <div class="bubble right"><div class="speaker">Vendor</div>They are 10 baht each. How many apples do you need?<div class="th">ลูกละ 10 บาทค่ะ ต้องการกี่ลูกคะ</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Five apples, please. Thank you!<div class="th">ขอ 5 ลูกค่ะ ขอบคุณค่ะ</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ How many money do you have?</div>
+    <div class="why">🤔 money เป็นคำนามนับไม่ได้ ต้องใช้ How much ไม่ใช่ How many</div>
+    <div class="right">✅ How much money do you have?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ How much students are there?</div>
+    <div class="why">🤔 students เป็นคำนามนับได้ ต้องใช้ How many ไม่ใช่ How much</div>
+    <div class="right">✅ How many students are there?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ How old you are?</div>
+    <div class="why">🤔 ประโยคคำถามต้องสลับ Verb to Be มาไว้หน้าประธาน ไม่ใช่เรียงแบบประโยคบอกเล่า</div>
+    <div class="right">✅ How old are you?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ How much is these apples?</div>
+    <div class="why">🤔 apples เป็นพหูพจน์ ต้องใช้ are ไม่ใช่ is</div>
+    <div class="right">✅ How much are these apples?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ How many homeworks do you have?</div>
+    <div class="why">🤔 homework เป็นคำนามนับไม่ได้ ไม่มีรูปพหูพจน์ homeworks และต้องใช้ How much</div>
+    <div class="right">✅ How much homework do you have?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ How often is he go to the gym?</div>
+    <div class="why">🤔 ประโยคที่ใช้ do-support ต้องใช้ does ไม่ใช่ is (he/she/it ใช้ does)</div>
+    <div class="right">✅ How often does he go to the gym?</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>ดูคำนามที่ตามหลัง How much/How many ก่อนเสมอ — ถ้าเติม s แล้วนับเป็นชิ้นได้ชัดเจน ใช้ How many แต่ถ้าเป็นของเหลว/ผง/นามธรรม ใช้ How much</span></li><li><span class="num">2</span><span>จำคำนามตัวร้าย 5 คำที่นับไม่ได้ให้แม่น: money, rice, homework, information, luggage — ห้ามเติม s เด็ดขาด</span></li><li><span class="num">3</span><span>ลำดับคำในประโยคคำถามต้องเป็น How + adjective/much/many + is/are/do/does/did + ประธาน เสมอ ห้ามเรียงแบบประโยคบอกเล่า</span></li><li><span class="num">4</span><span>คำตอบของ How often ต้องเป็นคำบอกความถี่เท่านั้น เช่น always, often, sometimes, never, every day, twice a week — ห้ามตอบเป็นจำนวนหรือราคา</span></li><li><span class="num">5</span><span>ถ้าประธานเป็นเอกพจน์ (he/she/it) ในประโยค How + do ต้องเปลี่ยนเป็น How + does ทันที</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">How Questions</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">😊 How + be</span>ถามความเป็นอยู่/สภาพ เช่น How are you?</div>
+      <div class="mindmap-branch mb-b"><span class="bt">📏 How + adjective</span>อายุ/ความสูง/ระยะทาง/เวลา/ความถี่</div>
+      <div class="mindmap-branch mb-c"><span class="bt">🥛 How much</span>นามนับไม่ได้ หรือถามราคา</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🔢 How many</span>นามนับได้ (พหูพจน์เสมอ)</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🚶 How + do/does/did</span>ถามวิธีการ/การเดินทาง</div>
+      <div class="mindmap-branch mb-f"><span class="bt">⚠️ ข้อควรระวัง</span>money/rice/homework/information/luggage นับไม่ได้</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 24</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม How + Verb to Be และ How + Adjective (8 ข้อ)</h2><p class="part-desc">เติมคำถามให้สมบูรณ์โดยใช้ How, How old, How tall, How far, How long หรือ How often ให้เหมาะสมกับคำตอบที่ให้มา</p><ol class="qlist two-col"><li>A: <span class="blank"></span> is your mother? B: She's fine, thank you.</li><li>A: <span class="blank"></span> are you today? B: I'm very well.</li><li>A: <span class="blank"></span> are you? B: I'm 15 years old.</li><li>A: <span class="blank"></span> is your brother? B: He's 180 cm tall.</li><li>A: <span class="blank"></span> is it from your house to school? B: It's about 3 kilometers.</li><li>A: <span class="blank"></span> does it take to get to Bangkok by bus? B: It takes about 2 hours.</li><li>A: <span class="blank"></span> do you go to the gym? B: I go three times a week.</li><li>A: <span class="blank"></span> is the weather in your hometown? B: It's usually sunny and hot.</li></ol><h2 class="part-title">ตอนที่ 2: เติม How much หรือ How many (9 ข้อ)</h2><p class="part-desc">เติม How much หรือ How many ให้ถูกต้องตามคำนามที่ตามมา (นับได้ใช้ How many, นับไม่ได้ใช้ How much)</p><ol class="qlist two-col"><li><span class="blank"></span> money do you have in your wallet?</li><li><span class="blank"></span> books are there on the shelf?</li><li><span class="blank"></span> rice do you eat every day?</li><li><span class="blank"></span> students are there in your class?</li><li><span class="blank"></span> water do you drink a day?</li><li><span class="blank"></span> apples do you want?</li><li><span class="blank"></span> homework do you have tonight?</li><li><span class="blank"></span> sisters do you have?</li><li><span class="blank"></span> is this pair of shoes?</li></ol><h2 class="part-title">ตอนที่ 3: เติม How + do/does/did และทบทวนรวม (7 ข้อ)</h2><p class="part-desc">เติมคำถาม How ให้สมบูรณ์ โดยเลือกจาก How, How much, How many ให้เหมาะสมกับสถานการณ์</p><ol class="qlist two-col"><li><span class="blank"></span> do you go to school? — I go by bicycle.</li><li><span class="blank"></span> did you get to the airport? — I got there by taxi.</li><li><span class="blank"></span> does your mother cook Tom Yum soup? — She boils the water first and adds shrimp.</li><li><span class="blank"></span> do you spend on lunch every day?</li><li><span class="blank"></span> times a week do you play football? — I play twice a week.</li><li><span class="blank"></span> people are there in your family?</li><li><span class="blank"></span> old is your grandmother?</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😊</div>
+      <div class="qtext">___ are you today?<div class="rule-tag">How + are (ทักทาย)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) What</div><div class="choice">C) Who</div><div class="choice">D) Where</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👪</div>
+      <div class="qtext">___ is your family?<div class="rule-tag">How + is (ถามครอบครัว)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) What</div><div class="choice">C) How much</div><div class="choice">D) How many</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎂</div>
+      <div class="qtext">___ are you? — I'm 14 years old.<div class="rule-tag">How old (อายุ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How old</div><div class="choice">B) How much</div><div class="choice">C) How many</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📏</div>
+      <div class="qtext">___ is your brother? — He's 175 cm tall.<div class="rule-tag">How tall (ความสูง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How tall</div><div class="choice">B) How old</div><div class="choice">C) How far</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚏</div>
+      <div class="qtext">___ is it to the bus stop? — It's about 500 meters.<div class="rule-tag">How far (ระยะทาง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How far</div><div class="choice">B) How long</div><div class="choice">C) How old</div><div class="choice">D) How much</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏱️</div>
+      <div class="qtext">___ does the movie last? — It lasts two hours.<div class="rule-tag">How long (ระยะเวลา)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How long</div><div class="choice">B) How often</div><div class="choice">C) How far</div><div class="choice">D) How old</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔁</div>
+      <div class="qtext">___ do you brush your teeth? — Twice a day.<div class="rule-tag">How often (ความถี่)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How often</div><div class="choice">B) How long</div><div class="choice">C) How far</div><div class="choice">D) How much</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌤️</div>
+      <div class="qtext">___ is the weather today? — It's sunny.<div class="rule-tag">How + is (สภาพอากาศ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) What</div><div class="choice">C) Where</div><div class="choice">D) Why</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👵</div>
+      <div class="qtext">___ is your grandmother? — She's 70 years old.<div class="rule-tag">How old (อายุ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How old</div><div class="choice">B) How long</div><div class="choice">C) How far</div><div class="choice">D) How many</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏔️</div>
+      <div class="qtext">___ is that mountain? — It's 1,000 meters tall.<div class="rule-tag">How tall (ความสูง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How tall</div><div class="choice">B) How far</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚌</div>
+      <div class="qtext">___ is your school from your house?<div class="rule-tag">How far (ระยะทาง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How far</div><div class="choice">B) How long</div><div class="choice">C) How much</div><div class="choice">D) How many</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏳</div>
+      <div class="qtext">___ do you sleep every night? — About 8 hours.<div class="rule-tag">How long (ระยะเวลา)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How long</div><div class="choice">B) How often</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🩺</div>
+      <div class="qtext">___ are you feeling now? — I'm feeling better.<div class="rule-tag">How + are (ถามอาการ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) What</div><div class="choice">C) Who</div><div class="choice">D) How much</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏃</div>
+      <div class="qtext">___ do you go jogging? — Every morning.<div class="rule-tag">How often (ความถี่)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How often</div><div class="choice">B) How long</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👶</div>
+      <div class="qtext">___ is your baby sister? — She's one year old.<div class="rule-tag">How old (อายุ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How old</div><div class="choice">B) How tall</div><div class="choice">C) How far</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💰</div>
+      <div class="qtext">___ money do you have with you?<div class="rule-tag">How much (นับไม่ได้: money)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">___ books do you read a month?<div class="rule-tag">How many (นับได้: books)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">💧</div>
+      <div class="qtext">___ water should we drink every day?<div class="rule-tag">How much (นับไม่ได้: water)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How long</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍎</div>
+      <div class="qtext">___ apples are there in the basket?<div class="rule-tag">How many (นับได้: apples)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩‍🎓</div>
+      <div class="qtext">___ students are there in your classroom?<div class="rule-tag">How many (นับได้: students)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How often</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👟</div>
+      <div class="qtext">___ is this pair of shoes?<div class="rule-tag">How much (ถามราคา)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How long</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥛</div>
+      <div class="qtext">___ milk is left in the fridge?<div class="rule-tag">How much (นับไม่ได้: milk)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐶</div>
+      <div class="qtext">___ dogs does your neighbor have?<div class="rule-tag">How many (นับได้: dogs)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How often</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🕐</div>
+      <div class="qtext">How often do you check your email? — I check it ___.<div class="rule-tag">How often (คำตอบ: every day)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) every day</div><div class="choice">B) two kilograms</div><div class="choice">C) three books</div><div class="choice">D) five dollars</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📅</div>
+      <div class="qtext">How often do you visit your grandparents? — ___.<div class="rule-tag">How often (คำตอบ: once a week)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Once a week</div><div class="choice">B) Two kilograms</div><div class="choice">C) Three books</div><div class="choice">D) Five dollars</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">___ do you go to work? — I go by car.<div class="rule-tag">How + do (วิธีการเดินทาง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) How much</div><div class="choice">C) How many</div><div class="choice">D) How old</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">___ does your sister go to school? — She goes by bike.<div class="rule-tag">How + does (วิธีการเดินทาง)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) How much</div><div class="choice">C) How many</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">✈️</div>
+      <div class="qtext">___ did you travel to Japan? — I traveled by plane.<div class="rule-tag">How + did (วิธีการเดินทางในอดีต)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) How much</div><div class="choice">C) How many</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍚</div>
+      <div class="qtext">___ rice do you cook for dinner?<div class="rule-tag">How much (นับไม่ได้: rice)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧃</div>
+      <div class="qtext">___ juice do you want?<div class="rule-tag">How much (นับไม่ได้: juice)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How often</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥚</div>
+      <div class="qtext">___ eggs do we need for the cake?<div class="rule-tag">How many (นับได้: eggs)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🖊️</div>
+      <div class="qtext">___ pens are there in your pencil case?<div class="rule-tag">How many (นับได้: pens)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How often</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍬</div>
+      <div class="qtext">___ candies did you buy?<div class="rule-tag">How many (นับได้: candies)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧂</div>
+      <div class="qtext">___ salt do you put in the soup?<div class="rule-tag">How much (นับไม่ได้: salt)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How often</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚶‍♀️</div>
+      <div class="qtext">___ do you usually get to the market? — I usually walk.<div class="rule-tag">How + do (วิธีการ)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How</div><div class="choice">B) How much</div><div class="choice">C) How many</div><div class="choice">D) How old</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💵</div>
+      <div class="qtext">___ money did your father spend on the new phone?<div class="rule-tag">How much (นับไม่ได้พิเศษ: money)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">___ homework do you have this weekend?<div class="rule-tag">How much (นับไม่ได้พิเศษ: homework)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧳</div>
+      <div class="qtext">___ luggage are you taking on the trip?<div class="rule-tag">How much (นับไม่ได้พิเศษ: luggage)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">ℹ️</div>
+      <div class="qtext">___ information do you need for your project?<div class="rule-tag">How much (นับไม่ได้พิเศษ: information)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How often</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🛋️</div>
+      <div class="qtext">___ furniture is there in your new house?<div class="rule-tag">How much (นับไม่ได้พิเศษ: furniture)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🤝‍🧑</div>
+      <div class="qtext">___ people are there in your big family?<div class="rule-tag">How many (นับได้พิเศษ: people)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">💴</div>
+      <div class="qtext">___ dollars did you pay for that bag?<div class="rule-tag">How many (นับได้: dollars)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How long</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍞</div>
+      <div class="qtext">___ bread did you buy from the bakery?<div class="rule-tag">How much (นับไม่ได้: bread)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧑‍🎓</div>
+      <div class="qtext">'How often do you study English?' ถามเกี่ยวกับอะไร<div class="rule-tag">ระบุชนิดคำถาม How (ผสม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ความถี่</div><div class="choice">B) ราคา</div><div class="choice">C) อายุ</div><div class="choice">D) ระยะทาง</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏙️</div>
+      <div class="qtext">'How far is it from Bangkok to Chiang Mai?' ถามเกี่ยวกับอะไร<div class="rule-tag">ระบุชนิดคำถาม How (ผสม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) ระยะทาง</div><div class="choice">B) ราคา</div><div class="choice">C) จำนวน</div><div class="choice">D) วิธีการ</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎒</div>
+      <div class="qtext">___ bags do you need for the trip?<div class="rule-tag">How much vs How many (ผสม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many</div><div class="choice">B) How much</div><div class="choice">C) How old</div><div class="choice">D) How far</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍜</div>
+      <div class="qtext">___ soup would you like?<div class="rule-tag">How much (นับไม่ได้: soup)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much</div><div class="choice">B) How many</div><div class="choice">C) How old</div><div class="choice">D) How often</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How much money do you have?</div><div class="choice">B) How many money do you have?</div><div class="choice">C) How much moneys do you have?</div><div class="choice">D) How many moneys do you have?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How many student are there in your school?</div><div class="choice">B) How much students are there in your school?</div><div class="choice">C) How many students are there in your school?</div><div class="choice">D) How students are there in your school?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) How old is your grandmother?</div><div class="choice">B) How olds is your grandmother?</div><div class="choice">C) How much old is your grandmother?</div><div class="choice">D) How many old is your grandmother?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>How</td><td>ถามความเป็นอยู่ของแม่ ใช้ How + is เฉย ๆ</td></tr><tr><td>2</td><td>How</td><td>ถามความเป็นอยู่ทั่วไป ใช้ How + are</td></tr><tr><td>3</td><td>How old</td><td>ถามอายุ ต้องใช้ How old</td></tr><tr><td>4</td><td>How tall</td><td>ถามความสูง ต้องใช้ How tall</td></tr><tr><td>5</td><td>How far</td><td>ถามระยะทาง ต้องใช้ How far</td></tr><tr><td>6</td><td>How long</td><td>ถามระยะเวลาที่ใช้ ต้องใช้ How long</td></tr><tr><td>7</td><td>How often</td><td>ถามความถี่ ต้องใช้ How often</td></tr><tr><td>8</td><td>How</td><td>ถามสภาพอากาศ ใช้ How + is เฉย ๆ</td></tr><tr><td>9</td><td>How much</td><td>money เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>10</td><td>How many</td><td>books เป็นคำนามนับได้ (พหูพจน์) ใช้ How many</td></tr><tr><td>11</td><td>How much</td><td>rice เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>12</td><td>How many</td><td>students เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>13</td><td>How much</td><td>water เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>14</td><td>How many</td><td>apples เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>15</td><td>How much</td><td>homework เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>16</td><td>How many</td><td>sisters เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>17</td><td>How much</td><td>ถามราคาของสิ่งของ ใช้ How much is...?</td></tr><tr><td>18</td><td>How</td><td>ถามวิธีการเดินทางไปโรงเรียน ใช้ How + do</td></tr><tr><td>19</td><td>How</td><td>ถามวิธีการเดินทางในอดีต ใช้ How + did</td></tr><tr><td>20</td><td>How</td><td>ถามวิธีทำอาหาร ใช้ How + does</td></tr><tr><td>21</td><td>How much</td><td>ถามจำนวนเงินที่ใช้จ่าย (เงินนับไม่ได้) ใช้ How much</td></tr><tr><td>22</td><td>How many</td><td>ถามจำนวนครั้งต่อสัปดาห์ ใช้ How many times</td></tr><tr><td>23</td><td>How many</td><td>people เป็นคำนามนับได้ (พหูพจน์ของ person) ใช้ How many</td></tr><tr><td>24</td><td>How</td><td>ถามอายุ ใช้ How old</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">😊</td><td>A) How</td><td>ถามความเป็นอยู่ ใช้ How are you?</td></tr><tr><td>2</td><td class="emoji-cell">👪</td><td>A) How</td><td>ถามความเป็นอยู่ของครอบครัว ใช้ How is...?</td></tr><tr><td>3</td><td class="emoji-cell">🎂</td><td>A) How old</td><td>ถามอายุ ใช้ How old</td></tr><tr><td>4</td><td class="emoji-cell">📏</td><td>A) How tall</td><td>ถามความสูง ใช้ How tall</td></tr><tr><td>5</td><td class="emoji-cell">🚏</td><td>A) How far</td><td>ถามระยะทาง ใช้ How far</td></tr><tr><td>6</td><td class="emoji-cell">⏱️</td><td>A) How long</td><td>ถามระยะเวลา ใช้ How long</td></tr><tr><td>7</td><td class="emoji-cell">🔁</td><td>A) How often</td><td>ถามความถี่ ใช้ How often</td></tr><tr><td>8</td><td class="emoji-cell">🌤️</td><td>A) How</td><td>ถามสภาพอากาศ ใช้ How is...?</td></tr><tr><td>9</td><td class="emoji-cell">👵</td><td>A) How old</td><td>ถามอายุ ใช้ How old</td></tr><tr><td>10</td><td class="emoji-cell">🏔️</td><td>A) How tall</td><td>ถามความสูงของภูเขา ใช้ How tall</td></tr><tr><td>11</td><td class="emoji-cell">🚌</td><td>A) How far</td><td>ถามระยะทาง ใช้ How far</td></tr><tr><td>12</td><td class="emoji-cell">⏳</td><td>A) How long</td><td>ถามระยะเวลาการนอน ใช้ How long</td></tr><tr><td>13</td><td class="emoji-cell">🩺</td><td>A) How</td><td>ถามอาการความรู้สึก ใช้ How are you feeling?</td></tr><tr><td>14</td><td class="emoji-cell">🏃</td><td>A) How often</td><td>ถามความถี่ ใช้ How often</td></tr><tr><td>15</td><td class="emoji-cell">👶</td><td>A) How old</td><td>ถามอายุของทารก ใช้ How old</td></tr><tr><td>16</td><td class="emoji-cell">💰</td><td>A) How much</td><td>money เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>17</td><td class="emoji-cell">📚</td><td>A) How many</td><td>books เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>18</td><td class="emoji-cell">💧</td><td>A) How much</td><td>water เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>19</td><td class="emoji-cell">🍎</td><td>A) How many</td><td>apples เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>20</td><td class="emoji-cell">👩‍🎓</td><td>A) How many</td><td>students เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>21</td><td class="emoji-cell">👟</td><td>A) How much</td><td>ถามราคาสิ่งของ ใช้ How much</td></tr><tr><td>22</td><td class="emoji-cell">🥛</td><td>A) How much</td><td>milk เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>23</td><td class="emoji-cell">🐶</td><td>A) How many</td><td>dogs เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>24</td><td class="emoji-cell">🕐</td><td>A) every day</td><td>คำตอบของ How often ต้องเป็นความถี่ เช่น every day ไม่ใช่ปริมาณหรือจำนวนเงิน</td></tr><tr><td>25</td><td class="emoji-cell">📅</td><td>A) Once a week</td><td>คำตอบของ How often ต้องเป็นความถี่ เช่น once a week</td></tr><tr><td>26</td><td class="emoji-cell">🚗</td><td>A) How</td><td>ถามวิธีการเดินทาง ใช้ How + do</td></tr><tr><td>27</td><td class="emoji-cell">🚲</td><td>A) How</td><td>ถามวิธีการเดินทาง ใช้ How + does</td></tr><tr><td>28</td><td class="emoji-cell">✈️</td><td>A) How</td><td>ถามวิธีการเดินทางในอดีต ใช้ How + did</td></tr><tr><td>29</td><td class="emoji-cell">🍚</td><td>A) How much</td><td>rice เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>30</td><td class="emoji-cell">🧃</td><td>A) How much</td><td>juice เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>31</td><td class="emoji-cell">🥚</td><td>A) How many</td><td>eggs เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>32</td><td class="emoji-cell">🖊️</td><td>A) How many</td><td>pens เป็นคำนามนับได้ ใช้ How many</td></tr><tr><td>33</td><td class="emoji-cell">🍬</td><td>A) How many</td><td>candies เป็นคำนามนับได้ (นับเป็นชิ้น) ใช้ How many</td></tr><tr><td>34</td><td class="emoji-cell">🧂</td><td>A) How much</td><td>salt เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>35</td><td class="emoji-cell">🚶‍♀️</td><td>A) How</td><td>ถามวิธีการเดินทาง ใช้ How + do</td></tr><tr><td>36</td><td class="emoji-cell">💵</td><td>A) How much</td><td>money เป็นคำนามนับไม่ได้เสมอ แม้จะใช้ซื้อของนับได้ ใช้ How much</td></tr><tr><td>37</td><td class="emoji-cell">📖</td><td>A) How much</td><td>homework เป็นคำนามนับไม่ได้ (ไม่มีรูปพหูพจน์) ใช้ How much</td></tr><tr><td>38</td><td class="emoji-cell">🧳</td><td>A) How much</td><td>luggage เป็นคำนามนับไม่ได้ (ไม่มีรูป luggages) ใช้ How much</td></tr><tr><td>39</td><td class="emoji-cell">ℹ️</td><td>A) How much</td><td>information เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>40</td><td class="emoji-cell">🛋️</td><td>A) How much</td><td>furniture เป็นคำนามนับไม่ได้ (ไม่มีรูป furnitures) ใช้ How much</td></tr><tr><td>41</td><td class="emoji-cell">🧑‍🤝‍🧑</td><td>A) How many</td><td>people เป็นรูปพหูพจน์ของ person นับได้ ใช้ How many</td></tr><tr><td>42</td><td class="emoji-cell">💴</td><td>A) How many</td><td>dollars เป็นหน่วยเงินที่นับเป็นจำนวนได้ ใช้ How many (ต่างจาก money ที่นับไม่ได้)</td></tr><tr><td>43</td><td class="emoji-cell">🍞</td><td>A) How much</td><td>bread เป็นคำนามนับไม่ได้ (ก้อนขนมปังทั้งก้อน) ใช้ How much</td></tr><tr><td>44</td><td class="emoji-cell">🧑‍🎓</td><td>A) ความถี่</td><td>How often ใช้ถามความถี่ในการทำสิ่งใดสิ่งหนึ่ง</td></tr><tr><td>45</td><td class="emoji-cell">🏙️</td><td>A) ระยะทาง</td><td>How far ใช้ถามระยะทาง</td></tr><tr><td>46</td><td class="emoji-cell">🎒</td><td>A) How many</td><td>bags เป็นคำนามนับได้ ใช้ How many (ต่างจาก luggage ที่นับไม่ได้)</td></tr><tr><td>47</td><td class="emoji-cell">🍜</td><td>A) How much</td><td>soup เป็นคำนามนับไม่ได้ ใช้ How much</td></tr><tr><td>48</td><td class="emoji-cell">🔍</td><td>A) How much money do you have?</td><td>money เป็นคำนามนับไม่ได้ ต้องใช้ How much money และห้ามเติม s</td></tr><tr><td>49</td><td class="emoji-cell">🔍</td><td>C) How many students are there in your school?</td><td>students เป็นคำนามนับได้ ต้องใช้ How many + นามพหูพจน์ (students มี s)</td></tr><tr><td>50</td><td class="emoji-cell">🔍</td><td>A) How old is your grandmother?</td><td>How old เป็นวลีคงที่ ไม่เติม s และไม่ใช้ How much/How many นำหน้า adjective old</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>ตาราง How-question</h4>
+      <table><tr><th>ชนิด</th><th>ตัวอย่าง</th></tr>
+      <tr><td>How + be</td><td>How are you?</td></tr>
+      <tr><td>How + adj</td><td>How old/tall/far/long/often?</td></tr>
+      <tr><td>How much</td><td>นับไม่ได้/ราคา</td></tr>
+      <tr><td>How many</td><td>นับได้ (พหูพจน์)</td></tr>
+      <tr><td>How + do</td><td>ถามวิธีการ</td></tr></table></div>
+    <div class="cheat-box"><h4>นับได้ vs นับไม่ได้</h4>
+      <ul><li>นับไม่ได้: money, rice, homework, information, luggage, furniture</li><li>นับได้: book(s), student(s), people, dollar(s)</li></ul></div>
+    <div class="cheat-box"><h4>คำตอบความถี่ (How often)</h4>
+      <ul><li>always, usually, often</li><li>sometimes, rarely, never</li><li>every day/week, once/twice a week</li></ul></div>
+    <div class="cheat-box"><h4>เทคนิคจำเร็ว</h4>
+      <ul><li>much → ไม่มี s (นับไม่ได้)</li><li>many → มี s (นับได้)</li><li>he/she/it → does ไม่ใช่ do</li><li>ลำดับ: How+adj/much/many + be/do + S</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากตัวอย่างใกล้ตัวนักเรียนก่อนเข้าเนื้อหา (อายุ ส่วนสูง ระยะทางบ้าน-โรงเรียน)</li>
+    <li>เน้นให้นักเรียนแยกคำนามนับได้/นับไม่ได้ก่อนเลือก How much/How many ทุกครั้ง เพราะเป็นจุดที่สับสนบ่อยที่สุด</li>
+    <li>ย้ำเรื่องคำตอบของ How often ต้องเป็นความถี่เท่านั้น ไม่ใช่จำนวนหรือราคา</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>Class Survey</b> — นักเรียนเดินถามเพื่อน 5 คนด้วยคำถาม "How often do you...?" แล้วสรุปผลเป็นกราฟหน้าชั้น</li>
+    <li><b>Price is Right</b> — ครูนำของมาแสดง ให้นักเรียนถาม "How much is this?" แล้วทายราคาให้ใกล้เคียงที่สุด</li>
+    <li><b>How Far/Tall Estimation Game</b> — วัดของในห้องเรียน (โต๊ะ ประตู กระดานดำ) แล้วถามตอบด้วย How tall/How far จริง ๆ ด้วยไม้บรรทัด/สายวัด</li>
+    <li><b>Countable or Not?</b> — แจกบัตรคำนาม ให้นักเรียนแยกกลุ่มว่านับได้หรือนับไม่ได้ แล้วแต่งคำถาม How much/How many</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 (โดยเฉพาะ How much/How many) เพื่อวางแผนการสอนซ่อมเสริมรายบุคคล</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> สัมภาษณ์คนในครอบครัว 3 คน ด้วยคำถาม "How often do you...?" (เช่น ออกกำลังกาย ทำอาหาร อ่านหนังสือ) แล้วจดคำตอบมาเล่าในห้องเรียน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> เขียนประโยค 3 ประโยคเกี่ยวกับระยะทางหรือระยะเวลา โดยใช้ How far หรือ How long (เช่น How far is it from your house to the park?)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> ถ่ายรูปหรือวาดสิ่งของ 3 อย่างในบ้าน แล้วเขียนคำถาม-คำตอบ "How much is it?" สมมติราคาขึ้นเอง</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> เขียนย่อหน้าสั้น ๆ 4-5 ประโยค บรรยายวิธีที่ตัวเองไปโรงเรียนทุกวัน โดยใช้ How do you go to school? เป็นหัวข้อ</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"ถามให้เป็น ก็เข้าใจโลกได้กว้างขึ้น" 🌟</div>
+    <div class="sub">How Questions คือกุญแจสำคัญที่จะช่วยให้เราถามหาข้อมูลได้ทุกเรื่อง ไม่ว่าจะเป็นราคา จำนวน ระยะทาง หรือวิธีการ ถ้าวันนี้แยกแยะ How much กับ How many ได้แม่นแล้ว นักเรียนจะพูดและเขียนภาษาอังกฤษได้มั่นใจขึ้นมาก อย่ากลัวที่จะถามผิด เพราะทุกคำถามคือก้าวหนึ่งของการเรียนรู้ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง How Questions ที่แปลว่า "อย่างไร" แต่ใช้ถามได้หลายแบบมากค่ะ</div><div class="line">✅ How + is/am/are ใช้ถามความเป็นอยู่หรือสภาพ เช่น How are you? / How is the weather?</div><div class="line">✅ How + adjective ใช้ถามข้อมูลเฉพาะ เช่น How old, How tall, How far, How long, How often</div><div class="line">✅ How much คู่กับนามนับไม่ได้หรือถามราคา ส่วน How many คู่กับนามนับได้ที่ต้องเติม s เสมอ</div><div class="line">✅ How + do/does/did ใช้ถามวิธีการหรือการเดินทาง เช่น How do you go to school?</div><div class="line">✅ ระวังคำนามตัวร้าย 5 คำที่นับไม่ได้: money, rice, homework, information, luggage</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

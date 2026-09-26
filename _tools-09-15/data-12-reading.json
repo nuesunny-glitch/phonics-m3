@@ -1,0 +1,153 @@
+{
+  "id": "12",
+  "folder": "12-Reading",
+  "titleThai": "Reading (การอ่านจับใจความ)",
+  "titleShort": "Reading",
+  "emojiTitle": "📖🔍",
+  "objectives": [
+    "ใช้กลยุทธ์การอ่าน 3 แบบ (Skimming, Scanning, Guessing from Context) ได้ถูกต้อง",
+    "แยกแยะประเภทคำถามอ่านจับใจความ 5 แบบ (Main Idea, Detail, Vocabulary in Context, Inference, Reference)",
+    "หาใจความหลักของย่อหน้าได้โดยไม่ต้องอ่านทุกคำ",
+    "เดาความหมายคำศัพท์ที่ไม่รู้จักจากบริบทรอบข้างได้",
+    "ตอบคำถามอ้างอิงสรรพนาม (it, he, she, they) และคำถามอนุมานได้ถูกต้อง"
+  ],
+  "summaryTable": {
+    "headers": ["ทักษะ/ประเภทคำถาม", "คืออะไร", "วิธีตอบ"],
+    "rows": [
+      ["Skimming", "อ่านคร่าว ๆ ทั้งย่อหน้าเพื่อจับใจความหลัก", "ใช้หา Main Idea"],
+      ["Scanning", "กวาดสายตาหาคำ/ตัวเลข/ชื่อเฉพาะที่ต้องการ", "ใช้หาคำตอบ Detail Questions"],
+      ["Guessing from Context", "เดาความหมายคำศัพท์จากประโยครอบข้าง", "ใช้ตอบ Vocabulary in Context"],
+      ["Inference", "คำตอบไม่ได้บอกตรง ๆ ต้องคิดต่อจากข้อมูลที่ให้มา", "อ่านทั้งย่อหน้าอีกรอบแล้วคิดต่อ"],
+      ["Reference", "คำสรรพนาม (it, he, she, they) อ้างถึงอะไร", "มองย้อนกลับไปหาคำนามที่อยู่ก่อนหน้า"]
+    ]
+  },
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: อ่านย่อหน้าแล้วตอบคำถาม (12 ข้อ)",
+        "instructions": "Somchai works at a small shop in the market. The shop sells fruit and vegetables. It opens at 7 AM and closes at 6 PM every day except Sunday. Many people come to buy fresh fruit from Somchai because his prices are cheap and his fruit is always fresh. Somchai's favorite fruit is mango. He says mango is delicious and good for health. Every morning, he goes to the farm to buy fresh fruit before opening his shop. His daughter sometimes helps him at the shop after school.",
+        "items": [
+          "What is the passage mainly about? (ก. A school ข. Somchai's shop ค. A hospital ง. A bus station)",
+          "What does Somchai's shop sell? (ก. Books ข. Clothes ค. Fruit and vegetables ง. Toys)",
+          "What time does the shop open? (ก. 6 AM ข. 7 AM ค. 8 AM ง. 9 AM)",
+          "What time does the shop close? (ก. 5 PM ข. 6 PM ค. 7 PM ง. 8 PM)",
+          "Which day is the shop closed? (ก. Saturday ข. Monday ค. Sunday ง. Friday)",
+          "Why do many people buy fruit from Somchai? (ก. Because it's far ข. Because his prices are cheap and fruit is fresh ค. Because he is famous ง. Because the shop is big)",
+          "What is Somchai's favorite fruit? (ก. Apple ข. Banana ค. Mango ง. Orange)",
+          "The word \"delicious\" is closest in meaning to...? (ก. expensive ข. tasty ค. cheap ง. fresh)",
+          "Where does Somchai go every morning before opening his shop? (ก. School ข. The farm ค. The bank ง. The hospital)",
+          "What can we infer about Somchai? (ก. He is lazy ข. He is careful about his business ค. He dislikes his job ง. He never works)",
+          "The word \"He\" in \"He says mango is delicious\" refers to...? (ก. the shop ข. Somchai ค. the farm ง. the daughter)",
+          "Who sometimes helps Somchai at the shop? (ก. His wife ข. His daughter ค. His son ง. His friend)"
+        ],
+        "answers": ["ข", "ค", "ข", "ข", "ค", "ข", "ค", "ข", "ข", "ข", "ข", "ข"],
+        "reasons": [
+          "ทั้งย่อหน้าพูดถึงร้านของสมชาย",
+          "ระบุตรงในประโยคที่ 2",
+          "ระบุตรง \"opens at 7 AM\"",
+          "ระบุตรง \"closes at 6 PM\"",
+          "ระบุตรง \"except Sunday\"",
+          "ระบุตรงในเนื้อเรื่อง",
+          "ระบุตรง \"favorite fruit is mango\"",
+          "เดาจากบริบท \"delicious...good for health\"",
+          "ระบุตรง \"goes to the farm\"",
+          "อนุมานจากพฤติกรรมไปซื้อผลไม้สดทุกเช้า",
+          "He แทน Somchai ซึ่งเป็นประธานของประโยคก่อนหน้า",
+          "ระบุตรง \"His daughter sometimes helps him\""
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: อ่านย่อหน้าแล้วตอบคำถาม (12 ข้อ)",
+        "instructions": "Ploy loves reading books. Every weekend, she goes to the library near her house. The library is big and quiet. Ploy usually reads storybooks and comic books. Her favorite book is about a young girl who travels to different countries. Ploy dreams of traveling around the world one day, just like the girl in her favorite book. Ploy's best friend, Nam, also loves reading, so they often go to the library together and share their favorite stories.",
+        "items": [
+          "What does Ploy love doing? (ก. Swimming ข. Reading books ค. Cooking ง. Singing)",
+          "Where does Ploy go every weekend? (ก. The market ข. The library ค. The zoo ง. The park)",
+          "How is the library? (ก. Small and noisy ข. Big and quiet ค. Old and dirty ง. Far and expensive)",
+          "What kind of books does Ploy usually read? (ก. Science books ข. Storybooks and comic books ค. Cook books ง. Math books)",
+          "What is Ploy's favorite book about? (ก. A boy who plays football ข. A girl who travels to different countries ค. A dog and a cat ง. A teacher)",
+          "What does Ploy dream of doing? (ก. Becoming a teacher ข. Traveling around the world ค. Opening a library ง. Writing a book)",
+          "The word \"quiet\" is closest in meaning to...? (ก. noisy ข. silent ค. big ง. small)",
+          "The word \"her\" in \"Her favorite book\" refers to...? (ก. the library ข. Ploy ค. the girl in the book ง. the world)",
+          "What can we infer about Ploy? (ก. She dislikes books ข. She is inspired by the book she reads ค. She never goes out ง. She hates traveling)",
+          "This passage is mainly about...? (ก. A library's rules ข. Ploy's love of reading and her dream ค. How to travel the world ง. A comic book store)",
+          "Who is Ploy's best friend? (ก. Nid ข. Nam ค. Ann ง. Ben)",
+          "The word \"they\" in \"they often go to the library together\" refers to...? (ก. Ploy and Nam ข. Ploy and the girl in the book ค. the books ง. the library)"
+        ],
+        "answers": ["ข", "ข", "ข", "ข", "ข", "ข", "ข", "ข", "ข", "ข", "ข", "ก"],
+        "reasons": [
+          "ระบุตรง \"loves reading books\"",
+          "ระบุตรง \"goes to the library\"",
+          "ระบุตรง \"big and quiet\"",
+          "ระบุตรง \"storybooks and comic books\"",
+          "ระบุตรง \"a girl who travels to different countries\"",
+          "ระบุตรง \"dreams of traveling around the world\"",
+          "silent ใกล้เคียงความหมายกับ quiet มากที่สุด",
+          "her แทน Ploy",
+          "อนุมานจากการที่เธออยากทำตามรอยตัวละครที่ชอบ",
+          "ทั้งย่อหน้าพูดถึงความรักการอ่านและความฝันของ Ploy",
+          "ระบุตรง \"Ploy's best friend, Nam\"",
+          "they แทน Ploy และ Nam ซึ่งเป็นประธานร่วมของประโยค"
+        ]
+      }
+    ]
+  },
+  "passages": [
+    { "id": "p1", "title": "📖 ย่อหน้าที่ 1: Tum and Football", "text": "Tum is a Grade 9 student who loves playing football. Every afternoon after school, he practices with his friends at the field near his house. His coach says Tum is very talented and works harder than anyone else on the team. Last month, Tum's team won the district championship, and he scored the winning goal in the final match. Tum dreams of becoming a professional football player one day. He always tells his friends, \"If you practice every day, you will improve.\" Tum's parents are proud of him and support his dream by driving him to practice every day." },
+    { "id": "p2", "title": "📖 ย่อหน้าที่ 2: Kate's Baking Day", "text": "Kate is spending her Saturday afternoon baking cookies with her mother. Her mother is teaching her a family recipe that has been passed down for three generations. Kate carefully measures the flour and sugar, just like her mother shows her. Halfway through, Kate forgets to add the eggs, so the mixture looks strange and dry. Her mother laughs gently and helps her fix the mistake. After an hour, they take a tray of golden brown cookies out of the oven. The whole kitchen smells sweet. Kate feels proud because this is the first time she has baked something all by herself." },
+    { "id": "p3", "title": "📖 ย่อหน้าที่ 3: A Family Trip to the Beach", "text": "Last weekend, the Suksawat family drove three hours to spend the day at a quiet beach in the south. The children built sandcastles while their parents set up a small tent for shade. Around noon, they ate lunch together on a large mat near the water. In the afternoon, the wind became strong and the waves grew bigger, so the lifeguard asked everyone to stay closer to the shore. Despite the wind, the family enjoyed watching the sunset before driving home. They all agreed it was one of the best trips they had taken together." },
+    { "id": "p4", "title": "📖 ย่อหน้าที่ 4: Nan's Part-Time Job", "text": "Nan works part-time at a small bookstore near her school every weekend. Her main duties are arranging books on the shelves and helping customers find what they are looking for. At first, Nan found the job difficult because she had to remember where hundreds of books were kept. After a few weeks, however, she became familiar with the store and could answer customers' questions quickly. The bookstore owner often praises her for being responsible and polite to every customer. Nan uses the money she earns to buy books for herself and save for university in the future." },
+    { "id": "p5", "title": "📖 ย่อหน้าที่ 5: Reducing Plastic Waste", "text": "Many schools in Thailand have started programs to reduce plastic waste. Students are encouraged to bring their own bottles and food containers instead of using single-use plastic. One school in Chiang Mai reported that plastic waste decreased by half within just one semester after starting this program. Teachers explain that small daily choices, like refusing a plastic straw, can make a big difference over time. Some students were unsure about the change at first, but most of them now say they feel proud to be part of protecting the environment. The school plans to expand the program to include recycling stations next year." }
+  ],
+  "quiz": [
+    { "emoji": "⚽", "tag": "Main Idea", "difficulty": 1, "passageRef": "p1", "q": "What is the passage mainly about?", "choices": ["Tum's passion for football", "A district's history", "Tum's school subjects", "A football stadium"], "answer": 0, "explain": "ทั้งย่อหน้าพูดถึงความรักในฟุตบอลของตุ้ม" },
+    { "emoji": "⏰", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "When does Tum practice football?", "choices": ["In the morning", "Every afternoon after school", "Late at night", "Only on weekends"], "answer": 1, "explain": "ระบุตรง \"Every afternoon after school\"" },
+    { "emoji": "📍", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "Where does Tum practice?", "choices": ["At school", "At the field near his house", "At the stadium downtown", "At his coach's house"], "answer": 1, "explain": "ระบุตรง \"at the field near his house\"" },
+    { "emoji": "🏆", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "What did Tum's team win last month?", "choices": ["A scholarship", "The district championship", "A trophy for attendance", "A new football"], "answer": 1, "explain": "ระบุตรง \"won the district championship\"" },
+    { "emoji": "🥅", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "Who scored the winning goal in the final match?", "choices": ["The coach", "Tum", "Tum's friend", "The other team"], "answer": 1, "explain": "ระบุตรง \"he scored the winning goal\"" },
+    { "emoji": "💪", "tag": "Vocabulary in Context", "difficulty": 2, "passageRef": "p1", "q": "The word \"talented\" is closest in meaning to...?", "choices": ["lazy", "skillful", "tall", "young"], "answer": 1, "explain": "talented แปลว่ามีพรสวรรค์/เก่ง ใกล้เคียงกับ skillful มากที่สุด" },
+    { "emoji": "🔍", "tag": "Reference", "difficulty": 2, "passageRef": "p1", "q": "The word \"He\" in \"He always tells his friends\" refers to...?", "choices": ["the coach", "Tum", "the team", "the field"], "answer": 1, "explain": "He แทน Tum ซึ่งเป็นประธานของเรื่อง" },
+    { "emoji": "🌟", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "What is Tum's dream?", "choices": ["To become a coach", "To become a professional football player", "To become a teacher", "To travel abroad"], "answer": 1, "explain": "ระบุตรง \"dreams of becoming a professional football player\"" },
+    { "emoji": "🤔", "tag": "Inference", "difficulty": 2, "passageRef": "p1", "q": "What can we infer about Tum's parents?", "choices": ["They don't care about football", "They support and are proud of him", "They want him to quit football", "They never watch his matches"], "answer": 1, "explain": "อนุมานจากการที่พ่อแม่ขับรถไปส่งซ้อมทุกวันและภูมิใจในตัวเขา" },
+    { "emoji": "📈", "tag": "Detail", "difficulty": 1, "passageRef": "p1", "q": "According to Tum, what helps you improve?", "choices": ["Watching TV", "Practicing every day", "Eating more", "Sleeping early"], "answer": 1, "explain": "ระบุตรงคำพูดของ Tum: \"If you practice every day, you will improve.\"" },
+    { "emoji": "🍪", "tag": "Main Idea", "difficulty": 1, "passageRef": "p2", "q": "What is the passage mainly about?", "choices": ["Kate baking cookies with her mother", "A cooking competition", "Kate's school project", "A bakery shop"], "answer": 0, "explain": "ทั้งย่อหน้าพูดถึงการทำคุกกี้ของเคทกับแม่" },
+    { "emoji": "📅", "tag": "Detail", "difficulty": 1, "passageRef": "p2", "q": "When is Kate baking cookies?", "choices": ["Friday morning", "Saturday afternoon", "Sunday night", "Monday evening"], "answer": 1, "explain": "ระบุตรง \"Saturday afternoon\"" },
+    { "emoji": "👩‍🍳", "tag": "Detail", "difficulty": 1, "passageRef": "p2", "q": "Who is teaching Kate the recipe?", "choices": ["Her teacher", "Her mother", "Her grandmother", "Her sister"], "answer": 1, "explain": "ระบุตรง \"Her mother is teaching her\"" },
+    { "emoji": "❌", "tag": "Detail", "difficulty": 2, "passageRef": "p2", "q": "What mistake did Kate make?", "choices": ["She used too much sugar", "She forgot to add the eggs", "She burned the cookies", "She used the wrong oven"], "answer": 1, "explain": "ระบุตรง \"Kate forgets to add the eggs\"" },
+    { "emoji": "😊", "tag": "Detail", "difficulty": 2, "passageRef": "p2", "q": "How did Kate's mother react to the mistake?", "choices": ["She got angry", "She laughed gently and helped fix it", "She stopped baking", "She left the kitchen"], "answer": 1, "explain": "ระบุตรง \"Her mother laughs gently and helps her fix the mistake\"" },
+    { "emoji": "🔍", "tag": "Vocabulary in Context", "difficulty": 2, "passageRef": "p2", "q": "The word \"golden brown\" describes...?", "choices": ["the color of the cookies", "the color of the kitchen", "the color of the flour", "the color of Kate's dress"], "answer": 0, "explain": "golden brown ใช้บรรยายสีของคุกกี้ที่อบเสร็จแล้ว" },
+    { "emoji": "🏡", "tag": "Detail", "difficulty": 1, "passageRef": "p2", "q": "How long did it take to bake the cookies?", "choices": ["30 minutes", "An hour", "Two hours", "All day"], "answer": 1, "explain": "ระบุตรง \"After an hour\"" },
+    { "emoji": "🤔", "tag": "Inference", "difficulty": 2, "passageRef": "p2", "q": "Why does Kate feel proud?", "choices": ["Because she bought the cookies", "Because this is the first time she baked alone", "Because her mother did all the work", "Because she won a competition"], "answer": 1, "explain": "ระบุตรง \"this is the first time she has baked something all by herself\"" },
+    { "emoji": "🔍", "tag": "Reference", "difficulty": 2, "passageRef": "p2", "q": "The word \"they\" in \"they take a tray of golden brown cookies\" refers to...?", "choices": ["Kate and her mother", "Kate's friends", "the neighbors", "the recipe books"], "answer": 0, "explain": "they แทน Kate และแม่ของเธอ" },
+    { "emoji": "📜", "tag": "Detail", "difficulty": 2, "passageRef": "p2", "q": "How long has the recipe been in the family?", "choices": ["One generation", "Two generations", "Three generations", "Four generations"], "answer": 2, "explain": "ระบุตรง \"passed down for three generations\"" },
+    { "emoji": "🏖️", "tag": "Main Idea", "difficulty": 1, "passageRef": "p3", "q": "What is the passage mainly about?", "choices": ["A family trip to the beach", "A swimming competition", "A weather report", "A fishing trip"], "answer": 0, "explain": "ทั้งย่อหน้าพูดถึงทริปครอบครัวไปทะเล" },
+    { "emoji": "🚗", "tag": "Detail", "difficulty": 1, "passageRef": "p3", "q": "How long did the family drive to the beach?", "choices": ["One hour", "Two hours", "Three hours", "Four hours"], "answer": 2, "explain": "ระบุตรง \"drove three hours\"" },
+    { "emoji": "🏰", "tag": "Detail", "difficulty": 1, "passageRef": "p3", "q": "What did the children do at the beach?", "choices": ["Built sandcastles", "Went fishing", "Played football", "Rode bicycles"], "answer": 0, "explain": "ระบุตรง \"built sandcastles\"" },
+    { "emoji": "⛺", "tag": "Detail", "difficulty": 1, "passageRef": "p3", "q": "What did the parents set up?", "choices": ["A barbecue grill", "A small tent for shade", "A volleyball net", "A boat"], "answer": 1, "explain": "ระบุตรง \"set up a small tent for shade\"" },
+    { "emoji": "🌬️", "tag": "Detail", "difficulty": 2, "passageRef": "p3", "q": "What happened in the afternoon?", "choices": ["It started raining", "The wind became strong and waves grew bigger", "The family went home early", "They lost their tent"], "answer": 1, "explain": "ระบุตรง \"the wind became strong and the waves grew bigger\"" },
+    { "emoji": "🛟", "tag": "Detail", "difficulty": 2, "passageRef": "p3", "q": "What did the lifeguard ask everyone to do?", "choices": ["Leave the beach", "Stay closer to the shore", "Swim further out", "Wear life jackets"], "answer": 1, "explain": "ระบุตรง \"asked everyone to stay closer to the shore\"" },
+    { "emoji": "🌅", "tag": "Detail", "difficulty": 1, "passageRef": "p3", "q": "What did the family do before driving home?", "choices": ["Watched the sunset", "Went shopping", "Took a boat ride", "Ate at a restaurant"], "answer": 0, "explain": "ระบุตรง \"enjoyed watching the sunset before driving home\"" },
+    { "emoji": "🔍", "tag": "Reference", "difficulty": 2, "passageRef": "p3", "q": "The word \"they\" in \"they all agreed it was one of the best trips\" refers to...?", "choices": ["the lifeguards", "the Suksawat family", "the other tourists", "the children only"], "answer": 1, "explain": "they แทนครอบครัว Suksawat ทั้งหมด" },
+    { "emoji": "🤔", "tag": "Inference", "difficulty": 3, "passageRef": "p3", "q": "What can we infer about the family's feeling about the trip?", "choices": ["They regretted going", "They enjoyed it despite the windy weather", "They were bored the whole time", "They wanted to leave early"], "answer": 1, "explain": "อนุมานจาก \"despite the wind, the family enjoyed...\" และ \"one of the best trips\"" },
+    { "emoji": "🍽️", "tag": "Detail", "difficulty": 1, "passageRef": "p3", "q": "Where did the family eat lunch?", "choices": ["At a restaurant", "On a mat near the water", "In the car", "At a hotel"], "answer": 1, "explain": "ระบุตรง \"ate lunch together on a large mat near the water\"" },
+    { "emoji": "📚", "tag": "Main Idea", "difficulty": 1, "passageRef": "p4", "q": "What is the passage mainly about?", "choices": ["Nan's part-time job at a bookstore", "A library's history", "Nan's school exams", "A writing competition"], "answer": 0, "explain": "ทั้งย่อหน้าพูดถึงงานพาร์ทไทม์ของแนนที่ร้านหนังสือ" },
+    { "emoji": "🗓️", "tag": "Detail", "difficulty": 1, "passageRef": "p4", "q": "When does Nan work at the bookstore?", "choices": ["Every day", "Every weekend", "Only in summer", "Every morning"], "answer": 1, "explain": "ระบุตรง \"works part-time...every weekend\"" },
+    { "emoji": "📋", "tag": "Detail", "difficulty": 1, "passageRef": "p4", "q": "What are Nan's main duties?", "choices": ["Cooking food", "Arranging books and helping customers", "Cleaning the floor", "Driving a delivery truck"], "answer": 1, "explain": "ระบุตรง \"arranging books on the shelves and helping customers\"" },
+    { "emoji": "😕", "tag": "Detail", "difficulty": 2, "passageRef": "p4", "q": "Why did Nan find the job difficult at first?", "choices": ["The pay was too low", "She had to remember where hundreds of books were kept", "The store was too far from home", "She didn't like reading"], "answer": 1, "explain": "ระบุตรง \"had to remember where hundreds of books were kept\"" },
+    { "emoji": "👍", "tag": "Detail", "difficulty": 2, "passageRef": "p4", "q": "What does the bookstore owner often praise Nan for?", "choices": ["Being fast at math", "Being responsible and polite", "Being the best reader", "Being always on time"], "answer": 1, "explain": "ระบุตรง \"praises her for being responsible and polite\"" },
+    { "emoji": "💰", "tag": "Detail", "difficulty": 1, "passageRef": "p4", "q": "What does Nan use her earned money for?", "choices": ["Buying clothes", "Buying books and saving for university", "Buying a phone", "Traveling abroad"], "answer": 1, "explain": "ระบุตรง \"buy books for herself and save for university\"" },
+    { "emoji": "🔍", "tag": "Reference", "difficulty": 2, "passageRef": "p4", "q": "The word \"she\" in \"she could answer customers' questions quickly\" refers to...?", "choices": ["the bookstore owner", "Nan", "a customer", "Nan's teacher"], "answer": 1, "explain": "she แทน Nan" },
+    { "emoji": "🔤", "tag": "Vocabulary in Context", "difficulty": 2, "passageRef": "p4", "q": "The word \"familiar\" is closest in meaning to...?", "choices": ["confused", "well-known/used to", "afraid", "bored"], "answer": 1, "explain": "familiar with แปลว่าคุ้นเคยกับ ใกล้เคียง \"well-known/used to\"" },
+    { "emoji": "🤔", "tag": "Inference", "difficulty": 3, "passageRef": "p4", "q": "What can we infer about Nan's attitude toward her job?", "choices": ["She dislikes working at the bookstore", "She has grown responsible and confident through her job", "She wants to quit soon", "She only works for fun"], "answer": 1, "explain": "อนุมานจากการที่เธอปรับตัวได้ดีขึ้น ได้รับคำชม และตั้งใจเก็บเงินเพื่ออนาคต" },
+    { "emoji": "🎓", "tag": "Detail", "difficulty": 2, "passageRef": "p4", "q": "What does Nan plan to save money for?", "choices": ["A vacation", "University in the future", "A new phone", "A car"], "answer": 1, "explain": "ระบุตรง \"save for university in the future\"" },
+    { "emoji": "♻️", "tag": "Main Idea", "difficulty": 1, "passageRef": "p5", "q": "What is the passage mainly about?", "choices": ["A school reducing plastic waste", "A recycling factory", "A science experiment", "A shopping mall"], "answer": 0, "explain": "ทั้งย่อหน้าพูดถึงโครงการลดขยะพลาสติกในโรงเรียน" },
+    { "emoji": "🍶", "tag": "Detail", "difficulty": 1, "passageRef": "p5", "q": "What are students encouraged to bring?", "choices": ["Their own bottles and food containers", "Extra plastic bags", "More snacks", "New textbooks"], "answer": 0, "explain": "ระบุตรง \"bring their own bottles and food containers\"" },
+    { "emoji": "📉", "tag": "Detail", "difficulty": 2, "passageRef": "p5", "q": "How much did plastic waste decrease at the Chiang Mai school?", "choices": ["By a quarter", "By half", "By all of it", "It didn't decrease"], "answer": 1, "explain": "ระบุตรง \"decreased by half within just one semester\"" },
+    { "emoji": "🥤", "tag": "Detail", "difficulty": 2, "passageRef": "p5", "q": "What example of a small daily choice is mentioned?", "choices": ["Refusing a plastic straw", "Buying more plastic bottles", "Skipping lunch", "Riding a bicycle to school"], "answer": 0, "explain": "ระบุตรง \"refusing a plastic straw\"" },
+    { "emoji": "🔍", "tag": "Vocabulary in Context", "difficulty": 2, "passageRef": "p5", "q": "The word \"unsure\" is closest in meaning to...?", "choices": ["confident", "not certain", "excited", "angry"], "answer": 1, "explain": "unsure แปลว่าไม่แน่ใจ ใกล้เคียงกับ \"not certain\"" },
+    { "emoji": "🔍", "tag": "Reference", "difficulty": 2, "passageRef": "p5", "q": "The word \"them\" in \"most of them now say they feel proud\" refers to...?", "choices": ["the teachers", "the students", "the schools", "the plastic bottles"], "answer": 1, "explain": "them แทนนักเรียนที่ถูกกล่าวถึงก่อนหน้า" },
+    { "emoji": "🤔", "tag": "Inference", "difficulty": 3, "passageRef": "p5", "q": "What can we infer about the school's future plans?", "choices": ["They will stop the program", "They believe the program is worth expanding", "They think it failed", "They will ignore recycling"], "answer": 1, "explain": "อนุมานจาก \"plans to expand the program to include recycling stations next year\"" },
+    { "emoji": "🎯", "tag": "Inference", "difficulty": 3, "passageRef": "p5", "q": "What is the main message of this passage?", "choices": ["Small daily choices can make a big environmental difference", "Plastic is impossible to reduce", "Only teachers can help the environment", "Recycling is too expensive for schools"], "answer": 0, "explain": "สรุปใจความจากประโยค \"small daily choices...can make a big difference over time\"" },
+    { "emoji": "🏫", "tag": "Detail", "difficulty": 1, "passageRef": "p5", "q": "Where is the school mentioned in the passage located?", "choices": ["Bangkok", "Chiang Mai", "Phuket", "Khon Kaen"], "answer": 1, "explain": "ระบุตรง \"One school in Chiang Mai reported...\"" },
+    { "emoji": "♻️", "tag": "Detail", "difficulty": 2, "passageRef": "p5", "q": "What will the school add next year according to the plan?", "choices": ["A swimming pool", "Recycling stations", "A new library", "A cafeteria"], "answer": 1, "explain": "ระบุตรง \"plans to expand the program to include recycling stations next year\"" }
+  ]
+}

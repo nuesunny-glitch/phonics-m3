@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ความสำเร็จ — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+<style>
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+  .cal-day{
+    aspect-ratio:1;border-radius:10px;display:flex;align-items:center;
+    justify-content:center;font-size:.85rem;font-weight:700;
+    background:var(--border);color:var(--ink-muted);
+  }
+  .cal-day.filled{background:var(--streak);color:#fff;}
+  .cal-day.today{outline:2.5px solid var(--primary);}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <h1 class="topbar-title">🏆 ความสำเร็จ</h1>
+    <a href="dashboard.html" class="icon-btn" aria-label="กลับหน้าหลัก">✕</a>
+  </header>
+
+  <section class="center mt-8 mb-16">
+    <div class="mascot-avatar mascot-avatar-lg">🐼</div>
+    <p style="font-weight:700;margin-top:8px;">เก่งมาก! เก็บมาแล้ว 23 ดาว 🌟</p>
+  </section>
+
+  <section class="grid-3 mb-16">
+    <div class="card center">
+      <div style="font-size:1.6rem;">⭐</div>
+      <div style="font-weight:800;font-family:var(--font-display);">23</div>
+      <div class="muted" style="font-size:.72rem;">ดาวรวม</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.6rem;">⚡</div>
+      <div style="font-weight:800;font-family:var(--font-display);">1,240</div>
+      <div class="muted" style="font-size:.72rem;">XP รวม</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.6rem;">🔥</div>
+      <div style="font-weight:800;font-family:var(--font-display);">12</div>
+      <div class="muted" style="font-size:.72rem;">Streak สูงสุด</div>
+    </div>
+  </section>
+
+  <section class="card mb-16">
+    <h3 style="margin:0 0 10px;font-size:1rem;">🔥 Streak 7 วันหลังสุด</h3>
+    <div class="cal-grid">
+      <div class="cal-day filled">จ</div>
+      <div class="cal-day filled">อ</div>
+      <div class="cal-day filled">พ</div>
+      <div class="cal-day filled">พฤ</div>
+      <div class="cal-day filled">ศ</div>
+      <div class="cal-day filled">ส</div>
+      <div class="cal-day filled today">อา</div>
+    </div>
+  </section>
+
+  <section>
+    <h3 style="margin:0 0 12px;font-size:1rem;">🎖️ เหรียญตรา</h3>
+    <div id="badgeGrid" class="badge-grid"></div>
+  </section>
+
+</div>
+
+<div id="bottomNav"></div>
+<script src="_tools/mock-data.js"></script>
+<script src="_tools/bottom-nav.js"></script>
+<script>
+  var grid = document.getElementById('badgeGrid');
+  MOCK_BADGES.forEach(function (b) {
+    var el = b.unlocked && b.href ? document.createElement('a') : document.createElement('div');
+    el.className = 'badge' + (b.unlocked ? '' : ' locked');
+    if (b.unlocked && b.href) el.href = b.href;
+    el.innerHTML = '<div class="icon">' + b.icon + '</div><div class="label">' + b.label + '</div>';
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>

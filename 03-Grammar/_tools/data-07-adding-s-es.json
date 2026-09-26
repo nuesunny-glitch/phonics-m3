@@ -1,0 +1,178 @@
+{
+  "id": "07",
+  "folder": "07-Adding S and ES",
+  "titleThai": "การเติม s และ es (Adding S and ES)",
+  "titleShort": "Adding S and ES",
+  "emojiTitle": "➕🔤",
+  "objectives": [
+    "บอกและเติม s/es ให้คำนามพหูพจน์ปกติได้ถูกต้อง (regular +s และ +es หลังเสียง s, ss, sh, ch, x, z)",
+    "เปลี่ยนคำนามที่ลงท้ายด้วย y, f/fe และ o ให้เป็นรูปพหูพจน์ได้ถูกต้องตามกฎการสะกด",
+    "จำและใช้คำนามพหูพจน์รูปแปลก (irregular plurals) เช่น man-men, child-children ได้อย่างถูกต้อง",
+    "ใช้กฎการเติม s/es แบบเดียวกันกับกริยาในประโยค Present Simple สำหรับประธาน he/she/it ได้ถูกต้อง",
+    "สังเกตและแก้ไขคำสะกดผิดของคำนามพหูพจน์และกริยาเติม s/es ในประโยค ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย"
+  ],
+  "explanation": [
+    {
+      "heading": "📖 การเติม s แบบปกติ (Regular +s)",
+      "html": "<p>คำนามส่วนใหญ่เวลาทำให้เป็นพหูพจน์ (มีมากกว่า 1) หรือกริยาที่ใช้กับประธาน <b>he, she, it</b> ในประโยค Present Simple แค่เติม <b>-s</b> ต่อท้ายคำเดิมได้เลย ไม่ต้องเปลี่ยนรูปคำ</p><table><tr><th>คำเดิม</th><th>เติม -s</th><th>ตัวอย่างประโยค</th></tr><tr><td>cat (แมว)</td><td>cats</td><td>I have two cats. (ฉันมีแมวสองตัว)</td></tr><tr><td>book (หนังสือ)</td><td>books</td><td>She has three books. (เธอมีหนังสือสามเล่ม)</td></tr><tr><td>play (กริยา เล่น)</td><td>plays</td><td>He plays football. (เขาเล่นฟุตบอล)</td></tr></table>"
+    },
+    {
+      "heading": "➕ การเติม -es หลังเสียง s, ss, sh, ch, x, z",
+      "html": "<p>ถ้าคำนามหรือกริยาลงท้ายด้วยเสียง <b>s, ss, sh, ch, x, z</b> การเติมแค่ -s เฉย ๆ จะออกเสียงยาก จึงต้องเติม <b>-es</b> แทน เพื่อให้ออกเสียงง่ายขึ้น</p><table><tr><th>ลงท้ายด้วยเสียง</th><th>คำเดิม</th><th>เติม -es</th></tr><tr><td>-s</td><td>bus (รถบัส)</td><td>buses</td></tr><tr><td>-ss</td><td>class (ชั้นเรียน)</td><td>classes</td></tr><tr><td>-sh</td><td>dish (จาน)</td><td>dishes</td></tr><tr><td>-ch</td><td>watch (นาฬิกาข้อมือ)</td><td>watches</td></tr><tr><td>-x</td><td>box (กล่อง)</td><td>boxes</td></tr><tr><td>-z</td><td>quiz (แบบทดสอบสั้น ๆ)</td><td>quizzes (เติม z ซ้ำก่อนแล้วเติม es)</td></tr></table><p>กฎเดียวกันนี้ใช้กับกริยา he/she/it ด้วย เช่น <b>watch → watches</b>, <b>wash → washes</b>, <b>fix → fixes</b></p>"
+    },
+    {
+      "heading": "🔤 คำที่ลงท้ายด้วย y: พยัญชนะ+y กับ สระ+y ไม่เหมือนกัน!",
+      "html": "<p>เวลาเจอคำที่ลงท้ายด้วย <b>y</b> ต้องดูตัวอักษรที่อยู่<b>หน้าตัว y</b> ก่อนเสมอ</p><table><tr><th>หน้า y คือ...</th><th>กฎ</th><th>ตัวอย่าง</th></tr><tr><td>พยัญชนะ (b, c, d, ...)</td><td>เปลี่ยน y เป็น i แล้วเติม -es</td><td>baby → babies, city → cities, study → studies</td></tr><tr><td>สระ (a, e, i, o, u)</td><td>เติม -s ตรง ๆ ไม่ต้องเปลี่ยน y</td><td>boy → boys, day → days, play → plays</td></tr></table><p>กฎนี้ใช้ได้ทั้งกับคำนามพหูพจน์และกริยา he/she/it เช่น <b>study → studies</b> เหมือนกับ <b>baby → babies</b> เป๊ะ</p>"
+    },
+    {
+      "heading": "🍃 คำที่ลงท้ายด้วย f หรือ fe: บางคำเปลี่ยนเป็น ves",
+      "html": "<p>คำนามหลายคำที่ลงท้ายด้วย <b>f</b> หรือ <b>fe</b> จะเปลี่ยน f/fe เป็น <b>ves</b> เวลาทำเป็นพหูพจน์</p><table><tr><th>คำเดิม</th><th>พหูพจน์</th></tr><tr><td>leaf (ใบไม้)</td><td>leaves</td></tr><tr><td>knife (มีด)</td><td>knives</td></tr><tr><td>wife (ภรรยา)</td><td>wives</td></tr><tr><td>half (ครึ่งหนึ่ง)</td><td>halves</td></tr><tr><td>shelf (ชั้นวางของ)</td><td>shelves</td></tr><tr><td>wolf (หมาป่า)</td><td>wolves</td></tr></table><p><b>⚠️ ข้อยกเว้น:</b> ไม่ใช่ทุกคำที่ลงท้าย f จะเปลี่ยนเป็น ves! บางคำเติม -s ปกติ เช่น <b>roof → roofs</b> (หลังคา), <b>chief → chiefs</b> (หัวหน้า) — ต้องจำเป็นคำ ๆ ไป และกฎนี้ใช้กับ<b>คำนามเท่านั้น</b> ไม่มีผลกับกริยา</p>"
+    },
+    {
+      "heading": "🥔 คำที่ลงท้ายด้วย o: บางคำเติม -es บางคำเติม -s เท่านั้น",
+      "html": "<p>คำนามที่ลงท้ายด้วย <b>o</b> ส่วนใหญ่ (โดยเฉพาะคำง่าย ๆ ในชีวิตประจำวัน) จะเติม <b>-es</b></p><table><tr><th>คำเดิม</th><th>พหูพจน์ (+es)</th></tr><tr><td>potato (มันฝรั่ง)</td><td>potatoes</td></tr><tr><td>tomato (มะเขือเทศ)</td><td>tomatoes</td></tr><tr><td>hero (วีรบุรุษ)</td><td>heroes</td></tr><tr><td>echo (เสียงสะท้อน)</td><td>echoes</td></tr></table><p><b>⚠️ ข้อยกเว้น:</b> คำที่เกี่ยวกับดนตรี เทคโนโลยี หรือคำยืมจากภาษาอื่น มักเติม <b>-s</b> เฉย ๆ เช่น <b>photo → photos</b>, <b>piano → pianos</b>, <b>radio → radios</b>, <b>kilo → kilos</b></p>"
+    },
+    {
+      "heading": "🧑‍🤝‍🧑 พหูพจน์รูปแปลก (Irregular Plurals) ที่ต้องท่องจำ",
+      "html": "<p>คำนามบางคำไม่ได้เติม s/es เลย แต่เปลี่ยนรูปคำไปเลย ต้องท่องจำเป็นคำ ๆ ไป (ข้อสอบชอบออก!)</p><table><tr><th>เอกพจน์</th><th>พหูพจน์</th></tr><tr><td>man (ผู้ชาย)</td><td>men</td></tr><tr><td>woman (ผู้หญิง)</td><td>women</td></tr><tr><td>child (เด็ก)</td><td>children</td></tr><tr><td>tooth (ฟัน)</td><td>teeth</td></tr><tr><td>foot (เท้า)</td><td>feet</td></tr><tr><td>mouse (หนู)</td><td>mice</td></tr><tr><td>person (คน)</td><td>people</td></tr></table><p>และยังมีคำที่รูปเอกพจน์กับพหูพจน์<b>เหมือนกันเป๊ะ</b> ไม่เปลี่ยนเลย เช่น <b>sheep → sheep</b> (แกะ), <b>fish → fish</b> (ปลา)</p>"
+    },
+    {
+      "heading": "🔁 ข่าวดี! กฎเดียวกันนี้ใช้กับกริยา Present Simple (He/She/It) ด้วย",
+      "html": "<p>ทุกกฎการเติม s/es ที่เรียนมาข้างต้น <b>ใช้ได้เหมือนกันทุกประการ</b> กับกริยาในประโยค Present Simple เมื่อประธานเป็น <b>he, she, it</b> (หรือคำนามเอกพจน์)</p><table><tr><th>กฎ</th><th>คำนาม (ตัวอย่าง)</th><th>กริยา (ตัวอย่าง)</th></tr><tr><td>เติม -s ปกติ</td><td>cat → cats</td><td>play → plays</td></tr><tr><td>เติม -es (s/ss/sh/ch/x/z)</td><td>box → boxes</td><td>watch → watches, fix → fixes</td></tr><tr><td>พยัญชนะ+y → ies</td><td>baby → babies</td><td>study → studies, try → tries</td></tr><tr><td>สระ+y → +s</td><td>boy → boys</td><td>play → plays, enjoy → enjoys</td></tr></table><p>สังเกตว่า <b>box → boxes</b> กับ <b>watch → watches</b> ใช้กฎเดียวกันเป๊ะ! ต่างกันแค่คำนามใช้บอกจำนวน (พหูพจน์) ส่วนกริยาใช้บอกว่าประธานเป็น he/she/it (เอกพจน์)</p>"
+    },
+    {
+      "heading": "⚠️ จุดที่ต้องระวัง & ข้อยกเว้นที่ข้อสอบชอบออก",
+      "html": "<p>รวมจุดที่นักเรียนสะกดผิดบ่อยที่สุด:</p><table><tr><th>จุดที่ต้องระวัง</th><th>ตัวอย่างที่ถูกต้อง</th><th>อย่าเขียนผิดเป็น</th></tr><tr><td>f/fe → ves ไม่ใช่ทุกคำ</td><td>roof → roofs, chief → chiefs</td><td>❌ rooves, chieves</td></tr><tr><td>ลงท้าย o บางคำ +s เท่านั้น</td><td>photo → photos, piano → pianos</td><td>❌ photoes, pianoes</td></tr><tr><td>พหูพจน์รูปแปลก ไม่เติม s เลย</td><td>child → children, foot → feet</td><td>❌ childs, foots</td></tr><tr><td>คำที่รูปเหมือนกันทั้งเอกพจน์-พหูพจน์</td><td>sheep → sheep, fish → fish</td><td>❌ sheeps, fishs</td></tr><tr><td>go/do ลงท้ายเสียงสระ ก็เติม es เหมือนกัน</td><td>go → goes, do → does</td><td>❌ gos, dos</td></tr></table><p>เคล็ดลับ: เวลาทำข้อสอบ ให้ถามตัวเองก่อนเสมอว่า <b>\"คำนี้ลงท้ายด้วยอะไร\"</b> แล้วเลือกกฎที่ตรงกับตัวอักษรสุดท้าย ถ้าเป็นคำยกเว้นที่จำไม่ได้ ให้ท่องจำเป็นคำ ๆ ไป เพราะไม่มีกฎตายตัว</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["รูปแบบคำ (ลงท้ายด้วย)", "กฎการเติม", "ตัวอย่างคำนาม/กริยา"],
+    "rows": [
+      ["คำทั่วไป (b, c, d, ...)", "เติม -s", "cat → cats, play → plays"],
+      ["s, ss, sh, ch, x, z", "เติม -es", "bus → buses, box → boxes, watch → watches"],
+      ["พยัญชนะ + y", "เปลี่ยน y เป็น i แล้วเติม -es", "baby → babies, study → studies"],
+      ["สระ + y", "เติม -s เท่านั้น (y คงเดิม)", "boy → boys, play → plays"],
+      ["f / fe (บางคำ)", "เปลี่ยนเป็น -ves", "leaf → leaves, knife → knives"]
+    ]
+  },
+  "tips": [
+    "เสียง \"ซ ช ส\" ต้องมี E ช่วย: คำลงท้าย s, ss, sh, ch, x, z ให้เติม -es เสมอ (เช่น bus→buses, box→boxes)",
+    "หน้าพยัญชนะ Y ใจร้อน ต้องเปลี่ยนเป็น IES ไว ๆ ส่วนหน้าสระ Y ใจเย็น แค่เติม S ก็พอ (baby→babies แต่ boy→boys)",
+    "กฎเติม s/es ของคำนามพหูพจน์ กับกริยา he/she/it ใช้กฎเดียวกันเป๊ะ! จำแค่ชุดเดียวก็ใช้ได้ทั้งคู่ (box→boxes เหมือน watch→watches)"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม s/es ให้คำนามปกติ (8 ข้อ)",
+        "instructions": "เปลี่ยนคำนามต่อไปนี้ให้เป็นรูปพหูพจน์ (เติม -s หรือ -es ให้ถูกต้อง)",
+        "items": ["cat", "book", "bus", "box", "watch (นาฬิกาข้อมือ)", "class", "dish", "brush"],
+        "answers": ["cats", "books", "buses", "boxes", "watches", "classes", "dishes", "brushes"],
+        "reasons": [
+          "cat เป็นคำนามปกติ เติม s ได้เลย",
+          "book เป็นคำนามปกติ เติม s ได้เลย",
+          "bus ลงท้ายด้วย s ต้องเติม -es เป็น buses",
+          "box ลงท้ายด้วย x ต้องเติม -es เป็น boxes",
+          "watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches",
+          "class ลงท้ายด้วย ss ต้องเติม -es เป็น classes",
+          "dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes",
+          "brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติมพหูพจน์คำนามที่ลงท้าย y, f/fe, o (8 ข้อ)",
+        "instructions": "เปลี่ยนคำนามต่อไปนี้ให้เป็นรูปพหูพจน์ โดยระวังกฎการเปลี่ยน y, f/fe และ o",
+        "items": ["baby", "city", "boy", "day", "leaf", "knife", "potato", "photo"],
+        "answers": ["babies", "cities", "boys", "days", "leaves", "knives", "potatoes", "photos"],
+        "reasons": [
+          "baby ลงท้ายพยัญชนะ+y (b+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: babies",
+          "city ลงท้ายพยัญชนะ+y (t+y) ต้องเปลี่ยน y เป็น i แล้วเติม es: cities",
+          "boy ลงท้ายสระ+y (o+y) เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys",
+          "day ลงท้ายสระ+y (a+y) เติม s ได้เลย: days",
+          "leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves",
+          "knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives",
+          "potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes",
+          "photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น: photos"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติมกริยา he/she/it และพหูพจน์รูปแปลก (8 ข้อ)",
+        "instructions": "เติมคำในช่องว่างให้ถูกต้อง (ผันกริยาให้ตรงกับประธาน หรือเติมพหูพจน์ให้ถูกต้อง)",
+        "items": [
+          "He ___ (play) football every weekend.",
+          "She ___ (study) English every day.",
+          "My mother ___ (watch) TV at night.",
+          "The bus ___ (go) to school at 7 a.m.",
+          "He ___ (wash) his car every Sunday.",
+          "She ___ (try) her best in every exam.",
+          "One tooth, two ___.",
+          "One child, two ___."
+        ],
+        "answers": ["plays", "studies", "watches", "goes", "washes", "tries", "teeth", "children"],
+        "reasons": [
+          "He เป็นประธานเอกพจน์ (he/she/it) กริยา play ลงท้ายสระ+y เติม s ได้เลย: plays",
+          "She เป็นประธานเอกพจน์ กริยา study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: studies",
+          "กริยา watch ลงท้าย ch ต้องเติม -es: watches",
+          "กริยา go ลงท้ายเสียงสระ ต้องเติม -es: goes",
+          "กริยา wash ลงท้าย sh ต้องเติม -es: washes",
+          "กริยา try ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: tries",
+          "tooth เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น teeth",
+          "child เป็นพหูพจน์รูปแปลก (irregular) เปลี่ยนเป็น children"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🐱", "tag": "นามปกติ +s", "difficulty": 1, "q": "One cat, two ___.", "choices": ["cats", "catses", "caties", "cat"], "answer": 0, "explain": "cat เป็นคำนามปกติ เติม s ได้เลย" },
+    { "emoji": "📕", "tag": "นามปกติ +s", "difficulty": 1, "q": "One book, two ___.", "choices": ["bookes", "books", "bookies", "book"], "answer": 1, "explain": "book เป็นคำนามปกติ เติม s ได้เลย" },
+    { "emoji": "🐶", "tag": "นามปกติ +s", "difficulty": 1, "q": "One dog, two ___.", "choices": ["doges", "dogies", "dogs", "dog"], "answer": 2, "explain": "dog เป็นคำนามปกติ เติม s ได้เลย" },
+    { "emoji": "🚗", "tag": "นามปกติ +s", "difficulty": 1, "q": "One car, two ___.", "choices": ["carses", "carries", "car", "cars"], "answer": 3, "explain": "car เป็นคำนามปกติ เติม s ได้เลย ไม่ใช่ carries (นั่นคือกริยา carry)" },
+    { "emoji": "🚌", "tag": "ลงท้าย s → +es", "difficulty": 1, "q": "One bus, two ___.", "choices": ["buses", "buss", "busies", "bus"], "answer": 0, "explain": "bus ลงท้ายด้วยเสียง s ต้องเติม -es เป็น buses" },
+    { "emoji": "📦", "tag": "ลงท้าย x → +es", "difficulty": 1, "q": "One box, two ___.", "choices": ["boxs", "boxes", "boxies", "box"], "answer": 1, "explain": "box ลงท้ายด้วย x ต้องเติม -es เป็น boxes" },
+    { "emoji": "⌚", "tag": "ลงท้าย ch → +es", "difficulty": 1, "q": "One watch (นาฬิกาข้อมือ), two ___.", "choices": ["watchs", "watchies", "watches", "watch"], "answer": 2, "explain": "watch ลงท้ายด้วย ch ต้องเติม -es เป็น watches" },
+    { "emoji": "🍽️", "tag": "ลงท้าย sh → +es", "difficulty": 1, "q": "One dish, two ___.", "choices": ["dishs", "dishies", "dish", "dishes"], "answer": 3, "explain": "dish ลงท้ายด้วย sh ต้องเติม -es เป็น dishes" },
+    { "emoji": "🏫", "tag": "ลงท้าย ss → +es", "difficulty": 1, "q": "One class, two ___.", "choices": ["classes", "classs", "classies", "class"], "answer": 0, "explain": "class ลงท้ายด้วย ss ต้องเติม -es เป็น classes" },
+    { "emoji": "🖌️", "tag": "ลงท้าย sh → +es", "difficulty": 1, "q": "One brush, two ___.", "choices": ["brushs", "brushes", "brushies", "brush"], "answer": 1, "explain": "brush ลงท้ายด้วย sh ต้องเติม -es เป็น brushes" },
+    { "emoji": "🦊", "tag": "ลงท้าย x → +es", "difficulty": 1, "q": "One fox, two ___.", "choices": ["foxs", "foxies", "foxes", "fox"], "answer": 2, "explain": "fox ลงท้ายด้วย x ต้องเติม -es เป็น foxes" },
+    { "emoji": "🪑", "tag": "นามปกติ +s", "difficulty": 1, "q": "One chair, two ___.", "choices": ["chaires", "chairies", "chair", "chairs"], "answer": 3, "explain": "chair เป็นคำนามปกติ เติม s ได้เลย" },
+    { "emoji": "🖊️", "tag": "นามปกติ +s", "difficulty": 1, "q": "One pen, two ___.", "choices": ["pens", "penes", "penies", "pen"], "answer": 0, "explain": "pen เป็นคำนามปกติ เติม s ได้เลย" },
+    { "emoji": "🥛", "tag": "ลงท้าย ss → +es", "difficulty": 1, "q": "One glass (แก้วน้ำ), two ___.", "choices": ["glasss", "glasses", "glassies", "glass"], "answer": 1, "explain": "glass ลงท้ายด้วย ss ต้องเติม -es เป็น glasses" },
+    { "emoji": "📝", "tag": "ลงท้าย z → +es (เติม z ซ้ำ)", "difficulty": 1, "q": "One quiz, two ___.", "choices": ["quizs", "quizies", "quizzes", "quiz"], "answer": 2, "explain": "quiz ลงท้ายด้วย z ต้องเติม z ซ้ำแล้วเติม -es เป็น quizzes" },
+
+    { "emoji": "👶", "tag": "พยัญชนะ+y → ies", "difficulty": 2, "q": "One baby, two ___.", "choices": ["babys", "babyes", "baby", "babies"], "answer": 3, "explain": "baby ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: babies" },
+    { "emoji": "🏙️", "tag": "พยัญชนะ+y → ies", "difficulty": 2, "q": "One city, two ___.", "choices": ["cities", "citys", "cityes", "city"], "answer": 0, "explain": "city ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: cities" },
+    { "emoji": "👨‍👩‍👧‍👦", "tag": "พยัญชนะ+y → ies", "difficulty": 2, "q": "One family, two ___.", "choices": ["familys", "families", "familyes", "family"], "answer": 1, "explain": "family ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: families" },
+    { "emoji": "📖", "tag": "พยัญชนะ+y → ies", "difficulty": 2, "q": "One story, two ___.", "choices": ["storys", "storyes", "stories", "story"], "answer": 2, "explain": "story ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: stories" },
+    { "emoji": "🌍", "tag": "พยัญชนะ+y → ies", "difficulty": 2, "q": "One country, two ___.", "choices": ["countrys", "countryes", "country", "countries"], "answer": 3, "explain": "country ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น i แล้วเติม es: countries" },
+    { "emoji": "👦", "tag": "สระ+y → +s เท่านั้น", "difficulty": 2, "q": "One boy, two ___.", "choices": ["boys", "boies", "boyes", "boy"], "answer": 0, "explain": "boy ลงท้ายสระ+y เติม s ได้เลย ไม่ต้องเปลี่ยน y: boys" },
+    { "emoji": "📅", "tag": "สระ+y → +s เท่านั้น", "difficulty": 2, "q": "One day, two ___.", "choices": ["dies", "days", "dayes", "day"], "answer": 1, "explain": "day ลงท้ายสระ+y เติม s ได้เลย: days" },
+    { "emoji": "🐒", "tag": "สระ+y → +s เท่านั้น", "difficulty": 2, "q": "One monkey, two ___.", "choices": ["monkies", "monkeyes", "monkeys", "monkey"], "answer": 2, "explain": "monkey ลงท้ายสระ+y (e+y) เติม s ได้เลย: monkeys" },
+    { "emoji": "🍃", "tag": "f → ves", "difficulty": 2, "q": "One leaf, two ___.", "choices": ["leafs", "leafes", "leaf", "leaves"], "answer": 3, "explain": "leaf ลงท้าย f ต้องเปลี่ยนเป็น ves: leaves" },
+    { "emoji": "🔪", "tag": "fe → ves", "difficulty": 2, "q": "One knife, two ___.", "choices": ["knives", "knifes", "knifees", "knife"], "answer": 0, "explain": "knife ลงท้าย fe ต้องเปลี่ยนเป็น ves: knives" },
+    { "emoji": "💍", "tag": "fe → ves", "difficulty": 2, "q": "One wife, two ___.", "choices": ["wifes", "wives", "wifees", "wife"], "answer": 1, "explain": "wife ลงท้าย fe ต้องเปลี่ยนเป็น ves: wives" },
+    { "emoji": "🍕", "tag": "f → ves", "difficulty": 2, "q": "One half, two ___.", "choices": ["halfs", "halfes", "halves", "half"], "answer": 2, "explain": "half ลงท้าย f ต้องเปลี่ยนเป็น ves: halves" },
+    { "emoji": "📚", "tag": "f → ves", "difficulty": 2, "q": "One shelf, two ___.", "choices": ["shelfs", "shelfes", "shelf", "shelves"], "answer": 3, "explain": "shelf ลงท้าย f ต้องเปลี่ยนเป็น ves: shelves" },
+    { "emoji": "🥔", "tag": "ลงท้าย o → +es", "difficulty": 2, "q": "One potato, two ___.", "choices": ["potatoes", "potatos", "potatoies", "potato"], "answer": 0, "explain": "potato ลงท้าย o (พยัญชนะ+o) ต้องเติม -es: potatoes" },
+    { "emoji": "🍅", "tag": "ลงท้าย o → +es", "difficulty": 2, "q": "One tomato, two ___.", "choices": ["tomatos", "tomatoes", "tomatoies", "tomato"], "answer": 1, "explain": "tomato ลงท้าย o ต้องเติม -es: tomatoes" },
+    { "emoji": "🦸", "tag": "ลงท้าย o → +es", "difficulty": 2, "q": "One hero, two ___.", "choices": ["heros", "heroies", "heroes", "hero"], "answer": 2, "explain": "hero ลงท้าย o ต้องเติม -es: heroes" },
+    { "emoji": "📔", "tag": "กริยา he/she/it: พยัญชนะ+y → ies", "difficulty": 2, "q": "My brother ___ (study) English every day.", "choices": ["studys", "studyes", "study", "studies"], "answer": 3, "explain": "study ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ he/she/it: studies" },
+    { "emoji": "🎒", "tag": "กริยา he/she/it: พยัญชนะ+y → ies", "difficulty": 2, "q": "She ___ (carry) a heavy bag to school.", "choices": ["carries", "carrys", "carryes", "carry"], "answer": 0, "explain": "carry ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies: carries" },
+    { "emoji": "⚽", "tag": "กริยา he/she/it: สระ+y → +s", "difficulty": 2, "q": "He ___ (play) football every weekend.", "choices": ["plaies", "plays", "playes", "play"], "answer": 1, "explain": "play ลงท้ายสระ+y เติม s ได้เลยเมื่อใช้กับ he/she/it: plays" },
+    { "emoji": "🧼", "tag": "กริยา he/she/it: ลงท้าย sh → +es", "difficulty": 2, "q": "My mother ___ (wash) the dishes after dinner.", "choices": ["washs", "washies", "washes", "wash"], "answer": 2, "explain": "wash ลงท้าย sh ต้องเติม -es เมื่อใช้กับ he/she/it: washes" },
+
+    { "emoji": "🧑", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One man, two ___.", "choices": ["mans", "manes", "man", "men"], "answer": 3, "explain": "man เป็นพหูพจน์รูปแปลก ไม่เติม s แต่เปลี่ยนเป็น men" },
+    { "emoji": "👩", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One woman, two ___.", "choices": ["women", "womans", "womens", "woman"], "answer": 0, "explain": "woman เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น women" },
+    { "emoji": "🧒", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One child, two ___.", "choices": ["childs", "children", "childes", "child"], "answer": 1, "explain": "child เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น children" },
+    { "emoji": "🦷", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One tooth, two ___.", "choices": ["tooths", "toothes", "teeth", "tooth"], "answer": 2, "explain": "tooth เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น teeth" },
+    { "emoji": "🦶", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One foot, two ___.", "choices": ["foots", "footes", "foot", "feet"], "answer": 3, "explain": "foot เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น feet" },
+    { "emoji": "🐭", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One mouse, two ___.", "choices": ["mice", "mouses", "mousies", "mouse"], "answer": 0, "explain": "mouse เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น mice" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "พหูพจน์รูปแปลก (irregular)", "difficulty": 3, "q": "One person, many ___.", "choices": ["persons", "people", "personses", "person"], "answer": 1, "explain": "person เป็นพหูพจน์รูปแปลก เปลี่ยนเป็น people" },
+    { "emoji": "🐑", "tag": "รูปเดียวกันทั้งเอกพจน์-พหูพจน์", "difficulty": 3, "q": "One sheep, two ___.", "choices": ["sheeps", "sheepies", "sheep", "sheepes"], "answer": 2, "explain": "sheep เป็นคำที่รูปเอกพจน์และพหูพจน์เหมือนกัน ไม่เติมอะไรเลย" },
+    { "emoji": "📷", "tag": "ข้อยกเว้น: ลงท้าย o → +s เท่านั้น", "difficulty": 3, "q": "One photo, two ___.", "choices": ["photoes", "photos", "photoies", "photo"], "answer": 1, "explain": "photo เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ photoes" },
+    { "emoji": "🎹", "tag": "ข้อยกเว้น: ลงท้าย o → +s เท่านั้น", "difficulty": 3, "q": "One piano, two ___.", "choices": ["pianoes", "pianoies", "pianos", "piano"], "answer": 2, "explain": "piano เป็นคำยกเว้น ลงท้าย o แต่เติม -s เท่านั้น ไม่ใช่ pianoes" },
+    { "emoji": "🐺", "tag": "f → ves (คำยาก)", "difficulty": 3, "q": "One wolf, two ___.", "choices": ["wolfs", "wolfes", "wolf", "wolves"], "answer": 3, "explain": "wolf ลงท้าย f ต้องเปลี่ยนเป็น ves: wolves" },
+    { "emoji": "🐦", "tag": "กริยา he/she/it: พยัญชนะ+y → ies (คำยาก)", "difficulty": 3, "q": "The bird ___ (fly) south every winter.", "choices": ["flies", "flys", "flyes", "fly"], "answer": 0, "explain": "fly ลงท้ายพยัญชนะ+y ต้องเปลี่ยนเป็น ies เมื่อใช้กับ it (the bird): flies" },
+    { "emoji": "📦", "tag": "จับผิดประโยค: นามพหูพจน์", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["There are three boxs in the room.", "There are three boxes in the room.", "There are three boxies in the room.", "There are three box in the room."], "answer": 1, "explain": "box ลงท้าย x ต้องเติม -es เป็น boxes ไม่ใช่ boxs หรือ boxies" },
+    { "emoji": "🧑‍🎓", "tag": "จับผิดประโยค: กริยา he/she/it", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She study English every day.", "She studys English every day.", "She studies English every day.", "She studying English every day."], "answer": 2, "explain": "ประธาน She (he/she/it) กับกริยาที่ลงท้ายพยัญชนะ+y ต้องเปลี่ยน y เป็น ies: study → studies" },
+    { "emoji": "🔪", "tag": "จับผิดประโยค: ผสม", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["My father has two knifes in the kitchen.", "My father has two knives in the kitchen.", "My father has two knivies in the kitchen.", "My father has two knifes's in the kitchen."], "answer": 1, "explain": "knife ลงท้าย fe ต้องเปลี่ยนเป็น ves สะกดว่า knives (ระวังสะกดผิดเป็น knifes หรือ knives)" }
+  ]
+}

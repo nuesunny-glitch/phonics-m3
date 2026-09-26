@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Pronoun Adventure บทที่ 1: สรรพนามพื้นฐาน</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_tools/game.css">
+<link rel="stylesheet" href="../../Audio-System/audio-system.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้า Pronoun Adventure</a>
+
+  <!-- ===== Intro ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>🎭 Pronoun Adventure</h1>
+      <div class="sub">บทที่ 1 — สรรพนามพื้นฐาน (Subject Pronouns)</div>
+    </div>
+    <div class="game-card">
+      <div class="big-emoji">🪞</div>
+      <p class="story-text">
+        ยินดีต้อนรับนักผจญภัย! คำสรรพนามคือคำที่ใช้แทนคำนามเพื่อไม่ให้พูดซ้ำ
+        เช่น I, you, he, she, it, we, they มีทั้งหมด 7 คำให้ฝึกใน 3 ด่าน:<br><br>
+        📝 ด่าน 1 — เติมสรรพนามในประโยค<br>
+        🔊 ด่าน 2 — ฟังแล้วเลือกความหมาย<br>
+        🧩 ด่าน 3 — จับคู่คำกับภาพ
+      </p>
+      <button id="startBtn" class="btn btn-primary">เริ่มผจญภัย 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== Stage 1: picture + blanked sentence -> word ===== -->
+  <div id="screen-stage1" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 1/3 — เติมสรรพนามในประโยค</span>
+      <span id="s1-progress-label">1 / 7</span>
+    </div>
+    <div class="stage-bar"><div id="s1-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="s1-emoji" class="big-emoji">🙋</div>
+      <p id="s1-sentence" class="s1-sentence">____ am a student.</p>
+      <div id="s1-choices" class="choice-grid"></div>
+      <div id="s1-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== Stage 2: listen -> Thai meaning ===== -->
+  <div id="screen-stage2" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 2/3 — ฟังแล้วเลือกความหมาย</span>
+      <span id="s2-progress-label">1 / 7</span>
+    </div>
+    <div class="stage-bar"><div id="s2-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <button id="s2-audio-btn" class="audio-btn">🔊 ฟังคำศัพท์</button>
+      <div id="s2-choices" class="choice-grid"></div>
+      <div id="s2-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== Stage 3: matching game ===== -->
+  <div id="screen-stage3" class="screen hidden">
+    <div class="stage-progress">
+      <span>ด่าน 3/3 — จับคู่คำกับภาพ</span>
+      <span id="s3-progress-label">0 / 7 คู่</span>
+    </div>
+    <div class="stage-bar"><div id="s3-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="s3-grid" class="match-grid"></div>
+      <div id="s3-mistakes" class="mistake-counter">พลาด 0 ครั้ง</div>
+    </div>
+  </div>
+
+  <!-- ===== Result ===== -->
+  <div id="screen-result" class="screen hidden">
+    <div class="banner">
+      <h1>🎉 ผ่านด่านสำเร็จ!</h1>
+      <div class="sub">Pronoun Adventure บทที่ 1 — สรรพนามพื้นฐาน</div>
+    </div>
+    <div class="game-card">
+      <div id="result-stars" class="stars-display">☆☆☆</div>
+      <div id="result-score" class="result-score">0 / 21 คะแนน</div>
+      <div id="result-sub" class="result-sub"></div>
+      <a href="../chapter-2-object-pronouns/game.html" class="btn btn-primary" style="text-decoration:none;display:inline-block;">ไปบทที่ 2: Object Pronouns ➡️</a>
+      <button id="replayBtn" class="btn btn-secondary">เล่นอีกครั้ง 🔁</button>
+      <a href="../index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="../_tools/pronouns-data.js"></script>
+<script src="../../Audio-System/audio-system.js"></script>
+<script src="../_tools/game-audio.js"></script>
+<script src="../_tools/game-engine.js"></script>
+</body>
+</html>

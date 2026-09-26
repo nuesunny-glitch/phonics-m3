@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Preposition Adventure — เรียนกับน้องคอนนี่ 🦊</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+<link rel="stylesheet" href="../Pronunciation-System/pronunciation.css">
+</head>
+<body>
+<div class="game-shell">
+
+  <a class="home-link" href="index.html">&larr; กลับหน้า Preposition Adventure</a>
+
+  <!-- ===== 1. Learn (intro) ===== -->
+  <div id="screen-intro" class="screen">
+    <div class="banner">
+      <h1>🧭 Preposition Adventure</h1>
+      <div class="sub">เรียนคำบุพบทกับน้องคอนนี่ 🦊</div>
+    </div>
+    <div class="game-card">
+      <div id="intro-mascot"></div>
+      <p class="story-text">เรียนคำบุพบทบอกตำแหน่งและเวลา 7 คำ พร้อมเกมสนุก!<br>เริ่มกันเลย</p>
+      <button id="startBtn" class="btn btn-primary">เริ่มเรียน 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== 2. Learn: Prepositions of Place ===== -->
+  <div id="screen-learnPlace" class="screen hidden">
+    <div class="stage-progress"><span>Learn — Prepositions of Place</span><span id="lp-dots">1 / 4</span></div>
+    <div class="game-card">
+      <div id="lp-emoji" class="word-illustration">📦</div>
+      <button id="lp-audio-btn" class="audio-btn" data-audio="word">🔊 ออกเสียง</button>
+      <h2 id="lp-word" style="margin:6px 0 2px;">IN</h2>
+      <div id="lp-th" class="muted" style="font-weight:600;color:var(--c6);">อยู่ข้างใน</div>
+      <div id="lp-examples"></div>
+      <div class="carousel-nav">
+        <button id="lpPrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="lpNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. Learn: Prepositions of Time ===== -->
+  <div id="screen-learnTime" class="screen hidden">
+    <div class="stage-progress"><span>Learn — Prepositions of Time</span><span id="lt-dots">1 / 3</span></div>
+    <div class="game-card">
+      <div id="lt-emoji" class="word-illustration">🌸</div>
+      <button id="lt-audio-btn" class="audio-btn" data-audio="word">🔊 ออกเสียง</button>
+      <h2 id="lt-word" style="margin:6px 0 2px;">IN</h2>
+      <div id="lt-th" class="muted" style="font-weight:600;color:var(--c6);">ช่วงเวลายาว</div>
+      <div id="lt-timeline" class="timeline-row"></div>
+      <div class="carousel-nav">
+        <button id="ltPrevBtn" class="btn btn-secondary">◀ ก่อนหน้า</button>
+        <button id="ltNextBtn" class="btn btn-primary">ถัดไป ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 4. Memory Trick recap ===== -->
+  <div id="screen-memoryTrick" class="screen hidden">
+    <div class="stage-progress"><span>Memory Trick</span></div>
+    <div class="game-card">
+      <div id="mt-mascot"></div>
+      <div id="mt-grid" class="trick-grid"></div>
+      <button id="toMiniBtn" class="btn btn-primary mt-16">ไปฝึกซ้อม ➡️</button>
+    </div>
+  </div>
+
+  <!-- ===== 5. Mini Practice (ungraded, 4 rotating formats) ===== -->
+  <div id="screen-mini" class="screen hidden">
+    <div class="stage-progress"><span>Mini Practice</span><span id="mini-progress-label">1 / 8</span></div>
+    <div class="stage-bar"><div id="mini-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <span class="mini-badge">🎯 ฝึกซ้อม ไม่นับคะแนน</span>
+      <div id="mini-content"></div>
+      <div id="mini-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 6. Game 1 — Choose the correct picture ===== -->
+  <div id="screen-game1" class="screen hidden">
+    <div class="stage-progress"><span>🎮 เกม 1 — เลือกภาพให้ถูก</span><span id="g1-progress-label">1 / 7</span></div>
+    <div class="stage-bar"><div id="g1-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <h2 id="g1-word" style="margin:0 0 12px;">IN</h2>
+      <div id="g1-choices" class="choice-grid"></div>
+      <div id="g1-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 7. Game 2 — Drag the word ===== -->
+  <div id="screen-game2" class="screen hidden">
+    <div class="stage-progress"><span>🎮 เกม 2 — ลากคำให้ถูก</span><span id="g2-progress-label">1 / 7</span></div>
+    <div class="stage-bar"><div id="g2-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="g2-emoji" class="word-illustration" style="font-size:3.5rem;">📦</div>
+      <p id="g2-sentence" class="s1-sentence"></p>
+      <div id="g2-drag-row" class="drag-row"></div>
+      <div id="g2-feedback" class="feedback-line"></div>
+    </div>
+  </div>
+
+  <!-- ===== 8. Game 3 — Rescue Mission ===== -->
+  <div id="screen-game3" class="screen hidden">
+    <div class="stage-progress"><span>🎮 เกม 3 — Rescue Mission</span></div>
+    <div class="game-card">
+      <p class="story-text" style="margin:0 0 10px;">ช่วยน้องคอนนี่ไปโรงเรียนโดยเลือกคำบุพบทให้ถูก!</p>
+      <div id="rescue-track" class="rescue-track"></div>
+      <div id="g3-question"></div>
+      <div id="g3-choices" class="choice-grid"></div>
+      <div id="g3-feedback" class="feedback-line"></div>
+      <div id="g3-done" class="hidden">
+        <div style="font-size:3rem;">🎉🏫</div>
+        <p class="story-text">น้องคอนนี่ถึงโรงเรียนแล้ว!</p>
+        <button id="toBossBtn" class="btn btn-primary">ไปบอสยักษ์ ➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 9. Boss Quiz (20 questions) ===== -->
+  <div id="screen-boss" class="screen hidden">
+    <div class="banner boss-banner">
+      <h1>👹 Boss Quiz</h1>
+      <div class="sub" id="boss-progress-label">ข้อ 1 / 20</div>
+    </div>
+    <div class="stage-bar"><div id="boss-bar-fill" class="stage-bar-fill" style="width:0%"></div></div>
+    <div class="game-card">
+      <div id="boss-content"></div>
+      <div id="boss-feedback" class="feedback-line"></div>
+      <div id="boss-explain" class="explain-line hidden"></div>
+    </div>
+  </div>
+
+  <!-- ===== 10. Result ===== -->
+  <div id="screen-result" class="screen hidden">
+    <div class="banner">
+      <h1>🏆 เก่งมาก!</h1>
+      <div class="sub">Preposition Adventure — สรุปผล</div>
+    </div>
+    <div class="game-card">
+      <div id="result-mascot"></div>
+      <div id="result-stars" class="stars-display">☆☆☆</div>
+      <div id="result-score" class="result-score">0 / 20 คะแนน</div>
+      <div id="result-sub" class="result-sub"></div>
+      <button id="replayBtn" class="btn btn-primary">เล่นอีกครั้ง 🔁</button>
+      <a href="index.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">กลับหน้าหลัก 🏠</a>
+    </div>
+  </div>
+
+</div>
+<script src="_tools/prepositions-data.js"></script>
+<script src="_tools/game-audio.js"></script>
+<script src="../Pronunciation-System/pronunciation.js"></script>
+<script src="_tools/mascot.js"></script>
+<script src="_tools/drag-drop.js"></script>
+<script src="_tools/game-engine.js"></script>
+</body>
+</html>

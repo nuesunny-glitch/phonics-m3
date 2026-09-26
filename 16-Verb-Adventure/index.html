@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Verb Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>🗺️ Verb Adventure</h1>
+    <div class="sub">เกมฝึกคำกริยาภาษาอังกฤษ — เล่นซ้ำได้ไม่จำกัด ไม่มีการบันทึกคะแนนลงเซิร์ฟเวอร์</div>
+  </div>
+
+  <div class="hub-grid">
+    <a id="chapter1Card" class="hub-card" href="chapter-1-basic-verbs/game.html">
+      <div class="icon">🏃</div>
+      <div>
+        <p class="title">บทที่ 1: กริยาพื้นฐาน</p>
+        <p class="desc">run, eat, sleep, play และคำกริยาพื้นฐานอีก 8 คำ (รวม 12 คำ) — 3 ด่าน</p>
+        <p id="chapter1Best" class="best"></p>
+      </div>
+    </a>
+
+    <div class="hub-card locked">
+      <div class="icon">🔒</div>
+      <div>
+        <p class="title">บทที่ 2: กริยาไม่ปกติ (Irregular Verbs)</p>
+        <p class="desc">go, have, eat ในรูปอดีต</p>
+        <span class="soon-pill">เร็ว ๆ นี้</span>
+      </div>
+    </div>
+
+    <div class="hub-card locked">
+      <div class="icon">🔒</div>
+      <div>
+        <p class="title">บทที่ 3: กริยา 3 ช่อง</p>
+        <p class="desc">V1 / V2 / V3</p>
+        <span class="soon-pill">เร็ว ๆ นี้</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  (function () {
+    var raw = localStorage.getItem('verbAdventureProgress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.chapter1 && data.chapter1.playCount > 0) {
+        var stars = '★★★☆☆☆'.slice(3 - data.chapter1.bestStars, 6 - data.chapter1.bestStars);
+        document.getElementById('chapter1Best').textContent =
+          'คะแนนดีที่สุด: ' + data.chapter1.bestScore + '/36  ' + stars;
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+</script>
+</body>
+</html>

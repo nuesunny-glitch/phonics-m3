@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียน: การเติม -ing (Adding ING)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>🏃✍️ บทเรียน: การเติม -ing (Adding ING)</h1>
+    <div class="sub">English Grammar Quiz Pack · เตรียมสอบเข้า ม.4</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+    <ul class="obj-list"><li>บอกกฎการเติม -ing แบบปกติ (regular) ให้กับคำกริยาทั่วไปได้ถูกต้อง</li>
+<li>ใช้กฎตัด e ทิ้งก่อนเติม -ing กับคำกริยาที่ลงท้ายด้วย e ที่ไม่ออกเสียง (silent e) ได้ถูกต้อง</li>
+<li>ใช้กฎเบิ้ลพยัญชนะตัวท้ายก่อนเติม -ing กับคำกริยาพยางค์เดียวแบบ CVC ได้ถูกต้อง รวมถึงจำข้อยกเว้นคำที่ลงท้ายด้วย w, x, y</li>
+<li>แต่งประโยค Present Continuous (am/is/are + Ving) เพื่อบอกเหตุการณ์ที่กำลังเกิดขึ้นในขณะพูดหรือสถานการณ์ชั่วคราวได้ถูกต้อง</li>
+<li>สะกดคำกริยาเติม -ing ได้ถูกต้องแม่นยำ และแก้ไขประโยคที่สะกดผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกสอบบ่อยเรื่องการสะกดคำ Ving</li></ul>
+  </div>
+
+  
+    <div class="explain-block">
+      <h2>🌱 การเติม -ing แบบปกติ (Regular +ing)</h2>
+      <p>คำกริยาส่วนใหญ่ในภาษาอังกฤษ เวลาจะเปลี่ยนเป็นรูป <b>Ving</b> (กำลังทำ) แค่<b>เติม -ing ต่อท้ายคำเดิมได้เลย</b> ไม่ต้องเปลี่ยนตัวสะกดใด ๆ ทั้งสิ้น</p><table><tr><th>คำกริยาเดิม</th><th>เติม -ing</th></tr><tr><td>play (เล่น)</td><td>playing</td></tr><tr><td>read (อ่าน)</td><td>reading</td></tr><tr><td>go (ไป)</td><td>going</td></tr><tr><td>watch (ดู)</td><td>watching</td></tr><tr><td>listen (ฟัง)</td><td>listening</td></tr></table><p>กฎนี้เป็นกฎพื้นฐานที่สุด ถ้าคำกริยาไม่เข้าเงื่อนไขพิเศษข้อใดเลย (ไม่ได้ลงท้ายด้วย e ที่ไม่ออกเสียง และไม่ใช่คำพยางค์เดียวแบบ CVC) ให้ใช้กฎนี้ได้เลย</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>✂️ ตัด e ทิ้งก่อนเติม -ing (Silent-e Drop)</h2>
+      <p>ถ้าคำกริยาลงท้ายด้วยตัว <b>e ที่ไม่ออกเสียง</b> (silent e) เช่น make, write, dance, hope ให้<b>ตัดตัว e ตัวสุดท้ายทิ้งก่อน แล้วค่อยเติม -ing</b></p><table><tr><th>คำกริยาเดิม</th><th>ตัด e ออก</th><th>เติม -ing</th></tr><tr><td>make (ทำ)</td><td>mak-</td><td>making</td></tr><tr><td>write (เขียน)</td><td>writ-</td><td>writing</td></tr><tr><td>dance (เต้น)</td><td>danc-</td><td>dancing</td></tr><tr><td>hope (หวัง)</td><td>hop-</td><td>hoping</td></tr><tr><td>ride (ขี่)</td><td>rid-</td><td>riding</td></tr></table><p><b>ข้อสังเกต:</b> ถ้าเติม -ing ต่อจาก e ตรง ๆ โดยไม่ตัดทิ้ง จะได้คำที่สะกดผิด เช่น <b>makeing</b> (ผิด) ต้องเป็น <b>making</b> (ถูก)</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>👯 เบิ้ลพยัญชนะตัวท้าย (CVC Doubling Rule) และข้อยกเว้น w, x, y</h2>
+      <p>คำกริยา<b>พยางค์เดียว</b>ที่สะกดแบบ <b>C-V-C</b> (พยัญชนะ-สระเดี่ยว-พยัญชนะ) คือ ลงท้ายด้วยสระตัวเดียวเสียงสั้น ตามด้วยพยัญชนะตัวเดียว เช่น run, sit, swim, stop ให้<b>เบิ้ล (ซ้ำ) พยัญชนะตัวสุดท้ายก่อนเติม -ing</b></p><table><tr><th>คำกริยาเดิม</th><th>เบิ้ลตัวท้าย</th><th>เติม -ing</th></tr><tr><td>run (วิ่ง)</td><td>runn-</td><td>running</td></tr><tr><td>sit (นั่ง)</td><td>sitt-</td><td>sitting</td></tr><tr><td>swim (ว่ายน้ำ)</td><td>swimm-</td><td>swimming</td></tr><tr><td>stop (หยุด)</td><td>stopp-</td><td>stopping</td></tr></table><p><b>⚠️ ข้อยกเว้นสำคัญ:</b> ถ้าคำกริยาลงท้ายด้วยตัวอักษร <b>w, x, y</b> ห้ามเบิ้ลตัวสุดท้ายเด็ดขาด ให้เติม -ing ต่อท้ายแบบปกติเลย</p><table><tr><th>คำกริยาเดิม</th><th>เติม -ing (ไม่เบิ้ล)</th><th>เหตุผล</th></tr><tr><td>play (เล่น)</td><td>playing</td><td>ลงท้าย y</td></tr><tr><td>fix (ซ่อม)</td><td>fixing</td><td>ลงท้าย x</td></tr><tr><td>snow (หิมะตก)</td><td>snowing</td><td>ลงท้าย w</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>⏰ Present Continuous: am/is/are + Ving ใช้ทำอะไร</h2>
+      <p>เมื่อเปลี่ยนคำกริยาเป็นรูป Ving แล้ว เรานำไปใช้ในโครงสร้าง <b>Present Continuous</b> คือ <b>am/is/are + Ving</b> เพื่อบอกว่า...</p><table><tr><th>โครงสร้าง</th><th>ใช้บอก</th><th>ตัวอย่าง</th></tr><tr><td>I + am + Ving</td><td>สิ่งที่กำลังเกิดขึ้น "ตอนนี้ เดี๋ยวนี้"</td><td>I am reading a book now. (ฉันกำลังอ่านหนังสืออยู่ตอนนี้)</td></tr><tr><td>He/She/It + is + Ving</td><td>สิ่งที่กำลังเกิดขึ้น หรือสถานการณ์ชั่วคราว</td><td>Look! She is running. (ดูสิ! เธอกำลังวิ่งอยู่)</td></tr><tr><td>You/We/They + are + Ving</td><td>สิ่งที่กำลังเกิดขึ้น หรือสถานการณ์ชั่วคราว</td><td>They are studying English now. (พวกเขากำลังเรียนภาษาอังกฤษอยู่ตอนนี้)</td></tr></table><p>สังเกตคำสัญญาณที่มักเจอในประโยค Present Continuous: <b>now, right now, at the moment, Look!, Listen!</b></p>
+    </div>
+
+    <div class="explain-block">
+      <h2>⚖️ Present Continuous vs Present Simple</h2>
+      <p>อย่าสับสนกับ <b>Present Simple</b> (กริยาช่องที่ 1 เฉย ๆ หรือเติม s/es) ซึ่งใช้บอกสิ่งที่ทำเป็นประจำหรือความจริงทั่วไป ส่วน <b>Present Continuous</b> ใช้บอกสิ่งที่กำลังทำอยู่ในขณะพูดเท่านั้น</p><table><tr><th>ประเภท</th><th>ตัวอย่าง</th><th>ความหมาย</th></tr><tr><td>Present Simple</td><td>I read books every day.</td><td>ฉันอ่านหนังสือทุกวัน (เป็นกิจวัตร)</td></tr><tr><td>Present Continuous</td><td>I am reading a book now.</td><td>ฉันกำลังอ่านหนังสืออยู่ตอนนี้ (ขณะพูด)</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>🎭 คำกริยาพิเศษสุดท้าย: -ie เปลี่ยนเป็น y (die, lie, tie)</h2>
+      <p>มีคำกริยาพิเศษ 3 คำที่ลงท้ายด้วย <b>-ie</b> เวลาเติม -ing จะ<b>เปลี่ยน ie เป็น y ก่อน แล้วค่อยเติม -ing</b> (เพราะถ้าเติม -ing ต่อจาก ie ตรง ๆ จะกลายเป็น "iing" ซึ่งไม่มีการสะกดแบบนี้ในภาษาอังกฤษ)</p><table><tr><th>คำกริยาเดิม</th><th>เปลี่ยน ie เป็น y</th><th>เติม -ing</th></tr><tr><td>die (ตาย)</td><td>dy-</td><td>dying</td></tr><tr><td>lie (นอน/โกหก)</td><td>ly-</td><td>lying</td></tr><tr><td>tie (ผูก)</td><td>ty-</td><td>tying</td></tr></table><p><b>⚠️ ระวังสับสน:</b> dying (กำลังจะตาย จาก die) ต่างจาก <b>dyeing</b> (กำลังย้อมสี จาก dye) และ lying (กำลังนอน/โกหก จาก lie) ต่างจาก <b>laying</b> (กำลังวาง จาก lay) — คำเหล่านี้ออกเสียงคล้ายกันแต่สะกดและความหมายต่างกัน ข้อสอบชอบเอามาหลอก!</p>
+    </div>
+  <div class="explain-block">
+      <h2>📊 ตารางสรุป</h2>
+      <table><tr><th>กฎการเติม -ing</th><th>วิธีทำ</th><th>ตัวอย่าง</th></tr><tr><td>1. ปกติ (Regular)</td><td>เติม -ing ต่อท้ายได้เลย</td><td>play &rarr; playing</td></tr>
+<tr><td>2. ตัด e ทิ้ง (Silent-e)</td><td>ตัด e ตัวท้ายทิ้ง แล้วเติม -ing</td><td>make &rarr; making</td></tr>
+<tr><td>3. เบิ้ลตัวท้าย (CVC)</td><td>เบิ้ลพยัญชนะตัวสุดท้าย แล้วเติม -ing (ยกเว้นลงท้าย w, x, y)</td><td>run &rarr; running</td></tr>
+<tr><td>4. -ie &rarr; y</td><td>เปลี่ยน ie เป็น y แล้วเติม -ing</td><td>die &rarr; dying</td></tr></table>
+    </div>
+
+  <div class="explain-block">
+    <h2>🧠 เทคนิคการจำ</h2>
+    <div class="tip-card">💡 เห็น e เงียบ ๆ ท้ายคำ อย่ามัวรอช้า ต้องตัดทิ้งก่อนเสมอ แล้วค่อยเติม ing — 'e หาย ing มา'</div>
+<div class="tip-card">💡 คำสั้นพยางค์เดียว สระเดียวเสียงสั้น พยัญชนะปิดท้าย ให้เบิ้ลตัวท้ายก่อนเติม ing เหมือนเสียงกระแทกซ้ำ (run-n-ing, sit-t-ing) แต่ถ้าจบด้วย w, x, y ห้ามเบิ้ลเด็ดขาด!</div>
+<div class="tip-card">💡 จำ 3 คำพิเศษ ตาย-นอน-ผูก (die-lie-tie) ต้องตัด ie ทิ้งเปลี่ยนเป็น y แล้วค่อยเติม ing: dying, lying, tying — ท่องคล้องจอง 'ตาย นอน ผูก ต้องใช้ y'</div>
+  </div>
+
+  <div class="footer-note">English Grammar Quiz Pack · Adding ING</div>
+</div>
+</body>
+</html>

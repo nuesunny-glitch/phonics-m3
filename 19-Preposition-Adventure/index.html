@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Preposition Adventure — เกมเสริม English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/game.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home-link" href="../index.html">&larr; กลับหน้าหลักคอร์ส</a>
+  <a class="home-link" href="../home.html" style="margin-left:10px;">🏡 หน้าหลัก (Dashboard)</a>
+
+  <div class="banner">
+    <h1>🧭 Preposition Adventure</h1>
+    <div class="sub">เรียนคำบุพบทบอกตำแหน่งและเวลา กับน้องคอนนี่ 🦊 — เล่นซ้ำได้ไม่จำกัด</div>
+  </div>
+
+  <div class="game-card center" style="text-align:center;">
+    <div id="hub-mascot"></div>
+    <p class="story-text">เรียน 7 คำ: in, on, under, at (ตำแหน่ง) และ in, on, at
+    (เวลา) — พร้อมเกมสนุก 3 แบบ และ Boss Quiz 20 ข้อ!</p>
+    <p id="bestScoreLabel" class="best" style="font-weight:700;color:var(--c4);"></p>
+    <a href="game.html" class="btn btn-primary" style="text-decoration:none;display:inline-block;">เริ่มเรียน 🚀</a>
+  </div>
+
+</div>
+<script src="_tools/mascot.js"></script>
+<script>
+  Mascot.renderBubble('hub-mascot', 'พร้อมผจญภัยกับคำบุพบทหรือยัง?');
+  (function () {
+    var raw = localStorage.getItem('prepositionAdventureProgress');
+    if (!raw) return;
+    try {
+      var data = JSON.parse(raw);
+      if (data.playCount > 0) {
+        // Colored spans, not the ★/☆ glyph pair — at small font sizes some
+        // font-fallback stacks render ★ and ☆ visually identically.
+        var starsHtml = '';
+        for (var i = 0; i < 3; i++) {
+          starsHtml += '<span style="color:' + (i < data.bestStars ? 'var(--c2)' : '#ddd') + '">★</span>';
+        }
+        document.getElementById('bestScoreLabel').innerHTML =
+          'คะแนนดีที่สุด: ' + data.bestScore + '/20  ' + starsHtml;
+      }
+    } catch (e) { /* ignore corrupt storage */ }
+  })();
+</script>
+</body>
+</html>

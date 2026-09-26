@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏠 English M.3 — หน้าหลัก</title>
+<meta name="description" content="ศูนย์รวมบทเรียน เกม และแบบฝึกหัดทั้งหมดของหลักสูตร English M.3 ในหน้าเดียว">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Home Page (home.html) — reference implementation of DESIGN.md's
+     typography/visual rules. Reuses style.css's CSS custom properties
+     (--primary, --accent-yellow, --accent-teal, --accent-pink, --surface,
+     --radius-lg, --shadow, dark mode via data-theme) so this page matches
+     the main site's app-shell look without touching any shared/generated
+     file. Page-specific rules only, same pattern as games.html. */
+
+  * { box-sizing: border-box; }
+
+  .home-main { max-width: 1180px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* ---------------- Hero ---------------- */
+  .hero {
+    margin: 28px 0 40px;
+    padding: 44px 28px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 55%, var(--accent-pink) 100%);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-mascot { font-size: 4.2rem; line-height: 1; margin-bottom: 10px; }
+  .hero h1 {
+    margin: 0 0 14px;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 800;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .hero p {
+    margin: 0 auto 26px;
+    max-width: 640px;
+    font-size: 22px;
+    line-height: 1.6;
+    opacity: 0.97;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: var(--primary-darker);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 26px;
+    padding: 18px 36px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,0.25); }
+
+  /* ---------------- Section shell ---------------- */
+  .home-section { margin: 48px 0; }
+  .home-section-head { margin-bottom: 22px; text-align: center; }
+  .home-section-head h2 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .home-section-head p {
+    margin: 0;
+    font-size: 20px;
+    color: var(--text-muted);
+  }
+
+  /* ---------------- Card grid ---------------- */
+  .home-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .home-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .home-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .home-card-icon {
+    width: 68px; height: 68px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    font-size: 2.1rem;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .home-card-title { margin: 0; font-size: 28px; font-weight: 800; color: var(--text); line-height: 1.25; }
+  .home-card-desc { margin: 0; font-size: 20px; color: var(--text-muted); line-height: 1.55; flex: 1; }
+  .home-card-cta {
+    margin-top: 4px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    background: var(--primary); color: #fff;
+    font-weight: 700; font-size: 20px;
+    padding: 14px 20px; border-radius: 999px;
+    transition: background .15s ease;
+  }
+  .home-card:hover .home-card-cta { background: var(--primary-dark); }
+
+  /* Color-coded card icon badges — cycles through the site's bright
+     accent palette so each category reads as visually distinct
+     (DESIGN.md §4/§9 "color-coded lesson categories"). */
+  .home-card.c1 .home-card-icon { background: linear-gradient(135deg, #FF5D5D, #ff8a8a); }
+  .home-card.c2 .home-card-icon { background: linear-gradient(135deg, var(--accent-yellow), #ffcb66); }
+  .home-card.c3 .home-card-icon { background: linear-gradient(135deg, var(--primary), #7dc0ff); }
+  .home-card.c4 .home-card-icon { background: linear-gradient(135deg, var(--accent-teal), #6be0b8); }
+  .home-card.c5 .home-card-icon { background: linear-gradient(135deg, #9B5DE5, #c79bf2); }
+  .home-card.c6 .home-card-icon { background: linear-gradient(135deg, var(--accent-pink), #ff9ec8); }
+  .home-card.c7 .home-card-icon { background: linear-gradient(135deg, #2F9BFF, #21C38D); }
+
+  .home-card-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--table-head-bg);
+    color: var(--primary-dark);
+  }
+  .home-card-badge.coming-soon {
+    background: var(--accent-yellow-soft);
+    color: var(--accent-yellow-text);
+  }
+  .home-card.is-disabled { opacity: .6; pointer-events: none; }
+
+  /* ---------------- Single wide banner card (Games hub) ---------------- */
+  .home-banner {
+    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    padding: 30px 28px;
+    text-decoration: none; color: inherit;
+  }
+  .home-banner:hover { box-shadow: var(--shadow-lg); }
+  .home-banner-icon { font-size: 3.4rem; flex-shrink: 0; }
+  .home-banner-text { flex: 1; min-width: 220px; }
+  .home-banner-text h3 { margin: 0 0 6px; font-size: 26px; font-weight: 800; color: var(--text); }
+  .home-banner-text p { margin: 0; font-size: 19px; color: var(--text-muted); }
+  .home-banner-cta {
+    flex-shrink: 0;
+    background: var(--primary); color: #fff; font-weight: 700; font-size: 20px;
+    padding: 14px 24px; border-radius: 999px;
+  }
+
+  /* ---------------- Progress widget ---------------- */
+  .progress-grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .progress-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    padding: 18px 20px;
+  }
+  .progress-card-title { display: flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .progress-card-bar { height: 10px; border-radius: 999px; background: var(--border); overflow: hidden; margin-bottom: 6px; }
+  .progress-card-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--primary), var(--accent-teal)); transition: width .3s ease; }
+  .progress-card-label { font-size: 16px; color: var(--text-muted); }
+  .progress-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 20px;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    border-radius: var(--radius);
+    border: 2px dashed var(--border);
+  }
+
+  @media (min-width: 900px) {
+    .hero h1 { font-size: 52px; }
+    .hero p { font-size: 24px; }
+    .home-section-head h2 { font-size: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 32px 18px; }
+    .hero h1 { font-size: 32px; }
+    .hero-cta { font-size: 22px; padding: 16px 28px; }
+    .home-card { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🏠</span>
+        <div class="brand-text">
+          <span class="brand-title">English <span class="tag">ม.3</span></span>
+          <span class="brand-subtitle">หน้าหลัก — ทุกบทเรียนและเกมในที่เดียว</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.6rem;">
+      <button id="themeToggle" class="theme-toggle" aria-label="สลับเป็นโหมดมืด">🌙</button>
+    </div>
+  </header>
+
+  <main class="home-main">
+
+    <!-- ===== Hero / Start Learning ===== -->
+    <section class="hero">
+      <div class="hero-mascot" aria-hidden="true">🎓📚🦊</div>
+      <h1>ยินดีต้อนรับสู่ English M.3!</h1>
+      <p>เรียนภาษาอังกฤษแบบสนุก มีเกม มีการ์ตูน มีเสียงอ่านให้ฟัง — เลือกเมนูด้านล่างได้เลย ทุกอย่างอยู่ในหน้านี้หน้าเดียว</p>
+      <a class="hero-cta" href="index.html">🚀 เริ่มเรียนเลย</a>
+    </section>
+
+    <!-- ===== Adventures ===== -->
+    <section class="home-section" id="adventures">
+      <div class="home-section-head">
+        <h2>🎮 ผจญภัยเรียนภาษาอังกฤษ (Adventures)</h2>
+        <p>เกมฝึกคำศัพท์และไวยากรณ์ พร้อมคะแนน ดาว และมาสคอตน่ารัก</p>
+      </div>
+      <div class="home-grid" id="adventuresGrid"></div>
+    </section>
+
+    <!-- ===== Lessons & Practice ===== -->
+    <section class="home-section" id="lessons">
+      <div class="home-section-head">
+        <h2>📖 บทเรียนและแบบฝึกหัด</h2>
+        <p>เนื้อหาครบทุกหมวด อ่านออกเสียงได้ อธิบายเป็นภาษาไทยชัดเจน</p>
+      </div>
+      <div class="home-grid">
+        <a class="home-card c3" href="index.html">
+          <div class="home-card-icon" aria-hidden="true">📘</div>
+          <h3 class="home-card-title">บทเรียน (Lessons)</h3>
+          <p class="home-card-desc">คอร์สหลัก 15 บท ตั้งแต่การออกเสียงจนถึงแนวข้อสอบเข้า ม.4 — มีเมนูเลือกบทเรียนครบในหน้าเดียว</p>
+          <span class="home-card-cta">เข้าเรียน ▶</span>
+        </a>
+        <a class="home-card c2" href="01-Phonics/01-Alphabet/lesson.html">
+          <div class="home-card-icon" aria-hidden="true">🔤</div>
+          <h3 class="home-card-title">Phonics — ออกเสียง</h3>
+          <p class="home-card-desc">เรียนตัวอักษร A-Z และการออกเสียงคำศัพท์พื้นฐาน พร้อมปุ่มฟังเสียงทุกคำ</p>
+          <span class="home-card-cta">เริ่มฝึก ▶</span>
+        </a>
+        <a class="home-card c5" href="index.html#c4-1">
+          <div class="home-card-icon" aria-hidden="true">🧠</div>
+          <h3 class="home-card-title">คำศัพท์ (Vocabulary)</h3>
+          <p class="home-card-desc">คำศัพท์สำคัญที่ต้องรู้ก่อนสอบเข้า ม.4 พร้อมคำแปลและตัวอย่างประโยค</p>
+          <span class="home-card-cta">ดูคำศัพท์ ▶</span>
+        </a>
+        <a class="home-card c6" href="01-Phonics/01-Alphabet/quiz.html">
+          <div class="home-card-icon" aria-hidden="true">📝</div>
+          <h3 class="home-card-title">แบบทดสอบ (Quizzes)</h3>
+          <p class="home-card-desc">ตัวอย่างแบบทดสอบปรนัยพร้อมเฉลย — ทุกบทเรียนและทุกเกมก็มีแบบทดสอบของตัวเองด้วย</p>
+          <span class="home-card-cta">ลองทำ ▶</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Games hub ===== -->
+    <section class="home-section" id="games">
+      <div class="home-section-head">
+        <h2>🕹️ ศูนย์รวมเกมทั้งหมด</h2>
+      </div>
+      <a class="home-banner" href="games.html">
+        <div class="home-banner-icon" aria-hidden="true">🎮</div>
+        <div class="home-banner-text">
+          <h3>ดูเกมทั้งหมด + คะแนนของคุณ</h3>
+          <p>ศูนย์รวมเกม Adventure ทุกเกม พร้อมคะแนนและดาวล่าสุดของแต่ละเกม</p>
+        </div>
+        <span class="home-banner-cta">เปิดดู ▶</span>
+      </a>
+    </section>
+
+    <!-- ===== Progress ===== -->
+    <section class="home-section" id="progress">
+      <div class="home-section-head">
+        <h2>🏆 ความคืบหน้าของคุณ</h2>
+        <p>ข้อมูลบันทึกไว้ในเครื่องนี้เท่านั้น (ไม่ส่งขึ้นเซิร์ฟเวอร์)</p>
+      </div>
+      <div class="progress-grid" id="progressGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-title">English M.3 Course <span class="dot">•</span> หน้าหลัก</p>
+    <p class="footer-sub">ทำด้วย 💙 เพื่อปูพื้นฐานภาษาอังกฤษตั้งแต่การอ่านออกเสียงจนถึงแนวข้อสอบจริง · © <span id="year"></span></p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- Dark mode (same key/logic as games.html / tools/script.template.js) ---------------- */
+  var THEME_KEY = 'course-theme';
+  var themeToggleBtn = document.getElementById('themeToggle');
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    if (themeToggleBtn) {
+      themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeToggleBtn.setAttribute('aria-label', theme === 'dark' ? 'สลับเป็นโหมดสว่าง' : 'สลับเป็นโหมดมืด');
+    }
+  }
+  function initTheme() {
+    var saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'dark' || saved === 'light') { applyTheme(saved); return; }
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+  initTheme();
+
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------- Game registry — same shape as games.html's GAMES array,
+     ported here directly (including 22-Present-Continuous-Adventure, which
+     games.html itself is missing) so this page's Adventures grid and
+     Progress widget both read the exact same localStorage keys games.html
+     already writes to. ---------------- */
+  var GAMES = [
+    {
+      icon: '🏃', color: 'c1', title: 'Verb Adventure',
+      desc: 'ฝึกคำกริยาพื้นฐาน (run, eat, sleep, play...) ผ่านเกม 3 ด่าน',
+      href: '16-Verb-Adventure/index.html',
+      chapters: [{ storageKey: 'verbAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1', max: 36 }]
+    },
+    {
+      icon: '🎨', color: 'c2', title: 'Adjective Adventure',
+      desc: 'ฝึกคำคุณศัพท์พื้นฐาน (big, happy, hot, fast...) ผ่านเกม 3 ด่าน',
+      href: '17-Adjective-Adventure/index.html',
+      chapters: [{ storageKey: 'adjectiveAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1', max: 36 }]
+    },
+    {
+      icon: '🎭', color: 'c3', title: 'Pronoun Adventure',
+      desc: 'ฝึกคำสรรพนามครบ 3 บท: Subject, Object, Possessive',
+      href: '18-Pronoun-Adventure/index.html',
+      chapters: [
+        { storageKey: 'pronounAdventureProgress', dataKey: 'chapter1', label: 'บทที่ 1: Subject', max: 21 },
+        { storageKey: 'pronounAdventureCh2Progress', dataKey: 'chapter2', label: 'บทที่ 2: Object', max: 21 },
+        { storageKey: 'pronounAdventureCh3Progress', dataKey: 'chapter3', label: 'บทที่ 3: Possessive', max: 21 }
+      ]
+    },
+    {
+      icon: '🧭', color: 'c4', title: 'Preposition Adventure',
+      desc: 'ฝึกคำบุพบท พร้อมมาสคอต "น้องคอนนี่" 🦊 และ Boss Quiz 20 ข้อ',
+      href: '19-Preposition-Adventure/index.html',
+      chapters: [{ storageKey: 'prepositionAdventureProgress', dataKey: null, label: 'Boss Quiz', max: 20 }]
+    },
+    {
+      icon: '🔗', color: 'c5', title: 'Conjunction Adventure',
+      desc: 'ฝึกคำสันธานครบ 3 บท — and/but/or, because/so, although/if/when',
+      href: '20-Conjunction-Adventure/index.html',
+      chapters: [
+        { storageKey: 'conjunctionAdventureCh1Progress', dataKey: 'chapter1', label: 'บทที่ 1', max: 12 },
+        { storageKey: 'conjunctionAdventureCh2Progress', dataKey: 'chapter2', label: 'บทที่ 2', max: 8 },
+        { storageKey: 'conjunctionAdventureCh3Progress', dataKey: 'chapter3', label: 'บทที่ 3', max: 12 }
+      ]
+    },
+    {
+      icon: '⏰', color: 'c6', title: 'Present Simple Adventure',
+      desc: 'ฝึก Present Simple ครบ 3 บท พร้อมมาสคอต "น้องคอนนี่" 🦊',
+      href: '21-Present-Simple-Adventure/index.html',
+      chapters: [
+        { storageKey: 'presentSimpleAdventureCh1Progress', dataKey: null, label: 'บทที่ 1', max: 10 },
+        { storageKey: 'presentSimpleAdventureCh2Progress', dataKey: null, label: 'บทที่ 2', max: 10 },
+        { storageKey: 'presentSimpleAdventureCh3Progress', dataKey: null, label: 'บทที่ 3', max: 10 }
+      ]
+    },
+    {
+      icon: '⏳', color: 'c7', title: 'Present Continuous Adventure',
+      desc: 'ฝึก Present Continuous (am/is/are + -ing) พร้อมมาสคอต "น้องคอนนี่" 🦊',
+      href: '22-Present-Continuous-Adventure/index.html',
+      chapters: [{ storageKey: 'presentContinuousAdventureCh1Progress', dataKey: null, label: 'บทที่ 1', max: 10 }]
+    }
+  ];
+
+  function readChapterProgress(storageKey, dataKey) {
+    var raw = localStorage.getItem(storageKey);
+    if (!raw) return null;
+    try {
+      var data = JSON.parse(raw);
+      var entry = dataKey ? data[dataKey] : data;
+      if (!entry || !entry.playCount) return null;
+      return entry;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /* ---------------- Adventures grid ---------------- */
+  var advGrid = document.getElementById('adventuresGrid');
+  GAMES.forEach(function (game) {
+    var a = document.createElement('a');
+    a.className = 'home-card ' + game.color;
+    a.href = game.href;
+    a.innerHTML =
+      '<div class="home-card-icon" aria-hidden="true">' + game.icon + '</div>' +
+      '<h3 class="home-card-title">' + game.title + '</h3>' +
+      '<p class="home-card-desc">' + game.desc + '</p>' +
+      '<span class="home-card-cta">เล่นเลย ▶</span>';
+    advGrid.appendChild(a);
+  });
+
+  /* ---------------- Progress widget ---------------- */
+  var progressGrid = document.getElementById('progressGrid');
+  var anyPlayed = false;
+  var cards = GAMES.map(function (game) {
+    var results = game.chapters.map(function (ch) {
+      return { label: ch.label, max: ch.max, progress: readChapterProgress(ch.storageKey, ch.dataKey) };
+    });
+    var playedCount = results.filter(function (r) { return r.progress; }).length;
+    if (playedCount === 0) return null;
+    anyPlayed = true;
+    var totalMax = results.reduce(function (sum, r) { return sum + r.max; }, 0);
+    var totalScore = results.reduce(function (sum, r) { return sum + (r.progress ? r.progress.bestScore : 0); }, 0);
+    var pct = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0;
+    var div = document.createElement('div');
+    div.className = 'progress-card';
+    div.innerHTML =
+      '<div class="progress-card-title">' + game.icon + ' ' + game.title + '</div>' +
+      '<div class="progress-card-bar"><div class="progress-card-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="progress-card-label">คะแนนรวม ' + totalScore + ' / ' + totalMax + ' (เล่นแล้ว ' + playedCount + '/' + results.length + ' บท)</div>';
+    return div;
+  }).filter(Boolean);
+
+  if (!anyPlayed) {
+    var empty = document.createElement('div');
+    empty.className = 'progress-empty';
+    empty.textContent = 'ยังไม่มีข้อมูลความคืบหน้า — ลองเล่นเกมสักเกมเพื่อเริ่มสะสมคะแนนและดาว! 🌟';
+    progressGrid.appendChild(empty);
+  } else {
+    cards.forEach(function (c) { progressGrid.appendChild(c); });
+  }
+})();
+</script>
+</body>
+</html>

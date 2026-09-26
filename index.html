@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English M.3 Course</title>
+<meta name="description" content="หลักสูตรภาษาอังกฤษออนไลน์สำหรับนักเรียน ม.3 พื้นฐานอ่อน เตรียมสอบเข้า ม.4 — 15 บท">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="Audio-System/audio-system.css">
+<style>
+  .games-menu-link{display:inline-flex;align-items:center;gap:6px;background:var(--accent-yellow);color:var(--accent-yellow-text);text-decoration:none;font-weight:700;font-size:1.05rem;padding:0 18px;height:48px;border-radius:999px;white-space:nowrap;flex-shrink:0;}
+  .games-menu-link:hover{filter:brightness(0.95);}
+  @media (max-width:480px){
+    .games-menu-link .label{display:none;}
+    .games-menu-link{padding:0;width:48px;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <button id="menuToggle" class="menu-toggle" aria-label="เปิดเมนูสารบัญ" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🎓</span>
+        <div class="brand-text">
+          <span class="brand-title">English <span class="tag">ม.3</span></span>
+          <span class="brand-subtitle" id="brandSubtitle">หลักสูตรเตรียมสอบเข้า ม.4</span>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-right" style="display:flex;align-items:center;gap:0.6rem;">
+      <a id="gamesMenuLink" class="games-menu-link" href="games.html" title="ศูนย์รวมเกม English M.3" aria-label="เมนู Games">🎮 <span class="label">Games</span></a>
+      <button id="themeToggle" class="theme-toggle" aria-label="สลับเป็นโหมดมืด">🌙</button>
+    </div>
+  </header>
+
+  <div class="progress-track" aria-hidden="true">
+    <div id="progressBarFill" class="progress-fill"></div>
+  </div>
+
+  <div class="layout">
+    <nav id="sidebar" class="sidebar" aria-label="สารบัญหลักสูตร">
+      <div class="sidebar-header">
+        <span>📚 สารบัญ 15 บท</span>
+        <button id="closeSidebar" class="close-btn" aria-label="ปิดเมนู">✕</button>
+      </div>
+      <ul id="lessonList" class="lesson-list"></ul>
+    </nav>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main id="content" class="content" tabindex="-1"></main>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-title">English M.3 Course <span class="dot">•</span> หลักสูตรเตรียมสอบเข้า ม.4</p>
+    <p class="footer-sub">ทำด้วย 💙 เพื่อปูพื้นฐานภาษาอังกฤษตั้งแต่การอ่านออกเสียงจนถึงแนวข้อสอบจริง · © <span id="year"></span></p>
+  </footer>
+
+  <nav class="bottombar" aria-label="เปลี่ยนบทเรียน">
+    <button id="prevBtn" class="nav-btn nav-btn-prev">
+      <span class="nav-icon" aria-hidden="true">⬅</span><span>ก่อนหน้า</span>
+    </button>
+    <span id="progress" class="progress">1 / 9</span>
+    <button id="nextBtn" class="nav-btn nav-btn-next">
+      <span>ถัดไป</span><span class="nav-icon" aria-hidden="true">➡</span>
+    </button>
+  </nav>
+
+</div>
+<script src="Audio-System/audio-system.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

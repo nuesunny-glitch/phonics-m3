@@ -1,0 +1,193 @@
+{
+  "id": "04",
+  "folder": "04-A-An-The",
+  "titleThai": "A / An / The (Articles)",
+  "titleShort": "A/An/The",
+  "emojiTitle": "🔤📌",
+  "objectives": [
+    "บอกความแตกต่างระหว่างการใช้ a และ an โดยพิจารณาจาก \"เสียง\" ของคำถัดไป ไม่ใช่ตัวสะกด ได้อย่างถูกต้อง",
+    "เลือกใช้ a/an กับนามเอกพจน์ที่ยังไม่เจาะจง (กล่าวถึงเป็นครั้งแรก) ได้ถูกต้อง",
+    "เลือกใช้ the กับนามที่เจาะจงแล้ว เคยกล่าวถึงมาก่อน มีหนึ่งเดียวในโลก/บริบท และคำคุณศัพท์ขั้นสูงสุด (superlative) ได้ถูกต้อง",
+    "บอกได้ว่าเมื่อใด \"ไม่ต้องใช้ article เลย\" เช่น กับนามพหูพจน์ทั่วไป นามนับไม่ได้ และชื่อเฉพาะส่วนใหญ่",
+    "วิเคราะห์และแก้ไขโจทย์แนว a/an/the ที่ออกสอบบ่อยในข้อสอบเข้า ม.4 โดยเฉพาะคำยกเว้นด้านเสียง เช่น an hour, a university, an MP"
+  ],
+  "explanation": [
+    {
+      "heading": "📖 Article คืออะไร (A/An/The)",
+      "html": "<p>ในภาษาอังกฤษ คำว่า <b>a, an, the</b> เรียกว่า <b>Article</b> (คำนำหน้านาม) ทำหน้าที่บอกว่านามที่ตามมานั้นเจาะจงหรือไม่เจาะจง Article แบ่งเป็น 2 ประเภทหลัก:</p><table><tr><th>ประเภท</th><th>คำ</th><th>ความหมาย/การใช้</th></tr><tr><td>Indefinite Article (ไม่เจาะจง)</td><td>a, an</td><td>ใช้กับนามเอกพจน์ นับได้ ที่ยังไม่เจาะจงว่าอันไหน (แปลประมาณ \"...สักตัว/สักอัน\")</td></tr><tr><td>Definite Article (เจาะจง)</td><td>the</td><td>ใช้กับนามที่ผู้พูดและผู้ฟังรู้อยู่แล้วว่าหมายถึงอันไหน (แปลประมาณ \"...ตัวนั้น/อันนั้นแหละ\")</td></tr></table>"
+    },
+    {
+      "heading": "🔤 A กับ An: ฟังเสียง ไม่ใช่ดูตัวสะกด!",
+      "html": "<p>กฎที่สำคัญที่สุดและข้อสอบชอบออกบ่อยที่สุดคือ การเลือก <b>a</b> หรือ <b>an</b> ต้องฟัง \"เสียง\" ของคำที่ตามมาทันที <b>ไม่ใช่</b>ดูว่าตัวหนังสือขึ้นต้นด้วยพยัญชนะหรือสระ</p><table><tr><th>ใช้</th><th>เมื่อคำถัดไปขึ้นต้นด้วย</th><th>ตัวอย่าง</th></tr><tr><td><b>a</b></td><td>เสียงพยัญชนะ (consonant sound)</td><td>a cat, a dog, a book, a university (ออกเสียงว่า \"yoo-\")</td></tr><tr><td><b>an</b></td><td>เสียงสระ (vowel sound: a, e, i, o, u)</td><td>an apple, an egg, an hour (h ไม่ออกเสียง), an MP (ตัวอักษร M อ่านว่า \"em\")</td></tr></table><p>สังเกตให้ดี: บางคำสะกดขึ้นต้นด้วยพยัญชนะแต่ <b>ออกเสียง</b>เป็นสระ (เช่น hour, honest) จึงใช้ <b>an</b> ส่วนบางคำสะกดขึ้นต้นด้วยสระแต่ <b>ออกเสียง</b>เป็นพยัญชนะ (เช่น university, uniform, European ซึ่งออกเสียงขึ้นต้นด้วยเสียง \"y\") จึงใช้ <b>a</b> — กฎนี้ต้องจำให้แม่นเพราะข้อสอบชอบออกมาก</p>"
+    },
+    {
+      "heading": "🎯 ใช้ The เมื่อไหร่",
+      "html": "<p>ใช้ <b>the</b> เมื่อทั้งผู้พูดและผู้ฟังรู้อยู่แล้วว่านามนั้นหมายถึงอันไหน มี 4 กรณีหลัก:</p><table><tr><th>กรณี</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>1. เจาะจงจากบริบท (บอกไว้ชัดเจน)</td><td>The girl in red is my sister.</td><td>ผู้หญิงที่ใส่ชุดแดง(คนนั้น)เป็นน้องสาวฉัน</td></tr><tr><td>2. เคยกล่าวถึงมาแล้ว (second mention)</td><td>I saw a dog. The dog was cute.</td><td>ฉันเห็นสุนัขตัวหนึ่ง สุนัข(ตัวนั้น)น่ารักมาก</td></tr><tr><td>3. มีหนึ่งเดียวในโลก/บริบท (unique)</td><td>the sun, the moon, the sky, the world</td><td>ดวงอาทิตย์ ดวงจันทร์ ท้องฟ้า โลก (มีอยู่หนึ่งเดียว)</td></tr><tr><td>4. คำคุณศัพท์ขั้นสูงสุด (superlative)</td><td>the best, the tallest, the most expensive</td><td>...ที่สุด (ต้องมี the เสมอ)</td></tr></table>"
+    },
+    {
+      "heading": "🚫 ไม่ใช้ Article เลย (No Article)",
+      "html": "<p>บางครั้ง<b>ไม่ต้องใส่ a, an หรือ the เลย</b> เรียกว่า Zero Article มี 3 กรณีหลักที่พบบ่อย:</p><table><tr><th>กรณี</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>1. นามพหูพจน์ที่พูดถึงทั่วไป (ไม่เจาะจง)</td><td>Dogs are friendly animals. / I like cats.</td><td>สุนัข(ทั่วไป)เป็นสัตว์ที่เป็นมิตร / ฉันชอบแมว(ทั่วไป)</td></tr><tr><td>2. นามนับไม่ได้ (uncountable nouns)</td><td>She drinks water. / We need money.</td><td>เธอดื่มน้ำ / เราต้องการเงิน</td></tr><tr><td>3. ชื่อเฉพาะส่วนใหญ่ (คน, ประเทศ, เมือง)</td><td>Somchai is my friend. / I live in Thailand.</td><td>สมชายเป็นเพื่อนฉัน / ฉันอาศัยอยู่ในประเทศไทย</td></tr></table><p><b>ข้อควรระวัง:</b> ถ้านามพหูพจน์หรือนามนับไม่ได้นั้นถูกทำให้เจาะจงขึ้นมา (เช่น เคยกล่าวถึงแล้ว หรือระบุอันที่แน่นอน) จะต้องใช้ <b>the</b> เช่น \"The water in this bottle is cold.\" (น้ำในขวดนี้ ระบุเจาะจงว่าขวดไหน)</p>"
+    },
+    {
+      "heading": "🔄 กล่าวถึงครั้งแรก (a/an) กับ กล่าวถึงครั้งที่สอง (the)",
+      "html": "<p>รูปแบบที่ข้อสอบชอบออกมากที่สุดคือ: ประโยคแรกกล่าวถึงสิ่งของเป็นครั้งแรก (ยังไม่เจาะจง) ใช้ <b>a/an</b> พอประโยคถัดไปพูดถึงสิ่งเดิมอีกครั้ง (ตอนนี้เจาะจงแล้วเพราะรู้จักแล้ว) ต้องเปลี่ยนเป็น <b>the</b></p><p><b>ตัวอย่าง:</b> \"I bought <b>a</b> book yesterday. <b>The</b> book is very interesting.\"<br>(ฉันซื้อหนังสือมาเล่มหนึ่งเมื่อวาน หนังสือ(เล่มที่พูดถึง)เล่มนั้นน่าสนใจมาก)</p><p>สังเกต: ประโยคแรกใช้ a book เพราะเป็นการพูดถึงหนังสือครั้งแรก (ผู้ฟังยังไม่รู้ว่าเล่มไหน) ประโยคที่สองใช้ the book เพราะตอนนี้ทั้งผู้พูดและผู้ฟังรู้แล้วว่าหมายถึงเล่มที่เพิ่งพูดถึง</p>"
+    },
+    {
+      "heading": "⚠️ คำยกเว้นเรื่องเสียง (Tricky Exceptions) - ข้อสอบชอบออก!",
+      "html": "<p>คำเหล่านี้เป็นกับดักที่ทำให้นักเรียนสับสนบ่อยที่สุด เพราะตัวสะกดกับเสียงพูดไม่ตรงกัน:</p><table><tr><th>คำ</th><th>ใช้</th><th>เหตุผล</th></tr><tr><td>an hour</td><td>an</td><td>ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ \"our\"</td></tr><tr><td>an honest man</td><td>an</td><td>ตัว h ใน honest ไม่ออกเสียง</td></tr><tr><td>a university</td><td>a</td><td>ออกเสียงขึ้นต้นว่า \"yoo-\" ซึ่งเป็นเสียงพยัญชนะ</td></tr><tr><td>a uniform</td><td>a</td><td>ออกเสียงขึ้นต้นว่า \"yoo-\" เช่นกัน</td></tr><tr><td>a European</td><td>a</td><td>ออกเสียงขึ้นต้นว่า \"yoor-\" เป็นเสียงพยัญชนะ</td></tr><tr><td>an umbrella</td><td>an</td><td>ออกเสียงขึ้นต้นด้วยเสียงสระ u ตรงตัว</td></tr><tr><td>an MP</td><td>an</td><td>ตัวอักษร M เวลาอ่านชื่อตัวอักษรออกเสียงว่า \"em\" ซึ่งเป็นเสียงสระ</td></tr><tr><td>a one-hour movie</td><td>a</td><td>คำว่า one ออกเสียงว่า \"won\" ซึ่งเป็นเสียงพยัญชนะ w</td></tr></table>"
+    },
+    {
+      "heading": "🗺️ ชื่อทางภูมิศาสตร์ (ง่าย ๆ สำหรับ ม.3)",
+      "html": "<p>กฎเรื่องชื่อสถานที่มีรายละเอียดเยอะ แต่สำหรับระดับ ม.3 ให้จำแบบง่ายที่สุดคือ <b>ชื่อประเทศ ชื่อเมือง และชื่อคน ส่วนใหญ่ไม่ต้องใช้ article</b> เช่น Thailand, Bangkok, Somchai แต่ก็มีข้อยกเว้นเล็กน้อยที่พบได้บ่อย เช่น ชื่อสถานที่ที่เป็นกลุ่ม/มีคำว่า \"of\" มักใช้ the (the United States, the Philippines) ซึ่งนักเรียนยังไม่จำเป็นต้องท่องจำละเอียดในระดับนี้ เพียงจำหลักใหญ่ว่า \"ชื่อเฉพาะทั่วไป ไม่ใช้ article\" ก็เพียงพอสำหรับข้อสอบเข้า ม.4</p>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["สถานการณ์", "ใช้คำนำหน้า", "ตัวอย่าง"],
+    "rows": [
+      ["คำถัดไปขึ้นต้นด้วยเสียงพยัญชนะ", "a", "a cat, a university, a European"],
+      ["คำถัดไปขึ้นต้นด้วยเสียงสระ", "an", "an apple, an hour, an MP"],
+      ["เจาะจง / กล่าวถึงแล้ว / มีหนึ่งเดียว / ขั้นสูงสุด", "the", "the sun, the book (เล่มที่พูดถึง), the best"],
+      ["นามพหูพจน์ทั่วไป / นามนับไม่ได้ / ชื่อเฉพาะ", "(no article)", "Dogs are cute. / I drink water. / I live in Bangkok."]
+    ]
+  },
+  "tips": [
+    "\"ฟังเสียง ไม่ดูตัวหนังสือ\": ถ้าเสียงแรกที่ได้ยินเป็นเสียงสระ ใช้ <b>an</b> แม้สะกดด้วยพยัญชนะ (an hour) ถ้าเสียงแรกเป็นเสียงพยัญชนะ ใช้ <b>a</b> แม้สะกดด้วยสระ (a university)",
+    "The แปลว่า \"ตัวนั้นแหละ ที่รู้กันอยู่แล้ว\": ถ้าคิดในใจว่า \"ตัวไหนนะ\" ยังไม่เจาะจง ให้ใช้ a/an แต่ถ้ารู้แน่ชัดว่าตัวไหนแล้ว ให้ใช้ the",
+    "ท่องจังหวะสั้น ๆ: \"หนึ่งอย่าง ใช้ a/an — พูดซ้ำอีกที ใช้ the — พูดทั่วไปหลายอย่าง ไม่ต้องใช้อะไรเลย!\""
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม a หรือ an ให้ถูกต้อง (10 ข้อ)",
+        "instructions": "เติม a หรือ an ให้ถูกต้อง โดยพิจารณาจากเสียงของคำถัดไป",
+        "items": [
+          "I have ___ dog.",
+          "She is eating ___ apple.",
+          "He is ___ engineer.",
+          "This is ___ university.",
+          "I waited for ___ hour.",
+          "They live in ___ small house.",
+          "She wants to be ___ nurse.",
+          "It is ___ orange.",
+          "He is ___ honest boy.",
+          "We saw ___ elephant at the zoo."
+        ],
+        "answers": ["a", "an", "an", "a", "an", "a", "a", "an", "an", "an"],
+        "reasons": [
+          "dog ขึ้นต้นด้วยเสียงพยัญชนะ d จึงใช้ a",
+          "apple ขึ้นต้นด้วยเสียงสระ a จึงใช้ an",
+          "engineer ขึ้นต้นด้วยเสียงสระ e จึงใช้ an",
+          "university ออกเสียงขึ้นต้นว่า \"yoo-\" (เสียงพยัญชนะ) จึงใช้ a",
+          "hour ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ใช้ an",
+          "small ขึ้นต้นด้วยเสียงพยัญชนะ s จึงใช้ a",
+          "nurse ขึ้นต้นด้วยเสียงพยัญชนะ n จึงใช้ a",
+          "orange ขึ้นต้นด้วยเสียงสระ o จึงใช้ an",
+          "honest ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ใช้ an",
+          "elephant ขึ้นต้นด้วยเสียงสระ e จึงใช้ an"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติม the หรือไม่ต้องเติมคำนำหน้านาม (8 ข้อ)",
+        "instructions": "เติม the หรือเว้นว่างไว้ (เขียนคำว่า \"(no article)\" ถ้าไม่ต้องเติมคำใด ๆ) ให้ถูกต้องตามบริบท",
+        "items": [
+          "Look at ___ moon! It's so bright tonight.",
+          "I bought a pen. ___ pen is blue.",
+          "___ cats are cute animals.",
+          "She drinks ___ milk every morning.",
+          "He is ___ tallest boy in our class.",
+          "My father works in ___ Bangkok.",
+          "___ sun rises in the east.",
+          "I like ___ dogs."
+        ],
+        "answers": ["the", "the", "(no article)", "(no article)", "the", "(no article)", "the", "(no article)"],
+        "reasons": [
+          "the moon เป็นสิ่งเดียวที่มีอยู่ ใช้ the เสมอ",
+          "pen ถูกกล่าวถึงมาแล้วในประโยคก่อนหน้า (กล่าวถึงครั้งที่สอง) ใช้ the",
+          "cats เป็นนามพหูพจน์ที่พูดถึงทั่วไป ไม่เจาะจง จึงไม่ต้องใช้ article",
+          "milk เป็นนามนับไม่ได้ ไม่ต้องใช้ article",
+          "tallest เป็นคำคุณศัพท์ขั้นสูงสุด (superlative) ต้องใช้ the เสมอ",
+          "Bangkok เป็นชื่อเฉพาะ (ชื่อเมือง) ไม่ต้องใช้ article",
+          "the sun เป็นสิ่งเดียวที่มีอยู่ในโลก ใช้ the เสมอ",
+          "dogs เป็นนามพหูพจน์ที่พูดถึงทั่วไป ไม่ต้องใช้ article"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม a, an, the หรือไม่ต้องเติม (คำยกเว้นและบริบทผสม) (7 ข้อ)",
+        "instructions": "เติมคำนำหน้านามที่เหมาะสมที่สุด (a, an, the หรือ (no article)) โดยพิจารณาเสียงและบริบทให้ดี",
+        "items": [
+          "My uncle is ___ European.",
+          "She wears ___ uniform to school.",
+          "He works as ___ MP.",
+          "I saw ___ umbrella on the bus.",
+          "This is ___ honest man; I trust him.",
+          "I met a boy yesterday. ___ boy was very friendly.",
+          "This is ___ best restaurant in town."
+        ],
+        "answers": ["a", "a", "an", "an", "an", "the", "the"],
+        "reasons": [
+          "European ออกเสียงขึ้นต้นว่า \"yoor-\" (เสียงพยัญชนะ) จึงใช้ a ไม่ใช่ an",
+          "uniform ออกเสียงขึ้นต้นว่า \"yoo-\" จึงใช้ a",
+          "MP อ่านชื่อตัวอักษรว่า \"em-pee\" ขึ้นต้นด้วยเสียงสระ จึงใช้ an",
+          "umbrella ขึ้นต้นด้วยเสียงสระ u ตรงตัว จึงใช้ an",
+          "honest ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ใช้ an",
+          "boy ถูกกล่าวถึงมาแล้วในประโยคก่อนหน้า (กล่าวถึงครั้งที่สอง) ใช้ the",
+          "best เป็นคำคุณศัพท์ขั้นสูงสุด (superlative) ต้องใช้ the เสมอ"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🐱", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "I have ___ cat.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "cat ขึ้นต้นด้วยเสียงพยัญชนะ c จึงใช้ a" },
+    { "emoji": "🍎", "tag": "a/an: เสียงสระ", "difficulty": 1, "q": "She is eating ___ apple.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "apple ขึ้นต้นด้วยเสียงสระ a จึงใช้ an" },
+    { "emoji": "🐘", "tag": "a/an: เสียงสระ", "difficulty": 1, "q": "We saw ___ elephant at the zoo.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "elephant ขึ้นต้นด้วยเสียงสระ e จึงใช้ an" },
+    { "emoji": "🐶", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "He has ___ dog.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "dog ขึ้นต้นด้วยเสียงพยัญชนะ d จึงใช้ a" },
+    { "emoji": "🥚", "tag": "a/an: เสียงสระ", "difficulty": 1, "q": "I ate ___ egg for breakfast.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "egg ขึ้นต้นด้วยเสียงสระ e จึงใช้ an" },
+    { "emoji": "🍌", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "She wants ___ banana.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "banana ขึ้นต้นด้วยเสียงพยัญชนะ b จึงใช้ a" },
+    { "emoji": "🎈", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "There is ___ balloon in the sky.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "balloon ขึ้นต้นด้วยเสียงพยัญชนะ b จึงใช้ a" },
+    { "emoji": "🍊", "tag": "a/an: เสียงสระ", "difficulty": 1, "q": "He bought ___ orange.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "orange ขึ้นต้นด้วยเสียงสระ o จึงใช้ an" },
+    { "emoji": "☀️", "tag": "the: สิ่งเดียวในโลก", "difficulty": 1, "q": "___ sun rises in the east every morning.", "choices": ["a", "an", "The", "(no article)"], "answer": 2, "explain": "the sun เป็นสิ่งเดียวที่มีอยู่ในโลก ใช้ the เสมอ" },
+    { "emoji": "🌙", "tag": "the: สิ่งเดียวในโลก", "difficulty": 1, "q": "Look at ___ moon tonight!", "choices": ["a", "an", "The", "(no article)"], "answer": 2, "explain": "the moon เป็นสิ่งเดียวที่มีอยู่ ใช้ the เสมอ" },
+    { "emoji": "🐟", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "I saw ___ fish in the pond.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "fish ขึ้นต้นด้วยเสียงพยัญชนะ f จึงใช้ a" },
+    { "emoji": "🧑‍🏫", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "She is ___ teacher.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "teacher ขึ้นต้นด้วยเสียงพยัญชนะ t จึงใช้ a" },
+    { "emoji": "🦋", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "I caught ___ butterfly.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "butterfly ขึ้นต้นด้วยเสียงพยัญชนะ b จึงใช้ a" },
+    { "emoji": "🌍", "tag": "the: สิ่งเดียวในโลก", "difficulty": 1, "q": "___ earth goes around the sun.", "choices": ["a", "an", "The", "(no article)"], "answer": 2, "explain": "the earth หมายถึงโลกใบเดียวที่เรามีอยู่ ใช้ the เสมอ" },
+    { "emoji": "🚗", "tag": "a/an: เสียงพยัญชนะ", "difficulty": 1, "q": "He has ___ car.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "car ขึ้นต้นด้วยเสียงพยัญชนะ c จึงใช้ a" },
+
+    { "emoji": "📖", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "I bought a book. ___ book is very interesting.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "book ถูกกล่าวถึงมาแล้วในประโยคก่อนหน้า (กล่าวถึงครั้งที่สอง) ใช้ the" },
+    { "emoji": "🖊️", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "I have a pen. ___ pen is red.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "pen ถูกกล่าวถึงมาแล้วในประโยคก่อนหน้า ใช้ the" },
+    { "emoji": "🐕", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "There is a dog in the yard. ___ dog is barking.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "dog ถูกกล่าวถึงมาแล้ว จึงใช้ the ในประโยคที่สอง" },
+    { "emoji": "🍕", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "I ordered a pizza. ___ pizza was delicious.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "pizza ถูกกล่าวถึงมาแล้ว จึงใช้ the" },
+    { "emoji": "🏔️", "tag": "the: superlative", "difficulty": 2, "q": "He is ___ tallest boy in the class.", "choices": ["a", "an", "the", "(no article)"], "answer": 2, "explain": "tallest เป็นคำคุณศัพท์ขั้นสูงสุด (superlative) ต้องใช้ the เสมอ" },
+    { "emoji": "🚀", "tag": "the: superlative", "difficulty": 2, "q": "This is ___ fastest car in the world.", "choices": ["a", "an", "the", "(no article)"], "answer": 2, "explain": "fastest เป็นคำคุณศัพท์ขั้นสูงสุด ต้องใช้ the เสมอ" },
+    { "emoji": "💎", "tag": "the: superlative", "difficulty": 2, "q": "It is ___ most expensive ring in the shop.", "choices": ["a", "an", "the", "(no article)"], "answer": 2, "explain": "most expensive เป็นคำคุณศัพท์ขั้นสูงสุด ต้องใช้ the เสมอ" },
+    { "emoji": "🐕‍🦺", "tag": "no article: พหูพจน์ทั่วไป", "difficulty": 2, "q": "I like ___ dogs.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "dogs เป็นนามพหูพจน์ที่พูดถึงทั่วไป ไม่เจาะจง จึงไม่ต้องใช้ article" },
+    { "emoji": "🥛", "tag": "no article: นามนับไม่ได้", "difficulty": 2, "q": "She drinks ___ milk every day.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "milk เป็นนามนับไม่ได้ ไม่ต้องใช้ article" },
+    { "emoji": "💧", "tag": "no article: นามนับไม่ได้", "difficulty": 2, "q": "We need ___ water to survive.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "water เป็นนามนับไม่ได้ ไม่ต้องใช้ article" },
+    { "emoji": "🍚", "tag": "no article: นามนับไม่ได้", "difficulty": 2, "q": "He eats ___ rice for lunch.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "rice เป็นนามนับไม่ได้ ไม่ต้องใช้ article" },
+    { "emoji": "🐦", "tag": "no article: พหูพจน์ทั่วไป", "difficulty": 2, "q": "___ birds can fly.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "birds เป็นนามพหูพจน์ที่พูดถึงทั่วไป ไม่ต้องใช้ article" },
+    { "emoji": "🧒", "tag": "no article: พหูพจน์ทั่วไป", "difficulty": 2, "q": "___ children like playing games.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "children เป็นนามพหูพจน์ที่พูดถึงทั่วไป ไม่ต้องใช้ article" },
+    { "emoji": "💰", "tag": "no article: นามนับไม่ได้", "difficulty": 2, "q": "___ money is important, but health is more important.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "money เป็นนามนับไม่ได้ ไม่ต้องใช้ article" },
+    { "emoji": "🌟", "tag": "the: superlative", "difficulty": 2, "q": "She is ___ most beautiful girl in town.", "choices": ["a", "an", "the", "(no article)"], "answer": 2, "explain": "most beautiful เป็นคำคุณศัพท์ขั้นสูงสุด ต้องใช้ the เสมอ" },
+    { "emoji": "📏", "tag": "the: superlative", "difficulty": 2, "q": "This is ___ longest river in Thailand.", "choices": ["a", "an", "the", "(no article)"], "answer": 2, "explain": "longest เป็นคำคุณศัพท์ขั้นสูงสุด ต้องใช้ the เสมอ" },
+    { "emoji": "🐱", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "I saw a cat near my house. ___ cat was black.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "cat ถูกกล่าวถึงมาแล้วในประโยคก่อนหน้า จึงใช้ the" },
+    { "emoji": "🎈", "tag": "the: กล่าวถึงครั้งที่สอง", "difficulty": 2, "q": "He bought a balloon. ___ balloon was red.", "choices": ["A", "An", "The", "(no article)"], "answer": 2, "explain": "balloon ถูกกล่าวถึงมาแล้ว จึงใช้ the" },
+    { "emoji": "🍞", "tag": "no article: นามนับไม่ได้", "difficulty": 2, "q": "We need ___ bread for breakfast.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "bread เป็นนามนับไม่ได้ ไม่ต้องใช้ article" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "no article: พหูพจน์ทั่วไป", "difficulty": 2, "q": "___ people in Thailand are friendly.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "people ในที่นี้พูดถึงคนไทยโดยทั่วไป ไม่เจาะจงกลุ่มใดกลุ่มหนึ่ง จึงไม่ต้องใช้ article" },
+
+    { "emoji": "⏰", "tag": "a/an ยกเว้น: an hour (h ไม่ออกเสียง)", "difficulty": 3, "q": "I waited for ___ hour.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "hour ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ใช้ an" },
+    { "emoji": "🎓", "tag": "a/an ยกเว้น: a university (เสียง yoo)", "difficulty": 3, "q": "She studies at ___ university.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "university ออกเสียงขึ้นต้นว่า \"yoo-\" ซึ่งเป็นเสียงพยัญชนะ จึงใช้ a" },
+    { "emoji": "🌍", "tag": "a/an ยกเว้น: a European (เสียง yoor)", "difficulty": 3, "q": "He married ___ European woman.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "European ออกเสียงขึ้นต้นว่า \"yoor-\" ซึ่งเป็นเสียงพยัญชนะ จึงใช้ a" },
+    { "emoji": "☔", "tag": "a/an: เสียงสระตรงตัว", "difficulty": 3, "q": "I need ___ umbrella; it's raining.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "umbrella ขึ้นต้นด้วยเสียงสระ u ตรงตัว จึงใช้ an" },
+    { "emoji": "🧑‍⚖️", "tag": "a/an ยกเว้น: an honest man (h ไม่ออกเสียง)", "difficulty": 3, "q": "He is ___ honest man; everyone trusts him.", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "honest ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ใช้ an" },
+    { "emoji": "👔", "tag": "a/an ยกเว้น: a uniform (เสียง yoo)", "difficulty": 3, "q": "The student wears ___ uniform every day.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "uniform ออกเสียงขึ้นต้นว่า \"yoo-\" ซึ่งเป็นเสียงพยัญชนะ จึงใช้ a" },
+    { "emoji": "🏛️", "tag": "a/an ยกเว้น: an MP (ชื่อตัวอักษร)", "difficulty": 3, "q": "My aunt is ___ MP (Member of Parliament).", "choices": ["a", "an", "the", "(no article)"], "answer": 1, "explain": "MP อ่านชื่อตัวอักษรว่า \"em-pee\" ขึ้นต้นด้วยเสียงสระ จึงใช้ an" },
+    { "emoji": "🕐", "tag": "a/an ยกเว้น: a one-hour (เสียง won)", "difficulty": 3, "q": "We watched ___ one-hour movie last night.", "choices": ["a", "an", "the", "(no article)"], "answer": 0, "explain": "one ออกเสียงว่า \"won\" ซึ่งเป็นเสียงพยัญชนะ w จึงใช้ a" },
+    { "emoji": "🇹🇭", "tag": "no article: ชื่อประเทศ", "difficulty": 3, "q": "___ Thailand is a beautiful country.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "Thailand เป็นชื่อเฉพาะ (ชื่อประเทศ) ไม่ต้องใช้ article" },
+    { "emoji": "🗼", "tag": "no article: ชื่อเมือง", "difficulty": 3, "q": "She wants to visit ___ Paris someday.", "choices": ["a", "an", "the", "(no article)"], "answer": 3, "explain": "Paris เป็นชื่อเฉพาะ (ชื่อเมือง) ไม่ต้องใช้ article" },
+    { "emoji": "👦", "tag": "no article: ชื่อคน", "difficulty": 3, "q": "___ Somchai is my classmate.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "Somchai เป็นชื่อเฉพาะของคน ไม่ต้องใช้ article" },
+    { "emoji": "🏔️", "tag": "no article: ชื่อภูเขา", "difficulty": 3, "q": "___ Mount Everest is the highest mountain in the world.", "choices": ["A", "An", "The", "(no article)"], "answer": 3, "explain": "Mount Everest เป็นชื่อเฉพาะของภูเขา ไม่ต้องใช้ article นำหน้า" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["He bought an new car.", "He bought a new car.", "He bought the new car yesterday for the first time.", "He bought new car."], "answer": 1, "explain": "new ออกเสียงขึ้นต้นด้วยเสียงพยัญชนะ n จึงใช้ a และเป็นการกล่าวถึงรถครั้งแรก จึงยังไม่ใช้ the ส่วนนามเอกพจน์ต้องมี article เสมอ" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["I waited for a hour at the bus stop.", "I waited for an hour at the bus stop.", "I waited for the hour at the bus stop.", "I waited for hour at the bus stop."], "answer": 1, "explain": "hour ตัว h ไม่ออกเสียง จึงได้ยินเสียงสระ ต้องใช้ an ไม่ใช่ a" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She is a most intelligent student in class.", "She is most intelligent student in class.", "She is the most intelligent student in class.", "She is an most intelligent student in class."], "answer": 2, "explain": "most intelligent เป็นคำคุณศัพท์ขั้นสูงสุด (superlative) ต้องใช้ the เสมอ" }
+  ]
+}

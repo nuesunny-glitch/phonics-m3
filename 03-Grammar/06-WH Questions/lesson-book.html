@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หนังสือเรียน: WH-Questions — ม.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Book-only additions on top of shared.css.js ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22mm 16mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en {
+  font-family: 'Mali','Kanit',sans-serif;
+  font-size: 64px;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.cover-title-th { font-size: 29px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.95);
+  color: #2a2a3a;
+  border-radius: 20px;
+  padding: 22px 28px;
+  max-width: 150mm;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.meaning-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0; }
+.meaning-box { border-radius: 16px; padding: 18px; text-align: center; }
+.meaning-box .word { font-size: 32px; font-weight: 800; margin-bottom: 5px; }
+.meaning-box .ex { font-size: 16.5px; margin-top: 10px; background: rgba(255,255,255,0.7); border-radius: 10px; padding: 8px 10px; }
+.mb1 { background: #FFE1E1; color: #b3261e; }
+.mb2 { background: #DCEEFF; color: #10508f; }
+.mb3 { background: #D9F7EC; color: #0d7a53; }
+
+.step-card { border-radius: 18px; padding: 20px 22px; margin: 18px 0; border: 3px solid var(--accent); }
+.step-card .step-label { display:inline-block; background: var(--accent); color:#fff; font-weight:800; font-size: 16px; padding: 5px 14px; border-radius: 999px; margin-bottom: 10px; }
+.step-card.sc1 { --accent:#FF5D5D; background:#FFF3F3; }
+.step-card.sc2 { --accent:#2F9BFF; background:#F1F8FF; }
+.step-card.sc3 { --accent:#21C38D; background:#F0FBF7; }
+.step-card.sc4 { --accent:#9B5DE5; background:#F8F3FE; }
+.step-card ul { margin: 8px 0 0; padding-left: 24px; }
+
+.flash-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.flash-card { border-radius: 14px; padding: 16px 12px; text-align:center; background: #f5f7fd; border: 2px dashed #c7cfe8; }
+.flash-card .fe { font-size: 42px; }
+.flash-card .fw { font-weight: 700; font-size: 17px; margin-top: 6px; }
+.flash-card .ft { font-size: 15.5px; color: #55607a; }
+
+.pattern-box { border-radius: 16px; padding: 18px 22px; margin: 16px 0; background: #f5f7fd; border-left: 6px solid var(--accent); }
+.pattern-box .formula { font-family:'Mali','Kanit',sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.pattern-box .pex { font-size: 17px; margin-top: 8px; }
+.pattern-box .pex .th { color: #667; font-size: 15.5px; }
+
+.dialogue-wrap { margin: 18px 0 26px; }
+.dialogue-title { font-weight: 700; color: #1e2b5c; margin-bottom: 10px; font-size: 18.5px; }
+.bubble { max-width: 78%; padding: 12px 18px; border-radius: 16px; margin: 8px 0; font-size: 18px; }
+.bubble .th { font-size: 15.5px; color: #667; margin-top: 2px; }
+.bubble.left { background: #DCEEFF; border-bottom-left-radius: 4px; margin-right: auto; }
+.bubble.right { background: #FFE1E1; border-bottom-right-radius: 4px; margin-left: auto; text-align: right; }
+.speaker { font-weight: 700; font-size: 15.5px; color: #445; margin-bottom: 2px; }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.tip-checklist { list-style: none; padding: 0; margin: 16px 0; }
+.tip-checklist li { display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #FFD54F; border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:17.5px; }
+.tip-checklist .num { background:#FFA800; color:#fff; font-weight:800; border-radius:50%; width:30px; height:30px; min-width:30px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.cheat-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cheat-box { background:#f5f7fd; border-radius:14px; padding:16px 18px; border:2px solid #dbe2f5; }
+.cheat-box h4 { margin:0 0 10px; font-size:17px; color:#1e2b5c; font-family:'Mali','Kanit',sans-serif; }
+.cheat-box table { display:block; max-width:100%; overflow-x:auto; width:100%; border-collapse: collapse; font-size:15.5px; -webkit-overflow-scrolling: touch; }
+.cheat-box td, .cheat-box th { border:1px solid #d8dce8; padding:6px 8px; }
+.cheat-box ul { margin:0; padding-left:22px; font-size:15.5px; }
+.cheat-box li { margin-bottom:6px; }
+
+.teacher-note-box { background:#FFF3F3; border:2px dashed #b3261e; border-radius:14px; padding:16px 20px; margin-bottom:16px; }
+.teacher-note-box h4 { margin:0 0 8px; color:#b3261e; font-size:17.5px; }
+.teacher-note-box ul { margin:0; padding-left:24px; font-size:16.5px; }
+.teacher-note-box li { margin-bottom:6px; }
+
+.homework-card { background:#F0FBF7; border:2px solid #21C38D; border-radius:14px; padding:16px 20px; margin-bottom:14px; font-size:17px; }
+.homework-card .hnum { color:#0d7a53; font-weight:800; }
+
+.motivation-poster {
+  text-align:center; padding: 38px 24px; border-radius:20px;
+  background: linear-gradient(135deg,#9B5DE5,#FF5FA2);
+  color:#fff; margin-top: 34px;
+}
+.motivation-poster .quote { font-family:'Mali','Kanit',sans-serif; font-size:27px; font-weight:800; line-height:1.5; }
+.motivation-poster .sub { margin-top:12px; font-size:17px; opacity:0.95; }
+
+.sunee-poster {
+  background: linear-gradient(135deg,#FFD54F,#FF9800);
+  border-radius: 22px; padding: 26px 28px; color:#3a2a00;
+}
+.sunee-poster .avatar { font-size:52px; }
+.sunee-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.sunee-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.sunee-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+.toc { list-style: none; padding:0; margin: 14px 0; columns: 2; column-gap: 26px; }
+.toc li { font-size: 16.5px; padding: 7px 0; border-bottom: 1px dashed #dde2ee; }
+.toc .n { color:#2952e3; font-weight:700; margin-right:6px; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet cover-page" id="s1">
+    <div class="cover-decor">🌟 ⭐ 🎈 ✨ 🌈 ⭐ 🌟</div>
+    <div class="cover-emojis">❓ 🔍 🧑‍🎓 📚 ✏️</div>
+    <h1 class="cover-title-en">WH-Questions</h1>
+    <div class="cover-title-th">คำถาม WH (What / Where / When / Who / Why / Which / Whose)</div>
+    <div class="cover-subtitle">หนังสือเรียนภาษาอังกฤษ ม.3 เล่มที่ 6 · เตรียมสอบเข้า ม.4</div>
+    <div class="cover-credit">✍️ เรียบเรียงโดย ครูสุนี</div>
+    <div class="cover-objectives">
+      <h3>🎯 จุดประสงค์การเรียนรู้</h3>
+      <ul class="obj-list" style="list-style:disc;"><li>บอกความหมายและหน้าที่ของคำคำถาม WH-word ทั้ง 7 คำ (What, Where, When, Who, Why, Which, Whose) ได้ถูกต้อง</li><li>แต่งประโยคคำถามด้วย WH-word + Verb to Be (is/am/are/was/were) ให้ตรงกับประธานและกาลเวลาได้</li><li>แต่งประโยคคำถามด้วย WH-word + do/does/did ให้สอดคล้องกับประธานและกาลเวลาของกริยาได้</li><li>แยกความแตกต่างและเลือกใช้ Which กับ What ในสถานการณ์ที่มีตัวเลือกจำกัดหรือเปิดกว้างได้ถูกต้อง</li><li>เลือกใช้ WH-word และกริยาช่วยที่ถูกต้องในประโยคคำถามที่ซับซ้อน รวมถึงจับผิดประโยคคำถามที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อย</li></ul>
+    </div>
+    <div class="cover-footer">Lesson 06 · English Grammar Storybook Series 🌈</div>
+  </div>
+<div class="sheet" id="s2">
+  <div class="section-banner sb-c1">
+    <div><h1>❓ WH-Questions คืออะไร?</h1><div class="eng">What are WH-Questions?</div></div>
+    <div class="chip">ส่วนที่ 2</div>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">WH-Questions คือประโยคคำถามที่ขึ้นต้นด้วยคำคำถามกลุ่ม <b>WH</b> ทั้ง 7 คำ ได้แก่ What, Where, When, Who, Why, Which, Whose แต่ละคำมีความหมายและใช้ถามข้อมูลต่างกัน ไม่เหมือนคำถาม Yes/No ที่ตอบแค่ Yes หรือ No เพราะ WH-Questions ต้องการคำตอบที่เป็นข้อมูลจริง ๆ ลองดูความหมายของแต่ละคำก่อนเลย:</p>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">What = อะไร</div>ถามสิ่งของ/การกระทำแบบเปิดกว้าง<div class="ex">What is this?<br>(นี่คืออะไร)</div></div>
+    <div class="meaning-box mb2"><div class="word">Where = ที่ไหน</div>ถามสถานที่<div class="ex">Where do you live?<br>(คุณอาศัยอยู่ที่ไหน)</div></div>
+    <div class="meaning-box mb3"><div class="word">When = เมื่อไหร่</div>ถามเวลา<div class="ex">When is your birthday?<br>(วันเกิดคุณเมื่อไหร่)</div></div>
+  </div>
+  <div class="meaning-row">
+    <div class="meaning-box mb1"><div class="word">Who = ใคร</div>ถามถึงบุคคล<div class="ex">Who is that man?<br>(ผู้ชายคนนั้นเป็นใคร)</div></div>
+    <div class="meaning-box mb2"><div class="word">Why = ทำไม</div>ถามเหตุผล<div class="ex">Why are you late?<br>(ทำไมคุณถึงมาสาย)</div></div>
+    <div class="meaning-box mb3"><div class="word">Which = อันไหน</div>ถามตัวเลือกที่จำกัด<div class="ex">Which one do you want?<br>(คุณต้องการอันไหน)</div></div>
+  </div>
+  <div class="explain-block">
+    <h2>🧩 อีก 1 คำที่ต้องรู้: Whose (ของใคร)</h2>
+    <table>
+      <tr><th>WH-word</th><th>ความหมาย</th><th>ตัวอย่าง</th><th>คำแปล</th></tr>
+      <tr><td>Whose</td><td>ของใคร (ถามความเป็นเจ้าของ)</td><td>Whose bag is this?</td><td>กระเป๋าใบนี้เป็นของใคร</td></tr>
+    </table>
+  </div>
+  <p style="font-size:15px;line-height:1.7;">สังเกตว่าทั้ง 7 คำนี้ใช้ถามข้อมูลคนละแบบกัน — เคล็ดลับคือต้องเข้าใจ "ใช้ถามอะไร" ของแต่ละคำให้แม่นก่อน แล้วค่อยไปเรียนรู้ว่าประโยคคำถามแต่ละแบบเรียงคำอย่างไร</p>
+</div>
+<div class="sheet" id="s3">
+  <div class="section-banner sb-c2">
+    <div><h1>🧩 กฎไวยากรณ์ทีละขั้น</h1><div class="eng">Grammar Rules Step by Step</div></div>
+    <div class="chip">ส่วนที่ 3</div>
+  </div>
+  <div class="step-card sc1">
+    <span class="step-label">STEP 1</span>
+    <div class="qtext" style="font-size:17px;">WH + is / are / was / were + ประธาน...?</div>
+    <p style="margin:6px 0;">ใช้เมื่อหลัง WH ไม่มีกริยาแท้ (มีแต่คำนาม/คุณศัพท์/สถานที่) เลือก Verb to Be ให้ตรงกับประธานเหมือนเดิม</p>
+    <ul><li>What is this? (นี่คืออะไร)</li><li>Where are you? (คุณอยู่ที่ไหน)</li></ul>
+  </div>
+  <div class="step-card sc2">
+    <span class="step-label">STEP 2</span>
+    <div class="qtext" style="font-size:17px;">WH + do / does / did + ประธาน + กริยาช่อง 1...?</div>
+    <p style="margin:6px 0;">ใช้เมื่อหลัง WH มีกริยาแท้ (action verb เช่น like, live, arrive) กริยาหลักต้องเป็นกริยาช่อง 1 เสมอ ห้ามผัน เพราะ do/does/did ทำหน้าที่บอกกาลแทนแล้ว</p>
+    <ul><li>What do you like? (คุณชอบอะไร)</li><li>Where does she live? (เธออาศัยอยู่ที่ไหน)</li><li>When did you arrive? (คุณมาถึงเมื่อไหร่)</li></ul>
+  </div>
+  <div class="step-card sc3">
+    <span class="step-label">STEP 3</span>
+    <div class="qtext" style="font-size:17px;">Which vs What</div>
+    <p style="margin:6px 0;"><b>Which</b> = ใช้เมื่อมีตัวเลือกจำกัด/รู้อยู่แล้ว (มักมีคำว่า "...or...") ส่วน <b>What</b> = ใช้ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัด</p>
+    <ul><li>Which do you want, tea or coffee? (ตัวเลือกจำกัด)</li><li>What is your favorite food? (เปิดกว้าง)</li></ul>
+  </div>
+  <div class="step-card sc4">
+    <span class="step-label">BONUS STEP</span>
+    <div class="qtext" style="font-size:17px;">Whose + นาม...? — ถามความเป็นเจ้าของ</div>
+    <p style="margin:6px 0;">ใช้โครงสร้าง Whose + นาม + is/are... หรือ Whose + นาม + do/does/did + ประธาน + กริยา...</p>
+    <ul><li>Whose bag is this? (กระเป๋าใบนี้เป็นของใคร)</li><li>Whose pen do you have? (คุณมีปากกาของใคร)</li></ul>
+  </div>
+</div>
+<div class="sheet" id="s4">
+  <div class="section-banner sb-c3">
+    <div><h1>📊 ตารางสรุป</h1><div class="eng">Summary Table</div></div>
+    <div class="chip">ส่วนที่ 4</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>WH-word</th><th>ความหมาย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>What</b></td><td>อะไร (เปิดกว้าง)</td><td>What is your name?</td></tr><tr><td><b>Where</b></td><td>ที่ไหน</td><td>Where do you live?</td></tr><tr><td><b>When</b></td><td>เมื่อไหร่</td><td>When did you arrive?</td></tr><tr><td><b>Who</b></td><td>ใคร</td><td>Who is that man?</td></tr><tr><td><b>Why</b></td><td>ทำไม</td><td>Why are you late?</td></tr><tr><td><b>Which</b></td><td>อันไหน (ตัวเลือกจำกัด)</td><td>Which one do you want?</td></tr><tr><td><b>Whose</b></td><td>ของใคร</td><td>Whose bag is this?</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">💡 เคล็ดลับ: ท่องตารางนี้ให้ขึ้นใจ เพราะทุกกฎในบทนี้อ้างอิงจากตารางเดียวนี้ทั้งหมด!</div>
+</div>
+<div class="sheet" id="s5">
+  <div class="section-banner sb-c4">
+    <div><h1>🧠 เทคนิคการจำ</h1><div class="eng">Memory Tricks</div></div>
+    <div class="chip">ส่วนที่ 5</div>
+  </div>
+  <div class="step-card sc1"><span class="step-label">เทคนิค 1</span><div class="qtext" style="font-size:18px;">คำจำ 7 คำ: W-W-W-W-W-W-W</div><p>What-Where-When-Who-Why-Which-Whose ล้วนขึ้นต้นด้วย W ยกเว้น How! ท่องเรียงเป็นจังหวะ "อะไร-ที่ไหน-เมื่อไหร่-ใคร-ทำไม-อันไหน-ของใคร" ให้คล่องปากทุกเช้า</p></div>
+  <div class="step-card sc2"><span class="step-label">เทคนิค 2</span><div class="qtext" style="font-size:18px;">Which แปลว่าอันไหนถ้ามีตัวเลือกให้</div><p>เห็นคำว่า "...or..." หรือมีของให้เลือกอยู่ตรงหน้า ให้นึกถึง Which ทันที ถ้าไม่มีตัวเลือกจำกัดให้ใช้ What แทน</p></div>
+  <div class="step-card sc3"><span class="step-label">เทคนิค 3</span><div class="qtext" style="font-size:18px;">Who เป็นประธานไม่ต้องใช้ do ช่วย</div><p>ถ้า Who เป็นคนทำเอง (ใครทำ) ผันกริยาตรง ๆ ได้เลย เช่น Who made this cake? แต่ถ้า Who เป็นกรรม (ถามว่าทำอะไรกับใคร) ต้องมี do/does/did เช่น Who did you meet?</p></div>
+  <div class="step-card sc4"><span class="step-label">เทคนิคโบนัส</span><div class="qtext" style="font-size:18px;">Whose ≠ Who's</div><p><b>Whose</b> (ไม่มี apostrophe) แปลว่า "ของใคร" ส่วน <b>Who's</b> (มี apostrophe) ย่อมาจาก Who is/Who has — สะกดคล้ายกันแต่ความหมายคนละเรื่อง ข้อสอบชอบเอามาสลับ ต้องดูให้ดี!</p></div>
+</div>
+<div class="sheet" id="s6">
+  <div class="section-banner sb-c5">
+    <div><h1>🔊 มุมออกเสียง</h1><div class="eng">Phonics Corner</div></div>
+    <div class="chip">ส่วนที่ 6</div>
+  </div>
+  <div class="explain-block">
+    <table>
+      <tr><th>คำ</th><th>สัทอักษร (IPA)</th><th>เสียงอ่านแบบไทย</th><th>ตัวอย่างประโยค</th></tr>
+      <tr><td><b>what</b></td><td>/wʌt/</td><td>วอท</td><td>What is this? (วอท อิซ ดิส)</td></tr>
+      <tr><td><b>where</b></td><td>/wɛər/</td><td>แวร์</td><td>Where are you? (แวร์ อาร์ ยู)</td></tr>
+      <tr><td><b>when</b></td><td>/wɛn/</td><td>เวน</td><td>When is it? (เวน อิซ อิท)</td></tr>
+      <tr><td><b>who</b></td><td>/huː/</td><td>ฮู</td><td>Who is she? (ฮู อิซ ชี)</td></tr>
+      <tr><td><b>why</b></td><td>/waɪ/</td><td>วาย</td><td>Why are you late? (วาย อาร์ ยู เลท)</td></tr>
+      <tr><td><b>which</b></td><td>/wɪtʃ/</td><td>วิช</td><td>Which one? (วิช วัน)</td></tr>
+      <tr><td><b>whose</b></td><td>/huːz/</td><td>ฮูซ</td><td>Whose bag is this? (ฮูซ แบก อิซ ดิส)</td></tr>
+    </table>
+  </div>
+  <div class="tip-card">🎧 เกร็ดออกเสียง: ระวัง who /huː/ (ฮู) กับ whose /huːz/ (ฮูซ) เสียงคล้ายกันมาก ต่างกันแค่เสียง "ซ" ท้ายคำ ฝึกฟังและออกเสียงให้ชัดเจนเพื่อไม่ให้สับสน!</div>
+</div>
+<div class="sheet" id="s7">
+  <div class="section-banner sb-c6">
+    <div><h1>📚 คำศัพท์น่ารู้</h1><div class="eng">Vocabulary</div></div>
+    <div class="chip">ส่วนที่ 7</div>
+  </div>
+  <p style="font-size:14.5px;color:#55607a;">คำศัพท์กลุ่มนี้คือ "หมวดคำตอบ" ที่มักใช้ตอบ WH-Questions แบ่งเป็น 5 หมวด: สถานที่ (Where), เวลา (When), บุคคล (Who), เหตุผล (Why), และสิ่งของ (What/Which/Whose)</p>
+  <div class="flash-grid"><div class="flash-card"><div class="fe">🏫</div><div class="fw">school</div><div class="ft">โรงเรียน (สถานที่)</div></div><div class="flash-card"><div class="fe">🏠</div><div class="fw">home</div><div class="ft">บ้าน (สถานที่)</div></div><div class="flash-card"><div class="fe">🏬</div><div class="fw">mall</div><div class="ft">ห้าง (สถานที่)</div></div><div class="flash-card"><div class="fe">⏰</div><div class="fw">morning</div><div class="ft">ตอนเช้า (เวลา)</div></div><div class="flash-card"><div class="fe">🌙</div><div class="fw">tonight</div><div class="ft">คืนนี้ (เวลา)</div></div><div class="flash-card"><div class="fe">📅</div><div class="fw">yesterday</div><div class="ft">เมื่อวาน (เวลา)</div></div><div class="flash-card"><div class="fe">👩‍🏫</div><div class="fw">teacher</div><div class="ft">ครู (บุคคล)</div></div><div class="flash-card"><div class="fe">👨‍👩‍👧</div><div class="fw">family</div><div class="ft">ครอบครัว (บุคคล)</div></div><div class="flash-card"><div class="fe">🧑‍🤝‍🧑</div><div class="fw">friend</div><div class="ft">เพื่อน (บุคคล)</div></div><div class="flash-card"><div class="fe">💡</div><div class="fw">because</div><div class="ft">เพราะว่า (เหตุผล)</div></div><div class="flash-card"><div class="fe">🤒</div><div class="fw">sick</div><div class="ft">ป่วย (เหตุผล)</div></div><div class="flash-card"><div class="fe">⏳</div><div class="fw">busy</div><div class="ft">ยุ่ง (เหตุผล)</div></div><div class="flash-card"><div class="fe">👜</div><div class="fw">bag</div><div class="ft">กระเป๋า (ของ)</div></div><div class="flash-card"><div class="fe">👟</div><div class="fw">shoes</div><div class="ft">รองเท้า (ของ)</div></div><div class="flash-card"><div class="fe">📱</div><div class="fw">phone</div><div class="ft">โทรศัพท์ (ของ)</div></div></div>
+</div>
+<div class="sheet" id="s8">
+  <div class="section-banner sb-c1">
+    <div><h1>🧱 โครงสร้างประโยค</h1><div class="eng">Sentence Patterns</div></div>
+    <div class="chip">ส่วนที่ 8</div>
+  </div>
+  <div class="pattern-box" style="--accent:#21C38D;"><div class="formula">WH + is/are/was/were + Subject + ...?</div>
+    <div class="pex">Where is your school? <span class="th">(โรงเรียนของคุณอยู่ที่ไหน)</span></div>
+    <div class="pex">Why were you late? <span class="th">(ทำไมคุณถึงมาสาย)</span></div></div>
+  <div class="pattern-box" style="--accent:#FF5D5D;"><div class="formula">WH + do/does/did + Subject + base verb + ...?</div>
+    <div class="pex">Where do you live? <span class="th">(คุณอาศัยอยู่ที่ไหน)</span></div>
+    <div class="pex">What did she buy? <span class="th">(เธอซื้ออะไร)</span></div></div>
+  <div class="pattern-box" style="--accent:#2F9BFF;"><div class="formula">Who + verb (ไม่มี do-support เมื่อ Who เป็นประธาน)</div>
+    <div class="pex">Who made this cake? <span class="th">(ใครเป็นคนทำเค้กนี้)</span></div>
+    <div class="pex">Who broke the window? <span class="th">(ใครทำหน้าต่างแตก)</span></div></div>
+  <div class="pattern-box" style="--accent:#9B5DE5;"><div class="formula">Whose + noun + is/are... / Whose + noun + do/does/did + S + verb?</div>
+    <div class="pex">Whose bag is this? <span class="th">(กระเป๋าใบนี้เป็นของใคร)</span></div>
+    <div class="pex">Whose pen do you have? <span class="th">(คุณมีปากกาของใคร)</span></div></div>
+</div>
+<div class="sheet" id="s9">
+  <div class="section-banner sb-c2">
+    <div><h1>💬 บทสนทนาในชีวิตประจำวัน</h1><div class="eng">Daily Conversation</div></div>
+    <div class="chip">ส่วนที่ 9</div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🎤 บทสนทนาที่ 1: สัมภาษณ์เพื่อนใหม่ (Interviewing a New Friend)</div>
+    <div class="bubble left"><div class="speaker">Nan</div>Hi! What's your name?<div class="th">สวัสดี เธอชื่ออะไร</div></div>
+    <div class="bubble right"><div class="speaker">Tom</div>I'm Tom. Nice to meet you!<div class="th">ผมชื่อทอม ยินดีที่ได้รู้จักนะ</div></div>
+    <div class="bubble left"><div class="speaker">Nan</div>Where are you from?<div class="th">เธอมาจากที่ไหน</div></div>
+    <div class="bubble right"><div class="speaker">Tom</div>I'm from Chiang Mai. Where do you live now?<div class="th">ผมมาจากเชียงใหม่ แล้วเธออาศัยอยู่ที่ไหนตอนนี้</div></div>
+    <div class="bubble left"><div class="speaker">Nan</div>I live near the school. Why did you move here?<div class="th">ฉันอาศัยอยู่ใกล้โรงเรียน แล้วทำไมเธอถึงย้ายมาที่นี่</div></div>
+    <div class="bubble right"><div class="speaker">Tom</div>Because my father works here now.<div class="th">เพราะพ่อของผมมาทำงานที่นี่</div></div>
+  </div>
+  <div class="dialogue-wrap">
+    <div class="dialogue-title">🎒 บทสนทนาที่ 2: ทายของใคร (At the Lost and Found)</div>
+    <div class="bubble left"><div class="speaker">Ploy</div>Whose bag is this? It was under the chair.<div class="th">กระเป๋าใบนี้เป็นของใครนะ มันอยู่ใต้เก้าอี้</div></div>
+    <div class="bubble right"><div class="speaker">Beam</div>Which bag, the red one or the blue one?<div class="th">กระเป๋าใบไหนล่ะ ใบสีแดงหรือใบสีน้ำเงิน</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>The blue one. Whose is it?<div class="th">ใบสีน้ำเงิน มันเป็นของใครนะ</div></div>
+    <div class="bubble right"><div class="speaker">Beam</div>I think it's Nid's. Who saw her last?<div class="th">ฉันคิดว่าน่าจะเป็นของนิด ใครเห็นเธอครั้งสุดท้าย</div></div>
+    <div class="bubble left"><div class="speaker">Ploy</div>I don't know. Let's ask her tomorrow.<div class="th">ฉันไม่รู้เหมือนกัน พรุ่งนี้ไปถามเธอกันดีกว่า</div></div>
+  </div>
+</div>
+<div class="sheet" id="s10">
+  <div class="section-banner sb-c3">
+    <div><h1>⚠️ ข้อผิดพลาดที่พบบ่อย</h1><div class="eng">Common Mistakes</div></div>
+    <div class="chip">ส่วนที่ 10</div>
+  </div>
+  <div class="mistake-card">
+    <div class="wrong">❌ What you like?</div>
+    <div class="why">🤔 ลืมเติม do/does/did ช่วยเมื่อมีกริยาแท้</div>
+    <div class="right">✅ What do you like?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Where you are from?</div>
+    <div class="why">🤔 เรียงคำผิด ต้องยก Verb to Be มาไว้หน้าประธาน</div>
+    <div class="right">✅ Where are you from?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Who is make this cake?</div>
+    <div class="why">🤔 Who เป็นประธาน ไม่ต้องใช้ do-support และไม่ต้องมี is นำหน้ากริยา</div>
+    <div class="right">✅ Who made this cake?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Whose's bag is this?</div>
+    <div class="why">🤔 Whose ไม่ต้องเติม apostrophe-s เพราะไม่ใช่คำย่อของ Who is</div>
+    <div class="right">✅ Whose bag is this?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ What does she wants?</div>
+    <div class="why">🤔 เมื่อมี does ช่วยแล้ว กริยาหลักต้องเป็นกริยาช่อง 1 ห้ามเติม -s</div>
+    <div class="right">✅ What does she want?</div>
+  </div><div class="mistake-card">
+    <div class="wrong">❌ Which do you like your favorite color?</div>
+    <div class="why">🤔 ควรใช้ What เพราะเป็นคำถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัด</div>
+    <div class="right">✅ What is your favorite color?</div>
+  </div>
+</div>
+<div class="sheet" id="s11">
+  <div class="section-banner sb-c4">
+    <div><h1>🏆 เทคนิคทำข้อสอบ</h1><div class="eng">Exam Tips</div></div>
+    <div class="chip">ส่วนที่ 11</div>
+  </div>
+  <ul class="tip-checklist"><li><span class="num">1</span><span>เช็กก่อนเสมอว่าหลัง WH มีกริยาแท้หรือไม่ ถ้ามีให้ใช้ do/does/did ถ้าไม่มี (มีแต่นาม/คุณศัพท์) ให้ใช้ is/are/was/were</span></li><li><span class="num">2</span><span>จับคู่กริยาช่วยให้ตรงกับประธานและกาลเวลาเสมอ: I/You/We/They ปัจจุบันใช้ do, He/She/It ปัจจุบันใช้ does, อดีตทุกประธานใช้ did</span></li><li><span class="num">3</span><span>Who เป็นประธานของประโยค (ใครทำ) ไม่ต้องมี do/does/did ผันกริยาตรง ๆ แต่ถ้า Who เป็นกรรม (ถามว่าทำอะไรกับใคร) ต้องมี do/does/did ช่วยตามปกติ</span></li><li><span class="num">4</span><span>Which ใช้เมื่อมีตัวเลือกจำกัดหรือรู้ตัวเลือกอยู่แล้ว (มักมีคำว่า or) ส่วน What ใช้ถามแบบเปิดกว้างไม่จำกัดตัวเลือก</span></li><li><span class="num">5</span><span>ระวัง Whose (ของใคร ไม่มี apostrophe) กับ Who's (ย่อมาจาก Who is/Who has มี apostrophe) สะกดคล้ายกันแต่ความหมายต่างกัน ข้อสอบชอบเอามาจับผิด</span></li></ul>
+</div>
+<div class="sheet" id="s12">
+  <div class="section-banner sb-c5">
+    <div><h1>🗺️ แผนผังความคิด</h1><div class="eng">Mind Map</div></div>
+    <div class="chip">ส่วนที่ 12</div>
+  </div>
+  <div class="mindmap-wrap">
+    <div class="mindmap-center">WH-Questions</div>
+    <div class="mindmap-branches">
+      <div class="mindmap-branch mb-a"><span class="bt">❓ What</span>อะไร (เปิดกว้าง ไม่มีตัวเลือกจำกัด)</div>
+      <div class="mindmap-branch mb-b"><span class="bt">📍 Where</span>ที่ไหน (สถานที่)</div>
+      <div class="mindmap-branch mb-c"><span class="bt">⏰ When</span>เมื่อไหร่ (เวลา)</div>
+      <div class="mindmap-branch mb-d"><span class="bt">🧑 Who</span>ใคร (บุคคล — ประธานไม่ต้องมี do)</div>
+      <div class="mindmap-branch mb-e"><span class="bt">🤔 Why</span>ทำไม (เหตุผล — มักตอบ Because)</div>
+      <div class="mindmap-branch mb-f"><span class="bt">🎯 Which</span>อันไหน (ตัวเลือกจำกัด)</div>
+      <div class="mindmap-branch mb-g"><span class="bt">👑 Whose</span>ของใคร (ความเป็นเจ้าของ)</div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="s13">
+  <div class="section-banner sb-c6">
+    <div><h1>✏️ ใบงานฝึกหัด</h1><div class="eng">Worksheet</div></div>
+    <div class="chip">ส่วนที่ 13</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 23</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามหลักไวยากรณ์ที่เรียนมา</div>
+  <h2 class="part-title">ตอนที่ 1: เติม WH-word หรือ Verb to Be ให้ถูกต้อง (8 ข้อ)</h2><p class="part-desc">เติมคำคำถาม (What/Where/When/Who/Why/Which/Whose) หรือ Verb to Be (is/are/was/were) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค</p><ol class="qlist two-col"><li><span class="blank"></span> is your name?</li><li>Where <span class="blank"></span> you from?</li><li><span class="blank"></span> is that girl? She is my sister.</li><li><span class="blank"></span> were they absent yesterday? Because they were sick.</li><li><span class="blank"></span> bag is this? It is Ann's.</li><li><span class="blank"></span> day is the meeting, Monday or Tuesday?</li><li>Why <span class="blank"></span> you late this morning?</li><li><span class="blank"></span> are your shoes? They are under the bed.</li></ol><h2 class="part-title">ตอนที่ 2: เติม WH-word หรือ do/does/did ให้ถูกต้อง (8 ข้อ)</h2><p class="part-desc">เติมคำคำถาม (What/Where/When/Who/Which) หรือกริยาช่วย (do/does/did) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค</p><ol class="qlist two-col"><li><span class="blank"></span> do you live? I live in Chiang Mai.</li><li>What <span class="blank"></span> she want for lunch?</li><li><span class="blank"></span> did you arrive? I arrived at 6 pm.</li><li><span class="blank"></span> way does he go to school, by bus or by bike?</li><li>Who <span class="blank"></span> you meet at the party?</li><li><span class="blank"></span> made this delicious cake? Mom did.</li><li>Why <span class="blank"></span> you cry?</li><li><span class="blank"></span> do they need for the trip? They need a map and some money.</li></ol><h2 class="part-title">ตอนที่ 3: Whose, Which vs What และจุดที่ต้องระวัง (7 ข้อ)</h2><p class="part-desc">เติมคำคำถามที่ถูกต้อง (What/Which/Who/Whose/Where) ลงในช่องว่างให้ถูกต้องตามบริบทของประโยค</p><ol class="qlist two-col"><li><span class="blank"></span> pen is this on the desk? It is mine.</li><li><span class="blank"></span> car is parked outside, the red one or the blue one?</li><li><span class="blank"></span> do you usually do after school? I usually do my homework.</li><li><span class="blank"></span> broke the window? Tom did.</li><li><span class="blank"></span> did you buy that shirt? I bought it at the mall.</li><li><span class="blank"></span> shoes are these under the table?</li><li><span class="blank"></span> is the correct answer, A or B?</li></ol>
+</div>
+<div class="sheet" id="s14">
+  <div class="section-banner sb-c1">
+    <div><h1>🌈 แบบทดสอบสนุก 50 ข้อ</h1><div class="eng">Quiz</div></div>
+    <div class="chip">ส่วนที่ 14</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 50</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> ดูภาพและอ่านโจทย์แต่ละข้อ แล้วเลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ข้อสอบเรียงจากง่ายไปยาก</div>
+  <div class="card c1">
+    <div class="qnum">ข้อ 1</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">📛</div>
+      <div class="qtext">___ is your name?<div class="rule-tag">What + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Where</div><div class="choice">C) When</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 2</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🌍</div>
+      <div class="qtext">___ are you from?<div class="rule-tag">Where + are</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Where</div><div class="choice">C) Who</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 3</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎂</div>
+      <div class="qtext">___ is your birthday?<div class="rule-tag">When + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) When</div><div class="choice">B) Where</div><div class="choice">C) Who</div><div class="choice">D) Why</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 4</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧔</div>
+      <div class="qtext">___ is that man?<div class="rule-tag">Who + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Who</div><div class="choice">C) Where</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 5</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">😢</div>
+      <div class="qtext">___ are you crying?<div class="rule-tag">Why + are</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) When</div><div class="choice">C) Why</div><div class="choice">D) Where</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 6</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎒</div>
+      <div class="qtext">___ is this bag?<div class="rule-tag">Whose + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who</div><div class="choice">B) Whose</div><div class="choice">C) What</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 7</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👗</div>
+      <div class="qtext">___ dress is prettier, the red one or the blue one?<div class="rule-tag">Which + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Where</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 8</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏠</div>
+      <div class="qtext">___ is your house?<div class="rule-tag">Where + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) When</div><div class="choice">C) Where</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 9</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🕐</div>
+      <div class="qtext">___ is the party?<div class="rule-tag">When + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) When</div><div class="choice">B) Who</div><div class="choice">C) Whose</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 10</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩‍🏫</div>
+      <div class="qtext">___ is your English teacher?<div class="rule-tag">Who + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Who</div><div class="choice">C) Where</div><div class="choice">D) When</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 11</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍕</div>
+      <div class="qtext">___ is your favorite food?<div class="rule-tag">What + is</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Where</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 12</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐱</div>
+      <div class="qtext">___ are these cats?<div class="rule-tag">Whose + are</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) What</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 13</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👨</div>
+      <div class="qtext">___ was your father last night?<div class="rule-tag">Where + was</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) When</div><div class="choice">C) Where</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 14</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎈</div>
+      <div class="qtext">___ was your last birthday party?<div class="rule-tag">When + was</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) When</div><div class="choice">B) Where</div><div class="choice">C) Who</div><div class="choice">D) Why</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 15</div>
+    <div class="stars">⭐ ง่าย</div>
+    <div class="card-body">
+      <div class="emoji-badge">👧</div>
+      <div class="qtext">___ were those girls at the door?<div class="rule-tag">Who + were</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Who</div><div class="choice">C) Whose</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 16</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏫</div>
+      <div class="qtext">Where ___ you go to school?<div class="rule-tag">Where + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 17</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">👩‍🍳</div>
+      <div class="qtext">What ___ your mother cook for dinner?<div class="rule-tag">What + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 18</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">⏰</div>
+      <div class="qtext">When ___ you arrive at school yesterday?<div class="rule-tag">When + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) was</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 19</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍦</div>
+      <div class="qtext">___ ice cream flavor do you like, chocolate or vanilla?<div class="rule-tag">Which + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Where</div><div class="choice">D) Whose</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 20</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📚</div>
+      <div class="qtext">___ do you study on Mondays?<div class="rule-tag">What + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Where</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 21</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚌</div>
+      <div class="qtext">Where ___ the bus stop?<div class="rule-tag">Where + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 22</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎨</div>
+      <div class="qtext">What ___ you draw yesterday?<div class="rule-tag">What + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 23</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">❤️</div>
+      <div class="qtext">Who ___ you like the most in your family?<div class="rule-tag">Who (กรรม) + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 24</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎁</div>
+      <div class="qtext">What ___ she want for her birthday?<div class="rule-tag">What + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 25</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚲</div>
+      <div class="qtext">Where ___ they go last weekend?<div class="rule-tag">Where + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 26</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎤</div>
+      <div class="qtext">Why ___ you like singing?<div class="rule-tag">Why + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) are</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 27</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍔</div>
+      <div class="qtext">___ burger do you want, the big one or the small one?<div class="rule-tag">Which + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Where</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 28</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🕰️</div>
+      <div class="qtext">When ___ the movie start?<div class="rule-tag">When + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 29</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧹</div>
+      <div class="qtext">What ___ you do after school yesterday?<div class="rule-tag">What + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 30</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🐦</div>
+      <div class="qtext">Where ___ birds fly in winter?<div class="rule-tag">Where + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 31</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">📖</div>
+      <div class="qtext">What ___ this word mean?<div class="rule-tag">What + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 32</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎣</div>
+      <div class="qtext">Where ___ your father go fishing last month?<div class="rule-tag">Where + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) was</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 33</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍩</div>
+      <div class="qtext">___ donut do you prefer, chocolate or strawberry?<div class="rule-tag">Which + do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 34</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚗</div>
+      <div class="qtext">Why ___ he drive to work every day?<div class="rule-tag">Why + does</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 35</div>
+    <div class="stars">⭐⭐ ปานกลาง</div>
+    <div class="card-body">
+      <div class="emoji-badge">🏖️</div>
+      <div class="qtext">When ___ your family go on vacation last year?<div class="rule-tag">When + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) do</div><div class="choice">B) does</div><div class="choice">C) did</div><div class="choice">D) were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 36</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎧</div>
+      <div class="qtext">___ headphones are these on the table?<div class="rule-tag">Whose + are</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who</div><div class="choice">B) Whose</div><div class="choice">C) Which</div><div class="choice">D) What</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 37</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">📱</div>
+      <div class="qtext">___ phone is ringing?<div class="rule-tag">Whose vs Who's</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who's</div><div class="choice">B) Whose</div><div class="choice">C) Who</div><div class="choice">D) Which</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 38</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚙</div>
+      <div class="qtext">___ car did you borrow yesterday?<div class="rule-tag">Whose + did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who</div><div class="choice">B) Whose</div><div class="choice">C) Which</div><div class="choice">D) What</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 39</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍰</div>
+      <div class="qtext">___ this cake?<div class="rule-tag">Who (ประธาน) ไม่มี do</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who made</div><div class="choice">B) Who did make</div><div class="choice">C) Who does make</div><div class="choice">D) Whose made</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 40</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🪟</div>
+      <div class="qtext">___ the window?<div class="rule-tag">Who (ประธาน) ไม่มี did</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who broke</div><div class="choice">B) Who did break</div><div class="choice">C) Who does broke</div><div class="choice">D) Whose broke</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 41</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🧁</div>
+      <div class="qtext">___ she usually eat for breakfast?<div class="rule-tag">What + does (รวม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What is</div><div class="choice">B) What does</div><div class="choice">C) What did</div><div class="choice">D) What do</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 42</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🚴</div>
+      <div class="qtext">___ you go last Sunday?<div class="rule-tag">Where + did (รวม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Where do</div><div class="choice">B) Where does</div><div class="choice">C) Where did</div><div class="choice">D) Where were</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 43</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎁</div>
+      <div class="qtext">___ present is on the table?<div class="rule-tag">Whose + is (รวม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who is</div><div class="choice">B) Whose is</div><div class="choice">C) Who's is</div><div class="choice">D) Which are</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 44</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🍽️</div>
+      <div class="qtext">There are two menus here. ___ one do you want?<div class="rule-tag">Which vs What (ยาก)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c3">
+    <div class="qnum">ข้อ 45</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🎓</div>
+      <div class="qtext">___ university do you want to go to in the future?<div class="rule-tag">Which vs What (ยาก)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c4">
+    <div class="qnum">ข้อ 46</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">👟</div>
+      <div class="qtext">___ shoes are those under the bed?<div class="rule-tag">Whose + are (รวม)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who are</div><div class="choice">B) Whose are</div><div class="choice">C) Who's are</div><div class="choice">D) Which is</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c5">
+    <div class="qnum">ข้อ 47</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🥤</div>
+      <div class="qtext">We have coffee and tea. ___ do you prefer?<div class="rule-tag">Which vs What (ยาก)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) What</div><div class="choice">B) Which</div><div class="choice">C) Whose</div><div class="choice">D) Who</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c6">
+    <div class="qnum">ข้อ 48</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who did make this cake?</div><div class="choice">B) Who made this cake?</div><div class="choice">C) Who does made this cake?</div><div class="choice">D) Whose made this cake?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c1">
+    <div class="qnum">ข้อ 49</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Who's bag is this?</div><div class="choice">B) Whose bag is this?</div><div class="choice">C) Who bag is this?</div><div class="choice">D) Whose is bag this?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div><div class="card c2">
+    <div class="qnum">ข้อ 50</div>
+    <div class="stars">⭐⭐⭐ ยาก</div>
+    <div class="card-body">
+      <div class="emoji-badge">🔍</div>
+      <div class="qtext">ข้อใดถูกต้อง?<div class="rule-tag">จับผิดประโยค (Error Detection)</div></div>
+    </div>
+    <div class="choice-grid"><div class="choice">A) Where does you live?</div><div class="choice">B) Where do you live?</div><div class="choice">C) Do where you live?</div><div class="choice">D) Where you do live?</div></div>
+    <div class="write-row">
+      <span>คำตอบ:</span>
+      <div class="letters"><div class="letter-box">A</div><div class="letter-box">B</div><div class="letter-box">C</div><div class="letter-box">D</div></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+  <div class="score-box">🌟 คะแนนรวม: __________ / 50 🌟</div>
+</div>
+<div class="sheet" id="s15">
+  <div class="teacher-flag">สำหรับครูเท่านั้น — ตัดหน้านี้ออกก่อนแจกนักเรียน</div>
+  <div class="section-banner sb-teacher">
+    <div><h1>✅ เฉลยพร้อมคำอธิบาย</h1><div class="eng">Answer Key</div></div>
+    <div class="chip">ส่วนที่ 15</div>
+  </div>
+  <h2 class="part-title">เฉลยใบงานฝึกหัด</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th>คำตอบ</th><th>เหตุผลย่อ</th></tr><tr><td>1</td><td>What</td><td>ถามชื่อซึ่งเป็นข้อมูลแบบเปิดกว้าง ใช้ What</td></tr><tr><td>2</td><td>are</td><td>ประธาน you ใช้ are</td></tr><tr><td>3</td><td>Who</td><td>ถามถึงบุคคล (ใคร) ที่เป็นประธานประโยค ใช้ Who</td></tr><tr><td>4</td><td>Why</td><td>ประโยคมีคำตอบ Because... (บอกเหตุผล) ใช้ Why</td></tr><tr><td>5</td><td>Whose</td><td>ถามความเป็นเจ้าของกระเป๋า ใช้ Whose</td></tr><tr><td>6</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (Monday or Tuesday) ใช้ Which</td></tr><tr><td>7</td><td>were</td><td>ประธาน you ในประโยคอดีต ใช้ were</td></tr><tr><td>8</td><td>Where</td><td>ถามสถานที่ (รองเท้าอยู่ที่ไหน) ใช้ Where</td></tr><tr><td>9</td><td>Where</td><td>ถามสถานที่ที่อยู่อาศัย ใช้ Where</td></tr><tr><td>10</td><td>does</td><td>ประธาน she (เอกพจน์) ปัจจุบัน ใช้ does + กริยาช่อง 1</td></tr><tr><td>11</td><td>When</td><td>ถามเวลาที่มาถึง ใช้ When</td></tr><tr><td>12</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (by bus or by bike) ใช้ Which</td></tr><tr><td>13</td><td>did</td><td>Who ในที่นี้เป็นกรรม (คุณเจอใครที่งานปาร์ตี้) ต้องมี did ช่วย</td></tr><tr><td>14</td><td>Who</td><td>Who เป็นประธานของประโยค (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ did กริยาผันอดีตตรง ๆ ได้เลย (made)</td></tr><tr><td>15</td><td>did</td><td>ถามเหตุผลในอดีต ต้องมี did ช่วย</td></tr><tr><td>16</td><td>What</td><td>ถามสิ่งของที่ต้องการแบบเปิดกว้าง ใช้ What</td></tr><tr><td>17</td><td>Whose</td><td>ถามความเป็นเจ้าของปากกา ใช้ Whose</td></tr><tr><td>18</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (คันสีแดงหรือสีน้ำเงิน) ใช้ Which</td></tr><tr><td>19</td><td>What</td><td>ถามกิจกรรมทั่วไปแบบเปิดกว้าง ใช้ What</td></tr><tr><td>20</td><td>Who</td><td>Who เป็นประธานของประโยค (ใครเป็นคนทำหน้าต่างแตก) ไม่ต้องใช้ do/does/did</td></tr><tr><td>21</td><td>Where</td><td>ถามสถานที่ที่ซื้อของ ใช้ Where</td></tr><tr><td>22</td><td>Whose</td><td>ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose</td></tr><tr><td>23</td><td>Which</td><td>มีตัวเลือกจำกัดให้เลือก (A หรือ B) ใช้ Which</td></tr></table>
+  <h2 class="part-title">เฉลยแบบทดสอบ (50 ข้อ)</h2>
+  <table class="answer-table"><tr><th>ข้อ</th><th></th><th>คำตอบ</th><th>เหตุผล/คำอธิบาย</th></tr><tr><td>1</td><td class="emoji-cell">📛</td><td>A) What</td><td>ถามชื่อ (ข้อมูลแบบเปิดกว้าง) ใช้ What</td></tr><tr><td>2</td><td class="emoji-cell">🌍</td><td>B) Where</td><td>ถามสถานที่ ใช้ Where</td></tr><tr><td>3</td><td class="emoji-cell">🎂</td><td>A) When</td><td>ถามเวลา/วันที่ ใช้ When</td></tr><tr><td>4</td><td class="emoji-cell">🧔</td><td>B) Who</td><td>ถามถึงบุคคล ใช้ Who</td></tr><tr><td>5</td><td class="emoji-cell">😢</td><td>C) Why</td><td>ถามเหตุผล ใช้ Why</td></tr><tr><td>6</td><td class="emoji-cell">🎒</td><td>B) Whose</td><td>ถามความเป็นเจ้าของ ใช้ Whose</td></tr><tr><td>7</td><td class="emoji-cell">👗</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr><tr><td>8</td><td class="emoji-cell">🏠</td><td>C) Where</td><td>ถามสถานที่ ใช้ Where</td></tr><tr><td>9</td><td class="emoji-cell">🕐</td><td>A) When</td><td>ถามเวลา ใช้ When</td></tr><tr><td>10</td><td class="emoji-cell">👩‍🏫</td><td>B) Who</td><td>ถามถึงบุคคล ใช้ Who</td></tr><tr><td>11</td><td class="emoji-cell">🍕</td><td>A) What</td><td>ถามสิ่งของ/ของโปรดแบบเปิดกว้าง ใช้ What</td></tr><tr><td>12</td><td class="emoji-cell">🐱</td><td>C) Whose</td><td>ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose</td></tr><tr><td>13</td><td class="emoji-cell">👨</td><td>C) Where</td><td>ถามสถานที่ในอดีต ใช้ Where + was</td></tr><tr><td>14</td><td class="emoji-cell">🎈</td><td>A) When</td><td>ถามเวลาในอดีต ใช้ When + was</td></tr><tr><td>15</td><td class="emoji-cell">👧</td><td>B) Who</td><td>ถามถึงบุคคล (พหูพจน์) ในอดีต ใช้ Who + were</td></tr><tr><td>16</td><td class="emoji-cell">🏫</td><td>A) do</td><td>ประธาน you ปัจจุบัน ใช้ do</td></tr><tr><td>17</td><td class="emoji-cell">👩‍🍳</td><td>B) does</td><td>ประธาน your mother (เอกพจน์) ปัจจุบัน ใช้ does</td></tr><tr><td>18</td><td class="emoji-cell">⏰</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr><tr><td>19</td><td class="emoji-cell">🍦</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr><tr><td>20</td><td class="emoji-cell">📚</td><td>A) What</td><td>ถามสิ่งของ/วิชาแบบเปิดกว้าง ใช้ What</td></tr><tr><td>21</td><td class="emoji-cell">🚌</td><td>B) does</td><td>ประธาน the bus (เอกพจน์) ปัจจุบัน ใช้ does</td></tr><tr><td>22</td><td class="emoji-cell">🎨</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr><tr><td>23</td><td class="emoji-cell">❤️</td><td>A) do</td><td>Who ในที่นี้เป็นกรรม (คุณชอบใคร) ประธาน you ปัจจุบัน ใช้ do</td></tr><tr><td>24</td><td class="emoji-cell">🎁</td><td>B) does</td><td>ประธาน she เอกพจน์ ปัจจุบัน ใช้ does</td></tr><tr><td>25</td><td class="emoji-cell">🚲</td><td>C) did</td><td>ประโยคอดีต (last weekend) ใช้ did</td></tr><tr><td>26</td><td class="emoji-cell">🎤</td><td>A) do</td><td>ประธาน you ปัจจุบัน ใช้ do</td></tr><tr><td>27</td><td class="emoji-cell">🍔</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr><tr><td>28</td><td class="emoji-cell">🕰️</td><td>B) does</td><td>ประธาน the movie เอกพจน์ ปัจจุบัน ใช้ does</td></tr><tr><td>29</td><td class="emoji-cell">🧹</td><td>C) did</td><td>ประโยคอดีต (yesterday) ใช้ did</td></tr><tr><td>30</td><td class="emoji-cell">🐦</td><td>A) do</td><td>ประธาน birds (พหูพจน์) ปัจจุบัน ใช้ do</td></tr><tr><td>31</td><td class="emoji-cell">📖</td><td>B) does</td><td>ประธาน this word (เอกพจน์) ปัจจุบัน ใช้ does</td></tr><tr><td>32</td><td class="emoji-cell">🎣</td><td>C) did</td><td>ประโยคอดีต (last month) ใช้ did</td></tr><tr><td>33</td><td class="emoji-cell">🍩</td><td>B) Which</td><td>มีตัวเลือกจำกัดให้เลือก ใช้ Which</td></tr><tr><td>34</td><td class="emoji-cell">🚗</td><td>B) does</td><td>ประธาน he เอกพจน์ ปัจจุบัน ใช้ does</td></tr><tr><td>35</td><td class="emoji-cell">🏖️</td><td>C) did</td><td>ประโยคอดีต (last year) ใช้ did</td></tr><tr><td>36</td><td class="emoji-cell">🎧</td><td>B) Whose</td><td>ถามความเป็นเจ้าของ (พหูพจน์) ใช้ Whose</td></tr><tr><td>37</td><td class="emoji-cell">📱</td><td>B) Whose</td><td>Whose (ไม่มี apostrophe) ใช้ถามความเป็นเจ้าของ ต่างจาก Who's ที่แปลว่า Who is</td></tr><tr><td>38</td><td class="emoji-cell">🚙</td><td>B) Whose</td><td>ถามความเป็นเจ้าของรถที่ยืมมา ใช้ Whose + did</td></tr><tr><td>39</td><td class="emoji-cell">🍰</td><td>A) Who made</td><td>Who เป็นประธาน (ใครเป็นคนทำเค้ก) ไม่ต้องใช้ do/does/did กริยาผันอดีตตรง ๆ ได้เลย (made)</td></tr><tr><td>40</td><td class="emoji-cell">🪟</td><td>A) Who broke</td><td>Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ ไม่ต้องมี did ช่วย</td></tr><tr><td>41</td><td class="emoji-cell">🧁</td><td>B) What does</td><td>ประธาน she เอกพจน์ ปัจจุบัน ต้องใช้ What + does</td></tr><tr><td>42</td><td class="emoji-cell">🚴</td><td>C) Where did</td><td>ประโยคอดีต (last Sunday) ต้องใช้ Where + did</td></tr><tr><td>43</td><td class="emoji-cell">🎁</td><td>B) Whose is</td><td>ถามความเป็นเจ้าของของขวัญ (เอกพจน์) ใช้ Whose + is</td></tr><tr><td>44</td><td class="emoji-cell">🍽️</td><td>B) Which</td><td>มีตัวเลือกจำกัด 2 อย่างที่ระบุไว้ (two menus) ใช้ Which</td></tr><tr><td>45</td><td class="emoji-cell">🎓</td><td>A) What</td><td>ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัดให้ ใช้ What</td></tr><tr><td>46</td><td class="emoji-cell">👟</td><td>B) Whose are</td><td>ถามความเป็นเจ้าของรองเท้า (พหูพจน์) ใช้ Whose + are</td></tr><tr><td>47</td><td class="emoji-cell">🥤</td><td>B) Which</td><td>มีตัวเลือกจำกัด (coffee หรือ tea) ใช้ Which</td></tr><tr><td>48</td><td class="emoji-cell">🔍</td><td>B) Who made this cake?</td><td>Who เป็นประธานของประโยค ใช้กริยาผันอดีตตรง ๆ (made) ไม่ต้องมี did ช่วย</td></tr><tr><td>49</td><td class="emoji-cell">🔍</td><td>B) Whose bag is this?</td><td>Whose + นาม + is ใช้ถามความเป็นเจ้าของอย่างถูกต้อง (Who's แปลว่า Who is จึงใช้ผิดที่นี่)</td></tr><tr><td>50</td><td class="emoji-cell">🔍</td><td>B) Where do you live?</td><td>ประธาน you ปัจจุบัน ต้องใช้ Where + do + กริยาช่อง 1 เรียงคำให้ถูกต้อง</td></tr></table>
+</div>
+<div class="sheet" id="s16">
+  <div class="section-banner sb-c3">
+    <div><h1>📋 ชีทสรุปหน้าเดียว</h1><div class="eng">Cheat Sheet</div></div>
+    <div class="chip">ส่วนที่ 16</div>
+  </div>
+  <div class="cheat-grid">
+    <div class="cheat-box"><h4>ความหมาย WH-word ทั้ง 7 คำ</h4>
+      <table><tr><th>คำ</th><th>ความหมาย</th></tr>
+      <tr><td>What</td><td>อะไร</td></tr>
+      <tr><td>Where</td><td>ที่ไหน</td></tr>
+      <tr><td>When</td><td>เมื่อไหร่</td></tr>
+      <tr><td>Who</td><td>ใคร</td></tr>
+      <tr><td>Why</td><td>ทำไม</td></tr>
+      <tr><td>Which</td><td>อันไหน</td></tr>
+      <tr><td>Whose</td><td>ของใคร</td></tr></table></div>
+    <div class="cheat-box"><h4>จับคู่กริยาช่วยให้ตรง</h4>
+      <ul><li>ไม่มีกริยาแท้ → is/are/was/were</li><li>มีกริยาแท้ ปัจจุบัน (I/You/We/They) → do</li><li>มีกริยาแท้ ปัจจุบัน (He/She/It) → does</li><li>มีกริยาแท้ อดีต (ทุกประธาน) → did</li></ul></div>
+    <div class="cheat-box"><h4>Which vs What</h4>
+      <ul><li>Which = มีตัวเลือกจำกัด/มีคำว่า or</li><li>What = ถามแบบเปิดกว้าง</li></ul></div>
+    <div class="cheat-box"><h4>ข้อควรระวัง</h4>
+      <ul><li>Who เป็นประธาน → ไม่ต้องมี do/does/did</li><li>Whose ≠ Who's (Who's = Who is)</li><li>มีกริยาช่วยแล้ว กริยาหลักต้องเป็นช่อง 1</li></ul></div>
+  </div>
+  <div class="tip-card" style="margin-top:14px;">📌 พกหน้านี้ติดตัวไว้ อ่านทบทวน 5 นาทีก่อนสอบ ครบทุกกฎในบทนี้!</div>
+</div>
+<div class="sheet" id="s17">
+  <div class="section-banner sb-teacher">
+    <div><h1>🍎 มุมคุณครู</h1><div class="eng">Teacher's Notes</div></div>
+    <div class="chip">ส่วนที่ 17</div>
+  </div>
+  <div class="teacher-note-box"><h4>🎯 แนวคิดการสอน</h4><ul>
+    <li>เริ่มจากทบทวนความหมายของ WH-word ทีละคำก่อน ให้นักเรียนจับคู่คำกับความหมายไทยได้คล่องก่อนเข้าโครงสร้างประโยค</li>
+    <li>เน้นย้ำจุดตัดสินใจสำคัญ 2 อย่าง: (1) หลัง WH มีกริยาแท้หรือไม่ (2) ประธาน/กาลเวลาคืออะไร เพื่อเลือกกริยาช่วยให้ถูก</li>
+    <li>ยกตัวอย่าง Who ที่เป็นประธานกับ Who ที่เป็นกรรมให้เห็นความต่างชัดเจน เพราะเป็นจุดที่นักเรียนสับสนบ่อยที่สุด</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>🎲 กิจกรรมในห้องเรียน</h4><ul>
+    <li><b>20 Questions</b> — นักเรียนคนหนึ่งนึกถึงสิ่งของ/บุคคลในใจ เพื่อน ๆ ผลัดกันถามคำถาม WH-Questions เพื่อทายให้ถูกภายใน 20 คำถาม</li>
+    <li><b>Interview Bingo</b> — แจกตารางบิงโกที่มีคำตอบ (สถานที่/เวลา/บุคคล) นักเรียนเดินถามเพื่อนด้วย WH-Questions เพื่อหาคนที่คำตอบตรงกับช่องในตาราง</li>
+    <li><b>Whose Is It?</b> — ให้นักเรียนนำของใช้ส่วนตัวมาวางรวมกัน แล้วผลัดกันถาม "Whose is this?" เพื่อทายเจ้าของ</li>
+    <li><b>Reporter Role Play</b> — จับคู่ให้นักเรียนสวมบทบาทนักข่าวสัมภาษณ์เพื่อนด้วย What/Where/When/Why แล้วสรุปรายงานหน้าชั้น</li>
+  </ul></div>
+  <div class="teacher-note-box"><h4>📝 ข้อเสนอแนะการประเมินผล</h4><ul>
+    <li>ใช้ใบงาน (ส่วนที่ 13) เป็นแบบฝึกหัดในชั้นเรียน และแบบทดสอบ 50 ข้อ (ส่วนที่ 14) เป็นการบ้าน/สอบท้ายบท</li>
+    <li>สังเกตข้อผิดพลาดที่พบบ่อยที่สุดจากส่วนที่ 10 โดยเฉพาะเรื่อง Who เป็นประธาน และ Whose vs Who's เพื่อวางแผนการสอนซ่อมเสริมรายบุคคล</li>
+  </ul></div>
+</div>
+<div class="sheet" id="s18">
+  <div class="section-banner sb-c4">
+    <div><h1>🏡 การบ้านสนุก ๆ</h1><div class="eng">Homework</div></div>
+    <div class="chip">ส่วนที่ 18</div>
+  </div>
+  <div class="homework-card"><span class="hnum">การบ้านข้อ 1:</span> เขียนคำถาม WH-Questions 5 ข้อ เพื่อใช้สัมภาษณ์คนในครอบครัว 1 คน (ใช้ What/Where/When/Who/Why อย่างน้อยคนละ 1 ข้อ)</div><div class="homework-card"><span class="hnum">การบ้านข้อ 2:</span> นำคำถามข้อ 1 ไปถามจริง แล้วจดคำตอบที่ได้มา 3 ข้อ เตรียมมาเล่าให้เพื่อนฟังหน้าชั้นเรียน</div><div class="homework-card"><span class="hnum">การบ้านข้อ 3:</span> เขียนประโยคคำถาม Which กับ What อย่างละ 2 ประโยค พร้อมระบุว่าทำไมถึงเลือกใช้คำนั้น</div><div class="homework-card"><span class="hnum">การบ้านข้อ 4:</span> หาประโยคคำถาม WH-Questions จากเพลงหรือหนังที่ชอบ 3 ประโยค แล้วแปลไทยพร้อมบอกว่าใช้กริยาช่วยตัวไหน</div>
+</div>
+<div class="sheet" id="s19">
+  <div class="section-banner sb-c5">
+    <div><h1>💪 ให้กำลังใจ</h1><div class="eng">Motivation</div></div>
+    <div class="chip">ส่วนที่ 19</div>
+  </div>
+  <div class="motivation-poster">
+    <div class="quote">"การตั้งคำถามที่ดี คือก้าวแรกของการเรียนรู้ที่ดี" 🌟</div>
+    <div class="sub">WH-Questions คือกุญแจสำคัญที่จะช่วยให้นักเรียนสื่อสารภาษาอังกฤษได้ลึกซึ้งขึ้น ไม่ใช่แค่ตอบ Yes/No อีกต่อไป ยิ่งฝึกถามมากเท่าไหร่ ก็ยิ่งเก่งขึ้นเท่านั้น อย่ากลัวที่จะถามผิด เพราะทุกคำถามคือก้าวหนึ่งของความเข้าใจ 💙</div>
+  </div>
+</div>
+<div class="sheet" id="s20">
+  <div class="sunee-poster">
+    <div class="avatar">👩‍🏫</div>
+    <h2>ครูสุนีสรุปให้ 🌈</h2>
+    <div class="line">✅ บทนี้เรียนเรื่อง WH-Questions ทั้ง 7 คำ: What (อะไร), Where (ที่ไหน), When (เมื่อไหร่), Who (ใคร), Why (ทำไม), Which (อันไหน), Whose (ของใคร) ค่ะ</div><div class="line">✅ ถ้าหลัง WH ไม่มีกริยาแท้ (มีแต่นาม/คุณศัพท์) ให้ใช้ is/am/are/was/were ตามประธาน</div><div class="line">✅ ถ้าหลัง WH มีกริยาแท้ ให้ใช้ do/does/did ช่วย แล้วกริยาหลักต้องเป็นกริยาช่อง 1 เท่านั้น</div><div class="line">✅ Who เป็นประธาน (ใครทำ) ไม่ต้องมี do/does/did ผันกริยาตรง ๆ ได้เลย เช่น Who made this cake?</div><div class="line">✅ Which ใช้เมื่อมีตัวเลือกจำกัดให้ (มักมีคำว่า or) ส่วน What ใช้ถามแบบเปิดกว้าง</div><div class="line">✅ ระวัง Whose (ของใคร) กับ Who's (= Who is) สะกดคล้ายกันแต่ความหมายต่างกันสิ้นเชิง</div><div class="line">✅ สุดท้าย ฝึกทำแบบฝึกหัดและแบบทดสอบให้ครบ แล้วนักเรียนจะแม่นเรื่องนี้แน่นอนค่ะ</div>
+    <div class="signoff">สู้ๆ นะคะ นักเรียนของครูสุนีทุกคน 💪🌈 อ่านหน้านี้ซ้ำ 5 นาทีก่อนสอบ แล้วจะมั่นใจขึ้นเยอะเลยค่ะ!</div>
+  </div>
+</div>
+</body>
+</html>

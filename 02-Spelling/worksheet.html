@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ใบงาน: Spelling</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+
+/* ---- Phonics-only additions on top of the base above ---- */
+.audio-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: none; cursor: pointer; font-family: 'Kanit','Sarabun',sans-serif;
+  font-size: 17px; font-weight: 600; padding: 9px 19px; border-radius: 999px;
+  background: #2952e3; color: #fff; box-shadow: 0 2px 6px rgba(41,82,227,0.35);
+}
+.audio-btn:hover { filter: brightness(1.08); }
+.audio-btn:active { transform: translateY(1px); }
+.audio-btn.split { background: #9B5DE5; box-shadow: 0 2px 6px rgba(155,93,229,0.35); }
+.audio-btn.sentence { background: #21C38D; box-shadow: 0 2px 6px rgba(33,195,141,0.35); }
+.audio-row { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; }
+.audio-note {
+  font-size: 15.5px; color: #7a84a3; background: #f5f7fd; border-radius: 10px;
+  padding: 10px 15px; margin: 13px 0; border-left: 4px solid #c7cfe8;
+}
+
+.word-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.word-card {
+  background: #fff; border: 2px solid #dbe2f5; border-radius: 16px;
+  padding: 18px 16px; text-align: center;
+}
+.word-card .we { font-size: 44px; line-height: 1; margin-bottom: 6px; }
+.word-card .breakdown { font-size: 15px; font-weight: 700; color: #2952e3; margin-bottom: 4px; }
+.word-card .ww { font-size: 22px; font-weight: 800; color: #1e2b5c; }
+.word-card .ww .reading { font-size: 16px; font-weight: 500; color: #7a84a3; }
+.word-card .wm { font-size: 15.5px; color: #667; margin-bottom: 10px; }
+.word-card .audio-row { justify-content: center; margin-top: 8px; }
+
+.sentence-list { margin: 16px 0; }
+.sentence-card {
+  background: #F0FBF7; border: 2px solid #21C38D; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px;
+}
+.sentence-card .stext { font-size: 19px; font-weight: 600; color: #0d7a53; }
+.sentence-card .smeaning { font-size: 16px; color: #55607a; margin: 5px 0 10px; }
+
+.sound-table-word { display: inline-flex; align-items: center; gap: 8px; }
+
+.speed-toggle {
+  position: fixed; right: 16px; bottom: 16px; z-index: 999;
+  display: flex; align-items: center; gap: 8px;
+  background: #1e2b5c; color: #fff; border-radius: 999px;
+  padding: 10px 15px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-family: 'Kanit','Sarabun',sans-serif;
+}
+.speed-toggle .st-label { font-size: 15px; font-weight: 600; margin-right: 2px; white-space: nowrap; }
+.speed-toggle .st-btn {
+  border: none; cursor: pointer; font-family: inherit; font-size: 15.5px; font-weight: 700;
+  padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.15); color: #fff;
+}
+.speed-toggle .st-btn.active { background: #FFA800; color: #2a1a00; }
+
+body.no-speech .audio-btn, body.no-speech .speed-toggle, body.no-speech .audio-note { display: none; }
+
+@media print {
+  .audio-btn, .speed-toggle, .audio-note { display: none !important; }
+}
+
+/* ---- lesson-book.html only: cover page + section banners + mind map + mistake cards ---- */
+.cover-page {
+  min-height: 277mm;
+  background: linear-gradient(160deg, #FF5D5D 0%, #FFA800 22%, #21C38D 48%, #2F9BFF 72%, #9B5DE5 100%);
+  color: #fff; text-align: center; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start; padding: 22mm 16mm;
+  position: relative; overflow: hidden;
+}
+.cover-decor { font-size: 30px; letter-spacing: 14px; opacity: 0.9; margin-bottom: 6px; }
+.cover-emojis { font-size: 62px; margin: 6px 0 18px; }
+.cover-title-en { font-family: 'Mali','Kanit',sans-serif; font-size: 60px; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+.cover-title-th { font-size: 27px; font-weight: 700; margin-top: 6px; }
+.cover-subtitle { font-size: 19.5px; font-weight: 500; margin-top: 10px; opacity: 0.95; }
+.cover-credit { font-size: 17.5px; margin-top: 14px; background: rgba(255,255,255,0.2); padding: 7px 19px; border-radius: 999px; }
+.cover-objectives { margin-top: 28px; background: rgba(255,255,255,0.95); color: #2a2a3a; border-radius: 20px; padding: 22px 28px; max-width: 150mm; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.cover-objectives h3 { font-family:'Mali','Kanit',sans-serif; margin: 0 0 13px; color: #1e2b5c; font-size: 24px; text-align:center; }
+.cover-objectives li { margin-bottom: 10px; font-size: 18px; }
+.cover-footer { margin-top: auto; padding-top: 26px; font-size: 16.5px; opacity: 0.9; }
+
+.section-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 18px; padding: 18px 24px; margin-bottom: 20px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.section-banner h1 { font-family:'Mali','Kanit',sans-serif; font-size: 27px; margin: 0; }
+.section-banner .eng { font-size: 15.5px; font-weight: 500; opacity: 0.95; }
+.section-banner .chip { background: rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.sb-c1 { background: linear-gradient(90deg,#FF5D5D,#ff8a8a); }
+.sb-c2 { background: linear-gradient(90deg,#FFA800,#ffcb66); }
+.sb-c3 { background: linear-gradient(90deg,#2F9BFF,#7dc0ff); }
+.sb-c4 { background: linear-gradient(90deg,#21C38D,#6be0b8); }
+.sb-c5 { background: linear-gradient(90deg,#9B5DE5,#c79bf2); }
+.sb-c6 { background: linear-gradient(90deg,#FF5FA2,#ff9ec8); }
+.sb-teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+
+.mistake-card { border-radius: 14px; padding: 16px 20px; margin: 13px 0; background: #fff; border: 2px solid #f0d0d0; }
+.mistake-card .wrong { color: #b3261e; font-weight: 700; }
+.mistake-card .right { color: #0d7a53; font-weight: 700; }
+.mistake-card .why { font-size: 16.5px; color: #55607a; margin: 6px 0; }
+
+.mindmap-wrap { display:flex; flex-direction:column; align-items:center; margin: 22px 0; }
+.mindmap-center { background: linear-gradient(90deg,#FF5D5D,#9B5DE5); color:#fff; font-family:'Mali','Kanit',sans-serif; font-size:24px; font-weight:800; border-radius:999px; padding:18px 34px; box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+.mindmap-branches { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:22px; width:100%; }
+.mindmap-branch { border-radius:14px; padding:16px 18px; color:#fff; font-size:16.5px; }
+.mindmap-branch .bt { font-weight:800; font-size:17.5px; display:block; margin-bottom:6px; }
+.mb-a { background:#FF5D5D; } .mb-b { background:#FFA800; } .mb-c { background:#2F9BFF; }
+.mb-d { background:#21C38D; } .mb-e { background:#9B5DE5; } .mb-f { background:#FF5FA2; }
+
+.teacher-poster { background: linear-gradient(135deg,#FFD54F,#FF9800); border-radius: 22px; padding: 26px 28px; color:#3a2a00; }
+.teacher-poster .avatar { font-size:52px; }
+.teacher-poster h2 { font-family:'Mali','Kanit',sans-serif; font-size:29px; margin:6px 0 18px; }
+.teacher-poster .line { background:rgba(255,255,255,0.55); border-radius:12px; padding:11px 18px; margin-bottom:10px; font-size:18px; }
+.teacher-poster .signoff { text-align:center; font-weight:800; font-size:19.5px; margin-top:18px; }
+
+@media print {
+  .cover-page { min-height: 0; }
+}
+</style>
+<link rel="stylesheet" href="../Audio-System/audio-system.css">
+</head>
+<body>
+<a href="../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>✏️ ใบงานฝึกหัด: Spelling (กฎการสะกดคำ) <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="Spelling" aria-label="ฟังเสียง (Listen): Spelling">🔊</button></h1>
+    <div class="sub">แบบฝึกหัดเติมคำ — บทที่ 2</div>
+  </div>
+  <div class="info-row">
+    <span>ชื่อ-นามสกุล <span class="fill-line" style="min-width:220px;">&nbsp;</span></span>
+    <span>ชั้น <span class="fill-line" style="min-width:80px;">&nbsp;</span></span>
+    <span>เลขที่ <span class="fill-line" style="min-width:60px;">&nbsp;</span></span>
+    <span>วันที่ <span class="fill-line" style="min-width:100px;">&nbsp;</span></span>
+    <span>คะแนน <span class="fill-line" style="min-width:70px;">&nbsp;</span> / 25</span>
+  </div>
+  <div class="instructions"><b>คำสั่ง:</b> เติมคำในช่องว่างให้ถูกต้องตามกฎการสะกดคำที่เรียนมา</div>
+
+  <h2 class="part-title">ตอนที่ 1: เติมพหูพจน์ที่ถูกต้อง (10 ข้อ)</h2>
+  <ol class="qlist two-col">
+    <li>one dog <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="dog" aria-label="ฟังเสียง (Listen): dog">🔊</button>, two <span class="blank"></span></li>
+    <li>one box <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="box" aria-label="ฟังเสียง (Listen): box">🔊</button>, two <span class="blank"></span></li>
+    <li>one baby <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="baby" aria-label="ฟังเสียง (Listen): baby">🔊</button>, two <span class="blank"></span></li>
+    <li>one leaf <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="leaf" aria-label="ฟังเสียง (Listen): leaf">🔊</button>, two <span class="blank"></span></li>
+    <li>one child <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="child" aria-label="ฟังเสียง (Listen): child">🔊</button>, two <span class="blank"></span></li>
+    <li>one foot <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="foot" aria-label="ฟังเสียง (Listen): foot">🔊</button>, two <span class="blank"></span></li>
+    <li>one city <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="city" aria-label="ฟังเสียง (Listen): city">🔊</button>, two <span class="blank"></span></li>
+    <li>one boy <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="boy" aria-label="ฟังเสียง (Listen): boy">🔊</button>, two <span class="blank"></span></li>
+    <li>one man <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="man" aria-label="ฟังเสียง (Listen): man">🔊</button>, two <span class="blank"></span></li>
+    <li>one mouse <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="mouse" aria-label="ฟังเสียง (Listen): mouse">🔊</button>, two <span class="blank"></span></li>
+  </ol>
+
+  <h2 class="part-title">ตอนที่ 2: เติม -ing ให้ถูกต้อง (8 ข้อ)</h2>
+  <ol class="qlist two-col">
+    <li>run <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="run" aria-label="ฟังเสียง (Listen): run">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>make <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="make" aria-label="ฟังเสียง (Listen): make">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>play <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="play" aria-label="ฟังเสียง (Listen): play">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>sit <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="sit" aria-label="ฟังเสียง (Listen): sit">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>hope <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="hope" aria-label="ฟังเสียง (Listen): hope">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>fix <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="fix" aria-label="ฟังเสียง (Listen): fix">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>swim <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="swim" aria-label="ฟังเสียง (Listen): swim">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>dance <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="dance" aria-label="ฟังเสียง (Listen): dance">🔊</button> &rarr; <span class="blank"></span></li>
+  </ol>
+
+  <h2 class="part-title">ตอนที่ 3: เติม -ed ให้ถูกต้อง (7 ข้อ)</h2>
+  <ol class="qlist two-col">
+    <li>play <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="play" aria-label="ฟังเสียง (Listen): play">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>study <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="study" aria-label="ฟังเสียง (Listen): study">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>stop <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="stop" aria-label="ฟังเสียง (Listen): stop">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>like <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="like" aria-label="ฟังเสียง (Listen): like">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>stay <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="stay" aria-label="ฟังเสียง (Listen): stay">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>plan <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="plan" aria-label="ฟังเสียง (Listen): plan">🔊</button> &rarr; <span class="blank"></span></li>
+    <li>cry <button type="button" class="gaud-btn" data-gaud-type="word" data-gaud-text="cry" aria-label="ฟังเสียง (Listen): cry">🔊</button> &rarr; <span class="blank"></span></li>
+  </ol>
+
+  <div class="footer-note">English M.3 Course · บทที่ 2 — Spelling — ใบงานฝึกหัด</div>
+</div>
+<script src="../Audio-System/audio-system.js"></script>
+</body>
+</html>

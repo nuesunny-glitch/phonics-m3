@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียน: WH-Questions (What/Where/When/Who/Why/Which/Whose)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>❓🔍 บทเรียน: WH-Questions (What/Where/When/Who/Why/Which/Whose)</h1>
+    <div class="sub">English Grammar Quiz Pack · เตรียมสอบเข้า ม.4</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+    <ul class="obj-list"><li>บอกความหมายและหน้าที่ของคำคำถาม WH-word ทั้ง 7 คำ (What, Where, When, Who, Why, Which, Whose) ได้ถูกต้อง</li>
+<li>แต่งประโยคคำถามด้วย WH-word + Verb to Be (is/am/are/was/were) ให้ตรงกับประธานและกาลเวลาได้</li>
+<li>แต่งประโยคคำถามด้วย WH-word + do/does/did ให้สอดคล้องกับประธานและกาลเวลาของกริยาได้</li>
+<li>แยกความแตกต่างและเลือกใช้ Which กับ What ในสถานการณ์ที่มีตัวเลือกจำกัดหรือเปิดกว้างได้ถูกต้อง</li>
+<li>เลือกใช้ WH-word และกริยาช่วยที่ถูกต้องในประโยคคำถามที่ซับซ้อน รวมถึงจับผิดประโยคคำถามที่ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่ออกบ่อย</li></ul>
+  </div>
+
+  
+    <div class="explain-block">
+      <h2>❓ WH-Question คืออะไร</h2>
+      <p>WH-Question คือประโยคคำถามที่ขึ้นต้นด้วยคำคำถามกลุ่ม <b>WH</b> (What, Where, When, Who, Why, Which, Whose) ใช้ถามหาข้อมูลที่เฉพาะเจาะจง เช่น สิ่งของ สถานที่ เวลา บุคคล เหตุผล ตัวเลือก หรือเจ้าของ ต่างจากคำถาม Yes/No ที่ตอบแค่ Yes หรือ No เพราะ WH-Question ต้องตอบเป็นข้อมูลจริง ๆ ไม่ใช่แค่ Yes/No</p><table><tr><th>WH-word</th><th>ใช้ถามเกี่ยวกับ</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>What</td><td>สิ่งของ/การกระทำ (แบบเปิดกว้าง)</td><td>What is this?</td><td>นี่คืออะไร</td></tr><tr><td>Where</td><td>สถานที่</td><td>Where do you live?</td><td>คุณอาศัยอยู่ที่ไหน</td></tr><tr><td>When</td><td>เวลา</td><td>When did you arrive?</td><td>คุณมาถึงเมื่อไหร่</td></tr><tr><td>Who</td><td>บุคคล (มักเป็นประธาน)</td><td>Who is that man?</td><td>ผู้ชายคนนั้นเป็นใคร</td></tr><tr><td>Why</td><td>เหตุผล (มักตอบด้วย Because...)</td><td>Why are you late?</td><td>ทำไมคุณถึงมาสาย</td></tr><tr><td>Which</td><td>ตัวเลือกที่จำกัด/รู้อยู่แล้ว</td><td>Which color do you like, red or blue?</td><td>คุณชอบสีไหน (แดงหรือน้ำเงิน)</td></tr><tr><td>Whose</td><td>ความเป็นเจ้าของ</td><td>Whose bag is this?</td><td>กระเป๋าใบนี้เป็นของใคร</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>🔤 WH + Verb to Be (is/am/are/was/were)</h2>
+      <p>เมื่อประโยคคำถามใช้ Verb to Be ให้เรียงคำตามโครงสร้าง: <b>WH + is/am/are/was/were + ประธาน + ส่วนขยาย?</b> โดยเลือก Verb to Be ให้ตรงกับประธาน เหมือนกับที่เคยเรียนมาในเรื่อง Verb to Be</p><table><tr><th>ประธาน</th><th>Verb to Be</th><th>ตัวอย่าง</th></tr><tr><td>I</td><td>am</td><td>What am I supposed to do?</td></tr><tr><td>He / She / It / นามเอกพจน์</td><td>is</td><td>Who is that man?</td></tr><tr><td>You / We / They / นามพหูพจน์</td><td>are</td><td>Where are you from?</td></tr><tr><td>I / He / She / It / นามเอกพจน์ (อดีต)</td><td>was</td><td>Why was she absent?</td></tr><tr><td>You / We / They / นามพหูพจน์ (อดีต)</td><td>were</td><td>Where were you last night?</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>🏃 WH + do/does/did</h2>
+      <p>เมื่อประโยคคำถามมีกริยาแท้ (action verb เช่น live, like, go, eat) ต้องใช้ <b>do/does/did</b> ช่วย ตามโครงสร้าง: <b>WH + do/does/did + ประธาน + กริยาช่อง 1 (กริยาไม่ผัน)?</b> ข้อสำคัญมาก: เมื่อมี do/does/did อยู่แล้ว กริยาตัวหลักต้องเป็น <b>กริยาช่อง 1 เสมอ</b> ห้ามเติม -s และห้ามผันเป็นอดีต เพราะ does/did ทำหน้าที่แสดงกาลเวลาแทนกริยาไปแล้ว</p><table><tr><th>ประธาน/กาล</th><th>กริยาช่วย</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They (ปัจจุบัน)</td><td>do</td><td>Where do you live?</td></tr><tr><td>He / She / It / นามเอกพจน์ (ปัจจุบัน)</td><td>does</td><td>What does she want?</td></tr><tr><td>ทุกประธาน (อดีต)</td><td>did</td><td>When did they arrive?</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>🆚 Which กับ What ต่างกันอย่างไร</h2>
+      <p><b>What</b> ใช้ถามแบบเปิดกว้าง ไม่มีตัวเลือกจำกัด (ผู้ถามไม่รู้ล่วงหน้าว่าคำตอบจะเป็นอะไร) ส่วน <b>Which</b> ใช้ถามเมื่อมีตัวเลือกจำกัดหรือรู้ตัวเลือกอยู่แล้ว (มักมีคำว่า "...or..." หรือมีการระบุตัวเลือกไว้ในประโยคหรือบริบท)</p><table><tr><th>สถานการณ์</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>ถามแบบเปิดกว้าง ไม่จำกัดตัวเลือก</td><td>What</td><td>What is your favorite food?</td></tr><tr><td>มีตัวเลือกจำกัดให้เลือก (ระบุใน or)</td><td>Which</td><td>Which one do you want, tea or coffee?</td></tr><tr><td>มีของให้เลือกอยู่ตรงหน้า (จำนวนจำกัด)</td><td>Which</td><td>Which bag is yours? (เลือกจากกระเป๋าที่วางอยู่)</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>👑 Whose ใช้ถามความเป็นเจ้าของ</h2>
+      <p><b>Whose</b> แปลว่า "ของใคร" ใช้ถามความเป็นเจ้าของ โดยมีโครงสร้าง 2 แบบ:</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>Whose + นาม + is/are + ...?</td><td>Whose bag is this?</td><td>กระเป๋าใบนี้เป็นของใคร</td></tr><tr><td>Whose + นาม + do/does/did + ประธาน + กริยา?</td><td>Whose pen do you have?</td><td>คุณมีปากกาของใคร</td></tr></table><p><b>ระวัง!</b> <b>Whose</b> (ถามความเป็นเจ้าของ) กับ <b>Who's</b> (ย่อมาจาก Who is หรือ Who has) สะกดคล้ายกันมากแต่ความหมายต่างกันสิ้นเชิง ข้อสอบชอบเอามาสลับให้จับผิด: <b>Whose</b> book is this? (หนังสือเล่มนี้เป็นของใคร) ≠ <b>Who's</b> that woman? (= Who is that woman? ผู้หญิงคนนั้นเป็นใคร)</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>⚠️ จุดที่ต้องระวังที่สุด: เลือก WH-word และกริยาช่วยให้ตรงกัน (ข้อสอบชอบออก)</h2>
+      <p>เวลาแต่งหรือเลือกคำตอบ WH-Question ต้องดู 2 อย่างพร้อมกันเสมอ: (1) ต้องใช้ <b>WH-word คำไหน</b> และ (2) ต้องใช้ <b>กริยาช่วยตัวไหน</b> (is/are/was/were หรือ do/does/did) ให้ตรงกับประธานและกาลเวลา</p><table><tr><th>กรณี</th><th>หลักการ</th><th>ตัวอย่าง</th></tr><tr><td>Who เป็น<b>ประธาน</b>ของประโยค (ใครเป็นคนทำ)</td><td>ห้ามใช้ do/does/did เติมกริยาผันตามกาลได้เลย</td><td>Who <b>made</b> this cake? (ไม่ใช่ Who did make...)</td></tr><tr><td>Who เป็น<b>กรรม</b>ของประโยค (ถามว่าทำอะไรกับใคร)</td><td>ต้องมี do/does/did ช่วยตามปกติ</td><td>Who <b>did</b> you <b>meet</b> at the party?</td></tr><tr><td>หลัง WH มีคำนาม/คุณศัพท์/สถานที่ (ไม่มีกริยาแท้)</td><td>ใช้ WH + is/are/was/were</td><td>Where <b>is</b> your school?</td></tr><tr><td>หลัง WH มีกริยาแท้ (live, like, go, want ฯลฯ)</td><td>ใช้ WH + do/does/did + กริยาช่อง 1</td><td>Where <b>do</b> you <b>live</b>?</td></tr></table><p>เทคนิคเช็กเร็ว: ถ้าในประโยคยังไม่มีกริยา (มีแต่คำนาม/คุณศัพท์) แปลว่าต้องเติม Verb to Be แต่ถ้ามีกริยาแท้อยู่แล้วในรูปดั้งเดิม (base form) ให้เติม do/does/did ตามประธานและกาลเวลาให้ถูกต้อง และอย่าลืมว่า Who ที่เป็นประธานไม่ต้องมี do/does/did เลย</p>
+    </div>
+  <div class="explain-block">
+      <h2>📊 ตารางสรุป</h2>
+      <table><tr><th>WH-word</th><th>ใช้ถามเกี่ยวกับ</th><th>โครงสร้าง</th><th>ตัวอย่าง</th></tr><tr><td>What / Which</td><td>สิ่งของ/ตัวเลือก</td><td>WH + is/are/do/does/did + ...?</td><td>What is this? / Which do you like?</td></tr>
+<tr><td>Where / When</td><td>สถานที่/เวลา</td><td>WH + is/are/do/does/did + ...?</td><td>Where do you live? / When did you arrive?</td></tr>
+<tr><td>Who / Whose</td><td>บุคคล/เจ้าของ</td><td>Who + กริยา (ถ้าเป็นประธาน) หรือ Whose + นาม + is/are</td><td>Who made this? / Whose bag is this?</td></tr>
+<tr><td>Why</td><td>เหตุผล</td><td>WH + is/are/do/does/did + ...?</td><td>Why are you late? / Why did she cry?</td></tr></table>
+    </div>
+
+  <div class="explain-block">
+    <h2>🧠 เทคนิคการจำ</h2>
+    <div class="tip-card">💡 ท่องให้คล่องปาก: What=อะไร, Where=ที่ไหน, When=เมื่อไหร่, Who=ใคร, Why=ทำไม, Which=อันไหน, Whose=ของใคร</div>
+<div class="tip-card">💡 จำง่าย ๆ: ถ้าหลัง WH ตามด้วยคำนาม/คุณศัพท์ (ไม่มีกริยาแท้) ให้ใช้ WH + is/are/was/were แต่ถ้ามีกริยาแท้อยู่แล้ว ให้ใช้ WH + do/does/did + กริยาช่อง 1</div>
+<div class="tip-card">💡 จำ Who ประธาน ไม่ต้องมี do/does/did: ใครทำ ก็ถาม Who + กริยาผันตรง ๆ เลย เช่น Who broke the window? (ไม่ใช่ Who did break...)</div>
+  </div>
+
+  <div class="footer-note">English Grammar Quiz Pack · WH-Questions</div>
+</div>
+</body>
+</html>

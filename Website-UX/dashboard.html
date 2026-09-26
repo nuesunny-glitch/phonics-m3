@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>หน้าหลัก — English M.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_tools/theme.css">
+<script src="_tools/theme-init.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <div class="row" style="gap:10px;">
+      <span class="mascot-avatar" style="font-size:1.8rem;">🐼</span>
+      <div>
+        <div class="muted" style="font-size:.78rem;">สวัสดี,</div>
+        <div style="font-weight:700;" id="userNameLabel">น้องมิน</div>
+      </div>
+    </div>
+    <a href="settings.html" class="icon-btn" aria-label="ตั้งค่า">⚙️</a>
+  </header>
+
+  <div class="pill-row mb-16">
+    <span class="pill pill-streak">🔥 <span id="streakVal">7</span> วันติด</span>
+    <span class="pill pill-xp">⚡ <span id="xpVal">1,240</span> XP</span>
+    <span class="pill pill-star">⭐ <span id="starVal">23</span> ดาว</span>
+  </div>
+
+  <div id="mascotMount"></div>
+
+  <!-- Continue Learning -->
+  <section class="card-lg card mt-16" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;">
+    <div class="row-between">
+      <span style="font-size:.82rem;opacity:.9;">กำลังเรียน</span>
+      <span style="font-size:.82rem;opacity:.9;">บทที่ 6 / 15</span>
+    </div>
+    <h2 style="margin:6px 0 12px;font-size:1.3rem;">⏰ Present Simple</h2>
+    <div class="progress-track" style="background:rgba(255,255,255,.25);">
+      <div class="progress-fill" style="width:60%;background:#fff;"></div>
+    </div>
+    <a href="learning-map.html" class="btn btn-accent mt-16">เรียนต่อ ▶</a>
+  </section>
+
+  <!-- Quick stats -->
+  <section class="grid-3 mt-24">
+    <div class="card center">
+      <div style="font-size:1.6rem;">🔥</div>
+      <div style="font-weight:800;font-family:var(--font-display);">7</div>
+      <div class="muted" style="font-size:.72rem;">วันติดต่อกัน</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.6rem;">⚡</div>
+      <div style="font-weight:800;font-family:var(--font-display);">1,240</div>
+      <div class="muted" style="font-size:.72rem;">XP รวม</div>
+    </div>
+    <div class="card center">
+      <div style="font-size:1.6rem;">⭐</div>
+      <div style="font-weight:800;font-family:var(--font-display);">23</div>
+      <div class="muted" style="font-size:.72rem;">ดาวสะสม</div>
+    </div>
+  </section>
+
+  <!-- Recommended games -->
+  <section class="mt-24">
+    <div class="row-between mb-16">
+      <h3 style="margin:0;font-size:1.1rem;">🎮 เกมแนะนำวันนี้</h3>
+      <a href="course-library.html" class="muted" style="font-size:.85rem;">ดูทั้งหมด →</a>
+    </div>
+    <div class="stack">
+      <a href="../16-Verb-Adventure/index.html" class="card row" style="text-decoration:none;">
+        <span style="font-size:1.8rem;">🏃</span>
+        <div style="flex:1;">
+          <div style="font-weight:700;">Verb Adventure</div>
+          <div class="muted" style="font-size:.8rem;">ฝึกคำกริยาผ่านเกม 3 ด่าน</div>
+        </div>
+        <span style="color:var(--primary);font-weight:700;">เล่น ▶</span>
+      </a>
+      <a href="../20-Conjunction-Adventure/index.html" class="card row" style="text-decoration:none;">
+        <span style="font-size:1.8rem;">🔗</span>
+        <div style="flex:1;">
+          <div style="font-weight:700;">Conjunction Adventure</div>
+          <div class="muted" style="font-size:.8rem;">ฝึกคำสันธาน พร้อมมาสคอตน้องคอนนี่</div>
+        </div>
+        <span style="color:var(--primary);font-weight:700;">เล่น ▶</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<div id="bottomNav"></div>
+<script src="_tools/mock-data.js"></script>
+<script src="_tools/mascot.js"></script>
+<script src="_tools/bottom-nav.js"></script>
+<script>
+  Mascot.renderBubble('mascotMount', 'วันนี้เรียนต่อจาก <b>Present Simple</b> กันเลยไหม? อีกนิดเดียวจะครบบทที่ 6 แล้ว!');
+</script>
+</body>
+</html>

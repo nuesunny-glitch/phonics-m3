@@ -1,0 +1,191 @@
+{
+  "id": "02",
+  "folder": "02-Verb to Have",
+  "titleThai": "Verb to Have (have / has / had)",
+  "titleShort": "Verb to Have",
+  "emojiTitle": "🎒🖐️",
+  "objectives": [
+    "บอกรูปแบบ have/has ให้ตรงกับประธานในประโยคปัจจุบันได้ถูกต้อง",
+    "ใช้ have ในความหมายต่าง ๆ ได้แก่ ความเป็นเจ้าของ ครอบครัว อาการป่วย และกิจวัตรประจำวัน (have breakfast, have a shower) ได้อย่างเหมาะสม",
+    "แต่งประโยคปฏิเสธ (don't/doesn't have) และประโยคคำถาม (Do/Does...have?) พร้อมตอบคำถามสั้นได้ถูกต้อง",
+    "ใช้ had ในรูปอดีตกับทุกประธาน ทั้งประโยคบอกเล่า ปฏิเสธ (didn't have) และคำถาม (Did...have?) ได้ถูกต้อง",
+    "แยกความแตกต่างระหว่าง have (ความเป็นเจ้าของ) กับ have to (ความจำเป็น/ต้อง) และแก้ไขข้อผิดพลาดที่พบบ่อยในข้อสอบเข้า ม.4 ได้"
+  ],
+  "explanation": [
+    {
+      "heading": "📖 Have / Has คืออะไร",
+      "html": "<p>Have แปลว่า \"มี\" ใช้บอกว่าประธานมีสิ่งใดสิ่งหนึ่งอยู่ โดยรูปของมันจะเปลี่ยนไปตามประธาน (เหมือน Verb to Be ที่เปลี่ยนเป็น am/is/are) — ในปัจจุบันมีแค่ 2 รูป คือ <b>have</b> และ <b>has</b> เท่านั้น</p><table><tr><th>ประธาน (Subject)</th><th>Verb (ปัจจุบัน)</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They / นามพหูพจน์</td><td>have</td><td>I have a pen. (ฉันมีปากกา)</td></tr><tr><td>He / She / It / นามเอกพจน์</td><td>has</td><td>She has a pen. (เธอมีปากกา)</td></tr></table><p>สังเกตง่าย ๆ: ประธานตัวเดียว (เอกพจน์บุรุษที่ 3) เติม <b>s</b> ที่ verb เหมือนกับกริยาปกติในปัจจุบัน แต่ have ไม่เติม s ตรง ๆ — มันเปลี่ยนรูปไปเป็น <b>has</b> เลย (ไม่ใช่ \"haves\")</p>"
+    },
+    {
+      "heading": "🧩 Have ใช้บอกความหมายอะไรได้บ้าง",
+      "html": "<p>Have/Has ใช้ได้หลายความหมาย ไม่ได้แปลว่า \"มี\" ในเชิงของอย่างเดียว:</p><table><tr><th>ความหมาย</th><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>ความเป็นเจ้าของ (Possession)</td><td>I have a bike.</td><td>ฉันมีจักรยาน</td></tr><tr><td>ครอบครัว/ความสัมพันธ์ (Family)</td><td>She has two brothers.</td><td>เธอมีพี่ชายสองคน</td></tr><tr><td>อาการ/ความรู้สึก (Feelings/Illness)</td><td>He has a headache.</td><td>เขาปวดหัว</td></tr><tr><td>กิจวัตรประจำวัน (Routine)</td><td>We have breakfast at 7.</td><td>เรากินอาหารเช้าตอน 7 โมง</td></tr></table><p>คำที่ใช้กับ have/has บ่อยในกิจวัตร: <b>have breakfast/lunch/dinner</b> (กินข้าว), <b>have a shower/a bath</b> (อาบน้ำ), <b>have fun</b> (สนุก), <b>have a good time</b> (มีความสุข/สนุกสนาน) — คำเหล่านี้ไม่ได้แปลว่า \"มี\" ตรงตัว แต่เป็นสำนวนที่ต้องจำเป็นชุด ๆ</p>"
+    },
+    {
+      "heading": "🚫 รูปปฏิเสธ (Negative)",
+      "html": "<p>ใช้ <b>don't/doesn't</b> ช่วย แล้วตามด้วย <b>have</b> เสมอ (ไม่ใช้ has ในรูปปฏิเสธ)</p><table><tr><th>ประธาน</th><th>รูปปฏิเสธ</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They</td><td>don't have</td><td>I don't have a car.</td></tr><tr><td>He / She / It</td><td>doesn't have</td><td>He doesn't have a car.</td></tr></table><p>ข้อควรระวัง: ห้ามพูดว่า \"He don't haves\" หรือ \"He doesn't has\" — หลัง don't/doesn't ต้องใช้ <b>have</b> รูปเดิมเสมอ ไม่ผันตามประธานอีกครั้ง เพราะ don't/doesn't ผันให้แล้ว</p>"
+    },
+    {
+      "heading": "❓ รูปคำถาม (Yes/No Question)",
+      "html": "<p>ใช้ <b>Do/Does</b> ขึ้นต้นประโยค แล้วตามด้วยประธาน + <b>have</b> (ไม่ใช้ has หลัง Does เช่นกัน)</p><table><tr><th>ประธาน</th><th>โครงสร้างคำถาม</th><th>คำตอบสั้น</th></tr><tr><td>I / You / We / They</td><td>Do + ประธาน + have...?</td><td>Yes, I do. / No, I don't.</td></tr><tr><td>He / She / It</td><td>Does + ประธาน + have...?</td><td>Yes, she does. / No, she doesn't.</td></tr></table><p>ตัวอย่าง: <b>Do you have a pet?</b> — Yes, I do. &nbsp;|&nbsp; <b>Does he have a sister?</b> — No, he doesn't.</p>"
+    },
+    {
+      "heading": "⏮️ Have ในอดีต: Had",
+      "html": "<p>ในอดีต have และ has จะกลายเป็น <b>had</b> เหมือนกันหมดทุกประธาน (ไม่มีการแยกเอกพจน์-พหูพจน์อีกต่อไป)</p><table><tr><th>ประธาน</th><th>อดีต</th><th>ตัวอย่าง</th></tr><tr><td>ทุกประธาน (I, You, He, She, It, We, They)</td><td>had</td><td>She had a cat when she was young.</td></tr></table><p><b>ปฏิเสธ:</b> didn't have (ทุกประธาน) เช่น I didn't have any money yesterday.</p><p><b>คำถาม:</b> Did + ประธาน + have...? (ทุกประธาน) เช่น Did you have a pet? — Yes, I did. / No, I didn't.</p>"
+    },
+    {
+      "heading": "📌 Have to: \"ต้อง\" ไม่ใช่ \"มี\"",
+      "html": "<p>คำว่า <b>have to / has to</b> ไม่ได้แปลว่า \"มี\" แต่แปลว่า <b>\"ต้อง\"</b> (ความจำเป็น) ใกล้เคียงกับ must — เป็นจุดที่ข้อสอบเข้า ม.4 ชอบเอามาหลอก เพราะหน้าตาคล้าย have ที่แปลว่ามี</p><table><tr><th>ประธาน</th><th>รูปแบบ</th><th>ตัวอย่าง</th><th>ความหมาย</th></tr><tr><td>I / You / We / They</td><td>have to</td><td>I have to go now.</td><td>ฉันต้องไปแล้ว</td></tr><tr><td>He / She / It</td><td>has to</td><td>She has to wear a uniform.</td><td>เธอต้องใส่ชุดนักเรียน</td></tr></table><p>เทคนิคแยกความหมาย: ถ้าหลัง have/has ตามด้วย <b>to + กริยาช่อง 1</b> (have to go, has to do) แปลว่า \"ต้อง\" แต่ถ้าตามด้วยคำนามตรง ๆ (have a car, has a brother) แปลว่า \"มี\"</p>"
+    },
+    {
+      "heading": "⚠️ จุดที่ต้องระวัง (ข้อสอบชอบออก)",
+      "html": "<p>ข้อผิดพลาดที่พบบ่อยและควรระวังเป็นพิเศษ:</p><table><tr><th>เรื่องที่ผิดบ่อย</th><th>ตัวอย่างที่ถูกต้อง</th><th>เหตุผล</th></tr><tr><td>อดีตของ have/has ไม่ใช่ haved</td><td>He had a dog.</td><td>had เป็นกริยาไม่ปกติ (irregular verb) ห้ามเติม ed</td></tr><tr><td>หลัง don't/doesn't/didn't ใช้ have เสมอ</td><td>She doesn't have a car. (ไม่ใช่ doesn't has)</td><td>กริยาช่วยผันให้แล้ว กริยาหลักไม่ต้องผันซ้ำ</td></tr><tr><td>อย่าสับสน have กับ Verb to Be</td><td>He has a headache. (ไม่ใช่ He is a headache.)</td><td>อาการป่วยใช้ have/has ไม่ใช่ is/are</td></tr><tr><td>have to ≠ have (มี)</td><td>I have to study. (ต้องเรียน) ≠ I have a book. (มีหนังสือ)</td><td>ดูคำที่ตามหลัง have ว่าเป็น to+กริยา หรือ คำนาม</td></tr></table>"
+    }
+  ],
+  "summaryTable": {
+    "headers": ["ประธาน (Subject)", "Present (ปัจจุบัน)", "Past (อดีต)", "ตัวอย่าง"],
+    "rows": [
+      ["I / You / We / They", "have", "had", "I have/had a pen."],
+      ["He / She / It / นามเอกพจน์", "has", "had", "She has/had a cat."],
+      ["ปฏิเสธ (Negative)", "don't/doesn't have", "didn't have", "He doesn't have / didn't have a car."],
+      ["คำถาม (Question)", "Do/Does...have?", "Did...have?", "Does she have / Did she have a dog?"]
+    ]
+  },
+  "tips": [
+    "จำง่าย ๆ: <b>He, She, It</b> ใช้ <b>has</b> (สามคนนี้เติม s) ส่วนประธานอื่นทั้งหมดใช้ <b>have</b>",
+    "ท่องเป็นจังหวะคล้องจอง: \"I have, You have, He has, She has, It has, We have, They have\" ซ้ำ ๆ จนติดปาก",
+    "อดีตจำง่ายกว่าปัจจุบันอีก เพราะทุกประธานใช้ <b>had</b> เหมือนกันหมด ไม่มีคำว่า hased หรือ haved"
+  ],
+  "worksheet": {
+    "parts": [
+      {
+        "title": "ตอนที่ 1: เติม have/has ให้ถูกต้อง (9 ข้อ)",
+        "instructions": "เลือกใช้ have หรือ has ให้ตรงกับประธานในประโยค",
+        "items": [
+          "I ___ a new bag.",
+          "She ___ two brothers.",
+          "They ___ a big garden.",
+          "He ___ a red car.",
+          "We ___ a lot of homework.",
+          "My father ___ a small shop.",
+          "You ___ a kind heart.",
+          "The cat ___ soft fur.",
+          "My friends ___ the same hobby."
+        ],
+        "answers": ["have", "has", "have", "has", "have", "has", "have", "has", "have"],
+        "reasons": [
+          "ประธาน I ใช้ have เสมอ",
+          "She เป็นเอกพจน์ ใช้ has",
+          "They เป็นพหูพจน์ ใช้ have",
+          "He เป็นเอกพจน์ ใช้ has",
+          "We ใช้ have เสมอ",
+          "My father เป็นเอกพจน์ ใช้ has",
+          "You ใช้ have เสมอ (เอกพจน์และพหูพจน์)",
+          "The cat เป็นเอกพจน์ ใช้ has",
+          "My friends เป็นพหูพจน์ ใช้ have"
+        ]
+      },
+      {
+        "title": "ตอนที่ 2: เติมรูปปฏิเสธ/คำถาม (8 ข้อ)",
+        "instructions": "เติม don't, doesn't, Do หรือ Does ให้ถูกต้องตามบริบท",
+        "items": [
+          "He ___ have a bicycle. (ปฏิเสธ)",
+          "I ___ have a pen with me. (ปฏิเสธ)",
+          "___ you have a computer?",
+          "___ she have a sister?",
+          "They ___ have enough time. (ปฏิเสธ)",
+          "Does he have a car? No, he ___.",
+          "Do they have a dog? Yes, they ___.",
+          "My sister ___ have a headache today. (ปฏิเสธ)"
+        ],
+        "answers": ["doesn't", "don't", "Do", "Does", "don't", "doesn't", "do", "doesn't"],
+        "reasons": [
+          "He เป็นเอกพจน์ ใช้ doesn't have",
+          "ประธาน I ใช้ don't have",
+          "ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม",
+          "she เป็นเอกพจน์ ใช้ Does ขึ้นต้นประโยคคำถาม",
+          "They เป็นพหูพจน์ ใช้ don't have",
+          "he ใช้ doesn't ในคำตอบสั้น",
+          "they ใช้ do ในคำตอบสั้น",
+          "My sister เป็นเอกพจน์ ใช้ doesn't have"
+        ]
+      },
+      {
+        "title": "ตอนที่ 3: เติม had/didn't have/Did ให้ถูกต้อง (7 ข้อ)",
+        "instructions": "เติมรูปอดีตของ have ให้ถูกต้องตามบริบท",
+        "items": [
+          "I ___ a bike when I was young.",
+          "She ___ long hair last year.",
+          "They ___ a dog before.",
+          "We ___ a great time yesterday.",
+          "I ___ have any money yesterday. (ปฏิเสธ)",
+          "___ you have a pet when you were young?",
+          "He ___ have a car last year. (ปฏิเสธ)"
+        ],
+        "answers": ["had", "had", "had", "had", "didn't", "Did", "didn't"],
+        "reasons": [
+          "ทุกประธานใช้ had ในอดีต",
+          "She ใช้ had ในอดีต (ไม่แยก has/have อีกต่อไป)",
+          "They ใช้ had ในอดีต",
+          "We ใช้ had ในอดีต",
+          "ปฏิเสธอดีตใช้ didn't have กับทุกประธาน",
+          "คำถามอดีตใช้ Did + ประธาน + have",
+          "ปฏิเสธอดีตใช้ didn't have กับทุกประธาน"
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    { "emoji": "🚲", "tag": "have: I", "difficulty": 1, "q": "I ___ a bicycle.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "ประธาน I ใช้ have เสมอ" },
+    { "emoji": "👦", "tag": "has: she", "difficulty": 1, "q": "She ___ a brother.", "choices": ["have","has","had","haves"], "answer": 1, "explain": "ประธาน She (เอกพจน์) ใช้ has" },
+    { "emoji": "🏠", "tag": "have: they", "difficulty": 1, "q": "They ___ a big house.", "choices": ["has","have","had","haves"], "answer": 1, "explain": "ประธาน They (พหูพจน์) ใช้ have" },
+    { "emoji": "📱", "tag": "has: he", "difficulty": 1, "q": "He ___ a new phone.", "choices": ["has","have","had","haves"], "answer": 0, "explain": "ประธาน He ใช้ has" },
+    { "emoji": "🐱", "tag": "have: we", "difficulty": 1, "q": "We ___ two cats.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "ประธาน We ใช้ have" },
+    { "emoji": "🚗", "tag": "has: singular noun", "difficulty": 1, "q": "My mother ___ a car.", "choices": ["has","have","had","haves"], "answer": 0, "explain": "My mother เป็นเอกพจน์ ใช้ has" },
+    { "emoji": "👀", "tag": "have: you", "difficulty": 1, "q": "You ___ nice eyes.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "ประธาน You ใช้ have เสมอ (เอกพจน์และพหูพจน์)" },
+    { "emoji": "🐕", "tag": "has: singular noun", "difficulty": 1, "q": "The dog ___ a long tail.", "choices": ["have","has","had","haves"], "answer": 1, "explain": "The dog เป็นเอกพจน์ ใช้ has" },
+    { "emoji": "🚜", "tag": "have: plural noun", "difficulty": 1, "q": "My parents ___ a farm.", "choices": ["has","have","had","haves"], "answer": 1, "explain": "My parents เป็นพหูพจน์ ใช้ have" },
+    { "emoji": "🐘", "tag": "has: singular noun", "difficulty": 1, "q": "This elephant ___ a long trunk.", "choices": ["have","has","had","haves"], "answer": 1, "explain": "This elephant เป็นเอกพจน์ ใช้ has" },
+    { "emoji": "🧑‍🤝‍🧑", "tag": "have: I", "difficulty": 1, "q": "I ___ many friends.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "ประธาน I ใช้ have เสมอ" },
+    { "emoji": "🤕", "tag": "has: he", "difficulty": 1, "q": "He ___ a headache.", "choices": ["have","has","had","haves"], "answer": 1, "explain": "ประธาน He ใช้ has" },
+    { "emoji": "📝", "tag": "have: we", "difficulty": 1, "q": "We ___ a test today.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "ประธาน We ใช้ have" },
+    { "emoji": "💇‍♀️", "tag": "has: singular noun", "difficulty": 1, "q": "My sister ___ curly hair.", "choices": ["has","have","had","haves"], "answer": 0, "explain": "My sister เป็นเอกพจน์ ใช้ has" },
+    { "emoji": "👩‍🏫", "tag": "have: plural noun", "difficulty": 1, "q": "They ___ a new teacher.", "choices": ["have","has","had","haves"], "answer": 0, "explain": "They เป็นพหูพจน์ ใช้ have" },
+
+    { "emoji": "🚗", "tag": "ปฏิเสธ: doesn't have", "difficulty": 2, "q": "He ___ have a car.", "choices": ["doesn't","don't","isn't","not"], "answer": 0, "explain": "He เป็นเอกพจน์ ใช้ doesn't have" },
+    { "emoji": "💰", "tag": "ปฏิเสธ: don't have", "difficulty": 2, "q": "I ___ have any money.", "choices": ["don't","doesn't","isn't","not"], "answer": 0, "explain": "ประธาน I ใช้ don't have" },
+    { "emoji": "📺", "tag": "ปฏิเสธ: don't have", "difficulty": 2, "q": "They ___ have a TV.", "choices": ["doesn't","don't","aren't","not"], "answer": 1, "explain": "They เป็นพหูพจน์ ใช้ don't have" },
+    { "emoji": "🐹", "tag": "ปฏิเสธ: doesn't have", "difficulty": 2, "q": "She ___ have a pet.", "choices": ["don't","doesn't","isn't","not"], "answer": 1, "explain": "She เป็นเอกพจน์ ใช้ doesn't have" },
+    { "emoji": "✏️", "tag": "คำถาม: Do...have?", "difficulty": 2, "q": "___ you have a pen?", "choices": ["Do","Does","Have","Has"], "answer": 0, "explain": "ประธาน you ใช้ Do ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "🚲", "tag": "คำถาม: Does...have?", "difficulty": 2, "q": "___ she have a bike?", "choices": ["Do","Does","Have","Has"], "answer": 1, "explain": "ประธาน she ใช้ Does ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "👧", "tag": "คำตอบสั้น: do", "difficulty": 2, "q": "Do you have a sister? Yes, I ___.", "choices": ["do","does","have","has"], "answer": 0, "explain": "ประธาน I ใช้ do ในคำตอบสั้น" },
+    { "emoji": "💼", "tag": "คำตอบสั้น: doesn't", "difficulty": 2, "q": "Does he have a job? No, he ___.", "choices": ["don't","doesn't","haven't","hasn't"], "answer": 1, "explain": "ประธาน he ใช้ doesn't ในคำตอบสั้น" },
+    { "emoji": "🍳", "tag": "have breakfast (กิจวัตร)", "difficulty": 2, "q": "We ___ breakfast at 7 every day.", "choices": ["have","has","had","having"], "answer": 0, "explain": "We ใช้ have และ have breakfast แปลว่ากินอาหารเช้า" },
+    { "emoji": "🚿", "tag": "has a shower (กิจวัตร)", "difficulty": 2, "q": "She ___ a shower every morning.", "choices": ["have","has","had","having"], "answer": 1, "explain": "She เป็นเอกพจน์ ใช้ has และ have a shower แปลว่าอาบน้ำ" },
+    { "emoji": "🍱", "tag": "have lunch (กิจวัตร)", "difficulty": 2, "q": "I ___ lunch at noon.", "choices": ["have","has","had","having"], "answer": 0, "explain": "ประธาน I ใช้ have และ have lunch แปลว่ากินอาหารกลางวัน" },
+    { "emoji": "🤒", "tag": "has a headache (อาการป่วย)", "difficulty": 2, "q": "He ___ a headache today.", "choices": ["have","has","had","having"], "answer": 1, "explain": "He เป็นเอกพจน์ ใช้ has และ have a headache แปลว่าปวดหัว" },
+    { "emoji": "🎉", "tag": "have a good time", "difficulty": 2, "q": "They ___ a good time at the party.", "choices": ["have","has","had","having"], "answer": 0, "explain": "They ใช้ have และ have a good time แปลว่าสนุกสนาน/มีความสุข" },
+    { "emoji": "🤧", "tag": "has a cold (อาการป่วย)", "difficulty": 2, "q": "My brother ___ a cold this week.", "choices": ["have","has","had","having"], "answer": 1, "explain": "My brother เป็นเอกพจน์ ใช้ has และ have a cold แปลว่าเป็นหวัด" },
+    { "emoji": "🏖️", "tag": "have fun", "difficulty": 2, "q": "We ___ fun at the beach.", "choices": ["have","has","had","having"], "answer": 0, "explain": "We ใช้ have และ have fun แปลว่าสนุกสนาน" },
+    { "emoji": "🏍️", "tag": "คำถาม: Does...have?", "difficulty": 2, "q": "___ your father have a motorbike?", "choices": ["Do","Does","Is","Are"], "answer": 1, "explain": "your father เป็นเอกพจน์ ใช้ Does ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "⏰", "tag": "คำถาม: Do...have?", "difficulty": 2, "q": "___ they have enough time?", "choices": ["Do","Does","Is","Are"], "answer": 0, "explain": "they เป็นพหูพจน์ ใช้ Do ขึ้นต้นประโยคคำถาม" },
+    { "emoji": "🐈", "tag": "ปฏิเสธ: doesn't have", "difficulty": 2, "q": "He ___ have a dog; he has a cat.", "choices": ["doesn't","don't","isn't","hasn't"], "answer": 0, "explain": "He เป็นเอกพจน์ ใช้ doesn't have" },
+    { "emoji": "📓", "tag": "ปฏิเสธ: don't have", "difficulty": 2, "q": "I ___ have any homework today.", "choices": ["don't","doesn't","haven't","hasn't"], "answer": 0, "explain": "ประธาน I ใช้ don't have" },
+    { "emoji": "🤕", "tag": "คำตอบสั้น: does", "difficulty": 2, "q": "Does she have a headache? Yes, she ___.", "choices": ["do","does","has","have"], "answer": 1, "explain": "ประธาน she ใช้ does ในคำตอบสั้น" },
+
+    { "emoji": "🚲", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "I ___ a bike when I was young.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "ทุกประธานใช้ had ในอดีต" },
+    { "emoji": "💇‍♀️", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "She ___ long hair last year.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "อดีตใช้ had เหมือนกันทุกประธาน ไม่แยก has/have" },
+    { "emoji": "🐕", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "They ___ a dog before.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "ทุกประธานใช้ had ในอดีต" },
+    { "emoji": "🎊", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "We ___ a great time yesterday.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "ทุกประธานใช้ had ในอดีต" },
+    { "emoji": "🤒", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "He ___ a fever last night.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "ทุกประธานใช้ had ในอดีต" },
+    { "emoji": "🚜", "tag": "อดีต: had (ทุกประธาน)", "difficulty": 3, "q": "My grandparents ___ a small farm many years ago.", "choices": ["have","has","had","haves"], "answer": 2, "explain": "My grandparents เป็นพหูพจน์ แต่ในอดีตใช้ had เหมือนกันทุกประธาน" },
+    { "emoji": "💸", "tag": "อดีตปฏิเสธ: didn't have", "difficulty": 3, "q": "I ___ have any money yesterday.", "choices": ["don't","doesn't","didn't","hadn't"], "answer": 2, "explain": "ปฏิเสธอดีตใช้ didn't have กับทุกประธาน" },
+    { "emoji": "🚗", "tag": "อดีตปฏิเสธ: didn't have", "difficulty": 3, "q": "She ___ have a car last year.", "choices": ["don't","doesn't","didn't","hadn't"], "answer": 2, "explain": "ปฏิเสธอดีตใช้ didn't have กับทุกประธาน แม้ประธานจะเป็นเอกพจน์" },
+    { "emoji": "🐹", "tag": "อดีตคำถาม: Did...have?", "difficulty": 3, "q": "___ you have a pet when you were a child?", "choices": ["Do","Does","Did","Had"], "answer": 2, "explain": "คำถามอดีตใช้ Did + ประธาน + have กับทุกประธาน" },
+    { "emoji": "🚲", "tag": "อดีตคำถาม: Did...have?", "difficulty": 3, "q": "___ he have a bicycle before?", "choices": ["Do","Does","Did","Had"], "answer": 2, "explain": "คำถามอดีตใช้ Did + ประธาน + have แม้ประธานจะเป็นเอกพจน์" },
+    { "emoji": "📚", "tag": "have to (ความจำเป็น)", "difficulty": 3, "q": "I ___ to finish my homework before dinner.", "choices": ["have","has","had","having"], "answer": 0, "explain": "ประธาน I ใช้ have to (ต้อง) ตามด้วย to + กริยาช่อง 1" },
+    { "emoji": "🏫", "tag": "has to (ความจำเป็น)", "difficulty": 3, "q": "She ___ to go to school every day.", "choices": ["have","has","had","having"], "answer": 1, "explain": "She เป็นเอกพจน์ ใช้ has to (ต้อง) ไม่ใช่ has a school" },
+    { "emoji": "👕", "tag": "has to (ความจำเป็น)", "difficulty": 3, "q": "He ___ to wear a uniform at school.", "choices": ["have","has","had","having"], "answer": 1, "explain": "He เป็นเอกพจน์ ใช้ has to (ต้อง) แปลว่าเขาต้องใส่ชุดนักเรียน" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["She have a brother.","She has a brother.","She having a brother.","She haves a brother."], "answer": 1, "explain": "ประธาน She (เอกพจน์) ต้องใช้ has ไม่ใช่ have/having/haves" },
+    { "emoji": "🔍", "tag": "จับผิดประโยค (Error Detection)", "difficulty": 3, "q": "ข้อใดถูกต้อง?", "choices": ["He have a car last year.","He has a car last year.","He had a car last year.","He haves a car last year."], "answer": 2, "explain": "ประโยคอดีต (last year) ต้องใช้ had ไม่ใช่ have/has/haves" }
+  ]
+}

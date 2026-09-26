@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียน: Verb to Do (do / does / did)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #FF5D5D; --c1-light: #FFE1E1;
+  --c2: #FFA800; --c2-light: #FFF1D6;
+  --c3: #2F9BFF; --c3-light: #DCEEFF;
+  --c4: #21C38D; --c4-light: #D9F7EC;
+  --c5: #9B5DE5; --c5-light: #F1E4FB;
+  --c6: #FF5FA2; --c6-light: #FFE3F0;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Kanit', 'Sarabun', 'Tahoma', sans-serif;
+  color: #2a2a3a;
+  margin: 0;
+  padding: 0;
+  background: #eef1f8;
+  font-size: 21px;
+}
+.sheet {
+  max-width: 210mm;
+  margin: 16px auto;
+  background: #fff;
+  padding: 12mm 14mm;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+}
+.sheet.answer-sheet { page-break-before: always; }
+.banner {
+  background: linear-gradient(90deg, #FF5D5D, #FFA800, #21C38D, #2F9BFF, #9B5DE5, #FF5FA2);
+  border-radius: 18px;
+  padding: 20px 26px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
+}
+.banner.teacher { background: linear-gradient(90deg,#b3261e,#ff5d5d); }
+.banner h1 {
+  font-family: 'Mali', 'Kanit', sans-serif;
+  font-size: 32px;
+  margin: 0 0 5px;
+}
+.banner .sub { font-size: 17.5px; font-weight: 500; opacity: 0.97; }
+.badge-pill {
+  display: inline-block;
+  background: #2952e3;
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: #f5f7fd;
+  border: 2px dashed #c7cfe8;
+  border-radius: 14px;
+}
+.fill-line { display: inline-block; min-width: 130px; border-bottom: 1.6px dotted #7a84a3; }
+.instructions {
+  background: #FFF8E1;
+  border: 2px solid #FFD54F;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 17.5px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.instructions b { color: #92660a; }
+
+/* Quiz / question cards */
+.card {
+  position: relative;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px 26px 20px;
+  margin: 34px 0 30px;
+  break-inside: avoid;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.card.c1 { --accent: var(--c1); --light: var(--c1-light); }
+.card.c2 { --accent: var(--c2); --light: var(--c2-light); }
+.card.c3 { --accent: var(--c3); --light: var(--c3-light); }
+.card.c4 { --accent: var(--c4); --light: var(--c4-light); }
+.card.c5 { --accent: var(--c5); --light: var(--c5-light); }
+.card.c6 { --accent: var(--c6); --light: var(--c6-light); }
+.qnum {
+  position: absolute; top: -16px; left: 18px;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 17.5px;
+  padding: 6px 18px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.stars {
+  position: absolute; top: -16px; right: 18px;
+  background: #fff; border: 2px solid var(--accent); color: var(--accent);
+  font-size: 16px; font-weight: 700; padding: 5px 12px; border-radius: 999px;
+}
+.card-body { display: flex; gap: 20px; align-items: flex-start; margin-top: 13px; }
+.emoji-badge {
+  font-size: 50px; line-height: 1;
+  background: var(--light); border: 3px dashed var(--accent); border-radius: 50%;
+  width: 90px; height: 90px; min-width: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qtext { font-size: 24px; font-weight: 600; line-height: 1.45; padding-top: 8px; }
+.rule-tag {
+  display: inline-block; font-size: 15px; font-weight: 600; color: var(--accent);
+  background: var(--light); border-radius: 8px; padding: 4px 10px; margin-top: 6px;
+}
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 16px; margin: 18px 0 16px; }
+.choice { font-size: 21.5px; font-weight: 500; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 13px 17px; }
+.write-row { display: flex; align-items: center; gap: 13px; font-size: 17.5px; color: #555; }
+.write-row .letters { display: flex; gap: 10px; }
+.write-row .letter-box {
+  width: 37px; height: 37px; border: 2px solid var(--accent); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);
+}
+.write-line { flex: 1; border-bottom: 2px dotted #9aa2bb; height: 24px; }
+.score-box {
+  margin-top: 34px; border: 3px dashed #2952e3; border-radius: 16px; padding: 18px 22px;
+  font-size: 21px; font-weight: 700; text-align: center; color: #1e2b5c; background: #f5f7fd;
+}
+.footer-note { margin-top: 24px; font-size: 14.5px; color: #8891a8; text-align: center; }
+
+/* Worksheet fill-in items */
+.part-title {
+  font-size: 18.5px; color: #fff; background: #2952e3; padding: 8px 16px; border-radius: 6px; margin: 26px 0 14px;
+}
+.part-desc { font-size: 15.5px; color: #55607a; margin: -4px 0 14px; }
+ol.qlist { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+ol.qlist li { counter-increment: q; font-size: 18.5px; padding: 11px 0; border-bottom: 1px dashed #dde2ee; display: flex; align-items: baseline; gap: 10px; }
+ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3; min-width: 28px; }
+.blank { display: inline-block; min-width: 100px; border-bottom: 1.8px solid #333; margin: 0 4px; }
+.two-col { columns: 2; column-gap: 32px; }
+.two-col li { break-inside: avoid; }
+
+/* Lesson page */
+.obj-list { list-style: none; padding: 0; margin: 0; }
+.obj-list li {
+  background: #f5f7fd; border-left: 5px solid #2952e3; border-radius: 8px;
+  padding: 11px 18px; margin-bottom: 11px; font-size: 18.5px;
+}
+.explain-block { margin-bottom: 26px; }
+.explain-block h2 {
+  font-family: 'Mali','Kanit',sans-serif; font-size: 24px; color: #1e2b5c;
+  border-bottom: 3px solid #2952e3; padding-bottom: 6px; margin-bottom: 13px;
+}
+.explain-block table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 17.5px; margin: 13px 0; -webkit-overflow-scrolling: touch; }
+.explain-block th, .explain-block td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.explain-block th { background: #f3f5fb; }
+.tip-card {
+  background: #FFF8E1; border: 2px dashed #FFD54F; border-radius: 14px;
+  padding: 14px 20px; margin-bottom: 14px; font-size: 18px;
+}
+
+/* Answer key */
+.teacher-flag {
+  display: inline-block; background: #b3261e; color: #fff; font-size: 15.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+}
+.answer-table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 16.5px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.answer-table th, .answer-table td { border: 1px solid #d8dce8; padding: 10px 14px; text-align: left; }
+.answer-table th { background: #f3f5fb; }
+.answer-table td.emoji-cell { font-size: 24px; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; padding: 8mm 12mm; }
+}
+@page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<a href="../../home.html" style="display:inline-flex;align-items:center;gap:6px;margin:10px 0 0 10px;padding:8px 16px;background:#1e2b5c;color:#fff;font-family:Kanit,sans-serif;font-size:15px;font-weight:700;text-decoration:none;border-radius:999px;">🏡 Dashboard</a>
+<div class="sheet">
+  <div class="banner">
+    <h1>🔨❓ บทเรียน: Verb to Do (do / does / did)</h1>
+    <div class="sub">English Grammar Quiz Pack · เตรียมสอบเข้า ม.4</div>
+  </div>
+
+  <div class="explain-block">
+    <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+    <ul class="obj-list"><li>บอกรูปแบบของ do/does ให้ตรงกับประธานในประโยคได้ถูกต้อง (I/You/We/They ใช้ do, He/She/It ใช้ does)</li>
+<li>ใช้ do/does เป็นกริยาช่วย (Auxiliary Verb) สร้างประโยคคำถามและประโยคปฏิเสธในปัจจุบันกาลได้</li>
+<li>ใช้ do เป็นกริยาแท้ (Main Verb) แปลว่า "ทำ" ในวลีที่พบบ่อย เช่น do homework, do the dishes, do exercise</li>
+<li>ใช้ did เป็นกริยาช่วยและกริยาแท้ในอดีตได้ถูกต้องกับทุกประธาน</li>
+<li>สังเกตและแก้ไขประโยคที่ใช้ do/does/did ผิด ซึ่งเป็นแนวข้อสอบเข้า ม.4 ที่พบบ่อย</li></ul>
+  </div>
+
+  
+    <div class="explain-block">
+      <h2>📖 Do คืออะไร</h2>
+      <p>Do เป็นคำกริยาพิเศษที่ทำหน้าที่ได้ <b>2 แบบ</b>:</p><table><tr><th>หน้าที่</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>กริยาแท้ (Main Verb)</td><td>แปลว่า "ทำ"</td><td>I do my homework. (ฉันทำการบ้าน)</td></tr><tr><td>กริยาช่วย (Auxiliary Verb)</td><td>ไม่มีความหมาย ใช้ช่วยสร้างประโยคคำถาม/ปฏิเสธ</td><td>Do you like pizza? (คุณชอบพิซซ่าไหม)</td></tr></table><p>รูปของ do จะเปลี่ยนไปตามประธานและกาลเวลา: <b>do, does</b> (ปัจจุบัน) และ <b>did</b> (อดีต)</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🧩 Do/Does ต้องตรงกับประธาน (Subject-Verb Agreement)</h2>
+      <p>เลือกใช้ do หรือ does ให้ตรงกับประธาน เหมือนกริยาปกติที่เติม s/es กับประธานเอกพจน์บุรุษที่ 3:</p><table><tr><th>ประธาน (Subject)</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They</td><td>do</td><td>They do their homework every day.</td></tr><tr><td>He / She / It / ชื่อคน-สิ่งของเอกพจน์</td><td>does</td><td>She does her homework every day.</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>🏋️ Do เป็นกริยาแท้ (Main Verb): แปลว่า "ทำ"</h2>
+      <p>Do ใช้เป็นกริยาแท้ในวลีที่พบบ่อยมาก ต้องจำเป็นวลี ๆ ไป:</p><table><tr><th>วลี</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>do homework</td><td>ทำการบ้าน</td><td>I do my homework every night.</td></tr><tr><td>do the dishes</td><td>ล้างจาน</td><td>She does the dishes after dinner.</td></tr><tr><td>do exercise</td><td>ออกกำลังกาย</td><td>We do exercise every morning.</td></tr><tr><td>do a favor</td><td>ช่วยเหลือ</td><td>Can you do me a favor?</td></tr><tr><td>do one's best</td><td>ทำเต็มที่/ทำดีที่สุด</td><td>He always does his best.</td></tr><tr><td>do the cleaning/laundry/cooking</td><td>ทำความสะอาด/ซักผ้า/ทำอาหาร</td><td>They do the cleaning every weekend.</td></tr></table><p>สังเกตว่าเมื่อ do เป็นกริยาแท้ ก็ยังต้องผัน <b>do → does</b> กับประธานเอกพจน์บุรุษที่ 3 เหมือนกริยาอื่น ๆ</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>❓ Do/Does เป็นกริยาช่วยสร้างประโยคคำถาม (Yes/No Question)</h2>
+      <p><b>โครงสร้าง:</b> Do/Does + ประธาน + กริยาช่องที่ 1 (ไม่เติม s) ... ?</p><table><tr><th>ตัวอย่างคำถาม</th><th>คำตอบสั้น</th></tr><tr><td>Do you like pizza?</td><td>Yes, I do. / No, I don't.</td></tr><tr><td>Does he play football?</td><td>Yes, he does. / No, he doesn't.</td></tr></table><p><b>ข้อควรระวัง:</b> เมื่อมี Do/Does นำหน้าแล้ว กริยาตัวหลังต้องเป็นกริยาช่องที่ 1 เสมอ ห้ามเติม s (Does he plays ❌ → Does he play ✅)</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🚫 Do/Does เป็นกริยาช่วยสร้างประโยคปฏิเสธ (Negative)</h2>
+      <p><b>โครงสร้าง:</b> ประธาน + do/does + not + กริยาช่องที่ 1</p><table><tr><th>เต็มรูป</th><th>รูปย่อ</th><th>ตัวอย่าง</th></tr><tr><td>I/You/We/They + do not</td><td>don't</td><td>I don't like spiders.</td></tr><tr><td>He/She/It + does not</td><td>doesn't</td><td>She doesn't play tennis.</td></tr></table><p><b>ข้อควรระวัง:</b> หลัง doesn't กริยาต้องเป็นช่องที่ 1 เสมอ (She doesn't likes ❌ → She doesn't like ✅) เพราะ does ผันแทนประธานไปแล้ว กริยาตัวหลังจึงไม่ต้องเติม s ซ้ำ</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🔎 WH-Question กับ Do/Does</h2>
+      <p>วางคำถาม WH (What/Where/When/Why/How) ไว้หน้าสุด แล้วตามด้วย Do/Does + ประธาน + กริยาช่องที่ 1:</p><table><tr><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>What do you do?</td><td>คุณทำงานอะไร (ถามอาชีพ)</td></tr><tr><td>Where does he live?</td><td>เขาอาศัยอยู่ที่ไหน</td></tr><tr><td>Why don't you like it?</td><td>ทำไมคุณถึงไม่ชอบมันล่ะ</td></tr></table><p>สังเกตประโยค <b>"What do you do?"</b> — do ตัวแรกเป็นกริยาช่วย ส่วน do ตัวหลังเป็นกริยาแท้ที่แปลว่า "ทำงาน/ประกอบอาชีพ"</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>⏮️ Did: กริยาช่วยในอดีต (ใช้ได้กับทุกประธาน)</h2>
+      <p>เมื่อพูดถึงอดีต ไม่ว่าประธานจะเป็นใคร ใช้ <b>did</b> เหมือนกันหมด ไม่ต้องแยก do/does อีกต่อไป:</p><table><tr><th>โครงสร้าง</th><th>ตัวอย่าง</th></tr><tr><td>Did + ประธาน (ทุกตัว) + กริยาช่องที่ 1 ... ?</td><td>Did you go? / Did she go? / Did they go?</td></tr><tr><td>ประธาน (ทุกตัว) + did not (didn't) + กริยาช่องที่ 1</td><td>I didn't go. / He didn't go. / We didn't go.</td></tr></table><p><b>ข้อควรระวังสำคัญ:</b> หลัง did/didn't กริยาต้องเป็นช่องที่ 1 เสมอ ห้ามผันเป็นอดีตซ้ำ (Did you went? ❌ → Did you go? ✅) เพราะ did แสดงความเป็นอดีตไปแล้ว</p>
+    </div>
+
+    <div class="explain-block">
+      <h2>🕰️ Did เป็นกริยาแท้ (Past Main Verb)</h2>
+      <p>เมื่อ do ทำหน้าที่เป็นกริยาแท้ (แปลว่า "ทำ") แล้วอยู่ในประโยคบอกเล่าอดีต จะเปลี่ยนรูปเป็น <b>did</b> เหมือนกันทุกประธาน:</p><table><tr><th>ตัวอย่าง</th><th>คำแปล</th></tr><tr><td>I did my homework yesterday.</td><td>ฉันทำการบ้านเมื่อวาน</td></tr><tr><td>She did the laundry this morning.</td><td>เธอซักผ้าเมื่อเช้านี้</td></tr></table>
+    </div>
+
+    <div class="explain-block">
+      <h2>⚠️ จุดที่ต้องระวัง (ข้อสอบชอบออก)</h2>
+      <p><b>1. ประโยคที่มี "do" สองตัว (Double Do):</b> ตัวแรกเป็นกริยาช่วย ตัวหลังเป็นกริยาแท้ ต้องแยกให้ออก</p><table><tr><th>ตัวอย่าง</th><th>คำอธิบาย</th></tr><tr><td>Do you do the dishes every day?</td><td>Do (ช่วย) + you + do (แท้ = ล้างจาน)</td></tr><tr><td>Does he do the ironing?</td><td>Does (ช่วย) + he + do (แท้ = รีดผ้า)</td></tr></table><p><b>2. ห้ามใช้ do/does/did ซ้ำกับ Verb to Be:</b> เช่น Is he does...? ❌ ไม่มีจริงในภาษาอังกฤษ</p><p><b>3. หลัง Do/Does/Did ต้องใช้กริยาช่องที่ 1 เสมอ</b> ไม่ว่าจะเป็นกริยาปกติหรือกริยาไม่ปกติ (Did you go? ไม่ใช่ Did you went?)</p><p><b>4. Doesn't/Didn't ใช้กับกริยาแท้ do ได้เช่นกัน:</b> My sister doesn't do the laundry on Mondays. (doesn't = ช่วย, do = แท้)</p>
+    </div>
+  <div class="explain-block">
+      <h2>📊 ตารางสรุป</h2>
+      <table><tr><th>ประธาน (Subject)</th><th>Present (ปัจจุบัน)</th><th>Past (อดีต)</th><th>ตัวอย่าง</th></tr><tr><td>I / You / We / They</td><td>do / don't</td><td>did / didn't</td><td>I do my homework. / I did my homework yesterday.</td></tr>
+<tr><td>He / She / It</td><td>does / doesn't</td><td>did / didn't</td><td>She does her homework. / She did her homework yesterday.</td></tr>
+<tr><td>คำถาม (Question)</td><td>Do/Does + subject + verb1?</td><td>Did + subject + verb1?</td><td>Do you like it? / Did you go?</td></tr>
+<tr><td>คำตอบสั้น (Short Answer)</td><td>Yes, I do. / No, she doesn't.</td><td>Yes, they did. / No, he didn't.</td><td>Did you win? Yes, we did.</td></tr></table>
+    </div>
+
+  <div class="explain-block">
+    <h2>🧠 เทคนิคการจำ</h2>
+    <div class="tip-card">💡 จำแบบ "DDD": &lt;b&gt;D&lt;/b&gt;o ใช้กับ I-You-We-They, &lt;b&gt;D&lt;/b&gt;oes ใช้กับ He-She-It, &lt;b&gt;D&lt;/b&gt;id ใช้กับทุกประธานในอดีต</div>
+<div class="tip-card">💡 ท่องคล้องจอง: "Do, do, do — I You We They! Does, does, does — He She It today!"</div>
+<div class="tip-card">💡 จำกฎเหล็ก: หลัง do/does/did ต้องเป็นกริยาช่องที่ 1 เสมอ ห้ามเติม s ห้ามผันอดีตซ้ำ (Does he plays ❌ / Did you went ❌)</div>
+  </div>
+
+  <div class="footer-note">English Grammar Quiz Pack · Verb to Do</div>
+</div>
+</body>
+</html>
