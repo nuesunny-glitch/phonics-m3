@@ -196,6 +196,7 @@ ol.qlist li::before { content: counter(q) "."; font-weight: 700; color: #2952e3;
 }
 .word-card .we { font-size: 44px; line-height: 1; margin-bottom: 6px; }
 .word-card .breakdown { font-size: 15px; font-weight: 700; color: #2952e3; margin-bottom: 4px; }
+.breakdown-mini { display: inline-block; margin-top: 2px; font-size: 13px; font-weight: 600; color: #2952e3; }
 .word-card .ww { font-size: 22px; font-weight: 800; color: #1e2b5c; }
 .word-card .ww .reading { font-size: 16px; font-weight: 500; color: #7a84a3; }
 .word-card .wm { font-size: 15.5px; color: #667; margin-bottom: 10px; }
