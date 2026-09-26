@@ -8,7 +8,7 @@
   var SOUND_MAP = {
     'b': 'buh', 'c': 'kuh', 'd': 'duh', 'f': 'ffff', 'g': 'guh',
     'h': 'huh', 'j': 'juh', 'k': 'kuh', 'l': 'luh', 'm': 'mmm',
-    'n': 'nnn', 'p': 'puh', 'qu': 'kwuh', 'r': 'ruh', 's': 'sss',
+    'n': 'nnn', 'p': 'puh', 'q': 'kwuh', 'qu': 'kwuh', 'r': 'ruh', 's': 'sss',
     't': 'tuh', 'v': 'vuh', 'w': 'wuh', 'x': 'ks', 'y': 'yuh', 'z': 'zzz',
     'sh': 'shh', 'ch': 'chuh', 'th': 'th', 'wh': 'wuh', 'ph': 'ffff',
     'ng': 'ng', 'ck': 'kuh',
@@ -72,6 +72,12 @@
     speak(word);
   }
 
+  function playSound(letter) {
+    if (!window.speechSynthesis || !letter) return;
+    window.speechSynthesis.cancel();
+    speak(SOUND_MAP[letter.toLowerCase()] || letter);
+  }
+
   function playSentence(sentence) {
     if (!window.speechSynthesis || !sentence) return;
     window.speechSynthesis.cancel();
@@ -126,6 +132,7 @@
     if (audioEl) {
       var kind = audioEl.getAttribute('data-audio');
       if (kind === 'word') playWord(audioEl.getAttribute('data-text'));
+      else if (kind === 'sound') playSound(audioEl.getAttribute('data-text'));
       else if (kind === 'sentence') playSentence(audioEl.getAttribute('data-text'));
       else if (kind === 'split') playSplit(audioEl.getAttribute('data-word'), audioEl.getAttribute('data-parts'));
       return;
@@ -149,5 +156,5 @@
     init();
   }
 
-  window.PhonicsAudio = { playWord: playWord, playSentence: playSentence, playSplit: playSplit, setRate: setRate };
+  window.PhonicsAudio = { playWord: playWord, playSound: playSound, playSentence: playSentence, playSplit: playSplit, setRate: setRate };
 })();

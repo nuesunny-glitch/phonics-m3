@@ -116,11 +116,21 @@ fallback) ปุ่มเสียงทำงานผ่าน `data-audio` at
 
 ```html
 <button class="audio-btn" data-audio="word" data-text="cat">🔊 คำเต็ม</button>
+<button class="audio-btn" data-audio="sound" data-text="c">🔊 เสียง c</button>
 <button class="audio-btn split" data-audio="split" data-word="cat" data-parts="c,a,t">🔤 แยกเสียง</button>
 <button class="audio-btn sentence" data-audio="sentence" data-text="I have a cat.">🔊 ฟังประโยค</button>
 ```
 
-- `data-audio="word"` — พูดคำเต็มตรง ๆ (สะกดถูกต้องเสมอ)
+- `data-audio="word"` — พูดคำเต็มตรง ๆ (สะกดถูกต้องเสมอ) หรือ "ชื่อเรียก" ตัวอักษร
+  ถ้า `data-text` เป็นตัวอักษรเดี่ยว (เช่น `data-text="A"` พูดว่า "ay" ไม่ใช่เสียง
+  Phonics)
+- `data-audio="sound"` (เพิ่มเข้ามา 2026-09-26) — พูด**เสียง Phonics ของตัวอักษร
+  เดี่ยว** โดยตรง ไม่ใช่ชื่อเรียก ใช้ตาราง `SOUND_MAP` เดียวกับ `split` แปลง
+  `data-text` (เช่น `a`, `b`, `c` ตัวพิมพ์เล็ก) เป็นข้อความประมาณเสียง (เช่น
+  `a`→"ah", `b`→"buh", `c`→"kuh") ใช้ตอนหน้าเรียนต้องการฝึกเสียง Phonics ของ
+  ตัวอักษรเดี่ยว ไม่ใช่ชื่อเรียก (เช่น `01-Alphabet/lesson.html` หลัง
+  2026-09-26 — ดูหมายเหตุด้านล่าง) ต่างจาก `split` ตรงที่ `sound` พูดแค่เสียง
+  เดียวจบ ไม่มีการต่อด้วยคำเต็ม
 - `data-audio="split"` — **กฎ Phonics: พูดเสียงตัวอักษร/หน่วยเสียงทีละตัวก่อน
   แล้วค่อยพูดคำเต็มปิดท้าย** เช่น c → a → t → "cat" ใช้ตาราง `SOUND_MAP` ใน
   `shared-audio.js` แปลง grapheme (เช่น `c`, `sh`, `ai`) เป็นข้อความประมาณเสียง
@@ -128,6 +138,14 @@ fallback) ปุ่มเสียงทำงานผ่าน `data-audio` at
   (เช่น `c`→"kuh" ไม่ใช่ "see") — คั่นแต่ละเสียงด้วยหน่วงเวลาสั้น ๆ ผ่าน
   `utterance.onend` chain
 - `data-audio="sentence"` — พูดประโยคเต็ม
+
+**หน้า `01-Alphabet/lesson.html` เป็นข้อยกเว้น (2026-09-26):** เดิมตาราง A-Z
+สอน "ชื่อเรียก" ตัวอักษร (A=เอ, B=บี) ด้วย `data-audio="word"` และมีข้อความ
+อธิบายชัดเจนว่าเสียงจริงจะสอนในหัวข้อถัดไป ผู้ใช้ขอให้เปลี่ยนหน้านี้ทั้งหน้าให้
+สอน**เสียง Phonics โดยตรงแทนชื่อเรียก** จึงเปลี่ยนคอลัมน์ที่ 2 ของตารางเป็นเสียง
+Phonics ตาม `thai_phonics_sound_standard.md` และเปลี่ยนปุ่มตัวอักษรเดี่ยวเป็น
+`data-audio="sound"` ทั้งหมด — เป็นหน้าเดียวในโปรเจกต์ที่ตั้งใจสอนเสียงตั้งแต่
+หัวข้อแรก ไม่ใช่รูปแบบมาตรฐานของ topic อื่น
 - แถบลอยมุมขวาล่าง "🐢 ช้า / 🐇 ปกติ" ปรับความเร็ว (rate 0.55 / 1.0) จำค่าไว้ใน
   `localStorage` ข้ามหน้าได้ในเซสชันเดียวกัน
 - กดซ้ำได้ไม่จำกัด (ไม่มี debounce) — ก่อนพูดใหม่จะ `speechSynthesis.cancel()`
