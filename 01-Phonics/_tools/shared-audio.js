@@ -6,7 +6,7 @@
   'use strict';
 
   var SOUND_MAP = {
-    'b': 'buh', 'c': 'kuh', 'd': 'duh', 'f': 'fee', 'g': 'guh',
+    'b': 'buh', 'c': 'kuh', 'd': 'duh', 'f': 'fee', 'g': 'gah',
     'h': 'hah', 'j': 'juh', 'k': 'kuh', 'l': 'luh', 'm': 'mmm',
     'n': 'nnn', 'p': 'puh', 'q': 'kwuh', 'qu': 'kwuh', 'r': 'ruh', 's': 'sss',
     't': 'tuh', 'v': 'vuh', 'w': 'wuh', 'x': 'ksee', 'y': 'yuh', 'z': 'zzz',
